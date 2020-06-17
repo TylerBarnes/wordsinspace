@@ -1,10 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Gatsby WordPress Tutorial`,
+    description: `An example to learn how to source data from WordPress.`,
     author: `@gatsbyjs`,
   },
   plugins: [
+    /*
+     * Gatsby's data processing layer begins with “source”
+     * plugins. Here the site sources its data from WordPress.
+     */
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        /*
+         * The full URL of the WordPress site's GraphQL API.
+         * Example : 'https://www.example-site.com/graphql'
+         */
+        url: `https://testingiii.wordsinspace.net/graphql`,
+      },
+    },
+    /**
+     * The following plugins aren't required for gatsby-source-wordpress,
+     * but we need them so the default starter we installed above will keep working.
+     **/
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,8 +45,5 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
