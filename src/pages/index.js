@@ -1,5 +1,6 @@
 import React from "react"
-import { Link, graphql } from "gatsby" //highlight-line
+import { Link, graphql } from "gatsby" 
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -7,8 +8,8 @@ export default function Home({ data }) {
   return (
     <Layout>
       <SEO title="home" />
-      <h1>My WordPress Blog</h1>
-      <h4>Posts</h4>
+      <Link to="/page-2/">Go to page 2</Link>
+      <h1>Posts</h1>
       {data.allWpPost.nodes.map((node) => (
         <div key={node.slug}>
           <Link to={node.slug}>
