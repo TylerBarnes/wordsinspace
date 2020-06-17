@@ -12,10 +12,7 @@ export default function SecondPage({ data }) {
     	<h1>Pages</h1>
       {data.allWpPage.nodes.map((node) => (
         <div key={node.slug}>
-          <Link to={node.slug}>
-            <p>{node.title}</p>
-          </Link>
-          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+          <p>{node.title}</p>
         </div>
       ))}
     </Layout>
@@ -28,7 +25,6 @@ export const pageQuery = graphql`
         nodes {
             title
             slug
-
         }
     }
   }
