@@ -24,7 +24,10 @@ export default function Home({ data }) {
 
 export const pageQuery = graphql`
   query {
-    allWpPost(sort: { fields: [date] }) {
+    allWpPost(sort: { 
+        fields: [date] 
+        order: DESC }
+        ){
         nodes {
             title
             excerpt
