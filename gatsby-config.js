@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby WordPress Tutorial`,
+    title: `Testingiii`,
     description: `An example to learn how to source data from WordPress.`,
-    author: `@gatsbyjs`,
+    author: `kallirroi`,
   },
   plugins: [
     /*
@@ -33,6 +33,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-remove-serviceworker`,
+      options: {
+        filename: `runtime-service-worker.js`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
