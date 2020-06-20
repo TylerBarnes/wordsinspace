@@ -7,16 +7,18 @@ export default function List() {
 
     <StaticQuery
       query={graphql`
-        allWpPost(sort: { fields: [date] }) {
-          nodes {
-              title
-              excerpt
-              slug
+        query {
+          allWpPost(sort: { fields: [date] }) {
+              nodes {
+                  title
+                  excerpt
+                  slug
+              }
           }
         }
       `}
 
-      render={data=>(
+      render={data=>
         data.allWpPost.nodes.map((node) => (
           <div key={node.slug}>
             <Link to={node.slug}>
@@ -24,7 +26,8 @@ export default function List() {
             </Link>
             <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
           </div>
-        )))}
+        ))
+      }
     />
   )
 }
