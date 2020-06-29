@@ -4,24 +4,26 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allWpPost(sort: { fields: [date] }) {
+      allWpPost {
         nodes {
-            title
-            excerpt
-            content
-            slug
+          excerpt
+          slug
+          link
+          title
+          content
         }
       }
     }
   `).then(result => {
     result.data.allWpPost.nodes.forEach((node) => {
       createPage({
-        path: node.slug,
-        component: path.resolve(`./src/templates/blog-post.js`),
+        path: `/allPosts/${node.slug}`,
+        component: path.resolve(`./src/templates/post.js`),
         context: {
           slug: node.slug,
         },
       })
     })
   })
+  .catch(err=> console.log(err))
 }

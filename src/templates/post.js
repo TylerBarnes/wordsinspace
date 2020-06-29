@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
-export default function BlogPost({ data }) {
+export default function Post({ data }) {
   const post = data.allWpPost.nodes[0]
   return (
     <Layout>
@@ -13,13 +13,14 @@ export default function BlogPost({ data }) {
     </Layout>
   )
 }
+
 export const query = graphql`
-  query($slug: String!) {
-    allWpPost(filter: { slug: { eq: $slug } }) {
-        nodes {
-          title
-          content
-        }
+  query getPosts($slug: String!) {
+    allWpPost(filter: {slug: { eq: $slug }}) {
+      nodes {
+        slug
+        content
+      }
     }
   }
 `
