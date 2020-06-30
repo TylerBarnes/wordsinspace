@@ -8,8 +8,9 @@ function Home() {
   return (
     <Layout>
       <SEO title="home" />
-      <Link to="/allPosts/"><h5>All posts</h5></Link>
-      <Link to="/about/"><h5>about</h5></Link>
+      <Link to="/allPosts/"><h4>All posts</h4></Link>
+      <Link to="/allPages/"><h4>All pages</h4></Link>
+      <Link to="/about/"><h4>about</h4></Link>
     </Layout>
   )
 }

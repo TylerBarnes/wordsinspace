@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
-export default function Post({ data }) {
+export default function Page({ data }) {
   const post = data.allWpPost.edges[0]
   return (
     <Layout>
@@ -15,7 +15,7 @@ export default function Post({ data }) {
 }
 
 export const query = graphql`
-  query getPosts($slug: String!) {
+  query getPages($slug: String!) {
     allWpPost(filter: {slug: { eq: $slug }}) {
       edges {
         node {
