@@ -18,6 +18,7 @@ export default function AllPosts() {
 					        excerpt
 					        slug
 					        title
+					        date
 					      }
 					    }
 					  }
@@ -27,8 +28,9 @@ export default function AllPosts() {
 	        data.allWpPost.edges.map((edge) => (
 	          <div key={edge.node.slug}>
 	            <Link to={`/allPosts/${edge.node.slug}`}>
-	              <p>{edge.node.title}</p>
+	            	{edge.node.title}
 	            </Link>
+	            <p>{edge.node.date.slice(0,10)}</p>
 	            <div dangerouslySetInnerHTML={{ __html: edge.node.excerpt }} />
 	          </div>
 	        ))

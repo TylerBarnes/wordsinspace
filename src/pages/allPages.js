@@ -17,6 +17,7 @@ export default function allPages() {
 					      node {
 					        slug
 					        title
+					        date
 					      }
 					    }
 					  }
@@ -26,8 +27,9 @@ export default function allPages() {
 	        data.allWpPage.edges.map((edge) => (
 	          <div key={edge.node.slug}>
 	            <Link to={`/allPages/${edge.node.slug}`}>
-	              <p>{edge.node.title}</p>
+	            	{edge.node.title}
 	            </Link>
+	            <p>{edge.node.date.slice(0,10)}</p>
 	          </div>
 	        ))
 	      }
