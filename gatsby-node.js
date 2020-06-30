@@ -4,25 +4,34 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allWpPost {
+      allPosts: allWpPost {
         nodes {
           slug
         }
       }
-      allWpPage {
+
+      allPages: allWpPage {
         nodes {
           slug
         }
       }
-      allWpTag {
+
+      allTags: allWpTag {
         nodes {
           slug
+        }
+      }
+
+      allCategories: allWpCategory {
+        nodes {
+          name
         }
       }
     }
   `).then(result => {
-    // create Posts
-    result.data.allWpPost.nodes.forEach((node) => {
+    
+    // create a page for allPosts query
+    result.data.allPosts.nodes.forEach((node) => {
       createPage({
         path: `/allPosts/${node.slug}`,
         component: path.resolve(`./src/templates/post.js`),
@@ -32,8 +41,8 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })    
 
-    // create Pages
-    result.data.allWpPage.nodes.forEach((node) => {
+    // create a page for allPages query
+    result.data.allPages.nodes.forEach((node) => {
       createPage({
         path: `/allPages/${node.slug}`,
         component: path.resolve(`./src/templates/page.js`),
@@ -42,8 +51,6 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
-
-
   })
   .catch(err=> console.log(err))
 }
