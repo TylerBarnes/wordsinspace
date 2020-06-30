@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 export default function Page({ data }) {
-  const post = data.allWpPost.edges[0]
+  const post = data.allWpPage.edges[0]
   return (
     <Layout>
       <div>
@@ -16,7 +16,7 @@ export default function Page({ data }) {
 
 export const query = graphql`
   query getPages($slug: String!) {
-    allWpPost(filter: {slug: { eq: $slug }}) {
+    allWpPage(filter: {slug: { eq: $slug }}) {
       edges {
         node {
           slug

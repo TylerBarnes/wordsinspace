@@ -17,7 +17,6 @@ export default function AllPosts() {
 					      node {
 					        excerpt
 					        slug
-					        link
 					        title
 					      }
 					    }

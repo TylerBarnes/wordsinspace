@@ -12,12 +12,10 @@ export default function allPages() {
       <StaticQuery
 	      query={graphql`
 	        query {
-	          allWpPost {
+	          allWpPage {
 					    edges {
 					      node {
-					        excerpt
 					        slug
-					        link
 					        title
 					      }
 					    }
@@ -25,12 +23,11 @@ export default function allPages() {
 	        }
 	      `}
 	      render={data=>
-	        data.allWpPost.edges.map((edge) => (
+	        data.allWpPage.edges.map((edge) => (
 	          <div key={edge.node.slug}>
 	            <Link to={`/allPages/${edge.node.slug}`}>
 	              <p>{edge.node.title}</p>
 	            </Link>
-	            <div dangerouslySetInnerHTML={{ __html: edge.node.excerpt }} />
 	          </div>
 	        ))
 	      }

@@ -6,15 +6,22 @@ exports.createPages = ({ graphql, actions }) => {
     {
       allWpPost {
         nodes {
-          excerpt
           slug
-          link
-          title
-          content
+        }
+      }
+      allWpPage {
+        nodes {
+          slug
+        }
+      }
+      allWpTag {
+        nodes {
+          slug
         }
       }
     }
   `).then(result => {
+    // create Posts
     result.data.allWpPost.nodes.forEach((node) => {
       createPage({
         path: `/allPosts/${node.slug}`,
@@ -23,7 +30,20 @@ exports.createPages = ({ graphql, actions }) => {
           slug: node.slug,
         },
       })
+    })    
+
+    // create Pages
+    result.data.allWpPage.nodes.forEach((node) => {
+      createPage({
+        path: `/allPages/${node.slug}`,
+        component: path.resolve(`./src/templates/page.js`),
+        context: {
+          slug: node.slug,
+        },
+      })
     })
+
+
   })
   .catch(err=> console.log(err))
 }
