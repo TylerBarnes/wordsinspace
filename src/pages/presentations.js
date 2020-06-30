@@ -4,15 +4,15 @@ import { graphql, Link, StaticQuery} from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default function Blog() {
+export default function Presentations() {
   return (
     <Layout>
-    	<SEO title="Blog" />
-    	<h3>Blog</h3>
+    	<SEO title="Presentations" />
+    	<h3>All Presentations</h3>
       <StaticQuery
 	      query={graphql`
 	        query {
-	          blog: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Blog"}}}}}) {
+	          presentations: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Presentation"}}}}}) {
 					    totalCount
 					    edges {
 					      node {
@@ -33,7 +33,7 @@ export default function Blog() {
 	        }
 	      `}
 	      render={data=>
-	        data.blog.edges.map((edge) => (
+	        data.presentations.edges.map((edge) => (
 	          <div key={edge.node.slug}>
 	            <Link to={edge.node.slug}>
 	            	{edge.node.title}
