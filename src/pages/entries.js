@@ -8,11 +8,11 @@ export default function Entries({location}) {
   return (
     <Layout>
     	<SEO title="Entries" />
-    	<h3>Entries - {location.state.param}</h3>
+    	<h3>{location.state.param}</h3>
       <StaticQuery
 	      query={graphql`
           query {
-            pages: allWpPage {
+            pages: allWpPage(sort: { fields: [date] , order: [DESC] }) {
               nodes {
                 id
                 slug
@@ -21,7 +21,7 @@ export default function Entries({location}) {
                 uri
               }
             }
-            posts: allWpPost {
+            posts: allWpPost(sort: { fields: [date] , order: [DESC] }) {
               nodes {
                 id
                 slug
@@ -36,7 +36,7 @@ export default function Entries({location}) {
 	      render={data=>
 	        data[location.state.param].nodes.map((node) => (
 	          <div key={node.id}>
-	            <Link to={node.slug}>
+	            <Link to={`${location.state.param}/${node.slug}`}>
 	            	{node.title}
 	            </Link>	            
 	            <p>{node.date.slice(0,10)}</p>
