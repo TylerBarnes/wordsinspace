@@ -37,7 +37,7 @@ export default function Presentations({location}) {
 	      render={data=>
 	        data[location.state.param].edges.map((edge) => (
 	          <div key={edge.node.slug}>
-	            <Link to={`../${edge.node.slug}`}>
+	            <Link to={edge.node.slug}>
 	            	{edge.node.title}
 	            </Link>
 	            <p>{edge.node.date.slice(0,10)}</p>
