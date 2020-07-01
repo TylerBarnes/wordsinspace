@@ -4,23 +4,21 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      posts: allWpPost {
-        edges {
-          node {
-            slug
-          }
+      pages: allWpPage {
+        nodes {
+          slug
         }
       }
-      pages: allWpPage {
-        edges {
-          node {
-            slug
-          }
+      posts: allWpPost {
+        nodes {
+          slug
         }
       }
     }
   `).then(result => {
-    
+
+    if (!result.data) return null
+
     // create a page for Posts query
     result.data.posts.nodes.forEach((node) => {
       createPage({
@@ -36,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.pages.nodes.forEach((node) => {
       createPage({
         path: `/entries/${node.slug}`,
-        component: path.resolve(`./src/templates/post.js`),
+        component: path.resolve(`./src/templates/page.js`),
         context: {
           slug: node.slug,
         },

@@ -11,38 +11,36 @@ export default function Entries({location}) {
     	<h3>Entries - {location.state.param}</h3>
       <StaticQuery
 	      query={graphql`
-	      	query {
-	          pages: allWpPage {
-					    edges {
-					      node {
-					      	id
-					        slug
-					        date
-					        title
-					      }
-					    }
-					  }
-					  posts: allWpPost {
-					    edges {
-					      node {
-					      	id
-					        slug
-					        date
-					        title
-					        excerpt
-					      }
-					    }
-					  }
-	        }
-	      `}
+          query {
+            pages: allWpPage {
+              nodes {
+                id
+                slug
+                date
+                title
+                uri
+              }
+            }
+            posts: allWpPost {
+              nodes {
+                id
+                slug
+                date
+                title
+                excerpt
+                uri
+              }
+            }
+          }
+        `}
 	      render={data=>
-	        data[location.state.param].edges.map((edge) => (
-	          <div key={edge.node.id}>
-	            <Link to={edge.node.slug}>
-	            	{edge.node.title}
-	            </Link>
-	            <p>{edge.node.date.slice(0,10)}</p>
-	            <div dangerouslySetInnerHTML={{ __html: edge.node.excerpt }} />
+	        data[location.state.param].nodes.map((node) => (
+	          <div key={node.id}>
+	            <Link to={node.slug}>
+	            	{node.title}
+	            </Link>	            
+	            <p>{node.date.slice(0,10)}</p>
+	            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
 	          </div>
 	        ))
 	      }
