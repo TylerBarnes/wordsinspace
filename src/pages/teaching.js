@@ -10,8 +10,7 @@ export default function Teaching({location}) {
     	<SEO title="Teaching" />
     	<h3>Teaching {location.state.param}</h3>
       <StaticQuery
-	      query={graphql`
-	        query {
+	      query {
 	          pages: allWpPage(filter: {categories: {nodes: {elemMatch: {name: {eq: "Teaching"}}}}}) {
 					    totalCount
 					    edges {
@@ -19,30 +18,16 @@ export default function Teaching({location}) {
 					        slug
 					        date
 					        title
-					        link
-					        categories {
-					          nodes {
-					            name
-					          }
-					        }
-					        content
 					      }
 					    }
 					  }
-		        posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Teaching"}}}}}) {
+					  posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Teaching"}}}}}) {
 					    totalCount
 					    edges {
 					      node {
 					        slug
 					        date
 					        title
-					        link
-					        categories {
-					          nodes {
-					            name
-					          }
-					        }
-					        content
 					      }
 					    }
 					  }

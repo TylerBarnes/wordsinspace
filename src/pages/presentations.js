@@ -19,13 +19,6 @@ export default function Presentations({location}) {
 					        slug
 					        date
 					        title
-					        link
-					        categories {
-					          nodes {
-					            name
-					          }
-					        }
-					        content
 					      }
 					    }
 					  }
@@ -36,13 +29,6 @@ export default function Presentations({location}) {
 					        slug
 					        date
 					        title
-					        link
-					        categories {
-					          nodes {
-					            name
-					          }
-					        }
-					        content
 					      }
 					    }
 					  }

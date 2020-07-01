@@ -12,37 +12,23 @@ export default function Publications({location}) {
       <StaticQuery
 	      query={graphql`
 	        query {
-	          pages: allWpPage(filter: {categories: {nodes: {elemMatch: {name: {eq: "Publication"}}}}}) {
+	          pages: allWpPage(filter: {categories: {nodes: {elemMatch: {name: {eq: "Publications"}}}}}) {
 					    totalCount
 					    edges {
 					      node {
 					        slug
 					        date
 					        title
-					        link
-					        categories {
-					          nodes {
-					            name
-					          }
-					        }
-					        content
 					      }
 					    }
 					  }
-		        posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Publication"}}}}}) {
+					  posts: allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Publications"}}}}}) {
 					    totalCount
 					    edges {
 					      node {
 					        slug
 					        date
 					        title
-					        link
-					        categories {
-					          nodes {
-					            name
-					          }
-					        }
-					        content
 					      }
 					    }
 					  }
