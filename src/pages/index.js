@@ -9,14 +9,15 @@ function Home() {
     <Layout>
       <SEO title="home" />
       <h3>Some example categories:</h3>
-      <Link to="/publications/"><h4>publications</h4></Link>
-      <Link to="/presentations/"><h4>presentations</h4></Link>
-      <Link to="/projects/"><h4>projects</h4></Link>
-      <Link to="/teaching/"><h4>teaching</h4></Link>
+      
+      <h4> presentations:  <Link to="/presentations/" state={{ param: 'pages' }}>pages</Link> • <Link to="/presentations/" state={{ param: 'posts' }}>posts</Link></h4>
 
-			<hr/>
-      <h3>Some example pages:</h3>
-      <Link to="/about/"><h4>about</h4></Link>
+      <h4> publications: <Link to="/publications/" state={{ param: 'pages' }}>pages</Link></h4>
+
+      <h4> projects: <Link to="/projects/" state={{ param: 'pages' }}>pages</Link></h4>
+      
+      <h4> teaching: <Link to="/teaching/" state={{ param: 'pages' }}>pages</Link> • <Link to="/teaching/" state={{ param: 'posts' }}>posts</Link></h4>
+
     </Layout>
   )
 }
