@@ -22,7 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
     // create a page for Posts query
     result.data.posts.nodes.forEach((node) => {
       createPage({
-        path: `/entries/posts/${node.slug}`,
+        path: node.slug,
         component: path.resolve(`./src/templates/post.js`),
         context: {
           slug: node.slug,
@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
     // create a page for Pages query
     result.data.pages.nodes.forEach((node) => {
       createPage({
-        path: `/entries/pages/${node.slug}`,
+        path: node.slug,
         component: path.resolve(`./src/templates/page.js`),
         context: {
           slug: node.slug,

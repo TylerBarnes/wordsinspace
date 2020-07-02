@@ -9,9 +9,8 @@ function Home() {
     <Layout>
       <SEO title="home" />
       
-      <h4> <Link to="/entries/" state={{ param: 'pages' }}>pages</Link></h4>
-
-      <h4><Link to="/entries/" state={{ param: 'posts' }}>posts</Link></h4>
+      <h4> <Link to="/pages/">pages</Link></h4>
+      <h4><Link to="/posts/">posts</Link></h4>
 
     </Layout>
   )
