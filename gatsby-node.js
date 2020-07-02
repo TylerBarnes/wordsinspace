@@ -39,7 +39,8 @@ exports.createPages = ({ graphql, actions }) => {
           slug: node.slug,
         },
       })
-    })    
+    })
+
   })
   .catch(err=> console.log(err))
 }

@@ -1,22 +1,76 @@
 import React from "react"
-import { Link } from "gatsby" 
+import { Link, StaticQuery } from "gatsby" 
 
 import Layout from "../components/layout"
 import Menu from "../components/menu"
 import SEO from "../components/seo"
 
-function Home() {
+export default function Home({data}) {
+  const pages = data.pages.nodes;
+  const posts = data.posts.nodes;
+  const merged = [...pages, ...posts];
+
   return (
     <Layout>
       <SEO title="home" />
-      <h3>Pages vs Posts</h3>
-      <h4> <Link to="/pages/">pages</Link></h4>
-      <h4><Link to="/posts/">posts</Link></h4>
+      {
+        merged.map((node, index) => (
+          <li key={index} style={{
+            listStyle: 'none',
+            padding: '5px',
+            display: 'flex row',
+            border: '1px solid #eee'
+          }}>
+            <Link to={node.slug}> {node.title}</Link>              
+            
+            <div 
+              style={{
+                margin: '0 0.2vw', 
+                fontSize: '0.8rem'}}> <em>{node.nodeType} </em> </div>
+            
+            <div 
+              style={{
+                margin: '0 0.2vw', 
+                fontSize: '0.8rem', 
+                textAlign: 'right',
+              }}> {node.childPages && node.childPages.nodes.length > 0 ? node.childPages.nodes.length : null}</div>
 
-      <h3>Menu</h3>
-      <Menu />
+            <div style={{
+              margin: '0 0.2vw', 
+              fontSize: '0.8rem',
+            }}> {node.date.slice(0,10)} </div>
+          </li>
+        ))
+      }
     </Layout>
   )
 }
 
-export default Home
+export const query = graphql`
+  query {
+    pages: allWpPage {
+      nodes {
+        slug
+        title
+        link
+        date
+        nodeType
+        childPages {
+          nodes {
+            title
+            nodeType
+          }
+        }
+      }
+    }
+    posts: allWpPost {
+      nodes {
+        slug
+        title
+        link
+        date
+        nodeType
+      }
+    }
+  }
+`
