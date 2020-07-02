@@ -14,7 +14,7 @@ export default function Home({data}) {
     <Layout>
       <SEO title="home" />
       {
-        merged.map((node, index) => (
+        merged.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
           <li key={index} style={{
             listStyle: 'none',
             padding: '5px',
