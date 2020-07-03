@@ -1,24 +1,22 @@
-import React, {useState} from "react"
-import { graphql, Link } from "gatsby" 
+import React from "react"
+import { graphql } from "gatsby" 
 
 import Layout from "../components/layout"
 import List from "../components/list"
-import Tags from "../components/tags"
+import TagsMenu from "../components/tagsMenu"
 import SEO from "../components/seo"
 
 export default function Home({data}) {
   const pages = data.pages.nodes;
   const posts = data.posts.nodes;
   const all = [...pages, ...posts];
-
-  const tags = data.tags.nodes;
   const nonEmptyTags = data.tags.nodes.filter(node => node.posts.nodes.length > 0)
 
   return (
     <Layout>
       <SEO title="home" />
       <List items={all}/>
-      <Tags tags={nonEmptyTags} />
+      <TagsMenu tags={nonEmptyTags} />
     </Layout>
   )
 }

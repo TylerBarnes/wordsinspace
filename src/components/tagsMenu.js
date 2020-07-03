@@ -1,8 +1,7 @@
 import React from "react"
 import {Link } from "gatsby" 
 
-function Tags(props) {
-	
+function TagsMenu(props) {
   return (
      <aside style={{
       alignSelf: 'flex-start',
@@ -27,4 +26,4 @@ function Tags(props) {
    )
 }
 
-export default Tags 
+export default TagsMenu 

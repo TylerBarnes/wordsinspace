@@ -1,13 +1,22 @@
 import React from "react"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import List from "../components/list"
 
 export default function Tag({ data }) {
   const tag = data.allWpTag.nodes[0]
   return (
     <Layout>
-        <h2>here is a tag!!</h2>
-        <h1>{tag.name}</h1>
+      <List items={tag.posts.nodes}/>
+      <aside  
+        style={{
+        alignSelf: 'flex-start',
+        textAlign: 'left',
+        width: `40%`,
+        fontSize: '0.9rem',
+       }}>
+        <Link to="/">back</Link>
+      </aside>
     </Layout>
   )
 }
