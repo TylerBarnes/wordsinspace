@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { graphql, Link } from "gatsby" 
 
 import Layout from "../components/layout"
@@ -10,12 +10,17 @@ export default function Home({data}) {
   const pages = data.pages.nodes;
   const posts = data.posts.nodes;
   const merged = [...pages, ...posts];
+  const [selectedTag, setSelectedTag] = useState("")
+
+  function handleChange(e) {
+    setSelectedTag(e.target.value)
+  }
 
   return (
     <Layout>
       <SEO title="home" />
       <List merged={merged}/>
-      <Tags tags={data.tags}/>
+      <Tags tags={data.tags} doChange={handleChange} selectedTag={selectedTag} />
     </Layout>
   )
 }

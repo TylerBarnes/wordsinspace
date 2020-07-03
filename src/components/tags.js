@@ -1,8 +1,8 @@
-import React, {useState} from "react"
+import React from "react"
 
 function Tags(props) {
 	
-	const [selectedTag, setSelectedTag] = useState("")
+
   return (
      <aside style={{
       alignSelf: 'flex-start',
@@ -22,8 +22,8 @@ function Tags(props) {
 		          <input
 		            value={tag.name}
 		            type='radio'
-		            checked={tag.name === selectedTag}
-		            onChange={ e => setSelectedTag(e.target.value)}
+		            checked={tag.name === props.selectedTag}
+		            onChange={props.doChange}
 		            style={{
 						      height: '8px', 
 						      margin: '2px',
