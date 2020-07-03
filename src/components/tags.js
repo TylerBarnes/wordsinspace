@@ -9,7 +9,9 @@ function Tags(props) {
 			width: `40%`,
 			fontSize: '0.9rem',
      }}>
-				<div style={{opacity: '0.7'}} onClick={props.doClear}>clear all</div>
+				<div style={{opacity: '0.7'}} onClick={props.doClear}>
+					{props.selectedTag !== '' ? props.selectedTag : 'Clear all'}
+				</div>
 	      {props.tags.map( tag => (
 					<li 
 					key={tag.name}
