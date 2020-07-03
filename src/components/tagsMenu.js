@@ -20,7 +20,7 @@ const TagsMenu = (props) => {
 						}}		
 					>
 						<Link to={tag.slug} state={{ fromTags: true }}>
-		          {tag.name} [{tag.posts.nodes.length}]
+		          {tag.name} [{tag.posts.nodes.length+tag.pages.nodes.length}]
 		        </Link>
 					</li>
 	     	))}

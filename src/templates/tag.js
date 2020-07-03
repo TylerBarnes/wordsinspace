@@ -4,13 +4,17 @@ import Layout from "../components/layout"
 import List from "../components/list"
 
 export default function Tag({ data, location}) {
-  const tag = data.allWpTag.nodes[0]
+
+  const tag = data.allWpTag.nodes[0];
+  const pages = tag.pages.nodes;
+  const posts = tag.posts.nodes;
+  const all = [...pages, ...posts];
   
   if(!location) return null
   
   return (
     <Layout>
-      <List items={tag.posts.nodes} fromTags={location.state ? location.state.fromTags : false}/>
+      <List items={all} fromTags={location.state ? location.state.fromTags : false}/>
       <aside  
         style={{
         alignSelf: 'flex-start',
@@ -42,6 +46,16 @@ export const query = graphql`
             slug
             link
             date
+            nodeType
+          }
+        }
+        pages {
+          nodes {
+            title
+            slug
+            link
+            date
+            nodeType
           }
         }
       }

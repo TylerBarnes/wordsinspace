@@ -10,7 +10,8 @@ export default function Home({data}) {
   const pages = data.pages.nodes;
   const posts = data.posts.nodes;
   const all = [...pages, ...posts];
-  const nonEmptyTags = data.tags.nodes.filter(node => node.posts.nodes.length > 0)
+  const nonEmptyTags = data.tags.nodes.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
+  console.log(nonEmptyTags.length)
 
   return (
     <Layout>
@@ -52,6 +53,14 @@ export const query = graphql`
         name
         slug
         posts {
+          nodes {
+            title
+            slug
+            link
+            date
+          }
+        }
+        pages {
           nodes {
             title
             slug
