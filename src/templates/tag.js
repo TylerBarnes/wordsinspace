@@ -10,7 +10,7 @@ export default function Tag({ data, location}) {
   
   return (
     <Layout>
-      <List items={tag.posts.nodes} fromTags={location.state.fromTags}/>
+      <List items={tag.posts.nodes} fromTags={location.state ? location.state.fromTags : false}/>
       <aside  
         style={{
         alignSelf: 'flex-start',
