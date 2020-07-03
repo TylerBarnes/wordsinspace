@@ -2,6 +2,7 @@ import React from "react"
 import {Link } from "gatsby" 
 
 function List(props) {
+
   return (
      <main style={{
        alignSelf: 'flex-start',
@@ -14,7 +15,7 @@ function List(props) {
             width: '50vw',
             borderLeft: '2px solid #eee'
           }}>
-            <Link to={node.slug}> {node.title}</Link>              
+            <Link to={props.fromTags ? `../${node.slug}` : node.slug} state={{ fromTags: false }}> {node.title}</Link>              
             
             <div 
               style={{

@@ -17,7 +17,7 @@ function TagsMenu(props) {
             	listStyle: 'none',
 						}}		
 					>
-						<Link to={tag.slug}>
+						<Link to={tag.slug} state={{ fromTags: true }}>
 		          {tag.name}
 		        </Link>
 					</li>
