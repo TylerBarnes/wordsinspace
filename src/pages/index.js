@@ -9,18 +9,31 @@ import SEO from "../components/seo"
 export default function Home({data}) {
   const pages = data.pages.nodes;
   const posts = data.posts.nodes;
-  const merged = [...pages, ...posts];
-  const [selectedTag, setSelectedTag] = useState("")
+  const tags = data.tags.nodes;
+  const all = [...pages, ...posts];
+
+  const [selectedTag, setSelectedTag] = useState("");
+  const nonEmptyTags = data.tags.nodes.filter(node => node.posts.nodes.length > 0)
+  
+  const [entries, setEntries] = useState([]);
 
   function handleChange(e) {
+    e.preventDefault()
     setSelectedTag(e.target.value)
+    setEntries(tags.filter( tag => tag.name === selectedTag)) 
+  }
+
+  function handleClear(e) {
+    e.preventDefault()
+    setSelectedTag('');
+    setEntries([]);
   }
 
   return (
     <Layout>
       <SEO title="home" />
-      <List merged={merged}/>
-      <Tags tags={data.tags} doChange={handleChange} selectedTag={selectedTag} />
+      <List items={entries[0] && entries[0].posts.nodes.length > 0 ? entries[0].posts.nodes : all}/>
+      <Tags tags={nonEmptyTags} doChange={handleChange} selectedTag={selectedTag} doClear={handleClear} />
     </Layout>
   )
 }
@@ -57,6 +70,10 @@ export const query = graphql`
         posts {
           nodes {
             title
+            slug
+            title
+            link
+            date
           }
         }
       }

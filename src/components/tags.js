@@ -2,7 +2,6 @@ import React from "react"
 
 function Tags(props) {
 	
-
   return (
      <aside style={{
       alignSelf: 'flex-start',
@@ -10,7 +9,8 @@ function Tags(props) {
 			width: `40%`,
 			fontSize: '0.9rem',
      }}>
-	     {props.tags.nodes.map( tag => (
+				<div style={{opacity: '0.7'}} onClick={props.doClear}>clear all</div>
+	      {props.tags.map( tag => (
 					<li 
 					key={tag.name}
 					style={{

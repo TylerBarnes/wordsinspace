@@ -6,11 +6,12 @@ function List(props) {
      <main style={{
        alignSelf: 'flex-start',
      }}>
-      {props.merged.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
+      {props.items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
           <li key={index} style={{
             listStyle: 'none',
             padding: '5px',
             display: 'flex row',
+            width: '50vw',
             borderLeft: '2px solid #eee'
           }}>
             <Link to={node.slug}> {node.title}</Link>              
