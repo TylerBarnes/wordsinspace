@@ -4,8 +4,6 @@ import { graphql } from "gatsby"
 
 export default function Page({ data }) {
   const page = data.allWpPage.nodes[0]
-  const children = page.childPages
-  console.log (children)
   return (
     <Layout>
       <div>

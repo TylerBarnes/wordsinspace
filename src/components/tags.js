@@ -1,4 +1,5 @@
 import React from "react"
+import {Link } from "gatsby" 
 
 function Tags(props) {
 	
@@ -9,30 +10,17 @@ function Tags(props) {
 			width: `40%`,
 			fontSize: '0.9rem',
      }}>
-				<div style={{opacity: '0.7'}} onClick={props.doClear}>
-					{props.selectedTag !== '' ? props.selectedTag : 'Clear all'}
-				</div>
 	      {props.tags.map( tag => (
 					<li 
-					key={tag.name}
-					style={{
-			      margin: '10px auto',
-            listStyle: 'none',
-					}}		
+						key={tag.name}
+						style={{
+			      	margin: '10px auto',
+            	listStyle: 'none',
+						}}		
 					>
-						<label>
-		          <input
-		            value={tag.name}
-		            type='radio'
-		            checked={tag.name === props.selectedTag}
-		            onChange={props.doChange}
-		            style={{
-						      height: '8px', 
-						      margin: '2px',
-								}}
-		          />
+						<Link to={tag.slug}>
 		          {tag.name}
-		        </label>
+		        </Link>
 					</li>
 	     	))}
      </aside>

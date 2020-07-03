@@ -14,12 +14,17 @@ exports.createPages = ({ graphql, actions }) => {
           slug
         }
       }
+      tags: allWpTag {
+        nodes {
+          slug
+        }
+      }
     }
   `).then(result => {
 
     if (!result.data) return null
 
-    // create a page for Posts query
+    // create a view for Posts query
     result.data.posts.nodes.forEach((node) => {
       createPage({
         path: node.slug,
@@ -30,11 +35,22 @@ exports.createPages = ({ graphql, actions }) => {
       })
     }) 
 
-    // create a page for Pages query
+    // create a view for Pages query
     result.data.pages.nodes.forEach((node) => {
       createPage({
         path: node.slug,
         component: path.resolve(`./src/templates/page.js`),
+        context: {
+          slug: node.slug,
+        },
+      })
+    })
+
+    // create a page for Tags
+    result.data.tags.nodes.forEach((node) => {
+      createPage({
+        path: node.slug,
+        component: path.resolve(`./src/templates/tag.js`),
         context: {
           slug: node.slug,
         },
