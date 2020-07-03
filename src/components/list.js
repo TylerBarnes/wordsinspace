@@ -14,7 +14,6 @@ const List = (props) => {
             padding: '5px',
             display: 'flex row',
             width: '50vw',
-            borderLeft: '2px solid #eee'
           }}>
             <Link to={props.fromTags ? `../${node.slug}` : node.slug} state={{ fromTags: false }}> {node.title}</Link>              
             
