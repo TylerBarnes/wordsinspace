@@ -14,8 +14,8 @@ export default function Home({data}) {
   return (
     <Layout>
       <SEO title="home" />
-      <Tags />
       <List merged={merged}/>
+      <Tags tags={data.tags}/>
     </Layout>
   )
 }
@@ -44,6 +44,16 @@ export const query = graphql`
         link
         date
         nodeType
+      }
+    }
+    tags: allWpTag {
+      nodes {
+        name
+        posts {
+          nodes {
+            title
+          }
+        }
       }
     }
   }

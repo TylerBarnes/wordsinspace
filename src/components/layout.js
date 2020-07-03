@@ -25,12 +25,14 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
-          border: `1px solid #eee` // ******** <---- HELPER BORDER ******** 
         }}
       >
         <main 
           style={{
-            border: `1px solid #eee` // ******** <---- HELPER BORDER ******** 
+            display: `flex`,
+            flexDirection: `row`,
+            alignItems: `flex-start`, 
+            justifyContent: `flex-start`
           }}
         >
           {children}

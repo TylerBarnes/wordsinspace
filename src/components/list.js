@@ -3,13 +3,15 @@ import {Link } from "gatsby"
 
 function List(props) {
   return (
-     <main>
+     <main style={{
+       alignSelf: 'flex-start',
+     }}>
       {props.merged.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
           <li key={index} style={{
             listStyle: 'none',
             padding: '5px',
             display: 'flex row',
-            border: '1px solid #eee'
+            borderLeft: '2px solid #eee'
           }}>
             <Link to={node.slug}> {node.title}</Link>              
             
