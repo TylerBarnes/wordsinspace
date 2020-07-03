@@ -11,10 +11,11 @@ function Tags(props) {
 			fontSize: '0.9rem',
      }}>
 	     {props.tags.nodes.map( tag => (
-					<div 
+					<li 
 					key={tag.name}
 					style={{
 			      margin: '10px auto',
+            listStyle: 'none',
 					}}		
 					>
 						<label>
@@ -30,7 +31,7 @@ function Tags(props) {
 		          />
 		          {tag.name}
 		        </label>
-					</div>
+					</li>
 	     	))}
      </aside>
    )

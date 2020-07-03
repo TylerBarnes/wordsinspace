@@ -17,6 +17,16 @@ h1, h2, h3, h4, h5 {
   font-weight: 500;
 }
 
+label:hover {
+  cursor: pointer;
+  color: #000;
+  font-weight: 500;
+}
+
 input[type='radio'] {
   filter: saturate(0);
+}
+
+input[type='radio']:hover {
+  cursor: pointer;
 }
