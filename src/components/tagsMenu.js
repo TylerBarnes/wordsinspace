@@ -8,7 +8,6 @@ const TagsMenu = (props) => {
      <aside style={{
       alignSelf: 'flex-start',
       textAlign: 'left',
-			width: `40%`,
 			fontSize: '0.9rem',
      }}>
 	      {props.tags.map( tag => (
