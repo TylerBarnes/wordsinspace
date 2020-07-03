@@ -5,7 +5,8 @@ import List from "../components/list"
 
 export default function Tag({ data, location}) {
   const tag = data.allWpTag.nodes[0]
-  console.log('from tags?', location.state.fromTags)
+  
+  if(!location) return null
   
   return (
     <Layout>

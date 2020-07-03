@@ -1,7 +1,9 @@
 import React from "react"
 import {Link } from "gatsby" 
 
-function TagsMenu(props) {
+const TagsMenu = (props) => {
+	if(!props) return null
+  
   return (
      <aside style={{
       alignSelf: 'flex-start',

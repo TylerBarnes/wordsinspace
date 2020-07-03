@@ -2,9 +2,10 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
-export default function Post({ data, location }) {
+export default function Post({ data }) {
   const post = data.allWpPost.nodes[0]
-  console.log('from tags?', location.state.fromTags)
+  
+  if(!data) return null
 
   return (
     <Layout>

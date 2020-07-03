@@ -1,8 +1,9 @@
 import React from "react"
 import {Link } from "gatsby" 
 
-function List(props) {
-
+const List = (props) => {
+  if (!props) return null
+  
   return (
      <main style={{
        alignSelf: 'flex-start',
