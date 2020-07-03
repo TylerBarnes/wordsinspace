@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
             display: `flex`,
             flexDirection: `row`,
             alignItems: `flex-start`, 
-            justifyContent: `flex-start`
+            justifyContent: `flex-start`, 
           }}
         >
           {children}

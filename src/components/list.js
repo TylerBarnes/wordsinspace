@@ -6,7 +6,7 @@ const List = (props) => {
   
   return (
      <main style={{
-       alignSelf: 'flex-start',
+      alignSelf: 'flex-start',
      }}>
       {props.items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
           <li key={index} style={{
