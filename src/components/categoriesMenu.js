@@ -1,7 +1,8 @@
 import React from "react"
 import {Link } from "gatsby" 
 
-const TagsMenu = (props) => {
+const CategoriesMenu = (props) => {
+	
 	if(!props) return null
   
   return (
@@ -9,18 +10,19 @@ const TagsMenu = (props) => {
       alignSelf: 'flex-start',
       textAlign: 'left',
 			fontSize: '0.9rem',
+			width: '15vw'
      }}>
-     		Tags
-	      {props.tags.map( tag => (
+      	Categories
+	      {props.categories.map( category => (
 					<li 
-						key={tag.name}
+						key={category.name}
 						style={{
 			      	margin: '10px auto',
             	listStyle: 'none',
 						}}		
 					>
-						<Link to={tag.slug} state={{ fromMain: true }}>
-		          {tag.name} [{tag.posts.nodes.length+tag.pages.nodes.length}]
+						<Link to={category.slug} state={{ fromMain: true }}>
+		          {category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
 		        </Link>
 					</li>
 	     	))}
@@ -28,4 +30,4 @@ const TagsMenu = (props) => {
    )
 }
 
-export default TagsMenu 
+export default CategoriesMenu 

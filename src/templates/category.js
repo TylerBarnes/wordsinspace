@@ -3,18 +3,20 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import List from "../components/list"
 
-export default function Tag({ data, location}) {
+export default function Category({ data, location}) {
 
-  const tag = data.allWpTag.nodes[0];
-  const pages = tag.pages.nodes;
-  const posts = tag.posts.nodes;
+  const category = data.allWpCategory.nodes[0];
+  const pages = category.pages.nodes;
+  const posts = category.posts.nodes;
   const all = [...pages, ...posts];
-  
+
   if(!location) return null
   
   return (
     <Layout>
+      
       <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
+      
       <aside  
         style={{
         alignSelf: 'flex-start',
@@ -22,13 +24,13 @@ export default function Tag({ data, location}) {
         width: `40%`,
         fontSize: '0.9rem',
        }}>
-         Tag
-         <div style={{
-          marginBottom: '2vh',
-          color: '#ff5236',
-          fontWeight: '600',
-          textTransform: 'uppercase'
-         }}>{tag.name}</div>
+          Category
+          <div style={{
+            marginBottom: '2vh',
+            color: '#ff5236',
+            fontWeight: '600',
+            textTransform: 'uppercase'
+          }}>{category.name}</div>
         <div><Link to="/" >back</Link></div>
       </aside>
     </Layout>
@@ -36,8 +38,8 @@ export default function Tag({ data, location}) {
 }
 
 export const query = graphql`
-  query getTag($slug: String!) {
-    allWpTag(filter: {slug: { eq: $slug }}) {
+  query getCategory($slug: String!) {
+    allWpCategory(filter: {slug: { eq: $slug }}) {
       nodes {
         name
         slug
@@ -45,7 +47,6 @@ export const query = graphql`
           nodes {
             title
             slug
-            link
             date
             nodeType
           }
@@ -54,7 +55,6 @@ export const query = graphql`
           nodes {
             title
             slug
-            link
             date
             nodeType
           }

@@ -46,11 +46,22 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // create a page for Tags
+    // create a view for Tags
     result.data.tags.nodes.forEach((node) => {
       createPage({
         path: node.slug,
         component: path.resolve(`./src/templates/tag.js`),
+        context: {
+          slug: node.slug,
+        },
+      })
+    })   
+
+    // create a view for Categories
+    result.data.categories.nodes.forEach((node) => {
+      createPage({
+        path: node.slug === 'presentation' ? 'presentations' : node.slug,
+        component: path.resolve(`./src/templates/category.js`),
         context: {
           slug: node.slug,
         },

@@ -4,19 +4,22 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import List from "../components/list"
 import TagsMenu from "../components/tagsMenu"
+import CategoriesMenu from "../components/categoriesMenu"
 import SEO from "../components/seo"
 
 export default function Home({data}) {
   const pages = data.pages.nodes;
   const posts = data.posts.nodes;
   const all = [...pages, ...posts];
+
   const nonEmptyTags = data.tags.nodes.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
-  console.log(nonEmptyTags.length)
+  const nonEmptyCategories = data.categories.nodes.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
 
   return (
     <Layout>
       <SEO title="home" />
       <List items={all}/>
+      <CategoriesMenu categories={nonEmptyCategories} />
       <TagsMenu tags={nonEmptyTags} />
     </Layout>
   )
@@ -28,7 +31,6 @@ export const query = graphql`
       nodes {
         slug
         title
-        link
         date
         nodeType
         childPages {
@@ -43,7 +45,6 @@ export const query = graphql`
       nodes {
         slug
         title
-        link
         date
         nodeType
       }
@@ -56,7 +57,6 @@ export const query = graphql`
           nodes {
             title
             slug
-            link
             date
           }
         }
@@ -64,7 +64,26 @@ export const query = graphql`
           nodes {
             title
             slug
-            link
+            date
+          }
+        }
+      }
+    }
+    categories: allWpCategory {
+      nodes {
+        name
+        slug
+        posts {
+          nodes {
+            title
+            slug
+            date
+          }
+        }
+        pages {
+          nodes {
+            title
+            slug
             date
           }
         }
