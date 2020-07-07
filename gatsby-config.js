@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Words in space - demo`,
+    title: `Words in space - prototype`,
     description: `A gatsby-source-wordpress-experimental case study.`,
     author: `kallirroi`,
   },
@@ -16,7 +16,7 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `https://testingiv.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
+        url: `https://testingv.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
       },
     },
     /**
