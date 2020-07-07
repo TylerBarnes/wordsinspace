@@ -29,7 +29,6 @@ export default function Tag({ data, location}) {
           width: `40%`,
           fontSize: '0.9rem',
          }}>
-          Tag
           <div style={{
             marginBottom: '2vh',
             color: '#ff5236',
@@ -53,7 +52,6 @@ export const query = graphql`
           nodes {
             title
             slug
-            link
             date
             nodeType
           }
@@ -62,7 +60,6 @@ export const query = graphql`
           nodes {
             title
             slug
-            link
             date
             nodeType
           }

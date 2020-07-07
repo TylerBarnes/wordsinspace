@@ -12,9 +12,9 @@ function Menu() {
 			margin: '2vh 0',
 			padding: '0.5vh 0'
      }}>
-       {menuData[0].menuItems.nodes.map( node => (
-          <Link key={node.label} to={node.url} style={{marginRight: '2vw'}}>{node.label}</Link>
-        ))}
+      {menuData[0].menuItems.nodes.map( node => (
+        <Link key={node.label} to={node.url} style={{marginRight: '2vw'}}>{node.label}</Link>
+      ))}
      </main>
    )
 }

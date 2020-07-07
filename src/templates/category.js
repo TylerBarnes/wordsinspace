@@ -29,7 +29,6 @@ export default function Category({ data, location}) {
           width: `40%`,
           fontSize: '0.9rem',
          }}>
-            Category
             <div style={{
               marginBottom: '2vh',
               color: '#ff5236',
