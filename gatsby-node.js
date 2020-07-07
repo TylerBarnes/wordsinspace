@@ -65,7 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
     // create a view for Categories
     result.data.categories.nodes.forEach((node) => {
       createPage({
-        path: node.slug === 'Presentation' ? 'presentations' : node.slug,
+        path: node.slug,
         component: path.resolve(`./src/templates/category.js`),
         context: {
           slug: node.slug,
