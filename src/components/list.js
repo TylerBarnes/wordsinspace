@@ -4,6 +4,7 @@ import {Link } from "gatsby"
 const List = (props) => {
   if (!props) return null
     
+  console.log(props.fromMain)
   return (
      <main style={{
       alignSelf: 'flex-start',

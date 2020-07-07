@@ -2,8 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import {useSiteMenuData} from "./hooks/useSiteMenuData"
 
-function Menu() {
+function Menu({location}) {
   const menuData = useSiteMenuData();
+
   return (
      <main style={{
      	borderBottom: '1px solid #eee',
@@ -13,7 +14,7 @@ function Menu() {
 			padding: '0.5vh 0'
      }}>
       {menuData[0].menuItems.nodes.map( node => (
-        <Link key={node.label} to={node.url} style={{marginRight: '2vw'}}>{node.label}</Link>
+        <Link key={node.label} to={node.url} style={{marginRight: '2vw'}} state={{ fromMain: true}} >{node.label}</Link>
       ))}
      </main>
    )
