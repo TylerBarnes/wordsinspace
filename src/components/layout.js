@@ -27,14 +27,7 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main 
-          style={{
-            display: `flex`,
-            flexDirection: `row`,
-            alignItems: `flex-start`, 
-            justifyContent: `flex-start`, 
-          }}
-        >
+        <main>
           {children}
         </main>
       </div>

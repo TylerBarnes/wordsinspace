@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import List from "../components/list"
 import TagsMenu from "../components/tagsMenu"
+import Menu from "../components/menu"
 import CategoriesMenu from "../components/categoriesMenu"
 import SEO from "../components/seo"
 
@@ -18,9 +19,18 @@ export default function Home({data}) {
   return (
     <Layout>
       <SEO title="home" />
-      <List items={all}/>
-      <CategoriesMenu categories={nonEmptyCategories} />
-      <TagsMenu tags={nonEmptyTags} />
+      <Menu />
+      <div style={{
+            display: `flex`,
+            flexDirection: `row`,
+            alignItems: `flex-start`, 
+            justifyContent: `flex-start`, 
+          }}
+      >
+        <List items={all}/>
+        <CategoriesMenu categories={nonEmptyCategories} />
+        <TagsMenu tags={nonEmptyTags} />
+      </div>
     </Layout>
   )
 }
