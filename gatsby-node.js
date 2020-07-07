@@ -19,6 +19,11 @@ exports.createPages = ({ graphql, actions }) => {
           slug
         }
       }
+      categories: allWpCategory {
+        nodes {
+          slug
+        }
+      }
     }
   `).then(result => {
 
