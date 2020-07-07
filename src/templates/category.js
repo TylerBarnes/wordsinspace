@@ -14,25 +14,31 @@ export default function Category({ data, location}) {
   
   return (
     <Layout>
-      
-      <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
-      
-      <aside  
-        style={{
-        alignSelf: 'flex-start',
-        textAlign: 'left',
-        width: `40%`,
-        fontSize: '0.9rem',
-       }}>
-          Category
-          <div style={{
-            marginBottom: '2vh',
-            color: '#ff5236',
-            fontWeight: '600',
-            textTransform: 'uppercase'
-          }}>{category.name}</div>
-        <div><Link to="/" >back</Link></div>
-      </aside>
+      <div style={{
+            display: `flex`,
+            flexDirection: `row`,
+            alignItems: `flex-start`, 
+            justifyContent: `flex-start`, 
+          }}
+      >
+        <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
+        <aside  
+          style={{
+          alignSelf: 'flex-start',
+          textAlign: 'left',
+          width: `40%`,
+          fontSize: '0.9rem',
+         }}>
+            hey
+            <div style={{
+              marginBottom: '2vh',
+              color: '#ff5236',
+              fontWeight: '600',
+              textTransform: 'uppercase'
+            }}>{category.name}</div>
+          <div><Link to="/" >back</Link></div>
+        </aside>
+      </div>
     </Layout>
   )
 }
