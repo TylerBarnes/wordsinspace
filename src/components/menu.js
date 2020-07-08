@@ -4,7 +4,7 @@ import {useSiteMenuData} from "./hooks/useSiteMenuData"
 
 function Menu({location}) {
   const menuData = useSiteMenuData();
-
+  
   return (
      <main style={{
      	borderBottom: '1px solid #eee',

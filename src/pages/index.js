@@ -19,7 +19,6 @@ export default function Home({data}) {
   return (
     <Layout>
       <SEO title="home" />
-      <Menu />
       <div style={{
             display: `flex`,
             flexDirection: `row`,
