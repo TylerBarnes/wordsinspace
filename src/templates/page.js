@@ -24,14 +24,6 @@ export const query = graphql`
         slug
         title
         content
-        childPages {
-          nodes {
-            title
-            slug
-            link
-            nodeType
-          }
-        }
       }
     }
   }
