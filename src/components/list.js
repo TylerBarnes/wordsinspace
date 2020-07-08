@@ -23,13 +23,6 @@ const List = (props) => {
               margin: '0 0.2vw', 
               fontSize: '0.8rem'}}> <em>{node.nodeType} </em> </div>
           
-          <div 
-            style={{
-              margin: '0 0.2vw', 
-              fontSize: '0.8rem', 
-              textAlign: 'right',
-            }}> {node.childPages && node.childPages.nodes.length > 0 ? node.childPages.nodes.length : null}</div>
-
           <div style={{
             margin: '0 0.2vw', 
             fontSize: '0.8rem',

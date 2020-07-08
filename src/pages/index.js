@@ -43,12 +43,6 @@ export const query = graphql`
         title
         date
         nodeType
-        childPages {
-          nodes {
-            title
-            nodeType
-          }
-        }
       }
     }
     posts: allWpPost {
