@@ -22,6 +22,7 @@ function Menu({location}) {
       <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/teaching'>Teaching</Link>
       <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/blog'>Blog</Link>
       <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/about'>About</Link>
+      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/moda-example' state={{modal: true}}>test modal</Link>
      </main>
    )
 }

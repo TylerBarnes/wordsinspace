@@ -23,13 +23,14 @@ export default function Home() {
     <Layout>
       <SEO title="home" />
       <Menu />
-      <div style={{
-            display: `flex`,
-            flexDirection: `row`,
-            alignItems: `flex-start`, 
-            justifyContent: `flex-start`, 
-          }}
-      >
+      <div 
+        style={{
+          display: `flex`,
+          flexDirection: `row`,
+          alignItems: `flex-start`, 
+          justifyContent: `flex-start`, 
+        }}
+        >
         <List items={data}/>
         <CategoriesMenu categories={nonEmptyCategories} />
         <TagsMenu tags={nonEmptyTags} />

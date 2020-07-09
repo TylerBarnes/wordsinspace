@@ -7,10 +7,8 @@ function filterTags(tags) {
 }
 
 const TagsMenu = (props) => {
-	
 	const tags = useMemo(()=> filterTags(props.tags), [props.tags]) 
-	console.log(tags)
-
+  
   return (
      <aside style={{
       alignSelf: 'flex-start',
