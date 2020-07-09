@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import List from "../components/list"
+import Menu from "../components/menu"
 
 export default function Category({ data, location}) {
 
@@ -14,6 +15,7 @@ export default function Category({ data, location}) {
   
   return (
     <Layout>
+      <Menu />
       <div style={{
             display: `flex`,
             flexDirection: `row`,
