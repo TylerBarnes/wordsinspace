@@ -2,7 +2,8 @@ import React from "react"
 import {Link } from "gatsby" 
 
 const TagsMenu = (props) => {
-	if(!props) return null
+
+	const tags = props.tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 
   return (
      <aside style={{
@@ -11,7 +12,8 @@ const TagsMenu = (props) => {
 			fontSize: '0.9rem',
      }}>
      		Tags
-	      {props.tags.map( tag => (
+
+	      {tags.map( tag => (
 					<li 
 						key={tag.name}
 						style={{
