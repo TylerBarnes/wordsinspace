@@ -61,6 +61,7 @@ export const query = graphql`
             title
             slug
             date
+            nodeType
           }
         }
         pages {
@@ -68,6 +69,7 @@ export const query = graphql`
             title
             slug
             date
+            nodeType
           }
         }
       }

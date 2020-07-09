@@ -3,7 +3,7 @@ import {Link } from "gatsby"
 
 const TagsMenu = (props) => {
 	if(!props) return null
-  
+
   return (
      <aside style={{
       alignSelf: 'flex-start',
@@ -20,8 +20,14 @@ const TagsMenu = (props) => {
 						}}		
 					>
 						<Link to={tag.slug} state={{ fromMain: true }}>
-		          {tag.name} [{tag.posts.nodes.length+tag.pages.nodes.length}]
+		          {tag.name} 
 		        </Link>
+		        <div>
+		        	{tag.posts.nodes.length > 0 ? ` ${tag.posts.nodes.length} post(s)` : null}
+		        </div>
+		        <div>
+		          {tag.pages.nodes.length > 0 ? ` ${tag.pages.nodes.length} page(s)` : null}
+	          </div>
 					</li>
 	     	))}
      </aside>
