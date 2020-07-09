@@ -16,13 +16,14 @@ export default function Category({ data, location}) {
   return (
     <Layout>
       <Menu />
-      <div style={{
-            display: `flex`,
-            flexDirection: `row`,
-            alignItems: `flex-start`, 
-            justifyContent: `flex-start`, 
-          }}
-      >
+      <div 
+        style={{
+          display: `flex`,
+          flexDirection: `row`,
+          alignItems: `flex-start`, 
+          justifyContent: `flex-start`, 
+        }}
+        >
         <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
         
         <aside  

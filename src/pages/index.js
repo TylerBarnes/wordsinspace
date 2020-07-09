@@ -12,12 +12,10 @@ import {usePages} from "../components/hooks/usePages"
 import {useCategories} from "../components/hooks/useCategories"
 import {useTags} from "../components/hooks/useTags"
 
-
 export default function Home() {
-  const all = [...usePages(), ...usePosts()];
+  const data = [...usePages(), ...usePosts()];
   const tags = useTags();
   const categories = useCategories();
-
   const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
   const nonEmptyCategories = categories.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
 
@@ -32,7 +30,7 @@ export default function Home() {
             justifyContent: `flex-start`, 
           }}
       >
-        <List items={all}/>
+        <List items={data}/>
         <CategoriesMenu categories={nonEmptyCategories} />
         <TagsMenu tags={nonEmptyTags} />
       </div>
