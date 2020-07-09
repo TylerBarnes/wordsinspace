@@ -5,9 +5,10 @@ const List = (props) => {
   if (!props) return null
   
   return (
-     <main style={{
+    <main style={{
       alignSelf: 'flex-start',
-     }}>
+    }}>
+
       {props.items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
         <li key={index} style={{
           listStyle: 'none',
@@ -15,6 +16,7 @@ const List = (props) => {
           display: 'flex row',
           width: '40vw',
         }}>
+
           <Link to={props.fromMain ? `../${node.slug}` : node.slug} state={{ fromMain: false}}> {node.title}</Link>              
 
           {node.categories && node.categories.nodes.map(category=> {
@@ -43,15 +45,15 @@ const List = (props) => {
               {node.nodeType}
           </div>
 
-
           <div style={{
             margin: '0 0.2vw', 
             fontSize: '0.8rem',
             color: '#ccc'
           }}> {node.date.slice(0,10)} </div>
+          
         </li>
       ))}
-      </main>
+    </main>
    )
 }
 
