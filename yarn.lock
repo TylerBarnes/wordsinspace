@@ -272,7 +272,7 @@
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.10.2.tgz#871807f10442b92ff97e4783b9b54f6a0ca812d0"
 
-"@babel/parser@7.10.3", "@babel/parser@^7.0.0", "@babel/parser@^7.10.1", "@babel/parser@^7.10.2", "@babel/parser@^7.10.3", "@babel/parser@^7.7.0", "@babel/parser@^7.9.6":
+"@babel/parser@^7.0.0", "@babel/parser@^7.10.1", "@babel/parser@^7.10.2", "@babel/parser@^7.10.3", "@babel/parser@^7.7.0", "@babel/parser@^7.9.6":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.10.3.tgz#7e71d892b0d6e7d04a1af4c3c79d72c1f10f5315"
 
@@ -878,7 +878,7 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/traverse@7.10.3", "@babel/traverse@^7.0.0", "@babel/traverse@^7.10.1", "@babel/traverse@^7.10.3", "@babel/traverse@^7.7.0", "@babel/traverse@^7.9.6":
+"@babel/traverse@^7.0.0", "@babel/traverse@^7.10.1", "@babel/traverse@^7.10.3", "@babel/traverse@^7.7.0", "@babel/traverse@^7.9.6":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.10.3.tgz#0b01731794aa7b77b214bcd96661f18281155d7e"
   dependencies:
@@ -900,7 +900,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@babel/types@7.10.3", "@babel/types@^7.0.0", "@babel/types@^7.10.1", "@babel/types@^7.10.2", "@babel/types@^7.10.3", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.9.6":
+"@babel/types@^7.0.0", "@babel/types@^7.10.1", "@babel/types@^7.10.2", "@babel/types@^7.10.3", "@babel/types@^7.4.4", "@babel/types@^7.7.0", "@babel/types@^7.9.6":
   version "7.10.3"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.3.tgz#6535e3b79fea86a6b09e012ea8528f935099de8e"
   dependencies:
@@ -917,15 +917,6 @@
     fs-extra "9.0.1"
     tslib "~2.0.0"
 
-"@graphql-tools/code-file-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/code-file-loader/-/code-file-loader-6.0.11.tgz#120cf02224da5eb769e10181a2881a6ed147f873"
-  dependencies:
-    "@graphql-tools/graphql-tag-pluck" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    fs-extra "9.0.1"
-    tslib "~2.0.0"
-
 "@graphql-tools/delegate@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-6.0.10.tgz#f2fe8eea6cd5ce23f1e8f3dacfa6e136cad157da"
@@ -933,15 +924,6 @@
     "@graphql-tools/schema" "6.0.10"
     "@graphql-tools/utils" "6.0.10"
     aggregate-error "3.0.1"
-    tslib "~2.0.0"
-
-"@graphql-tools/delegate@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-6.0.11.tgz#669143dec73b6fd67a5b2bad15b9f7b6c377b2f6"
-  dependencies:
-    "@ardatan/aggregate-error" "0.0.1"
-    "@graphql-tools/schema" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
     tslib "~2.0.0"
 
 "@graphql-tools/git-loader@6.0.10":
@@ -952,14 +934,6 @@
     "@graphql-tools/utils" "6.0.10"
     simple-git "2.6.0"
 
-"@graphql-tools/git-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/git-loader/-/git-loader-6.0.11.tgz#80fdf0ba9f12afb07a03a08a0c8e3c35450a769a"
-  dependencies:
-    "@graphql-tools/graphql-tag-pluck" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    simple-git "2.10.0"
-
 "@graphql-tools/github-loader@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/github-loader/-/github-loader-6.0.10.tgz#dbafbc344509a0b157cd33fd4e122381f6ac4823"
@@ -968,29 +942,12 @@
     "@graphql-tools/utils" "6.0.10"
     cross-fetch "3.0.4"
 
-"@graphql-tools/github-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/github-loader/-/github-loader-6.0.11.tgz#b610b29a8d898671bb68512a7314c86327f0d55b"
-  dependencies:
-    "@graphql-tools/graphql-tag-pluck" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    cross-fetch "3.0.5"
-
 "@graphql-tools/graphql-file-loader@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/graphql-file-loader/-/graphql-file-loader-6.0.10.tgz#b8853345d71b1168f626ee2d2e10d73e4e30f02c"
   dependencies:
     "@graphql-tools/import" "6.0.10"
     "@graphql-tools/utils" "6.0.10"
-    fs-extra "9.0.1"
-    tslib "~2.0.0"
-
-"@graphql-tools/graphql-file-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/graphql-file-loader/-/graphql-file-loader-6.0.11.tgz#dd255124e8b4035f665249369033f368ad01755f"
-  dependencies:
-    "@graphql-tools/import" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
     fs-extra "9.0.1"
     tslib "~2.0.0"
 
@@ -1005,27 +962,9 @@
   optionalDependencies:
     vue-template-compiler "^2.6.11"
 
-"@graphql-tools/graphql-tag-pluck@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/graphql-tag-pluck/-/graphql-tag-pluck-6.0.11.tgz#1390bdfcce15e46d8c06e7d7dd20dc59a19182bd"
-  dependencies:
-    "@babel/parser" "7.10.3"
-    "@babel/traverse" "7.10.3"
-    "@babel/types" "7.10.3"
-    "@graphql-tools/utils" "6.0.11"
-  optionalDependencies:
-    vue-template-compiler "^2.6.11"
-
 "@graphql-tools/import@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/import/-/import-6.0.10.tgz#835f86729bc8e71ebcc809b6134df1965d9be977"
-  dependencies:
-    fs-extra "9.0.1"
-    resolve-from "5.0.0"
-
-"@graphql-tools/import@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/import/-/import-6.0.11.tgz#dabe6ab7c73bb3cd208bbed09a8aaadedf282c06"
   dependencies:
     fs-extra "9.0.1"
     resolve-from "5.0.0"
@@ -1035,14 +974,6 @@
   resolved "https://registry.yarnpkg.com/@graphql-tools/json-file-loader/-/json-file-loader-6.0.10.tgz#e233a5222a1408463611152750a504ec103a4c27"
   dependencies:
     "@graphql-tools/utils" "6.0.10"
-    fs-extra "9.0.1"
-    tslib "~2.0.0"
-
-"@graphql-tools/json-file-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/json-file-loader/-/json-file-loader-6.0.11.tgz#1ef4095261bda0358032109c84bfded2142d1ec1"
-  dependencies:
-    "@graphql-tools/utils" "6.0.11"
     fs-extra "9.0.1"
     tslib "~2.0.0"
 
@@ -1057,28 +988,9 @@
     form-data "3.0.0"
     tslib "~2.0.0"
 
-"@graphql-tools/links@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/links/-/links-6.0.11.tgz#ea4a6c47dd63dc02f5c5f3aea399f473a588681b"
-  dependencies:
-    "@graphql-tools/utils" "6.0.11"
-    apollo-link "1.2.14"
-    apollo-upload-client "13.0.0"
-    cross-fetch "3.0.5"
-    form-data "3.0.0"
-    tslib "~2.0.0"
-
 "@graphql-tools/load-files@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/load-files/-/load-files-6.0.10.tgz#dd99ab5a67ef8da80d155adb2860d6e2b796f397"
-  dependencies:
-    fs-extra "9.0.1"
-    globby "11.0.1"
-    unixify "1.0.0"
-
-"@graphql-tools/load-files@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/load-files/-/load-files-6.0.11.tgz#22dbc62c76c5051095e7d0642579bfa6e519d153"
   dependencies:
     fs-extra "9.0.1"
     globby "11.0.1"
@@ -1098,34 +1010,12 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
-"@graphql-tools/load@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-6.0.11.tgz#de80fb74e73a2606630d9fcba2d19c132ecb8842"
-  dependencies:
-    "@graphql-tools/merge" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    globby "11.0.1"
-    import-from "3.0.0"
-    is-glob "4.0.1"
-    p-limit "3.0.1"
-    tslib "~2.0.0"
-    unixify "1.0.0"
-    valid-url "1.0.9"
-
 "@graphql-tools/merge@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.0.10.tgz#f9b9f1e8d59cffdf8ef8c7ce7d065a7d179f216a"
   dependencies:
     "@graphql-tools/schema" "6.0.10"
     "@graphql-tools/utils" "6.0.10"
-    tslib "~2.0.0"
-
-"@graphql-tools/merge@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.0.11.tgz#0bf50e31f8dc2ec262809503b82ff54c6041dfd3"
-  dependencies:
-    "@graphql-tools/schema" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
     tslib "~2.0.0"
 
 "@graphql-tools/mock@6.0.10":
@@ -1136,26 +1026,11 @@
     "@graphql-tools/utils" "6.0.10"
     tslib "~2.0.0"
 
-"@graphql-tools/mock@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-6.0.11.tgz#2a72f05e966c41563163ef6cc15af9535cdec05b"
-  dependencies:
-    "@graphql-tools/schema" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    tslib "~2.0.0"
-
 "@graphql-tools/module-loader@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/module-loader/-/module-loader-6.0.10.tgz#0c96004afa9ed6e659649c5ea6d02ffb5df00824"
   dependencies:
     "@graphql-tools/utils" "6.0.10"
-    tslib "~2.0.0"
-
-"@graphql-tools/module-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/module-loader/-/module-loader-6.0.11.tgz#2db9bea480c15545962bdf750e537cdb59bcfcb8"
-  dependencies:
-    "@graphql-tools/utils" "6.0.11"
     tslib "~2.0.0"
 
 "@graphql-tools/relay-operation-optimizer@6.0.10":
@@ -1165,25 +1040,11 @@
     "@graphql-tools/utils" "6.0.10"
     relay-compiler "9.1.0"
 
-"@graphql-tools/relay-operation-optimizer@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.0.11.tgz#155208469858c5227d816b47ddb30f927f2bc5b8"
-  dependencies:
-    "@graphql-tools/utils" "6.0.11"
-    relay-compiler "9.1.0"
-
 "@graphql-tools/resolvers-composition@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/resolvers-composition/-/resolvers-composition-6.0.10.tgz#4e5ebfb32ff146f4efbd842991ccfe21cf69fb6c"
   dependencies:
     "@graphql-tools/utils" "6.0.10"
-    lodash "4.17.15"
-
-"@graphql-tools/resolvers-composition@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/resolvers-composition/-/resolvers-composition-6.0.11.tgz#ec0218ce0de905d9009b41f830e9ad9a0caad8be"
-  dependencies:
-    "@graphql-tools/utils" "6.0.11"
     lodash "4.17.15"
 
 "@graphql-tools/schema@6.0.10":
@@ -1193,11 +1054,11 @@
     "@graphql-tools/utils" "6.0.10"
     tslib "~2.0.0"
 
-"@graphql-tools/schema@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.11.tgz#4623c3662a8843822e36139855504ef8d7d89088"
+"@graphql-tools/schema@^6.0.11":
+  version "6.0.12"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.12.tgz#549ae14fa200cf7135e1d4f0b9e85db868cad6be"
   dependencies:
-    "@graphql-tools/utils" "6.0.11"
+    "@graphql-tools/utils" "6.0.12"
     tslib "~2.0.0"
 
 "@graphql-tools/stitch@6.0.10":
@@ -1209,17 +1070,6 @@
     "@graphql-tools/schema" "6.0.10"
     "@graphql-tools/utils" "6.0.10"
     "@graphql-tools/wrap" "6.0.10"
-    tslib "~2.0.0"
-
-"@graphql-tools/stitch@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/stitch/-/stitch-6.0.11.tgz#637d9fa673438dd7352a4b541732b01bf3f49882"
-  dependencies:
-    "@graphql-tools/delegate" "6.0.11"
-    "@graphql-tools/merge" "6.0.11"
-    "@graphql-tools/schema" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    "@graphql-tools/wrap" "6.0.11"
     tslib "~2.0.0"
 
 "@graphql-tools/url-loader@6.0.10":
@@ -1236,20 +1086,6 @@
     valid-url "1.0.9"
     websocket "1.0.31"
 
-"@graphql-tools/url-loader@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-6.0.11.tgz#43e8605e50f4dd5daabd227f408f043d4f4c4656"
-  dependencies:
-    "@graphql-tools/delegate" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    "@graphql-tools/wrap" "6.0.11"
-    "@types/websocket" "1.0.0"
-    cross-fetch "3.0.5"
-    subscriptions-transport-ws "0.9.16"
-    tslib "~2.0.0"
-    valid-url "1.0.9"
-    websocket "1.0.31"
-
 "@graphql-tools/utils@6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.10.tgz#ed15110a20acc5474a8dda5c0b99f970ba696c75"
@@ -1257,9 +1093,9 @@
     aggregate-error "3.0.1"
     camel-case "4.1.1"
 
-"@graphql-tools/utils@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.11.tgz#c394201c992dbc8f3644b9ad71411fdd55832f2d"
+"@graphql-tools/utils@6.0.12", "@graphql-tools/utils@^6.0.11":
+  version "6.0.12"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.12.tgz#3c58729f1bdb7881e675544016b56e0508c2541b"
   dependencies:
     "@ardatan/aggregate-error" "0.0.1"
     camel-case "4.1.1"
@@ -1271,16 +1107,6 @@
     "@graphql-tools/delegate" "6.0.10"
     "@graphql-tools/schema" "6.0.10"
     "@graphql-tools/utils" "6.0.10"
-    aggregate-error "3.0.1"
-    tslib "~2.0.0"
-
-"@graphql-tools/wrap@6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-6.0.11.tgz#5e0d9efd1e205da1953f3ba5cc4f46b2f7c757ec"
-  dependencies:
-    "@graphql-tools/delegate" "6.0.11"
-    "@graphql-tools/schema" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
     aggregate-error "3.0.1"
     tslib "~2.0.0"
 
@@ -1608,12 +1434,6 @@
     "@babel/runtime" "^7.7.2"
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
-
-"@kwsites/file-exists@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@kwsites/file-exists/-/file-exists-1.1.1.tgz#ad1efcac13e1987d8dbaf235ef3be5b0d96faa99"
-  dependencies:
-    debug "^4.1.1"
 
 "@mdx-js/mdx@^1.6.5", "@mdx-js/mdx@^1.6.6":
   version "1.6.6"
@@ -3841,12 +3661,6 @@ cross-fetch@3.0.4:
     node-fetch "2.6.0"
     whatwg-fetch "3.0.0"
 
-cross-fetch@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.5.tgz#2739d2981892e7ab488a7ad03b92df2816e03f4c"
-  dependencies:
-    node-fetch "2.6.0"
-
 cross-spawn@5.1.0, cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -5693,29 +5507,26 @@ gatsby-cli@^2.12.48:
     yargs "^15.3.1"
     yurnalist "^1.1.2"
 
-gatsby-cli@^2.12.51:
-  version "2.12.51"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.12.51.tgz#342b5c28ac5cb39809bb826929ab48775cf1322e"
+gatsby-cli@^2.12.60:
+  version "2.12.60"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.12.60.tgz#2e958fa97d778fafa327fce5e6c351f99f7c2cdd"
   dependencies:
     "@babel/code-frame" "^7.10.3"
-    "@babel/runtime" "^7.10.3"
     "@hapi/joi" "^15.1.1"
     "@types/common-tags" "^1.8.0"
     better-opn "^1.0.0"
-    bluebird "^3.7.2"
     chalk "^2.4.2"
     clipboardy "^2.3.0"
     common-tags "^1.8.0"
     configstore "^5.0.1"
     convert-hrtime "^3.0.0"
-    core-js "^2.6.11"
     envinfo "^7.5.1"
     execa "^3.4.0"
     fs-exists-cached "^1.0.0"
     fs-extra "^8.1.0"
-    gatsby-core-utils "^1.3.8"
-    gatsby-recipes "^0.1.43"
-    gatsby-telemetry "^1.3.14"
+    gatsby-core-utils "^1.3.12"
+    gatsby-recipes "^0.1.51"
+    gatsby-telemetry "^1.3.19"
     hosted-git-info "^3.0.4"
     ink "^2.7.1"
     ink-spinner "^3.1.0"
@@ -5723,7 +5534,6 @@ gatsby-cli@^2.12.51:
     lodash "^4.17.15"
     meant "^1.0.1"
     node-fetch "^2.6.0"
-    object.entries "^1.1.2"
     opentracing "^0.14.4"
     pretty-error "^2.1.1"
     progress "^2.0.3"
@@ -5752,9 +5562,9 @@ gatsby-core-utils@^1.0.34, gatsby-core-utils@^1.3.6:
     proper-lockfile "^4.1.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^1.3.8:
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.8.tgz#e6d15d8cb24fa7e16a0af01a5e262ac9c4f31913"
+gatsby-core-utils@^1.3.12:
+  version "1.3.12"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.12.tgz#4a35b1c4e61f967bb18640e983fd82199e48692a"
   dependencies:
     ci-info "2.0.0"
     configstore "^5.0.1"
@@ -5957,9 +5767,9 @@ gatsby-recipes@^0.1.41:
     ws "^7.3.0"
     xstate "^4.10.0"
 
-gatsby-recipes@^0.1.43:
-  version "0.1.43"
-  resolved "https://registry.yarnpkg.com/gatsby-recipes/-/gatsby-recipes-0.1.43.tgz#7bdc274c9544c939386c8d15d40308be9ddbf07f"
+gatsby-recipes@^0.1.51:
+  version "0.1.51"
+  resolved "https://registry.yarnpkg.com/gatsby-recipes/-/gatsby-recipes-0.1.51.tgz#6419070fe5ef1332670c5ed235bcddd25db0bcc2"
   dependencies:
     "@babel/core" "^7.10.3"
     "@babel/generator" "^7.10.3"
@@ -5968,6 +5778,8 @@ gatsby-recipes@^0.1.43:
     "@babel/standalone" "^7.10.3"
     "@babel/template" "^7.10.3"
     "@babel/types" "^7.10.3"
+    "@graphql-tools/schema" "^6.0.11"
+    "@graphql-tools/utils" "^6.0.11"
     "@hapi/hoek" "8.x"
     "@hapi/joi" "^15.1.1"
     "@mdx-js/mdx" "^1.6.6"
@@ -5982,13 +5794,12 @@ gatsby-recipes@^0.1.43:
     express "^4.17.1"
     express-graphql "^0.9.0"
     fs-extra "^8.1.0"
-    gatsby-core-utils "^1.3.8"
-    gatsby-telemetry "^1.3.14"
+    gatsby-core-utils "^1.3.12"
+    gatsby-telemetry "^1.3.19"
     glob "^7.1.6"
     graphql "^14.6.0"
     graphql-compose "^6.3.8"
     graphql-subscriptions "^1.1.0"
-    graphql-tools "^6.0.10"
     graphql-type-json "^0.3.2"
     hicat "^0.7.0"
     html-tag-names "^1.1.5"
@@ -5998,8 +5809,6 @@ gatsby-recipes@^0.1.43:
     ink-select-input "^3.1.2"
     ink-spinner "^3.1.0"
     is-binary-path "^2.1.0"
-    is-blank "^2.1.0"
-    is-string "^1.0.5"
     is-url "^1.2.4"
     jest-diff "^25.5.0"
     lodash "^4.17.15"
@@ -6022,7 +5831,7 @@ gatsby-recipes@^0.1.43:
     unist-util-visit "^2.0.2"
     urql "^1.9.8"
     ws "^7.3.0"
-    xstate "^4.10.0"
+    xstate "^4.11.0"
 
 gatsby-source-filesystem@^2.3.11:
   version "2.3.12"
@@ -6097,26 +5906,21 @@ gatsby-telemetry@^1.3.12:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-gatsby-telemetry@^1.3.14:
-  version "1.3.14"
-  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.3.14.tgz#4c53deccbac753e19052ddd50dff818ebaac8575"
+gatsby-telemetry@^1.3.19:
+  version "1.3.19"
+  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.3.19.tgz#ab10fc272eef130341669ae69f0901a38b6437f4"
   dependencies:
     "@babel/code-frame" "^7.10.3"
     "@babel/runtime" "^7.10.3"
-    bluebird "^3.7.2"
     boxen "^4.2.0"
     configstore "^5.0.1"
     envinfo "^7.5.1"
     fs-extra "^8.1.0"
-    gatsby-core-utils "^1.3.8"
+    gatsby-core-utils "^1.3.12"
     git-up "4.0.1"
     is-docker "2.0.0"
     lodash "^4.17.15"
     node-fetch "2.6.0"
-    resolve-cwd "^2.0.0"
-    source-map "^0.7.3"
-    stack-trace "^0.0.10"
-    stack-utils "1.0.2"
     uuid "3.4.0"
 
 gatsby-transformer-sharp@^2.5.10:
@@ -6613,32 +6417,6 @@ graphql-subscriptions@^1.1.0:
   resolved "https://registry.yarnpkg.com/graphql-subscriptions/-/graphql-subscriptions-1.1.0.tgz#5f2fa4233eda44cf7570526adfcf3c16937aef11"
   dependencies:
     iterall "^1.2.1"
-
-graphql-tools@^6.0.10:
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-6.0.11.tgz#6f6e48eac0d10039e10ff105e92ba5949f17151d"
-  dependencies:
-    "@graphql-tools/code-file-loader" "6.0.11"
-    "@graphql-tools/delegate" "6.0.11"
-    "@graphql-tools/git-loader" "6.0.11"
-    "@graphql-tools/github-loader" "6.0.11"
-    "@graphql-tools/graphql-file-loader" "6.0.11"
-    "@graphql-tools/graphql-tag-pluck" "6.0.11"
-    "@graphql-tools/import" "6.0.11"
-    "@graphql-tools/json-file-loader" "6.0.11"
-    "@graphql-tools/links" "6.0.11"
-    "@graphql-tools/load" "6.0.11"
-    "@graphql-tools/load-files" "6.0.11"
-    "@graphql-tools/merge" "6.0.11"
-    "@graphql-tools/mock" "6.0.11"
-    "@graphql-tools/module-loader" "6.0.11"
-    "@graphql-tools/relay-operation-optimizer" "6.0.11"
-    "@graphql-tools/resolvers-composition" "6.0.11"
-    "@graphql-tools/schema" "6.0.11"
-    "@graphql-tools/stitch" "6.0.11"
-    "@graphql-tools/url-loader" "6.0.11"
-    "@graphql-tools/utils" "6.0.11"
-    "@graphql-tools/wrap" "6.0.11"
 
 graphql-tools@^6.0.5:
   version "6.0.10"
@@ -11133,13 +10911,6 @@ simple-get@^4.0.0:
     once "^1.3.1"
     simple-concat "^1.0.0"
 
-simple-git@2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.10.0.tgz#9b9b6af5c7660b8ede5636296cc78774f85ac636"
-  dependencies:
-    "@kwsites/file-exists" "^1.1.1"
-    debug "^4.1.1"
-
 simple-git@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.6.0.tgz#04b554d1038e6036af2ae4d67a30bc5fd75f4fcd"
@@ -13017,6 +12788,10 @@ xss@^1.0.6:
 xstate@^4.10.0:
   version "4.10.0"
   resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.10.0.tgz#f87e4ef593fe40300b8eec50a5d9f0763aa4f622"
+
+xstate@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.11.0.tgz#dc0bd31079fe22918c2c27c118d6310bef3dcd9e"
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.2"
