@@ -24,6 +24,7 @@ export default function Category({ data, location}) {
           }}
       >
         <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
+        
         <aside  
           style={{
           alignSelf: 'flex-start',
