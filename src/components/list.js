@@ -3,7 +3,7 @@ import {Link } from "gatsby"
 
 const List = (props) => {
   if (!props) return null
-  
+
   return (
     <main style={{
       alignSelf: 'flex-start',
@@ -48,8 +48,19 @@ const List = (props) => {
           <div style={{
             margin: '0 0.2vw', 
             fontSize: '0.8rem',
-            color: '#ccc'
+            color: '#aaa',
           }}> {node.date.slice(0,10)} </div>
+
+          <div style={{
+            margin: '0 0.2vw', 
+            padding: '0 0.2vw', 
+            fontSize: '0.8rem',
+            fontStyle: 'italic',
+            background: node.content ? node.content.length > 1000 ? '#b3efe4' : '#ffe4d3' : '#aaa',
+            color: node.content ? '#000' : '#fff'
+            }}>
+            {node.content ? node.content.length : 'zero'} characters
+           </div>
           
         </li>
       ))}

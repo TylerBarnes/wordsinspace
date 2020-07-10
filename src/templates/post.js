@@ -4,9 +4,9 @@ import { graphql } from "gatsby"
 import Menu from "../components/menu"
 
 export default function Post({ data }) {
-  const post = data.allWpPost.nodes[0]
-  
   if(!data) return null
+ 
+  const post = data.allWpPost.nodes[0]
 
   return (
     <Layout>

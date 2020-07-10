@@ -10,6 +10,7 @@ export const usePosts = () => {
             title
             date
             nodeType
+            content
             categories {
               nodes {
                 name

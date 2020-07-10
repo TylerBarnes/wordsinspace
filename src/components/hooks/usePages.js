@@ -10,6 +10,7 @@ export const usePages = () => {
             title
             date
             nodeType
+            content
             categories {
               nodes {
                 name
