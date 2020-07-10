@@ -16,14 +16,7 @@ function Menu({location}) {
       {menuData[0] && menuData[0].menuItems.nodes.map( node => (
         <Link key={node.label} to={node.url} style={{marginRight: '2vw'}} state={{ fromMain: true}} >{node.label}</Link>
       ))}
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/publications'>Publications</Link>
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/presentations'>Presentations</Link>
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/projects'>Projects</Link>
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/teaching'>Teaching</Link>
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/blog'>Blog</Link>
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/about'>About</Link>
-      <Link style={{marginRight: '2vw'}} state={{ fromMain: true}}  to='/moda-example' state={{modal: true}}>test modal</Link>
-     </main>
+      </main>
    )
 }
 
