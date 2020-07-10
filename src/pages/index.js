@@ -42,6 +42,11 @@ export const query = graphql`
         title
         date
         nodeType
+        tags {
+          nodes {
+            slug
+          }
+        }
       }
     }
     posts: allWpPost {
@@ -50,6 +55,11 @@ export const query = graphql`
         title
         date
         nodeType
+        tags {
+          nodes {
+            slug
+          }
+        }
       }
     }
     tags: allWpTag {

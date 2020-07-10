@@ -3,7 +3,8 @@ import {Link } from "gatsby"
 
 const List = (props) => {
   if (!props) return null
-    
+  console.log(props)
+
   return (
      <main style={{
       alignSelf: 'flex-start',
@@ -21,7 +22,12 @@ const List = (props) => {
             style={{
               margin: '0 0.2vw', 
               fontSize: '0.8rem'}}> <em>{node.nodeType} </em> </div>
-          
+
+          <div 
+            style={{
+              margin: '0 0.2vw', 
+              fontSize: '0.8rem'}}> <em>{node.tags.nodes.map((tag) => <span>{tag.slug}, </span>)} </em> </div>
+
           <div style={{
             margin: '0 0.2vw', 
             fontSize: '0.8rem',
