@@ -6,14 +6,15 @@ import Menu from "../components/menu"
 export default function Post({ data }) {
   if(!data) return null
  
-  const post = data.allWpPost.nodes[0]
+  const {title, date, content} = data.allWpPost.nodes[0];
 
   return (
     <Layout>
       <Menu />
       <div>
-        <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <h1>{title}</h1>
+        <h4>{date.slice(0,10)}</h4>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </Layout>
   )
@@ -26,6 +27,7 @@ export const query = graphql`
         slug
         title
         content
+        date
       }
     }
   }

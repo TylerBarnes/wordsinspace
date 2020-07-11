@@ -13,9 +13,9 @@ const CategoriesMenu = (props) => {
 			width: '15vw'
      }}>
       	Categories
-	      {props.categories.map( category => (
+	      {props.categories.map( (category,index) => (
 					<li 
-						key={category.name}
+						key={index}
 						style={{
 			      	margin: '10px auto',
             	listStyle: 'none',

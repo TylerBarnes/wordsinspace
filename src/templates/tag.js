@@ -31,12 +31,13 @@ export default function Tag({ data, location}) {
           width: `40%`,
           fontSize: '0.9rem',
          }}>
-          <div style={{
-            marginBottom: '2vh',
-            color: '#ff5236',
-            fontWeight: '600',
-            textTransform: 'uppercase'
-          }}>{tag.name}</div>
+            Tag
+            <div style={{
+              marginBottom: '2vh',
+              color: '#ff5236',
+              fontWeight: '600',
+              textTransform: 'uppercase'
+            }}>{tag.name}</div>
           <div><Link to="/" >back</Link></div>
         </aside>
       </div>

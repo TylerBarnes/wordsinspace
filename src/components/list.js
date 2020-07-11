@@ -19,10 +19,10 @@ const List = (props) => {
 
           <Link to={props.fromMain ? `../${node.slug}` : node.slug} state={{ fromMain: false}}> {node.title}</Link>              
 
-          {node.categories && node.categories.nodes.map(category=> {
+          {node.categories && node.categories.nodes.map((category,index_cat)=> {
             return (
             <span
-              key={category.name} 
+              key={index_cat} 
               style={{
                 margin: '0 0.2vw', 
                 padding: '0.2vh 0.3vw', 

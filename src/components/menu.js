@@ -13,8 +13,8 @@ function Menu({location}) {
 			margin: '2vh 0',
 			padding: '0.5vh 0'
      }}>
-      {menuData[0] && menuData[0].menuItems.nodes.map( node => (
-        <Link key={node.label} to={node.url} style={{marginRight: '2vw'}} state={{ fromMain: true}} >{node.label}</Link>
+      {menuData[0] && menuData[0].menuItems.nodes.map( (node, index) => (
+        <Link key={node.index} to={node.url} style={{marginRight: '2vw'}} state={{ fromMain: true}} >{node.label}</Link>
       ))}
       </main>
    )

@@ -18,6 +18,7 @@ export default function Home() {
   const categories = useCategories();
   const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
   const nonEmptyCategories = categories.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
+  
   return (
     <Layout>
       <SEO title="home" />

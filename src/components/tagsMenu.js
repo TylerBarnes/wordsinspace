@@ -1,7 +1,6 @@
 import React, {useMemo} from "react"
 import {Link } from "gatsby" 
 
-
 function filterTags(tags) {
 	return tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 }
@@ -17,9 +16,9 @@ const TagsMenu = (props) => {
      }}>
      		Tags
 
-	      {tags.map( tag => (
+	      {tags.map( (tag, index) => (
 					<li 
-						key={tag.name}
+						key={index}
 						style={{
 			      	margin: '10px auto',
             	listStyle: 'none',
