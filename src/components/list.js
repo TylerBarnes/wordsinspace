@@ -17,7 +17,7 @@ const List = (props) => {
           width: '40vw',
         }}>
 
-          <Link to={props.fromMain ? `../${node.slug}` : node.slug} state={{ fromMain: false}}> {node.title}</Link>              
+          <Link to={node.slug}> {node.title}</Link>              
 
           {node.categories && node.categories.nodes.map((category,index_cat)=> {
             return (
@@ -51,7 +51,7 @@ const List = (props) => {
             color: '#aaa',
           }}> {node.date.slice(0,10)} </div>
 
-          <div style={{
+          {/*<div style={{
             margin: '0 0.2vw', 
             padding: '0 0.2vw', 
             fontSize: '0.8rem',
@@ -60,7 +60,7 @@ const List = (props) => {
             color: node.content ? '#000' : '#fff'
             }}>
             {node.content ? node.content.length : 'zero'} characters
-           </div>
+           </div>*/}
           
         </li>
       ))}

@@ -14,11 +14,6 @@ exports.createPages = ({ graphql, actions }) => {
           slug
         }
       }
-      tags: allWpTag {
-        nodes {
-          slug
-        }
-      }
       categories: allWpCategory {
         nodes {
           slug
@@ -29,44 +24,33 @@ exports.createPages = ({ graphql, actions }) => {
 
     if (!result.data) return null
 
-    // create a view for Posts query
+    // render a Post on Viewer
     result.data.posts.nodes.forEach((node) => {
       createPage({
         path: node.slug,
-        component: path.resolve(`./src/templates/post.js`),
+        component: path.resolve(`./src/templates/viewer-template.js`),
         context: {
           slug: node.slug,
         },
       })
     }) 
 
-    // create a view for Pages query
+    // render a Page on Viewer
     result.data.pages.nodes.forEach((node) => {
       createPage({
         path: node.slug,
-        component: path.resolve(`./src/templates/page.js`),
+        component: path.resolve(`./src/templates/viewer-template.js`),
         context: {
           slug: node.slug,
         },
       })
     })
 
-    // create a view for Tags
-    result.data.tags.nodes.forEach((node) => {
-      createPage({
-        path: node.slug,
-        component: path.resolve(`./src/templates/tag.js`),
-        context: {
-          slug: node.slug,
-        },
-      })
-    })   
-
-    // create a view for Categories
+    // render items of a specific Category on Collection
     result.data.categories.nodes.forEach((node) => {
       createPage({
         path: node.slug,
-        component: path.resolve(`./src/templates/category.js`),
+        component: path.resolve(`./src/templates/category-collection-template.js`),
         context: {
           slug: node.slug,
         },

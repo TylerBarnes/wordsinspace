@@ -10,10 +10,10 @@ const CategoriesMenu = (props) => {
       alignSelf: 'flex-start',
       textAlign: 'left',
 			fontSize: '0.9rem',
-			width: '15vw'
+			width: '10vw'
      }}>
       	Categories
-	      {props.categories.map( (category,index) => (
+	      {props.categories.filter(category => category.name === 'Blog' || category.name === 'Publication' || category.name === 'Presentation' || category.name === 'Teaching').map((category,index) => (
 					<li 
 						key={index}
 						style={{

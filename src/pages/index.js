@@ -22,7 +22,6 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="home" />
-      <Menu />
       <div 
         style={{
           display: `flex`,
