@@ -1,12 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Menu from "../components/menu"
 
-export default function Viewer({ data }) {
+export default function pageViewer({ data }) {
   if(!data) return null
- 
-  const {title, date, content} = data.allWpPost ? data.allWpPost.nodes[0] : data.allWpPage.nodes[0];
+
+  const {title, date, content} = data.allWpPage.nodes[0]
 
   return (
     <Layout>
@@ -21,8 +20,8 @@ export default function Viewer({ data }) {
 }
 
 export const query = graphql`
-  query getPosts($slug: String!) {
-    allWpPost(filter: {slug: { eq: $slug }}) {
+  query getPages($slug: String!) {
+    allWpPage(filter: {slug: { eq: $slug }}) {
       nodes {
         slug
         title
