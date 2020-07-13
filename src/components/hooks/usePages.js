@@ -16,6 +16,11 @@ export const usePages = () => {
                 name
               }
             }
+            tags {
+              nodes {
+                slug
+              }
+            }
           }
         }
       }

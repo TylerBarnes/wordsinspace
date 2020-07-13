@@ -14,6 +14,11 @@ export const useTags = () => {
                 slug
                 date
                 nodeType
+                tags {
+                  nodes {
+                    slug
+                  }
+                }
               }
             }
             pages {
@@ -22,6 +27,11 @@ export const useTags = () => {
                 slug
                 date
                 nodeType
+                tags {
+                  nodes {
+                    slug
+                  }
+                }
               }
             }
           }

@@ -16,6 +16,11 @@ export const usePosts = () => {
                 name
               }
             }
+            tags {
+              nodes {
+                slug
+              }
+            }
           }
         }
       }

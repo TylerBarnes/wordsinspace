@@ -1,5 +1,4 @@
 import React, {useMemo} from "react"
-import {Link} from "gatsby" 
 
 function filterTags(tags) {
 	return tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)

@@ -13,6 +13,11 @@ export const useCategories = () => {
                 title
                 slug
                 date
+                tags {
+                  nodes {
+                    slug
+                  }
+                }
               }
             }
             pages {
@@ -20,6 +25,11 @@ export const useCategories = () => {
                 title
                 slug
                 date
+                tags {
+                  nodes {
+                    slug
+                  }
+                }
               }
             }
           }
