@@ -65,7 +65,7 @@ const List = (props) => {
           style={{
           margin: '0 0.2vw',
           fontSize: '0.8rem'}}> 
-          <em>{node.tags.nodes.map((tag, index) => <span>{index < node.tags.nodes.length-1 ? `${tag.slug}, `.replace('-', ' ') : `${tag.slug}`.replace('-', ' ')}</span>)} </em> 
+          <em>{node.tags.nodes.map((tag, index) => <span>{index < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}</span>)} </em> 
           </div>
         
         </li>
