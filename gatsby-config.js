@@ -16,7 +16,7 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `https://testingv.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
+        url: `http://localhost:8888/wordpress_iii/graphql`, //  https://wordsinspace.net/shannon/graphql 
       },
     },
     /**
@@ -52,5 +52,17 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-modal-routing`,
+      options: {
+        // A selector to set react-modal's app root to, default is `#___gatsby`
+        // See http://reactcommunity.org/react-modal/accessibility/#app-element
+        appElement: '#___gatsby',
+
+        // Object of props that will be passed to the react-modal container
+        // See http://reactcommunity.org/react-modal/#usage
+        modalProps: { },
+      }
+    }
   ],
 }

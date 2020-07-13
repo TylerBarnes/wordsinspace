@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby" 
 
 import Layout from "../components/layout"
 import List from "../components/list"
@@ -8,101 +7,32 @@ import Menu from "../components/menu"
 import CategoriesMenu from "../components/categoriesMenu"
 import SEO from "../components/seo"
 
-export default function Home({data}) {
-  const pages = data.pages.nodes;
-  const posts = data.posts.nodes;
-  const all = [...pages, ...posts];
+import {usePosts} from "../components/hooks/usePosts"
+import {usePages} from "../components/hooks/usePages"
+import {useCategories} from "../components/hooks/useCategories"
+import {useTags} from "../components/hooks/useTags"
 
-  const nonEmptyTags = data.tags.nodes.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
-  const nonEmptyCategories = data.categories.nodes.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
-
+export default function Home() {
+  const data = [...usePages(), ...usePosts()];
+  const tags = useTags();
+  const categories = useCategories();
+  const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
+  const nonEmptyCategories = categories.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
   return (
     <Layout>
       <SEO title="home" />
-      <div style={{
-            display: `flex`,
-            flexDirection: `row`,
-            alignItems: `flex-start`, 
-            justifyContent: `flex-start`, 
-          }}
-      >
-        <List items={all}/>
+      <div 
+        style={{
+          display: `flex`,
+          flexDirection: `row`,
+          alignItems: `flex-start`, 
+          justifyContent: `flex-start`, 
+        }}
+        >
+        <List items={data}/>
         <CategoriesMenu categories={nonEmptyCategories} />
         <TagsMenu tags={nonEmptyTags} />
       </div>
     </Layout>
   )
 }
-
-export const query = graphql`
-  query {
-    pages: allWpPage {
-      nodes {
-        slug
-        title
-        date
-        nodeType
-        tags {
-          nodes {
-            slug
-          }
-        }
-      }
-    }
-    posts: allWpPost {
-      nodes {
-        slug
-        title
-        date
-        nodeType
-        tags {
-          nodes {
-            slug
-          }
-        }
-      }
-    }
-    tags: allWpTag {
-      nodes {
-        name
-        slug
-        posts {
-          nodes {
-            title
-            slug
-            date
-            nodeType
-          }
-        }
-        pages {
-          nodes {
-            title
-            slug
-            date
-            nodeType
-          }
-        }
-      }
-    }
-    categories: allWpCategory {
-      nodes {
-        name
-        slug
-        posts {
-          nodes {
-            title
-            slug
-            date
-          }
-        }
-        pages {
-          nodes {
-            title
-            slug
-            date
-          }
-        }
-      }
-    }
-  }
-`
