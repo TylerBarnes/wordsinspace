@@ -3,7 +3,6 @@ import {Link } from "gatsby"
 
 const List = (props) => {
   if (!props) return null
-  console.log("props is", props)
   return (
     <main style={{
       alignSelf: 'flex-start',
@@ -65,7 +64,8 @@ const List = (props) => {
           <div
           style={{
           margin: '0 0.2vw',
-          fontSize: '0.8rem'}}> <em>{node.tags.nodes.map((tag) => <span>{tag.slug}, </span>)} </em> 
+          fontSize: '0.8rem'}}> 
+          <em>{node.tags.nodes.map((tag, index) => <span>{index < node.tags.nodes.length-1 ? `${tag.slug}, `.replace('-', ' ') : `${tag.slug}`.replace('-', ' ')}</span>)} </em> 
           </div>
         
         </li>
