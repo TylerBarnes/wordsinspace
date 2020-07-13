@@ -16,7 +16,7 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `https://testingv.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
+        url: `https://testingvi.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
       },
     },
     /**

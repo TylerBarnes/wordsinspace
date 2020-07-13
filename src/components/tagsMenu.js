@@ -1,12 +1,12 @@
 import React, {useMemo} from "react"
-import {Link } from "gatsby" 
-
+import {Link} from "gatsby" 
 
 function filterTags(tags) {
 	return tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 }
 
 const TagsMenu = (props) => {
+	console.log(props.tags)
 	const tags = useMemo(()=> filterTags(props.tags), [props.tags]) 
   
   return (
@@ -16,24 +16,28 @@ const TagsMenu = (props) => {
 			fontSize: '0.9rem',
      }}>
      		Tags
-
-	      {tags.map( tag => (
+	      {tags.map( (tag, index) => (
 					<li 
-						key={tag.name}
+						key={index}
 						style={{
 			      	margin: '10px auto',
             	listStyle: 'none',
 						}}		
 					>
-						<Link to={tag.slug} state={{ fromMain: true }}>
+					<button 
+						style={{
+							margin: '0 0.2vw', 
+              padding: '0.2vh 0.3vw', 
+              fontSize: '0.8rem', 
+              borderRadius: '10px', 
+              border: '1px solid', 
+              textAlign: 'center', 
+				      background: '#000',
+				      color: '#fff'
+				     }}>
 		          {tag.name} 
-		        </Link>
-		        <div>
-		        	{tag.posts.nodes.length > 0 ? ` ${tag.posts.nodes.length} post(s)` : null}
-		        </div>
-		        <div>
-		          {tag.pages.nodes.length > 0 ? ` ${tag.pages.nodes.length} page(s)` : null}
-	          </div>
+		        	<span style={{color: '#aaa', marginLeft: '0.2vw'}}>{tag.posts.nodes.length + tag.pages.nodes.length}</span>
+		        </button>
 					</li>
 	     	))}
      </aside>

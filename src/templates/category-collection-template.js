@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import List from "../components/list"
 import Menu from "../components/menu"
 
-export default function Category({ data, location}) {
+export default function CategoryCollection({ data, location}) {
 
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;
@@ -15,7 +15,7 @@ export default function Category({ data, location}) {
   
   return (
     <Layout>
-      <Menu />
+      <h5>Collection</h5>
       <div 
         style={{
           display: `flex`,
@@ -24,23 +24,7 @@ export default function Category({ data, location}) {
           justifyContent: `flex-start`, 
         }}
         >
-        <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
-        
-        <aside  
-          style={{
-          alignSelf: 'flex-start',
-          textAlign: 'left',
-          width: `40%`,
-          fontSize: '0.9rem',
-         }}>
-            <div style={{
-              marginBottom: '2vh',
-              color: '#ff5236',
-              fontWeight: '600',
-              textTransform: 'uppercase'
-            }}>{category.name}</div>
-          <div><Link to="/" >back</Link></div>
-        </aside>
+        <List items={all} />
       </div>
     </Layout>
   )
