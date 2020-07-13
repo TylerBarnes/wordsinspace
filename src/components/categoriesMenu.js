@@ -13,7 +13,7 @@ const CategoriesMenu = (props) => {
 			width: '10vw'
      }}>
       	Categories
-	      {props.categories.filter(category => category.name === 'Blog' || category.name === 'Publication' || category.name === 'Presentation' || category.name === 'Teaching').map((category,index) => (
+	      {props.categories.map((category,index) => (
 					<li 
 						key={index}
 						style={{

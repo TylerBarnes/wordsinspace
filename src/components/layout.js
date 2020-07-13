@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
           maxWidth: '99%',
           padding: `1rem`,
-          border: '1px solid #ccc'
         }}
       >
         <main>
