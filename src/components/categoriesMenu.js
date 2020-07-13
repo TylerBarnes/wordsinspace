@@ -1,5 +1,5 @@
 import React from "react"
-import {Link } from "gatsby" 
+import {Link} from "gatsby" 
 
 const CategoriesMenu = (props) => {
 	
@@ -10,12 +10,12 @@ const CategoriesMenu = (props) => {
       alignSelf: 'flex-start',
       textAlign: 'left',
 			fontSize: '0.9rem',
-			width: '15vw'
+			width: '10vw'
      }}>
       	Categories
-	      {props.categories.map( category => (
+	      {props.categories.map((category,index) => (
 					<li 
-						key={category.name}
+						key={index}
 						style={{
 			      	margin: '10px auto',
             	listStyle: 'none',

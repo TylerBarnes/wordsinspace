@@ -1,19 +1,19 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Menu from "../components/menu"
 
-export default function Page({ data }) {
+export default function pageViewer({ data }) {
   if(!data) return null
-  
-  const page = data.allWpPage.nodes[0]
+
+  const {title, date, content} = data.allWpPage.nodes[0]
 
   return (
     <Layout>
-      <Menu />
+      <h3>Viewer</h3>
       <div>
-        <h1>{page.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: page.content }} />
+        <h1>{title}</h1>
+        <h4>{date.slice(0,10)}</h4>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </Layout>
   )
@@ -26,11 +26,12 @@ export const query = graphql`
         slug
         title
         content
-        tags {
-          nodes {
-            slug
+        date
+          tags {
+              nodes {
+                  slug
+              }
           }
-        }
       }
     }
   }

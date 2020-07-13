@@ -3,7 +3,6 @@ import React from "react"
 import Layout from "../components/layout"
 import List from "../components/list"
 import TagsMenu from "../components/tagsMenu"
-import Menu from "../components/menu"
 import CategoriesMenu from "../components/categoriesMenu"
 import SEO from "../components/seo"
 
@@ -17,7 +16,7 @@ export default function Home() {
   const tags = useTags();
   const categories = useCategories();
   const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
-  const nonEmptyCategories = categories.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
+  
   return (
     <Layout>
       <SEO title="home" />
@@ -30,8 +29,10 @@ export default function Home() {
         }}
         >
         <List items={data}/>
-        <CategoriesMenu categories={nonEmptyCategories} />
+
+        <CategoriesMenu categories={categories} />
         <TagsMenu tags={nonEmptyTags} />
+        
       </div>
     </Layout>
   )
