@@ -1,39 +1,36 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import Top from "./navigation/top"
 import Browser from "./navigation/browser"
 import Reader from "./navigation/reader"
-import Menu from "./menu"
+import FiltersContainer from "./navigation/filtersContainer"
+import Main from "./main"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
 
-const Layout = ({ children }) => {
-  
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({children }) => {
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />      
-      <Top />
+    <div style={{
+      display: 'flex',
+      flexDirection: 'row nowrap', 
+      alignItems: 'flex-start',
+      justifyContent: 'space-around',
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between', 
+        flexGrow: '1', 
+      }}>
+        <Top />
+        <Main children={children}/>
+      </div>
       <Browser />
       <Reader />
-      <Menu />
-      <div>
-        {children}
-      </div>
-    </>
+      <FiltersContainer />
+    </div>
   )
 }
 

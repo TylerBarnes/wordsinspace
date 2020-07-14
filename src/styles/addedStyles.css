@@ -4,7 +4,7 @@ body {
 }
 
 a {
-  color: #ff5236;
+  color: #000;
   text-decoration: none;
 }
 
@@ -14,19 +14,7 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
   text-decoration: none;
-  font-weight: 500;
-}
-
-label:hover {
-  cursor: pointer;
-  color: #000;
-  font-weight: 500;
-}
-
-input[type='radio'] {
-  filter: saturate(0);
-}
-
-input[type='radio']:hover {
-  cursor: pointer;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
 }

@@ -1,20 +1,23 @@
 import React, {useMemo} from "react"
 
 function filterTags(tags) {
+	if (tags===undefined) return null
+
 	return tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 }
 
 const Tags = (props) => {
-
 	const tags = useMemo(()=> filterTags(props.tags), [props.tags]) 
-  
+
   return (
-     <aside style={{
-      alignSelf: 'flex-start',
-      textAlign: 'left',
-			fontSize: '0.9rem',
-     }}>
-	      {tags.map( (tag, index) => (
+     <div style={{
+	      textAlign: 'left',
+				fontSize: '0.9rem',
+				overflow: 'scroll',
+				margin: '2vh 0',
+				maxHeight: '70vh'
+	     }}>
+	      {tags && tags.map( (tag, index) => (
 					<li 
 						key={index}
 						style={{
@@ -38,7 +41,7 @@ const Tags = (props) => {
 		        </button>
 					</li>
 	     	))}
-     </aside>
+     </div>
    )
 }
 

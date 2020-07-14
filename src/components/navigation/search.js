@@ -3,9 +3,9 @@ import React from "react"
 const Search = (props) => {
 
   return (
-    <div>
-      Search
-    </div>
+    <h4>
+      SEARCH
+    </h4>
    )
 }
 

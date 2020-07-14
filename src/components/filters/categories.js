@@ -3,29 +3,27 @@ import {Link} from "gatsby"
 
 const Categories = (props) => {
 	
-	if(!props) return null
+	if (props.categories===undefined) return null
   
   return (
-     <aside style={{
-      alignSelf: 'flex-start',
-      textAlign: 'left',
-			fontSize: '0.9rem',
-			width: '10vw'
-     }}>
+     <div style={{
+				fontSize: '0.9rem',
+				margin: '2vh 0'
+      }}>
 	      {props.categories.map((category,index) => (
 					<li 
 						key={index}
 						style={{
-			      	margin: '10px auto',
+			      	margin: '2px auto',
             	listStyle: 'none',
 						}}		
 					>
 						<Link to={category.slug} state={{ fromMain: true }}>
-		          {category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
+		          • {category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
 		        </Link>
 					</li>
 	     	))}
-     </aside>
+     </div>
    )
 }
 
