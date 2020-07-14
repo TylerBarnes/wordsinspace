@@ -48,24 +48,13 @@ const List = (props) => {
             margin: '0 0.2vw', 
             fontSize: '0.8rem',
             color: '#aaa',
-          }}> {node.date.slice(0,10)} </div>
-
-          {/*<div style={{
-            margin: '0 0.2vw', 
-            padding: '0 0.2vw', 
-            fontSize: '0.8rem',
-            fontStyle: 'italic',
-            background: node.content ? node.content.length > 1000 ? '#b3efe4' : '#ffe4d3' : '#aaa',
-            color: node.content ? '#000' : '#fff'
-            }}>
-            {node.content ? node.content.length : 'zero'} characters
-           </div>*/}
+          }}> {node.date && node.date.slice(0,10)} </div>
           
           <div
           style={{
           margin: '0 0.2vw',
           fontSize: '0.8rem'}}> 
-          <em>{node.tags.nodes.map((tag, index) => <span>{index < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}</span>)} </em> 
+          <em>{node.tags && node.tags.nodes.map((tag, index_tag) => <span key={index_tag}>{index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}</span>)} </em> 
           </div>
         
         </li>
