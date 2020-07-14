@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "words-in-space",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kalli Retzepi",
   "dependencies": {
     "gatsby": "^2.23.3",
     "gatsby-cli": "^2.12.60",
@@ -17,10 +17,15 @@
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-wordpress-experimental": "^1.0.2",
     "gatsby-transformer-sharp": "^2.5.5",
+    "immer": "^7.0.5",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-use": "^15.3.2",
+    "use-immer": "^0.4.0",
+    "xstate": "^4.11.0",
+    "zustand": "^2.2.3"
   },
   "devDependencies": {
     "prettier": "2.0.5"
@@ -40,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Kallirroi/gatsby-wp-test"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Kallirroi/gatsby-wp-test"
   }
 }

@@ -8,25 +8,15 @@ const Header = ({ siteTitle }) => (
       marginBottom: `0rem`,
     }}
   >
-    <div
+    <Link
+      to="/"
       style={{
-        margin: `0 auto`,
-        maxWidth: '99%',
-        padding: `1rem`,
+        color: `#000`,
+        textDecoration: `none`,
       }}
-      >
-      <h4 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `#000`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h4>
-    </div>
+    >
+      {siteTitle}
+    </Link>
   </header>
 )
 

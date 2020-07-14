@@ -4,8 +4,8 @@ function filterTags(tags) {
 	return tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 }
 
-const TagsMenu = (props) => {
-	console.log(props.tags)
+const Tags = (props) => {
+
 	const tags = useMemo(()=> filterTags(props.tags), [props.tags]) 
   
   return (
@@ -14,7 +14,6 @@ const TagsMenu = (props) => {
       textAlign: 'left',
 			fontSize: '0.9rem',
      }}>
-     		Tags
 	      {tags.map( (tag, index) => (
 					<li 
 						key={index}
@@ -43,4 +42,4 @@ const TagsMenu = (props) => {
    )
 }
 
-export default TagsMenu 
+export default Tags 

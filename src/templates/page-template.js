@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 export default function pageViewer({ data }) {
@@ -8,14 +7,11 @@ export default function pageViewer({ data }) {
   const {title, date, content} = data.allWpPage.nodes[0]
 
   return (
-    <Layout>
-      <h3>Viewer</h3>
-      <div>
-        <h1>{title}</h1>
-        <h4>{date.slice(0,10)}</h4>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
-    </Layout>
+    <div>
+      <h1>{title}</h1>
+      <h4>{date.slice(0,10)}</h4>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+    </div>
   )
 }
 

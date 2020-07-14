@@ -1,7 +1,7 @@
 import React from "react"
 import {Link} from "gatsby" 
 
-const CategoriesMenu = (props) => {
+const Categories = (props) => {
 	
 	if(!props) return null
   
@@ -12,7 +12,6 @@ const CategoriesMenu = (props) => {
 			fontSize: '0.9rem',
 			width: '10vw'
      }}>
-      	Categories
 	      {props.categories.map((category,index) => (
 					<li 
 						key={index}
@@ -30,4 +29,4 @@ const CategoriesMenu = (props) => {
    )
 }
 
-export default CategoriesMenu 
+export default Categories 

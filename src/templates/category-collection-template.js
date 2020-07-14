@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import List from "../components/list"
 
 export default function CategoryCollection({ data, location}) {
@@ -13,7 +12,7 @@ export default function CategoryCollection({ data, location}) {
   if(!location) return null
   
   return (
-    <Layout>
+    <div>
       <h5>Collection</h5>
       <div 
         style={{
@@ -25,7 +24,7 @@ export default function CategoryCollection({ data, location}) {
         >
         <List items={all} />
       </div>
-    </Layout>
+    </div>
   )
 }
 

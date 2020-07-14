@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
 import List from "../components/list"
-import Menu from "../components/menu"
 
 export default function Tag({ data, location}) {
 
@@ -14,8 +12,7 @@ export default function Tag({ data, location}) {
   if(!location) return null
   
   return (
-    <Layout>
-      <Menu />
+    <div>
       <div style={{
             display: `flex`,
             flexDirection: `row`,
@@ -23,7 +20,7 @@ export default function Tag({ data, location}) {
             justifyContent: `flex-start`, 
           }}
       >
-        <List items={all} fromMain={location.state ? location.state.fromMain : false}/>
+        <List items={all}/>
         <aside  
           style={{
           alignSelf: 'flex-start',
@@ -40,7 +37,7 @@ export default function Tag({ data, location}) {
           <div><Link to="/" >back</Link></div>
         </aside>
       </div>
-    </Layout>
+    </div>
   )
 }
 

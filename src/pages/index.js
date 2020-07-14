@@ -1,10 +1,10 @@
 import React from "react"
 
-import Layout from "../components/layout"
 import List from "../components/list"
-import TagsMenu from "../components/tagsMenu"
-import CategoriesMenu from "../components/categoriesMenu"
 import SEO from "../components/seo"
+import Layout from "../components/layout"
+
+import Filters from "../components/navigation/filters"
 
 import {usePosts} from "../components/hooks/usePosts"
 import {usePages} from "../components/hooks/usePages"
@@ -20,20 +20,8 @@ export default function Home() {
   return (
     <Layout>
       <SEO title="home" />
-      <div 
-        style={{
-          display: `flex`,
-          flexDirection: `row`,
-          alignItems: `flex-start`, 
-          justifyContent: `flex-start`, 
-        }}
-        >
-        <List items={data}/>
-
-        <CategoriesMenu categories={categories} />
-        <TagsMenu tags={nonEmptyTags} />
-        
-      </div>
-    </Layout>
+      <List items={data}/>
+      <Filters  categories={categories} tags={nonEmptyTags}/>
+    </Layout >
   )
 }
