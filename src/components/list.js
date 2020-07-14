@@ -34,13 +34,13 @@ const List = (props) => {
             margin: '0 0.2vw', 
             fontSize: '0.8rem',
             color: '#aaa',
-          }}> {node.date.slice(0,10)} </div>
-
+          }}> {node.date && node.date.slice(0,10)} </div>
+          
           <div
           style={{
           margin: '0 0.2vw',
           fontSize: '0.8rem'}}> 
-          <em>{node.tags.nodes.map((tag, index) => <span>{index < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}</span>)} </em> 
+          <em>{node.tags && node.tags.nodes.map((tag, index_tag) => <span key={index_tag}>{index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}</span>)} </em> 
           </div>
         
         </li>

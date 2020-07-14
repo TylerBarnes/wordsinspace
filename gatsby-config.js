@@ -17,6 +17,9 @@ module.exports = {
          * Example : 'https://www.example-site.com/graphql'
          */
         url: `https://testingvi.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
+        schema: {
+          perPage: 50,
+        }
       },
     },
     /**
