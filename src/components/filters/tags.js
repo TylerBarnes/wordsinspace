@@ -17,6 +17,7 @@ const Tags = (props) => {
 				margin: '2vh 0',
 				maxHeight: '70vh'
 	     }}>
+      	<strong>Tags</strong>
 	      {tags && tags.map( (tag, index) => (
 					<li 
 						key={index}

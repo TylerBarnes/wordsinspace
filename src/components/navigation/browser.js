@@ -1,8 +1,10 @@
 import React from "react"
 import {Link} from "gatsby" 
+import {usePosts} from "../hooks/usePosts"
+import {usePages} from "../hooks/usePages"
 
 const Browser = (props) => {
-
+	const data = [...usePages(), ...usePosts()]
   return (
     <div 
 	    style={{

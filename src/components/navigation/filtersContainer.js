@@ -8,15 +8,15 @@ import Tags from "../filters/tags"
 import Categories from "../filters/categories"
 
 const FiltersContainer = (props) => {
-	const [isExpanded, setIsExpanded] = useState(false);
-  
+	const [isExpanded, setIsExpanded] = useState(props.isHomepage);
+
   const tags = useTags();
   const categories = useCategories();
   const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
 
   return (
     <div 
-    	onClick={e=>setIsExpanded(!isExpanded)}
+    	onClick={props.isHomepage ? e => setIsExpanded(!isExpanded) : null}
       style={{
 				border: '1px solid',
 				height: '100vh', 

@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Location, useLocation} from '@reach/router';
 
 import Top from "./navigation/top"
 import Browser from "./navigation/browser"
@@ -10,7 +11,11 @@ import Main from "./main"
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
 
-const Layout = ({children }) => {
+const Layout = ({children}) => {
+  const { href, pathname } = useLocation();
+
+  const isHomepage = pathname === '/' ? false : true
+
   return (
     <div style={{
       display: 'flex',
@@ -29,7 +34,7 @@ const Layout = ({children }) => {
       </div>
       <Browser />
       <Reader />
-      <FiltersContainer />
+      <FiltersContainer isHomepage={isHomepage}/>
     </div>
   )
 }

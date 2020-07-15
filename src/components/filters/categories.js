@@ -10,6 +10,7 @@ const Categories = (props) => {
 				fontSize: '0.9rem',
 				margin: '2vh 0'
       }}>
+      	<strong>Categories</strong>
 	      {props.categories.map((category,index) => (
 					<li 
 						key={index}
@@ -18,8 +19,8 @@ const Categories = (props) => {
             	listStyle: 'none',
 						}}		
 					>
-						<Link to={category.slug} state={{ fromMain: true }}>
-		          • {category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
+						<Link to={`/${category.slug}`} activeStyle={{ color: "red" }} partiallyActive={true}>
+		        	{category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
 		        </Link>
 					</li>
 	     	))}

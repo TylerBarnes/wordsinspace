@@ -4,12 +4,9 @@ import {Link} from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-import {usePosts} from "../components/hooks/usePosts"
-import {usePages} from "../components/hooks/usePages"
 import {useSiteMenuData} from "../components/hooks/useSiteMenuData"
 
 export default function Home() {
-  const data = [...usePages(), ...usePosts()];
   const menuData = useSiteMenuData();
   
   return (
