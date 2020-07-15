@@ -5,6 +5,16 @@ import {usePages} from "../hooks/usePages"
 
 const Browser = (props) => {
 	const data = [...usePages(), ...usePosts()]
+
+	// Home = Browser is collapsed to the right and inactive?
+
+  // Category = Browser is expanded to full width, shows Search
+
+  // Browser + Reader = Browser is expanded to half width, shows Search
+
+  // Reader view = Browser is collapsed to the left, Search is hidden
+
+
   return (
     <div 
 	    style={{

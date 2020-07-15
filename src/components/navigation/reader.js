@@ -3,6 +3,14 @@ import {Link} from "gatsby"
 
 const Reader = (props) => {
 
+	// Home: Reader is collapsed to the right and inactive?
+
+	// Category: Reader is collapsed to the right
+
+	// Browser + Reader: Reader is expanded half width
+
+	// Reader view: Reader is expanded full width
+
   return (
     <div
      style={{
