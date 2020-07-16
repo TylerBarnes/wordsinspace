@@ -1,31 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+
+import Browser from "../layouts/browser"
 import List from "../components/list"
 
-export default function CategoryCollection({ data, location}) {
+export default function CategoryCollection({ data}) {
 
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;
   const posts = category.posts.nodes;
-  const all = [...pages, ...posts];
 
-  if(!location) return null
-  
   return (
-    <Layout>
-      <h5>Collection</h5>
-      <div 
-        style={{
-          display: `flex`,
-          flexDirection: `row`,
-          alignItems: `flex-start`, 
-          justifyContent: `flex-start`, 
-        }}
-        >
-        <List items={all} />
-      </div>
-    </Layout>
+    <Browser>
+      <List items={[...pages, ...posts]}/>
+    </Browser>
   )
 }
 
@@ -41,6 +29,8 @@ export const query = graphql`
             slug
             date
             nodeType
+            content
+            excerpt
             tags {
               nodes {
                 slug
@@ -54,6 +44,7 @@ export const query = graphql`
             slug
             date
             nodeType
+            content
             tags {
               nodes {
                 slug

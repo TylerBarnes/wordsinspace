@@ -11,16 +11,7 @@ export const usePosts = () => {
             date
             nodeType
             content
-            categories {
-              nodes {
-                name
-              }
-            }
-            tags {
-              nodes {
-                slug
-              }
-            }
+            excerpt
           }
         }
       }
