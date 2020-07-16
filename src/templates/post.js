@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Reader from "../components/layouts/reader"
 
 export default function postViewer({ data }) {
   if(!data) return null
@@ -8,7 +8,7 @@ export default function postViewer({ data }) {
   const {title, date, content} = data.allWpPost.nodes[0]
 
   return (
-    <Layout>
+    <Reader>
 
       <div style={{
         width: '60vw',
@@ -33,23 +33,18 @@ export default function postViewer({ data }) {
         
         <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
-    </Layout>
+    </Reader>
   )
 }
 
 export const query = graphql`
-  query getPosts($slug: String!) {
+  query getPost($slug: String!) {
     allWpPost(filter: {slug: { eq: $slug }}) {
       nodes {
         slug
         title
         content
         date
-          tags {
-              nodes {
-                  slug
-              }
-          }      
       }
     }
   }

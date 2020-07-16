@@ -2,15 +2,15 @@ import React from "react"
 import {Link} from "gatsby" 
 
 import SEO from "../components/seo"
-import Layout from "../components/layout"
+import Home from "../components/layouts/home"
 
 import {useSiteMenuData} from "../components/hooks/useSiteMenuData"
 
-export default function Home() {
+export default function HomePage() {
   const menuData = useSiteMenuData();
   
   return (
-    <Layout>
+    <Home>
       <SEO title="home" />
       <div style={{
         textAlign: 'left',
@@ -28,6 +28,6 @@ export default function Home() {
           </Link>
         ))}
         </div>
-    </Layout >
+    </Home >
   )
 }

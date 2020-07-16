@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Browser from "../components/layouts/browser"
 import List from "../components/list"
 
 export default function CategoryCollection({ data, location}) {
@@ -14,7 +14,7 @@ export default function CategoryCollection({ data, location}) {
   if(!location) return null
   
   return (
-    <Layout>
+    <Browser>
       <div 
         style={{
           display: `flex`,
@@ -25,7 +25,7 @@ export default function CategoryCollection({ data, location}) {
         >
         <List items={all} fromCategoryCollection={true} />
       </div>
-    </Layout>
+    </Browser>
   )
 }
 

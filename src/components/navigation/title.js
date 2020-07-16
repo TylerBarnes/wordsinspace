@@ -3,14 +3,6 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Title = ({ siteTitle }) => {
-  
-  // Home = Title is expanded and shows search
-
-  // Category = Title is collapsed to the left, search is hidden
-
-  // Browser+Reader = Title is collapsed to the left, search is hidden
-
-  // Reader = Title is collapsed to the left, search is hidden
 
   return (
     <h4>
@@ -19,6 +11,7 @@ const Title = ({ siteTitle }) => {
         style={{
           color: `#000`,
           textDecoration: `none`,
+          textTransform: 'uppercase',
         }}
       >
         {siteTitle}

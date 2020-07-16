@@ -3,7 +3,6 @@ import {Link } from "gatsby"
 
 const List = (props) => {
   if (!props) return null
-  
   return (
     <div>
       {props.items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (

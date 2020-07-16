@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.posts.nodes.forEach((node) => {
       createPage({
         path: node.slug,
-        component: path.resolve(`./src/templates/post-template.js`),
+        component: path.resolve(`./src/templates/post.js`),
         context: {
           slug: node.slug,
         },
@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.pages.nodes.forEach((node) => {
       createPage({
         path: node.slug,
-        component: path.resolve(`./src/templates/page-template.js`),
+        component: path.resolve(`./src/templates/page.js`),
         context: {
           slug: node.slug,
         },
@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.categories.nodes.forEach((node) => {
       createPage({
         path: node.slug,
-        component: path.resolve(`./src/templates/category-collection-template.js`),
+        component: path.resolve(`./src/templates/category.js`),
         context: {
           slug: node.slug,
         },

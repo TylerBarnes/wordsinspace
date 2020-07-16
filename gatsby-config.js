@@ -19,6 +19,43 @@ module.exports = {
         url: `https://testingvi.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
         schema: {
           perPage: 50,
+        },
+        type: {
+          Post: {
+            limit:
+              process.env.NODE_ENV === `development`
+                ? // Lets just pull 50 posts in development to make it easy on ourselves.
+                  10
+                : // And all posts in production
+                  null,
+          },
+          Page: {
+            limit:
+              process.env.NODE_ENV === `development`
+                ? // Lets just pull 50 posts in development to make it easy on ourselves.
+                  10
+                : // And all posts in production
+                  null,
+          },
+          Comment: {
+            limit: 0,
+          },          
+          MediaItem: {
+            limit: 
+              process.env.NODE_ENV === `development`
+                  ? // Lets just pull 50 posts in development to make it easy on ourselves.
+                    10
+                  : // And all posts in production
+                    null,
+          }, 
+          Tag: {
+            limit: 
+              process.env.NODE_ENV === `development`
+                ? // Lets just pull 50 posts in development to make it easy on ourselves.
+                  50
+                : // And all posts in production
+                  null,
+          }
         }
       },
     },
