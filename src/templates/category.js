@@ -12,16 +12,7 @@ export default function CategoryCollection({ data}) {
 
   return (
     <Browser>
-      <div 
-        style={{
-          display: `flex`,
-          flexDirection: `row`,
-          alignItems: `flex-start`, 
-          justifyContent: `flex-start`, 
-        }}
-        >
-        <List items={[...pages, ...posts]}/>
-      </div>
+      <List items={[...pages, ...posts]}/>
     </Browser>
   )
 }
