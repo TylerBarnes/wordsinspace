@@ -66,9 +66,9 @@ const Browser = ({children}) => {
         {/* ----------------------------Main---------------------------- */}
         <div 
           style={{
-            maxHeight: '95vh',
+            maxHeight: '90vh',
             padding: '20px 10px',
-            overflow: 'scroll'
+            overflow: 'hidden'
           }}>
           {children}
         </div>

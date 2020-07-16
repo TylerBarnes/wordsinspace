@@ -11,7 +11,9 @@ const List = (props) => {
   const handleClick = (e, index) => {
     e.preventDefault();
     setIsClicked(true);
-    setDetails(props.items[index].content)
+    setDetails(`
+      <div>${props.items[index].content}</div>
+    `)
   }  
 
   return (
@@ -21,11 +23,11 @@ const List = (props) => {
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
         justifyContent: 'stretch',
-        width: '80vw',
+        height: '90vh',
       }}>
         <div 
           style={{
-            maxWidth: '50vw',
+            flexGrow: '2',
             height: '90vh',
             overflow: 'scroll',
             padding: '10px'
@@ -81,10 +83,10 @@ const List = (props) => {
         </div>
         <div 
           style={{
-            maxWidth: '50vw',
+            width: isClicked ? '40vw' : '0',
             height: '90vh',
-            overflow: 'scroll',
-            padding: '10px'
+            overflow: 'hidden',
+            padding: '10px 20px'
           }}>
           {isClicked && <div dangerouslySetInnerHTML={{ __html: details }} />}
         </div>

@@ -12,9 +12,10 @@ export default function pageViewer({ data }) {
     <Reader>
 
       <div style={{
-        width: '60vw',
+        width: '70vw',
         margin: '0 auto',
       }}>
+
         <div 
           style={{
             fontSize: '4rem',
@@ -26,10 +27,10 @@ export default function pageViewer({ data }) {
         
         <div style={{
           margin: '1vh 0',
-          fontSize: '2rem',
-          lineHeight: '2rem',
+          fontSize: '1rem',
+          lineHeight: '1rem',
         }}>
-          {date.slice(0,10)}
+          {date.slice(0,4)}
         </div>
         
         <div dangerouslySetInnerHTML={{ __html: content }} />

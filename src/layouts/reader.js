@@ -89,7 +89,7 @@ const Reader = ({children}) => {
           style={{
             maxHeight: '95vh',
             padding: '20px 10px',
-            overflow: 'scroll'
+            overflow: 'scroll',
           }}>
           {children}
         </div>

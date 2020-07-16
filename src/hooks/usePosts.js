@@ -11,6 +11,7 @@ export const usePosts = () => {
             date
             nodeType
             content
+            excerpt
           }
         }
       }
