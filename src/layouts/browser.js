@@ -5,8 +5,8 @@ import PropTypes from "prop-types"
 import {useTitle} from "../hooks/useTitle"
 
 import FiltersContainer from "../components/filtersContainer"
-import Title from "../components/navigation/Title"
-import Search from "../components/navigation/Search"
+import Title from "../components/navigation/title"
+import Search from "../components/navigation/search"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
