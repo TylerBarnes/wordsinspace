@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Browser from "../components/layouts/browser"
+import Browser from "../layouts/browser"
 import List from "../components/list"
 
 export default function CategoryCollection({ data}) {

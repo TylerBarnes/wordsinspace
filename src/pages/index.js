@@ -2,9 +2,9 @@ import React from "react"
 import {Link} from "gatsby" 
 
 import SEO from "../components/seo"
-import Home from "../components/layouts/home"
+import Home from "../layouts/home"
 
-import {useSiteMenuData} from "../components/hooks/useSiteMenuData"
+import {useSiteMenuData} from "../hooks/useSiteMenuData"
 
 export default function HomePage() {
   const menuData = useSiteMenuData();

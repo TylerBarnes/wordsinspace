@@ -15,7 +15,7 @@ const Tags = (props) => {
 				fontSize: '0.9rem',
 				overflow: 'scroll',
 				margin: '2vh 0',
-				maxHeight: '70vh'
+				maxHeight: '70vh',
 	     }}>
       	<strong>Tags</strong>
 	      {tags && tags.map( (tag, index) => (
@@ -28,17 +28,15 @@ const Tags = (props) => {
 					>
 					<button 
 						style={{
-							margin: '0 0.2vw', 
-              padding: '0.2vh 0.3vw', 
+              padding: '2px 5px', 
               fontSize: '0.8rem', 
               borderRadius: '10px', 
               border: '1px solid', 
-              textAlign: 'center', 
-				      background: '#000',
-				      color: '#fff'
+              textAlign: 'center',
+              backgroundColor: '#000',
+              color: "#fff"
 				     }}>
-		          {tag.name} 
-		        	<span style={{color: '#aaa', marginLeft: '0.2vw'}}>{tag.posts.nodes.length + tag.pages.nodes.length}</span>
+		          {tag.name} <span style={{color: '#ccc', marginLeft: '1px'}}>{tag.posts.nodes.length + tag.pages.nodes.length}</span>
 		        </button>
 					</li>
 	     	))}

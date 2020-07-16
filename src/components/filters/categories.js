@@ -8,10 +8,15 @@ const Categories = (props) => {
   return (
      <div style={{
 				fontSize: '0.9rem',
-				margin: '2vh 0'
+				margin: '2vh 0',
       }}>
-      	<strong>Categories</strong>
-      	<div><Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link></div>
+      	
+      	<h4 style={{fontWeight: '600'}}>Categories</h4>
+
+      	<div style={{marginTop: '1vh'}}>
+      		<Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link>
+      	</div>
+	      
 	      {props.categories.map((category,index) => (
 					<li 
 						key={index}

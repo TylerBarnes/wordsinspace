@@ -4,8 +4,8 @@ import {Link} from "gatsby"
 import {useCategories} from "../hooks/useCategories"
 import {useTags} from "../hooks/useTags"
 
-import Tags from "../filters/tags"
-import Categories from "../filters/categories"
+import Tags from "./filters/tags"
+import Categories from "./filters/categories"
 
 const FiltersContainer = (props) => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -29,13 +29,14 @@ const FiltersContainer = (props) => {
           writingMode: isExpanded ? 'default' :'vertical-rl',
           transform: isExpanded ? 'rotate(-90deg)' : 'rotate(180deg)',
           textAlign:  isExpanded ? 'left' : 'right',
-          marginLeft:  isExpanded ? '5px' : '0'
+          marginLeft:  isExpanded ? '5px' : '0',
         }}>
         Index
       </span>
       <div 
         style={{
           display: isExpanded ? 'block' : 'none',
+          margin: '2vh 0'
         }}>
         <Categories categories={categories} />
         <Tags tags={nonEmptyTags} />

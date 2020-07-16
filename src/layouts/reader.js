@@ -1,18 +1,18 @@
 import React from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
+import { Location, useLocation} from '@reach/router';
+
 import {useTitle} from "../hooks/useTitle"
+import Title from "../components/navigation/Title"
 
-import FiltersContainer from "../navigation/filtersContainer"
-import Title from "../navigation/Title"
-import Search from "../navigation/Search"
+import "../styles/layout.css"
+import "../styles/addedStyles.css"
 
-import "../../styles/layout.css"
-import "../../styles/addedStyles.css"
-
-const Browser = ({children}) => {
+const Reader = ({children}) => {
   const title = useTitle();
-
+  const {pathname} = useLocation();
+  
   return (
     <div style={{
       display: 'flex',
@@ -20,20 +20,36 @@ const Browser = ({children}) => {
       alignItems: 'flex-start',
       justifyContent: 'space-around',
     }}>
-      
+
       {/* Left */}
-      <div 
-        style={{
+      <div style={{
         border: '1px solid',
-        alignSelf: 'flex-start',
         height: '100vh', 
         minWidth: '3vw', 
         writingMode: 'vertical-rl',
         transform: 'rotate(180deg)',
+        whiteSpace: 'wrap', 
+        textAlign: 'right',
+        textTransform: 'uppercase',
         padding: '10px',
-        textAlign: 'right'
       }}>
-        <Title siteTitle={title} />      
+        <Title siteTitle={title} />
+      </div>      
+
+
+      {/* Left */}
+      <div style={{
+        border: '1px solid',
+        height: '100vh', 
+        minWidth: '3vw', 
+        writingMode: 'vertical-rl',
+        transform: 'rotate(180deg)',
+        whiteSpace: 'wrap', 
+        textAlign: 'right',
+        textTransform: 'uppercase',
+        padding: '10px',
+      }}>
+        <Link to='/work'>Browser</Link>
       </div>
 
       <div style={{
@@ -53,8 +69,7 @@ const Browser = ({children}) => {
           minHeight: '3vw', 
           textTransform: 'uppercase',
         }}>
-          Browser
-          <Search />
+          <div>Reader</div>
         </div>
 
         {/* Main */}
@@ -66,15 +81,12 @@ const Browser = ({children}) => {
           {children}
         </div>
       </div>
-
-      {/* Right */}
-      <FiltersContainer />
     </div>
   )
 }
 
-Browser.propTypes = {
+Reader.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Browser
+export default Reader

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Reader from "../components/layouts/reader"
+
+import Reader from "../layouts/reader"
 
 export default function postViewer({ data }) {
   if(!data) return null

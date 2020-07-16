@@ -3,11 +3,11 @@ import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import {useTitle} from "../hooks/useTitle"
-import Title from "../navigation/Title"
-import Search from "../navigation/Search"
+import Title from "../components/navigation/Title"
+import Search from "../components/navigation/Search"
 
-import "../../styles/layout.css"
-import "../../styles/addedStyles.css"
+import "../styles/layout.css"
+import "../styles/addedStyles.css"
 
 const Home = ({children}) => {
   const title = useTitle();

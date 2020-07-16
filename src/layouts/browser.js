@@ -1,18 +1,19 @@
 import React from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
-import { Location, useLocation} from '@reach/router';
 
 import {useTitle} from "../hooks/useTitle"
-import Title from "../navigation/Title"
 
-import "../../styles/layout.css"
-import "../../styles/addedStyles.css"
+import FiltersContainer from "../components/navigation/filtersContainer"
+import Title from "../components/navigation/Title"
+import Search from "../components/navigation/Search"
 
-const Reader = ({children}) => {
+import "../styles/layout.css"
+import "../styles/addedStyles.css"
+
+const Browser = ({children}) => {
   const title = useTitle();
-  const {pathname} = useLocation();
-  
+
   return (
     <div style={{
       display: 'flex',
@@ -20,36 +21,20 @@ const Reader = ({children}) => {
       alignItems: 'flex-start',
       justifyContent: 'space-around',
     }}>
-
+      
       {/* Left */}
-      <div style={{
+      <div 
+        style={{
         border: '1px solid',
+        alignSelf: 'flex-start',
         height: '100vh', 
         minWidth: '3vw', 
         writingMode: 'vertical-rl',
         transform: 'rotate(180deg)',
-        whiteSpace: 'wrap', 
-        textAlign: 'right',
-        textTransform: 'uppercase',
         padding: '10px',
+        textAlign: 'right'
       }}>
-        <Title siteTitle={title} />
-      </div>      
-
-
-      {/* Left */}
-      <div style={{
-        border: '1px solid',
-        height: '100vh', 
-        minWidth: '3vw', 
-        writingMode: 'vertical-rl',
-        transform: 'rotate(180deg)',
-        whiteSpace: 'wrap', 
-        textAlign: 'right',
-        textTransform: 'uppercase',
-        padding: '10px',
-      }}>
-        <Link to='/work'>Browser</Link>
+        <Title siteTitle={title} />      
       </div>
 
       <div style={{
@@ -69,7 +54,8 @@ const Reader = ({children}) => {
           minHeight: '3vw', 
           textTransform: 'uppercase',
         }}>
-          <div>Reader</div>
+          Browser
+          <Search />
         </div>
 
         {/* Main */}
@@ -81,12 +67,15 @@ const Reader = ({children}) => {
           {children}
         </div>
       </div>
+
+      {/* Right */}
+      <FiltersContainer />
     </div>
   )
 }
 
-Reader.propTypes = {
+Browser.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Reader
+export default Browser
