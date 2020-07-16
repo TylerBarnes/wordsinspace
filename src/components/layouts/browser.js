@@ -1,6 +1,6 @@
 import React from "react"
+import {Link} from "gatsby" 
 import PropTypes from "prop-types"
-import { Location, useLocation} from '@reach/router';
 import {useTitle} from "../hooks/useTitle"
 
 import FiltersContainer from "../navigation/filtersContainer"
@@ -11,7 +11,6 @@ import "../../styles/layout.css"
 import "../../styles/addedStyles.css"
 
 const Browser = ({children}) => {
-  const { href, pathname } = useLocation();
   const title = useTitle();
 
   return (
@@ -21,7 +20,7 @@ const Browser = ({children}) => {
       alignItems: 'flex-start',
       justifyContent: 'space-around',
     }}>
-
+      
       {/* Left */}
       <div 
         style={{
@@ -31,7 +30,7 @@ const Browser = ({children}) => {
         minWidth: '3vw', 
         writingMode: 'vertical-rl',
         transform: 'rotate(180deg)',
-        padding: '5px',
+        padding: '10px',
         textAlign: 'right'
       }}>
         <Title siteTitle={title} />      
@@ -54,7 +53,7 @@ const Browser = ({children}) => {
           minHeight: '3vw', 
           textTransform: 'uppercase',
         }}>
-          <div>Browser</div>
+          Browser
           <Search />
         </div>
 

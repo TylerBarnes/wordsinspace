@@ -1,6 +1,6 @@
 import React from "react"
+import {Link} from "gatsby" 
 import PropTypes from "prop-types"
-import { Location, useLocation} from '@reach/router';
 
 import {useTitle} from "../hooks/useTitle"
 import Title from "../navigation/Title"
@@ -9,8 +9,7 @@ import Search from "../navigation/Search"
 import "../../styles/layout.css"
 import "../../styles/addedStyles.css"
 
-const Home = ({data,children}) => {
-  const { href, pathname } = useLocation();
+const Home = ({children}) => {
   const title = useTitle();
 
   return (
@@ -63,13 +62,13 @@ const Home = ({data,children}) => {
           whiteSpace: 'wrap', 
           textAlign: 'right',
           textTransform: 'uppercase',
-          padding: '5px',
+          padding: '10px',
         }}>
-        Browser
+       <Link to='/work'>Browser</Link>
       </div>
 
       {/* Right */}
-      <div
+      {/*<div
        style={{
           border: '1px solid',
           height: '100vh', 
@@ -78,10 +77,10 @@ const Home = ({data,children}) => {
           transform: 'rotate(180deg)',
           textAlign: 'right',
           textTransform: 'uppercase',
-          padding: '5px',
+          padding: '10px',
         }}>
         Reader
-      </div>
+      </div>*/}
     </div>
   )
 }

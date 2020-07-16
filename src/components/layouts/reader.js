@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 import { Location, useLocation} from '@reach/router';
 
@@ -9,9 +10,9 @@ import "../../styles/layout.css"
 import "../../styles/addedStyles.css"
 
 const Reader = ({children}) => {
-  const { href, pathname } = useLocation();
   const title = useTitle();
-
+  const {pathname} = useLocation();
+  
   return (
     <div style={{
       display: 'flex',
@@ -30,9 +31,25 @@ const Reader = ({children}) => {
         whiteSpace: 'wrap', 
         textAlign: 'right',
         textTransform: 'uppercase',
-        padding: '5px',
+        padding: '10px',
       }}>
         <Title siteTitle={title} />
+      </div>      
+
+
+      {/* Left */}
+      <div style={{
+        border: '1px solid',
+        height: '100vh', 
+        minWidth: '3vw', 
+        writingMode: 'vertical-rl',
+        transform: 'rotate(180deg)',
+        whiteSpace: 'wrap', 
+        textAlign: 'right',
+        textTransform: 'uppercase',
+        padding: '10px',
+      }}>
+        <Link to='/work'>Browser</Link>
       </div>
 
       <div style={{
@@ -41,14 +58,18 @@ const Reader = ({children}) => {
         justifyContent: 'space-between', 
         flexGrow: '1', 
       }}>
-
         {/* Top */}
-        <div
+        <div 
           style={{
-            border: '1px solid',
-            minHeight: '3vw', 
-          }}>
-          Reader
+          border: '1px solid',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between', 
+          padding: '10px',
+          minHeight: '3vw', 
+          textTransform: 'uppercase',
+        }}>
+          <div>Reader</div>
         </div>
 
         {/* Main */}

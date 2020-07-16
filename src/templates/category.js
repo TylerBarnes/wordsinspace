@@ -4,15 +4,12 @@ import { graphql } from "gatsby"
 import Browser from "../components/layouts/browser"
 import List from "../components/list"
 
-export default function CategoryCollection({ data, location}) {
+export default function CategoryCollection({ data}) {
 
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;
   const posts = category.posts.nodes;
-  const all = [...pages, ...posts];
 
-  if(!location) return null
-  
   return (
     <Browser>
       <div 
@@ -23,7 +20,7 @@ export default function CategoryCollection({ data, location}) {
           justifyContent: `flex-start`, 
         }}
         >
-        <List items={all} fromCategoryCollection={true} />
+        <List items={[...pages, ...posts]}/>
       </div>
     </Browser>
   )

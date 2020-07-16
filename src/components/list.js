@@ -15,7 +15,7 @@ const List = (props) => {
             width: '80%'
           }}>
           
-          <Link to={props.fromCategoryCollection ? `../${node.slug}`: node.slug}> 
+          <Link to={`../${node.slug}`}> 
             <h1>{node.title}</h1>
           </Link>              
           
@@ -42,7 +42,9 @@ const List = (props) => {
             fontSize: '0.8rem'}}
             > 
             {node.tags && node.tags.nodes.map((tag, index_tag) => 
-              <span key={index_tag}>{index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}</span>
+              <span key={index_tag}>
+                {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
+              </span>
             )}
           </div>
         

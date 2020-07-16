@@ -8,7 +8,7 @@ import Tags from "../filters/tags"
 import Categories from "../filters/categories"
 
 const FiltersContainer = (props) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const tags = useTags();
   const categories = useCategories();
@@ -28,9 +28,8 @@ const FiltersContainer = (props) => {
         style={{
           writingMode: isExpanded ? 'default' :'vertical-rl',
           transform: isExpanded ? 'rotate(-90deg)' : 'rotate(180deg)',
-          whiteSpace: 'wrap', 
           textAlign:  isExpanded ? 'left' : 'right',
-          marginLeft:  isExpanded ? '10px' : '0'
+          marginLeft:  isExpanded ? '5px' : '0'
         }}>
         Index
       </span>
