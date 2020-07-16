@@ -29,6 +29,7 @@ export const query = graphql`
             slug
             date
             nodeType
+            content
             tags {
               nodes {
                 slug
@@ -42,6 +43,7 @@ export const query = graphql`
             slug
             date
             nodeType
+            content
             tags {
               nodes {
                 slug

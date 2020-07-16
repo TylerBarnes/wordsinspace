@@ -1,11 +1,13 @@
 import React, {useState} from "react"
+import { useLocation } from "@reach/router"
 import {Link } from "gatsby" 
 
 const List = (props) => {
 
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
-
+  const {pathname} = useLocation();
+  
   const handleClick = (e, index) => {
     e.preventDefault();
     setIsClicked(true);
@@ -18,15 +20,15 @@ const List = (props) => {
         display: 'flex',
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
-        justifyContent: 'space-evenly',
-        width: '80vw'
+        justifyContent: 'stretch',
+        width: '80vw',
       }}>
         <div 
           style={{
-            alignSelf: 'flex-start',
-            width: isClicked ? '30vw' : '60vw',
+            maxWidth: '50vw',
             height: '90vh',
             overflow: 'scroll',
+            padding: '10px'
           }}>
 
           {props.items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
@@ -79,10 +81,10 @@ const List = (props) => {
         </div>
         <div 
           style={{
-            alignSelf: 'flex-end',
-            width: isClicked ? '30vw' : '0vw',
+            maxWidth: '50vw',
             height: '90vh',
             overflow: 'scroll',
+            padding: '10px'
           }}>
           {isClicked && <div dangerouslySetInnerHTML={{ __html: details }} />}
         </div>
