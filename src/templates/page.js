@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Reader from "../layouts/reader"
 
-export default function pageViewer({ data }) {
+export default function pageTemplate({ data }) {
   if(!data) return null
 
   const {title, date, content} = data.allWpPage.nodes[0]

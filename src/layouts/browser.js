@@ -1,12 +1,13 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
 import {useTitle} from "../hooks/useTitle"
+import {useCategories} from "../hooks/useCategories"
 
 import FiltersContainer from "../components/filtersContainer"
-import Title from "../components/navigation/title"
-import Search from "../components/navigation/search"
+import Title from "../components/title"
+import Search from "../components/search"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
@@ -14,6 +15,22 @@ import "../styles/addedStyles.css"
 const Browser = ({children}) => {
   const title = useTitle();
   const [isHovered, setIsHovered] = useState(false);
+
+  const categories = useCategories()
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+
+  const handleSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
+  }
+  console.log(searchTerm)
+
+  // useEffect(() => {
+  //   const results = categories.filter(category => {
+  //     return category.name.toLowerCase().startsWith(searchTerm)
+  //   })
+  //   setSearchResults(results)
+  // }, [searchTerm])
 
   return (
     <div style={{
@@ -60,7 +77,7 @@ const Browser = ({children}) => {
             textTransform: 'uppercase',
           }}>
           Browser
-          <Search />
+          <Search onSearch={handleSearch} />
         </div>
 
         {/* ----------------------------Main---------------------------- */}

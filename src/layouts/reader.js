@@ -3,7 +3,7 @@ import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import {useTitle} from "../hooks/useTitle"
-import Title from "../components/navigation/title"
+import Title from "../components/title"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"

@@ -6,7 +6,7 @@ import Home from "../layouts/home"
 const NotFoundPage = () => (
   <Home>
     <SEO title="404: Not found" />
-    <h3>NOT FOUND</h3>
+    <h2>NOT FOUND</h2>
     <p>Oops. This URL doesn't go anywhere. Oh well, there are worse things in life.</p>
   </Home>
 )

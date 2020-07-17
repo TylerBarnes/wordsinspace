@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Reader from "../layouts/reader"
 
-export default function postViewer({ data }) {
+export default function postTemplate({ data }) {
   if(!data) return null
 
   const {title, date, content} = data.allWpPost.nodes[0]

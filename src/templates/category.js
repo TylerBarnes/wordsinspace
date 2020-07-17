@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Browser from "../layouts/browser"
 import List from "../components/list"
 
-export default function CategoryCollection({data}) {
+export default function CategoryTemplate({data}) {
   
   if(!data) return null
 

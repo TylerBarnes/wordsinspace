@@ -1,13 +1,11 @@
 import React, {useState} from "react"
-import { useLocation } from "@reach/router"
 import PropTypes from "prop-types"
-import {Link } from "gatsby" 
+import {Link} from "gatsby" 
 
 const List = ({items}) => {
 
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
-  const {pathname} = useLocation();
   
   const handleClick = (e, index) => {
     e.preventDefault();
@@ -26,6 +24,8 @@ const List = ({items}) => {
         justifyContent: 'stretch',
         height: '90vh',
       }}>
+      
+        {/* ---------------- LEFT SIDE LIST ---------------- */}
         <div 
           style={{
             flexGrow: '2',
@@ -33,7 +33,6 @@ const List = ({items}) => {
             overflow: 'scroll',
             padding: '10px'
           }}>
-
           {items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
             <li 
               key={index}
@@ -81,6 +80,8 @@ const List = ({items}) => {
             </li>
           ))}
         </div>
+
+        {/* ---------------- RIGHT SIDE PREVIEW ---------------- */}
         <div 
           style={{
             width: isClicked ? '40vw' : '0',
