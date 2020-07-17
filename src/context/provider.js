@@ -1,14 +1,14 @@
-import React, {useState, createContext} from 'react'
+import React, {useState} from 'react'
 
-export const myContext = React.createContext(null)
+export const myContext = React.createContext();
 
 const Provider = props => {
-  const [isDark, setTheme] = useState(false);
+	const [searchTerm, setSearchTerm] = useState('e');
 
   return (
     <myContext.Provider value={{
-      isDark,
-      changeTheme: () => setTheme(!isDark)
+      searchTerm,
+      updateSearch: _searchTerm => setSearchTerm(_searchTerm)
     }}>
       {props.children}
     </myContext.Provider>

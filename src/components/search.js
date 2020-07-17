@@ -1,21 +1,26 @@
-import React, {useState} from "react"
+import React from "react"
+import { myContext } from '../context/provider';
 
-const Search = ({onSearch}) => {
-  const [searchTerm, setSearchTerm] = useState('')
+const Search = () => {
 
-  const handleChange = (e) => {
-  	e.preventDefault(); 
-  	setSearchTerm(e.target.value)
+  const handleChange = (e, context) => {
+    e.preventDefault()
+    context.updateSearch(e.target.value)
+    console.log(context)
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="SEARCH"
-        onChange={handleChange}
-      />
-    </div>
+    <myContext.Consumer>
+      {context => (
+        <React.Fragment>
+          <input
+            type="text"
+            placeholder="SEARCH"
+            onChange={e=>handleChange(e,context)}
+          />
+        </React.Fragment>
+      )}
+    </myContext.Consumer>
    )
 }
 

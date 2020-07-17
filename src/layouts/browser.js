@@ -61,7 +61,7 @@ const Browser = ({children}) => {
             textTransform: 'uppercase',
           }}>
           Browser
-          <Search onSearch={handleSearch} />
+          <Search  />
         </div>
 
         {/* ----------------------------Main---------------------------- */}
