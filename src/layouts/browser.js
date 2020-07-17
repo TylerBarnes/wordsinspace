@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
@@ -15,22 +15,6 @@ import "../styles/addedStyles.css"
 const Browser = ({children}) => {
   const title = useTitle();
   const [isHovered, setIsHovered] = useState(false);
-
-  const categories = useCategories()
-  const [searchTerm, setSearchTerm] = useState('')
-  const [searchResults, setSearchResults] = useState([])
-
-  const handleSearch = (searchTerm) => {
-    setSearchTerm(searchTerm);
-  }
-  console.log(searchTerm)
-
-  // useEffect(() => {
-  //   const results = categories.filter(category => {
-  //     return category.name.toLowerCase().startsWith(searchTerm)
-  //   })
-  //   setSearchResults(results)
-  // }, [searchTerm])
 
   return (
     <div style={{

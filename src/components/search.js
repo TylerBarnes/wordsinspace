@@ -1,10 +1,11 @@
-import React from "react"
+import React, {useState} from "react"
 
 const Search = ({onSearch}) => {
+  const [searchTerm, setSearchTerm] = useState('')
 
   const handleChange = (e) => {
   	e.preventDefault(); 
-  	onSearch(e.target.value)
+  	setSearchTerm(e.target.value)
   }
 
   return (
