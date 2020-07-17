@@ -6,7 +6,6 @@ const Search = () => {
   const handleChange = (e, context) => {
     e.preventDefault()
     context.updateSearch(e.target.value)
-    console.log(context)
   }
 
   return (
