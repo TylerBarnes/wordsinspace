@@ -1,18 +1,11 @@
 import React, {useState} from "react"
 import {Link} from "gatsby" 
 
-import {useCategories} from "../hooks/useCategories"
-import {useTags} from "../hooks/useTags"
-
 import Tags from "./filters/tags"
 import Categories from "./filters/categories"
 
-const FiltersContainer = (props) => {
+const FiltersContainer = () => {
   const [isExpanded, setIsExpanded] = useState(true);
-
-  const tags = useTags();
-  const categories = useCategories();
-  const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0))
 
   return (
     <div 
@@ -38,8 +31,8 @@ const FiltersContainer = (props) => {
           display: isExpanded ? 'block' : 'none',
           margin: '2vh 0'
         }}>
-        <Categories categories={categories} />
-        <Tags tags={nonEmptyTags} />
+        <Categories />
+        <Tags />
       </div>
     </div>
    )

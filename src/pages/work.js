@@ -14,6 +14,7 @@ const Work = () => {
 	
 	return (
 	  <Browser>
+      <SEO title="work" />
       <List items={[...pages, ...posts]}/>
     </Browser>
 	)

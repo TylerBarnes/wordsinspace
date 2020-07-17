@@ -1,10 +1,11 @@
 import React from "react"
 import {Link} from "gatsby" 
+import {useCategories} from "../../hooks/useCategories"
 
-const Categories = (props) => {
-	
-	if (props.categories===undefined) return null
+const Categories = () => {
   
+  const categories = useCategories();
+
   return (
      <div style={{
 				fontSize: '0.9rem',
@@ -17,7 +18,7 @@ const Categories = (props) => {
       		<Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link>
       	</div>
 	      
-	      {props.categories.map((category,index) => (
+	      {categories.map((category,index) => (
 					<li 
 						key={index}
 						style={{

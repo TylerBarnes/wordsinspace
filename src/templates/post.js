@@ -29,7 +29,7 @@ export default function postViewer({ data }) {
           fontSize: '1rem',
           lineHeight: '1rem',
         }}>
-          {date.slice(0,4)}
+          {date && date.slice(0,4)}
         </div>
         
         <div dangerouslySetInnerHTML={{ __html: content }} />

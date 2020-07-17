@@ -1,13 +1,10 @@
-import React, {useMemo} from "react"
+import React from "react"
+import {useTags} from "../../hooks/useTags"
 
-function filterTags(tags) {
-	if (tags===undefined) return null
+const Tags = () => {
 
-	return tags.sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
-}
-
-const Tags = (props) => {
-	const tags = useMemo(()=> filterTags(props.tags), [props.tags]) 
+  const tags = useTags();
+  const nonEmptyTags = tags.filter(node => (node.pages.nodes.length > 0 || node.posts.nodes.length > 0)).sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 
   return (
      <div style={{
@@ -18,7 +15,7 @@ const Tags = (props) => {
 				maxHeight: '70vh',
 	     }}>
       	<strong>Tags</strong>
-	      {tags && tags.map( (tag, index) => (
+	      {nonEmptyTags && nonEmptyTags.map( (tag, index) => (
 					<li 
 						key={index}
 						style={{

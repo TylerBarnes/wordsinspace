@@ -1,8 +1,9 @@
 import React, {useState} from "react"
 import { useLocation } from "@reach/router"
+import PropTypes from "prop-types"
 import {Link } from "gatsby" 
 
-const List = (props) => {
+const List = ({items}) => {
 
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
@@ -12,7 +13,7 @@ const List = (props) => {
     e.preventDefault();
     setIsClicked(true);
     setDetails(`
-      <div>${props.items[index].content}</div>
+      <div>${items[index].content}</div>
     `)
   }  
 
@@ -33,7 +34,7 @@ const List = (props) => {
             padding: '10px'
           }}>
 
-          {props.items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
+          {items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
             <li 
               key={index}
               style={{
@@ -91,6 +92,15 @@ const List = (props) => {
         </div>
     </div>
    )
+}
+
+
+List.propTypes = {
+  items: PropTypes.array,
+}
+
+List.defaultProps = {
+  items: [],
 }
 
 export default List

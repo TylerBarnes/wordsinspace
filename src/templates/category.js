@@ -4,7 +4,9 @@ import { graphql } from "gatsby"
 import Browser from "../layouts/browser"
 import List from "../components/list"
 
-export default function CategoryCollection({ data}) {
+export default function CategoryCollection({data}) {
+  
+  if(!data) return null
 
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;

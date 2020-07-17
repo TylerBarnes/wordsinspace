@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 
 import {useTitle} from "../hooks/useTitle"
 import Title from "../components/navigation/title"
-import Search from "../components/navigation/search"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
@@ -39,7 +38,6 @@ const Home = ({children}) => {
             minHeight: '3vw', 
           }}>
           <Title siteTitle={title} />      
-          <Search />
         </div>
 
         {/* ----------------------------Main---------------------------- */}
