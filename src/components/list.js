@@ -32,6 +32,7 @@ const List = ({items}) => {
             overflow: 'scroll',
             padding: '10px'
           }}>
+          Search results: {items.length}
           {items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
             <li 
               key={index}

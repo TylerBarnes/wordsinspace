@@ -1,5 +1,5 @@
 import React from "react"
-import { myContext } from '../context/provider';
+import { searchContext } from '../context/provider';
 
 const Search = () => {
 
@@ -9,7 +9,7 @@ const Search = () => {
   }
 
   return (
-    <myContext.Consumer>
+    <searchContext.Consumer>
       {context => (
         <React.Fragment>
           <input
@@ -19,7 +19,7 @@ const Search = () => {
           />
         </React.Fragment>
       )}
-    </myContext.Consumer>
+    </searchContext.Consumer>
    )
 }
 

@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 
-export const myContext = React.createContext();
+export const searchContext = React.createContext();
 
 const Provider = props => {
-	const [searchTerm, setSearchTerm] = useState('e');
+	const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <myContext.Provider value={{
+    <searchContext.Provider value={{
       searchTerm,
       updateSearch: _searchTerm => setSearchTerm(_searchTerm)
     }}>
       {props.children}
-    </myContext.Provider>
+    </searchContext.Provider>
   )
 };
 
