@@ -22,13 +22,18 @@ const Search = () => {
     <searchContext.Consumer>
       {context => (
         <React.Fragment>
+          <div>
           <input
+            style={{
+              width: '10vw'
+            }}
             type="text"
             placeholder="SEARCH"
             onFocus={e=>handleFocus(e,context)}
             onBlur={e=>handleBlur(e,context)}
             onChange={e=>handleChange(e,context)}
           />
+          </div>
         </React.Fragment>
       )}
     </searchContext.Consumer>

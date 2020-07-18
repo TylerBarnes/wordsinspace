@@ -60,7 +60,7 @@ const Browser = ({children}) => {
             minHeight: '3vw', 
             textTransform: 'uppercase',
           }}>
-          Browser
+          <div>Browser</div>
           <Search  />
         </div>
 

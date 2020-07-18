@@ -1,5 +1,6 @@
 import React, {useState, useMemo} from "react"
 import PropTypes from "prop-types"
+import {useLocation} from '@reach/router'
 import {Link} from "gatsby" 
 
 function doSearch(arr, string) {
@@ -11,7 +12,7 @@ function doSearch(arr, string) {
 }
 
 const List = ({searchTerm, searchInfoVisible, items}) => {
-
+  const location = useLocation();
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
   const searchResults = useMemo( ()=> doSearch(items, searchTerm), [items, searchTerm])
@@ -42,8 +43,15 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
             padding: '10px'
           }}>
 
-          {searchInfoVisible ? `${searchResults.length} items` : null}
-          
+          {searchInfoVisible && searchTerm.length > 0 && 
+          <div 
+            style={{
+              padding: '1vh 0'
+            }}>
+            Results for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
+          </div>
+          }
+
           {searchResults.map((node, index) => (
             <li 
               key={index}
