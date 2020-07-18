@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-const List = ({items}) => {
+const List = ({items, searchInfoVisible}) => {
 
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
@@ -32,7 +32,9 @@ const List = ({items}) => {
             overflow: 'scroll',
             padding: '10px'
           }}>
-          Search results: {items.length}
+
+          {searchInfoVisible ? `Search results: ${items.length}` : null}
+          
           {items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
             <li 
               key={index}

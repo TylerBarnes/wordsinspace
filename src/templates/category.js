@@ -3,19 +3,26 @@ import { graphql } from "gatsby"
 
 import Browser from "../layouts/browser"
 import List from "../components/list"
+import {searchContext} from '../context/provider'
 
 export default function CategoryTemplate({data}) {
-  
   if(!data) return null
-
+    
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;
   const posts = category.posts.nodes;
+  const items=[...pages, ...posts]
 
   return (
-    <Browser>
-      <List items={[...pages, ...posts]}/>
-    </Browser>
+    <searchContext.Consumer>
+      {context => (
+        <React.Fragment>
+          <Browser>
+            <List items={items.filter(item => item.content && item.content.includes(context.searchTerm))}/>
+          </Browser>
+        </React.Fragment>
+      )}
+    </searchContext.Consumer>
   )
 }
 

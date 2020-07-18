@@ -10,11 +10,11 @@ export default function postTemplate({ data }) {
 
   return (
     <Reader>
-
-      <div style={{
-        width: '70vw',
-        margin: '0 auto',
-      }}>
+      <div 
+        style={{
+          width: '70vw',
+          margin: '0 auto',
+        }}>
         <div 
           style={{
             fontSize: '4rem',
@@ -23,12 +23,12 @@ export default function postTemplate({ data }) {
           }}>
           {title}
         </div>
-        
-        <div style={{
-          margin: '1vh 0',
-          fontSize: '1rem',
-          lineHeight: '1rem',
-        }}>
+        <div 
+          style={{
+            margin: '1vh 0',
+            fontSize: '1rem',
+            lineHeight: '1rem',
+          }}>
           {date && date.slice(0,4)}
         </div>
         

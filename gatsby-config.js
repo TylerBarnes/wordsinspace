@@ -16,47 +16,47 @@ module.exports = {
          * The full URL of the WordPress site's GraphQL API.
          * Example : 'https://www.example-site.com/graphql'
          */
-        url: `https://testingvi.wordsinspace.net/graphql`, //  https://wordsinspace.net/shannon/graphql 
+        url: `http://localhost:8888/shannon/graphql`, //  https://testingvi.wordsinspace.net/graphql 
         schema: {
           perPage: 50,
         },
-        type: {
-          Post: {
-            limit:
-              process.env.NODE_ENV === `development`
-                ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  10
-                : // And all posts in production
-                  null,
-          },
-          Page: {
-            limit:
-              process.env.NODE_ENV === `development`
-                ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  10
-                : // And all posts in production
-                  null,
-          },
-          Comment: {
-            limit: 0,
-          },          
-          MediaItem: {
-            limit: 
-              process.env.NODE_ENV === `development`
-                  ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                    10
-                  : // And all posts in production
-                    null,
-          }, 
-          Tag: {
-            limit: 
-              process.env.NODE_ENV === `development`
-                ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                  50
-                : // And all posts in production
-                  null,
-          }
-        }
+        // type: {
+        //   Post: {
+        //     limit:
+        //       process.env.NODE_ENV === `development`
+        //         ? // Lets just pull 50 posts in development to make it easy on ourselves.
+        //           10
+        //         : // And all posts in production
+        //           null,
+        //   },
+        //   Page: {
+        //     limit:
+        //       process.env.NODE_ENV === `development`
+        //         ? // Lets just pull 50 posts in development to make it easy on ourselves.
+        //           10
+        //         : // And all posts in production
+        //           null,
+        //   },
+        //   Comment: {
+        //     limit: 0,
+        //   },          
+        //   MediaItem: {
+        //     limit: 
+        //       process.env.NODE_ENV === `development`
+        //           ? // Lets just pull 50 posts in development to make it easy on ourselves.
+        //             10
+        //           : // And all posts in production
+        //             null,
+        //   }, 
+        //   Tag: {
+        //     limit: 
+        //       process.env.NODE_ENV === `development`
+        //         ? // Lets just pull 50 posts in development to make it easy on ourselves.
+        //           50
+        //         : // And all posts in production
+        //           null,
+        //   }
+        // }
       },
     },
     /**

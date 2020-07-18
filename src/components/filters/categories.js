@@ -27,7 +27,7 @@ const Categories = () => {
 						}}		
 					>
 						<Link to={`/${category.slug}`} activeStyle={{ color: "red" }} partiallyActive={true}>
-		        	{category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
+		        	{category.name}
 		        </Link>
 					</li>
 	     	))}
