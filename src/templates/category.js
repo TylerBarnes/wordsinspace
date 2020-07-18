@@ -18,7 +18,11 @@ export default function CategoryTemplate({data}) {
       {context => (
         <React.Fragment>
           <Browser>
-            <List items={items.filter(item => item.content && item.content.includes(context.searchTerm))}/>
+            <List 
+              searchInfoVisible={context.searchInfoVisible} 
+              searchTerm={context.searchTerm}
+              items={items}
+              />
           </Browser>
         </React.Fragment>
       )}

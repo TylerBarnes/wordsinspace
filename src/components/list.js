@@ -1,12 +1,21 @@
-import React, {useState} from "react"
+import React, {useState, useMemo} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-const List = ({items, searchInfoVisible}) => {
+function doSearch(arr, string) {
+  if (!arr) return []
+  
+  let results = arr.filter(item=>item.content && item.content.includes(string) || item.title.includes(string)).sort((a, b) => a.date < b.date ? 1 : -1)
+
+  return results
+}
+
+const List = ({searchTerm, searchInfoVisible, items}) => {
 
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
-  
+  const searchResults = useMemo( ()=> doSearch(items, searchTerm), [items, searchTerm])
+
   const handleClick = (e, index) => {
     e.preventDefault();
     setIsClicked(true);
@@ -33,9 +42,9 @@ const List = ({items, searchInfoVisible}) => {
             padding: '10px'
           }}>
 
-          {searchInfoVisible ? `Search results: ${items.length}` : null}
+          {searchInfoVisible ? `${searchResults.length} items` : null}
           
-          {items.sort((a, b) => a.date < b.date ? 1 : -1).map((node, index) => (
+          {searchResults.map((node, index) => (
             <li 
               key={index}
               style={{

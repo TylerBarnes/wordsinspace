@@ -20,7 +20,11 @@ const Work = () => {
         <React.Fragment>
 				  <Browser>
 			      <SEO title="work" />
-			      <List searchInfoVisible={context.searchInfoVisible} items={items.filter(item => item.content && item.content.includes(context.searchTerm))}/>
+			      <List 
+              searchInfoVisible={context.searchInfoVisible} 
+              searchTerm={context.searchTerm}
+              items={items}
+			      	/>
 			    </Browser>
 	      </React.Fragment>
       )}
