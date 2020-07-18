@@ -5,18 +5,12 @@ module.exports = {
     author: `kallirroi`,
   },
   plugins: [
-    /*
-     * Gatsby's data processing layer begins with “source”
-     * plugins. Here the site sources its data from WordPress.
-     */
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        /*
-         * The full URL of the WordPress site's GraphQL API.
-         * Example : 'https://www.example-site.com/graphql'
-         */
-        url: `http://localhost:8888/shannon/graphql`, //  https://testingvi.wordsinspace.net/graphql 
+        url: process.env.NODE_ENV === `development`
+            ? `http://localhost:8888/shannon/graphql`
+            : `https://testingvi.wordsinspace.net/graphql`,
         schema: {
           perPage: 50,
         },
@@ -95,12 +89,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
-        // A selector to set react-modal's app root to, default is `#___gatsby`
-        // See http://reactcommunity.org/react-modal/accessibility/#app-element
         appElement: '#___gatsby',
-
-        // Object of props that will be passed to the react-modal container
-        // See http://reactcommunity.org/react-modal/#usage
         modalProps: { },
       }
     }
