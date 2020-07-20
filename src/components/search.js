@@ -28,7 +28,7 @@ const Search = () => {
               width: '10vw'
             }}
             type="text"
-            placeholder="SEARCH"
+            placeholder="SEARCH 🔍"
             onFocus={e=>handleFocus(e,context)}
             onBlur={e=>handleBlur(e,context)}
             onChange={e=>handleChange(e,context)}

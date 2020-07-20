@@ -1,27 +1,72 @@
 import React, {useState, useMemo} from "react"
 import PropTypes from "prop-types"
-import {useLocation} from '@reach/router'
 import {Link} from "gatsby" 
+import {useLocation} from '@reach/router'
 
-function doSearch(arr, string) {
-  if (!arr) return []
-  
-  let results = arr.filter(item=>item.content && item.content.includes(string) || item.title.includes(string)).sort((a, b) => a.date < b.date ? 1 : -1)
+import {useQuery} from '@apollo/react-hooks'
+import gql from 'graphql-tag'
 
-  return results
+// The GraphQL query containing the search term, will be sent to Apollo
+const SEARCH_POSTS_QUERY = gql`
+  query MySearchQuery($searchTerm: String!) {
+  pageTitle:allWpPage(filter: {title:{regex: $searchTerm}}) {
+    nodes {
+      slug
+       id
+      ... on WpPage {
+        title
+      }
+    }
+  }
+  pageContent:allWpPage(filter: {content:{regex: $searchTerm}}) {
+    nodes {
+      slug
+       id
+      ... on WpPage {
+        title
+      }
+    }
+  }
+  postTitle: allWpPost(filter: {title:{regex: $searchTerm}}) {
+    nodes {
+      slug
+       id
+      ... on WpPost {
+        title
+      }
+    }
+  }
+  postContent: allWpPost(filter: {content:{regex: $searchTerm}}) {
+    nodes {
+      slug
+       id
+      ... on WpPost {
+        title
+      }
+    }
+  }
 }
+`
+
 
 const List = ({searchTerm, searchInfoVisible, items}) => {
+  
   const location = useLocation();
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
-  const searchResults = useMemo( ()=> doSearch(items, searchTerm), [items, searchTerm])
+  console.log('before', items)
+
+  const { data: searchResults } = useQuery(SEARCH_POSTS_QUERY, {
+    variables: { searchTerm: searchTerm },
+  })
+
+  console.log('after', searchResults)
 
   const handleClick = (e, index) => {
     e.preventDefault();
     setIsClicked(true);
     setDetails(`
-      <div>${items[index].content}</div>
+      <div>${searchResults[index].content}</div>
     `)
   }  
 

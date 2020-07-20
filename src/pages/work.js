@@ -5,7 +5,6 @@ import {usePosts} from "../hooks/usePosts"
 import {searchContext} from '../context/provider'
 
 import Browser from "../layouts/browser"
-
 import SEO from "../components/seo"
 import List from "../components/list"
 
