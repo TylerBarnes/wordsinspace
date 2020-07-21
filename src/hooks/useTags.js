@@ -7,6 +7,7 @@ export const useTags = () => {
         allWpTag {
           nodes {
             name
+            id
             slug
             posts {
               nodes {

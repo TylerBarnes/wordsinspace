@@ -20,6 +20,7 @@ const Home = ({children}) => {
         alignItems: 'flex-start',
         justifyContent: 'space-around',
       }}>
+      {/* ---------------------------Top+Main---------------------------- */}
       <div 
         style={{
           display: 'flex',
@@ -27,20 +28,18 @@ const Home = ({children}) => {
           justifyContent: 'space-between', 
           flexGrow: '1', 
         }}>
-        {/* ----------------------------Top---------------------------- */}
         <div 
-            style={{
-            border: '1px solid',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between', 
-            padding: '10px',
-            minHeight: '3vw', 
-          }}>
+          style={{
+          border: '1px solid',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between', 
+          padding: '10px',
+          minHeight: '3vw', 
+        }}>
           <Title siteTitle={title} />      
         </div>
 
-        {/* ----------------------------Main---------------------------- */}
         <div 
           style={{
             maxHeight: '95vh',
@@ -71,21 +70,6 @@ const Home = ({children}) => {
          Browser
         </div>
       </Link>
-
-      {/* ----------------------------Right---------------------------- */}
-      {/*<div
-         style={{
-            border: '1px solid',
-            height: '100vh', 
-            minWidth: '3vw', 
-            writingMode: 'vertical-rl',
-            transform: 'rotate(180deg)',
-            textAlign: 'right',
-            textTransform: 'uppercase',
-            padding: '10px',
-          }}>
-          Reader
-        </div>*/}
     </div>
   )
 }

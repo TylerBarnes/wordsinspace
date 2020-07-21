@@ -42,6 +42,7 @@ const Browser = ({children}) => {
         <Title siteTitle={title} />      
       </div>
 
+      {/* ----------------------------Top + Main ---------------------------- */}
       <div 
         style={{
           display: 'flex',
@@ -49,7 +50,6 @@ const Browser = ({children}) => {
           justifyContent: 'space-between', 
           flexGrow: '1', 
         }}>
-        {/* ----------------------------Top---------------------------- */}
         <div 
           style={{
             border: '1px solid',
@@ -64,7 +64,6 @@ const Browser = ({children}) => {
           <Search  />
         </div>
 
-        {/* ----------------------------Main---------------------------- */}
         <div 
           style={{
             maxHeight: '90vh',
