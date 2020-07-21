@@ -8,6 +8,7 @@ const httpLink = createHttpLink({
 
 const client = new ApolloClient({
     fetch,
+    link: httpLink,
     cache: new InMemoryCache(),
 });
 

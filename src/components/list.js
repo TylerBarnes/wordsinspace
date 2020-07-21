@@ -7,41 +7,12 @@ import { gql, useQuery } from '@apollo/client'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
-  query MySearchQuery($searchTerm: String!) {
-    pageTitle:allWpPage(filter: {title:{regex: $searchTerm}}) {
+  query SearchPostsQuery($searchTerm: String!) {
+    posts(where: { search: $searchTerm }) {
       nodes {
+        title
         slug
-         id
-        ... on WpPage {
-          title
-        }
-      }
-    }
-    pageContent:allWpPage(filter: {content:{regex: $searchTerm}}) {
-      nodes {
-        slug
-         id
-        ... on WpPage {
-          title
-        }
-      }
-    }
-    postTitle: allWpPost(filter: {title:{regex: $searchTerm}}) {
-      nodes {
-        slug
-         id
-        ... on WpPost {
-          title
-        }
-      }
-    }
-    postContent: allWpPost(filter: {content:{regex: $searchTerm}}) {
-      nodes {
-        slug
-         id
-        ... on WpPost {
-          title
-        }
+        excerpt
       }
     }
   }
@@ -59,7 +30,7 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
 
   console.log(loading, error, data)
 
-  const searchResults = data
+  const searchResults = !loading ? data.posts.nodes : []
 
   const handleClick = (e, index) => {
     e.preventDefault();
@@ -97,7 +68,7 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
           }
 
           {loading && (<div>loading...</div>)}
-          {!loading && searchResults.map((node, index) => (
+          {!loading && searchResults && searchResults.map((node, index) => (
             <li 
               key={index}
               style={{
