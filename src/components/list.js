@@ -1,9 +1,9 @@
-import React, {useState, useMemo} from "react"
+import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
+import {useLocalStorage} from '../hooks/useLocalStorage'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
@@ -25,9 +25,8 @@ const SEARCH_POSTS_QUERY = gql`
   }
 `
 
-const List = ({searchTerm, searchInfoVisible, items}) => {
+const List = ({searchTerm, items}) => {
   
-  const location = useLocation();
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
 
@@ -36,15 +35,19 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
   })
 
   const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
-  console.log(searchResults)
 
-  const handleClick = (e, index) => {
+  const handleExpand = (e, index) => {
     e.preventDefault();
     setIsClicked(true);
     setDetails(`
       <div>${searchResults[index].content}</div>
     `)
   }  
+
+  
+  useEffect( () => {
+    console.log(searchTerm)
+  }, [searchTerm])
 
   return (
     <div 
@@ -64,16 +67,15 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
             padding: '10px'
           }}>
 
-          {searchInfoVisible && searchTerm.length > 0 && 
-          <div 
-            style={{
-              padding: '1vh 0'
-            }}>
-            Results for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
-          </div>
-          }
-
-          {loading && (<div> Loading search results...</div>)}
+          {/* ---------------- LOADING MESSAGE ---------------- */}
+          {loading && (
+            <div 
+              style={{
+                padding: '1vh 0'
+              }}> Loading...
+            </div>
+          )}
+          
           {!loading && searchResults && searchResults.map((node, index) => (
             <li 
               key={index}
@@ -86,7 +88,7 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
                 to={`../${node.slug}`}> 
                 <h1>{node.title}</h1>
               </Link>              
-              <span  onClick={e=>handleClick(e,index)} > PREVIEW </span>
+              <span  onClick={e=>handleExpand(e,index)} > PREVIEW </span>
               
               <div 
                 style={{

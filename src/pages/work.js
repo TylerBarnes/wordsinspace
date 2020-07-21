@@ -12,15 +12,18 @@ const Work = () => {
 	const posts = usePosts()
 	const items = [...pages,...posts]
 
-	return (
-  <Browser>
-    <SEO title="work" />
-    <List 
-      searchInfoVisible={true} 
-      searchTerm={'infrastructure'}
-      items={items}
-    	/>
-  </Browser>
+  return (
+    <Browser>
+      <SEO title="work" />
+      <List 
+        searchTerm={
+          localStorage.getItem("searchTerm") 
+          ? JSON.parse(localStorage.getItem("searchTerm"))
+          : ''
+        }
+        items={items}
+      	/>
+    </Browser>
 	)
 }
 
