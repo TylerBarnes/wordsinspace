@@ -2,52 +2,17 @@ import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-import { gql, useQuery } from '@apollo/client'
-import {useLocalStorage} from '../hooks/useLocalStorage'
-
-// The GraphQL query containing the search term, will be sent to Apollo
-const SEARCH_POSTS_QUERY = gql`
-  query SearchQuery($first: Int, $searchTerm: String!) {
-    posts(first: $first, where: { search: $searchTerm }) {
-      nodes {
-        title
-        slug
-        excerpt
-      }
-    }
-    pages(first: $first, where: { search: $searchTerm }) {
-      nodes {
-        title
-        slug
-        excerpt
-      }
-    }
-  }
-`
-
-const List = ({searchTerm, items}) => {
-  
+const List = ({items}) => {
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
-
-  const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
-    variables: { searchTerm: searchTerm, first: 150},
-  })
-
-  const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
 
   const handleExpand = (e, index) => {
     e.preventDefault();
     setIsClicked(true);
     setDetails(`
-      <div>${searchResults[index].content}</div>
+      <div>${items[index].content}</div>
     `)
   }  
-
-  
-  useEffect( () => {
-    console.log(searchTerm)
-  }, [searchTerm])
 
   return (
     <div 
@@ -58,7 +23,7 @@ const List = ({searchTerm, items}) => {
         justifyContent: 'stretch',
         height: '90vh',
       }}>
-        {/* ---------------- LEFT SIDE LIST ---------------- */}
+        {/* ---------------- LIST ---------------- */}
         <div 
           style={{
             flexGrow: '2',
@@ -67,16 +32,7 @@ const List = ({searchTerm, items}) => {
             padding: '10px'
           }}>
 
-          {/* ---------------- LOADING MESSAGE ---------------- */}
-          {loading && (
-            <div 
-              style={{
-                padding: '1vh 0'
-              }}> Loading...
-            </div>
-          )}
-          
-          {!loading && searchResults && searchResults.map((node, index) => (
+          {items && items.map((node, index) => (
             <li 
               key={index}
               style={{
@@ -124,7 +80,7 @@ const List = ({searchTerm, items}) => {
           ))}
         </div>
 
-        {/* ---------------- RIGHT SIDE PREVIEW ---------------- */}
+        {/* ---------------- PREVIEW ---------------- */}
         <div 
           style={{
             width: isClicked ? '40vw' : '0',

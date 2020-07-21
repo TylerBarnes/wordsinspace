@@ -15,14 +15,7 @@ const Work = () => {
   return (
     <Browser>
       <SEO title="work" />
-      <List 
-        searchTerm={
-          localStorage.getItem("searchTerm") 
-          ? JSON.parse(localStorage.getItem("searchTerm"))
-          : ''
-        }
-        items={items}
-      	/>
+      <List items={items}/>
     </Browser>
 	)
 }

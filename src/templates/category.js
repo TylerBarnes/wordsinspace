@@ -14,12 +14,8 @@ export default function CategoryTemplate({data}) {
 
   return (
     <Browser>
-    <List 
-      searchInfoVisible={true} 
-      searchTerm={'test'}
-      items={items}
-      />
-  </Browser>
+      <List items={items} />
+    </Browser>
   )
 }
 

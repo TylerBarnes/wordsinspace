@@ -1,21 +1,58 @@
 import React, {useState, useRef} from "react"
-import {useLocalStorage} from '../hooks/useLocalStorage'
+import {Link} from "gatsby" 
 import {useLocation} from '@reach/router'
+import { gql, useQuery } from '@apollo/client'
+
+import Modal from "./modal"
+import useModal from "../hooks/useModal"
+
+
+// The GraphQL query containing the search term, will be sent to Apollo
+const SEARCH_POSTS_QUERY = gql`
+  query SearchQuery($first: Int, $searchTerm: String!) {
+    posts(first: $first, where: { search: $searchTerm }) {
+      nodes {
+        title
+        slug
+        excerpt
+        date
+      }
+    }
+    pages(first: $first, where: { search: $searchTerm }) {
+      nodes {
+        title
+        slug
+        excerpt
+        date
+      }
+    }
+  }
+`
 
 const Search = () => {
-  const location = useLocation();
-  const [searchTerm, setSearchTerm] = useLocalStorage('searchTerm', '');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showResults, setShowResults] = useState(false);
   const inputEl = useRef(null)
+  const location = useLocation();
+  const {isShowing, toggle} = useModal();
+  
+  const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
+    variables: { searchTerm: searchTerm, first: 150},
+  })
+  const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
 
   function handleSubmit(e) {
     e.preventDefault()
     setSearchTerm(inputEl.current.value)
     inputEl.current.value=''
+    setShowResults(true)
   }
 
   function onChange(e) {
     setSearchTerm(inputEl.current.value)
   }
+
+  console.log(searchResults)
 
   return (
     <div>
@@ -37,18 +74,13 @@ const Search = () => {
         onChange={e => onChange(e)}
         />
       </form>
-
-      {/* ---------------- SEARCH TERMS ---------------- */}
-      {searchTerm.length > 0 && 
-      <div 
-        style={{
-          padding: '1vh 0'
-        }}>
-        <div>
-          Results for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
-        </div>
-      </div>
-      }
+      <Modal
+        isShowing={showResults}
+        hide={toggle}
+        searchTerm={searchTerm}
+        location={location}
+        loading={loading}
+      />
     </div>
    )
 }
