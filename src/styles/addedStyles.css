@@ -52,6 +52,8 @@ h1, h2, h3, h4, h5 {
   position: relative;
   margin: 1.75rem auto;
   border-radius: 3px;
-  max-width: 500px;
+  max-width: 80vw;
+  max-height: 80vh;
   padding: 2rem;
+  overflow-y: scroll;
 }

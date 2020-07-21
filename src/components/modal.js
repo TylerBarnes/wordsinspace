@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from "gatsby" 
 
-import List from "./list"
+import FilteredList from "./FilteredList"
 
 const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
@@ -36,7 +36,7 @@ const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading})
         
         {/* ---------------- SEARCH RESULTS ---------------- */}
         {!loading && (
-          <List items={searchResults} />
+          <FilteredList items={searchResults} />
         )}
       </div>
     </div>

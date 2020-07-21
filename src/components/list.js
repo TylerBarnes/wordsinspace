@@ -29,7 +29,7 @@ const List = ({items}) => {
             flexGrow: '2',
             height: '90vh',
             overflow: 'scroll',
-            padding: '10px'
+            padding: '10px',
           }}>
 
           {items && items.map((node, index) => (
@@ -51,7 +51,6 @@ const List = ({items}) => {
                   margin: '0 0.2vw', 
                   fontSize: '0.8rem', 
                   fontStyle: 'italic', 
-                  display: 'none'
                 }}> 
                 {node.nodeType}
               </div>
