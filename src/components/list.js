@@ -45,15 +45,6 @@ const List = ({items}) => {
                 <h1>{node.title}</h1>
               </Link>              
               <span  onClick={e=>handleExpand(e,index)} > PREVIEW </span>
-              
-              <div 
-                style={{
-                  margin: '0 0.2vw', 
-                  fontSize: '0.8rem', 
-                  fontStyle: 'italic', 
-                }}> 
-                {node.nodeType}
-              </div>
 
               <div 
                 style={{

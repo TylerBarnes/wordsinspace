@@ -1,9 +1,9 @@
-import React, {useState, useRef} from "react"
+import React, {useState, useRef, useEffect} from "react"
 import {Link} from "gatsby" 
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
-import Modal from "./modal"
+import SearchModal from "./search/searchModal"
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
@@ -40,7 +40,7 @@ const Search = () => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setShowResults(true)
+    setShowResults(() => (searchTerm.length > 0 ? true : false))
     inputEl.current.value=''
   }
 
@@ -77,7 +77,7 @@ const Search = () => {
         />
       </form>
       
-      <Modal
+      <SearchModal
         isShowing={showResults}
         hide={e=>setShowResults(false)}
         searchTerm={searchTerm}

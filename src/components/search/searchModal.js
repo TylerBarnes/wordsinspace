@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from "gatsby" 
 
-import FilteredList from "./search/FilteredList"
-import ModalText from "./search/modalText"
+import FilteredList from "./FilteredList"
+import ModalText from "./modalText"
 
-const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
+const SearchModal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
     <div 
       style={{
@@ -67,4 +67,4 @@ const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading})
   </React.Fragment>, document.body
 ) : null;
 
-export default Modal;
+export default SearchModal;
