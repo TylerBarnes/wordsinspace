@@ -17,7 +17,7 @@ const Work = () => {
     <SEO title="work" />
     <List 
       searchInfoVisible={true} 
-      searchTerm={'Cuomo'}
+      searchTerm={'infrastructure'}
       items={items}
     	/>
   </Browser>

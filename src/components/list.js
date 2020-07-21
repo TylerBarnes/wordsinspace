@@ -7,8 +7,15 @@ import { gql, useQuery } from '@apollo/client'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
-  query SearchPostsQuery($searchTerm: String!) {
-    posts(where: { search: $searchTerm }) {
+  query SearchQuery($first: Int, $searchTerm: String!) {
+    posts(first: $first, where: { search: $searchTerm }) {
+      nodes {
+        title
+        slug
+        excerpt
+      }
+    }
+    pages(first: $first, where: { search: $searchTerm }) {
       nodes {
         title
         slug
@@ -25,12 +32,11 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
   const [details, setDetails] = useState('')
 
   const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
-    variables: { searchTerm: searchTerm },
+    variables: { searchTerm: searchTerm, first: 150},
   })
 
-  console.log(loading, error, data)
-
-  const searchResults = !loading ? data.posts.nodes : []
+  const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
+  console.log(searchResults)
 
   const handleClick = (e, index) => {
     e.preventDefault();
@@ -67,7 +73,7 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
           </div>
           }
 
-          {loading && (<div>loading...</div>)}
+          {loading && (<div> Loading search results...</div>)}
           {!loading && searchResults && searchResults.map((node, index) => (
             <li 
               key={index}
