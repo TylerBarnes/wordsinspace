@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
 import {useLocation} from '@reach/router'
-import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+import { gql, useQuery } from '@apollo/client'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`

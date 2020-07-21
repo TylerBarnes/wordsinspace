@@ -1,6 +1,5 @@
 import React from 'react';
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import fetch from "isomorphic-fetch"
 
 const httpLink = createHttpLink({
