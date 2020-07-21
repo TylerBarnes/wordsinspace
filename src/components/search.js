@@ -6,7 +6,6 @@ import { gql, useQuery } from '@apollo/client'
 import Modal from "./modal"
 import useModal from "../hooks/useModal"
 
-
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
   query SearchQuery($first: Int, $searchTerm: String!) {
@@ -34,7 +33,6 @@ const Search = () => {
   const [showResults, setShowResults] = useState(false);
   const inputEl = useRef(null)
   const location = useLocation();
-  const {isShowing, toggle} = useModal();
   
   const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
     variables: { searchTerm: searchTerm, first: 150},
@@ -76,10 +74,11 @@ const Search = () => {
       </form>
       <Modal
         isShowing={showResults}
-        hide={toggle}
+        hide={setShowResults}
         searchTerm={searchTerm}
         location={location}
         loading={loading}
+        searchResults={searchResults}
       />
     </div>
    )

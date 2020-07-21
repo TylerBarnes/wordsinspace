@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from "gatsby" 
 
+import List from "./list"
+
 const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
     <div className="modal-overlay"/>
@@ -27,48 +29,14 @@ const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading})
           <div 
             style={{
               padding: '1vh 0'
-            }}> Loading...
+            }}> 
+            Loading...
           </div>
         )}
         
         {/* ---------------- SEARCH RESULTS ---------------- */}
         {!loading && (
-          <div>
-            results here
-            {searchResults && searchResults.map((node, index) => (
-              <li 
-                key={index}
-                style={{
-                  listStyle: 'none',
-                  padding: '5px',
-                }}>
-
-                <Link 
-                  to={`../${node.slug}`}> 
-                  <h1>{node.title}</h1>
-                </Link>              
-                
-                <div 
-                  style={{
-                    margin: '0 0.2vw', 
-                    fontSize: '0.8rem', 
-                    fontStyle: 'italic', 
-                    display: 'none'
-                  }}> 
-                  {node.excerpt}
-                </div>
-
-                <div 
-                  style={{
-                    margin: '0 0.2vw', 
-                    fontSize: '0.8rem',
-                    color: '#aaa',
-                  }}> 
-                  {node.date && node.date.slice(0,4)} 
-                </div>
-              </li>
-            ))}
-          </div>
+          <List items={searchResults} />
         )}
       </div>
     </div>
