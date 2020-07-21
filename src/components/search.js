@@ -4,7 +4,6 @@ import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
 import Modal from "./modal"
-import useModal from "../hooks/useModal"
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
@@ -41,16 +40,21 @@ const Search = () => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setSearchTerm(inputEl.current.value)
-    inputEl.current.value=''
     setShowResults(true)
+    inputEl.current.value=''
   }
 
   function onChange(e) {
+    e.preventDefault();
     setSearchTerm(inputEl.current.value)
   }
 
-  console.log(searchResults)
+  function closeModal(e) {
+    e.preventDefault();
+    setShowResults(false)
+    setSearchTerm('')
+    inputEl.current.value=''
+  }
 
   return (
     <div>
@@ -72,9 +76,10 @@ const Search = () => {
         onChange={e => onChange(e)}
         />
       </form>
+      
       <Modal
         isShowing={showResults}
-        hide={setShowResults}
+        hide={e=>setShowResults(false)}
         searchTerm={searchTerm}
         location={location}
         loading={loading}

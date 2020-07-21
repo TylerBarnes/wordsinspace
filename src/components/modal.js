@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from "gatsby" 
 
-import FilteredList from "./FilteredList"
+import FilteredList from "./search/FilteredList"
+import ModalText from "./search/modalText"
 
 const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
@@ -27,7 +28,7 @@ const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading})
           width: '100%',
           height: '100%',
           overflowX: 'hidden',
-          overflowY: 'auto',
+          overflowY: 'hidden',
           outline: '0',
         }}>
         <div 
@@ -35,47 +36,31 @@ const Modal = ({ isShowing, hide, searchResults, searchTerm, location, loading})
             zIndex: '100',
             background: '#000',
             position: 'relative',
-            margin: '5vh auto',
-            borderRadius: '3px',
+            margin: '10vh auto',
+            borderRadius: '5px',
             maxWidth: '80vw',
-            maxHeight: '80vh',
+            maxHeight: '70vh',
             padding: '0.5vh 1vw',
             overflowY: 'scroll',
           }}>
-          <button 
-            style={{
-              background: 'none',
-              outline: 'none',
-              border: 'none',
-              position: 'fixed',
-              right: '10%'
-            }}
-            data-dismiss="modal" aria-label="Close" onClick={hide}>Close &times;</button>
-
-          {/* ---------------- SEARCH TERMS ---------------- */}
-          <div 
-            style={{
-              padding: '2vh 0',
-              textTransform: 'uppercase',
-              fontSize: '2rem',
-              color: '#fff',
-            }}>
-            Results for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
-          </div>
 
           {/* ---------------- LOADING MESSAGE ---------------- */}
           {loading && (
             <div 
               style={{
-                padding: '1vh 0'
+                padding: '1vh 0',
+                color: '#fff'
               }}> 
-              Loading...
+              Searching for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
             </div>
           )}
           
           {/* ---------------- SEARCH RESULTS ---------------- */}
           {!loading && (
-            <FilteredList items={searchResults} />
+            <>
+              <ModalText searchTerm={searchTerm} location={location} hide={hide} />
+              <FilteredList items={searchResults} />
+            </>
           )}
         </div>
       </div>
