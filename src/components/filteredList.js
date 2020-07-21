@@ -26,11 +26,13 @@ const FilteredList = ({items}) => {
               style={{
                 listStyle: 'none',
                 padding: '5px',
+                color: '#fff',
               }}>
 
               <Link 
+                style={{color: '#fff'}}
                 to={`../${node.slug}`}> 
-                <h1>{node.title}</h1>
+                <h2>{node.title}</h2>
               </Link>    
 
               <div 
