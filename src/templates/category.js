@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 
 import Browser from "../layouts/browser"
 import List from "../components/list"
-import {searchContext} from '../context/provider'
 
 export default function CategoryTemplate({data}) {
   if(!data) return null
@@ -14,19 +13,13 @@ export default function CategoryTemplate({data}) {
   const items=[...pages, ...posts]
 
   return (
-    <searchContext.Consumer>
-      {context => (
-        <React.Fragment>
-          <Browser>
-            <List 
-              searchInfoVisible={context.searchInfoVisible} 
-              searchTerm={context.searchTerm}
-              items={items}
-              />
-          </Browser>
-        </React.Fragment>
-      )}
-    </searchContext.Consumer>
+    <Browser>
+    <List 
+      searchInfoVisible={true} 
+      searchTerm={'test'}
+      items={items}
+      />
+  </Browser>
   )
 }
 

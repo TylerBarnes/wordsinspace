@@ -1,66 +1,66 @@
 import React, {useState, useMemo} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
-import {useLocation} from '@reach/router'
 
-import {useQuery} from '@apollo/react-hooks'
+import {useLocation} from '@reach/router'
+import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
   query MySearchQuery($searchTerm: String!) {
-  pageTitle:allWpPage(filter: {title:{regex: $searchTerm}}) {
-    nodes {
-      slug
-       id
-      ... on WpPage {
-        title
+    pageTitle:allWpPage(filter: {title:{regex: $searchTerm}}) {
+      nodes {
+        slug
+         id
+        ... on WpPage {
+          title
+        }
+      }
+    }
+    pageContent:allWpPage(filter: {content:{regex: $searchTerm}}) {
+      nodes {
+        slug
+         id
+        ... on WpPage {
+          title
+        }
+      }
+    }
+    postTitle: allWpPost(filter: {title:{regex: $searchTerm}}) {
+      nodes {
+        slug
+         id
+        ... on WpPost {
+          title
+        }
+      }
+    }
+    postContent: allWpPost(filter: {content:{regex: $searchTerm}}) {
+      nodes {
+        slug
+         id
+        ... on WpPost {
+          title
+        }
       }
     }
   }
-  pageContent:allWpPage(filter: {content:{regex: $searchTerm}}) {
-    nodes {
-      slug
-       id
-      ... on WpPage {
-        title
-      }
-    }
-  }
-  postTitle: allWpPost(filter: {title:{regex: $searchTerm}}) {
-    nodes {
-      slug
-       id
-      ... on WpPost {
-        title
-      }
-    }
-  }
-  postContent: allWpPost(filter: {content:{regex: $searchTerm}}) {
-    nodes {
-      slug
-       id
-      ... on WpPost {
-        title
-      }
-    }
-  }
-}
 `
-
 
 const List = ({searchTerm, searchInfoVisible, items}) => {
   
   const location = useLocation();
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState('')
-  console.log('before', items)
 
-  const { data: searchResults } = useQuery(SEARCH_POSTS_QUERY, {
+  const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
     variables: { searchTerm: searchTerm },
   })
 
-  console.log('after', searchResults)
+  console.log(loading, error, data)
+
+  const searchResults = data
 
   const handleClick = (e, index) => {
     e.preventDefault();
@@ -97,7 +97,8 @@ const List = ({searchTerm, searchInfoVisible, items}) => {
           </div>
           }
 
-          {searchResults.map((node, index) => (
+          {loading && (<div>loading...</div>)}
+          {!loading && searchResults.map((node, index) => (
             <li 
               key={index}
               style={{

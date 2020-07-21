@@ -1,3 +1,1 @@
-import Provider from './src/context/provider';
-
-export const wrapRootElement = Provider;
+export { wrapRootElement } from './src/apollo/wrap-root-element';
