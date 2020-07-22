@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Browser from "../layouts/browser"
+import Filters from "../components/filters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
@@ -15,6 +16,7 @@ export default function CategoryTemplate({data}) {
   return (
     <Browser>
       <List items={items} />
+      <Filters />
     </Browser>
   )
 }

@@ -13,6 +13,8 @@ export const useCategories = () => {
                 title
                 slug
                 date
+                content
+                excerpt
                 tags {
                   nodes {
                     slug
@@ -25,6 +27,7 @@ export const useCategories = () => {
                 title
                 slug
                 date
+                content
                 tags {
                   nodes {
                     slug

@@ -4,14 +4,10 @@ import {Link} from "gatsby"
 
 const List = ({items}) => {
   const [isClicked, setIsClicked] = useState(false);
-  const [details, setDetails] = useState('')
 
-  const handleExpand = (e, index) => {
+  const togglePreview = (e, index) => {
     e.preventDefault();
-    setIsClicked(true);
-    setDetails(`
-      <div>${items[index].content}</div>
-    `)
+    setIsClicked(!isClicked);
   }  
 
   return (
@@ -21,17 +17,11 @@ const List = ({items}) => {
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
         justifyContent: 'stretch',
-        height: '90vh',
+        maxHeight: '92vh',
+        overflow: 'scroll',
       }}>
         {/* ---------------- LIST ---------------- */}
-        <div 
-          style={{
-            flexGrow: '2',
-            height: '90vh',
-            overflow: 'scroll',
-            padding: '10px',
-          }}>
-
+        <div>
           {items && items.map((node, index) => (
             <li 
               key={index}
@@ -44,7 +34,7 @@ const List = ({items}) => {
                 to={`../${node.slug}`}> 
                 <h1>{node.title}</h1>
               </Link>              
-              <span  onClick={e=>handleExpand(e,index)} > PREVIEW </span>
+              <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
 
               <div 
                 style={{
@@ -66,19 +56,16 @@ const List = ({items}) => {
                   </span>
                 )}
               </div>
+
+              {/* ---------------- PREVIEW ---------------- */}
+              <div 
+                style={{
+                  overflow: 'hidden'
+                }}>
+                {isClicked && <div dangerouslySetInnerHTML={{ __html: node.excerpt ? node.excerpt : node.content ? node.content.slice(0,200) : node.title }} />}
+              </div>
             </li>
           ))}
-        </div>
-
-        {/* ---------------- PREVIEW ---------------- */}
-        <div 
-          style={{
-            width: isClicked ? '40vw' : '0',
-            height: '90vh',
-            overflow: 'hidden',
-            padding: '10px 20px'
-          }}>
-          {isClicked && <div dangerouslySetInnerHTML={{ __html: details }} />}
         </div>
     </div>
    )
