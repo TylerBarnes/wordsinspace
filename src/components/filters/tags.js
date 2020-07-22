@@ -1,12 +1,10 @@
 import React, {useState} from "react"
-import {useTags} from "../../hooks/useTags"
 
 import Checkbox from './checkbox'
 
-const Tags = () => {
+const Tags = ({tags}) => {
 
-  const unsortedTags = useTags();
-  const tags = unsortedTags.filter(tag => tag.name.length > 0).sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
+  const sortedTags = tags.filter(tag => tag.name.length > 0).sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
 
  	const [checkedItems, setCheckedItems] = useState({}); 
 
@@ -24,8 +22,7 @@ const Tags = () => {
 				margin: '2vh 0',
 				maxHeight: '70vh',
 	     }}>
-      	<strong>Tags</strong>
-	      {tags && tags.map((tag) => (
+	      {sortedTags && sortedTags.map((tag) => (
 					<Checkbox
 			      key={tag.id}
 			      label={tag.name}

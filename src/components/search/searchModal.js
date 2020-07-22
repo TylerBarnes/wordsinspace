@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from "gatsby" 
 
-import FilteredList from "./FilteredList"
+import SearchResults from "./searchResults"
 import ModalText from "./modalText"
 
 const SearchModal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
@@ -59,7 +59,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, location, loa
           {!loading && (
             <>
               <ModalText searchTerm={searchTerm} location={location} hide={hide} />
-              <FilteredList items={searchResults} />
+              <SearchResults items={searchResults} />
             </>
           )}
         </div>

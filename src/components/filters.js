@@ -4,7 +4,7 @@ import {Link} from "gatsby"
 import Tags from "./filters/tags"
 import Categories from "./filters/categories"
 
-const Filters = () => {
+const Filters = ({categories, tags}) => {
 
   return (
     <div 
@@ -13,15 +13,16 @@ const Filters = () => {
         maxHeight: '93vh', 
         textTransform: 'uppercase',
         padding: '10px',
-        overflow: 'scroll'
+        overflow: 'scroll',
+        fontWeight: '500'
       }}>
       Index
       <div 
         style={{
           margin: '2vh 0'
         }}>
-        <Categories />
-        <Tags />
+        <Categories categories={categories} />
+        <Tags tags={tags}/>
       </div>
     </div>
    )

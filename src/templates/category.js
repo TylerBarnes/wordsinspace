@@ -1,22 +1,28 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import {useCategories} from "../hooks/useCategories"
+import {useTags} from "../hooks/useTags"
+
 import Browser from "../layouts/browser"
+import SEO from "../components/seo"
 import Filters from "../components/filters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
-  if(!data) return null
     
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;
   const posts = category.posts.nodes;
   const items=[...pages, ...posts]
+  const categories = useCategories();
+  const tags = useTags();
 
   return (
     <Browser>
+      <SEO title={category.name} />
       <List items={items} />
-      <Filters />
+      <Filters categories={categories} tags={tags} />
     </Browser>
   )
 }
