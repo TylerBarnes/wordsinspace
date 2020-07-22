@@ -4,7 +4,7 @@ import {Link} from "gatsby"
 import Tags from "./filters/tags"
 import Categories from "./filters/categories"
 
-const Filters = ({categories, tags}) => {
+const Filters = ({categories, tags, getSelectedTags}) => {
 
   return (
     <div 
@@ -22,7 +22,7 @@ const Filters = ({categories, tags}) => {
           margin: '2vh 0'
         }}>
         <Categories categories={categories} />
-        <Tags tags={tags}/>
+        <Tags tags={tags} getSelectedTags={getSelectedTags} />
       </div>
     </div>
    )

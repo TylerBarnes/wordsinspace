@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { gql, useQuery } from '@apollo/client'
 
 import {usePages} from "../hooks/usePages"
@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 import Filters from "../components/filters"
 import List from "../components/list"
 
-// The GraphQL query containing the search term, will be sent to Apollo
+// A GraphQL query looking up Posts and Pages which contain a given Tag
 const SEARCH_TAGS_QUERY = gql`
   query SearchQuery($first: Int, $tagName: String!) {
     posts(first: $first,where: {tag: $tagName}) {
@@ -36,26 +36,35 @@ const SEARCH_TAGS_QUERY = gql`
 `
 
 const Work = () => {
-	const pages = usePages()
-	const posts = usePosts()
-  const categories = useCategories();
-  const tags = useTags();
+  const [items, setItems] = useState([])
+  const [tags, setTags] = useState(useTags())
+  const [categories, setCategories] = useState(useCategories())
+  const [selectedTags, setSelectedTags] = useState('teaching')
+  const pages = usePages()
+  const posts = usePosts()
 
-  // GraphQL query to grab the posts/pages out of the specific Tag that has been selected
+  useEffect( ()=> {
+    // initialize items array with all Posts and Pages
+    setItems([...pages,...posts])
+  }, [])
+
+
+  function handleTags(e) {
+    const { name, checked } = e.target;
+    console.log(name)
+    // setCheckedItems({...checkedItems, [name] : checked });
+  }
+
   const {loading, error, data} = useQuery(SEARCH_TAGS_QUERY, {
-    variables: {first: 150, tagName: 'teaching'},
+    variables: {first: 150, tagName: selectedTags},
   })
-  const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
-  console.log(searchResults)
-
-  // if no Tag is selected
-  const items = [...pages,...posts]
+  const results = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
 
   return (
     <Browser>
       <SEO title="work" />
       <List items={items}/>
-      <Filters categories={categories} tags={tags}/>
+      <Filters categories={categories} tags={tags} getSelectedTags={handleTags}/>
     </Browser>
 	)
 }
