@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from "gatsby" 
 
 import FilteredList from "./filteredList"
 import ModalText from "./modalText"

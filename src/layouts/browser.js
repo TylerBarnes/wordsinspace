@@ -1,9 +1,7 @@
 import React, {useState} from "react"
-import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
 import {useTitle} from "../hooks/useTitle"
-import {useCategories} from "../hooks/useCategories"
 
 import FiltersContainer from "../components/filtersContainer"
 import Title from "../components/title"
