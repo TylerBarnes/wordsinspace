@@ -11,7 +11,6 @@ const Filters = () => {
       style={{
         borderLeft: '1px solid',
         maxHeight: '93vh', 
-        minWidth: '3vw', 
         textTransform: 'uppercase',
         padding: '10px',
         overflow: 'scroll'

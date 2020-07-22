@@ -19,9 +19,12 @@ const List = ({items}) => {
         justifyContent: 'stretch',
         maxHeight: '92vh',
         overflow: 'scroll',
+        width: '80vw'
       }}>
         {/* ---------------- LIST ---------------- */}
-        <div>
+        <div 
+          style={{
+          }}>
           {items && items.map((node, index) => (
             <li 
               key={index}
