@@ -22,7 +22,7 @@ const Filters = ({categories, tags, getSelectedTags}) => {
           margin: '2vh 0'
         }}>
         <Categories categories={categories} />
-        <Tags tags={tags} getSelectedTags={getSelectedTags} />
+        <Tags tags={tags} getSelectedTags={getSelectedTags} selectedTags={selectedTags} />
       </div>
     </div>
    )

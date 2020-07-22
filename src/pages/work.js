@@ -39,24 +39,24 @@ const Work = () => {
   const [items, setItems] = useState([])
   const [tags, setTags] = useState(useTags())
   const [categories, setCategories] = useState(useCategories())
-  const [selectedTags, setSelectedTags] = useState('teaching')
   const pages = usePages()
   const posts = usePosts()
 
+  // initialize items array with all Posts and Pages
   useEffect( ()=> {
-    // initialize items array with all Posts and Pages
     setItems([...pages,...posts])
   }, [])
 
 
+  const [selectedTags, setSelectedTags] = useState([])
   function handleTags(e) {
-    const { name, checked } = e.target;
-    console.log(name)
-    // setCheckedItems({...checkedItems, [name] : checked });
+    const { name } = e.target;
+    setSelectedTags(selectedTags[name]: true);
+    console.log(selectedTags)
   }
 
   const {loading, error, data} = useQuery(SEARCH_TAGS_QUERY, {
-    variables: {first: 150, tagName: selectedTags},
+    variables: {first: 150, tagName: 'teaching'},
   })
   const results = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
 
@@ -64,7 +64,7 @@ const Work = () => {
     <Browser>
       <SEO title="work" />
       <List items={items}/>
-      <Filters categories={categories} tags={tags} getSelectedTags={handleTags}/>
+      <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleTags}/>
     </Browser>
 	)
 }
