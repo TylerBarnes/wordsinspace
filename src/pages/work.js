@@ -42,7 +42,7 @@ const Work = () => {
     <Browser>
       <SEO title="work" />
       <List items={isTagMode ? tagQueryResults : [...pages, ...posts]}/>
-      <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear}/>
+      <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)
 }
