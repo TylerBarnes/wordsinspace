@@ -11,6 +11,11 @@ const SEARCH_TAGS_QUERY = gql`
         title
         date
         excerpt
+        tags {
+          nodes {
+            slug
+          }
+        }
       }
     }
     pages(first: $first, where: {tagSlugIn: $tags}) {
@@ -20,6 +25,11 @@ const SEARCH_TAGS_QUERY = gql`
         title
         date
         content
+        tags {
+          nodes {
+            slug
+          }
+        }
       }
     }
   }
