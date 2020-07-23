@@ -13,9 +13,9 @@ import List from "../components/list"
 
 const Work = () => {
 
-  const [categories, setCategories] = useState(useCategories())
   const pages = usePages()
   const posts = usePosts()
+  const categories= useCategories()
 
   const [isTagMode, setTagMode] = useState(false)
   const [tags, setTags] = useState(useTags())
@@ -36,11 +36,14 @@ const Work = () => {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  const tagQueryResults = useTagQueries(tags, isTagMode);
-
+  const response= useTagQueries(tags, isTagMode);
+  const tagQueryResults= isTagMode && !response.loading 
+                ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+                : []    
   return (
     <Browser>
       <SEO title="work" />
+      {response.loading ? <div>Loading....</div> : null}
       <List items={isTagMode ? tagQueryResults : [...pages, ...posts]}/>
       <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>

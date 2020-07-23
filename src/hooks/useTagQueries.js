@@ -42,10 +42,6 @@ export const useTagQueries = (tags, isTagMode) => {
     variables: {first: 100, tags: slugs },
     skip: !isTagMode
   })
-
-  const results = isTagMode && !response.loading 
-                ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
-                : []    
   
-  return results;
+  return response;
 }

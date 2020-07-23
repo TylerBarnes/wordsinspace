@@ -12,7 +12,7 @@ const Categories = ({categories}) => {
 				<Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link>
 			</div>
 		  
-		  {categories.map((category,index) => (
+		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
 				<li 
 					key={index}
 					style={{

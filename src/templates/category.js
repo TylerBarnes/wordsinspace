@@ -17,31 +17,34 @@ export default function CategoryTemplate({data}) {
   const posts = category.posts.nodes;
   const categories = useCategories()
 
-  const [items, setItems] = useState([...pages, ...posts])
   const [isTagMode, setTagMode] = useState(false)
   const [tags, setTags] = useState(useTags())
-
+  
   // updates the tags array
   function handleSelection(e) {
     const { name } = e.target;
-    setTags([...tags].map(tag => tag.name === name ? {checked: !tag.checked } : tag))
+    setTags(tags.map(tag => tag.name === name ? {...tag, checked: !tag.checked } : tag))
   }
 
   function handleClear(e) {
     e.preventDefault()
-    setTags(tags.map(tag=> ({name: tag.name, checked: false})))
+    setTags(tags.map(tag=> ({...tag, checked: false})))
+    setTagMode(false)
   }
 
   useEffect(()=> {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  const tagQueryResults = useTagQueries(tags, isTagMode);
+  const response= useTagQueries(tags, isTagMode);
+  const tagQueryResults= isTagMode && !response.loading 
+                ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+                : []   
 
   return (
     <Browser>
       <SEO title={category.name} />
-      <List items={isTagMode ? tagQueryResults : items}/>
+      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]}/>
       <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear}/>
     </Browser>
   )
