@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 
 import {usePages} from "../hooks/usePages"
 import {usePosts} from "../hooks/usePosts"
@@ -18,6 +18,7 @@ const Work = () => {
   const posts = usePosts()
   const [items, setItems] = useState([...pages, ...posts])
   
+  const [isTagMode, setTagMode] = useState(false)
   const tags = useTags()
   const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
 
@@ -27,12 +28,16 @@ const Work = () => {
     setSelectedTags([...selectedTags].map(tag => tag.name === name ? { name: name, checked: !tag.checked } : tag))
   }
 
-  const results = useTagQueries(selectedTags);
-  
+  useEffect(()=> {
+    setTagMode(selectedTags.filter(tag=>tag.checked).length > 0)
+  }, [selectedTags])
+
+  const tagQueryResults = useTagQueries(selectedTags, isTagMode);
+
   return (
     <Browser>
       <SEO title="work" />
-      <List items={items}/>
+      <List items={isTagMode ? tagQueryResults : items}/>
       <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleTags}/>
     </Browser>
 	)
