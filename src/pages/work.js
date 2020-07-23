@@ -38,6 +38,7 @@ const SEARCH_TAGS_QUERY = gql`
 const Work = () => {
   const [items, setItems] = useState([])
   const [tags, setTags] = useState(useTags())
+  const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
   const [categories, setCategories] = useState(useCategories())
   const pages = usePages()
   const posts = usePosts()
@@ -47,12 +48,9 @@ const Work = () => {
     setItems([...pages,...posts])
   }, [])
 
-
-  const [selectedTags, setSelectedTags] = useState([])
   function handleTags(e) {
     const { name } = e.target;
-    setSelectedTags(selectedTags[name]: true);
-    console.log(selectedTags)
+    setSelectedTags([...selectedTags].map(tag => tag.name === name ? { name: name, checked: !tag.checked } : tag))
   }
 
   const {loading, error, data} = useQuery(SEARCH_TAGS_QUERY, {
