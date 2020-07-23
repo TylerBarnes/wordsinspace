@@ -21,11 +21,17 @@ const Work = () => {
   const [isTagMode, setTagMode] = useState(false)
   const tags = useTags()
   const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
-
+  console.log(tags, selectedTags)
+  
   // updates the selectedTags array
-  function handleTags(e) {
+  function handleSelection(e) {
     const { name } = e.target;
     setSelectedTags([...selectedTags].map(tag => tag.name === name ? { name: name, checked: !tag.checked } : tag))
+  }
+
+  function handleClear(e) {
+    e.preventDefault()
+    setSelectedTags(selectedTags.map(tag=> ({name: tag.name, checked: false})))
   }
 
   useEffect(()=> {
@@ -38,7 +44,7 @@ const Work = () => {
     <Browser>
       <SEO title="work" />
       <List items={isTagMode ? tagQueryResults : items}/>
-      <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleTags}/>
+      <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleSelection} clearTags={handleClear}/>
     </Browser>
 	)
 }

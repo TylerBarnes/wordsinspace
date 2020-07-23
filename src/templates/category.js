@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
 
 import {useCategories} from "../hooks/useCategories"
@@ -16,10 +16,11 @@ export default function CategoryTemplate({data}) {
   const pages = category.pages.nodes;
   const posts = category.posts.nodes;
   const categories = useCategories();
+  const [items, setItems] = useState([...pages, ...posts])
   
+  const [isTagMode, setTagMode] = useState(false)
   const tags = useTags()
   const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
-  const [items, setItems] = useState([...pages, ...posts])
 
   // updates the selectedTags array
   function handleTags(e) {
@@ -27,12 +28,16 @@ export default function CategoryTemplate({data}) {
     setSelectedTags([...selectedTags].map(tag => tag.name === name ? { name: name, checked: !tag.checked } : tag))
   }
 
-  const results = useTagQueries(selectedTags);
+  useEffect(()=> {
+    setTagMode(selectedTags.filter(tag=>tag.checked).length > 0)
+  }, [selectedTags])
+
+  const tagQueryResults = useTagQueries(selectedTags, isTagMode);
 
   return (
     <Browser>
       <SEO title={category.name} />
-      <List items={results.length > 0 ? results : items}/>
+      <List items={isTagMode ? tagQueryResults : items}/>
       <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleTags}/>
     </Browser>
   )

@@ -1,12 +1,9 @@
 import React, {useState} from "react"
 
 import Checkbox from './checkbox'
+import TagsInfoBox from './tagsInfoBox'
 
-const Tags = ({tags, getSelectedTags, selectedTags}) => {
-
-  const sortedTags = tags.filter(tag => tag.name.length > 0)
-  											 .filter(hasTags => hasTags.pages.nodes.length>0 || hasTags.posts.nodes.length>0)
-  											 .sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1)
+const Tags = ({tags, getSelectedTags, selectedTags, clearTags}) => {
 
   return (
      <div style={{
@@ -16,11 +13,12 @@ const Tags = ({tags, getSelectedTags, selectedTags}) => {
 				margin: '2vh 0',
 				maxHeight: '70vh',
 	     }}>
-	      {sortedTags && sortedTags.map((tag) => (
+	     	<TagsInfoBox selectedTags={selectedTags} clearTags={clearTags}/>
+	      {tags && tags.map((tag, index) => (
 					<Checkbox
-			      key={tag.id}
-			      label={tag.name}
-			      isSelected={selectedTags[tag.name]}
+			      key={index}
+			      label={selectedTags[index].name}
+			      isSelected={selectedTags[index]}
 			      onCheckboxChange={getSelectedTags}
 			    />
 	     	))}
