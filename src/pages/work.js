@@ -16,35 +16,33 @@ const Work = () => {
   const [categories, setCategories] = useState(useCategories())
   const pages = usePages()
   const posts = usePosts()
-  const [items, setItems] = useState([...pages, ...posts])
-  
+
   const [isTagMode, setTagMode] = useState(false)
-  const tags = useTags()
-  const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
-  console.log(tags, selectedTags)
-  
-  // updates the selectedTags array
+  const [tags, setTags] = useState(useTags())
+
+  // updates the tags array
   function handleSelection(e) {
     const { name } = e.target;
-    setSelectedTags([...selectedTags].map(tag => tag.name === name ? { name: name, checked: !tag.checked } : tag))
+    setTags(tags.map(tag => tag.name === name ? {...tag, checked: !tag.checked } : tag))
   }
 
   function handleClear(e) {
     e.preventDefault()
-    setSelectedTags(selectedTags.map(tag=> ({name: tag.name, checked: false})))
+    setTags(tags.map(tag=> ({...tag, checked: false})))
+    setTagMode(false)
   }
 
   useEffect(()=> {
-    setTagMode(selectedTags.filter(tag=>tag.checked).length > 0)
-  }, [selectedTags])
+    setTagMode(tags.filter(tag=>tag.checked).length > 0)
+  }, [tags])
 
-  const tagQueryResults = useTagQueries(selectedTags, isTagMode);
+  const tagQueryResults = useTagQueries(tags, isTagMode);
 
   return (
     <Browser>
       <SEO title="work" />
-      <List items={isTagMode ? tagQueryResults : items}/>
-      <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleSelection} clearTags={handleClear}/>
+      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]}/>
+      <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear}/>
     </Browser>
 	)
 }

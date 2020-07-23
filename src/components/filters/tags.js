@@ -3,7 +3,7 @@ import React, {useState} from "react"
 import Checkbox from './checkbox'
 import TagsInfoBox from './tagsInfoBox'
 
-const Tags = ({tags, getSelectedTags, selectedTags, clearTags}) => {
+const Tags = ({tags, selectTags, clearTags}) => {
 
   return (
      <div style={{
@@ -13,13 +13,13 @@ const Tags = ({tags, getSelectedTags, selectedTags, clearTags}) => {
 				margin: '2vh 0',
 				maxHeight: '70vh',
 	     }}>
-	     	<TagsInfoBox selectedTags={selectedTags} clearTags={clearTags}/>
+	     	<TagsInfoBox tags={tags} clearTags={clearTags}/>
 	      {tags && tags.map((tag, index) => (
 					<Checkbox
 			      key={index}
-			      label={selectedTags[index].name}
-			      isSelected={selectedTags[index]}
-			      onCheckboxChange={getSelectedTags}
+			      label={tag.name}
+			      isSelected={tag.checked}
+			      onCheckboxChange={selectTags}
 			    />
 	     	))}
      </div>

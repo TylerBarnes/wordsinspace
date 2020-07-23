@@ -11,6 +11,8 @@ const List = ({items}) => {
     setIsClicked(!isClicked);
   }  
 
+  console.log('number of items', sortedItems.length)
+
   return (
     <div 
       style={{

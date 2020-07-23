@@ -15,30 +15,34 @@ export default function CategoryTemplate({data}) {
   const category = data.allWpCategory.nodes[0];
   const pages = category.pages.nodes;
   const posts = category.posts.nodes;
-  const categories = useCategories();
-  const [items, setItems] = useState([...pages, ...posts])
-  
-  const [isTagMode, setTagMode] = useState(false)
-  const tags = useTags()
-  const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
+  const categories = useCategories()
 
-  // updates the selectedTags array
-  function handleTags(e) {
+  const [items, setItems] = useState([...pages, ...posts])
+  const [isTagMode, setTagMode] = useState(false)
+  const [tags, setTags] = useState(useTags())
+
+  // updates the tags array
+  function handleSelection(e) {
     const { name } = e.target;
-    setSelectedTags([...selectedTags].map(tag => tag.name === name ? { name: name, checked: !tag.checked } : tag))
+    setTags([...tags].map(tag => tag.name === name ? {checked: !tag.checked } : tag))
+  }
+
+  function handleClear(e) {
+    e.preventDefault()
+    setTags(tags.map(tag=> ({name: tag.name, checked: false})))
   }
 
   useEffect(()=> {
-    setTagMode(selectedTags.filter(tag=>tag.checked).length > 0)
-  }, [selectedTags])
+    setTagMode(tags.filter(tag=>tag.checked).length > 0)
+  }, [tags])
 
-  const tagQueryResults = useTagQueries(selectedTags, isTagMode);
+  const tagQueryResults = useTagQueries(tags, isTagMode);
 
   return (
     <Browser>
       <SEO title={category.name} />
       <List items={isTagMode ? tagQueryResults : items}/>
-      <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleTags}/>
+      <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear}/>
     </Browser>
   )
 }
