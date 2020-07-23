@@ -33,6 +33,7 @@ const Work = () => {
   }, [selectedTags])
 
   const tagQueryResults = useTagQueries(selectedTags, isTagMode);
+  console.log(isTagMode, tagQueryResults)
 
   return (
     <Browser>
