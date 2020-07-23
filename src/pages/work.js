@@ -26,7 +26,7 @@ const Work = () => {
   }
 
   const results = useTagQueries(selectedTags);
-
+  
   return (
     <Browser>
       <SEO title="work" />

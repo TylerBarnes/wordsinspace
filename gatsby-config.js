@@ -14,14 +14,14 @@ module.exports = {
         schema: {
           perPage: 50,
         },
-        type: {
-          Tag: {
-            limit: 
-              process.env.NODE_ENV === `development`
-                ? 10
-                : null,
-          }
-        }
+        // type: {
+        //   Tag: {
+        //     limit: 
+        //       process.env.NODE_ENV === `development`
+        //         ? 10
+        //         : null,
+        //   }
+        // }
       },
     },
     `gatsby-plugin-react-helmet`,
