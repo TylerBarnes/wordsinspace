@@ -30,7 +30,7 @@ const Work = () => {
   return (
     <Browser>
       <SEO title="work" />
-      <List items={items}/>
+      <List items={results.length > 0 ? results : items}/>
       <Filters categories={categories} tags={tags} selectedTags={selectedTags} getSelectedTags={handleTags}/>
     </Browser>
 	)
