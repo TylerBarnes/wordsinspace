@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 
 import {usePages} from "../hooks/usePages"
 import {usePosts} from "../hooks/usePosts"
@@ -12,12 +12,14 @@ import Filters from "../components/filters"
 import List from "../components/list"
 
 const Work = () => {
-  const [tags, setTags] = useState(useTags())
-  const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
+
   const [categories, setCategories] = useState(useCategories())
   const pages = usePages()
   const posts = usePosts()
   const [items, setItems] = useState([...pages, ...posts])
+  
+  const tags = useTags()
+  const [selectedTags, setSelectedTags] = useState(tags.map(tag =>{ return { name: tag.name, checked : false}}))
 
   // updates the selectedTags array
   function handleTags(e) {

@@ -4,6 +4,7 @@ import {Link} from "gatsby"
 
 const List = ({items}) => {
   const [isClicked, setIsClicked] = useState(false);
+  const sortedItems = items.sort( (a, b) => a.date > b.date)
 
   const togglePreview = (e, index) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ const List = ({items}) => {
         <div 
           style={{
           }}>
-          {items && items.map((node, index) => (
+          {sortedItems && sortedItems.map((node, index) => (
             <li 
               key={index}
               style={{
@@ -54,7 +55,7 @@ const List = ({items}) => {
                 fontSize: '0.8rem'
                 }}> 
                 {node.tags && node.tags.nodes.map((tag, index_tag) => 
-                  <span key={index_tag}>
+                  <span key={index_tag}> yo
                     {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
                   </span>
                 )}
