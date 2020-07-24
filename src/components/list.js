@@ -2,16 +2,13 @@ import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-const List = ({items}) => {
+const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
-  const [details, setDetails] = useState('')
+  const sortedItems = items.sort( (a, b) => a.date > b.date)
 
-  const handleExpand = (e, index) => {
+  const togglePreview = (e, index) => {
     e.preventDefault();
-    setIsClicked(true);
-    setDetails(`
-      <div>${items[index].content}</div>
-    `)
+    setIsClicked(!isClicked);
   }  
 
   return (
@@ -21,65 +18,69 @@ const List = ({items}) => {
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
         justifyContent: 'stretch',
-        height: '90vh',
+        maxHeight: '92vh',
+        overflow: 'scroll',
+        width: '80vw'
       }}>
+        {/* ---------------- LOADING ---------------- */}
+        {loading && 
+          <h4 
+            style={{
+              padding: '5px'
+            }}>
+            FILTERING CONTENT...
+          </h4>
+        }
+        
         {/* ---------------- LIST ---------------- */}
-        <div 
-          style={{
-            flexGrow: '2',
-            height: '90vh',
-            overflow: 'scroll',
-            padding: '10px',
-          }}>
-
-          {items && items.map((node, index) => (
-            <li 
-              key={index}
-              style={{
-                listStyle: 'none',
-                padding: '5px',
-              }}>
-
-              <Link 
-                to={`../${node.slug}`}> 
-                <h1>{node.title}</h1>
-              </Link>              
-              <span  onClick={e=>handleExpand(e,index)} > PREVIEW </span>
-
-              <div 
+        {!loading &&
+          <div>
+            {sortedItems && sortedItems.map((node, index) => (
+              <li 
+                key={index}
                 style={{
-                  margin: '0 0.2vw', 
-                  fontSize: '0.8rem',
-                  color: '#aaa',
-                }}> 
-                {node.date && node.date.slice(0,4)} 
-              </div>
-              
-              <div
-                style={{
-                margin: '0 0.2vw',
-                fontSize: '0.8rem'
-                }}> 
-                {node.tags && node.tags.nodes.map((tag, index_tag) => 
-                  <span key={index_tag}>
-                    {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
-                  </span>
-                )}
-              </div>
-            </li>
-          ))}
-        </div>
+                  listStyle: 'none',
+                  padding: '5px',
+                }}>
 
-        {/* ---------------- PREVIEW ---------------- */}
-        <div 
-          style={{
-            width: isClicked ? '40vw' : '0',
-            height: '90vh',
-            overflow: 'hidden',
-            padding: '10px 20px'
-          }}>
-          {isClicked && <div dangerouslySetInnerHTML={{ __html: details }} />}
-        </div>
+                <Link 
+                  to={`../${node.slug}`}> 
+                  <h1>{node.title}</h1>
+                </Link>              
+                <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
+
+                <div 
+                  style={{
+                    margin: '0 0.2vw', 
+                    fontSize: '0.8rem',
+                    color: '#aaa',
+                  }}> 
+                  {node.date && node.date.slice(0,4)} 
+                </div>
+                
+                <div
+                  style={{
+                  margin: '0 0.2vw',
+                  fontSize: '0.8rem'
+                  }}> 
+                  {node.tags && node.tags.nodes.map((tag, index_tag) => 
+                    <span key={index_tag}>
+                      {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
+                    </span>
+                  )}
+                </div>
+
+                {/* ---------------- PREVIEW ---------------- */}
+                <div 
+                  style={{
+                    overflow: 'hidden'
+                  }}>
+                  {isClicked && <div dangerouslySetInnerHTML={{ __html: node.excerpt ? node.excerpt : node.content ? node.content.slice(0,200) : node.title }} />}
+                </div>
+              </li>
+            ))}
+          </div>
+        }
     </div>
    )
 }

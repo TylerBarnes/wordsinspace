@@ -12,6 +12,11 @@ export const usePosts = () => {
             nodeType
             content
             excerpt
+            tags {
+              nodes {
+                slug
+              }
+            }
           }
         }
       }

@@ -46,6 +46,11 @@ export const query = graphql`
         title
         content
         date
+        tags {
+          nodes {
+            slug
+          }
+        }
       }
     }
   }

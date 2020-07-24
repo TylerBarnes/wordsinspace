@@ -46,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // render items of a specific Category on Collection
+    // render items of a specific Category in Browser
     result.data.categories.nodes.forEach((node) => {
       createPage({
         path: node.slug,

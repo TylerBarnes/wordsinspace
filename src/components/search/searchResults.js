@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-const FilteredList = ({items}) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [details, setDetails] = useState('')
+const SearchResults = ({items}) => {
 
   return (
     <div 
@@ -51,12 +49,12 @@ const FilteredList = ({items}) => {
 }
 
 
-FilteredList.propTypes = {
+SearchResults.propTypes = {
   items: PropTypes.array,
 }
 
-FilteredList.defaultProps = {
+SearchResults.defaultProps = {
   items: [],
 }
 
-export default FilteredList
+export default SearchResults

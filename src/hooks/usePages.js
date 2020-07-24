@@ -11,6 +11,11 @@ export const usePages = () => {
             date
             nodeType
             content
+            tags {
+              nodes {
+                slug
+              }
+            }
           }
         }
       }

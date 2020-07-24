@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 import {useTitle} from "../hooks/useTitle"
 
-import FiltersContainer from "../components/filtersContainer"
 import Title from "../components/title"
 import Search from "../components/search"
 
@@ -47,7 +46,8 @@ const Browser = ({children}) => {
           justifyContent: 'space-between', 
           flexGrow: '1', 
         }}>
-        {/* ----------------------------Top---------------------------- */}
+
+        {/* ----------------------------Top ---------------------------- */}
         <div 
           style={{
             border: '1px solid',
@@ -62,19 +62,16 @@ const Browser = ({children}) => {
           <Search  />
         </div>
 
-        {/* ----------------------------Main---------------------------- */}
+        {/* ----------------------------Main ---------------------------- */}
         <div 
           style={{
-            maxHeight: '90vh',
-            padding: '20px 10px',
-            overflow: 'hidden'
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between', 
           }}>
           {children}
         </div>
       </div>
-
-      {/* ----------------------------Right---------------------------- */}
-      <FiltersContainer />
     </div>
   )
 }

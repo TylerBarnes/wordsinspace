@@ -1,5 +1,4 @@
-import React, {useState, useRef, useEffect} from "react"
-import {Link} from "gatsby" 
+import React, {useState, useRef} from "react"
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
@@ -36,6 +35,7 @@ const Search = () => {
   const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
     variables: { searchTerm: searchTerm, first: 150},
   })
+
   const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
 
   function handleSubmit(e) {
@@ -79,7 +79,7 @@ const Search = () => {
       
       <SearchModal
         isShowing={showResults}
-        hide={e=>setShowResults(false)}
+        hide={e=>closeModal(e)}
         searchTerm={searchTerm}
         location={location}
         loading={loading}

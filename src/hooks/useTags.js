@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby"
+import {sortTags} from "../utils"
 
 export const useTags = () => {
   const { allWpTag } = useStaticQuery(
@@ -7,6 +8,7 @@ export const useTags = () => {
         allWpTag {
           nodes {
             name
+            id
             slug
             posts {
               nodes {
@@ -39,5 +41,7 @@ export const useTags = () => {
       }
     `
   )
-  return allWpTag.nodes
+
+  const sortedTags = sortTags(allWpTag.nodes)
+  return sortedTags 
 }

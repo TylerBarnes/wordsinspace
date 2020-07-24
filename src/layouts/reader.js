@@ -63,6 +63,7 @@ const Reader = ({children}) => {
         </div>
       </Link>
 
+      {/* ----------------------------Top+Main---------------------------- */}
       <div 
         style={{
           display: 'flex',
@@ -70,7 +71,6 @@ const Reader = ({children}) => {
           justifyContent: 'space-between', 
           flexGrow: '1', 
         }}>
-        {/* ----------------------------Top---------------------------- */}
         <div 
           style={{
           border: '1px solid',
@@ -84,7 +84,6 @@ const Reader = ({children}) => {
           <div>Reader</div>
         </div>
 
-        {/* ----------------------------Main---------------------------- */}
         <div 
           style={{
             maxHeight: '95vh',
