@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
 const SearchResults = ({items}) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [details, setDetails] = useState('')
 
   return (
     <div 

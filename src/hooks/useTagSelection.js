@@ -1,4 +1,3 @@
-import React from 'react';
 import { gql, useQuery } from '@apollo/client'
 
 // A GraphQL query looking up Posts and Pages which contain a given Tag

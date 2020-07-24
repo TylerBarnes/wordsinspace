@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
 
 import {useCategories} from "../hooks/useCategories"
-import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
 
 import Browser from "../layouts/browser"
