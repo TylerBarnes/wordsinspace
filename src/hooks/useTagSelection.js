@@ -43,5 +43,10 @@ export const useTagSelection = (tags, isTagMode) => {
     skip: !isTagMode
   })
   
-  return response;
+  let loading = response.loading;
+  const results = isTagMode && !loading 
+                ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+                : [] 
+
+  return {results, loading}  
 }

@@ -13,38 +13,37 @@ import List from "../components/list"
 
 const Work = () => {
 
+  const categories= useCategories()
   const pages = usePages()
   const posts = usePosts()
-  const categories= useCategories()
-
   const [isTagMode, setTagMode] = useState(false)
-  const init_tags = useTags()
-  const [tags, setTags] = useState(init_tags)
-
+  const [tags, setTags] = useState(useTags())
+  console.log(tags)
+  
   // updates the tags array
   function handleSelection(e) {
     const { name } = e.target;
     setTags(tags.map(tag => tag.name === name ? {...tag, checked: !tag.checked } : tag))
   }
 
+  // handle Clear button
   function handleClear(e) {
     e.preventDefault()
     setTags(tags.map(tag=> ({...tag, checked: false})))
     setTagMode(false)
   }
 
+  // set tagMode to false if no tag is selected
   useEffect(()=> {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  const response= useTagSelection(tags, isTagMode);
-  const tagQueryResults= isTagMode && !response.loading 
-                ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
-                : []    
+  const {tagQueryResults, loading} = useTagSelection(tags, isTagMode);
+  
   return (
     <Browser>
       <SEO title="work" />
-      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]} loading={response.loading}/>
+      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]} loading={loading}/>
       <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)
