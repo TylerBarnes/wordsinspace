@@ -1,6 +1,6 @@
 import React from "react"
 
-const ModalText = ({location, searchTerm, hide}) => {
+const ModalText = ({catName, searchTerm, hide}) => {
   return (
     <div>
     	<div 
@@ -23,7 +23,7 @@ const ModalText = ({location, searchTerm, hide}) => {
           textTransform: 'uppercase',
           color: '#fff',
         }}>
-        Results for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
+        Results for <strong>{searchTerm}</strong> {catName !== 'work' ? `within ${catName}`: null}
       </div>
     </div>
   )

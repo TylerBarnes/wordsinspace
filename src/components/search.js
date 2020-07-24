@@ -8,20 +8,25 @@ import SearchModal from "./search/searchModal"
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_POSTS_QUERY = gql`
-  query SearchQuery($first: Int, $searchTerm: String!) {
-    posts(first: $first, where: { search: $searchTerm }) {
+  query SearchQuery($first: Int, $searchTerm: String!, $catName: String!) {
+    categories(where: {nameLike: $catName}) {
       nodes {
-        title
-        slug
-        excerpt
-        date
-      }
-    }
-    pages(first: $first, where: { search: $searchTerm }) {
-      nodes {
-        title
-        slug
-        date
+        name
+        posts(first: $first, where: {search: $searchTerm}) {
+          nodes {
+            title
+            slug
+            date
+            excerpt
+          }
+        }
+        pages(first: $first, where: {search: $searchTerm}) {
+          nodes {
+            title
+            slug
+            date
+          }
+        }
       }
     }
   }
@@ -32,13 +37,19 @@ const Search = () => {
   const [showResults, setShowResults] = useState(false);
   const inputEl = useRef(null)
   const location = useLocation();
-  
+  const catName = location.pathname !== '/work' ? location.pathname.slice(1) : ''
+
   const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
-    variables: { searchTerm: searchTerm, first: 150},
+    variables: { searchTerm: searchTerm, first: 150, catName: catName},
     skip: !showResults
   })
 
-  const searchResults = showResults && !loading ? sortByDate([...data.posts.nodes, ...data.pages.nodes]) : []
+  const searchResults = showResults && !loading 
+                        ? sortByDate([
+                            data.posts ? [...data.posts.nodes] : [], 
+                            data.pages ? [...data.pages.nodes] : [] 
+                          ]) 
+                        : []
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -83,7 +94,7 @@ const Search = () => {
         isShowing={showResults}
         hide={e=>closeModal(e)}
         searchTerm={searchTerm}
-        location={location}
+        catName={catName}
         loading={loading}
         searchResults={searchResults}
       />

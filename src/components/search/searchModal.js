@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import SearchResults from "./searchResults"
 import ModalText from "./modalText"
 
-const SearchModal = ({ isShowing, hide, searchResults, searchTerm, location, loading}) => isShowing ? ReactDOM.createPortal(
+const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
     <div 
       style={{
@@ -50,14 +50,14 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, location, loa
                 padding: '1vh 0',
                 color: '#fff'
               }}> 
-              Searching for <strong>{searchTerm}</strong> {location.pathname !== '/work' ? `within ${location.pathname.slice(1)}`: null}
+              Searching for <strong>{searchTerm}</strong> {catName !== 'work' ? `within ${catName}`: null}
             </div>
           )}
           
           {/* ---------------- SEARCH RESULTS ---------------- */}
           {!loading && (
             <>
-              <ModalText searchTerm={searchTerm} location={location} hide={hide} />
+              <ModalText searchTerm={searchTerm} catName={catName} hide={hide} />
               <SearchResults items={searchResults} />
             </>
           )}
