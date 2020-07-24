@@ -11,8 +11,6 @@ const List = ({loading, items}) => {
     setIsClicked(!isClicked);
   }  
 
-  console.log('displaying', sortedItems.length, 'items')
-
   return (
     <div 
       style={{
@@ -25,63 +23,64 @@ const List = ({loading, items}) => {
         width: '80vw'
       }}>
         {/* ---------------- LOADING ---------------- */}
-        {loading 
-          ? <h4 
-              style={{
-                padding: '5px'
-              }}>
-              FILTERING CONTENT...
-            </h4>
-          : null
+        {loading && 
+          <h4 
+            style={{
+              padding: '5px'
+            }}>
+            FILTERING CONTENT...
+          </h4>
         }
         
         {/* ---------------- LIST ---------------- */}
-        <div>
-          {sortedItems && sortedItems.map((node, index) => (
-            <li 
-              key={index}
-              style={{
-                listStyle: 'none',
-                padding: '5px',
-              }}>
-
-              <Link 
-                to={`../${node.slug}`}> 
-                <h1>{node.title}</h1>
-              </Link>              
-              <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
-
-              <div 
+        {!loading &&
+          <div>
+            {sortedItems && sortedItems.map((node, index) => (
+              <li 
+                key={index}
                 style={{
-                  margin: '0 0.2vw', 
-                  fontSize: '0.8rem',
-                  color: '#aaa',
-                }}> 
-                {node.date && node.date.slice(0,4)} 
-              </div>
-              
-              <div
-                style={{
-                margin: '0 0.2vw',
-                fontSize: '0.8rem'
-                }}> 
-                {node.tags && node.tags.nodes.map((tag, index_tag) => 
-                  <span key={index_tag}>
-                    {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
-                  </span>
-                )}
-              </div>
-
-              {/* ---------------- PREVIEW ---------------- */}
-              <div 
-                style={{
-                  overflow: 'hidden'
+                  listStyle: 'none',
+                  padding: '5px',
                 }}>
-                {isClicked && <div dangerouslySetInnerHTML={{ __html: node.excerpt ? node.excerpt : node.content ? node.content.slice(0,200) : node.title }} />}
-              </div>
-            </li>
-          ))}
-        </div>
+
+                <Link 
+                  to={`../${node.slug}`}> 
+                  <h1>{node.title}</h1>
+                </Link>              
+                <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
+
+                <div 
+                  style={{
+                    margin: '0 0.2vw', 
+                    fontSize: '0.8rem',
+                    color: '#aaa',
+                  }}> 
+                  {node.date && node.date.slice(0,4)} 
+                </div>
+                
+                <div
+                  style={{
+                  margin: '0 0.2vw',
+                  fontSize: '0.8rem'
+                  }}> 
+                  {node.tags && node.tags.nodes.map((tag, index_tag) => 
+                    <span key={index_tag}>
+                      {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
+                    </span>
+                  )}
+                </div>
+
+                {/* ---------------- PREVIEW ---------------- */}
+                <div 
+                  style={{
+                    overflow: 'hidden'
+                  }}>
+                  {isClicked && <div dangerouslySetInnerHTML={{ __html: node.excerpt ? node.excerpt : node.content ? node.content.slice(0,200) : node.title }} />}
+                </div>
+              </li>
+            ))}
+          </div>
+        }
     </div>
    )
 }

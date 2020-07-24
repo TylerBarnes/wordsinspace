@@ -16,10 +16,10 @@ const Work = () => {
   const categories= useCategories()
   const pages = usePages()
   const posts = usePosts()
+  const initial = [...pages, ...posts]
   const [isTagMode, setTagMode] = useState(false)
   const [tags, setTags] = useState(useTags())
-  console.log(tags)
-  
+
   // updates the tags array
   function handleSelection(e) {
     const { name } = e.target;
@@ -38,12 +38,17 @@ const Work = () => {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  const {tagQueryResults, loading} = useTagSelection(tags, isTagMode);
+  // GraphQL-Apollo query to get the posts corresonding to current Tag selection
+  const response = useTagSelection(tags, isTagMode);
+  const tagQueryResults = isTagMode && !response.loading 
+                          ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+                          : [] 
+  console.log('displaying', initial.length, 'original items', tagQueryResults.length, 'filtered items and', tags.length, 'tags')
   
   return (
     <Browser>
       <SEO title="work" />
-      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]} loading={loading}/>
+      <List items={isTagMode ? tagQueryResults : initial} loading={response.loading}/>
       <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)
