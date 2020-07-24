@@ -17,7 +17,7 @@ export default function CategoryTemplate({data}) {
   const posts = category.posts.nodes;
   const initial = [...pages, ...posts];
   const [isTagMode, setTagMode] = useState(false)
-  const [tags, setTags] = useState(extractTags(category, posts, pages))
+  const [tags, setTags] = useState(extractTags(category,initial))
 
   // handle Tag selection
   function handleSelection(e) {

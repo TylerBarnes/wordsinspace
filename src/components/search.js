@@ -35,7 +35,7 @@ const Search = () => {
   const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
     variables: { searchTerm: searchTerm, first: 150},
   })
-  console.error(error)
+
   const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
 
   function handleSubmit(e) {
