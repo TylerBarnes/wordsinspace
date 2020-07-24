@@ -18,7 +18,8 @@ const Work = () => {
   const categories= useCategories()
 
   const [isTagMode, setTagMode] = useState(false)
-  const [tags, setTags] = useState(useTags())
+  const init_tags = useTags()
+  const [tags, setTags] = useState(init_tags)
 
   // updates the tags array
   function handleSelection(e) {
@@ -43,8 +44,7 @@ const Work = () => {
   return (
     <Browser>
       <SEO title="work" />
-      {response.loading ? <div>Loading....</div> : null}
-      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]}/>
+      <List items={isTagMode ? tagQueryResults : [...pages, ...posts]} loading={response.loading}/>
       <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)

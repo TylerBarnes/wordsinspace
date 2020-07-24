@@ -19,8 +19,10 @@ export default function CategoryTemplate({data}) {
   const categories = useCategories()
 
   const [isTagMode, setTagMode] = useState(false)
+
+  // special GraphQL query to get back the tags belonging to only this category
   const [tags, setTags] = useState(useTagCategory(category.name))
-  console.log(tags, useTags())
+  console.log(tags)
 
   // updates the tags array
   function handleSelection(e) {

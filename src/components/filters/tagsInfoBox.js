@@ -11,6 +11,7 @@ const TagsInfoBox = ({tags, clearTags, isTagMode}) => {
 	    	}}>
     		{tags.map( tag => tag.checked 
     			? <li 
+    					key={tag.name}
 		    			style={{
 								margin: '0',
 								padding: '0',

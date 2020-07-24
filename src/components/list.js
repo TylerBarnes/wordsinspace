@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-const List = ({items}) => {
+const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
   const sortedItems = items.sort( (a, b) => a.date > b.date)
 
@@ -11,7 +11,7 @@ const List = ({items}) => {
     setIsClicked(!isClicked);
   }  
 
-  console.log('number of items', sortedItems.length)
+  console.log('displaying', sortedItems.length, 'items')
 
   return (
     <div 
@@ -24,10 +24,19 @@ const List = ({items}) => {
         overflow: 'scroll',
         width: '80vw'
       }}>
+        {/* ---------------- LOADING ---------------- */}
+        {loading 
+          ? <h4 
+              style={{
+                padding: '5px'
+              }}>
+              FILTERING CONTENT...
+            </h4>
+          : null
+        }
+        
         {/* ---------------- LIST ---------------- */}
-        <div 
-          style={{
-          }}>
+        <div>
           {sortedItems && sortedItems.map((node, index) => (
             <li 
               key={index}
