@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 
 import {useCategories} from "../hooks/useCategories"
 import {useTags} from "../hooks/useTags"
-import {useTagQueries} from "../hooks/useTagQueries"
+import {useTagCategory} from "../hooks/useTagCategory"
+import {useTagSelection} from "../hooks/useTagSelection"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
@@ -18,8 +19,9 @@ export default function CategoryTemplate({data}) {
   const categories = useCategories()
 
   const [isTagMode, setTagMode] = useState(false)
-  const [tags, setTags] = useState(useTags())
-  
+  const [tags, setTags] = useState(useTagCategory(category.name))
+  console.log(tags, useTags())
+
   // updates the tags array
   function handleSelection(e) {
     const { name } = e.target;
@@ -36,9 +38,9 @@ export default function CategoryTemplate({data}) {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  const response= useTagQueries(tags, isTagMode);
-  const tagQueryResults= isTagMode && !response.loading 
-                ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+  const responseTagSelection = useTagSelection(tags, isTagMode);
+  const tagQueryResults= isTagMode && !responseTagSelection.loading 
+                ? [...responseTagSelection.data.posts.nodes, ...responseTagSelection.data.pages.nodes].sort( (a, b) => a.date > b.date)
                 : []   
 
   return (

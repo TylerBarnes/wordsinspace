@@ -35,7 +35,7 @@ const SEARCH_TAGS_QUERY = gql`
   }
 `
 
-export const useTagQueries = (tags, isTagMode) => {
+export const useTagSelection = (tags, isTagMode) => {
   // GraphQL query to get the list of Posts and Pages of a selected Tag
   const slugs = tags.filter(tag=> tag.checked).map(d => d.slug)
   const response = useQuery(SEARCH_TAGS_QUERY, {

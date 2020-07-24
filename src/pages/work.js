@@ -4,7 +4,7 @@ import {usePages} from "../hooks/usePages"
 import {usePosts} from "../hooks/usePosts"
 import {useCategories} from "../hooks/useCategories"
 import {useTags} from "../hooks/useTags"
-import {useTagQueries} from "../hooks/useTagQueries"
+import {useTagSelection} from "../hooks/useTagSelection"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
@@ -36,7 +36,7 @@ const Work = () => {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  const response= useTagQueries(tags, isTagMode);
+  const response= useTagSelection(tags, isTagMode);
   const tagQueryResults= isTagMode && !response.loading 
                 ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
                 : []    
