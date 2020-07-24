@@ -22,3 +22,7 @@ export const sortTags = (tags) => {
             .sort((a, b) => a.posts.nodes.length + a.pages.nodes.length < b.posts.nodes.length + b.pages.nodes.length ? 1 : -1) // sort DESC by the number of tags across both Posts and Pages
             .map(obj=> ({ ...obj, checked: false })) // modify the incoming array by inserting a {checked: true|false} field to every object, which is used for selecting Tags
 }
+
+export const sortByDate = (array) => {
+   return array.sort((a,b)=> a.date > b.date)
+}

@@ -44,7 +44,7 @@ export default function CategoryTemplate({data}) {
                           ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
                           : [] 
   
-  console.log('displaying', initial.length, 'original items', tagQueryResults.length, 'filtered items and', tags.length, 'tags')
+  // console.log('displaying', initial.length, 'original items', tagQueryResults.length, 'filtered items and', tags.length, 'tags')
 
   return (
     <Browser>

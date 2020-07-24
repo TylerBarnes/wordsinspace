@@ -2,6 +2,8 @@ import React, {useState, useRef} from "react"
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
+import {sortByDate} from '../utils'
+
 import SearchModal from "./search/searchModal"
 
 // The GraphQL query containing the search term, will be sent to Apollo
@@ -33,9 +35,10 @@ const Search = () => {
   
   const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
     variables: { searchTerm: searchTerm, first: 150},
+    skip: !showResults
   })
 
-  const searchResults = !loading ? [...data.posts.nodes, ...data.pages.nodes] : []
+  const searchResults = showResults && !loading ? sortByDate([...data.posts.nodes, ...data.pages.nodes]) : []
 
   function handleSubmit(e) {
     e.preventDefault()
