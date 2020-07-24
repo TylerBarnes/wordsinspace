@@ -19,7 +19,6 @@ const SEARCH_POSTS_QUERY = gql`
       nodes {
         title
         slug
-        excerpt
         date
       }
     }
