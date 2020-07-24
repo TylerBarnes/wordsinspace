@@ -33,10 +33,13 @@ const SEARCH_TAGS_QUERY = gql`
     }
   }
 `
-
+// we are using the Apollo useQuery hook in order to query the Apollo GraphQL layer using variables (the array of tags' slugs in this case)
 export const useTagSelection = (tags, isTagMode) => {
+
+  // extract slugs from the tags that are set to 'checked: true'
+  const slugs = tags.map(d => d.slug)
+  
   // GraphQL query to get the list of Posts and Pages of a selected Tag
-  const slugs = tags.filter(tag=> tag.checked).map(d => d.slug)
   const response = useQuery(SEARCH_TAGS_QUERY, {
     variables: {first: 100, tags: slugs },
     skip: !isTagMode

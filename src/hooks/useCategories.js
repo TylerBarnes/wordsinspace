@@ -8,33 +8,6 @@ export const useCategories = () => {
           nodes {
             name
             slug
-            posts {
-              nodes {
-                title
-                slug
-                date
-                content
-                excerpt
-                tags {
-                  nodes {
-                    slug
-                  }
-                }
-              }
-            }
-            pages {
-              nodes {
-                title
-                slug
-                date
-                content
-                tags {
-                  nodes {
-                    slug
-                  }
-                }
-              }
-            }
           }
         }
       }

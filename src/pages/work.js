@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react"
-
 import {usePages} from "../hooks/usePages"
 import {usePosts} from "../hooks/usePosts"
-import {useCategories} from "../hooks/useCategories"
 import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
 
@@ -13,43 +11,44 @@ import List from "../components/list"
 
 const Work = () => {
 
-  const categories= useCategories()
-  const pages = usePages()
-  const posts = usePosts()
-  const initial = [...pages, ...posts]
+  // initialize the items to all of the Pages and all of the Posts
+  const initial = [...usePages(), ...usePosts()]
   const [isTagMode, setTagMode] = useState(false)
-  const [tags, setTags] = useState(useTags())
 
-  // updates the tags array
+  // initialize the tags to all of the Tags available
+  const [tags, setTags] = useState(useTags())
+  
+  // handles clicking on Tags by updating the 'checked' key-value for every tag
   function handleSelection(e) {
     const { name } = e.target;
     setTags(tags.map(tag => tag.name === name ? {...tag, checked: !tag.checked } : tag))
   }
 
-  // handle Clear button
+  // handles clearing the Tag selections and toggling TagMode
   function handleClear(e) {
     e.preventDefault()
     setTags(tags.map(tag=> ({...tag, checked: false})))
     setTagMode(false)
   }
 
-  // set tagMode to false if no tag is selected
+  // watches tags array for updates and updates the Tag Mode in case no Tag is checked
   useEffect(()=> {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  // GraphQL-Apollo query to get the posts corresonding to current Tag selection
-  const response = useTagSelection(tags, isTagMode);
+  // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
+  const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
                           ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
                           : [] 
+  
   console.log('displaying', initial.length, 'original items', tagQueryResults.length, 'filtered items and', tags.length, 'tags')
   
   return (
     <Browser>
       <SEO title="work" />
       <List items={isTagMode ? tagQueryResults : initial} loading={response.loading}/>
-      <Filters categories={categories} tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+      <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)
 }

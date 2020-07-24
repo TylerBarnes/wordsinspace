@@ -4,7 +4,7 @@ import {Link} from "gatsby"
 import Tags from "./filters/tags"
 import Categories from "./filters/categories"
 
-const Filters = ({categories, tags, selectTags, clearTags, isTagMode}) => {
+const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
     <div 
@@ -14,14 +14,15 @@ const Filters = ({categories, tags, selectTags, clearTags, isTagMode}) => {
         textTransform: 'uppercase',
         padding: '10px',
         overflow: 'scroll',
-        fontWeight: '500'
+        fontWeight: '500',
+        width: '15vw'
       }}>
       Index
       <div 
         style={{
           margin: '2vh 0'
         }}>
-        <Categories categories={categories} />
+        <Categories />
         <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} />
       </div>
     </div>

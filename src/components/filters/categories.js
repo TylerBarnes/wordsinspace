@@ -1,7 +1,9 @@
 import React from "react"
 import {Link} from "gatsby" 
+import {useCategories} from "../../hooks/useCategories"
 
-const Categories = ({categories}) => {
+const Categories = () => {
+  const categories = useCategories()
 
   return (
 		<div style={{
@@ -21,7 +23,7 @@ const Categories = ({categories}) => {
 					}}		
 				>
 					<Link to={`/${category.slug}`} activeStyle={{ color: "red" }} partiallyActive={true}>
-		      	{category.name} [{category.posts.nodes.length+category.pages.nodes.length}]
+		      	{category.name}
 		      </Link>
 				</li>
 		 	))}
