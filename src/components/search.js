@@ -2,7 +2,7 @@ import React, {useState, useRef} from "react"
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
-import {sortByDate} from '../utils'
+import {sortByDate, extractSearchResults} from '../utils'
 import SearchModal from "./search/searchModal"
 
 // The GraphQL query containing the search term, will be sent to Apollo
@@ -42,16 +42,9 @@ const Search = () => {
     variables: { searchTerm: searchTerm, first: 150, catName: catName},
     skip: !showResults
   })
+  
   const searchResults = showResults && !loading
-                        ? [
-                          ...data.categories.nodes[0].pages.nodes.length > 0 
-                            ? data.categories.nodes[0].pages.nodes
-                            : []
-                          ,
-                          ...data.categories.nodes[0].posts.nodes.length > 0 
-                            ? data.categories.nodes[0].posts.nodes
-                            : []
-                          ]
+                        ? extractSearchResults(data)
                         : []
   
   function handleSubmit(e) {
@@ -92,7 +85,6 @@ const Search = () => {
         onChange={e => onChange(e)}
         />
       </form>
-      
       <SearchModal
         isShowing={showResults}
         hide={e=>closeModal(e)}

@@ -14,6 +14,7 @@ export default function pageTemplate({ data }) {
         style={{
           width: '70vw',
           margin: '0 auto',
+          border: '1px solid'
         }}>
         <div 
           style={{

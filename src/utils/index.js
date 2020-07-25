@@ -1,7 +1,6 @@
 
 // When we first land on a /category endpoint, we want the Tag list to automatically display Tags that are associated with this category's content. We can't do that dynamically with Apollo and we can't use a Gatsby static Query since it doesn't accept variables. We have to construct the [tags] array manually, by extracting them out of the deeply nested 'category' variable. 
 export const extractTags = (initial) => {
-   
   return initial
          	.filter(hasTags=>hasTags.tags && hasTags.tags.nodes.length>0) // filter for elements that contain non-zero Tag arrays
          	.map(item=> { 
@@ -14,7 +13,6 @@ export const extractTags = (initial) => {
   
 }
 
-
 export const sortTags = (tags) => {
    return tags
             .filter(tag => tag.name.length > 0) // filter for nodes which have tags
@@ -25,4 +23,14 @@ export const sortTags = (tags) => {
 
 export const sortByDate = (array) => {
    return array.sort((a,b)=> a.date > b.date)
+}
+
+export const extractSearchResults = (array) => {
+   let results = array.categories.nodes
+                 .filter(cat=> cat.pages.nodes.length >0 || cat.posts.nodes.length >0)
+                 .map(nonEmptyCat => {
+                    return [...nonEmptyCat.pages.nodes, ...nonEmptyCat.posts.nodes]
+                 })
+                 .flat(2)
+   return results
 }
