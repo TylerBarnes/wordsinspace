@@ -3,11 +3,10 @@ import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
 import {sortByDate} from '../utils'
-
 import SearchModal from "./search/searchModal"
 
 // The GraphQL query containing the search term, will be sent to Apollo
-const SEARCH_POSTS_QUERY = gql`
+const SEARCH_QUERY = gql`
   query SearchQuery($first: Int, $searchTerm: String!, $catName: String!) {
     categories(where: {nameLike: $catName}) {
       nodes {
@@ -37,20 +36,16 @@ const Search = () => {
   const [showResults, setShowResults] = useState(false);
   const inputEl = useRef(null)
   const location = useLocation();
-  const catName = location.pathname !== '/work' ? location.pathname.slice(1) : ''
+  const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
+  console.log(catName)
 
-  const {loading, error, data} = useQuery(SEARCH_POSTS_QUERY, {
+  const {loading, error, data} = useQuery(SEARCH_QUERY, {
     variables: { searchTerm: searchTerm, first: 150, catName: catName},
     skip: !showResults
   })
-
-  const searchResults = showResults && !loading 
-                        ? sortByDate([
-                            data.posts ? [...data.posts.nodes] : [], 
-                            data.pages ? [...data.pages.nodes] : [] 
-                          ]) 
+  const searchResults = showResults && !loading
+                        ? []
                         : []
-
   function handleSubmit(e) {
     e.preventDefault()
     setShowResults(() => (searchTerm.length > 0 ? true : false))

@@ -23,7 +23,7 @@ const ModalText = ({catName, searchTerm, hide}) => {
           textTransform: 'uppercase',
           color: '#fff',
         }}>
-        Results for <strong>{searchTerm}</strong> {catName !== 'work' ? `within ${catName}`: null}
+        Results for <strong>{searchTerm}</strong> {catName === '' ? '' : `under ${catName}`}
       </div>
     </div>
   )

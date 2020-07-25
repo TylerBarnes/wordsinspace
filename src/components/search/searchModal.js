@@ -48,9 +48,10 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
             <div 
               style={{
                 padding: '1vh 0',
+                textTransform: 'uppercase',
                 color: '#fff'
               }}> 
-              Searching for <strong>{searchTerm}</strong> {catName !== 'work' ? `within ${catName}`: null}
+              Searching for <strong>{searchTerm}</strong> {catName === '' ? '' : `under ${catName}`}
             </div>
           )}
           
