@@ -37,15 +37,23 @@ const Search = () => {
   const inputEl = useRef(null)
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
-  console.log(catName)
 
   const {loading, error, data} = useQuery(SEARCH_QUERY, {
     variables: { searchTerm: searchTerm, first: 150, catName: catName},
     skip: !showResults
   })
   const searchResults = showResults && !loading
-                        ? []
+                        ? [
+                          ...data.categories.nodes[0].pages.nodes.length > 0 
+                            ? data.categories.nodes[0].pages.nodes
+                            : []
+                          ,
+                          ...data.categories.nodes[0].posts.nodes.length > 0 
+                            ? data.categories.nodes[0].posts.nodes
+                            : []
+                          ]
                         : []
+  
   function handleSubmit(e) {
     e.preventDefault()
     setShowResults(() => (searchTerm.length > 0 ? true : false))
