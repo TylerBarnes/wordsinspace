@@ -4,12 +4,11 @@ export const usePages = () => {
   const { allWpPage } = useStaticQuery(
     graphql`
       query {
-        allWpPage(limit: 10) {
+        allWpPage {
           nodes {
             slug
             title
             date
-            nodeType
             content
             tags {
               nodes {

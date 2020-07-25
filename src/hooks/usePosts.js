@@ -9,7 +9,6 @@ export const usePosts = () => {
             slug
             title
             date
-            nodeType
             content
             excerpt
             tags {
