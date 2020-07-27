@@ -18,7 +18,7 @@ const Work = () => {
   
   // initialize the tags to all of the Tags available
   const [tags, setTags] = useState(useTags())
-  
+
   // handles clicking on Tags by updating the 'checked' key-value for every tag
   function handleSelection(e) {
     const { name } = e.target;

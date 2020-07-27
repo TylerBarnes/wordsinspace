@@ -47,6 +47,7 @@ export const query = graphql`
         content
         date
         uri
+        slug
         tags {
           nodes {
             slug

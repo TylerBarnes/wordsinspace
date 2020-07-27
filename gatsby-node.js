@@ -43,7 +43,6 @@ exports.createPages = async ({ actions, graphql }) => {
   // ------------
   // ------------ Create Category views
   // ------------
-
   const {
     data: { allWpCategory },
   } = await graphql(`
@@ -67,15 +66,4 @@ exports.createPages = async ({ actions, graphql }) => {
       })
     })
   )
-
-  // // render items of a specific Category in Browser
-  // result.data.categories.nodes.forEach((node) => {
-  //   createPage({
-  //     path: node.slug,
-  //     component: path.resolve(`./src/templates/category.js`),
-  //     context: {
-  //       slug: node.slug,
-  //     },
-  //   })
-  // })
 }
