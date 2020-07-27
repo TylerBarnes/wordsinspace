@@ -2,14 +2,12 @@ import React, {useState} from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
-import {useTitle} from "../hooks/useTitle"
 import Title from "../components/title"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
 
 const Reader = ({children}) => {
-  const title = useTitle();
   const [isBrowserHovered, setBrowser] = useState(false);
   const [isTitleHovered, setTitle] = useState(false);
   
@@ -38,7 +36,7 @@ const Reader = ({children}) => {
           padding: '10px',
           background: !isTitleHovered ? '#fff' : '#ccc',
         }}>
-        <Title siteTitle={title} />
+        <Title />
       </div>      
 
 

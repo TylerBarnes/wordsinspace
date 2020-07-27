@@ -2,14 +2,12 @@ import React, {useState} from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
-import {useTitle} from "../hooks/useTitle"
 import Title from "../components/title"
 
 import "../styles/layout.css"
 import "../styles/addedStyles.css"
 
 const Home = ({children}) => {
-  const title = useTitle();
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -37,7 +35,7 @@ const Home = ({children}) => {
           padding: '10px',
           minHeight: '3vw', 
         }}>
-          <Title siteTitle={title} />      
+          <Title/>      
         </div>
 
         <div 

@@ -1,8 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import {useTitle} from "../hooks/useTitle"
 
-const Title = ({ siteTitle }) => {
+const Title = () => {
+  const title = useTitle();
   return (
     <h4>
       <Link
@@ -13,18 +14,10 @@ const Title = ({ siteTitle }) => {
           textTransform: 'uppercase',
         }}
       >
-        {siteTitle}
+        {title}
       </Link>
     </h4>
   )
-}
-
-Title.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Title.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Title

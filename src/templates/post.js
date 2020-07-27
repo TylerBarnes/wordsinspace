@@ -38,6 +38,36 @@ export default function postTemplate({ data }) {
   )
 }
 
+
+// {
+//   posts {
+//     nodes {
+//       slug
+//       title
+//       date
+//       tags {
+//         nodes {
+//           slug
+//         }
+//         edges {
+//           node {
+//             posts {
+//               nodes {
+//                 slug
+//               }
+//             }
+//             pages {
+//               nodes {
+//                 slug
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 export const query = graphql`
   query getPost($slug: String!) {
     allWpPost(filter: {slug: { eq: $slug }}) {

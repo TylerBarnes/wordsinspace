@@ -12,7 +12,8 @@ export default function HomePage() {
   return (
     <Home>
       <SEO title="home" />
-      <div style={{
+      <div 
+        style={{
         textAlign: 'left',
         display: 'flex row',
        }}>
@@ -27,7 +28,7 @@ export default function HomePage() {
             </div>
           </Link>
         ))}
-        </div>
+      </div>
     </Home >
   )
 }
