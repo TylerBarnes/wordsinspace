@@ -22,7 +22,11 @@ export const sortTags = (tags) => {
 }
 
 export const sortByDate = (array) => {
-   return array.sort((a,b)=> a.date > b.date)
+  return array.sort((a,b)=> {
+    if (a.date && b.date) {
+      return parseInt(b.date.slice(0,4)) - parseInt(a.date.slice(0,4))
+    }
+  })
 }
 
 export const extractSearchResults = (array) => {
