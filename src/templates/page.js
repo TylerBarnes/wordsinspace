@@ -39,17 +39,17 @@ export default function pageTemplate({ data }) {
 }
 
 export const query = graphql`
-  query getPage($uri: String!) {
-    allWpPage(filter: {uri: { eq: $uri }}) {
+  query getPage($id: String!) {
+    allWpPage(filter: {id: { eq: $id }}) {
       nodes {
-        uri
+        id
         title
         content
         date
         uri
         tags {
           nodes {
-            uri
+            slug
           }
         }
       }

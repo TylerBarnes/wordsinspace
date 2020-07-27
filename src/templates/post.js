@@ -69,17 +69,17 @@ export default function postTemplate({ data }) {
 // }
 
 export const query = graphql`
-  query getPost($uri: String!) {
-    allWpPost(filter: {uri: { eq: $uri }}) {
+  query getPost($id: String!) {
+    allWpPost(filter: {id: { eq: $id }}) {
       nodes {
-        uri
+        id
         title
         content
         date
         uri
         tags {
           nodes {
-            uri
+            slug
           }
         }
       }
