@@ -47,7 +47,7 @@ const Search = () => {
 
   useEffect(()=>{
     if (showResults && !loading) { 
-      setSearchResults(extractSearchResults(data))
+      setSearchResults(sortByDate(extractSearchResults(data)))
     }
   },[data])
 

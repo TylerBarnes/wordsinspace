@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
 import {useTagSelection} from "../hooks/useTagSelection"
 import {extractTags} from "../utils"
+import {sortByDate} from "../utils"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
@@ -49,7 +50,7 @@ export default function CategoryTemplate({data}) {
   return (
     <Browser>
       <SEO title={category.name} />
-      <List items={isTagMode ? tagQueryResults : initial} loading={response.loading}/>
+      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading}/>
       <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
   )

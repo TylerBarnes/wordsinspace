@@ -3,6 +3,7 @@ import {usePages} from "../hooks/usePages"
 import {usePosts} from "../hooks/usePosts"
 import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
+import {sortByDate} from "../utils"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
@@ -34,7 +35,7 @@ const Work = () => {
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
-                          ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+                          ? [...response.data.posts.nodes, ...response.data.pages.nodes]
                           : [] 
   
     // watches tags array for updates and updates the Tag Mode in case no Tag is checked
@@ -45,7 +46,7 @@ const Work = () => {
   return (
     <Browser>
       <SEO title="work" />
-      <List items={isTagMode ? tagQueryResults : initial} loading={response.loading}/>
+      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading}/>
       <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)

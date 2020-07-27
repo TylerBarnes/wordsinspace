@@ -4,7 +4,6 @@ import {Link, useScrollRestoration} from "gatsby"
 
 const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
-  const sortedItems = items.sort( (a, b) => a.date > b.date)
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 
   const togglePreview = (e, index) => {
@@ -37,7 +36,7 @@ const List = ({loading, items}) => {
         {/* ---------------- LIST ---------------- */}
         {!loading &&
           <ul>
-            {sortedItems && sortedItems.map((node, index) => (
+            {items && items.map((node, index) => (
               <li 
                 key={index}
                 style={{
