@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
-import {Link} from "gatsby" 
+import {Link, useScrollRestoration} from "gatsby" 
 
 const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
   const sortedItems = items.sort( (a, b) => a.date > b.date)
-
+  const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
+  console.log(ulScrollRestoration)
   const togglePreview = (e, index) => {
     e.preventDefault();
     setIsClicked(!isClicked);
@@ -34,7 +35,7 @@ const List = ({loading, items}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <div>
+          <ul {...ulScrollRestoration} style={{overflow: 'auto'}}>
             {sortedItems && sortedItems.map((node, index) => (
               <li 
                 key={index}
@@ -79,7 +80,7 @@ const List = ({loading, items}) => {
                 </div>
               </li>
             ))}
-          </div>
+          </ul>
         }
     </div>
    )
