@@ -6,7 +6,7 @@ const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
   const sortedItems = items.sort( (a, b) => a.date > b.date)
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
-  console.log(ulScrollRestoration)
+
   const togglePreview = (e, index) => {
     e.preventDefault();
     setIsClicked(!isClicked);
@@ -14,13 +14,14 @@ const List = ({loading, items}) => {
 
   return (
     <div 
+      {...ulScrollRestoration}
       style={{
         display: 'flex',
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
         justifyContent: 'stretch',
         maxHeight: '92vh',
-        overflow: 'scroll',
+        overflow: 'auto',
         width: '80vw'
       }}>
         {/* ---------------- LOADING ---------------- */}
@@ -35,7 +36,7 @@ const List = ({loading, items}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul {...ulScrollRestoration} style={{overflow: 'auto'}}>
+          <ul>
             {sortedItems && sortedItems.map((node, index) => (
               <li 
                 key={index}
