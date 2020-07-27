@@ -30,7 +30,7 @@ const SearchResults = ({items}) => {
 
               <Link 
                 style={{color: '#fff'}}
-                to={`../${node.slug}`}> 
+                to={node.uri}> 
                 <h2>{node.title}</h2>
               </Link>    
 

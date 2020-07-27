@@ -14,20 +14,23 @@ module.exports = {
         schema: {
           perPage: 50,
         },
-        // type: {
-        //   Page: {
-        //     limit: 
-        //       process.env.NODE_ENV === `development`
-        //         ? 10
-        //         : null,
-        //   },
-        //   Post: {
-        //     limit: 
-        //       process.env.NODE_ENV === `development`
-        //         ? 10
-        //         : null,
-        //   }
-        // }
+        type: {
+          // Page: {
+          //   limit: 
+          //     process.env.NODE_ENV === `development`
+          //       ? 10
+          //       : null,
+          // },
+          // Post: {
+          //   limit: 
+          //     process.env.NODE_ENV === `development`
+          //       ? 10
+          //       : null,
+          // },          
+          Comments: {
+            limit: 10
+          },
+        }
       },
     },
     `gatsby-plugin-react-helmet`,

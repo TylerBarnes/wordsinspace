@@ -18,6 +18,7 @@ const SEARCH_QUERY = gql`
             slug
             date
             excerpt
+            uri
           }
         }
         pages(first: $first, where: {search: $searchTerm}) {
@@ -25,6 +26,7 @@ const SEARCH_QUERY = gql`
             title
             slug
             date
+            uri
           }
         }
       }
