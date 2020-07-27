@@ -3,14 +3,18 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   
+  // ------------
+  // ------------ Create Pages and Posts views
+  // ------------
   const {
     data: {
       allWpContentNode: { nodes: contentNodes },
     },
-  } = await graphql(/* GraphQL */ `
+  } = await graphql(`
     query ALL_CONTENT_NODES {
       allWpContentNode(
         sort: { fields: date, order: DESC }
+        filter: { nodeType: { ne: "MediaItem" } }
       ) {
         nodes {
           nodeType
@@ -21,8 +25,6 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `)
-
-
 
   await Promise.all(
     contentNodes.map(async (node, i) => {
@@ -38,6 +40,33 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   )
 
+  // ------------
+  // ------------ Create Category views
+  // ------------
+
+  const {
+    data: { allWpCategory },
+  } = await graphql(`
+    {
+      allWpCategory {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
+
+  await Promise.all(
+    allWpCategory.nodes.map(async (node, index) => {
+      await actions.createPage({
+        component: path.resolve(`./src/templates/Category.js`),
+        path: node.slug,
+        context: {
+          slug: node.slug,
+        },
+      })
+    })
+  )
 
   // // render items of a specific Category in Browser
   // result.data.categories.nodes.forEach((node) => {
@@ -46,29 +75,6 @@ exports.createPages = async ({ actions, graphql }) => {
   //     component: path.resolve(`./src/templates/category.js`),
   //     context: {
   //       slug: node.slug,
-  //     },
-  //   })
-  // })
-
-
-  // // render a Post on Viewer
-  // result.data.posts.nodes.forEach((node) => {
-  //   createPage({
-  //     path: node.uri,
-  //     component: path.resolve(`./src/templates/post.js`),
-  //     context: {
-  //       uri: node.uri,
-  //     },
-  //   })
-  // }) 
-
-  // // render a Page on Viewer
-  // result.data.pages.nodes.forEach((node) => {
-  //   createPage({
-  //     path: node.uri,
-  //     component: path.resolve(`./src/templates/page.js`),
-  //     context: {
-  //       uri: node.uri,
   //     },
   //   })
   // })
