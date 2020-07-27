@@ -11,6 +11,7 @@ export const usePosts = () => {
             date
             content
             excerpt
+            uri
             tags {
               nodes {
                 slug

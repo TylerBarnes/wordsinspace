@@ -45,7 +45,7 @@ const List = ({loading, items}) => {
                 }}>
 
                 <Link 
-                  to={`../${node.slug}`}> 
+                  to={node.uri}> 
                   <h1>{node.title}</h1>
                 </Link>              
                 <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>

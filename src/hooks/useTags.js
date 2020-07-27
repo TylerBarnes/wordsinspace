@@ -16,6 +16,7 @@ export const useTags = () => {
                 slug
                 date
                 nodeType
+                uri
                 tags {
                   nodes {
                     slug
@@ -29,6 +30,7 @@ export const useTags = () => {
                 slug
                 date
                 nodeType
+                uri
                 tags {
                   nodes {
                     slug

@@ -10,6 +10,7 @@ const SEARCH_TAGS_QUERY = gql`
         title
         date
         content
+        uri
         tags {
           nodes {
             slug
@@ -24,6 +25,7 @@ const SEARCH_TAGS_QUERY = gql`
         title
         date
         excerpt
+        uri
         tags {
           nodes {
             slug

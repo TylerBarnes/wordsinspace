@@ -10,6 +10,7 @@ export const usePages = () => {
             title
             date
             content
+            uri
             tags {
               nodes {
                 slug

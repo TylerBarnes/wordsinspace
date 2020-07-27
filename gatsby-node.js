@@ -7,11 +7,13 @@ exports.createPages = ({ graphql, actions }) => {
       pages: allWpPage {
         nodes {
           slug
+          uri
         }
       }
       posts: allWpPost {
         nodes {
           slug
+          uri
         }
       }
       categories: allWpCategory {
@@ -27,10 +29,10 @@ exports.createPages = ({ graphql, actions }) => {
     // render a Post on Viewer
     result.data.posts.nodes.forEach((node) => {
       createPage({
-        path: node.slug,
+        path: node.uri,
         component: path.resolve(`./src/templates/post.js`),
         context: {
-          slug: node.slug,
+          uri: node.uri,
         },
       })
     }) 
@@ -38,10 +40,10 @@ exports.createPages = ({ graphql, actions }) => {
     // render a Page on Viewer
     result.data.pages.nodes.forEach((node) => {
       createPage({
-        path: node.slug,
+        path: node.uri,
         component: path.resolve(`./src/templates/page.js`),
         context: {
-          slug: node.slug,
+          uri: node.uri,
         },
       })
     })

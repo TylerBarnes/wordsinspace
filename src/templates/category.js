@@ -70,6 +70,7 @@ export const query = graphql`
             date
             content
             excerpt
+            uri
             tags {
               nodes {
                 slug
@@ -85,6 +86,7 @@ export const query = graphql`
             slug
             date
             content
+            uri
             tags {
               nodes {
                 slug
