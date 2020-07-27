@@ -11,20 +11,21 @@ const SearchResults = ({items}) => {
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
         justifyContent: 'stretch',
-        height: '90vh',
+        height: '60vh',
       }}>
         {/* ---------------- LIST ---------------- */}
         <div 
           style={{
             overflow: 'scroll',
+            color: '#fff',
+            height: 'auto',
           }}>
-          {items && items.map((node, index) => (
+          {items && items.length>0 && items.map((node, index) => (
             <li 
               key={index}
               style={{
                 listStyle: 'none',
                 padding: '5px',
-                color: '#fff',
               }}>
 
               <Link 
@@ -43,6 +44,12 @@ const SearchResults = ({items}) => {
               </div>
             </li>
           ))}
+          {items && items.length === 0 && 
+            (
+              <div>
+                No results found for this search term.
+              </div>
+            )}
         </div>
     </div>
    )
