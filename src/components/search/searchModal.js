@@ -58,7 +58,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
           {/* ---------------- SEARCH RESULTS ---------------- */}
           {!loading && (
             <>
-              <ModalText searchTerm={searchTerm} catName={catName} hide={hide} />
+              <ModalText resultsCount={searchResults.length} searchTerm={searchTerm} catName={catName} hide={hide} />
               <SearchResults items={searchResults} />
             </>
           )}

@@ -1,9 +1,10 @@
-import React, {useState, useRef} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
 import {sortByDate, extractSearchResults} from '../utils'
 import SearchModal from "./search/searchModal"
+import SearchResults from "./search/searchResults"
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_QUERY = gql`
@@ -34,19 +35,22 @@ const SEARCH_QUERY = gql`
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showResults, setShowResults] = useState(false);
+  const [searchResults, setSearchResults] = useState([])
   const inputEl = useRef(null)
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
-
+  
   const {loading, error, data} = useQuery(SEARCH_QUERY, {
-    variables: { searchTerm: searchTerm, first: 150, catName: catName},
-    skip: !showResults
-  })
-  
-  const searchResults = showResults && !loading
-                        ? extractSearchResults(data)
-                        : []
-  
+      variables: { searchTerm: searchTerm, first: 150, catName: catName},
+      skip: !showResults
+    })
+
+  useEffect(()=>{
+    if (showResults && !loading) { 
+      setSearchResults(extractSearchResults(data))
+    }
+  },[data])
+
   function handleSubmit(e) {
     e.preventDefault()
     setShowResults(() => (searchTerm.length > 0 ? true : false))

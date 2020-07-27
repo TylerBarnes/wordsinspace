@@ -1,6 +1,6 @@
 import React from "react"
 
-const ModalText = ({catName, searchTerm, hide}) => {
+const ModalText = ({resultsCount, catName, searchTerm, hide}) => {
   return (
     <div>
     	<div 
@@ -23,7 +23,7 @@ const ModalText = ({catName, searchTerm, hide}) => {
           textTransform: 'uppercase',
           color: '#fff',
         }}>
-        Results for <strong>{searchTerm}</strong> {catName === '' ? '' : `under ${catName}`}
+        {resultsCount} Results for <strong>{searchTerm}</strong> {catName === '' ? '' : `under ${catName}`}
       </div>
     </div>
   )

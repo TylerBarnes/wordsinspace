@@ -14,7 +14,7 @@ const Work = () => {
   // initialize the items to all of the Pages and all of the Posts
   const initial = [...usePages(), ...usePosts()]
   const [isTagMode, setTagMode] = useState(false)
-
+  
   // initialize the tags to all of the Tags available
   const [tags, setTags] = useState(useTags())
   
@@ -31,18 +31,16 @@ const Work = () => {
     setTagMode(false)
   }
 
-  // watches tags array for updates and updates the Tag Mode in case no Tag is checked
-  useEffect(()=> {
-    setTagMode(tags.filter(tag=>tag.checked).length > 0)
-  }, [tags])
-
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
                           ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
                           : [] 
   
-  // console.log('displaying', initial.length, 'original items', tagQueryResults.length, 'filtered items and', tags.length, 'tags')
+    // watches tags array for updates and updates the Tag Mode in case no Tag is checked
+  useEffect(()=> {
+    setTagMode(tags.filter(tag=>tag.checked).length > 0)
+  }, [tags])
   
   return (
     <Browser>
