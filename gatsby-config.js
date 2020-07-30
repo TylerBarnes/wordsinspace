@@ -10,7 +10,7 @@ module.exports = {
       options: {
         url: process.env.NODE_ENV === `development`
             ? `http://localhost:8888/shannon/graphql`
-            : `https://testingvi.wordsinspace.net/graphql`,
+            : `https://testingvii.wordsinspace.net/graphql`,
         schema: {
           perPage: 50,
         },
