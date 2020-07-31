@@ -42,7 +42,7 @@ export default function postTemplate({ data }) {
           }}>
           <h3>Related pages</h3>
           {pages?.map(page=> (
-            <div key={page.id} >yo
+            <div key={page.id} >
               <Link to={page.uri}>{page.title}</Link>
             </div>
           ))}

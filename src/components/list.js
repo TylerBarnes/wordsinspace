@@ -1,7 +1,8 @@
 import React, {useState} from "react"
 import PropTypes from "prop-types"
-import {Link, useScrollRestoration} from "gatsby" 
-import Img from "gatsby-image"
+import {useScrollRestoration} from "gatsby" 
+
+import ListItem from "./list/listItem"
 
 const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -38,55 +39,11 @@ const List = ({loading, items}) => {
         {!loading &&
           <ul>
             {items && items.map((item, index) => (
-              <li 
+              <ListItem 
                 key={index}
-                style={{
-                  listStyle: 'none',
-                  padding: '5px',
-                }}>
-
-                <Link 
-                  to={item.uri}> 
-                  <h1>{item.title}</h1>
-                </Link>              
-                <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
-
-                {item.featuredImage && item.featuredImage.node.localFile.childImageSharp && 
-                <div style={{width: '200px'}}>
-                  <Img
-                    fluid={item.featuredImage.node.localFile.childImageSharp.fluid}
-                    alt="thumbnails"/>
-                  </div>
-                }
-                <div 
-                  style={{
-                    margin: '0 0.2vw', 
-                    fontSize: '0.8rem',
-                    color: '#aaa',
-                  }}> 
-                  {item.date && item.date.slice(0,4)} 
-                </div>
-                
-                <div
-                  style={{
-                  margin: '0 0.2vw',
-                  fontSize: '0.8rem'
-                  }}> 
-                  {item.tags && item.tags.nodes.map((tag, index_tag) => 
-                    <span key={index_tag}>
-                      {index_tag < item.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
-                    </span>
-                  )}
-                </div>
-
-                {/* ---------------- PREVIEW ---------------- */}
-                <div 
-                  style={{
-                    overflow: 'hidden'
-                  }}>
-                  {isClicked && <div dangerouslySetInnerHTML={{ __html: item.excerpt ? item.excerpt : item.content ? item.content.slice(0,200) : item.title }} />}
-                </div>
-              </li>
+                item={item} 
+                onClick={e=>togglePreview(e,index)}
+                /> 
             ))}
           </ul>
         }

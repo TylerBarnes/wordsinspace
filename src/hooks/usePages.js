@@ -11,17 +11,22 @@ export const usePages = () => {
             date
             content
             uri
-            # featuredImage {
-            #   node {
-            #     localFile {
-            #       childImageSharp {
-            #         fluid {
-            #           ...GatsbyImageSharpFluid
-            #         }
-            #       }
-            #     }
-            #   }
-            # }
+            categories {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+             node {
+               localFile {
+                 childImageSharp {
+                   fluid {
+                     ...GatsbyImageSharpFluid
+                   }
+                 }
+               }
+             }
+            }
             tags {
               nodes {
                 slug

@@ -8,7 +8,6 @@ export default function pageTemplate({ data }) {
 
   const {title, date, content, related} = data.allWpPage.nodes[0]
   const {posts, pages} = related;
-  console.log(pages)
   
   return (
     <Reader>

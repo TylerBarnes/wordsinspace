@@ -12,17 +12,22 @@ export const usePosts = () => {
             content
             excerpt
             uri
-        # featuredImage {
-        #   node {
-        #     localFile {
-        #       childImageSharp {
-        #         fluid {
-        #           ...GatsbyImageSharpFluid
-        #         }
-        #       }
-        #     }
-        #   }
-        # }
+            categories {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                     ...GatsbyImageSharpFluid
+                    } 
+                  }
+                }
+              }
+            }
             tags {
               nodes {
                 slug
