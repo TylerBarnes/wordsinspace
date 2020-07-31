@@ -1,8 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const ListCategoryComponent = ({item}) => {
-	const category=item.categories.nodes[0]?.name
+const ListCategoryComponent = ({category}) => {
 
   return (
     <div 

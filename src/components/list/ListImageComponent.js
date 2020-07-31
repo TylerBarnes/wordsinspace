@@ -1,12 +1,12 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const ListImageComponent = ({item}) => {
+const ListImageComponent = ({thumbnail}) => {
   return (
     <div style={{width: '200px'}}>
     	<Img
-      	fluid={item.featuredImage.node.localFile.childImageSharp.fluid}
-      	alt={item.slug}
+      	fluid={thumbnail}
+      	alt={'thumbnail'}
       	/>
     </div>
   )

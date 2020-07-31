@@ -1,6 +1,6 @@
 import React from "react"
 
-const ListDateComponent = ({item}) => {
+const ListDateComponent = ({date}) => {
   return (
     <div 
       style={{
@@ -8,7 +8,7 @@ const ListDateComponent = ({item}) => {
         fontSize: '0.8rem',
         color: '#aaa',
       }}> 
-      {item.date && item.date.slice(0,4)} 
+      {date.slice(0,4)} 
     </div>
   )
 }
