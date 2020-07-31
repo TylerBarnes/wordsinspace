@@ -6,8 +6,7 @@ import Reader from "../layouts/reader"
 export default function postTemplate({ data }) {
   if(!data) return null
 
-  const {title, date, content} = data.allWpPost.nodes[0]
-
+  const {title, date, content, tags} = data.allWpPost.nodes[0]
   return (
     <Reader>
       <div 
@@ -39,35 +38,6 @@ export default function postTemplate({ data }) {
 }
 
 
-// {
-//   posts {
-//     nodes {
-//       uri
-//       title
-//       date
-//       tags {
-//         nodes {
-//           uri
-//         }
-//         edges {
-//           node {
-//             posts {
-//               nodes {
-//                 uri
-//               }
-//             }
-//             pages {
-//               nodes {
-//                 uri
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
 export const query = graphql`
   query getPost($id: String!) {
     allWpPost(filter: {id: { eq: $id }}) {
@@ -80,7 +50,7 @@ export const query = graphql`
         slug
         tags {
           nodes {
-            slug
+            name
           }
         }
       }

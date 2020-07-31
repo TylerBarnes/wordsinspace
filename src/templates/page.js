@@ -1,12 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Reader from "../layouts/reader"
 
 export default function pageTemplate({ data }) {
   if(!data) return null
 
-  const {title, date, content} = data.allWpPage.nodes[0]
+  const {title, date, content, related_pages} = data.allWpPage.nodes[0]
 
   return (
     <Reader>
@@ -14,7 +14,6 @@ export default function pageTemplate({ data }) {
         style={{
           width: '70vw',
           margin: '0 auto',
-          border: '1px solid'
         }}>
         <div 
           style={{
@@ -33,6 +32,20 @@ export default function pageTemplate({ data }) {
           {date.slice(0,4)}
         </div>
         <div dangerouslySetInnerHTML={{ __html: content }} />
+
+        <div 
+          style={{
+            margin: '2vh 0',
+            fontSize: '1rem',
+            opacity: '0.5'
+          }}>
+          <h3>Related Pages</h3>
+          {related_pages?.relatedpages?.map(page=> (
+            <div key={page.id} >
+              <Link to={page.uri}>{page.title}</Link>
+            </div>
+          ))}
+        </div>
       </div>
     </Reader>
   )
@@ -48,9 +61,13 @@ export const query = graphql`
         date
         uri
         slug
-        tags {
-          nodes {
-            slug
+        related_pages {
+          relatedpages {
+            ... on WpPage {
+              id
+              uri
+              title
+            }
           }
         }
       }
