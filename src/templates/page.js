@@ -6,8 +6,8 @@ import Reader from "../layouts/reader"
 export default function pageTemplate({ data }) {
   if(!data) return null
 
-  const {title, date, content, related_pages} = data.allWpPage.nodes[0]
-
+  const {title, date, content, related} = data.allWpPage.nodes[0]
+  console.log(related)
   return (
     <Reader>
       <div 
@@ -39,9 +39,9 @@ export default function pageTemplate({ data }) {
             fontSize: '1rem',
             opacity: '0.5'
           }}>
-          {related_pages?.relatedPages?.map(page=> (
+          {related?.pages?.map(page=> (
             <div>
-              <h3>Related Pages</h3>
+              <h3>Related</h3>
               <div key={page.id} >
                 <Link to={page.uri}>{page.title}</Link>
               </div>
@@ -63,12 +63,19 @@ export const query = graphql`
         date
         uri
         slug
-        related_pages {
-          relatedPages {
+        related{
+          pages {
             ... on WpPage {
               id
+              slug
               uri
-              title
+            }
+          }
+          posts {
+            ... on WpPost {
+              id
+              slug
+              uri
             }
           }
         }

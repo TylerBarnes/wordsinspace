@@ -22,7 +22,7 @@ module.exports = {
         },
         develop: {
           nodeUpdateInterval: 10000,
-          hardCacheMediaFiles: false,
+          hardCacheMediaFiles: true,
         },
         production: {
           hardCacheMediaFiles: false,

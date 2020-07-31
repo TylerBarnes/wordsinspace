@@ -1,12 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
+import {Link, graphql } from "gatsby"
 
 import Reader from "../layouts/reader"
 
 export default function postTemplate({ data }) {
   if(!data) return null
 
-  const {title, date, content, related_posts} = data.allWpPost.nodes[0]
+  const {title, date, content, related} = data.allWpPost.nodes[0]
   return (
     <Reader>
       <div 
@@ -38,11 +38,11 @@ export default function postTemplate({ data }) {
             fontSize: '1rem',
             opacity: '0.5'
           }}>
-          {related_posts?.relatedPosts?.map(page=> (
+          {related?.posts?.map(post=> (
             <div>
-              <h3>Related Pages</h3>
-              <div key={page.id} >
-                <Link to={page.uri}>{page.title}</Link>
+              <h3>Related posts</h3>
+              <div key={post.id} >
+                <Link to={post.uri}>{post.title}</Link>
               </div>
             </div>
           ))}
@@ -63,12 +63,19 @@ export const query = graphql`
         date
         uri
         slug
-        related_posts {
-          relatedPosts {
+        related {
+          pages {
+            ... on WpPage {
+              id
+              slug
+              uri
+            }
+          }
+          posts {
             ... on WpPost {
               id
+              slug
               uri
-              title
             }
           }
         }

@@ -11,17 +11,17 @@ const SEARCH_TAGS_QUERY = gql`
         date
         content
         uri
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
+        # featuredImage {
+        #   node {
+        #     localFile {
+        #       childImageSharp {
+        #         fluid {
+        #           ...GatsbyImageSharpFluid
+        #         }
+        #       }
+        #     }
+        #   }
+        # }
         tags {
           nodes {
             slug
