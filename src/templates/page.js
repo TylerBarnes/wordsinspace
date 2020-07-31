@@ -39,10 +39,12 @@ export default function pageTemplate({ data }) {
             fontSize: '1rem',
             opacity: '0.5'
           }}>
-          <h3>Related Pages</h3>
-          {related_pages?.relatedpages?.map(page=> (
-            <div key={page.id} >
-              <Link to={page.uri}>{page.title}</Link>
+          {related_pages?.relatedPages?.map(page=> (
+            <div>
+              <h3>Related Pages</h3>
+              <div key={page.id} >
+                <Link to={page.uri}>{page.title}</Link>
+              </div>
             </div>
           ))}
         </div>
@@ -62,7 +64,7 @@ export const query = graphql`
         uri
         slug
         related_pages {
-          relatedpages {
+          relatedPages {
             ... on WpPage {
               id
               uri

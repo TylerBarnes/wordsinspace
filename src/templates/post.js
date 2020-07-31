@@ -6,7 +6,7 @@ import Reader from "../layouts/reader"
 export default function postTemplate({ data }) {
   if(!data) return null
 
-  const {title, date, content, tags} = data.allWpPost.nodes[0]
+  const {title, date, content, related_posts} = data.allWpPost.nodes[0]
   return (
     <Reader>
       <div 
@@ -32,6 +32,21 @@ export default function postTemplate({ data }) {
         </div>
         
         <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div 
+          style={{
+            margin: '2vh 0',
+            fontSize: '1rem',
+            opacity: '0.5'
+          }}>
+          {related_posts?.relatedPosts?.map(page=> (
+            <div>
+              <h3>Related Pages</h3>
+              <div key={page.id} >
+                <Link to={page.uri}>{page.title}</Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </Reader>
   )
@@ -48,9 +63,13 @@ export const query = graphql`
         date
         uri
         slug
-        tags {
-          nodes {
-            name
+        related_posts {
+          relatedPosts {
+            ... on WpPost {
+              id
+              uri
+              title
+            }
           }
         }
       }
