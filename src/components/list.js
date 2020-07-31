@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import PropTypes from "prop-types"
-import {useStaticQuery, Link, useScrollRestoration} from "gatsby" 
+import {Link, useScrollRestoration} from "gatsby" 
 import Img from "gatsby-image"
 
 const List = ({loading, items}) => {
@@ -51,10 +51,13 @@ const List = ({loading, items}) => {
                 </Link>              
                 <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
 
-                <Img
-                  fluid={items[10].featuredImage.node.localFile.childImageSharp.fluid}
-                  alt="thumbnails"/>
-
+                {item.featuredImage && item.featuredImage.node.localFile.childImageSharp && 
+                <div style={{width: '200px'}}>
+                  <Img
+                    fluid={item.featuredImage.node.localFile.childImageSharp.fluid}
+                    alt="thumbnails"/>
+                  </div>
+                }
                 <div 
                   style={{
                     margin: '0 0.2vw', 
