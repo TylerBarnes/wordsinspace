@@ -7,6 +7,8 @@ export default function postTemplate({ data }) {
   if(!data) return null
 
   const {title, date, content, related} = data.allWpPost.nodes[0]
+  const {posts, pages} = related;
+  
   return (
     <Reader>
       <div 
@@ -38,12 +40,16 @@ export default function postTemplate({ data }) {
             fontSize: '1rem',
             opacity: '0.5'
           }}>
-          {related?.posts?.map(post=> (
-            <div>
-              <h3>Related posts</h3>
-              <div key={post.id} >
-                <Link to={post.uri}>{post.title}</Link>
-              </div>
+          <h3>Related pages</h3>
+          {pages?.map(page=> (
+            <div key={page.id} >yo
+              <Link to={page.uri}>{page.title}</Link>
+            </div>
+          ))}
+          <h3>Related posts</h3>
+          {posts?.map(post=> (
+            <div key={post.id} >
+              <Link to={post.uri}>{post.title}</Link>
             </div>
           ))}
         </div>
@@ -67,15 +73,15 @@ export const query = graphql`
           pages {
             ... on WpPage {
               id
-              slug
               uri
+              title
             }
           }
           posts {
             ... on WpPost {
               id
-              slug
               uri
+              title
             }
           }
         }

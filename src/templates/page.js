@@ -7,7 +7,9 @@ export default function pageTemplate({ data }) {
   if(!data) return null
 
   const {title, date, content, related} = data.allWpPage.nodes[0]
-  console.log(related)
+  const {posts, pages} = related;
+  console.log(pages)
+  
   return (
     <Reader>
       <div 
@@ -39,12 +41,16 @@ export default function pageTemplate({ data }) {
             fontSize: '1rem',
             opacity: '0.5'
           }}>
-          {related?.pages?.map(page=> (
-            <div>
-              <h3>Related</h3>
-              <div key={page.id} >
-                <Link to={page.uri}>{page.title}</Link>
-              </div>
+          <h3>Related pages</h3>
+          {pages?.map(page=> (
+            <div key={page.id}>
+              <Link to={page.uri}>{page.title}</Link>
+            </div>
+          ))}
+          <h3>Related posts</h3>
+          {posts?.map(post=> (
+            <div key={post.id} >
+              <Link to={post.uri}>{post.title}</Link>
             </div>
           ))}
         </div>
@@ -63,19 +69,19 @@ export const query = graphql`
         date
         uri
         slug
-        related{
+        related {
           pages {
             ... on WpPage {
               id
-              slug
               uri
+              title
             }
           }
           posts {
             ... on WpPost {
               id
-              slug
               uri
+              title
             }
           }
         }
