@@ -37,17 +37,17 @@ const SEARCH_TAGS_QUERY = gql`
         date
         excerpt
         uri
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
+        # featuredImage {
+        #   node {
+        #     localFile {
+        #       childImageSharp {
+        #         fluid {
+        #           ...GatsbyImageSharpFluid
+        #         }
+        #       }
+        #     }
+        #   }
+        # }
         tags {
           nodes {
             slug

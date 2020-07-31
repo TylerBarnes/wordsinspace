@@ -17,17 +17,17 @@ export const useTags = () => {
                 date
                 nodeType
                 uri
-                featuredImage {
-                  node {
-                    localFile {
-                      childImageSharp {
-                        fluid {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
-                    }
-                  }
-                }
+        # featuredImage {
+        #   node {
+        #     localFile {
+        #       childImageSharp {
+        #         fluid {
+        #           ...GatsbyImageSharpFluid
+        #         }
+        #       }
+        #     }
+        #   }
+        # }
                 tags {
                   nodes {
                     slug
@@ -42,17 +42,17 @@ export const useTags = () => {
                 date
                 nodeType
                 uri
-                featuredImage {
-                  node {
-                    localFile {
-                      childImageSharp {
-                        fluid {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
-                    }
-                  }
-                }
+        # featuredImage {
+        #   node {
+        #     localFile {
+        #       childImageSharp {
+        #         fluid {
+        #           ...GatsbyImageSharpFluid
+        #         }
+        #       }
+        #     }
+        #   }
+        # }
                 tags {
                   nodes {
                     slug
