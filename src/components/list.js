@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import PropTypes from "prop-types"
-import {Link, useScrollRestoration} from "gatsby" 
+import {useStaticQuery, Link, useScrollRestoration} from "gatsby" 
+import Img from "gatsby-image"
 
 const List = ({loading, items}) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -36,7 +37,7 @@ const List = ({loading, items}) => {
         {/* ---------------- LIST ---------------- */}
         {!loading &&
           <ul>
-            {items && items.map((node, index) => (
+            {items && items.map((item, index) => (
               <li 
                 key={index}
                 style={{
@@ -45,10 +46,14 @@ const List = ({loading, items}) => {
                 }}>
 
                 <Link 
-                  to={node.uri}> 
-                  <h1>{node.title}</h1>
+                  to={item.uri}> 
+                  <h1>{item.title}</h1>
                 </Link>              
                 <span  onClick={e=>togglePreview(e,index)} > {isClicked ? 'CLOSE PREVIEW' : 'PREVIEW'} </span>
+
+                <Img
+                  fluid={items[10].featuredImage.node.localFile.childImageSharp.fluid}
+                  alt="thumbnails"/>
 
                 <div 
                   style={{
@@ -56,7 +61,7 @@ const List = ({loading, items}) => {
                     fontSize: '0.8rem',
                     color: '#aaa',
                   }}> 
-                  {node.date && node.date.slice(0,4)} 
+                  {item.date && item.date.slice(0,4)} 
                 </div>
                 
                 <div
@@ -64,9 +69,9 @@ const List = ({loading, items}) => {
                   margin: '0 0.2vw',
                   fontSize: '0.8rem'
                   }}> 
-                  {node.tags && node.tags.nodes.map((tag, index_tag) => 
+                  {item.tags && item.tags.nodes.map((tag, index_tag) => 
                     <span key={index_tag}>
-                      {index_tag < node.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
+                      {index_tag < item.tags.nodes.length-1 ? `${tag.slug}, `.replace(/-|_/, ' ') : `${tag.slug}`.replace(/-|_/, ' ')}
                     </span>
                   )}
                 </div>
@@ -76,7 +81,7 @@ const List = ({loading, items}) => {
                   style={{
                     overflow: 'hidden'
                   }}>
-                  {isClicked && <div dangerouslySetInnerHTML={{ __html: node.excerpt ? node.excerpt : node.content ? node.content.slice(0,200) : node.title }} />}
+                  {isClicked && <div dangerouslySetInnerHTML={{ __html: item.excerpt ? item.excerpt : item.content ? item.content.slice(0,200) : item.title }} />}
                 </div>
               </li>
             ))}

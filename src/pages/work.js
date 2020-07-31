@@ -46,7 +46,7 @@ const Work = () => {
     if (isTagMode && !response.loading) {
       setTagQueryResults([...response.data.posts.nodes, ...response.data.pages.nodes])
     }
-  }, [response.data])
+  }, [response.data, isTagMode, response.loading])
   
   return (
     <Browser>

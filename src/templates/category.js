@@ -71,6 +71,17 @@ export const query = graphql`
             content
             excerpt
             uri
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
             tags {
               nodes {
                 slug
@@ -87,6 +98,17 @@ export const query = graphql`
             date
             content
             uri
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }          
             tags {
               nodes {
                 slug
