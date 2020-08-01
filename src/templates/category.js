@@ -10,11 +10,8 @@ import Filters from "../components/filters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
-  // get the current category 
-  const category = data.allWpCategory.nodes[0];
-
   // initialize the items to all of the Pages and all of the Posts
-  const initial = [...category.pages.nodes, ...category.posts.nodes];
+  const initial = [...data.allWpCategory.nodes[0].pages.nodes, ...data.allWpCategory.nodes[0].posts.nodes];
 
   const [isTagMode, setTagMode] = useState(false)
 
@@ -39,7 +36,7 @@ export default function CategoryTemplate({data}) {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-    // ========== //
+  // ========== //
   // Apollo query
   // ========== //
 
@@ -51,7 +48,7 @@ export default function CategoryTemplate({data}) {
 
   return (
     <Browser>
-      <SEO title={category.name} />
+      <SEO title={data.allWpCategory.nodes[0].name} />
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading}/>
       <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
@@ -73,17 +70,6 @@ export const query = graphql`
             content
             excerpt
             uri
-            # featuredImage {
-            #   node {
-            #     localFile {
-            #       childImageSharp {
-            #         fluid {
-            #           ...GatsbyImageSharpFluid
-            #         }
-            #       }
-            #     }
-            #   }
-            # }
             tags {
               nodes {
                 slug
@@ -100,17 +86,6 @@ export const query = graphql`
             date
             content
             uri
-            # featuredImage {
-            #   node {
-            #     localFile {
-            #       childImageSharp {
-            #         fluid {
-            #           ...GatsbyImageSharpFluid
-            #         }
-            #       }
-            #     }
-            #   }
-            # }      
             tags {
               nodes {
                 slug
@@ -124,3 +99,15 @@ export const query = graphql`
     }
   }
 `
+
+            // featuredImage {
+            //  node {
+            //    localFile {
+            //      childImageSharp {
+            //        fluid {
+            //          ...GatsbyImageSharpFluid
+            //        }
+            //      }
+            //    }
+            //  }
+            // }     

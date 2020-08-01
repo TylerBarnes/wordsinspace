@@ -30,11 +30,11 @@ export const sortByDate = (array) => {
 }
 
 export const extractSearchResults = (array) => {
-   let results = array.categories.nodes
-                 .filter(cat=> cat.pages.nodes.length >0 || cat.posts.nodes.length >0)
-                 .map(nonEmptyCat => {
-                    return [...nonEmptyCat.pages.nodes, ...nonEmptyCat.posts.nodes]
-                 })
-                 .flat(2)
-   return results
+  let results = array.categories.nodes
+               .filter(cat=> cat.pages.nodes.length >0 || cat.posts.nodes.length >0)
+               .map(nonEmptyCat => {
+                  return [...nonEmptyCat.pages.nodes, ...nonEmptyCat.posts.nodes]
+               })
+               .flat(2)
+  return results
 }

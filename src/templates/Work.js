@@ -41,15 +41,10 @@ export default function Work({data}) {
   // ========== //
 
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
-  const response = useTagSelection(tags.filter(tag=>tag.checked), isTagMode);
-  const [tagQueryResults, setTagQueryResults] = useState([])
-  
-  // watches tags array for updates and updates the Tag Mode in case no Tag is checked
-  useEffect(()=> {
-    if (isTagMode && !response.loading) {
-      setTagQueryResults([...response.data.posts.nodes, ...response.data.pages.nodes])
-    }
-  }, [response.data, isTagMode, response.loading])
+  const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
+  const tagQueryResults = isTagMode && !response.loading 
+                          ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
+                          : [] 
   
   return (
     <Browser>

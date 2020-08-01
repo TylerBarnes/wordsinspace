@@ -43,17 +43,17 @@ module.exports = {
           },
           Tag: {
             limit: process.env.NODE_ENV === `development`
-                   ? 10
+                   ? null
                    : null
           },
           Post: {
             limit: process.env.NODE_ENV === `development`
-                   ? 10
+                   ? null
                    : null
           },          
           Page: {
             limit: process.env.NODE_ENV === `development`
-                   ? 10
+                   ? null
                    : null
           },          
           MediaItem: {
