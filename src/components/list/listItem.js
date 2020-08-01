@@ -30,7 +30,6 @@ const ListItem = ({item}) => {
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-        padding: '5px',
         border: '1px solid #ccc'
       }}>
 

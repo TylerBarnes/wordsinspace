@@ -17,7 +17,6 @@ const List = ({loading, items}) => {
         justifyContent: 'stretch',
         maxHeight: '92vh',
         overflow: 'auto',
-        width: '80vw'
       }}>
         {/* ---------------- LOADING ---------------- */}
         {loading && 
@@ -31,13 +30,13 @@ const List = ({loading, items}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul>
-            {items && items.map((item, index) => (
-              <ListItem 
-                key={index}
-                item={item} 
-                /> 
-            ))}
+          <ul style={{paddingRight: '20px'}}>
+          {items && items.map((item, index) => (
+            <ListItem 
+              key={index}
+              item={item} 
+              /> 
+          ))}
           </ul>
         }
     </div>
