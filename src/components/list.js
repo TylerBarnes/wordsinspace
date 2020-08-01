@@ -1,11 +1,10 @@
-import React, {useState} from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
 import ListItem from "./list/listItem"
 
 const List = ({loading, items}) => {
-  const [isVisible, setIsVisible] = useState(false);
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 
   return (
@@ -37,8 +36,6 @@ const List = ({loading, items}) => {
               <ListItem 
                 key={index}
                 item={item} 
-                onClick={e=>setIsVisible(!isVisible)}
-                isVisible={isVisible}
                 /> 
             ))}
           </ul>

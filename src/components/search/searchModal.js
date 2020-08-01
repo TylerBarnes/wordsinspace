@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import SearchResults from "./searchResults"
-import ModalText from "./modalText"
+import SearchModalText from "./searchModalText"
 
 const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
@@ -58,7 +58,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
           {/* ---------------- SEARCH RESULTS ---------------- */}
           {!loading && (
             <>
-              <ModalText resultsCount={searchResults.length} searchTerm={searchTerm} catName={catName} hide={hide} />
+              <SearchModalText resultsCount={searchResults.length} searchTerm={searchTerm} catName={catName} hide={hide} />
               <SearchResults items={searchResults} />
             </>
           )}

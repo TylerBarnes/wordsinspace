@@ -2,7 +2,10 @@ import React from "react"
 
 const TagsInfoBox = ({tags, clearTags, isTagMode}) => {
   return (
-    <div>
+    <div 
+    	style={{
+    		border: '1px solid #ccc'
+    	}}>
     	<ul 
 	    	style={{
 					listStyle: 'none',

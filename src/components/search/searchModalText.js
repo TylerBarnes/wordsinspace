@@ -1,6 +1,6 @@
 import React from "react"
 
-const ModalText = ({resultsCount, catName, searchTerm, hide}) => {
+const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   return (
     <div>
     	<div 
@@ -29,4 +29,4 @@ const ModalText = ({resultsCount, catName, searchTerm, hide}) => {
   )
 }
 
-export default ModalText
+export default SearchModalText

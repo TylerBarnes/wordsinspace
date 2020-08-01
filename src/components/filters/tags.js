@@ -12,6 +12,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 				overflow: 'scroll',
 				margin: '2vh 0',
 				maxHeight: '70vh',
+				border: '1px solid #ccc'
 	     }}>
 	     	<TagsInfoBox tags={tags} clearTags={clearTags} isTagMode={isTagMode}/>
 	      {tags && tags.map((tag, index) => (
