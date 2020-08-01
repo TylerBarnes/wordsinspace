@@ -11,29 +11,31 @@ export default function postTemplate({ data }) {
 
   const {title, date, content, related} = data.allWpPost.nodes[0]
   const {posts, pages} = related;
+  const showRelated = posts?.length > 0 || pages?.length > 0
   
   return (
     <Reader>
-      <div 
-        style={{
-          width: '70vw',
-          margin: '0 auto',
-          border: '1px solid #ccc'
-        }}>
 
         <ArticleTitle title={title}/>
 
         <ArticleDate date={date}/>
-        
+
         <div 
           style={{
-            border: '1px solid #ccc'
-          }} 
-          dangerouslySetInnerHTML={{ __html: content }} />
-
-        <ArticleRelated posts={posts} pages={pages} />
-
-      </div>
+            border: '1px solid #ccc',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: 'space-evenly',
+          }}> 
+          <div 
+            style={{
+              border: '1px solid #ccc',
+            }} 
+            dangerouslySetInnerHTML={{ __html: content }} />
+          {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
+        </div>
+        
     </Reader>
   )
 }

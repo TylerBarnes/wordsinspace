@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-import Title from "../components/title"
-import Search from "../components/search"
+import Title from '../components/title'
+import Search from '../components/search'
 
-import "../styles/layout.css"
-import "../styles/addedStyles.css"
+import '../styles/layout.css'
+import '../styles/addedStyles.css'
 
 const Browser = ({ children }) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -13,10 +13,10 @@ const Browser = ({ children }) => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "row nowrap",
-        alignItems: "flex-start",
-        justifyContent: "space-around",
+        display: 'flex',
+        flexDirection: 'row nowrap',
+        alignItems: 'flex-start',
+        justifyContent: 'space-around',
       }}
     >
       {/* ----------------------------Left---------------------------- */}
@@ -24,15 +24,15 @@ const Browser = ({ children }) => {
         onMouseEnter={e => setIsHovered(true)}
         onMouseLeave={e => setIsHovered(false)}
         style={{
-          border: "1px solid",
-          alignSelf: "flex-start",
-          height: "100vh",
-          minWidth: "3vw",
-          writingMode: "vertical-rl",
-          transform: "rotate(180deg)",
-          padding: "10px",
-          textAlign: "right",
-          background: !isHovered ? "#fff" : "#ccc",
+          border: '1px solid',
+          alignSelf: 'flex-start',
+          height: '100vh',
+          minWidth: '3vw',
+          writingMode: 'vertical-rl',
+          transform: 'rotate(180deg)',
+          padding: '10px',
+          textAlign: 'right',
+          background: !isHovered ? '#fff' : '#ccc',
         }}
       >
         <Title />
@@ -40,22 +40,22 @@ const Browser = ({ children }) => {
 
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          flexGrow: "1",
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          flexGrow: '1',
         }}
       >
         {/* ----------------------------Top ---------------------------- */}
         <div
           style={{
-            border: "1px solid",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            padding: "10px",
-            minHeight: "3vw",
-            textTransform: "uppercase",
+            border: '1px solid',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            padding: '10px',
+            minHeight: '3vw',
+            textTransform: 'uppercase',
           }}
         >
           <div>Browser</div>
@@ -65,9 +65,9 @@ const Browser = ({ children }) => {
         {/* ----------------------------Main ---------------------------- */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
           }}
         >
           {children}

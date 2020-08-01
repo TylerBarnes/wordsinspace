@@ -11,29 +11,32 @@ export default function pageTemplate({ data }) {
 
   const {title, date, content, related} = data.allWpPage.nodes[0]
   const {posts, pages} = related;
+  const showRelated = posts?.length > 0 || pages?.length > 0
   
   return (
     <Reader>
-      <div 
-        style={{
-          width: '70vw',
-          margin: '0 auto',
-          border: '1px solid #ccc'
-        }}>
 
         <ArticleTitle title={title}/>
-
         <ArticleDate date={date}/>
 
         <div 
           style={{
-            border: '1px solid #ccc'
-          }} 
-          dangerouslySetInnerHTML={{ __html: content }} />
+            border: '1px solid #ccc',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: 'space-evenly',
+          }}> 
 
-        <ArticleRelated posts={posts} pages={pages} />
+          <div 
+            style={{
+              border: '1px solid #ccc',
+            }} 
+            dangerouslySetInnerHTML={{ __html: content }} />
+          
+          {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
+        </div>
         
-      </div>
     </Reader>
   )
 }

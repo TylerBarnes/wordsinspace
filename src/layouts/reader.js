@@ -79,14 +79,17 @@ const Reader = ({children}) => {
           minHeight: '3vw', 
           textTransform: 'uppercase',
         }}>
-          <div>Reader</div>
+          <Link to={'/work'}>back</Link>
         </div>
 
         <div 
           style={{
             maxHeight: '95vh',
+            width: '80vw',
             padding: '20px 10px',
             overflow: 'scroll',
+            border: '1px solid #ccc',
+            margin: '0 auto'
           }}>
           {children}
         </div>
