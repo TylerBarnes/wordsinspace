@@ -15,7 +15,7 @@ const Categories = () => {
 				<Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link>
 			</div>
 		  
-		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
+		  {categories.sort((a,b) => a.name < b.name).filter(cat=>cat.name !== 'Uncategorized').map((category,index) => (
 				<li 
 					key={index}
 					style={{

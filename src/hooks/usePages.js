@@ -16,17 +16,6 @@ export const usePages = () => {
                 name
               }
             }
-            featuredImage {
-             node {
-               localFile {
-                 childImageSharp {
-                   fluid {
-                     ...GatsbyImageSharpFluid
-                   }
-                 }
-               }
-             }
-            }
             tags {
               nodes {
                 slug
@@ -39,3 +28,15 @@ export const usePages = () => {
   )
   return allWpPage.nodes
 }
+
+            // featuredImage {
+            //  node {
+            //    localFile {
+            //      childImageSharp {
+            //        fluid {
+            //          ...GatsbyImageSharpFluid
+            //        }
+            //      }
+            //    }
+            //  }
+            // }

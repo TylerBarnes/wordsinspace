@@ -17,17 +17,6 @@ export const usePosts = () => {
                 name
               }
             }
-            featuredImage {
-              node {
-                localFile {
-                  childImageSharp {
-                    fluid {
-                     ...GatsbyImageSharpFluid
-                    } 
-                  }
-                }
-              }
-            }
             tags {
               nodes {
                 slug
@@ -40,3 +29,15 @@ export const usePosts = () => {
   )
   return allWpPost.nodes
 }
+
+            // featuredImage {
+            //   node {
+            //     localFile {
+            //       childImageSharp {
+            //         fluid {
+            //          ...GatsbyImageSharpFluid
+            //         } 
+            //       }
+            //     }
+            //   }
+            // }

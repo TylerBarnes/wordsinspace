@@ -10,18 +10,19 @@ const ListItem = ({item}) => {
   const category=item.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
-  const thumbnail = item?.featuredImage?.node?.localFile?.childImageSharp?.fluid
-  
+  const [thumbnail, setThumbnail] = useState(null)
   const [isVisible, setIsVisible] = useState(false);
   
   const handleMouseEnter = (e) => {
     e.preventDefault()
     setIsVisible(true)
+    setThumbnail(item?.featuredImage?.node?.localFile?.childImageSharp?.fluid)
   }  
 
   const handleMouseLeave = (e) => {
     e.preventDefault()
     setIsVisible(false)
+    setThumbnail(null)
   }
 
   return (

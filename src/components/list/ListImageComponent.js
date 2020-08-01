@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 
 const ListImageComponent = ({thumbnail, isVisible}) => {
-
+  console.log(isVisible)
   return (
     <div 
     	style={{

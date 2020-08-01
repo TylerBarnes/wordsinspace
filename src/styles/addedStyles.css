@@ -18,10 +18,9 @@ a:hover {
 h1, h2, h3, h4, h5 {
   text-decoration: none;
   font-weight: 400;
-  margin: 0;
+  margin: 1vh 0;
   padding: 0;
 }
-
 
 .gatsby-image-wrapper {
   border: 2px solid red;
