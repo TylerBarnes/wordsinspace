@@ -2,6 +2,8 @@ import React from "react"
 import {Link} from "gatsby"
 
 const ArticleRelated = ({pages, posts}) => {
+  if (pages.length === 0 && posts.length === 0 ) return null
+  
   return (
     <div 
       style={{
@@ -12,7 +14,7 @@ const ArticleRelated = ({pages, posts}) => {
       }}>
 
       <h3>Related</h3>
-      {pages?.map(page=> (
+      {pages?.filter(p => p).map(page=> (
         <div 
           style={{ 
             margin: '1vh 0',
@@ -23,7 +25,7 @@ const ArticleRelated = ({pages, posts}) => {
         </div>
       ))}
       
-      {posts?.map(post=> (
+      {posts?.filter(p => p).map(post=> (
         <div 
           style={{ 
             margin: '1vh 0',

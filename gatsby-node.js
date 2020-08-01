@@ -4,7 +4,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   
   // ------------
-  // ------------ Create Pages and Posts views
+  // ------------ Create Pages and Posts endpoints
   // ------------
   const {
     data: {
@@ -41,7 +41,7 @@ exports.createPages = async ({ actions, graphql }) => {
   )
 
   // ------------
-  // ------------ Create Category views
+  // ------------ Create Category endpoints
   // ------------
   const {
     data: { allWpCategory },
@@ -66,4 +66,13 @@ exports.createPages = async ({ actions, graphql }) => {
       })
     })
   )
+
+
+  // ------------
+  // ------------ Create 'work' endpoint
+  // ------------ 
+  await actions.createPage({
+    component: path.resolve(`./src/templates/Work.js`),
+    path: '/work',
+  })
 }

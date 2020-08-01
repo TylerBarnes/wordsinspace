@@ -38,8 +38,28 @@ module.exports = {
           },
         },
         type: {        
-          Comments: {
+          Comment: {
             limit: 0
+          },
+          Tag: {
+            limit: process.env.NODE_ENV === `development`
+                   ? 10
+                   : null
+          },
+          Post: {
+            limit: process.env.NODE_ENV === `development`
+                   ? 10
+                   : null
+          },          
+          Page: {
+            limit: process.env.NODE_ENV === `development`
+                   ? 10
+                   : null
+          },          
+          MediaItem: {
+            limit: process.env.NODE_ENV === `development`
+                   ? 10
+                   : null
           },
         }
       },

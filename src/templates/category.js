@@ -10,12 +10,12 @@ import Filters from "../components/filters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
-  
   // get the current category 
   const category = data.allWpCategory.nodes[0];
 
   // initialize the items to all of the Pages and all of the Posts
   const initial = [...category.pages.nodes, ...category.posts.nodes];
+
   const [isTagMode, setTagMode] = useState(false)
 
   // initialize the tags to only those that belong to data of this category, see function definition below for more details
@@ -39,13 +39,15 @@ export default function CategoryTemplate({data}) {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
+    // ========== //
+  // Apollo query
+  // ========== //
+
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
                           ? [...response.data.posts.nodes, ...response.data.pages.nodes].sort( (a, b) => a.date > b.date)
                           : [] 
-  
-  // console.log('displaying', initial.length, 'original items', tagQueryResults.length, 'filtered items and', tags.length, 'tags')
 
   return (
     <Browser>
