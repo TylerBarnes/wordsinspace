@@ -5,13 +5,8 @@ import {useScrollRestoration} from "gatsby"
 import ListItem from "./list/listItem"
 
 const List = ({loading, items}) => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
-
-  const togglePreview = (e, index) => {
-    e.preventDefault();
-    setIsClicked(!isClicked);
-  }  
 
   return (
     <div 
@@ -42,7 +37,8 @@ const List = ({loading, items}) => {
               <ListItem 
                 key={index}
                 item={item} 
-                onClick={e=>togglePreview(e,index)}
+                onClick={e=>setIsVisible(!isVisible)}
+                isVisible={isVisible}
                 /> 
             ))}
           </ul>

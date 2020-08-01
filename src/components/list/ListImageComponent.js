@@ -1,9 +1,14 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const ListImageComponent = ({thumbnail}) => {
+const ListImageComponent = ({thumbnail, isVisible}) => {
   return (
-    <div style={{width: '200px'}}>
+    <div 
+    	style={{
+    		width: '200px',
+        border: '1px solid #ccc',
+    		display: isVisible ? 'block' : 'none'
+    	}}>
     	<Img
       	fluid={thumbnail}
       	alt={'thumbnail'}

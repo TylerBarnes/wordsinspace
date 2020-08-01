@@ -9,6 +9,7 @@ const ListCategoryComponent = ({category}) => {
         margin: '0 0.2vw', 
         fontSize: '0.8rem',
         color: '#aaa',
+        border: '1px solid #ccc',
       }}> 
       {category} 
     </div>

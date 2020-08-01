@@ -5,7 +5,8 @@ const ListTagComponent = ({tags}) => {
     <div
       style={{
       margin: '0 0.2vw',
-      fontSize: '0.8rem'
+      fontSize: '0.8rem',
+      border: '1px solid #ccc'
       }}> 
       {tags.nodes.map((tag, index_tag) => 
         <div 

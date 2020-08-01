@@ -6,7 +6,7 @@ import ListDateComponent from "./listDateComponent"
 import ListImageComponent from "./listImageComponent"
 import ListCategoryComponent from "./listCategoryComponent"
 
-const ListItem = ({item}) => {
+const ListItem = ({item, isVisible}) => {
   const category=item.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
@@ -17,11 +17,17 @@ const ListItem = ({item}) => {
       style={{
         listStyle: 'none',
         padding: '5px',
+        border: '1px solid #ccc'
       }}>
 
-      <Link to={item.uri}> <h1>{item.title}</h1></Link> 
+      <Link to={item.uri}>
+        <h3 
+          style={{
+            border: '1px solid #ccc',
+          }} >{item.title}</h3>
+      </Link> 
                    
-      {thumbnail && <ListImageComponent thumbnail={thumbnail} />}
+      {thumbnail && <ListImageComponent thumbnail={thumbnail} isVisible={isVisible} />}
       
       {date && <ListDateComponent date={date} />}
       

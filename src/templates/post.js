@@ -1,7 +1,10 @@
 import React from "react"
-import {Link, graphql } from "gatsby"
+import {graphql } from "gatsby"
 
 import Reader from "../layouts/reader"
+import ArticleTitle from "../components/article/articleTitle"
+import ArticleDate from "../components/article/articleDate"
+import ArticleRelated from "../components/article/articleRelated"
 
 export default function postTemplate({ data }) {
   if(!data) return null
@@ -15,44 +18,21 @@ export default function postTemplate({ data }) {
         style={{
           width: '70vw',
           margin: '0 auto',
+          border: '1px solid #ccc'
         }}>
-        <div 
-          style={{
-            fontSize: '4rem',
-            lineHeight: '4rem',
-            margin: '1vh 0'
-          }}>
-          {title}
-        </div>
-        <div 
-          style={{
-            margin: '1vh 0',
-            fontSize: '1rem',
-            lineHeight: '1rem',
-          }}>
-          {date && date.slice(0,4)}
-        </div>
+
+        <ArticleTitle title={title}/>
+
+        <ArticleDate date={date}/>
         
-        <div dangerouslySetInnerHTML={{ __html: content }} />
         <div 
           style={{
-            margin: '2vh 0',
-            fontSize: '1rem',
-            opacity: '0.5'
-          }}>
-          <h3>Related pages</h3>
-          {pages?.map(page=> (
-            <div key={page.id} >
-              <Link to={page.uri}>{page.title}</Link>
-            </div>
-          ))}
-          <h3>Related posts</h3>
-          {posts?.map(post=> (
-            <div key={post.id} >
-              <Link to={post.uri}>{post.title}</Link>
-            </div>
-          ))}
-        </div>
+            border: '1px solid #ccc'
+          }} 
+          dangerouslySetInnerHTML={{ __html: content }} />
+
+        <ArticleRelated posts={posts} pages={pages} />
+
       </div>
     </Reader>
   )
