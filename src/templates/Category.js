@@ -32,6 +32,7 @@ export default function CategoryTemplate({data}) {
     setTags(tags.map(tag=> ({...tag, checked: false})))
     setTagMode(false)
   }
+  
 
   // watches tags array for updates and updates the Tag Mode in case no Tag is checked
   useEffect(()=> {
