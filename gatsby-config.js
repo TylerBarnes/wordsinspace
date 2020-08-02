@@ -9,8 +9,16 @@ module.exports = {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url: process.env.NODE_ENV === `development`
+<<<<<<< HEAD
             ? `http://localhost:8888/test/graphql`
             : `https://importii.wordsinspace.net/graphql`,
+||||||| merged common ancestors
+            ? `http://localhost:8888/shannon/graphql`
+            : `https://testingvi.wordsinspace.net/graphql`,
+=======
+            ? `http://localhost:8888/shannon/graphql`
+            : `https://testingvii.wordsinspace.net/graphql`,
+>>>>>>> ca58380d90730de5d916383698ba4b9ee41d4bb6
         schema: {
           perPage: 50,
         },
