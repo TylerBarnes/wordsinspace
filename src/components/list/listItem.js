@@ -7,7 +7,7 @@ import ListImageComponent from "./listImageComponent"
 import ListCategoryComponent from "./listCategoryComponent"
 
 const ListItem = ({item, isTagMode}) => {
-  const category=item.categories?.nodes[0]?.name
+  const category=item?.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
   const [thumbnail, setThumbnail] = useState('')
@@ -16,7 +16,7 @@ const ListItem = ({item, isTagMode}) => {
   const handleMouseEnter = (e,item) => {
     e.preventDefault()
     setIsVisible(true)
-    setThumbnail(!isTagMode 
+    setThumbnail(!isTagMode
                  ? item?.featuredImage?.node?.localFile?.childImageSharp?.fluid
                  : item?.featuredImage?.node?.guid
                  )
@@ -44,7 +44,7 @@ const ListItem = ({item, isTagMode}) => {
           }} >{item.title}</h3>
       </Link> 
                    
-      {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isVisible={isVisible} isTagMode={isTagMode} />}
+      {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isVisible={isVisible} isTagMode={isTagMode}/>}
       
       {date && <ListDateComponent date={date} />}
       

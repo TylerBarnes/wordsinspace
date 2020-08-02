@@ -10,10 +10,8 @@ const ListImageComponent = ({title, thumbnail, isVisible, isTagMode}) => {
     		display: isVisible ? 'block' : 'none',
         right: '0'
     	}}>
-      
       {!isTagMode && <Img fluid={thumbnail} alt={title} />}
-      
-      {isTagMode && <img src={thumbnail} alt={title}/>}
+      {isTagMode && <img src={thumbnail} alt={title} />}
     </div>
   )
 }
