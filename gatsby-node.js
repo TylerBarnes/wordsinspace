@@ -31,7 +31,7 @@ exports.createPages = async ({ actions, graphql }) => {
       const { nodeType, uri, id } = node
       
       await actions.createPage({
-        component: path.resolve(`./src/templates/${nodeType}.js`),
+        component: path.resolve(`./src/templates/${nodeType.toLowerCase()}.js`),
         path: uri,
         context: {
           id,
@@ -58,7 +58,7 @@ exports.createPages = async ({ actions, graphql }) => {
   await Promise.all(
     allWpCategory.nodes.map(async (node, index) => {
       await actions.createPage({
-        component: path.resolve(`./src/templates/Category.js`),
+        component: path.resolve(`./src/templates/category.js`),
         path: node.slug,
         context: {
           slug: node.slug,
@@ -72,7 +72,7 @@ exports.createPages = async ({ actions, graphql }) => {
   // ------------ Create 'work' endpoint
   // ------------ 
   await actions.createPage({
-    component: path.resolve(`./src/templates/Work.js`),
+    component: path.resolve(`./src/templates/work.js`),
     path: '/work',
   })
 }
