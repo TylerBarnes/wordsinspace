@@ -4,13 +4,15 @@ export const extractTags = (initial) => {
   return initial
          	.filter(hasTags=>hasTags.tags && hasTags.tags.nodes.length>0) // filter for elements that contain non-zero Tag arrays
          	.map(item=> { 
-            let item_tags = item.tags.nodes.map(tag => {return {checked: false, slug: tag.slug, name: tag.name, id: tag.id}}) // transform the incoming array into an object with 3 key-value pairs => {checked: bool, slug: string, id: string}, which we need for Tag UX
+            // transform the incoming array into an object with 3 key-value pairs => {checked: bool, slug: string, id: string}, which we need for Tag UX
+            let item_tags = item.tags.nodes.map(tag => {
+                              return {checked: false, slug: tag.slug, name: tag.name, id: tag.id}
+                            }) 
             return item_tags
          })
          .flat(2) // flattens the incoming array of arrays (depth=2)
          .filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i) // checks for uniqueness based on id, seen here https://stackoverflow.com/a/56757215 
          .sort( (a, b) => a.id.localeCompare(b.id, 'en', {'sensitivity': 'base'})) // sorts the incoming array of objects alphabetically by 'name', seen here https://stackoverflow.com/a/58958381
-  
 }
 
 export const sortTags = (tags) => {

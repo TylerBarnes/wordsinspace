@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
+import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
 import {extractTags} from "../utils"
 import {sortByDate} from "../utils"
@@ -16,7 +17,8 @@ export default function CategoryTemplate({data}) {
   const [isTagMode, setTagMode] = useState(false)
 
   // initialize the tags to only those that belong to data of this category, see function definition below for more details
-  const [tags, setTags] = useState(extractTags(initial))
+  // const [tags, setTags] = useState(extractTags(initial))
+  const [tags, setTags] = useState(useTags())
 
   // handles clicking on Tags by updating the 'checked' key-value for every tag
   function handleSelection(e) {

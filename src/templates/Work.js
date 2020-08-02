@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
+import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
 import {extractTags} from "../utils"
 import {sortByDate} from "../utils"
@@ -16,8 +17,9 @@ export default function Work({data}) {
   const [isTagMode, setTagMode] = useState(false)
   
   // initialize the tags to all of the Tags available
-  const [tags, setTags] = useState(extractTags(initial))
-  
+  // const [tags, setTags] = useState(extractTags(initial))
+  const [tags, setTags] = useState(useTags())
+
   // handles clicking on Tags by updating the 'checked' key-value for every tag
   function handleSelection(e) {
     const { name } = e.target;
@@ -73,6 +75,8 @@ export const query = graphql`
         tags {
           nodes {
             slug
+            name
+            id
           }
         }
       }
@@ -93,6 +97,8 @@ export const query = graphql`
         tags {
           nodes {
             slug
+            name
+            id
           }
         }
       }
