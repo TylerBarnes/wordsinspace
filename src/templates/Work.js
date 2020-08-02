@@ -44,14 +44,14 @@ export default function Work({data}) {
 
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
+
   const tagQueryResults = isTagMode && !response.loading 
                           ? [...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]
                           : [] 
-  
   return (
     <Browser>
       <SEO title="work" />
-      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading}/>
+      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
 	)

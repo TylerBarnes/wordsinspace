@@ -9,17 +9,10 @@ const SEARCH_TAGS_QUERY = gql`
         slug
         title
         date
-        content
         uri
         featuredImage {
           node {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            guid
           }
         }
         tags {
@@ -41,13 +34,7 @@ const SEARCH_TAGS_QUERY = gql`
         uri
         featuredImage {
           node {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            guid
           }
         }
         tags {
@@ -72,6 +59,5 @@ export const useTagSelection = (tags, isTagMode) => {
     variables: {first: 100, tags: slugs },
     skip: !isTagMode
   })
-  
   return response
 }

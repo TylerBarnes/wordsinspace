@@ -51,7 +51,7 @@ export default function CategoryTemplate({data}) {
   return (
     <Browser>
       <SEO title={data.allWpCategory.nodes[0].name} />
-      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading}/>
+      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
     </Browser>
   )

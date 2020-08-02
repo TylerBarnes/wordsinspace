@@ -4,7 +4,7 @@ import {useScrollRestoration} from "gatsby"
 
 import ListItem from "./list/listItem"
 
-const List = ({loading, items}) => {
+const List = ({loading, items, isTagMode}) => {
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 
   return (
@@ -35,6 +35,7 @@ const List = ({loading, items}) => {
             <ListItem 
               key={index}
               item={item} 
+              isTagMode={isTagMode}
               /> 
           ))}
           </ul>

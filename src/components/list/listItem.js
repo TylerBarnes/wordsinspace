@@ -6,17 +6,21 @@ import ListDateComponent from "./listDateComponent"
 import ListImageComponent from "./listImageComponent"
 import ListCategoryComponent from "./listCategoryComponent"
 
-const ListItem = ({item}) => {
+const ListItem = ({item, isTagMode}) => {
   const category=item.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
-  const [thumbnail, setThumbnail] = useState(null)
+  const [thumbnail, setThumbnail] = useState('')
   const [isVisible, setIsVisible] = useState(false);
   
   const handleMouseEnter = (e,item) => {
     e.preventDefault()
     setIsVisible(true)
-    setThumbnail(item?.featuredImage?.node?.localFile?.childImageSharp?.fluid)
+    setThumbnail(!isTagMode 
+                 ? item?.featuredImage?.node?.localFile?.childImageSharp?.fluid
+                 : item?.featuredImage?.node?.guid
+                 )
+    console.log(thumbnail)
   }  
 
   const handleMouseLeave = (e) => {
@@ -40,7 +44,7 @@ const ListItem = ({item}) => {
           }} >{item.title}</h3>
       </Link> 
                    
-      {thumbnail && <ListImageComponent thumbnail={thumbnail} isVisible={isVisible} />}
+      {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isVisible={isVisible} isTagMode={isTagMode} />}
       
       {date && <ListDateComponent date={date} />}
       

@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const ListImageComponent = ({thumbnail, isVisible}) => {
+const ListImageComponent = ({title, thumbnail, isVisible, isTagMode}) => {
   return (
     <div 
     	style={{
@@ -10,10 +10,10 @@ const ListImageComponent = ({thumbnail, isVisible}) => {
     		display: isVisible ? 'block' : 'none',
         right: '0'
     	}}>
-    	<Img
-      	fluid={thumbnail}
-      	alt={'thumbnail'}
-      	/>
+      
+      {!isTagMode && <Img fluid={thumbnail} alt={title} />}
+      
+      {isTagMode && <img src={thumbnail} alt={title}/>}
     </div>
   )
 }
