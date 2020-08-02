@@ -10,7 +10,7 @@ module.exports = {
       options: {
         url: process.env.NODE_ENV === `development`
             ? `http://localhost:8888/test/graphql`
-            : `https://testingvi.wordsinspace.net/graphql`,
+            : `https://importii.wordsinspace.net/graphql`,
         schema: {
           perPage: 50,
         },
@@ -58,7 +58,7 @@ module.exports = {
           },          
           MediaItem: {
             limit: process.env.NODE_ENV === `development`
-                   ? 10
+                   ? null
                    : null
           },
         }
