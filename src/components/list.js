@@ -11,7 +11,6 @@ const List = ({loading, items, isTagMode}) => {
   return (
     <div 
       {...ulScrollRestoration}
-
       style={{
         display: 'flex',
         flexDirection: 'row wrap', 
@@ -40,6 +39,7 @@ const List = ({loading, items, isTagMode}) => {
                 key={index}
                 item={item} 
                 isTagMode={isTagMode}
+                invertedTheme={false}
                 /> 
             ))}
             <Footer />

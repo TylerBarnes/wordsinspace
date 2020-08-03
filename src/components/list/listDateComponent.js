@@ -1,13 +1,13 @@
 import React from "react"
 import {getMonthName} from "../../utils"
 
-const ListDateComponent = ({date}) => {
+const ListDateComponent = ({date, invertedTheme}) => {
   const monthIndex = parseInt(date.slice(5,7))
   const monthName = getMonthName(monthIndex)
   const year = date.slice(0,4)
   return (
     <div 
-      className='date'
+      className={invertedTheme ? 'date date-inverted' : 'date'}
       style={{
         margin: '0 0.2vw', 
         fontSize: '0.8rem',

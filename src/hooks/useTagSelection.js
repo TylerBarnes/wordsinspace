@@ -10,6 +10,11 @@ const SEARCH_TAGS_QUERY = gql`
         title
         date
         uri
+        categories {
+          nodes {
+            name
+          }
+        }
         featuredImage {
           node {
             guid
@@ -32,6 +37,11 @@ const SEARCH_TAGS_QUERY = gql`
         date
         excerpt
         uri
+        categories {
+          nodes {
+            name
+          }
+        }
         featuredImage {
           node {
             guid

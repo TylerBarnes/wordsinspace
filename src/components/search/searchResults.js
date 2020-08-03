@@ -2,8 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby" 
 
-const SearchResults = ({items}) => {
+import ListItem from "../list/listItem"
 
+const SearchResults = ({items}) => {
+  console.log(items)
   return (
     <div 
       style={{
@@ -11,7 +13,8 @@ const SearchResults = ({items}) => {
         flexDirection: 'row wrap', 
         alignItems: 'flex-start',
         justifyContent: 'stretch',
-        height: '60vh',
+        maxHeight: '60vh',
+        overflow: 'auto',
       }}>
         {/* ---------------- LIST ---------------- */}
         <div 
@@ -19,31 +22,18 @@ const SearchResults = ({items}) => {
             overflow: 'scroll',
             color: '#fff',
             height: 'auto',
+            marginBottom: '2vh',
+            borderBottom: '1px solid #fff',
           }}>
-          {items && items.length>0 && items.map((node, index) => (
-            <li 
+          {items && items.map((item, index) => (
+            <ListItem 
               key={index}
-              style={{
-                listStyle: 'none',
-                padding: '5px',
-              }}>
-
-              <Link 
-                style={{color: '#fff'}}
-                to={node.uri}> 
-                <h2>{node.title}</h2>
-              </Link>    
-
-              <div 
-                style={{
-                  margin: '0 0.2vw', 
-                  fontSize: '0.8rem',
-                  color: '#aaa',
-                }}> 
-                {node.date && node.date.slice(0,4)} 
-              </div>
-            </li>
+              item={item} 
+              isTagMode={false}
+              invertedTheme={true}
+              /> 
           ))}
+
           {items && items.length === 0 && 
             (
               <div>

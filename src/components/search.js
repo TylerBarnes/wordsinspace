@@ -21,6 +21,18 @@ const SEARCH_QUERY = gql`
             date
             excerpt
             uri
+            categories {
+              nodes {
+                name
+              }
+            }
+            tags {
+              nodes {
+                id
+                slug
+                name
+              }
+            }
           }
         }
         pages(first: $first, where: {search: $searchTerm}) {
@@ -29,6 +41,18 @@ const SEARCH_QUERY = gql`
             slug
             date
             uri
+            categories {
+              nodes {
+                name
+              }
+            }
+            tags {
+              nodes {
+                id
+                slug
+                name
+              }
+            }
           }
         }
       }

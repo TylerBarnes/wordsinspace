@@ -33,7 +33,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
         <div 
           style={{
             zIndex: '100',
-            background: '#000',
+            background: '#513bfd',
             position: 'relative',
             margin: '10vh auto',
             borderRadius: '5px',

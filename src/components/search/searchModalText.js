@@ -4,6 +4,7 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   return (
     <div>
     	<div 
+        className='metadata'
         style={{
           background: 'none',
           outline: 'none',
@@ -18,6 +19,7 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
         data-dismiss="modal" aria-label="Close" onClick={hide}>Close &times;</div>
       
       <div 
+        className='metadata'
         style={{
           padding: '2vh 0',
           textTransform: 'uppercase',

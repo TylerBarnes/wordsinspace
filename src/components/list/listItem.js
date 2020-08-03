@@ -7,7 +7,7 @@ import ListDateComponent from "./listDateComponent"
 import ListImageComponent from "./listImageComponent"
 import ListCategoryComponent from "./listCategoryComponent"
 
-const ListItem = ({item, isTagMode}) => {
+const ListItem = ({item, isTagMode, invertedTheme}) => {
   const category=item?.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
@@ -35,14 +35,16 @@ const ListItem = ({item, isTagMode}) => {
       style={{
         listStyle: 'none',
         width: '75vw',
-        height: '150px',
+        height: invertedTheme ? '120px' :'150px',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         borderStyle: 'dashed none none none',
-        borderColor: '#513bfd',
-        background: isVisible ? '#F7E3E5' : 'none',
+        borderColor: invertedTheme ? '#fff' : '#513bfd',
+        background: isVisible && !invertedTheme 
+                    ? '#F7E3E5' 
+                    : 'none'
       }}>
 
       <div 
@@ -64,9 +66,9 @@ const ListItem = ({item, isTagMode}) => {
             alignItems: 'flex-start',
             marginLeft: '40px'
           }}>
-          {date && <ListDateComponent date={date} />}
-          {category && category !== 'Uncategorized' && <ListCategoryComponent category={category} />}
-          {tags && <ListTagComponent tags={tags} />}
+          {date && <ListDateComponent date={date} invertedTheme={invertedTheme} />}
+          {category && category !== 'Uncategorized' && <ListCategoryComponent category={category.toLowerCase()} />}
+          {tags && <ListTagComponent tags={tags} invertedTheme={invertedTheme} />}
         </div>
 
         {/* ==================== Title ====================  */}
@@ -77,7 +79,7 @@ const ListItem = ({item, isTagMode}) => {
           }}>
           <Link 
             to={item.uri} 
-            className='list-title'>
+            className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
             {item.title}
             <Glyph />
           </Link> 
@@ -93,7 +95,7 @@ const ListItem = ({item, isTagMode}) => {
           height: '200px',
           margin: 0, 
           padding: 0,
-          display: isVisible ? 'block' : 'none',
+          display: isVisible && !invertedTheme ? 'block' : 'none',
         }}>
         {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>

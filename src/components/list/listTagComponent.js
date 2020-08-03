@@ -1,6 +1,6 @@
 import React from "react"
 
-const ListTagComponent = ({tags}) => {
+const ListTagComponent = ({tags, invertedTheme}) => {
   return (
     <div
       style={{
@@ -8,7 +8,7 @@ const ListTagComponent = ({tags}) => {
       }}> 
       {tags.nodes.map((tag, index_tag) => 
         <span 
-          className='tag'
+          className={invertedTheme ? 'tag tag-inverted' : 'tag'}
           key={index_tag}>
           {tag.slug}
         </span>
