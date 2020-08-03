@@ -6,6 +6,8 @@ import {sortByDate, extractSearchResults} from '../utils'
 import SearchModal from "./search/searchModal"
 import SearchResults from "./search/searchResults"
 
+import Glyph from '../images/assets/glyph.svg'
+
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_QUERY = gql`
   query SearchQuery($first: Int, $searchTerm: String!, $catName: String!) {
@@ -72,24 +74,41 @@ const Search = () => {
   }
 
   return (
-    <div>
+    <div 
+      style={{
+        marginTop: '20px',
+        marginRight: '270px'
+      }}>
       <form 
         style={{
           margin: '0',
           padding: '0'
         }} 
         onSubmit={e => handleSubmit(e)}>
-      <input
-        style={{
-          width: '10vw',
-          margin: '0',
-          padding: '0'
-        }} 
-        ref={inputEl}
-        type="text"
-        placeholder="SEARCH"
-        onChange={e => onChange(e)}
-        />
+
+        <div 
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyItems: 'stretch'
+          }}>
+        <input
+          style={{
+            width: '8vw',
+            margin: '0',
+            padding: '0',
+            border: 'none'
+          }} 
+          ref={inputEl}
+          type="text"
+          placeholder="SEARCH"
+          className='interface'
+          onChange={e => onChange(e)}
+          />
+
+        <span className='glyph'><Glyph /></span>
+
+        </div>
       </form>
       <SearchModal
         isShowing={showResults}
@@ -99,7 +118,7 @@ const Search = () => {
         loading={loading}
         searchResults={searchResults}
       />
-    </div>
+   </div>
    )
 }
 

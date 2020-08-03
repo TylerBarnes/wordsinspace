@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'LaNord';
+  src: url('../fonts/LaNord.otf');
+}
+
+@font-face {
+  font-family: 'Wremena_Light';
+  src: url('../fonts/Wremena_Light.otf');
+}
+
+@font-face {
+  font-family: 'Bespoke';
+  src: url('../fonts/Bespoke.otf');
+}
+
+body {
+  cursor: default;
+  overflow: hidden;
+  font-family: 'Wremena_Light', sans-serif;
+}
+
+a {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+.list-title {
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 400;
+  font-family: 'LaNord', sans-serif;
+}
+
+
+.interface {
+  color: #513bfd;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 15px 0;
+  font-family: 'Bespoke', sans-serif;
+}
+
+.metadata {
+  color: #513bfd;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-family: 'Bespoke', sans-serif;
+}
+
+
+.blog, .teaching, .publications, .projects , .presentations , .talks, .research {
+  border: 1px solid;
+  background-color: #a2d2dd;
+  padding: 3px 5px;
+  font-size: 12px;
+  color: #fff;
+  font-family: 'Bespoke', sans-serif;
+}

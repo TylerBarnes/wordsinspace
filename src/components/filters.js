@@ -9,19 +9,19 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
   return (
     <div 
       style={{
-        borderLeft: '1px solid',
-        maxHeight: '93vh', 
+        borderLeft: '1px dotted #513bfd',
+        // backgroundImage: 'linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%)',
+        // backgroundPosition: 'left',
+        // backgroundSize: '10px 1px',
+        // backgroundRepeat: 'repeat-x',
+        maxHeight: '92vh',
         textTransform: 'uppercase',
-        padding: '10px',
+        padding: '0 20px',
         overflow: 'scroll',
         fontWeight: '500',
-        width: '15vw'
+        width: '250px'
       }}>
-      Index
-      <div 
-        style={{
-          margin: '2vh 0'
-        }}>
+      <div>
         <Categories />
         <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} />
       </div>

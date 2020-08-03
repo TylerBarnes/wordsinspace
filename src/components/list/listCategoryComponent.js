@@ -5,13 +5,14 @@ const ListCategoryComponent = ({category}) => {
 
   return (
     <div 
+      className={category.toLowerCase()}
       style={{
         margin: '0 0.2vw', 
         fontSize: '0.8rem',
         color: '#aaa',
-        border: '1px solid #ccc',
+        alignSelf: 'flex-start'
       }}> 
-      {category} 
+      {category}
     </div>
   )
 }

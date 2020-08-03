@@ -9,7 +9,6 @@ const Categories = () => {
 		<div style={{
 			fontSize: '0.9rem',
 			margin: '2vh 0',
-			border: '1px solid #ccc'
 		}}>
 			<div style={{marginTop: '1vh'}}>
 				<Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link>

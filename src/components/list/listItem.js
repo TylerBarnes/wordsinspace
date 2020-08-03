@@ -20,7 +20,6 @@ const ListItem = ({item, isTagMode}) => {
                  ? item?.featuredImage?.node?.localFile?.childImageSharp?.fluid
                  : item?.featuredImage?.node?.guid
                  )
-    console.log(thumbnail)
   }  
 
   const handleMouseLeave = (e) => {
@@ -34,23 +33,65 @@ const ListItem = ({item, isTagMode}) => {
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-        border: '1px solid #ccc'
+        border: '1px solid #ccc', 
+        width: '75vw',
+        height: '150px',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
       }}>
 
-      <Link to={item.uri}>
-        <h3 
+      <div 
+        style={{
+          alignSelf: 'flex-start',
+          width: '50vw',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-evenly',
+          alignItems: 'flex-start',
+          border: '1px solid',
+        }}>
+
+        {/* ==================== Date, Categories, Tags ====================  */}
+        <div 
           style={{
-            border: '1px solid #ccc',
-          }} >{item.title}</h3>
-      </Link> 
-                   
-      {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isVisible={isVisible} isTagMode={isTagMode}/>}
-      
-      {date && <ListDateComponent date={date} />}
-      
-      {category && <ListCategoryComponent category={category} />}
-      
-      {tags && <ListTagComponent tags={tags} />}
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            alignItems: 'flex-start',
+          }}>
+          {date && <ListDateComponent date={date} />}
+          {category && category !== 'Uncategorized' && <ListCategoryComponent category={category} />}
+          {tags && <ListTagComponent tags={tags} />}
+        </div>
+
+        {/* ==================== Title ====================  */}
+        <div         
+          style={{ 
+            width: '50vw',
+            border: '1px solid',
+            margin: '20px 0'
+          }}>
+          <Link 
+            to={item.uri} 
+            className='list-title'>
+            {item.title}
+          </Link> 
+        </div>
+      </div>
+
+      {/* ==================== Thumbnail ====================  */}
+      <div 
+        style={{
+          alignSelf: 'flex-start',
+          width: '150px',
+          margin: 0, 
+          padding: 0,
+          display: isVisible ? 'block' : 'block',
+        }}>
+        {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
+      </div>
 
     </li>
   )

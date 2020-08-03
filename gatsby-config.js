@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Words in space - prototype`,
-    description: `A gatsby-source-wordpress-experimental case study.`,
-    author: `kallirroi`,
+    title: `Words in Space`,
+    description: `Words in Space is the work of Shannon Mattern.`,
+    author: `Work: Shannon Mattern. Design: FOREIGN OBJECTS`,
   },
   plugins: [
     {
@@ -72,8 +72,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    },
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-offline`, 
     {
       resolve: `gatsby-plugin-remove-serviceworker`,

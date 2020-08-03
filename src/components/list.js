@@ -3,10 +3,11 @@ import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
 import ListItem from "./list/listItem"
+import Footer from './footer'
 
 const List = ({loading, items, isTagMode}) => {
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
-
+  
   return (
     <div 
       {...ulScrollRestoration}
@@ -30,7 +31,7 @@ const List = ({loading, items, isTagMode}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul style={{paddingRight: '20px'}}>
+          <ul>
           {items && items.map((item, index) => (
             <ListItem 
               key={index}
@@ -38,6 +39,7 @@ const List = ({loading, items, isTagMode}) => {
               isTagMode={isTagMode}
               /> 
           ))}
+          <Footer />
           </ul>
         }
     </div>

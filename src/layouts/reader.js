@@ -5,7 +5,8 @@ import PropTypes from "prop-types"
 import Title from "../components/title"
 
 import "../styles/layout.css"
-import "../styles/addedStyles.css"
+import "../styles/global.css"
+import "../styles/reader.css"
 
 const Reader = ({children}) => {
   const [isBrowserHovered, setBrowser] = useState(false);

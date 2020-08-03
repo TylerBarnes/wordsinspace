@@ -1,0 +1,19 @@
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: scroll;
+  max-width: 60vw;
+  margin: 0 auto;
+  height: auto;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.gallery-item {
+  margin: 1vw;
+  align-self: flex-end;
+}

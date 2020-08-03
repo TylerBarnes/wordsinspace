@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import {useLocation} from '@reach/router'
 
 import Title from '../components/title'
 import Search from '../components/search'
 
 import '../styles/layout.css'
-import '../styles/addedStyles.css'
+import '../styles/global.css'
+import '../styles/browser.css'
 
 const Browser = ({ children }) => {
   const [isHovered, setIsHovered] = useState(false)
-
+  const location = useLocation();
+  const catName = location.pathname.replace('/', '').replace('/', '')
+  
   return (
     <div
       style={{
@@ -24,15 +28,13 @@ const Browser = ({ children }) => {
         onMouseEnter={e => setIsHovered(true)}
         onMouseLeave={e => setIsHovered(false)}
         style={{
-          border: '1px solid',
           alignSelf: 'flex-start',
           height: '100vh',
-          minWidth: '3vw',
+          width: '60px',
           writingMode: 'vertical-rl',
-          transform: 'rotate(180deg)',
-          padding: '10px',
-          textAlign: 'right',
-          background: !isHovered ? '#fff' : '#ccc',
+          transform: 'rotate(0deg)',
+          textAlign: 'left',
+          paddingRight: '20px'
         }}
       >
         <Title />
@@ -49,16 +51,24 @@ const Browser = ({ children }) => {
         {/* ----------------------------Top ---------------------------- */}
         <div
           style={{
-            border: '1px solid',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
-            padding: '10px',
-            minHeight: '3vw',
+            height: '60px',
             textTransform: 'uppercase',
           }}
         >
-          <div>Browser</div>
+          <div 
+            className='interface'
+            style={{
+              marginLeft: '30px',
+            }}>
+            {catName!== 'work' && 
+            <div>
+              Browsing: <span className={catName}>{catName}</span>
+            </div>
+            }
+          </div>
           <Search />
         </div>
 
@@ -69,7 +79,7 @@ const Browser = ({ children }) => {
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}
-        >
+          >
           {children}
         </div>
       </div>
