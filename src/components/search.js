@@ -76,8 +76,8 @@ const Search = () => {
   return (
     <div 
       style={{
-        marginTop: '20px',
-        marginRight: '270px'
+        marginRight: '270px',
+        marginTop: '15px',
       }}>
       <form 
         style={{

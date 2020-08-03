@@ -90,13 +90,13 @@ const ListItem = ({item, isTagMode}) => {
         style={{
           alignSelf: 'flex-start',
           width: '200px',
+          height: '200px',
           margin: 0, 
           padding: 0,
           display: isVisible ? 'block' : 'none',
         }}>
         {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>
-
     </li>
   )
 }

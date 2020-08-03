@@ -1,3 +1,7 @@
+/* */
+/* Global styles */
+/* */
+
 @font-face {
   font-family: 'LaNord';
   src: url('../fonts/LaNord.otf');
@@ -41,44 +45,11 @@ ul, li {
   padding: 0;
 }
 
-input[type=checkbox] {
-  margin-left: -20px;
-}
-
-.rd {
-  width: 14px;
-  height: 14px;
-  padding: 0;
-  position: relative;
-  margin-right: 5px;
-  background-color: none;
-  border: 1px solid #513bfd;
-  float: left;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-}
-
-.category-active > .rd  {
-  background-color: #513bfd;
-}
-
-.list-title {
-  font-size: 24px;
-  line-height: 27px;
-  font-weight: 400;
-  font-family: 'LaNord', sans-serif;
-  color: #513bfd;
-}
-
 .interface {
   color: #513bfd;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
-  margin: 15px 0;
   font-family: 'Bespoke', sans-serif;
 }
 
@@ -92,7 +63,7 @@ input[type=checkbox] {
 .tag {
   border: 1px solid #6262F4;
   border-radius: 53px;
-  padding: 1px 7px;
+  padding: 2px 7px;
   height: 15px;
   font-family: Bespoke;
   font-style: normal;
@@ -103,11 +74,6 @@ input[type=checkbox] {
   text-transform: uppercase;
   color: #6262F4;
   margin: 0 5px;
-}
-
-.tag-active {
-  color: #fff;
-  background-color: #6262F4;
 }
 
 .date, .work, .blog, .teaching, .publications, .projects , .presentations , .talks, .research {
@@ -129,71 +95,31 @@ input[type=checkbox] {
   background-color: none;
   color: #513bfd;
 }
-.work.category-active {
-  border: 1px solid #513bfd;
-  color: #513bfd;
-  background-color: #fff;
-}
 
 .blog {
   background-color: #a2d2dd;
-}
-.blog.category-active {
-  border: 1px solid #a2d2dd;
-  color: #a2d2dd;
-  background-color: #fff;
 }
 
 .teaching {
   background-color: #6F9AAD;
 }
-.teaching.category-active {
-  border: 1px solid #6F9AAD;
-  color: #6F9AAD;
-  background-color: #fff;
-}
 
 .publications {
   background-color: #E79180;
 }
-.publications.category-active {
-  border: 1px solid #E79180;
-  color: #E79180;
-  background-color: #fff;
-}
-
 .projects {
   background-color: #F4D791;
-}
-.projects.category-active {
-  border: 1px solid #F4D791;
-  color: #F4D791;
-  background-color: #fff;
 }
 
 .presentations {
   background-color: #E9B7BA;
 } 
-.presentations.category-active {
-  border: 1px solid #E9B7BA;
-  color: #E9B7BA;
-  background-color: #fff;
-}
 
 .talks {
   background-color: #ccc;
-}
-.talks.category-active {
-  border: 1px solid #ccc;
-  color: #ccc;
-  background-color: #fff;
 }
 
 .research {
   background-color: #ccc;
 }
-.research.category-active {
-  border: 1px solid #ccc;
-  color: #ccc;
-  background-color: #fff;
-}
+

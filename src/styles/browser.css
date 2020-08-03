@@ -1,0 +1,95 @@
+/* */
+/* Styles specific to Browser.js */
+/* */
+
+
+input[type=checkbox] {
+  margin-left: -20px;
+}
+
+.rd {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  position: relative;
+  margin-right: 5px;
+  background-color: none;
+  border: 1px solid #513bfd;
+  float: left;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+}
+
+.category-active > .rd  {
+  background-color: #513bfd;
+}
+
+.list-title {
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 400;
+  font-family: 'LaNord', sans-serif;
+  color: #513bfd;
+}
+
+.tag-active {
+  color: #fff;
+  background-color: #6262F4;
+}
+
+.tag-clear {
+  color: red;
+  font-family: sans-serif;
+  font-size: 0.6rem;
+}
+
+.work.category-active {
+  border: 1px solid #513bfd;
+  color: #513bfd;
+  background-color: #fff;
+}
+
+.blog.category-active {
+  border: 1px solid #a2d2dd;
+  color: #a2d2dd;
+  background-color: #fff;
+}
+
+.teaching.category-active {
+  border: 1px solid #6F9AAD;
+  color: #6F9AAD;
+  background-color: #fff;
+}
+
+.publications.category-active {
+  border: 1px solid #E79180;
+  color: #E79180;
+  background-color: #fff;
+}
+
+.projects.category-active {
+  border: 1px solid #F4D791;
+  color: #F4D791;
+  background-color: #fff;
+}
+
+.presentations.category-active {
+  border: 1px solid #E9B7BA;
+  color: #E9B7BA;
+  background-color: #fff;
+}
+
+.talks.category-active {
+  border: 1px solid #ccc;
+  color: #ccc;
+  background-color: #fff;
+}
+
+.research.category-active {
+  border: 1px solid #ccc;
+  color: #ccc;
+  background-color: #fff;
+}

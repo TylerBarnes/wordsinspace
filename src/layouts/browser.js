@@ -47,26 +47,27 @@ const Browser = ({ children }) => {
           justifyContent: 'space-between',
           flexGrow: '1',
         }}
-      >
+        >
         {/* ----------------------------Top ---------------------------- */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
-            height: '60px',
             textTransform: 'uppercase',
+            height: '60px',
           }}
-        >
+          >
           <div 
             className='interface'
             style={{
               marginLeft: '30px',
+              marginTop: '15px',
             }}>
             {catName!== 'work' && 
-            <div>
-              Browsing: <span className={catName.toLowerCase()}>{catName}</span>
-            </div>
+              <div>
+                Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()}>{catName}</span>
+              </div>
             }
           </div>
           <Search />
