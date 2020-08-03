@@ -84,6 +84,11 @@ export const query = graphql`
                 }
               }
             }
+            categories {
+              nodes {
+                name
+              }
+            }
             tags {
               nodes {
                 slug
@@ -109,6 +114,11 @@ export const query = graphql`
                     }
                   }
                 }
+              }
+            }
+            categories {
+              nodes {
+                name
               }
             }
             tags {

@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "gatsby" 
 import Img from "gatsby-image"
 
 const ListCategoryComponent = ({category}) => {
@@ -12,7 +13,7 @@ const ListCategoryComponent = ({category}) => {
         color: '#aaa',
         alignSelf: 'flex-start'
       }}> 
-      {category}
+      <Link to={`/${category.toLowerCase()}`}>{category}</Link>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from "react"
 const ListDateComponent = ({date}) => {
   return (
     <div 
-      className='interface'
+      className='date'
       style={{
         margin: '0 0.2vw', 
         fontSize: '0.8rem',

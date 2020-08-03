@@ -65,7 +65,7 @@ const Browser = ({ children }) => {
             }}>
             {catName!== 'work' && 
             <div>
-              Browsing: <span className={catName}>{catName}</span>
+              Browsing: <span className={catName.toLowerCase()}>{catName}</span>
             </div>
             }
           </div>

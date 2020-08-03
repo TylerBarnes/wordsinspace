@@ -11,7 +11,14 @@ const Categories = () => {
 			margin: '2vh 0',
 		}}>
 			<div style={{marginTop: '1vh'}}>
-				<Link to={'/work'} activeStyle={{ color: "red" }} partiallyActive={true}>All</Link>
+				<Link 
+					to={'/work'} 
+					activeStyle={{ color: "red" }} 
+					partiallyActive={true}
+					className='work'
+					>
+					All
+					</Link>
 			</div>
 		  
 		  {categories.sort((a,b) => a.name < b.name).filter(cat=>cat.name !== 'Uncategorized').map((category,index) => (
@@ -22,7 +29,12 @@ const Categories = () => {
 		      	listStyle: 'none',
 					}}		
 				>
-					<Link to={`/${category.slug}`} activeStyle={{ color: "red" }} partiallyActive={true}>
+					<Link 
+						to={`/${category.slug}`} 
+						activeStyle={{ color: "red" }} 
+						partiallyActive={true}
+						className={category.slug}
+						>
 		      	{category.name}
 		      </Link>
 				</li>

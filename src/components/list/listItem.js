@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import {Link} from "gatsby" 
+import Glyph from '../../images/assets/glyph.svg'
 
 import ListTagComponent from "./listTagComponent"
 import ListDateComponent from "./listDateComponent"
@@ -33,13 +34,15 @@ const ListItem = ({item, isTagMode}) => {
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-        border: '1px solid #ccc', 
         width: '75vw',
         height: '150px',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderTop: '1px dotted #513bfd',
+        borderBottom: '1px dotted #513bfd',
+        background: isVisible ? '#F7E3E5' : 'none',
       }}>
 
       <div 
@@ -50,7 +53,6 @@ const ListItem = ({item, isTagMode}) => {
           flexDirection: 'column',
           justifyContent: 'space-evenly',
           alignItems: 'flex-start',
-          border: '1px solid',
         }}>
 
         {/* ==================== Date, Categories, Tags ====================  */}
@@ -70,7 +72,6 @@ const ListItem = ({item, isTagMode}) => {
         <div         
           style={{ 
             width: '50vw',
-            border: '1px solid',
             margin: '20px 0'
           }}>
           <Link 
@@ -78,17 +79,19 @@ const ListItem = ({item, isTagMode}) => {
             className='list-title'>
             {item.title}
           </Link> 
+          <Glyph />
         </div>
+
       </div>
 
       {/* ==================== Thumbnail ====================  */}
       <div 
         style={{
           alignSelf: 'flex-start',
-          width: '150px',
+          width: '200px',
           margin: 0, 
           padding: 0,
-          display: isVisible ? 'block' : 'block',
+          display: isVisible ? 'block' : 'none',
         }}>
         {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>
