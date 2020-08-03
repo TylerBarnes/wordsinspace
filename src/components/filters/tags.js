@@ -8,9 +8,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
   return (
      <div style={{
 	      textAlign: 'left',
-				fontSize: '0.9rem',
 				overflow: 'scroll',
-				margin: '2vh 0',
 				maxHeight: '70vh',
 	     }}>
 	     	<TagsInfoBox tags={tags} clearTags={clearTags} isTagMode={isTagMode}/>

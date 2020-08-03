@@ -7,34 +7,33 @@ const Categories = () => {
 
   return (
 		<div style={{
-			fontSize: '0.9rem',
 			margin: '2vh 0',
 		}}>
-			<div style={{marginTop: '1vh'}}>
-				<Link 
-					to={'/work'} 
-					activeStyle={{ color: "red" }} 
-					partiallyActive={true}
-					className='work'
-					>
-					All
-					</Link>
-			</div>
-		  
+
+			<Link 
+				to={'/work'} 
+				activeClassName='category-active'
+				partiallyActive={true}
+				className='work'
+				>
+				<span className='rd'></span>
+				All
+			</Link>
 		  {categories.sort((a,b) => a.name < b.name).filter(cat=>cat.name !== 'Uncategorized').map((category,index) => (
 				<li 
 					key={index}
 					style={{
-		      	margin: '2px auto',
+		      	margin: '15px 0',
 		      	listStyle: 'none',
 					}}		
 				>
 					<Link 
 						to={`/${category.slug}`} 
-						activeStyle={{ color: "red" }} 
+						activeClassName='category-active'
 						partiallyActive={true}
 						className={category.slug}
 						>
+						<span className='rd'></span>
 		      	{category.name}
 		      </Link>
 				</li>

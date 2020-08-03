@@ -40,8 +40,8 @@ const ListItem = ({item, isTagMode}) => {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderTop: '1px dotted #513bfd',
-        borderBottom: '1px dotted #513bfd',
+        borderStyle: 'dashed none none none',
+        borderColor: '#513bfd',
         background: isVisible ? '#F7E3E5' : 'none',
       }}>
 
@@ -62,6 +62,7 @@ const ListItem = ({item, isTagMode}) => {
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
+            marginLeft: '40px'
           }}>
           {date && <ListDateComponent date={date} />}
           {category && category !== 'Uncategorized' && <ListCategoryComponent category={category} />}
@@ -78,8 +79,8 @@ const ListItem = ({item, isTagMode}) => {
             to={item.uri} 
             className='list-title'>
             {item.title}
+            <Glyph />
           </Link> 
-          <Glyph />
         </div>
 
       </div>
