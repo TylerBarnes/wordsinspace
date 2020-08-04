@@ -45,6 +45,19 @@ export default function postTemplate({ data }) {
           }}>
           {/* ==================== Related ====================  */}
           {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
+
+          {/* ==================== Related - placeholder =========== */}
+          {!showRelated 
+            && 
+            <div 
+              style={{
+                width: '250px',
+                alignSelf: 'flex-start',
+                marginTop: '70vh',
+                marginRight: '2vw'
+              }}>
+            </div>
+          }
           
           {/* ==================== Content ====================  */}
           <div 
@@ -53,10 +66,10 @@ export default function postTemplate({ data }) {
               flexDirection: 'row',
               alignItems: 'flex-start',
               justifyContent: 'space-evenly',
-              marginBottom: '5vh',
+              margin: '5vh 0',
               width: '70vw'
             }}> 
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
         

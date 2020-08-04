@@ -66,10 +66,10 @@ export default function pageTemplate({ data }) {
               flexDirection: 'row',
               alignItems: 'flex-start',
               justifyContent: 'space-evenly',
-              marginBottom: '5vh',
+              margin: '5vh 0',
               width: '70vw'
             }}> 
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
         
