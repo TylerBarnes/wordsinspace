@@ -3,13 +3,14 @@ import {Link} from "gatsby"
 import ArticleCategory from "./articleCategory"
 
 const ArticleRelated = ({pages, posts}) => {
+  
   if (pages.length === 0 && posts.length === 0 ) return null
 
   const styles = {
     margin: '1vh 0',
     height: '250px',
     width: '250px',
-    border: '1px dashed #00f',
+    border: '1px dashed #513bfd',
     borderRadius: '250px',
     display: 'flex',
     flexDirection: 'column',
@@ -23,8 +24,17 @@ const ArticleRelated = ({pages, posts}) => {
         width: '250px',
         alignSelf: 'flex-start',
         marginTop: '70vh',
+        marginRight: '2vw'
       }}>
-
+      <div 
+        className='metadata'
+        style={{
+          border: '1px solid',
+          width: '60px',
+          textAlign: 'center'
+        }}>
+        Related
+      </div>
       {pages?.filter(p => p).map(page=> (
         <div 
           style={styles}

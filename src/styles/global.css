@@ -92,37 +92,47 @@ ul, li {
 
 .date {
   background-color: #513bfd;
+  border: 1px solid #513bfd;
 }
 
 .work {
   background-color: none;
   color: #513bfd;
+  border: 1px solid transparent;
 }
 
 .blog {
   background-color: #a2d2dd;
+  border: 1px solid #a2d2dd;
 }
 
 .teaching {
   background-color: #6F9AAD;
+  border: 1px solid #6F9AAD;
 }
 
 .publications {
   background-color: #E79180;
+  border: 1px solid #E79180;
 }
+
 .projects {
   background-color: #F4D791;
+  border: 1px solid #F4D791;
 }
 
 .presentations {
   background-color: #E9B7BA;
+  border: 1px solid #E9B7BA;
 } 
 
 .talks {
   background-color: #ccc;
+  border: 1px solid #ccc;
 }
 
 .research {
   background-color: #ccc;
+  border: 1px solid #ccc;
 }
 

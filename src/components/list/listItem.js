@@ -35,7 +35,8 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
       style={{
         listStyle: 'none',
         width: '75vw',
-        height: invertedTheme ? '120px' :'150px',
+        height: 'auto',
+        minHeight: '150px',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'row',

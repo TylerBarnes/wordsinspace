@@ -28,9 +28,9 @@ export default function pageTemplate({ data }) {
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
           }}>
-          <ArticleDate date={date}/>
-          <ArticleCategory categories={categories}/>
-          <ArticleTags tags={tags}/>
+          {date && <ArticleDate date={date}/>}
+          {categories && <ArticleCategory categories={categories}/>}
+          {tags && <ArticleTags tags={tags}/>}
         </div>
 
         {/* ==================== Title ====================  */}
@@ -43,13 +43,25 @@ export default function pageTemplate({ data }) {
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
           }}>
-          {/* ==================== Related ====================  */}
+          {/* ==================== Related ========================  */}
           {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
+          
+          {/* ==================== Related - placeholder =========== */}
+          {!showRelated 
+            && 
+            <div 
+              style={{
+                width: '250px',
+                alignSelf: 'flex-start',
+                marginTop: '70vh',
+                marginRight: '2vw'
+              }}>
+            </div>
+          }
           
           {/* ==================== Content ====================  */}
           <div 
             style={{
-              border: '1px solid',
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'flex-start',

@@ -1,8 +1,8 @@
-/* */
-/* Styles specific to Browser.js */
-/* */
-
-
+/*****/
+/*****/
+/*****STYLES SPECIFIC TO BROWSER*/
+/*****/
+/*****/
 .list-title , .list-title-inverted {
   font-size: 24px;
   line-height: 27px;
@@ -17,6 +17,12 @@
 .list-title-inverted {
   color: #fff;
 }
+
+/*****/
+/*****/
+/*****TAGS*/
+/*****/
+/*****/
 
 .tag-active {
   color: #fff;
@@ -43,6 +49,12 @@ label.tag:hover {
   color: #513bfd;
   background-color: #fff
 }
+
+/*****/
+/*****/
+/*****CATEGORIES*/
+/*****/
+/*****/
 
 .work.category-active {
   border: 1px solid #513bfd;
@@ -92,7 +104,11 @@ label.tag:hover {
   background-color: #fff;
 }
 
-
+/*****/
+/*****/
+/*****INPUT + RADIO*/
+/*****/
+/*****/
 
 input[type=checkbox] {
   margin-left: -20px;
