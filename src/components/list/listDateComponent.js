@@ -9,9 +9,6 @@ const ListDateComponent = ({date, invertedTheme}) => {
     <div 
       className={invertedTheme ? 'date date-inverted' : 'date'}
       style={{
-        margin: '0 0.2vw', 
-        fontSize: '0.8rem',
-        color: '#aaa',
         alignSelf: 'flex-start'
       }}> 
       {monthName} {year} 

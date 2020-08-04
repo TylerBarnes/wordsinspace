@@ -64,7 +64,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            marginLeft: '40px'
+            marginLeft: '40px',
           }}>
           {date && <ListDateComponent date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategoryComponent category={category.toLowerCase()} />}

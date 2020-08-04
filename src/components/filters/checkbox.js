@@ -5,7 +5,7 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
     style={{
       margin: '5px 0',
     }}>
-    {isSelected ? <span className='tag-clear'></span> : null}
+    {isSelected ? <span className='tag-clear'> &times; </span> : null}
     <label 
       style={{padding: '2px 15px 2px 25px'}} 
       className={isSelected ? 'tag tag-active' : 'tag'}

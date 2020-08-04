@@ -19,50 +19,25 @@ const Reader = ({children}) => {
         flexDirection: 'row nowrap', 
         alignItems: 'flex-start',
         justifyContent: 'space-around',
+        background: 'rgba(255, 145, 83, 0.13)',
       }}>
 
-      {/* ----------------------------Left---------------------------- */}
+      {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <div 
         onMouseEnter={e=>setTitle(true)}
         onMouseLeave={e=>setTitle(false)}
         style={{
-          border: '1px solid',
-          height: '100vh', 
-          minWidth: '3vw', 
+          alignSelf: 'flex-start',
+          height: '100vh',
+          width: '60px',
           writingMode: 'vertical-rl',
-          transform: 'rotate(180deg)',
-          whiteSpace: 'wrap', 
-          textAlign: 'right',
-          textTransform: 'uppercase',
-          padding: '10px',
-          background: !isTitleHovered ? '#fff' : '#ccc',
+          transform: 'rotate(0deg)',
+          textAlign: 'left',
+          paddingRight: '20px'
         }}>
         <Title />
       </div>      
 
-
-      {/* ----------------------------Left---------------------------- */}
-      <Link to='/work'>
-        <div 
-          onMouseEnter={e=>setBrowser(true)}
-          onMouseLeave={e=>setBrowser(false)}
-          style={{
-            border: '1px solid',
-            height: '100vh', 
-            minWidth: '3vw', 
-            writingMode: 'vertical-rl',
-            transform: 'rotate(180deg)',
-            whiteSpace: 'wrap', 
-            textAlign: 'right',
-            textTransform: 'uppercase',
-            padding: '10px',
-            background: !isBrowserHovered ? '#fff' : '#ccc',
-          }}>
-          Browser
-        </div>
-      </Link>
-
-      {/* ----------------------------Top+Main---------------------------- */}
       <div 
         style={{
           display: 'flex',
@@ -70,27 +45,31 @@ const Reader = ({children}) => {
           justifyContent: 'space-between', 
           flexGrow: '1', 
         }}>
+        {/* ----------------------------BROWSER---------------------------- */}
         <div 
           style={{
-          border: '1px solid',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between', 
-          padding: '10px',
-          minHeight: '3vw', 
-          textTransform: 'uppercase',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            textTransform: 'uppercase',
+            height: '60px',
         }}>
-          <Link to={'/work'}>back</Link>
+          <div 
+            className='interface'
+            style={{
+              marginLeft: '30px',
+              marginTop: '15px',
+            }}>
+            <Link to={'/work'}>◀️ BROWSER</Link>
+          </div>
         </div>
 
+        {/* ----------------------------Main---------------------------- */}
         <div 
           style={{
-            maxHeight: '95vh',
-            width: '80vw',
-            padding: '20px 10px',
-            overflow: 'scroll',
-            border: '1px solid #ccc',
-            margin: '0 auto'
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
           }}>
           {children}
         </div>

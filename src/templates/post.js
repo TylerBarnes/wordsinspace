@@ -15,11 +15,9 @@ export default function postTemplate({ data }) {
   
   return (
     <Reader>
-
+      <div>
         <ArticleTitle title={title}/>
-
         <ArticleDate date={date}/>
-
         <div 
           style={{
             border: '1px solid #ccc',
@@ -35,7 +33,7 @@ export default function postTemplate({ data }) {
             dangerouslySetInnerHTML={{ __html: content }} />
           {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
         </div>
-        
+      </div>
     </Reader>
   )
 }

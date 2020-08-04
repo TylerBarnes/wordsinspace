@@ -23,7 +23,7 @@ const Browser = ({ children }) => {
         justifyContent: 'space-around',
       }}
     >
-      {/* ----------------------------Left---------------------------- */}
+      {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <div
         onMouseEnter={e => setIsHovered(true)}
         onMouseLeave={e => setIsHovered(false)}
@@ -48,7 +48,7 @@ const Browser = ({ children }) => {
           flexGrow: '1',
         }}
         >
-        {/* ----------------------------Top ---------------------------- */}
+        {/* ----------------------------BROWSER---------------------------- */}
         <div
           style={{
             display: 'flex',

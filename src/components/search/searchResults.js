@@ -5,7 +5,6 @@ import {Link} from "gatsby"
 import ListItem from "../list/listItem"
 
 const SearchResults = ({items}) => {
-  console.log(items)
   return (
     <div 
       style={{
@@ -36,7 +35,7 @@ const SearchResults = ({items}) => {
 
           {items && items.length === 0 && 
             (
-              <div>
+              <div className='metadata' style={{color: '#fff'}}>
                 No results found for this search term.
               </div>
             )}

@@ -1,15 +1,15 @@
 import React from "react"
+import {getMonthName} from "../../utils"
 
 const ArticleDate = ({date}) => {
+	const monthIndex = parseInt(date.slice(5,7))
+  const monthName = getMonthName(monthIndex)
+  const year = date.slice(0,4)
+  
   return (
 		<div 
-	    style={{
-	      margin: '1vh 0',
-	      fontSize: '1rem',
-	      lineHeight: '1rem',
-	      border: '1px solid #ccc'
-	    }}>
-	    {date && date.slice(0,4)}
+			className='date'>
+	    {monthName} {year} 
 	  </div>
   )
 }

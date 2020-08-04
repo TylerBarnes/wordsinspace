@@ -4,19 +4,23 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   return (
     <div>
     	<div 
-        className='metadata'
         style={{
           background: 'none',
           outline: 'none',
-          border: 'none',
+          border: '1px solid #fff',
           padding: '5px',
-          position: 'fixed',
-          right: '11%',
+          margin: '5px 0',
+          position: 'relative',
+          float: 'right',
           color: '#fff',
-          fontWeight: 500,
           textTransform: 'uppercase'
         }}
-        data-dismiss="modal" aria-label="Close" onClick={hide}>Close &times;</div>
+        className='metadata'
+        data-dismiss="modal" 
+        aria-label="Close" 
+        onClick={hide}>
+          Close &times;
+        </div>
       
       <div 
         className='metadata'

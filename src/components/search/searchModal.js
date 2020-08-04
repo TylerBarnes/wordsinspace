@@ -35,10 +35,10 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
             zIndex: '100',
             background: '#513bfd',
             position: 'relative',
-            margin: '10vh auto',
+            margin: '59px 0 0 59px',
             borderRadius: '5px',
-            maxWidth: '80vw',
-            maxHeight: '70vh',
+            width: '78.5vw',
+            maxHeight: '75vh',
             padding: '0.5vh 1vw',
             overflowY: 'scroll',
           }}>
@@ -46,6 +46,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
           {/* ---------------- LOADING MESSAGE ---------------- */}
           {loading && (
             <div 
+              className='metadata'
               style={{
                 padding: '1vh 0',
                 textTransform: 'uppercase',
