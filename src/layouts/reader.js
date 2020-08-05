@@ -19,7 +19,6 @@ const Reader = ({children}) => {
     flexDirection: 'row nowrap', 
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    background: 'rgba(255, 145, 83, 0.13)',
   }
   
   const styleTopBar = 
@@ -32,7 +31,7 @@ const Reader = ({children}) => {
   }
 
   return (
-    <div style={styleWrapper}>
+    <div className='gradient' style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <LeftNav />      
