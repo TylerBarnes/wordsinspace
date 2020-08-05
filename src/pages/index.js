@@ -42,7 +42,6 @@ export default function HomePage() {
           justifyContent: 'flex-start',
           alignItems: 'stretch',
           alignContent: 'stretch',
-          width: '100%'
           }}>
           <div 
             style={{
@@ -98,6 +97,9 @@ export default function HomePage() {
           <div 
             style={{
               width:'50%',
+              display: 'flex',
+              flexFlow: 'column',
+              flexWrap: 'nowrap',
             }}>
 
             <HomeItem item={menuItems[6]} index={7} />

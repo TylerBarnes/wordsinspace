@@ -18,9 +18,6 @@ const HomeItem = ({item, index}) => {
         display: 'flex',
         flexFlow: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        alignContent: 'flex-start',
         borderTop: '1px dotted #513bfd',
         margin: '1vh 1vw',
       }}> 
@@ -38,13 +35,20 @@ const HomeItem = ({item, index}) => {
         {connectedNode && <HomeCategory category={category}/>}
       </div>
 
-      {/*================ Title ================*/}
-      <div className={isEven ? 'home-title left' : 'home-title right'}>
-        <Link to={item.url}>{item.label}</Link>
-      </div>
+      <div 
+        style={{
+          display: 'flex',
+          flexFlow: 'row',
+          flexWrap: 'nowrap',
+        }}>
+        {/*================ Title ================*/}
+        <div className={isEven ? 'home-title left' : 'home-title right'}>
+          <Link to={item.url}>{item.label}</Link>
+        </div>
 
-      {/*================ Thumbnail ================*/}
-      {connectedNode && <HomeImage title={title} thumbnail={thumbnail} />}
+        {/*================ Thumbnail ================*/}
+        {connectedNode && <HomeImage title={title} thumbnail={thumbnail} isEven={isEven} />}
+      </div>
 
     </div>
   )

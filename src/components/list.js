@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useRef} from "react"
 import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
@@ -7,7 +7,8 @@ import Footer from './footer'
 
 const List = ({loading, items, isTagMode}) => {
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
-  
+  const anchorRef = useRef(null)
+
   return (
     <div 
       {...ulScrollRestoration}
@@ -38,17 +39,30 @@ const List = ({loading, items, isTagMode}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul>
-            {items && items.map((item, index) => (
-              <ListItem 
-                key={index}
-                item={item} 
-                isTagMode={isTagMode}
-                invertedTheme={false}
-                /> 
-            ))}
-            <Footer />
-          </ul>
+          <>
+            <ul>
+              <div ref={anchorRef}></div>
+              {items && items.map((item, index) => (
+                <ListItem 
+                  key={index}
+                  item={item} 
+                  isTagMode={isTagMode}
+                  invertedTheme={false}
+                  /> 
+              ))}
+              <Footer />
+            </ul>
+            <button 
+              style={{
+                position: 'fixed',
+                right: '230px',
+                top: '10vh',
+                display: 'none'
+              }}
+              onClick={window.scrollTo(0,500)}>
+              scroll to top
+            </button>
+          </>
         }
     </div>
    )

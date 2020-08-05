@@ -38,7 +38,7 @@ const Reader = ({children}) => {
       <LeftNav />      
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div>
+      <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar}>
           <div className='interface'>
@@ -55,9 +55,7 @@ const Reader = ({children}) => {
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-        <div>
-          {children}
-        </div>
+        {children}
       </div>
     </div>
   )
