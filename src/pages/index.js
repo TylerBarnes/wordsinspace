@@ -20,7 +20,7 @@ import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 export default function HomePage() {
   const menuData = useSiteMenuData();
 
-  if (!menuData) return null
+  if (!menuData)  {window.location = ('/work')}
   
   const menuItems = menuData[0]?.menuItems?.nodes
 
