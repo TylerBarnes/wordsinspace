@@ -21,54 +21,55 @@
   text-align: center;
   margin-top: 5vh;
 }
+
 /*****/
 /*****/
 /*****CATEGORIES HOVER*/
 /*****/
 /*****/
-.work:hover {
+.work.reader:hover {
   border: 1px solid #513bfd;
   color: #513bfd;
   background-color: #fff;
 }
 
-.blog:hover {
+.blog.reader:hover {
   border: 1px solid #a2d2dd;
   color: #a2d2dd;
   background-color: #fff;
 }
 
-.teaching:hover {
+.teaching.reader:hover {
   border: 1px solid #6F9AAD;
   color: #6F9AAD;
   background-color: #fff;
 }
 
-.publications:hover {
+.publications.reader:hover {
   border: 1px solid #E79180;
   color: #E79180;
   background-color: #fff;
 }
 
-.projects:hover {
+.projects.reader:hover {
   border: 1px solid #F4D791;
   color: #F4D791;
   background-color: #fff;
 }
 
-.presentations:hover {
+.presentations.reader:hover {
   border: 1px solid #E9B7BA;
   color: #E9B7BA;
   background-color: #fff;
 }
 
-.talks:hover {
+.talks.reader:hover {
   border: 1px solid #ccc;
   color: #ccc;
   background-color: #fff;
 }
 
-.research:hover {
+.research.reader:hover {
   border: 1px solid #ccc;
   color: #ccc;
   background-color: #fff;
