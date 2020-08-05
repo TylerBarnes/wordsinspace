@@ -5,6 +5,7 @@ import Home from '../layouts/home'
 import SEO from '../components/seo'
 import HomeItem from '../components/home/homeItem'
 import Footer from "../components/footer"
+import { navigate } from "gatsby"
 
 import {useSiteMenuData} from '../hooks/useSiteMenuData'
 
@@ -20,7 +21,7 @@ import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 export default function HomePage() {
   const menuData = useSiteMenuData();
 
-  if (!menuData)  {window.location = ('/work')}
+  if (!menuData)  {navigate('/work')}
   
   const menuItems = menuData[0]?.menuItems?.nodes
 
