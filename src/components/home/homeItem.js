@@ -9,42 +9,44 @@ const HomeItem = ({item, index}) => {
   const thumbnail = connectedNode?.node.featuredImage?.node?.localFile?.childImageSharp?.fluid
   const title = connectedNode?.node.title
   const category = connectedNode?.node.categories?.nodes[0]?.name
-  const isEven = index%2 === 0
+  const isThree = index%3 === 0
 
   return (
-    <div 
+    <div className={isThree ? 'right' : 'left'}
       style={{
-        alignSelf: 'stretch',
-        display: 'flex',
-        flexFlow: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        alignContent: 'flex-start',
         borderTop: '1px dotted #513bfd',
         margin: '1vh 1vw',
+        paddingBottom: '2vh',
       }}> 
 
-      <div 
-        style={{
-          display: 'flex',
-          flexFlow: 'row',
-          flexWrap: 'wrap',
-        }}>
-        {/*================ Latest ================*/}
-        {connectedNode && <div className='latest'>LATEST</div>}
 
-        {/*================ Category ================*/}
-        {connectedNode && <HomeCategory category={category}/>}
+      {/*================ Latest, Category labels and Title ================*/}
+
+      <div className={'home-entry'}>
+
+        <div 
+          style={{
+            display: 'flex',
+            flexFlow: 'row',
+            flexWrap: 'wrap',
+          }}>
+
+          {/*================ Latest ================*/}
+          {connectedNode && <div className='latest'>LATEST</div>}
+
+          {/*================ Category ================*/}
+          {connectedNode && <HomeCategory category={category}/>}
+        
+        </div>
+
+        {/*================ Title ================*/}
+        <div className={'home-title'}>
+          <Link to={item.url}>{item.label}</Link>
+        </div>
       </div>
 
-      {/*================ Title ================*/}
-      <div className={isEven ? 'home-title left' : 'home-title right'}>
-        <Link to={item.url}>{item.label}</Link>
-      </div>
-
-      {/*================ Thumbnail ================*/}
-      {connectedNode && <HomeImage title={title} thumbnail={thumbnail} />}
+        {/*================ Thumbnail ================*/}
+        {connectedNode && <HomeImage title={title} thumbnail={thumbnail} />}
 
     </div>
   )

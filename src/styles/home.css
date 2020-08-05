@@ -1,30 +1,46 @@
 .latest {
 	font-family: Bespoke;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 8px;
-  line-height: 13px;
-  color: #fff;
-  padding: 2px 20px;
-  text-transform: uppercase;
-  background-color: #6262F4;
-  margin-right: 10px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 16px;
+	color: #fff;
+	padding: 3px 20px 0px 20px;
+	text-transform: uppercase;
+	background-color: #6262F4;
+	margin-right: 10px;
 }
 
 .home-title {
 	font-family: 'LaNord', sans-serif;
 	font-style: normal;
-	font-weight: 900;
+	font-weight: normal;
 	font-size: 45px;
 	line-height: 44px;
 	color: #6262F4;
 	margin: 10px;
+	padding-bottom: 10px;
 }
 
 .right {
-	text-align: right;
+	text-align: center;
+	align-self: stretch;
+	display: flex;
+	flex-flow: column;
+	flex-flow: column;
 }
 
 .left {
 	text-align: left;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
 }
+
+.left .home-entry {
+	flex-basis: 60%;
+}
+
+.left .gatsby-image-wrapper {
+}
+

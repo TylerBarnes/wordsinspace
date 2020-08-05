@@ -6,7 +6,6 @@ const HomeImage = ({title, thumbnail}) => {
     <div 
 	    style={{
 	    	flexBasis: '40%', 
-	    	alignSelf: 'flex-end'
 	    }}>
       <Img fluid={thumbnail} alt={title} />
     </div>
