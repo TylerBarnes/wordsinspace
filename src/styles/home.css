@@ -29,8 +29,13 @@
 	text-align: left;
 }
 
-svg#sticker-browser {
+svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
 	animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
+svg#sticker-words:hover, svg#sticker-email:hover, svg#sticker-CV:hover, svg#sticker-pinboard:hover 
+{
+	animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
 @keyframes loading-spinner {
