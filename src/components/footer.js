@@ -5,8 +5,9 @@ const Footer = () => {
   return (
     <div 
     	style={{
-	    	borderTop: '1px solid #513bfd',
-	    	padding: '10vh 0 5vh 0'
+	    	borderTop: '0.5px solid #513bfd',
+        marginTop: '5vh',
+	    	padding: '5vh 0'
 	    }} 
 	    className="metadata">
      Copyright All Rights Reserved © 2020

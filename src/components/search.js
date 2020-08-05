@@ -7,6 +7,7 @@ import SearchModal from "./search/searchModal"
 import SearchResults from "./search/searchResults"
 
 import Glyph from '../images/assets/glyph.svg'
+import GlyphHover from '../images/assets/glyph_hover.svg'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_QUERY = gql`
@@ -67,6 +68,7 @@ const Search = () => {
   const inputEl = useRef(null)
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
+  const [isGlyphHovered, setGlyphHovered] = useState(false)
   
   const {loading, error, data} = useQuery(SEARCH_QUERY, {
       variables: { searchTerm: searchTerm, first: 150, catName: catName},
@@ -117,6 +119,8 @@ const Search = () => {
             justifyItems: 'stretch'
           }}>
         <input
+          onMouseEnter={e=>setGlyphHovered(true)}
+          onMouseLeave={e=>setGlyphHovered(false)}
           style={{
             width: '8vw',
             margin: '0',
@@ -130,7 +134,12 @@ const Search = () => {
           onChange={e => onChange(e)}
           />
 
-        <span className='glyph'><Glyph /></span>
+         <div
+            onMouseEnter={e=>setGlyphHovered(true)}
+            onMouseLeave={e=>setGlyphHovered(false)}
+          >
+           {isGlyphHovered ? <GlyphHover /> : <Glyph />}
+         </div>
 
         </div>
       </form>

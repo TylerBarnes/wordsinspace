@@ -1,7 +1,7 @@
 import React from "react"
 import {getMonthName} from "../../utils"
 
-const ListDateComponent = ({date, invertedTheme}) => {
+const ListDate = ({date, invertedTheme}) => {
   const monthIndex = parseInt(date.slice(5,7))
   const monthName = getMonthName(monthIndex)
   const year = date.slice(0,4)
@@ -16,4 +16,4 @@ const ListDateComponent = ({date, invertedTheme}) => {
   )
 }
 
-export default ListDateComponent
+export default ListDate

@@ -36,10 +36,11 @@ const Browser = ({ children }) => {
           textAlign: 'left',
           paddingRight: '20px'
         }}
-      >
+        >
         <Title />
       </div>
 
+      {/* ----------------------------TOP---------------------------- */}
       <div
         style={{
           display: 'flex',

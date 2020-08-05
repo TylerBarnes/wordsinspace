@@ -3,13 +3,13 @@ import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import Title from "../components/title"
+import Footer from "../components/footer"
 
 import "../styles/layout.css"
 import "../styles/global.css"
 import "../styles/home.css"
 
 const Home = ({children}) => {
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
@@ -18,57 +18,64 @@ const Home = ({children}) => {
         flexDirection: 'row nowrap', 
         alignItems: 'flex-start',
         justifyContent: 'space-around',
+        background: 'rgba(255, 145, 83, 0.13)',
       }}>
-      {/* ---------------------------Top+Main---------------------------- */}
-      <div 
+      {/* ----------------------------WORDS IN SPACE---------------------------- */}
+      <div
+        style={{
+          alignSelf: 'flex-start',
+          height: '100vh',
+          width: '60px',
+          writingMode: 'vertical-rl',
+          transform: 'rotate(0deg)',
+          textAlign: 'left',
+          paddingRight: '20px'
+        }}
+        >
+        <Title />
+      </div>
+
+      {/* ----------------------------TOP---------------------------- */}
+      <div
         style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between', 
-          flexGrow: '1', 
-        }}>
-        <div 
+          justifyContent: 'space-between',
+          flexGrow: '1',
+        }}
+        >
+        {/* ----------------------------HOME---------------------------- */}
+        <div
           style={{
-          border: '1px solid',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between', 
-          padding: '10px',
-          minHeight: '3vw', 
-        }}>
-          <Title/>      
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            textTransform: 'uppercase',
+            height: '60px',
+          }}
+          >
+          <div 
+            className='interface'
+            style={{
+              marginLeft: '30px',
+              marginTop: '15px',
+            }}>
+            HOME
+          </div>
         </div>
 
-        <div 
+        {/* ----------------------------MAIN---------------------------- */}
+        <div
           style={{
-            maxHeight: '95vh',
-            padding: '20px 10px',
-            overflow: 'scroll'
-          }}>
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+          >
           {children}
         </div>
+        <Footer />
       </div>
-
-      {/* ----------------------------Right---------------------------- */}
-      <Link to='/work'>
-        <div
-          onMouseEnter={e=>setIsHovered(true)}
-          onMouseLeave={e=>setIsHovered(false)}
-          style={{
-            border: '1px solid',
-            height: '100vh', 
-            minWidth: '3vw', 
-            writingMode: 'vertical-rl',
-            transform: 'rotate(180deg)',
-            whiteSpace: 'wrap', 
-            textAlign: 'right',
-            textTransform: 'uppercase',
-            padding: '10px',
-            background: !isHovered ? '#fff' : '#ccc',
-          }}>
-         Browser
-        </div>
-      </Link>
     </div>
   )
 }

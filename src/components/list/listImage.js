@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const ListImageComponent = ({title, thumbnail, isTagMode}) => {
+const ListImage = ({title, thumbnail, isTagMode}) => {
   return (
     <div>
       {!isTagMode && <Img fluid={thumbnail} alt={title} />}
@@ -10,4 +10,4 @@ const ListImageComponent = ({title, thumbnail, isTagMode}) => {
   )
 }
 
-export default ListImageComponent
+export default ListImage

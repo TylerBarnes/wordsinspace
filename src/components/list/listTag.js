@@ -1,6 +1,6 @@
 import React from "react"
 
-const ListTagComponent = ({tags, invertedTheme}) => {
+const ListTag = ({tags, invertedTheme}) => {
   return (
     <div
       style={{
@@ -17,4 +17,4 @@ const ListTagComponent = ({tags, invertedTheme}) => {
   )
 }
 
-export default ListTagComponent
+export default ListTag

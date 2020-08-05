@@ -1,8 +1,6 @@
 import React from "react"
-import {Link} from "gatsby" 
-import Img from "gatsby-image"
 
-const ListCategoryComponent = ({category, invertedTheme}) => {
+const ListCategory = ({category}) => {
   return (
     <div 
       className={category}
@@ -16,4 +14,4 @@ const ListCategoryComponent = ({category, invertedTheme}) => {
   )
 }
 
-export default ListCategoryComponent
+export default ListCategory

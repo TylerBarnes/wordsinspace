@@ -80,6 +80,44 @@
 /*****/
 /*****/
 
+.content {
+  font-family: 'Wremena_Light', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 34px;
+  text-transform: capitalize;
+  color: #6262F4 !important;
+}
+
+.content > h1, .content > h2, .content > h3 {
+  font-family: 'LaNord', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 27px;
+  color: #6262F4;
+}
+
+.content > * > a {
+  font-family: 'Wremena_Light', sans-serif;
+  font-weight: 500;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
+
+/*****/
+/*****/
+/*****INLINE WORDPRESS STYLES FOR IMAGES THIS IS A SPECIAL TYPE OF HELL*/
+/*****/
+/*****/
+
+.content > figure, img {
+  padding: 0;
+  margin: 0;
+}
+
 .gallery {
   display: flex;
   flex-direction: row;
@@ -98,47 +136,12 @@
   align-self: flex-start;
 }
 
-.content {
-  font-family: 'Wremena_Light', sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 34px;
-  text-transform: capitalize;
-  color: #6262F4 !important;
-}
 
-.content > span {
-  color: #6262F4 !important;
-}
-
-.content > figure, img {
-  padding: 0;
-  margin: 0;
-}
-
-.content > * > figcaption {
+figcaption {
   color: #513bfd;
   text-transform: uppercase;
   font-size: 8px;
   line-height: 13px;
   font-family: 'Bespoke', sans-serif;
   margin-left: 15px;
-}
-
-.content > h1, .content > h2, .content > h3 {
-  font-family: 'LaNord', sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 27px;
-  color: #6262F4;
-}
-
-.content > * > a {
-  font-family: 'Wremena_Light', sans-serif;
-  font-weight: 500;
-  text-decoration: underline;
-  margin: 0;
-  padding: 0;
 }

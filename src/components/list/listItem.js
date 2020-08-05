@@ -2,10 +2,10 @@ import React, {useState} from "react"
 import {Link} from "gatsby" 
 import Glyph from '../../images/assets/glyph.svg'
 
-import ListTagComponent from "./listTagComponent"
-import ListDateComponent from "./listDateComponent"
-import ListImageComponent from "./listImageComponent"
-import ListCategoryComponent from "./listCategoryComponent"
+import ListTag from "./listTag"
+import ListDate from "./listDate"
+import ListImage from "./listImage"
+import ListCategory from "./listCategory"
 
 const ListItem = ({item, isTagMode, invertedTheme}) => {
   const category=item?.categories?.nodes[0]?.name
@@ -67,9 +67,9 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
             alignItems: 'flex-start',
             marginLeft: '40px',
           }}>
-          {date && <ListDateComponent date={date} invertedTheme={invertedTheme} />}
-          {category && category !== 'Uncategorized' && <ListCategoryComponent category={category.toLowerCase()} />}
-          {tags && <ListTagComponent tags={tags} invertedTheme={invertedTheme} />}
+          {date && <ListDate date={date} invertedTheme={invertedTheme} />}
+          {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
+          {tags && <ListTag tags={tags} invertedTheme={invertedTheme} />}
         </div>
 
         {/* ==================== Title ====================  */}
@@ -98,7 +98,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
           padding: 0,
           display: isVisible && !invertedTheme ? 'block' : 'none',
         }}>
-        {thumbnail && <ListImageComponent title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
+        {thumbnail && <ListImage title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>
     </li>
   )

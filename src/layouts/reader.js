@@ -3,6 +3,8 @@ import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import Title from "../components/title"
+import GlyphLeft from '../images/assets/glyph_left.svg'
+import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
 
 import "../styles/layout.css"
 import "../styles/global.css"
@@ -11,7 +13,7 @@ import "../styles/reader.css"
 const Reader = ({children}) => {
   const [isBrowserHovered, setBrowser] = useState(false);
   const [isTitleHovered, setTitle] = useState(false);
-  
+  const [isGlyphHovered, setGlyphHovered] = useState(false)
   return (
     <div 
       style={{
@@ -60,7 +62,15 @@ const Reader = ({children}) => {
               marginLeft: '30px',
               marginTop: '15px',
             }}>
-            <Link to={'/work'}>◀️ BROWSER</Link>
+            <Link to={'/work'}> 
+              <div             
+                  onMouseEnter={e=>setGlyphHovered(true)}
+                  onMouseLeave={e=>setGlyphHovered(false)}
+                  >
+                  {isGlyphHovered ? <GlyphLeftHover /> : <GlyphLeft />}
+                  <span style={{marginLeft: '5px'}}>BROWSER</span>
+                </div>
+              </Link>
           </div>
         </div>
 

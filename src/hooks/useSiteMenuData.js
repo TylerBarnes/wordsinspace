@@ -9,8 +9,51 @@ export const useSiteMenuData = () => {
               menuItems {
                 nodes {
                   url
-                  title
                   label
+                  connectedNode {
+                    node {
+                      ... on WpPage {
+                        id
+                        title
+                        categories {
+                          nodes {
+                            name
+                          }
+                        }
+                        featuredImage {
+                          node {
+                            localFile {
+                              childImageSharp {
+                                fluid {
+                                  ...GatsbyImageSharpFluid
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      ... on WpPost {
+                        id
+                        title
+                        categories {
+                          nodes {
+                            name
+                          }
+                        }
+                        featuredImage {
+                          node {
+                            localFile {
+                              childImageSharp {
+                                fluid {
+                                  ...GatsbyImageSharpFluid
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
