@@ -18,7 +18,7 @@
 	font-size: 45px;
 	line-height: 44px;
 	color: #6262F4;
-	margin: 10px 0;
+	margin: 10px;
 }
 
 .right {
@@ -27,8 +27,4 @@
 
 .left {
 	text-align: left;
-}
-
-svg {
-	margin: 1vh 1vw;
 }

@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
-import Title from "../components/title"
+import LeftNav from '../components/leftNav'
 import GlyphLeft from '../images/assets/glyph_left.svg'
 import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
 
@@ -11,76 +11,51 @@ import "../styles/global.css"
 import "../styles/reader.css"
 
 const Reader = ({children}) => {
-  const [isBrowserHovered, setBrowser] = useState(false);
-  const [isTitleHovered, setTitle] = useState(false);
   const [isGlyphHovered, setGlyphHovered] = useState(false)
+
+  const styleWrapper = 
+  {
+    display: 'flex',
+    flexDirection: 'row nowrap', 
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    background: 'rgba(255, 145, 83, 0.13)',
+  }
+  
+  const styleTopBar = 
+  {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    textTransform: 'uppercase',
+    height: '60px',
+  }
+
   return (
-    <div 
-      style={{
-        display: 'flex',
-        flexDirection: 'row nowrap', 
-        alignItems: 'flex-start',
-        justifyContent: 'space-around',
-        background: 'rgba(255, 145, 83, 0.13)',
-      }}>
+    <div style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <div 
-        onMouseEnter={e=>setTitle(true)}
-        onMouseLeave={e=>setTitle(false)}
-        style={{
-          alignSelf: 'flex-start',
-          height: '100vh',
-          width: '60px',
-          writingMode: 'vertical-rl',
-          transform: 'rotate(0deg)',
-          textAlign: 'left',
-          paddingRight: '20px'
-        }}>
-        <Title />
-      </div>      
+      <LeftNav />      
 
-      <div 
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between', 
-          flexGrow: '1', 
-        }}>
-        {/* ----------------------------BROWSER---------------------------- */}
-        <div 
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            textTransform: 'uppercase',
-            height: '60px',
-        }}>
-          <div 
-            className='interface'
-            style={{
-              marginLeft: '30px',
-              marginTop: '15px',
-            }}>
-            <Link to={'/work'}> 
+      {/* ----------------------------CONTAINER---------------------------- */}
+      <div>
+        {/* ----------------------------TOP---------------------------- */}
+        <div style={styleTopBar}>
+          <div className='interface'>
+            <Link to={'/work/'}> 
               <div             
-                  onMouseEnter={e=>setGlyphHovered(true)}
-                  onMouseLeave={e=>setGlyphHovered(false)}
-                  >
-                  {isGlyphHovered ? <GlyphLeftHover /> : <GlyphLeft />}
-                  <span style={{marginLeft: '5px'}}>BROWSER</span>
-                </div>
-              </Link>
+                onMouseEnter={e=>setGlyphHovered(true)}
+                onMouseLeave={e=>setGlyphHovered(false)}
+                >
+                {isGlyphHovered ? <GlyphLeftHover /> : <GlyphLeft />}
+                <span style={{marginLeft: '5px'}}>BROWSER</span>
+              </div>
+            </Link>
           </div>
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-        <div 
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
+        <div>
           {children}
         </div>
       </div>

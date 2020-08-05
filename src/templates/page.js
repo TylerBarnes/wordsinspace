@@ -19,7 +19,10 @@ export default function pageTemplate({ data }) {
 
   return (
     <Reader>
-      <div>
+      <div 
+        style={{
+          width: '100%'
+        }}>
         {/* ==================== Date, Categories, Tags ====================  */}
         <div 
           style={{

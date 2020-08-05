@@ -18,17 +18,22 @@ const List = ({loading, items, isTagMode}) => {
         justifyContent: 'stretch',
         maxHeight: '92vh',
         overflow: 'auto',
+        width: '100%'
       }}>
 
         {/* ---------------- LOADING ---------------- */}
         {loading && 
-          <div 
-            className='interface'
+          <ul>
+            <div 
             style={{
-              padding: '5px'
-            }}>
-            FILTERING TAGS...
-          </div>
+              width: '75vw',
+              height: 'auto',
+              minHeight: '150px',
+            }} 
+            className='interface'>
+              FILTERING TAGS...
+            </div>
+          </ul>
         }
         
         {/* ---------------- LIST ---------------- */}

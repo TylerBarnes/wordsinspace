@@ -1,8 +1,11 @@
 import React from 'react'
+import {Link} from "gatsby" 
 
+import Home from '../layouts/home'
 import SEO from '../components/seo'
 import HomeItem from '../components/home/homeItem'
-import Home from '../layouts/home'
+import Footer from "../components/footer"
+
 import {useSiteMenuData} from '../hooks/useSiteMenuData'
 
 import Sticker_Email from '../images/assets/Sticker_Email.svg'
@@ -14,15 +17,19 @@ import Sticker_Pinboard from '../images/assets/Sticker_Pinboard.svg'
 import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
 import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 
-
-import '../styles/home.css'
-
 export default function HomePage() {
   const menuData = useSiteMenuData();
 
   if (!menuData) return null
   
   const menuItems = menuData[0]?.menuItems?.nodes
+
+  const styleSVG = {
+    width:'50%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center'
+  }
   
   return (
     <Home>
@@ -34,12 +41,11 @@ export default function HomePage() {
           flexWrap: 'wrap',
           justifyContent: 'flex-start',
           alignItems: 'stretch',
-          alignContent: 'stretch'
-        }}>
-
+          alignContent: 'stretch',
+          width: '100%'
+          }}>
           <div 
             style={{
-              border: '1px solid',
               width: '50%', 
             }}>
             <HomeItem item={menuItems[0]} index={1} />
@@ -47,24 +53,17 @@ export default function HomePage() {
           </div>
 
           <div 
-            style={{
-              border: '1px solid',
-              width:'50%',
-            }}>
-            <Sticker_Browse />
+            style={styleSVG}>
+            <Link to={'/work/'}><Sticker_Browse /></Link>
+          </div>
+
+          <div
+            style={styleSVG}>
+            <Link to ={'/about/'}><Sticker_Words /></Link>
           </div>
 
           <div
             style={{
-              border: '1px solid',
-              width:'50%',
-            }}>
-            <Sticker_Words />
-          </div>
-
-          <div
-            style={{
-              border: '1px solid',
               width:'50%',
             }}>
             <HomeItem item={menuItems[2]} index={3} />
@@ -73,7 +72,6 @@ export default function HomePage() {
           
           <div 
             style={{
-              border: '1px solid',
               width:'50%',
             }}>
             <HomeItem item={menuItems[3]} index={4} />
@@ -81,24 +79,17 @@ export default function HomePage() {
           </div>
           
           <div
-            style={{
-              border: '1px solid',
-              width:'50%',
-            }}>
-            <Sticker_Student />
+            style={styleSVG}>
+            <Link to={'/student-resources/'}><Sticker_Student /></Link>
           </div>
 
           <div
-            style={{
-              border: '1px solid',
-              width:'50%',
-            }}>
-            <Sticker_Upcoming />
+            style={styleSVG}>
+            <Link to={'/upcoming-events/'}><Sticker_Upcoming /></Link>
           </div>
           
           <div
             style={{
-              border: '1px solid',
               width:'50%',
             }}>
             <HomeItem item={menuItems[5]} index={6} />
@@ -106,19 +97,26 @@ export default function HomePage() {
 
           <div 
             style={{
-              border: '1px solid',
               width:'50%',
             }}>
 
             <HomeItem item={menuItems[6]} index={7} />
             
-            <div style={{marginTop: '5vh'}}>
-              <Sticker_Email />
-              <Sticker_CV />
-              <Sticker_Pinboard />
+            <div 
+              style={{
+                marginTop: '5vh',
+                display: 'flex',
+                alignContent: 'center',
+                justifyContent: 'space-around'
+              }}>
+              <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email /></a>
+              <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV /></a>
+              <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /></a>
             </div>
           </div>
+
       </div>
+      <Footer />
     </Home >
   )
 }

@@ -22,7 +22,7 @@ const HomeItem = ({item, index}) => {
         alignItems: 'flex-start',
         alignContent: 'flex-start',
         borderTop: '1px dotted #513bfd',
-        margin: '1vh 1vw'
+        margin: '1vh 1vw',
       }}> 
 
       <div 
