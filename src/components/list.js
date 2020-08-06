@@ -9,7 +9,7 @@ const List = ({loading, items, isTagMode}) => {
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 
   return (
-    <div className="listBody"
+    <div className="list-body"
       {...ulScrollRestoration}
       style={{
         display: 'flex',
