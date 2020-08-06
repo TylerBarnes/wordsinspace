@@ -72,7 +72,6 @@ export default function pageTemplate({ data }) {
               width: '70vw'
             }}> 
               <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
-              
               <div
                 className="citations"
                 style={{
