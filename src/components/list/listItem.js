@@ -35,7 +35,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
         onMouseLeave={handleMouseLeave}
         style={{
           listStyle: 'none',
-          width: '80vw',
+          width: '75vw',
           height: 'auto',
           // minHeight: '150px',
           overflow: 'hidden',

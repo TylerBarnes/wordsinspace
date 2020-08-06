@@ -148,9 +148,10 @@ input[type=checkbox] {
 .rd {
   width: 14px;
   height: 14px;
-  padding: 0;
+  padding: 10px 0px 2px 0px;
   position: relative;
   margin-right: 5px;
+  margin-top: 6px;
   background-color: none;
   border: 1px solid #513bfd;
   float: left;

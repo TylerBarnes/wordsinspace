@@ -6,6 +6,7 @@ const LeftNav = () => {
 		<div 
       style={{
 		    alignSelf: 'flex-start',
+		    flexShrink: '0',
 		    height: '100vh',
 		    width: '50px',
 		    writingMode: 'vertical-rl',
