@@ -28,8 +28,9 @@ export default function HomePage() {
   const styleSVG = {
     width:'50%',
     display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center'
+    flexFlow: 'column', 
+    justifyContent: 'space-around',
+    alignItems: 'center',
   }
   
   return (
