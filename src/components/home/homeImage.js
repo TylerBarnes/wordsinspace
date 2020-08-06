@@ -5,8 +5,7 @@ const HomeImage = ({title, thumbnail, isEven}) => {
   return (
     <div 
 	    style={{
-	    	flexBasis: '100%', 
-	    	alignSelf: isEven ? 'flex-start' : 'flex-end'
+	    	flexBasis: '40%', 
 	    }}>
       <Img fluid={thumbnail} alt={title} />
     </div>

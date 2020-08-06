@@ -7,11 +7,12 @@ const LeftNav = () => {
       style={{
 		    alignSelf: 'flex-start',
 		    height: '100vh',
-		    width: '60px',
+		    width: '50px',
 		    writingMode: 'vertical-rl',
 		    transform: 'rotate(0deg)',
 		    textAlign: 'left',
-		    paddingRight: '20px'
+		    padding: '5px 10px 5px 0px',
+		    marginRight: '10px',
 		  }}>
         <Title />
       </div> 

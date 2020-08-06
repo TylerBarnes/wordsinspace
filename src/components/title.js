@@ -24,7 +24,7 @@ const Title = () => {
         to="/"
         className='interface'
         style={{
-          marginTop: '40px',
+          marginTop: '80px',
         }}
       >
         {title}
