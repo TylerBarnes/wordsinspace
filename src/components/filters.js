@@ -15,7 +15,7 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
         padding: '0 20px',
         overflow: 'scroll',
         fontWeight: '500',
-        width: '250px'
+        width: '17vw'
       }}>
       <div>
         <Categories />

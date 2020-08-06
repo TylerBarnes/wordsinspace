@@ -92,8 +92,7 @@ ul, li {
 .tag {
   border: 1px solid #6262F4;
   border-radius: 53px;
-  padding: 5px 8px 3px 8px;
-  height: 15px;
+  padding: 5px 15px 3px 15px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
@@ -102,7 +101,8 @@ ul, li {
   text-align: center;
   text-transform: uppercase;
   color: #6262F4;
-  margin: -10px 5px;
+  margin: 0 10px 0 0;
+  display: inline-block;
 }
 
 .date, .work, .blog, .teaching, .publications, .projects , .presentations , .talks, .research {
@@ -114,6 +114,8 @@ ul, li {
   color: #fff;
   padding: 3px 20px 0px 20px;
   text-transform: uppercase;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
 .date {

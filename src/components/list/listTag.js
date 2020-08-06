@@ -5,6 +5,7 @@ const ListTag = ({tags, invertedTheme}) => {
     <div
       style={{
         alignSelf: 'flex-start',
+        'margin': '-4px 5px -4px 20px',
       }}> 
       {tags.nodes.map((tag, index_tag) => 
         <span 

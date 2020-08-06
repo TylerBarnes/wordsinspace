@@ -29,78 +29,87 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
   }
 
   return (
-    <li 
-      onMouseEnter={e=>handleMouseEnter(e, item)}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        listStyle: 'none',
-        width: '75vw',
-        height: 'auto',
-        minHeight: '150px',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        borderStyle: 'dashed none none none',
-        borderColor: invertedTheme ? '#fff' : '#513bfd',
-        background: isVisible && !invertedTheme 
-                    ? '#F7E3E5' 
-                    : 'none'
-      }}>
-
-      <div 
+    <div>  
+      <li 
+        onMouseEnter={e=>handleMouseEnter(e, item)}
+        onMouseLeave={handleMouseLeave}
         style={{
-          alignSelf: 'flex-start',
-          width: '50vw',
+          listStyle: 'none',
+          width: '75vw',
+          height: 'auto',
+          // minHeight: '150px',
+          overflow: 'hidden',
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-evenly',
-          alignItems: 'flex-start',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          borderStyle: 'dashed none none none',
+          borderWidth: '1px',
+          borderColor: invertedTheme ? '#fff' : '#513bfd',
+          background: isVisible && !invertedTheme 
+                      ? '#F7E3E5' 
+                      : 'none'
         }}>
 
-        {/* ==================== Date, Categories, Tags ====================  */}
         <div 
           style={{
+            alignSelf: 'flex-start',
+            // width: '50vw',
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            marginLeft: '40px',
           }}>
-          {date && <ListDate date={date} invertedTheme={invertedTheme} />}
-          {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
-          {tags && <ListTag tags={tags} invertedTheme={invertedTheme} />}
+
+          {/* ==================== Date, Categories, Tags ====================  */}
+          <div 
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              alignItems: 'flex-start',
+              marginLeft: '40px',
+              marginTop: '10px',
+            }}>
+            {date && <ListDate date={date} invertedTheme={invertedTheme} />}
+            {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
+            {tags && <ListTag tags={tags} invertedTheme={invertedTheme} />}
+          </div>
+
+          {/* ==================== Title ====================  */}
+          <div         
+            style={{ 
+              width: '55vw',
+              margin: '30px 0 40px 0',
+              paddingLeft: '20px',
+            }}>
+            <Link 
+              to={item.uri} 
+              className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
+              {item.title}
+              <Glyph />
+            </Link> 
+          </div>
+
         </div>
 
-        {/* ==================== Title ====================  */}
-        <div         
-          style={{ 
-            width: '50vw',
-            margin: '20px 0'
-          }}>
-          <Link 
-            to={item.uri} 
-            className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
-            {item.title}
-            <Glyph />
-          </Link> 
-        </div>
+        {/* ==================== Thumbnail ====================  */}
+        
+      </li>
 
-      </div>
-
-      {/* ==================== Thumbnail ====================  */}
       <div 
         style={{
-          alignSelf: 'flex-start',
-          width: '200px',
-          height: '200px',
+          position: 'absolute',
+          bottom: '20px',
+          right: '220px',
+          width: '27vw',
           margin: 0, 
           padding: 0,
+          filter: 'drop-shadow(0px 4.4px 4px rgba(0, 0, 0, 0.25))',
           display: isVisible && !invertedTheme ? 'block' : 'none',
         }}>
         {thumbnail && <ListImage title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>
-    </li>
+    </div>
   )
 }
 
