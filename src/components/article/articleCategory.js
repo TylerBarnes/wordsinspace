@@ -5,7 +5,7 @@ const ArticleCategory = ({categories}) => {
   const category = categories?.nodes[0]?.name.toLowerCase()
   return (
 		<div 
-	    className={category}
+	    className={`${category} reader`}
       style={{
         alignSelf: 'center',
         margin: '0 10px'

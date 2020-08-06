@@ -5,6 +5,7 @@ import Home from '../layouts/home'
 import SEO from '../components/seo'
 import HomeItem from '../components/home/homeItem'
 import Footer from "../components/footer"
+import { navigate } from "gatsby"
 
 import {useSiteMenuData} from '../hooks/useSiteMenuData'
 
@@ -20,7 +21,7 @@ import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 export default function HomePage() {
   const menuData = useSiteMenuData();
 
-  if (!menuData) return null
+  if (!menuData)  {navigate('/work')}
   
   const menuItems = menuData[0]?.menuItems?.nodes
 
@@ -42,7 +43,6 @@ export default function HomePage() {
           justifyContent: 'flex-start',
           alignItems: 'stretch',
           alignContent: 'stretch',
-          width: '100%'
           }}>
           <div 
             style={{
@@ -98,6 +98,9 @@ export default function HomePage() {
           <div 
             style={{
               width:'50%',
+              display: 'flex',
+              flexFlow: 'column',
+              flexWrap: 'nowrap',
             }}>
 
             <HomeItem item={menuItems[6]} index={7} />

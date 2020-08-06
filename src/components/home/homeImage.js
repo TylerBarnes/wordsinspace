@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const HomeImage = ({title, thumbnail}) => {
+const HomeImage = ({title, thumbnail, isEven}) => {
   return (
     <div 
 	    style={{
