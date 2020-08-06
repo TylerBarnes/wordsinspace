@@ -7,8 +7,7 @@ const ArticleCategory = ({categories}) => {
 		<div 
 	    className={`${category} reader`}
       style={{
-        alignSelf: 'center',
-        margin: '0 10px'
+        margin: '0 10px',
       }}> 
 	    <Link to={`/${category}`}>{category}</Link>
 	  </div>

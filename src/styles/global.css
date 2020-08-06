@@ -91,17 +91,17 @@ ul, li {
 .tag {
   border: 1px solid #6262F4;
   border-radius: 53px;
-  padding: 2px 7px;
+  padding: 5px 8px 3px 8px;
   height: 15px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 13px;
   text-align: center;
   text-transform: uppercase;
   color: #6262F4;
-  margin: 0 5px;
+  margin: -10px 5px;
 }
 
 .date, .work, .blog, .teaching, .publications, .projects , .presentations , .talks, .research {

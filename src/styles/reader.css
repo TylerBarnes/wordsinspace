@@ -6,7 +6,6 @@
 .reader-title {
   font-family:  'LaNord', sans-serif;
   font-style: normal;
-  font-weight: 900;
   font-size: 60px;
   line-height: 61px;
   color: #513bfd;
@@ -15,7 +14,6 @@
 
 .related-title {
   color: #513bfd;
-  font-weight: 900;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
