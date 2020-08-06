@@ -93,7 +93,6 @@ ul, li {
   border: 1px solid #6262F4;
   border-radius: 53px;
   padding: 5px 15px 3px 15px;
-  height: 15px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
@@ -116,7 +115,7 @@ ul, li {
   padding: 3px 20px 0px 20px;
   text-transform: uppercase;
   margin-right: 10px;
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 .date {
