@@ -16,7 +16,7 @@ const Browser = ({ children }) => {
   const styleWrapper = 
   {
     display: 'flex',
-    flexDirection: 'row nowrap', 
+    flexDirection: 'row nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
   }
@@ -31,7 +31,7 @@ const Browser = ({ children }) => {
   }
   
   return (
-    <div style={styleWrapper} >
+    <div className='gradient' style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <LeftNav />
 
