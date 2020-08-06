@@ -3,6 +3,38 @@
 /*****STYLES SPECIFIC TO BROWSER*/
 /*****/
 /*****/
+
+
+/*****/
+/*****/
+/*****DISABLE SCROLL IN LIST AND SEARCH*/
+/*****/
+/*****/
+
+.search-modal {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.search-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.list-body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.list-body::-webkit-scrollbar {
+  display: none;
+}
+
+/*****/
+/*****/
+/*****LIST TITLE*/
+/*****/
+/*****/
+
 .list-title, .list-title-inverted {
   font-size: 36px;
   line-height: 36px;

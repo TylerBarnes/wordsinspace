@@ -31,10 +31,11 @@ const Browser = ({ children }) => {
   }
   
   return (
-    <div className='gradient' style={styleWrapper} >
+    <div  style={styleWrapper} >
+    <div  className='gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <LeftNav />
-
+    </div>
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}

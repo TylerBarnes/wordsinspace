@@ -3,7 +3,7 @@ import React from "react"
 const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   return (
     <div>
-    	<div 
+    	<div
         style={{
           background: 'none',
           outline: 'none',

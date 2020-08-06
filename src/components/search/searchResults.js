@@ -6,7 +6,7 @@ import ListItem from "../list/listItem"
 
 const SearchResults = ({items}) => {
   return (
-    <div 
+    <div className="search-modal"
       style={{
         display: 'flex',
         flexDirection: 'row wrap', 
@@ -16,7 +16,7 @@ const SearchResults = ({items}) => {
         overflow: 'auto',
       }}>
         {/* ---------------- LIST ---------------- */}
-        <div 
+        <div
           style={{
             overflow: 'scroll',
             color: '#fff',
