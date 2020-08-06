@@ -11,9 +11,8 @@ const LeftNav = () => {
 		    writingMode: 'vertical-rl',
 		    transform: 'rotate(0deg)',
 		    textAlign: 'left',
-		    paddingRight: '10px',
-		    paddingLeft: '0px',
-		    paddingTop: '5px',
+		    padding: '5px 10px 5px 0px',
+		    marginRight: '10px',
 		  }}>
         <Title />
       </div> 

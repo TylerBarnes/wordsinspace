@@ -19,8 +19,7 @@
 	font-size: 45px;
 	line-height: 44px;
 	color: #6262F4;
-	margin: 10px;
-	padding-bottom: 10px;
+	margin: 15px 0px 5px 10px;
 }
 
 .right {
@@ -44,4 +43,51 @@
 
 .left .gatsby-image-wrapper {
 }
+
+.right .home-title {
+	padding-bottom: 20px;
+}
+
+svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
+	animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
+svg#sticker-words:hover, svg#sticker-CV:hover {
+	animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
+svg#sticker-email:hover, svg#sticker-pinboard:hover {
+	animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
+@keyframes loading-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-spinner-inverse{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+  }
 
