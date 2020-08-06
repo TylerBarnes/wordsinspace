@@ -5302,6 +5302,7 @@ gatsby-plugin-react-helmet@^3.3.4:
 gatsby-plugin-react-svg@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-svg/-/gatsby-plugin-react-svg-3.0.0.tgz#67984bf350bce0532bef965fab094b0b461cdf68"
+  integrity sha512-myZl5NjVZwLLn4ovwSDM7cufa8yjaRiU5KoufJrz8FEalRroZ/hFSCCKNVna3blTwxcS0rZgISigYn9/xY7rkw==
   dependencies:
     svg-react-loader "^0.4.4"
 
