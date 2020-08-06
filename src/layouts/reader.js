@@ -54,7 +54,13 @@ const Reader = ({children}) => {
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-        {children}
+        
+        <div style={{
+          maxHeight: '92vh',
+          overflow: 'auto',
+        }}>
+         {children}
+       </div>
       </div>
     </div>
   )

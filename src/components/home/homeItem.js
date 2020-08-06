@@ -43,6 +43,7 @@ const HomeItem = ({item, index}) => {
         <div className={'home-title'}>
           <Link to={item.url}>{item.label}</Link>
         </div>
+        
       </div>
 
         {/*================ Thumbnail ================*/}

@@ -50,7 +50,7 @@ ul, li {
 
 
 .gradient {
-  background: transparent;
+  background: rgba(255, 145, 83, 0.13);
 }
 
 .gradient:before,
@@ -66,11 +66,11 @@ ul, li {
 }
 
 .gradient:before {
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(255, 145, 83, 0.13) 0%, transparent 100%);
 }
 
 .gradient:after {
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(255, 145, 83, 0.13) 0%, transparent 100%);
   bottom: 0;
 }
 

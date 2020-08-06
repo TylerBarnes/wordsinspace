@@ -28,11 +28,11 @@ const Home = ({children}) => {
   }
 
   return (
-    <div className='gradient' style={styleWrapper}>
-    
+    <div style={styleWrapper}>
+      <div className='gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <LeftNav />
-
+        <LeftNav />
+      </div>
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%' }}>
         {/* ----------------------------TOP---------------------------- */}
@@ -43,7 +43,13 @@ const Home = ({children}) => {
         </div>
 
         {/* ----------------------------MAIN---------------------------- */}
-        {children}
+        <div style={{
+          maxHeight: '92vh',
+          overflow: 'auto',
+          width: '100%'
+        }}>
+          {children}
+        </div>
       </div>
     </div>
   )

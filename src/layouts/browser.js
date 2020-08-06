@@ -31,8 +31,8 @@ const Browser = ({ children }) => {
   }
   
   return (
-    <div  style={styleWrapper} >
-    <div  className='gradient'>
+    <div style={styleWrapper} >
+    <div className='gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <LeftNav />
     </div>
