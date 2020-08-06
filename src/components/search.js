@@ -8,6 +8,7 @@ import SearchResults from "./search/searchResults"
 
 import Glyph from '../images/assets/glyph.svg'
 import GlyphHover from '../images/assets/glyph_hover.svg'
+import GlyphOpen from '../images/assets/glyph_open.svg'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_QUERY = gql`
@@ -138,7 +139,14 @@ const Search = () => {
             onMouseEnter={e=>setGlyphHovered(true)}
             onMouseLeave={e=>setGlyphHovered(false)}
           >
-           {isGlyphHovered ? <GlyphHover /> : <Glyph />}
+           {isGlyphHovered
+             ? !showResults 
+               ? <GlyphHover /> 
+               : null
+             : !showResults 
+               ? <Glyph />
+               : <GlyphOpen />
+           }
          </div>
 
         </div>
