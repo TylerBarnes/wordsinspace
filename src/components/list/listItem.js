@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {Link} from "gatsby" 
-import Glyph from '../../images/assets/glyph.svg'
+import GlyphFilled from '../../images/assets/glyph_filled.svg'
 
 import ListTag from "./listTag"
 import ListDate from "./listDate"
@@ -30,6 +30,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
 
   return (
     <li 
+      className='list-item'
       onMouseEnter={e=>handleMouseEnter(e, item)}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -45,7 +46,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
         borderColor: invertedTheme ? '#fff' : '#513bfd',
         background: isVisible && !invertedTheme 
                     ? '#F7E3E5' 
-                    : 'none'
+                    : 'none',
       }}>
 
       <div 
@@ -82,7 +83,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
             to={item.uri} 
             className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
             {item.title}
-            <Glyph />
+            <GlyphFilled />
           </Link> 
         </div>
 

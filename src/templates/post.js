@@ -20,6 +20,7 @@ export default function postTemplate({ data }) {
     related,
     categories,
     tags,
+    citations
   } = data.allWpPost.nodes[0]
   const { posts, pages } = related
   const showRelated = posts?.length > 0 || pages?.length > 0
@@ -81,9 +82,16 @@ export default function postTemplate({ data }) {
               className="content"
               dangerouslySetInnerHTML={{ __html: content }}
             />
+            <div
+                className="citations"
+                style={{
+                  width: '30vw',
+                  alignSelf: 'flex-end'
+                }}
+                dangerouslySetInnerHTML={{ __html: citations.citations }}
+              />
           </div>
         </div>
-
         {/* ==================== Footer ====================  */}
         <Footer />
       </div>
@@ -93,7 +101,7 @@ export default function postTemplate({ data }) {
 
 export const query = graphql`
   query getPost($id: String!) {
-    allWpPost(filter: { id: { eq: $id } }) {
+    allWpPost(filter: {id: { eq: $id }}) {
       nodes {
         id
         title
@@ -101,19 +109,41 @@ export const query = graphql`
         date
         uri
         slug
+        categories {
+          nodes {
+            name
+          }
+        }
+        tags {
+          nodes {
+            slug
+            name
+          }
+        }
+        citations {
+          citations
+        }
         related {
           pages {
             ... on WpPage {
-              id
               uri
               title
+              categories {
+                nodes {
+                  name
+                }
+              }
             }
           }
           posts {
             ... on WpPost {
-              id
               uri
               title
+              categories {
+                nodes {
+                  name
+                }
+              }
             }
           }
         }
