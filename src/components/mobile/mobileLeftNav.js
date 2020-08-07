@@ -10,9 +10,7 @@ const MobileLeftNav = () => {
 		    height: '50px',
 		    padding: '5px 10px 5px 0px',
 		    marginRight: '10px',
-		    border: '1px solid'
 		  }}>
-		  	MOBILE
         <Title />
       </div> 
   )
