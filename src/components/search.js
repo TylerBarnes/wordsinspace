@@ -116,7 +116,8 @@ const Search = () => {
           style={{
             display: 'flex',
             flexDirection: 'row',
-            justifyItems: 'stretch'
+            justifyItems: 'stretch',
+            alignItems: 'center',
           }}>
         <input
           onMouseEnter={e=>setGlyphHovered(true)}
@@ -124,7 +125,7 @@ const Search = () => {
           style={{
             width: '16vw',
             margin: '0',
-            padding: '0',
+            padding: '5px 0 0 5px',
             border: 'none'
           }} 
           ref={inputEl}
