@@ -87,6 +87,12 @@
   font-size: 22px;
   line-height: 34px;
   color: #6262F4 !important;
+  width: inherit;
+}
+
+.content img {
+  width: auto;
+  height: auto;
 }
 
 .content > h1, .content > h2, .content > h3 {
