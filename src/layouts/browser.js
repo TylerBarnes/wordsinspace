@@ -13,10 +13,10 @@ import '../styles/layout.css'
 import '../styles/global.css'
 import '../styles/browser.css'
 
-
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
+  
   const breakpoint = useBreakpoints();
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveVars(breakpoint)
 
