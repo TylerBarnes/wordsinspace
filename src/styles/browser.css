@@ -11,21 +11,12 @@
 /*****/
 /*****/
 
-.search-modal {
+.no-scroll {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
-.search-modal::-webkit-scrollbar {
-  display: none;
-}
-
-.list-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.list-body::-webkit-scrollbar {
+.no-scroll::-webkit-scrollbar {
   display: none;
 }
 

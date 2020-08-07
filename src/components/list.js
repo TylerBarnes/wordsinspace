@@ -9,7 +9,7 @@ const List = ({loading, items, isTagMode}) => {
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 
   return (
-    <div className="list-body"
+    <div className="no-scroll"
       {...ulScrollRestoration}
       style={{
         display: 'flex',
@@ -18,7 +18,7 @@ const List = ({loading, items, isTagMode}) => {
         justifyContent: 'stretch',
         maxHeight: '92vh',
         overflow: 'auto',
-        width: '100%'
+        // width: '100%'
 
       }}>
 

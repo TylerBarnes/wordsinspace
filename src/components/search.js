@@ -122,7 +122,7 @@ const Search = () => {
           onMouseEnter={e=>setGlyphHovered(true)}
           onMouseLeave={e=>setGlyphHovered(false)}
           style={{
-            width: '10vw',
+            width: '16vw',
             margin: '0',
             padding: '0',
             border: 'none'

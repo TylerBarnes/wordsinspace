@@ -6,7 +6,7 @@ import ListItem from "../list/listItem"
 
 const SearchResults = ({items}) => {
   return (
-    <div className="search-modal"
+    <div className="no-scroll"
       style={{
         display: 'flex',
         flexDirection: 'row wrap', 

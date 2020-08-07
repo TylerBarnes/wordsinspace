@@ -6,10 +6,12 @@ import TagsInfoBox from './tagsInfoBox'
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
-     <div style={{
-	      textAlign: 'left',
-				overflow: 'scroll',
-				maxHeight: '70vh',
+     <div className="no-scroll" 
+     	style={{
+	    textAlign: 'left',
+		overflowY: 'scroll',
+		overflowX: 'hidden',
+		height: '65vh',
 	     }}>
 	     	<TagsInfoBox tags={tags} clearTags={clearTags} isTagMode={isTagMode}/>
 	      {tags && tags.map((tag, index) => (
