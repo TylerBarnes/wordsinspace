@@ -34,7 +34,7 @@ const Home = ({children}) => {
         <LeftNav />
       </div>
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div style={{width: '100%' }}>
+      <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar}>
           <div className='interface'>

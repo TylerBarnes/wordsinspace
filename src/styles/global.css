@@ -21,6 +21,7 @@ body {
   cursor: default;
   overflow: hidden;
   font-family: 'Wremena_Light', sans-serif;
+  background-color: #F5F5FF
 }
 
 *::-moz-focus-inner {
@@ -57,7 +58,7 @@ ul, li {
 
 
 .gradient {
-  background: rgba(255, 145, 83, 0.13);
+  background: linear-gradient(0deg, rgba(245,245,253,1) 0%, rgba(245,245,253,0.43879558659401263) 50%, rgba(255,255,255,0) 100%);
 }
 
 .gradient:before,
@@ -73,11 +74,12 @@ ul, li {
 }
 
 .gradient:before {
-  background: linear-gradient(to bottom, rgba(255, 145, 83, 0.13) 0%, transparent 100%);
+  background: rgba(245,245,253,1);
+  background: linear-gradient(0deg, rgba(245,245,253,1) 0%, rgba(245,245,253,0.43879558659401263) 50%, rgba(255,255,255,0) 100%);
 }
 
 .gradient:after {
-  background: linear-gradient(to bottom, rgba(255, 145, 83, 0.13) 0%, transparent 100%);
+  background: linear-gradient(0deg, rgba(245,245,253,1) 10%, rgba(245,245,253,1) 50%, rgba(255,255,255,1) 100%);
   bottom: 0;
 }
 
