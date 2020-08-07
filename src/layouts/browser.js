@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+
 import {useLocation} from '@reach/router'
+import useBreakpoints from '../hooks/useBreakpoint';
 
 import LeftNav from '../components/leftNav'
 import Search from '../components/search'
@@ -9,10 +11,12 @@ import '../styles/layout.css'
 import '../styles/global.css'
 import '../styles/browser.css'
 
-const Browser = ({ children }) => {
+
+const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
-
+  const point = useBreakpoints();
+  console.log(point)
   const styleWrapper = 
   {
     display: 'flex',
@@ -32,6 +36,7 @@ const Browser = ({ children }) => {
   
   return (
     <div style={styleWrapper} >
+      <h1> {point} </h1>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <LeftNav />
 
