@@ -30,6 +30,7 @@ export default function pageTemplate({ data }) {
             flexDirection: 'row wrap',
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
+            marginTop: '5px',
           }}>
           {date && <ArticleDate date={date}/>}
           {categories && <ArticleCategory categories={categories}/>}
