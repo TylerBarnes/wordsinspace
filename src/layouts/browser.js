@@ -7,7 +7,7 @@ import useBreakpoints from '../hooks/useBreakpoint';
 import LeftNav from '../components/leftNav'
 import MobileLeftNav from '../components/mobile/mobileLeftNav'
 import Search from '../components/search'
-import {getResponsiveVars} from "../utils"
+import {getResponsiveVars} from "../utils/dom"
 
 import '../styles/layout.css'
 import '../styles/global.css'

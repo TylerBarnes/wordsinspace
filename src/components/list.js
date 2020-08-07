@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
 import useBreakpoints from '../hooks/useBreakpoint';
-import {getResponsiveVars} from "../utils"
+import {getResponsiveVars} from "../utils/dom"
 
 import ListItem from "./list/listItem"
 import Footer from './footer'

@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react"
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
-import {sortByDate, extractSearchResults} from '../utils'
+import {sortByDate, extractSearchResults} from '../utils/helpers'
 import SearchModal from "./search/searchModal"
 import SearchResults from "./search/searchResults"
 

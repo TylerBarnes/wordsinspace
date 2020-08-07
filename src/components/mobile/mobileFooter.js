@@ -1,6 +1,6 @@
 import React from "react"
 
-import Sticker_Words from '../../images/assets/Sticker_Words.svg'
+import Sticker_WordsMobile from '../../images/assets/Sticker_WordsMobile.svg'
 
 const MobileFooter = () => {
   return (
@@ -12,7 +12,7 @@ const MobileFooter = () => {
 	    }} 
 	    className="metadata">
       Copyright All Rights Reserved © 2020
-      <Sticker_Words />
+      <Sticker_WordsMobile />
     </div>
   )
 }

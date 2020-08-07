@@ -5,9 +5,9 @@ import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
 import useBreakpoints from '../hooks/useBreakpoint'
 
-import {extractTags} from "../utils"
-import {sortByDate} from "../utils"
-import {getResponsiveVars} from "../utils"
+import {extractTags} from "../utils/helpers"
+import {sortByDate} from "../utils/helpers"
+import {getResponsiveVars} from "../utils/dom"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
