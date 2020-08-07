@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
 const getDeviceConfig = (width) => {
-  if(width < 320) {
+  if (width >= 320 && width < 375) {
     return 'xs';
-  } else if(width >= 320 && width < 720 ) {
+  } else if(width >= 375 && width < 768 ) {
     return 'sm';
-  } else if(width >= 720 && width < 1024) {
+  } else if(width >= 768 && width < 1024) {
     return 'md';
   } else if(width >= 1024) {
     return 'lg';

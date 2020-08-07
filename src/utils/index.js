@@ -48,3 +48,11 @@ export const extractSearchResults = (array) => {
                .flat(2)
   return results
 }
+
+export const getResponsiveVars = (breakpoint) => { 
+  return {
+    showDesktopFilters: breakpoint === 'lg',
+    showMobileFilters: breakpoint !== 'lg',
+    showSearch: breakpoint === 'lg'
+  }
+}

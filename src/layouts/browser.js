@@ -6,6 +6,7 @@ import useBreakpoints from '../hooks/useBreakpoint';
 
 import LeftNav from '../components/leftNav'
 import Search from '../components/search'
+import {getResponsiveVars} from "../utils"
 
 import '../styles/layout.css'
 import '../styles/global.css'
@@ -15,8 +16,9 @@ import '../styles/browser.css'
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
-  const point = useBreakpoints();
-  console.log(point)
+  const breakpoint = useBreakpoints();
+  const {showSearch} = getResponsiveVars(breakpoint)
+  
   const styleWrapper = 
   {
     display: 'flex',
@@ -36,7 +38,6 @@ const Browser = ({ children, props }) => {
   
   return (
     <div style={styleWrapper} >
-      <h1> {point} </h1>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       <LeftNav />
 
@@ -51,7 +52,7 @@ const Browser = ({ children, props }) => {
               </div>
             }
           </div>
-          <Search />
+          {showSearch && <Search />}
         </div>
 
         {/* ----------------------------MAIN ---------------------------- */}

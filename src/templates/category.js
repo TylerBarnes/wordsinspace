@@ -1,9 +1,13 @@
 import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
+
 import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
+import useBreakpoints from '../hooks/useBreakpoint'
+
 import {extractTags} from "../utils"
 import {sortByDate} from "../utils"
+import {getResponsiveVars} from "../utils"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
@@ -11,6 +15,9 @@ import Filters from "../components/filters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
+  const breakpoint = useBreakpoints();
+  const {showDesktopFilters, showMobileFilters} = getResponsiveVars(breakpoint)
+
   // initialize the items to all of the Pages and all of the Posts
   const initial = [...data.allWpCategory.nodes[0].pages.nodes, ...data.allWpCategory.nodes[0].posts.nodes];
 
@@ -52,8 +59,13 @@ export default function CategoryTemplate({data}) {
   return (
     <Browser>
       <SEO title={data.allWpCategory.nodes[0].name} />
+      {showMobileFilters && 
+        <div>mobile Filters</div>
+      }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
-      <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+      {showDesktopFilters && 
+        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+      }
     </Browser>
   )
 }
