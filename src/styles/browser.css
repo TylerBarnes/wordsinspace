@@ -7,7 +7,7 @@
 
 /*****/
 /*****/
-/*****DISABLE SCROLL IN LIST AND SEARCH*/
+/*****DISABLE SCROLLBAR, ITEM MARGINS IN LIST AND SEARCH*/
 /*****/
 /*****/
 
@@ -18,6 +18,11 @@
 
 .no-scroll::-webkit-scrollbar {
   display: none;
+}
+
+.no-scroll ul, .no-scroll li {
+  margin: 0;
+  padding: 0;
 }
 
 /*****/

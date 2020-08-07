@@ -46,8 +46,8 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
           borderWidth: '1px',
           borderColor: invertedTheme ? '#fff' : '#513bfd',
           background: isVisible && !invertedTheme 
-                      ? '#F7E3E5' 
-                      : 'none'
+                      ? 'linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%)'
+                      : 'none',
         }}>
 
         <div 
