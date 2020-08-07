@@ -99,8 +99,8 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
       <div 
         style={{
           position: 'absolute',
-          bottom: '20px',
-          right: '220px',
+          bottom: '0px',
+          right: '20vw',
           width: '27vw',
           margin: 0, 
           padding: 0,
