@@ -21,6 +21,14 @@ body {
   cursor: default;
   overflow: hidden;
   font-family: 'Wremena_Light', sans-serif;
+  background-color: #F5F5FF
+}
+
+*::-moz-focus-inner {
+padding: 0;
+border: 0;
+margin-top:-1px;
+margin-bottom:-1px;
 }
 
 a {
@@ -41,11 +49,11 @@ h1, h2, h3, h4, h5 {
   text-decoration: none;
   font-weight: 400;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.45rem 0;
 }
 
 ul, li {
-  margin: 0;
+  margin: 0 0 1.45rem 0;
   padding: 0;
 }
 
@@ -69,7 +77,7 @@ input:hover {
   text-transform: uppercase;
   font-size: 16px;
   font-family: 'Bespoke', sans-serif;
-  margin: 15px 0 0 30px;
+  margin: 15px 0 0 15px;
 }
 
 .metadata {
@@ -82,18 +90,22 @@ input:hover {
 .tag {
   border: 1px solid #6262F4;
   border-radius: 53px;
-  padding: 2px 7px;
-  height: 15px;
+  padding: 5px 15px 3px 15px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 13px;
   text-align: center;
   text-transform: uppercase;
   color: #6262F4;
-  margin: 0 5px;
+  margin: 0 10px 0 0;
+  display: inline-block;
 }
+
+
+/*.tag::-moz-focus-inner { border: 0; padding: 0; margin:0; }
+*/
 
 .date, .work, .blog, .teaching, .publications, .projects , .presentations , .talks, .research {
   font-family: Bespoke;
@@ -102,8 +114,10 @@ input:hover {
   font-size: 10px;
   line-height: 13px;
   color: #fff;
-  padding: 3px 20px 0px 20px;
+  padding: 5px 20px 2px 20px;
   text-transform: uppercase;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
 .date {

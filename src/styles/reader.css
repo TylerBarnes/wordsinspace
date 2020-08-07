@@ -6,21 +6,69 @@
 .reader-title {
   font-family:  'LaNord', sans-serif;
   font-style: normal;
-  font-weight: 900;
   font-size: 60px;
   line-height: 61px;
   color: #513bfd;
-  width: 50vw;
+  width: 60vw;
+  margin: 5vh 0 5vh 0;
 }
 
 .related-title {
   color: #513bfd;
-  font-weight: 900;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
   margin-top: 5vh;
 }
+
+.wp-block-gallery {
+  height: 60vh;
+}
+
+.blocks-gallery-grid {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.blocks-gallery-grid::-webkit-scrollbar {
+  display: none;
+}
+
+
+.blocks-gallery-grid {
+  height: 100%;
+  overflow-x: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding: 4vh;
+  background:
+    linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
+    linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
+    linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+}
+
+.wp-block-gallery ul, .wp-block-gallery li{
+  list-style-type: none;
+  margin: 0;
+}
+
+
+.blocks-gallery-grid figure {
+  height: 100%;
+  width: inherit;
+}
+
+.blocks-gallery-grid figure > *  {
+  height: inherit;
+  width: inherit;
+}
+
+.blocks-gallery-grid img  {
+  padding: 0px 50px;
+  object-fit: contain !important;
+}
+
 
 /*****/
 /*****/
@@ -88,6 +136,12 @@
   font-size: 22px;
   line-height: 34px;
   color: #6262F4 !important;
+  width: inherit;
+}
+
+.content img {
+  width: auto;
+  height: auto;
 }
 
 .content > h1, .content > h2, .content > h3 {

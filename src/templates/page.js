@@ -26,9 +26,10 @@ export default function pageTemplate({ data }) {
         <div 
           style={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'row wrap',
             justifyContent: 'flex-start',
             alignItems: 'flex-start',
+            marginTop: '5px',
           }}>
           {date && <ArticleDate date={date}/>}
           {categories && <ArticleCategory categories={categories}/>}
@@ -68,7 +69,7 @@ export default function pageTemplate({ data }) {
               flexDirection: 'column',
               alignItems: 'flex-start',
               justifyContent: 'space-evenly',
-              margin: '5vh 0',
+              margin: '0vh 5vh 0vh 5vh',
               width: '70vw'
             }}> 
               <div className='content' dangerouslySetInnerHTML={{ __html: content }} />

@@ -4,7 +4,7 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   const [isHovered, setIsHovered] = useState(false)
   return (
     <div>
-    	<div 
+    	<div
         style={{
           outline: 'none',
           border: '1px dotted #fff',

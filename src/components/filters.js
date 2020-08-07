@@ -12,10 +12,10 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
         borderLeft: '1px dotted #513bfd',
         maxHeight: '92vh',
         textTransform: 'uppercase',
-        padding: '0 20px',
-        overflow: 'scroll',
+        padding: '0 1vw',
+        overflow: 'hidden',
         fontWeight: '500',
-        width: '250px'
+        width: '20vw'
       }}>
       <div>
         <Categories />

@@ -3,15 +3,41 @@
 /*****STYLES SPECIFIC TO BROWSER*/
 /*****/
 /*****/
-.list-title , .list-title-inverted {
-  font-size: 24px;
-  line-height: 27px;
+
+
+/*****/
+/*****/
+/*****DISABLE SCROLLBAR, ITEM MARGINS IN LIST AND SEARCH*/
+/*****/
+/*****/
+
+.no-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scroll ul, .no-scroll li {
+  margin: 0;
+  padding: 0;
+}
+
+/*****/
+/*****/
+/*****LIST TITLE*/
+/*****/
+/*****/
+
+.list-title, .list-title-inverted {
+  font-size: 36px;
+  line-height: 36px;
   font-family: 'LaNord', sans-serif;
   color: #513bfd;
   font-style: normal;
   font-weight: normal;
-  font-size: 45px;
-  line-height: 44px;
 }
 
 .list-title-inverted {
@@ -123,9 +149,10 @@ input[type=checkbox] {
 .rd {
   width: 14px;
   height: 14px;
-  padding: 0;
+  padding: 10px 0px 2px 0px;
   position: relative;
   margin-right: 5px;
+  margin-top: 6px;
   background-color: none;
   border: 1px solid #513bfd;
   float: left;

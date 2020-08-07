@@ -23,7 +23,7 @@ const Categories = () => {
 				<li 
 					key={index}
 					style={{
-		      	margin: '15px 0',
+		      	margin: '0px 0',
 		      	listStyle: 'none',
 					}}		
 				>
