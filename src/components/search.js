@@ -102,7 +102,7 @@ const Search = () => {
   return (
     <div 
       style={{
-        marginRight: '270px',
+        marginRight: '2vw',
         marginTop: '15px',
       }}>
       <form 
@@ -122,7 +122,7 @@ const Search = () => {
           onMouseEnter={e=>setGlyphHovered(true)}
           onMouseLeave={e=>setGlyphHovered(false)}
           style={{
-            width: '8vw',
+            width: '10vw',
             margin: '0',
             padding: '0',
             border: 'none'
