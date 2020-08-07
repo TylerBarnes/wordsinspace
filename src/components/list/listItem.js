@@ -7,7 +7,7 @@ import ListDate from "./listDate"
 import ListImage from "./listImage"
 import ListCategory from "./listCategory"
 
-const ListItem = ({item, isTagMode, invertedTheme}) => {
+const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTitleWidth}) => {
   const category=item?.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
@@ -35,7 +35,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-        width: '75vw',
+        width: listWidth,
         height: 'auto',
         minHeight: '150px',
         overflow: 'hidden',
@@ -52,7 +52,6 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
       <div 
         style={{
           alignSelf: 'flex-start',
-          width: '50vw',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
@@ -70,13 +69,13 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
           }}>
           {date && <ListDate date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
-          {tags && <ListTag tags={tags} invertedTheme={invertedTheme} />}
+          {tags && !mobileList && <ListTag tags={tags} invertedTheme={invertedTheme} />}
         </div>
 
         {/* ==================== Title ====================  */}
         <div         
           style={{ 
-            width: '50vw',
+            width: listTitleWidth,
             margin: '20px 0'
           }}>
           <Link 

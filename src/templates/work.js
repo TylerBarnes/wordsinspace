@@ -11,6 +11,7 @@ import {getResponsiveVars} from "../utils"
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
 import Filters from "../components/filters"
+import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function Work({data}) {
@@ -57,7 +58,7 @@ export default function Work({data}) {
     <Browser>
       <SEO title="work" />
       {showMobileFilters && 
-        <div>mobile Filters</div>
+        <MobileFilters />
       }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       {showDesktopFilters && 

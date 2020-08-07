@@ -5,6 +5,7 @@ import {useLocation} from '@reach/router'
 import useBreakpoints from '../hooks/useBreakpoint';
 
 import LeftNav from '../components/leftNav'
+import MobileLeftNav from '../components/mobile/mobileLeftNav'
 import Search from '../components/search'
 import {getResponsiveVars} from "../utils"
 
@@ -17,12 +18,13 @@ const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
   const breakpoint = useBreakpoints();
-  const {showSearch} = getResponsiveVars(breakpoint)
-  
+  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveVars(breakpoint)
+
   const styleWrapper = 
   {
     display: 'flex',
-    flexDirection: 'row nowrap', 
+    flexDirection: mobileNavBar ? 'column' : 'row', 
+    flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
   }
@@ -33,16 +35,17 @@ const Browser = ({ children, props }) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: '60px',
+    height: mobileNavBar ? 'auto' : '60px',
   }
   
   return (
     <div style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <LeftNav />
+      {!mobileNavBar && <LeftNav />}
+      {mobileNavBar && <MobileLeftNav />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div style={{width: '100%'}}>
+      <div style={{width: '100%', border: '1px solid'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
           <div  className='interface'>
@@ -59,7 +62,7 @@ const Browser = ({ children, props }) => {
         <div
           style={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: mobileBrowserLayout ? 'column' : 'row',
             justifyContent: 'space-between',
           }}
           >

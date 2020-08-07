@@ -2,12 +2,19 @@ import React from "react"
 import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
+import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveVars} from "../utils"
+
 import ListItem from "./list/listItem"
 import Footer from './footer'
+import MobileFooter from './mobile/mobileFooter'
 
 const List = ({loading, items, isTagMode}) => {
-  const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
+  const breakpoint = useBreakpoints();
+  const {mobileList, listWidth, listTitleWidth} = getResponsiveVars(breakpoint)
 
+  const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
+  
   return (
     <div 
       {...ulScrollRestoration}
@@ -26,7 +33,7 @@ const List = ({loading, items, isTagMode}) => {
           <ul>
             <div 
             style={{
-              width: '75vw',
+              width: listWidth,
               height: 'auto',
               minHeight: '150px',
             }} 
@@ -43,11 +50,15 @@ const List = ({loading, items, isTagMode}) => {
               <ListItem 
                 key={index}
                 item={item} 
+                mobileList={mobileList}
                 isTagMode={isTagMode}
                 invertedTheme={false}
+                listWidth={listWidth}
+                listTitleWidth={listTitleWidth}
                 /> 
             ))}
-            <Footer />
+            {!mobileList && <Footer />}
+            {mobileList && <MobileFooter />}
           </ul>
         }
     </div>

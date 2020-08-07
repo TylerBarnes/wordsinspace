@@ -12,6 +12,7 @@ import {getResponsiveVars} from "../utils"
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
 import Filters from "../components/filters"
+import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
@@ -60,7 +61,7 @@ export default function CategoryTemplate({data}) {
     <Browser>
       <SEO title={data.allWpCategory.nodes[0].name} />
       {showMobileFilters && 
-        <div>mobile Filters</div>
+        <MobileFilters />
       }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       {showDesktopFilters && 
