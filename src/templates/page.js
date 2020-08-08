@@ -13,7 +13,7 @@ import ArticleRelated from "../components/article/articleRelated"
 export default function pageTemplate({ data }) {
     if (!data) return null
 
-    const { title, date, content, related, categories, tags, citations} = data.allWpPage.nodes[0]
+    const { title, date, content, related, categories, tags} = data.allWpPage.nodes[0]
     const { posts, pages } = related;
     const showRelated = posts?.length > 0 || pages?.length > 0
     return (
@@ -73,13 +73,13 @@ export default function pageTemplate({ data }) {
               width: '70vw'
             }}> 
               <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
-              <div
+              {/*<div
                 className="citations"
                 style={{
                   width: '30vw',
                   alignSelf: 'flex-end'
                 }}
-                dangerouslySetInnerHTML={{ __html: citations.citations }}
+                dangerouslySetInnerHTML={{ __html: citations.citations }} */}
               />
           </div>
         </div>
