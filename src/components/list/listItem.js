@@ -35,9 +35,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-          width: '74vw',
+          width: '75vw',
           height: 'auto',
-          // minHeight: '150px',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'row',
@@ -45,9 +44,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           borderStyle: 'dashed none none none',
           borderWidth: '1px',
           borderColor: invertedTheme ? '#fff' : '#513bfd',
-          // background: isVisible && !invertedTheme
-          //             ? 'linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%)'
-          //             : 'none',
+
       }}>
 
       <div
@@ -94,9 +91,9 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       <div
         style={{
           position: 'absolute',
-          bottom: '0px',
-          right: '20vw',
-          width: '27vw',
+          bottom: '2vh',
+          right: '18vw',
+          width: '30vw',
           margin: 0,
           padding: 0,
           filter: 'drop-shadow(0px 4.4px 4px rgba(0, 0, 0, 0.25))',
