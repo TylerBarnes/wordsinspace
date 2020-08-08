@@ -77,7 +77,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: '30px 0 40px 0',
+            margin: '25px 0 35px 0',
             paddingLeft: '20px',
           }}>
           <Link
