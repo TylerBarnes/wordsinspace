@@ -39,6 +39,9 @@ Where Gatsby looks when building something dynamically - currently its either a 
 
 
 ## Responsiveness
-I have created `utils/dom.js` where we are handling the breakpoint logic. An important file to look at is `src/hooks/useBreakpoint.js` - this is where the breakpoint widths are defined. The function `getResponsiveVars(breakpoint)` is called by various files in the codebase, mostly the layouts (`src/layouts/*`) and the templates (`src/templates/*`). 
+- I have created `utils/dom.js` where we are handling the breakpoint logic. For the moment I am simply oscillating between two states (either we are at `lg` viewpoint (=desktop) or not (=mobile). I have already built the logic of moving things around, and hiding what needs to be hidden.
+- An important file to look at is `src/hooks/useBreakpoint.js` - this is where the breakpoint widths are defined. 
+- The function `getResponsiveVars(breakpoint)` is called by various files in the codebase, mostly the layouts (`src/layouts/*`) and the templates (`src/templates/*`). 
+- Under `src/components/mobile/*` we have the components that get sourced when we are not in desktop mode.
 
 Important to note: I extracted the width of `List` (the main component in `Browser` view) and `ListTitle` out of these components and into this function - the reason is that we want to be looking at a single file in order to be modifying the designs. 
