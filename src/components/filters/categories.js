@@ -9,7 +9,6 @@ const Categories = () => {
 		<div style={{
 			margin: '2vh 0',
 		}}>
-
 			<Link 
 				to={'/work'} 
 				activeClassName='category-active'
@@ -19,14 +18,14 @@ const Categories = () => {
 				<span className='rd'></span>
 				All
 			</Link>
-		  {categories.sort((a,b) => a.name < b.name).filter(cat=>cat.name !== 'Uncategorized').map((category,index) => (
+		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
 				<li 
 					key={index}
 					style={{
 		      	margin: '0px 0',
 		      	listStyle: 'none',
 					}}		
-				>
+					>
 					<Link 
 						to={`/${category.slug}`} 
 						activeClassName='category-active'
