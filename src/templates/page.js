@@ -80,7 +80,6 @@ export default function pageTemplate({ data }) {
                   alignSelf: 'flex-end'
                 }}
                 dangerouslySetInnerHTML={{ __html: citations.citations }} */}
-              />
           </div>
         </div>
         
