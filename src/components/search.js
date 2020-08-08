@@ -70,14 +70,14 @@ const Search = () => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
   const [isGlyphHovered, setGlyphHovered] = useState(false)
-  
+
   const {loading, error, data} = useQuery(SEARCH_QUERY, {
       variables: { searchTerm: searchTerm, first: 150, catName: catName},
       skip: !showResults
     })
 
   useEffect(()=>{
-    if (showResults && !loading) { 
+    if (showResults && !loading) {
       setSearchResults(sortByDate(extractSearchResults(data)))
     }
   },[data])
@@ -101,55 +101,52 @@ const Search = () => {
   }
 
   return (
-    <div 
+    <div
       style={{
-        marginRight: '2vw',
         marginTop: '15px',
-      }}>
-      <form 
+        width: '18vw',
+            }}>
+      <form
         style={{
           margin: '0',
           padding: '0'
-        }} 
+        }}
         onSubmit={e => handleSubmit(e)}>
 
-        <div 
+        <div
           style={{
             display: 'flex',
             flexDirection: 'row',
-            justifyItems: 'stretch',
-            alignItems: 'center',
+            justifyItems: 'flex-end',
           }}>
-        <input
-          onMouseEnter={e=>setGlyphHovered(true)}
-          onMouseLeave={e=>setGlyphHovered(false)}
-          style={{
-            width: '16vw',
-            margin: '0',
-            padding: '5px 0 0 5px',
-            border: 'none'
-          }} 
-          ref={inputEl}
-          type="text"
-          placeholder="SEARCH"
-          className='interface'
-          onChange={e => onChange(e)}
-          />
 
-         <div
+          <div
+             onMouseEnter={e=>setGlyphHovered(true)}
+             onMouseLeave={e=>setGlyphHovered(false)}
+           >
+            {isGlyphHovered
+              ? !showResults
+                ? <GlyphHover />
+                : null
+              : !showResults
+                ? <Glyph />
+                : <GlyphOpen />
+            }
+          </div>
+
+          <input
             onMouseEnter={e=>setGlyphHovered(true)}
             onMouseLeave={e=>setGlyphHovered(false)}
-          >
-           {isGlyphHovered
-             ? !showResults 
-               ? <GlyphHover /> 
-               : null
-             : !showResults 
-               ? <Glyph />
-               : <GlyphOpen />
-           }
-         </div>
-
+            style={{
+              padding: '5px 0 0 5px',
+              border: 'none'
+            }}
+            ref={inputEl}
+            type="text"
+            placeholder="SEARCH"
+            className='interface'
+            onChange={e => onChange(e)}
+            />
         </div>
       </form>
       <SearchModal

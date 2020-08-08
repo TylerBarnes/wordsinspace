@@ -16,20 +16,20 @@ import '../styles/browser.css'
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
-  
+
   const breakpoint = useBreakpoints();
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveVars(breakpoint)
 
-  const styleWrapper = 
+  const styleWrapper =
   {
     display: 'flex',
-    flexDirection: mobileNavBar ? 'column' : 'row', 
+    flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
   }
 
-  const styleTopBar = 
+  const styleTopBar =
   {
     display: 'flex',
     flexDirection: 'row',
@@ -37,25 +37,29 @@ const Browser = ({ children, props }) => {
     textTransform: 'uppercase',
     height: mobileNavBar ? 'auto' : '60px',
   }
-  
+
   return (
     <div style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      {!mobileNavBar && <LeftNav />}
-      {mobileNavBar && <MobileLeftNav />}
-
+      <div className='gradient'>
+        {!mobileNavBar && <LeftNav />}
+        {mobileNavBar && <MobileLeftNav />}
+      </div>
       {/* ----------------------------CONTAINER---------------------------- */}
       <div>
         {/* ----------------------------TOP---------------------------- */}
-        <div style={styleTopBar} >
-          <div  className='interface'>
-            {catName!== 'work' && 
-              <div>
-                Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()}>{catName}</span>
+        <div className='gradient'>
+          <div style={styleTopBar} >
+              <div className='interface'>
+                {catName!== 'work' &&
+                  <div>
+                    Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()}>{catName}</span>
+                  </div>
+                }
               </div>
-            }
+
+            {showSearch && <Search />}
           </div>
-          {showSearch && <Search />}
         </div>
 
         {/* ----------------------------MAIN ---------------------------- */}

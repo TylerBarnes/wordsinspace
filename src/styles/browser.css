@@ -130,7 +130,7 @@ label.tag:hover {
 .work.category-active {
   border: 1px solid #513bfd;
   color: #513bfd;
-  background-color: #fff;
+  background-color: #F5F5FF;
 }
 
 .blog.category-active {
