@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
+
 const getDeviceConfig = (width) => {
   if (width >= 320 && width < 375) {
     return 'xs';
@@ -14,17 +15,16 @@ const getDeviceConfig = (width) => {
 
 const useBreakpoint = () => {
 
-  const [brkPnt, setBrkPnt] = useState(() => getDeviceConfig(window.innerWidth));
+  const [brkPnt, setBrkPnt] = useState(() => getDeviceConfig((typeof window !== `undefined`) && window.innerWidth));
   
   useEffect(() => {
     const calcInnerWidth = () => {
-      setBrkPnt(getDeviceConfig(window.innerWidth))
+      setBrkPnt(getDeviceConfig((typeof window !== `undefined`) &&  window.innerWidth))
     }; 
-    window.addEventListener('resize', calcInnerWidth);
-    return () => window.removeEventListener('resize', calcInnerWidth);
+    (typeof window !== `undefined`) && window.addEventListener('resize', calcInnerWidth);
+    return () => (typeof window !== `undefined`) &&  window.removeEventListener('resize', calcInnerWidth);
   }, []);
 
-  if (typeof window === `undefined`) return null
   return brkPnt;
 }
 
