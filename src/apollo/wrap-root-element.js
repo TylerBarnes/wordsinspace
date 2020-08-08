@@ -4,7 +4,7 @@ import fetch from "isomorphic-fetch"
 
 const httpLink = createHttpLink({
     uri: process.env.NODE_ENV === `development`
-        ? `http://localhost:8888/shannon11/graphql`
+        ? `http://localhost:8888/test/graphql`
         : `https://importii.wordsinspace.net/graphql`
 });
 

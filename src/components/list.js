@@ -14,7 +14,7 @@ const List = ({loading, items, isTagMode}) => {
   const {mobileList, listWidth, listTitleWidth} = getResponsiveVars(breakpoint)
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
-  
+
   return (
     <div className="no-scroll"
       {...ulScrollRestoration}
