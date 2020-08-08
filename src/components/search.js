@@ -117,22 +117,14 @@ const Search = () => {
           style={{
             display: 'flex',
             flexDirection: 'row',
-            justifyItems: 'flex-end',
+            justifyItems: 'stretch',
+            alignItems: 'center',
           }}>
 
           <div
              onMouseEnter={e=>setGlyphHovered(true)}
              onMouseLeave={e=>setGlyphHovered(false)}
            >
-            {isGlyphHovered
-              ? !showResults
-                ? <GlyphHover />
-                : null
-              : !showResults
-                ? <Glyph />
-                : <GlyphOpen />
-            }
-          </div>
 
           <input
             onMouseEnter={e=>setGlyphHovered(true)}
@@ -147,6 +139,15 @@ const Search = () => {
             className='interface'
             onChange={e => onChange(e)}
             />
+            {isGlyphHovered
+              ? !showResults
+                ? <GlyphHover />
+                : null
+              : !showResults
+                ? <Glyph />
+                : <GlyphOpen />
+            }
+        </div>
         </div>
       </form>
       <SearchModal
