@@ -14,7 +14,7 @@ const ArticleRelated = ({related}) => {
     borderRadius: '250px',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'center'
   } 
 
