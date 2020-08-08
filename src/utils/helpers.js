@@ -45,7 +45,7 @@ export const extractSearchResults = (array) => {
                   return [...nonEmptyCat.pages.nodes, ...nonEmptyCat.posts.nodes]
                })
                .flat(2)
-  return results
+  return sortByDate(results)
 }
 
 export const getRelated = (tags, title) => {

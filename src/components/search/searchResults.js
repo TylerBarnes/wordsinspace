@@ -24,6 +24,13 @@ const SearchResults = ({items}) => {
             marginBottom: '2vh',
             borderBottom: '1px solid #fff',
           }}>
+
+          {items && items.length === 0 && 
+            <div className='metadata' style={{color: '#fff'}}>
+              No results found for this search term.
+            </div>
+          }
+
           {items && items.map((item, index) => (
             <ListItem 
               key={index}
@@ -32,13 +39,6 @@ const SearchResults = ({items}) => {
               invertedTheme={true}
               /> 
           ))}
-
-          {items && items.length === 0 && 
-            (
-              <div className='metadata' style={{color: '#fff'}}>
-                No results found for this search term.
-              </div>
-            )}
         </div>
     </div>
    )
