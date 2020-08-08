@@ -26,7 +26,7 @@ const Browser = ({ children, props }) => {
     flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
   }
 
   const styleTopBar =
