@@ -11,12 +11,13 @@ const Title = () => {
          <div
           style={{
             position: 'absolute',
-            width: '20px',
-            height: '20px',
+            width: '35px',
+            height: '35px',
             border: '1px solid #513bfd',
             boxSizing: 'border-box',
             borderRadius: '100px',
-            marginTop: '10px',
+            marginTop: '4px',
+            marginRight: '-6px',
           }}></div>
       </Link>
 
