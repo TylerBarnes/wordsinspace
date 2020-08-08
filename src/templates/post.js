@@ -120,9 +120,6 @@ export const query = graphql`
             name
           }
         }
-        citations {
-          citations
-        }
         related {
           pages {
             ... on WpPage {
