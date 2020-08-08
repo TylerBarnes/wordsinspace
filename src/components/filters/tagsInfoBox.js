@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const TagsInfoBox = ({tags, clearTags, isTagMode}) => {
+const TagsInfoBox = ({clearTags, isTagMode}) => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
