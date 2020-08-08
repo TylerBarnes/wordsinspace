@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 .wordpress-cache
+
+src/apollo/wrap-root-element.js
