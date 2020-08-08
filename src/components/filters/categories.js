@@ -23,7 +23,7 @@ const Categories = () => {
 				<li
 					key={index}
 					style={{
-		      	margin: '0px 0px', // override li ul margins
+		      	margin: '5px 0px', // override li ul margins
 		      	listStyle: 'none',
 					}}
 				>

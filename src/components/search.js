@@ -132,7 +132,7 @@ const Search = () => {
               onMouseLeave={e=>setGlyphHovered(false)}
               style={{
                 padding: '5px 0 0 5px',
-                width: '15vw',
+                width: '18vw',
               }}
               ref={inputEl}
               type="text"

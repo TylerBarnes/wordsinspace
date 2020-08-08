@@ -7,15 +7,15 @@ import Categories from "./filters/categories"
 const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
-    <div
+    <div className="filterBar"
       style={{
-        borderLeft: '1px dotted #513bfd',
+        borderLeft: '1px dashed #513bfd',
         maxHeight: '92vh',
         textTransform: 'uppercase',
         padding: '0 1vw',
         overflow: 'hidden',
         fontWeight: '500',
-        width: '20vw'
+        width: '20vw',
       }}>
       <div>
         <Categories />

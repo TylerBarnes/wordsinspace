@@ -8,6 +8,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
   return (
      <div className="no-scroll"
      	style={{
+      marginTop: '20px',
 	    textAlign: 'left',
 		overflowY: 'scroll',
 		overflowX: 'hidden',
