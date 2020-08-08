@@ -10,20 +10,15 @@ import ArticleCategory from '../components/article/articleCategory'
 import ArticleTags from '../components/article/articleTags'
 import ArticleRelated from '../components/article/articleRelated'
 
+import {getRelated} from "../utils/helpers"
+
 export default function postTemplate({ data }) {
   if (!data) return null
-
-  const {
-    title,
-    date,
-    content,
-    categories,
-    tags,
-  } = data.allWpPost.nodes[0]
-  const related = {posts: [], pages: []}
-  const { posts, pages } = related
-  const showRelated = posts?.length > 0 || pages?.length > 0
   
+  const { title, date, content, categories, tags} = data.allWpPost.nodes[0]
+  const related = getRelated(tags)
+  const showRelated = related.posts?.length > 0 || related.pages?.length > 0
+
   return (
     <Reader>
       <div>
@@ -52,7 +47,7 @@ export default function postTemplate({ data }) {
           }}
         >
           {/* ==================== Related ====================  */}
-          {showRelated && <ArticleRelated posts={posts} pages={pages} />}
+          {showRelated && <ArticleRelated posts={related.posts} pages={related.pages} />}
 
           {/* ==================== Related - placeholder =========== */}
           {!showRelated && (

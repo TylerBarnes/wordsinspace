@@ -6,7 +6,6 @@ export const getMonthName = (index) => {
   return monthNames[index-1]
 }
 
-
 // When we first land on a /category endpoint, we want the Tag list to automatically display Tags that are associated with this category's content. We can't do that dynamically with Apollo and we can't use a Gatsby static Query since it doesn't accept variables. We have to construct the [tags] array manually, by extracting them out of the deeply nested 'category' variable. 
 export const extractTags = (initial) => {
   return initial
@@ -47,4 +46,24 @@ export const extractSearchResults = (array) => {
                })
                .flat(2)
   return results
+}
+
+export const getRelated = (tags) => {
+  let randomTagSelection = getRandomSubarray(tags.nodes, 3)
+  let relatedPages = randomTagSelection.map(tag => getRandomSubarray(tag.pages.nodes, 2)).flat(2)
+  let relatedPosts = randomTagSelection.map(tag => getRandomSubarray(tag.posts.nodes, 2)).flat(2)
+
+  console.log(relatedPages, relatedPosts)
+  return {pages: relatedPages, posts: relatedPosts}
+}
+
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
 }

@@ -35,19 +35,19 @@ const ArticleRelated = ({pages, posts}) => {
         }}>
         Related
       </div>
-      {pages?.filter(p => p).map(page=> (
+      {pages?.filter(p => p).map((page,index)=> (
         <div 
           style={styles}
-          key={page.title} >
+          key={index} >
           <ArticleCategory categories={page.categories}/>
           <Link className='related-title' to={page.uri}>{page.title}</Link>
         </div>
       ))}
       
-      {posts?.filter(p => p).map(post=> (
+      {posts?.filter(p => p).map((post,index)=> (
         <div 
           style={styles}
-          key={post.title} >
+          key={index} >
           <ArticleCategory categories={post.categories}/>
           <Link className='related-title' to={post.uri}>{post.title}</Link>
         </div>
