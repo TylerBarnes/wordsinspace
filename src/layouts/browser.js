@@ -53,7 +53,7 @@ const Browser = ({ children, props }) => {
               <div className='interface'>
                 {catName!== 'work' &&
                   <div>
-                    Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()}>{catName}</span>
+                    Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()+" category-active"}>{catName}</span>
                   </div>
                 }
               </div>

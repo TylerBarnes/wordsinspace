@@ -20,7 +20,12 @@
   display: none;
 }
 
-.no-scroll ul, .no-scroll li {
+.no-scroll ul {
+  margin: -11px;
+  padding: 0;
+}
+
+.no-scroll li {
   margin: 0;
   padding: 0;
 }
