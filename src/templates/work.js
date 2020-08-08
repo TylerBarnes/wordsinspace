@@ -1,16 +1,23 @@
 import React, {useState, useEffect} from "react"
 import { graphql } from "gatsby"
+
 import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
-import {extractTags} from "../utils"
-import {sortByDate} from "../utils"
+import useBreakpoints from '../hooks/useBreakpoint';
+import {extractTags} from "../utils/helpers"
+import {sortByDate} from "../utils/helpers"
+import {getResponsiveVars} from "../utils/dom"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
 import Filters from "../components/filters"
+import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function Work({data}) {
+  const breakpoint = useBreakpoints();
+  const {showDesktopFilters, showMobileFilters} = getResponsiveVars(breakpoint)
+
   // initialize the items to all of the Pages and all of the Posts
   const initial = [...data.allWpPage.nodes, ...data.allWpPost.nodes]
 
@@ -50,8 +57,13 @@ export default function Work({data}) {
   return (
     <Browser>
       <SEO title="work" />
+      {showMobileFilters && 
+        <MobileFilters />
+      }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
-      <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+      {showDesktopFilters && 
+        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+      }
     </Browser>
 	)
 }

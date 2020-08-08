@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Reader from "../layouts/reader"
-import Footer from "../components/footer"
+import Reader from '../layouts/reader'
+import Footer from '../components/footer'
 
-import ArticleTitle from "../components/article/articleTitle"
-import ArticleDate from "../components/article/articleDate"
-import ArticleCategory from "../components/article/articleCategory"
-import ArticleTags from "../components/article/articleTags"
-import ArticleRelated from "../components/article/articleRelated"
+import ArticleTitle from '../components/article/articleTitle'
+import ArticleDate from '../components/article/articleDate'
+import ArticleCategory from '../components/article/articleCategory'
+import ArticleTags from '../components/article/articleTags'
+import ArticleRelated from '../components/article/articleRelated'
 
 export default function postTemplate({ data }) {
   if (!data) return null
@@ -20,6 +20,7 @@ export default function postTemplate({ data }) {
     related,
     categories,
     tags,
+    citations
   } = data.allWpPost.nodes[0]
   const { posts, pages } = related
   const showRelated = posts?.length > 0 || pages?.length > 0
@@ -30,10 +31,10 @@ export default function postTemplate({ data }) {
         {/* ==================== Date, Categories, Tags ====================  */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignItems: 'flex-start',
           }}
         >
           {date && <ArticleDate date={date} />}
@@ -45,10 +46,10 @@ export default function postTemplate({ data }) {
         <ArticleTitle title={title} />
         <div
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-            alignItems: "flex-start",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            alignItems: 'flex-start',
           }}
         >
           {/* ==================== Related ====================  */}
@@ -58,10 +59,10 @@ export default function postTemplate({ data }) {
           {!showRelated && (
             <div
               style={{
-                width: "250px",
-                alignSelf: "flex-start",
-                marginTop: "70vh",
-                marginRight: "2vw",
+                width: '250px',
+                alignSelf: 'flex-start',
+                marginTop: '70vh',
+                marginRight: '2vw',
               }}
             ></div>
           )}
@@ -69,21 +70,28 @@ export default function postTemplate({ data }) {
           {/* ==================== Content ====================  */}
           <div
             style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "flex-start",
-              justifyContent: "space-evenly",
-              margin: "5vh 0",
-              width: "70vw",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              justifyContent: 'space-evenly',
+              margin: '5vh 0',
+              width: '70vw',
             }}
           >
             <div
-              className="content"
+              className='content'
               dangerouslySetInnerHTML={{ __html: content }}
+            />
+            <div
+              className='citations'
+              style={{
+                width: '30vw',
+                alignSelf: 'flex-end'
+              }}
+              dangerouslySetInnerHTML={{ __html: citations.citations }}
             />
           </div>
         </div>
-
         {/* ==================== Footer ====================  */}
         <Footer />
       </div>
@@ -93,7 +101,7 @@ export default function postTemplate({ data }) {
 
 export const query = graphql`
   query getPost($id: String!) {
-    allWpPost(filter: { id: { eq: $id } }) {
+    allWpPost(filter: {id: { eq: $id }}) {
       nodes {
         id
         title
@@ -101,19 +109,41 @@ export const query = graphql`
         date
         uri
         slug
+        categories {
+          nodes {
+            name
+          }
+        }
+        tags {
+          nodes {
+            slug
+            name
+          }
+        }
+        citations {
+          citations
+        }
         related {
           pages {
             ... on WpPage {
-              id
               uri
               title
+              categories {
+                nodes {
+                  name
+                }
+              }
             }
           }
           posts {
             ... on WpPost {
-              id
               uri
               title
+              categories {
+                nodes {
+                  name
+                }
+              }
             }
           }
         }
