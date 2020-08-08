@@ -17,13 +17,13 @@ export default function postTemplate({ data }) {
     title,
     date,
     content,
-    related,
     categories,
     tags,
   } = data.allWpPost.nodes[0]
+  const related = {posts: [], pages: []}
   const { posts, pages } = related
   const showRelated = posts?.length > 0 || pages?.length > 0
-
+  
   return (
     <Reader>
       <div>
@@ -117,30 +117,6 @@ export const query = graphql`
           nodes {
             slug
             name
-          }
-        }
-        related {
-          pages {
-            ... on WpPage {
-              uri
-              title
-              categories {
-                nodes {
-                  name
-                }
-              }
-            }
-          }
-          posts {
-            ... on WpPost {
-              uri
-              title
-              categories {
-                nodes {
-                  name
-                }
-              }
-            }
           }
         }
       }

@@ -11,84 +11,87 @@ import ArticleTags from "../components/article/articleTags"
 import ArticleRelated from "../components/article/articleRelated"
 
 export default function pageTemplate({ data }) {
-    if (!data) return null
+  if (!data) return null
 
-    const { title, date, content, related, categories, tags} = data.allWpPage.nodes[0]
-    const { posts, pages } = related;
-    const showRelated = posts?.length > 0 || pages?.length > 0
-    return (
-        <Reader>
+  const { title, date, content, categories, tags} = data.allWpPage.nodes[0]
+  console.log(tags.nodes)
+  const related = {posts: tags.nodes[7].posts.nodes, pages: tags.nodes[7].pages.nodes}
+  console.log(tags.nodes[7], related)
+  const showRelated = related.posts?.length > 0 || related.pages?.length > 0
+
+  return (
+      <Reader>
+    <div 
+      style={{
+        width: '100%'
+      }}>
+      {/* ==================== Date, Categories, Tags ====================  */}
       <div 
         style={{
-          width: '100%'
+          display: 'flex',
+          flexDirection: 'row wrap',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
+          marginTop: '5px',
         }}>
-        {/* ==================== Date, Categories, Tags ====================  */}
-        <div 
-          style={{
-            display: 'flex',
-            flexDirection: 'row wrap',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-start',
-            marginTop: '5px',
-          }}>
-          {date && <ArticleDate date={date}/>}
-          {categories && <ArticleCategory categories={categories}/>}
-          {tags && <ArticleTags tags={tags}/>}
-        </div>
+        {date && <ArticleDate date={date}/>}
+        {categories && <ArticleCategory categories={categories}/>}
+        {tags && <ArticleTags tags={tags}/>}
+      </div>
 
-        {/* ==================== Title ====================  */}
-        <ArticleTitle title={title}/>
+      {/* ==================== Title ====================  */}
+      <ArticleTitle title={title}/>
+      
+      <div 
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          alignItems: 'flex-start',
+        }}>
+        {/* ==================== Related ========================  */}
+        {showRelated && <ArticleRelated posts={related.posts} pages={related.pages}/>}
         
-        <div 
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'flex-start',
-          }}>
-          {/* ==================== Related ========================  */}
-          {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
-          
-          {/* ==================== Related - placeholder =========== */}
-          {!showRelated 
-            && 
-            <div 
-              style={{
-                width: '250px',
-                alignSelf: 'flex-start',
-                marginTop: '70vh',
-                marginRight: '2vw'
-              }}>
-            </div>
-          }
-          
-          {/* ==================== Content ====================  */}
+        {/* ==================== Related - placeholder =========== */}
+        {!showRelated 
+          && 
           <div 
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              justifyContent: 'space-evenly',
-              margin: '0vh 5vh 0vh 5vh',
-              width: '70vw'
-            }}> 
-              <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
-              {/*<div
-                className="citations"
-                style={{
-                  width: '30vw',
-                  alignSelf: 'flex-end'
-                }}
-                dangerouslySetInnerHTML={{ __html: citations.citations }} 
-              />*/}
+              width: '250px',
+              alignSelf: 'flex-start',
+              marginTop: '70vh',
+              marginRight: '2vw'
+            }}>
           </div>
-        </div>
+        }
         
-        {/* ==================== Footer ====================  */}
-        <Footer />
+        {/* ==================== Content ====================  */}
+        <div 
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'space-evenly',
+            margin: '0vh 5vh 0vh 5vh',
+            width: '70vw'
+          }}> 
+            <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
+            {/*<div
+              className="citations"
+              style={{
+                width: '30vw',
+                alignSelf: 'flex-end'
+              }}
+              dangerouslySetInnerHTML={{ __html: citations.citations }} 
+            />*/}
+        </div>
       </div>
-    </Reader>
-    )
+      
+      {/* ==================== Footer ====================  */}
+      <Footer />
+    </div>
+  </Reader>
+  )
 }
 
 export const query = graphql `
@@ -110,27 +113,31 @@ export const query = graphql `
           nodes {
             slug
             name
-          }
-        }
-        related {
-          pages {
-            ... on WpPage {
-              uri
-              title
-              categories {
-                nodes {
-                  name
+            posts {
+              nodes {
+                title
+                slug
+                date
+                nodeType
+                uri
+                tags {
+                  nodes {
+                    slug
+                  }
                 }
               }
             }
-          }
-          posts {
-            ... on WpPost {
-              uri
-              title
-              categories {
-                nodes {
-                  name
+            pages {
+              nodes {
+                title
+                slug
+                date
+                nodeType
+                uri
+                tags {
+                  nodes {
+                    slug
+                  }
                 }
               }
             }
