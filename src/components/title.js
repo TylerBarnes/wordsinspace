@@ -16,8 +16,8 @@ const Title = () => {
             border: '1px solid #513bfd',
             boxSizing: 'border-box',
             borderRadius: '100px',
-            marginTop: '4px',
-            marginRight: '-6px',
+            marginTop: '5px',
+            marginRight: '-7px',
           }}></div>
       </Link>
 

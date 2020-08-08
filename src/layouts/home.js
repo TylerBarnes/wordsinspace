@@ -24,7 +24,7 @@ const Home = ({children}) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: '50px',
+    height: '60px',
   }
 
   return (

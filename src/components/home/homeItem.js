@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 
 import HomeImage from "./homeImage"
 import HomeCategory from "./homeCategory"
@@ -15,16 +15,16 @@ const HomeItem = ({item, index}) => {
     <div className={isThree ? 'right' : 'left'}
       style={{
         borderTop: '1px dotted #513bfd',
-        margin: '1vh 0vw',
+        margin: '0',
         paddingBottom: '2vh',
-      }}> 
+      }}>
 
 
       {/*================ Latest, Category labels and Title ================*/}
 
       <div className={'home-entry'}>
 
-        <div 
+        <div
           style={{
             display: 'flex',
             flexFlow: 'row',
@@ -36,14 +36,14 @@ const HomeItem = ({item, index}) => {
 
           {/*================ Category ================*/}
           {connectedNode && <HomeCategory category={category}/>}
-        
+
         </div>
 
         {/*================ Title ================*/}
         <div className={'home-title'}>
           <Link to={item.url}>{item.label}</Link>
         </div>
-        
+
       </div>
 
         {/*================ Thumbnail ================*/}
