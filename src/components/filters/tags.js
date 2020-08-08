@@ -10,9 +10,9 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
      	style={{
       marginTop: '20px',
 	    textAlign: 'left',
-		overflowY: 'scroll',
-		overflowX: 'hidden',
-		height: '65vh',
+			overflowY: 'scroll',
+			overflowX: 'hidden',
+			height: '65vh',
 	     }}>
 	     	<TagsInfoBox tags={tags} clearTags={clearTags} isTagMode={isTagMode}/>
 	      {tags && tags.map((tag, index) => (
