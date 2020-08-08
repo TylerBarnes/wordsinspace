@@ -94,7 +94,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         style={{
           position: 'absolute',
           bottom: '2vh',
-          right: '18vw',
+          right: '22vw',
           width: '30vw',
           margin: 0,
           padding: 0,
