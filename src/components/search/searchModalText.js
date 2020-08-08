@@ -1,29 +1,25 @@
-import React, {useState} from "react"
+import React from "react"
 
 const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
-  const [isHovered, setIsHovered] = useState(false)
   return (
     <div>
     	<div
         style={{
+          background: 'none',
           outline: 'none',
-          border: '1px dotted #fff',
+          border: '1px solid #fff',
           padding: '5px',
           margin: '5px 0',
           position: 'relative',
           float: 'right',
-          color: isHovered ? '#6262F4' : '#fff',
-          background: isHovered ? '#fff' : 'transparent',
-          textTransform: 'uppercase',
-          cursor: 'pointer'
+          color: '#fff',
+          textTransform: 'uppercase'
         }}
         className='metadata'
         data-dismiss="modal" 
         aria-label="Close" 
-        onMouseEnter={e=>setIsHovered(true)}
-        onMouseLeave={e=>setIsHovered(false)}
         onClick={hide}>
-          Close
+          Close &times;
         </div>
       
       <div 

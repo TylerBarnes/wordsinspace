@@ -38,7 +38,7 @@ const ArticleRelated = ({pages, posts}) => {
       {pages?.filter(p => p).map(page=> (
         <div 
           style={styles}
-          key={page.title} >
+          key={page.id} >
           <ArticleCategory categories={page.categories}/>
           <Link className='related-title' to={page.uri}>{page.title}</Link>
         </div>
@@ -47,7 +47,7 @@ const ArticleRelated = ({pages, posts}) => {
       {posts?.filter(p => p).map(post=> (
         <div 
           style={styles}
-          key={post.title} >
+          key={post.id} >
           <ArticleCategory categories={post.categories}/>
           <Link className='related-title' to={post.uri}>{post.title}</Link>
         </div>

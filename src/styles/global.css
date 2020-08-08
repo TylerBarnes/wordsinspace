@@ -42,7 +42,6 @@ a {
 
 a:hover {
   text-decoration: none;
-  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5 {
@@ -57,18 +56,31 @@ ul, li {
   padding: 0;
 }
 
-input:hover {
-  cursor: pointer;
-}
-
-/* */
-/* Shared styles */
-/* */
-
 
 .gradient {
-  background: rgba(255, 145, 83, 0.13);
-  box-shadow: 30px 30px 50px #fff inset;
+  background: linear-gradient(0deg, rgba(245,245,253,1) 0%, rgba(245,245,253,0.43879558659401263) 50%, rgba(255,255,255,0) 100%);
+}
+
+.gradient:before,
+.gradient:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gradient:before {
+  background: rgba(245,245,253,1);
+  background: linear-gradient(0deg, rgba(245,245,253,1) 0%, rgba(245,245,253,0.43879558659401263) 50%, rgba(255,255,255,0) 100%);
+}
+
+.gradient:after {
+  background: linear-gradient(0deg, rgba(245,245,253,1) 10%, rgba(245,245,253,1) 50%, rgba(255,255,255,1) 100%);
+  bottom: 0;
 }
 
 .interface {
@@ -128,7 +140,7 @@ input:hover {
 .work {
   background-color: none;
   color: #513bfd;
-  border: 1px solid rgba(255, 145, 83, 0.13);
+  border: 1px solid transparent;
 }
 
 .blog {

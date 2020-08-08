@@ -84,10 +84,6 @@
   color: #fff;
 }
 
-.list-item {
-  
-}
-
 /*****/
 /*****/
 /*****TAGS*/
@@ -113,7 +109,6 @@
 
 label.tag:hover {
   background-color:  #bab6fb;
-  cursor: pointer;
 }
 
 .date-inverted {
@@ -205,7 +200,6 @@ input[type=checkbox] {
 
 .rd:hover {
   background-color: #bab6fb;
-  cursor: pointer;
 }
 
 .category-active > .rd  {

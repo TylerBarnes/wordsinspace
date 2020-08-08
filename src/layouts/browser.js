@@ -1,30 +1,22 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-
 import {useLocation} from '@reach/router'
-import useBreakpoints from '../hooks/useBreakpoint';
 
 import LeftNav from '../components/leftNav'
-import MobileLeftNav from '../components/mobile/mobileLeftNav'
 import Search from '../components/search'
-import {getResponsiveVars} from "../utils/dom"
 
 import '../styles/layout.css'
 import '../styles/global.css'
 import '../styles/browser.css'
 
-const Browser = ({ children, props }) => {
+const Browser = ({ children }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
-  
-  const breakpoint = useBreakpoints();
-  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveVars(breakpoint)
 
   const styleWrapper = 
   {
     display: 'flex',
-    flexDirection: mobileNavBar ? 'column' : 'row', 
-    flexWrap: 'nowrap',
+    flexDirection: 'row nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
   }
@@ -35,17 +27,17 @@ const Browser = ({ children, props }) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: mobileNavBar ? 'auto' : '60px',
+    height: '60px',
   }
   
   return (
     <div style={styleWrapper} >
+    <div className='gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      {!mobileNavBar && <LeftNav />}
-      {mobileNavBar && <MobileLeftNav />}
-
+      <LeftNav />
+    </div>
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div>
+      <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
           <div  className='interface'>
@@ -55,14 +47,14 @@ const Browser = ({ children, props }) => {
               </div>
             }
           </div>
-          {showSearch && <Search />}
+          <Search />
         </div>
 
         {/* ----------------------------MAIN ---------------------------- */}
         <div
           style={{
             display: 'flex',
-            flexDirection: mobileBrowserLayout ? 'column' : 'row',
+            flexDirection: 'row',
             justifyContent: 'space-between',
           }}
           >

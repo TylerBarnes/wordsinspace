@@ -1,5 +1,5 @@
 import React from "react"
-import {getMonthName} from "../../utils/helpers"
+import {getMonthName} from "../../utils"
 
 const ListDate = ({date, invertedTheme}) => {
   const monthIndex = parseInt(date.slice(5,7))

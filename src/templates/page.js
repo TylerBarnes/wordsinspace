@@ -11,13 +11,14 @@ import ArticleTags from "../components/article/articleTags"
 import ArticleRelated from "../components/article/articleRelated"
 
 export default function pageTemplate({ data }) {
-    if (!data) return null
+  if(!data) return null
 
-    const { title, date, content, related, categories, tags, citations} = data.allWpPage.nodes[0]
-    const { posts, pages } = related;
-    const showRelated = posts?.length > 0 || pages?.length > 0
-    return (
-        <Reader>
+  const {title, date, content, related, categories, tags} = data.allWpPage.nodes[0]
+  const {posts, pages} = related;
+  const showRelated = posts?.length > 0 || pages?.length > 0
+
+  return (
+    <Reader>
       <div 
         style={{
           width: '100%'
@@ -66,21 +67,13 @@ export default function pageTemplate({ data }) {
           <div 
             style={{
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'row',
               alignItems: 'flex-start',
               justifyContent: 'space-evenly',
               margin: '0vh 5vh 0vh 5vh',
               width: '70vw'
             }}> 
-              <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
-              <div
-                className="citations"
-                style={{
-                  width: '30vw',
-                  alignSelf: 'flex-end'
-                }}
-                dangerouslySetInnerHTML={{ __html: citations.citations }}
-              />
+            <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
         
@@ -88,10 +81,10 @@ export default function pageTemplate({ data }) {
         <Footer />
       </div>
     </Reader>
-    )
+  )
 }
 
-export const query = graphql `
+export const query = graphql`
   query getPage($id: String!) {
     allWpPage(filter: {id: { eq: $id }}) {
       nodes {
@@ -108,16 +101,15 @@ export const query = graphql `
         }
         tags {
           nodes {
+            id
             slug
             name
           }
         }
-        citations {
-          citations
-        }
         related {
           pages {
             ... on WpPage {
+              id
               uri
               title
               categories {
@@ -129,6 +121,7 @@ export const query = graphql `
           }
           posts {
             ... on WpPost {
+              id
               uri
               title
               categories {
