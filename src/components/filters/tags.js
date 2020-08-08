@@ -7,8 +7,8 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 	
-	const topTags = tags?.slice(0,tags.length < 20 ? Math.floor(tags.length/2) : 5)
-  const extraTags = tags?.slice(tags.length < 20 ? Math.floor(tags.length/2) : 5, tags.length)
+	const topTags = tags?.slice(0,tags.length < 20 ? Math.floor(tags.length/2) : 20)
+  const extraTags = tags?.slice(tags.length < 20 ? Math.floor(tags.length/2) : 20, tags.length)
 
   return (
    <div 
