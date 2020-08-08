@@ -112,6 +112,44 @@ export const query = graphql`
           nodes {
             slug
             name
+            posts {
+              nodes {
+                title
+                slug
+                date
+                nodeType
+                uri
+                categories {
+                  nodes {
+                    name
+                  }
+                }
+                tags {
+                  nodes {
+                    slug
+                  }
+                }
+              }
+            }
+            pages {
+              nodes {
+                title
+                slug
+                date
+                nodeType
+                uri
+                categories {
+                  nodes {
+                    name
+                  }
+                }
+                tags {
+                  nodes {
+                    slug
+                  }
+                }
+              }
+            }
           }
         }
       }
