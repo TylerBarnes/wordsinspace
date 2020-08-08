@@ -21,6 +21,9 @@
   margin-top: 5vh;
 }
 
+
+/*****Styling new layout as slideshow***/
+
 .wp-block-gallery {
   height: 60vh;
 }
@@ -68,6 +71,51 @@
   padding: 0px 50px;
   object-fit: contain !important;
 }
+
+
+/*****Styling old layout as slideshow***/
+
+.slideshowFrame {
+  height: 60vh;
+}
+
+.slideshowWrapper {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.slideshowWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.slideshowWrapper {
+  height: 100%;
+  overflow-x: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding: 4vh;
+  background:
+    linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
+    linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
+    linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+}
+
+.slideshowImgWrapper {
+  height: 100%;
+  width: inherit;
+}
+
+.slideshowImgWrapper > *  {
+  height: inherit;
+  width: inherit;
+}
+
+.slideshowImgWrapper img  {
+  padding: 0px 30px;
+  object-fit: contain !important;
+}
+
 
 
 /*****/
