@@ -4,11 +4,11 @@ import {Link} from "gatsby"
 const ArticleCategory = ({categories}) => {
   const category = categories?.nodes[0]?.name.toLowerCase()
   return (
-		<div 
+		<div
 	    className={`${category} reader`}
       style={{
-        margin: '0 10px',
-      }}> 
+        margin: '0 50px',
+      }}>
 	    <Link to={`/${category}`}>{category}</Link>
 	  </div>
   )

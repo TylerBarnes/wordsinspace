@@ -46,7 +46,7 @@ const Browser = ({ children, props }) => {
         {mobileNavBar && <MobileLeftNav />}
       </div>
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div>
+      <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div className='gradient'>
           <div style={styleTopBar} >

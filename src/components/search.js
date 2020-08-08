@@ -104,50 +104,44 @@ const Search = () => {
     <div
       style={{
         marginTop: '0',
-        width: '18vw',
+        width: '20vw',
             }}>
       <form
         style={{
           margin: '0',
-          padding: '0'
+          padding: '0 1vw',
+          width: '100%',
         }}
         onSubmit={e => handleSubmit(e)}>
 
         <div
           style={{
             display: 'flex',
-            flexFlow: 'row nowrap',
-            justifyItems: 'stretch',
-            alignItems: 'center',
+            flexFlow: 'row',
+            justifyContent: 'flex-end',
+            width: 'inherit',
           }}>
 
           <div
              onMouseEnter={e=>setGlyphHovered(true)}
              onMouseLeave={e=>setGlyphHovered(false)}
            >
-           {isGlyphHovered
-             ? !showResults
-               ? <GlyphHover />
-               : null
-             : !showResults
-               ? <Glyph />
-               : <GlyphOpen />
-           }
-          <input
-            onMouseEnter={e=>setGlyphHovered(true)}
-            onMouseLeave={e=>setGlyphHovered(false)}
-            style={{
-              padding: '5px 0 0 5px',
-              border: 'none'
-            }}
-            ref={inputEl}
-            type="text"
-            placeholder="SEARCH"
-            className='interface'
-            onChange={e => onChange(e)}
-            />
 
-        </div>
+            <input
+              onMouseEnter={e=>setGlyphHovered(true)}
+              onMouseLeave={e=>setGlyphHovered(false)}
+              style={{
+                padding: '5px 0 0 5px',
+                width: '18vw',
+              }}
+              ref={inputEl}
+              type="text"
+              placeholder="SEARCH"
+              className='interface'
+              onChange={e => onChange(e)}
+              />
+
+            </div>
         </div>
       </form>
       <SearchModal
