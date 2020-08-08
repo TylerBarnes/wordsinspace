@@ -1,5 +1,5 @@
 import React from "react"
-import {getMonthName} from "../../utils"
+import {getMonthName} from "../../utils/helpers"
 
 const ArticleDate = ({date}) => {
 	const monthIndex = parseInt(date.slice(5,7))

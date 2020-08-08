@@ -1,6 +1,8 @@
-import React from "react"
+import React, {useState} from "react"
 
 const TagsInfoBox = ({tags, clearTags, isTagMode}) => {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <button className='metadata'
     	style={{
@@ -10,8 +12,12 @@ const TagsInfoBox = ({tags, clearTags, isTagMode}) => {
 				background: 'transparent',
 				textAlign: 'left',
 				color: 'red',
-				display: isTagMode ? 'block' : 'none'
+				display: isTagMode ? 'block' : 'none', 
+        cursor: 'pointer',
+        textDecoration: isHovered ? 'underline' : 'none'
     	}}
+      onMouseEnter={e=>setIsHovered(true)}
+      onMouseLeave={e=>setIsHovered(false)}
     	onClick={clearTags}>
     	CLEAR
     </button>

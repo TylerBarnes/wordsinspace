@@ -1,15 +1,13 @@
 import React, {useState} from "react"
-import {Link} from "gatsby"
-import Glyph from '../../images/assets/glyph.svg'
+
 
 import ListTag from "./listTag"
 import ListDate from "./listDate"
 import ListImage from "./listImage"
 import ListCategory from "./listCategory"
 
-const ListItem = ({item, isTagMode, invertedTheme}) => {
-  const category = item?.categories?.nodes[0]?.name
-  const categoryClass = item?.categories?.nodes[0]?.name.toLowerCase()
+const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTitleWidth}) => {
+  const category=item?.categories?.nodes[0]?.name
   const tags = item?.tags
   const date = item?.date
   const [thumbnail, setThumbnail] = useState('')
@@ -49,55 +47,53 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
           // background: isVisible && !invertedTheme
           //             ? 'linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%)'
           //             : 'none',
+          background: isVisible && !invertedTheme 
+                      ? 'linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%)'
+                      : 'none',
+      }}>
+
+      <div 
+        style={{
+          alignSelf: 'flex-start',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-evenly',
+          alignItems: 'flex-start',
         }}>
 
-        <div
+        {/* ==================== Date, Categories, Tags ====================  */}
+        <div 
           style={{
-            alignSelf: 'flex-start',
-            // width: '50vw',
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
+            marginLeft: '40px',
           }}>
-
-          {/* ==================== Date, Categories, Tags ====================  */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-evenly',
-              alignItems: 'flex-start',
-              marginLeft: '40px',
-              marginTop: '10px',
-            }}>
-            {date && <ListDate date={date} invertedTheme={invertedTheme} />}
-            {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
-            {tags && <ListTag tags={tags} invertedTheme={invertedTheme} />}
-          </div>
-
-          {/* ==================== Title ====================  */}
-          <div
-            style={{
-              width: '55vw',
-              margin: '30px 0 40px 0',
-              paddingLeft: '20px',
-            }}>
-            <Link
-              to={item.uri}
-              className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
-              {item.title}
-              <Glyph />
-            </Link>
-          </div>
-
+          {date && <ListDate date={date} invertedTheme={invertedTheme} />}
+          {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
+          {tags && !mobileList && <ListTag tags={tags} invertedTheme={invertedTheme} />}
         </div>
 
-        {/* ==================== Thumbnail ====================  */}
+        {/* ==================== Title ====================  */}
+        <div         
+          style={{ 
+            width: listTitleWidth,
+            margin: '30px 0 40px 0',
+            paddingLeft: '20px',
+          }}>
+          <Link 
+            to={item.uri} 
+            className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
+            {item.title}
+            <GlyphFilled />
+          </Link> 
+        </div>
 
-      </li>
+      </div>
 
-      <div
+      {/* ==================== Thumbnail ====================  */}
+      <div 
         style={{
           position: 'absolute',
           bottom: '0px',
@@ -110,7 +106,7 @@ const ListItem = ({item, isTagMode, invertedTheme}) => {
         }}>
         {thumbnail && <ListImage title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>
-    </div>
+    </li>
   )
 }
 
