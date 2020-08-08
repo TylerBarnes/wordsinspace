@@ -1,17 +1,16 @@
 import React from "react";
 
 const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
-  <div 
+  <div
     style={{
       margin: '5px 0',
     }}>
-    {isSelected ? <span className='tag-clear'> &times; </span> : null}
-    <label 
+    <label
       style={{
         // padding: '2px 15px 2px 25px',
         paddingLeft: '20px',
         textAlign: 'left',
-      }} 
+      }}
       className={isSelected ? 'tag tag-active' : 'tag'}
       >
       <input

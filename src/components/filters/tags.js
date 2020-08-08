@@ -6,7 +6,7 @@ import TagsInfoBox from './tagsInfoBox'
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
-     <div className="no-scroll" 
+     <div className="no-scroll"
      	style={{
 	    textAlign: 'left',
 		overflowY: 'scroll',
@@ -26,4 +26,4 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
    )
 }
 
-export default Tags 
+export default Tags
