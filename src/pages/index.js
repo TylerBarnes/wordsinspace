@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 
 import Home from '../layouts/home'
 import SEO from '../components/seo'
@@ -22,21 +22,21 @@ export default function HomePage() {
   const menuData = useSiteMenuData();
 
   if (!menuData)  {navigate('/work')}
-  
+
   const menuItems = menuData[0]?.menuItems?.nodes
 
   const styleSVG = {
     width:'50%',
     display: 'flex',
-    flexFlow: 'column', 
+    flexFlow: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
   }
-  
+
   return (
     <Home>
       <SEO title='home' />
-      <div 
+      <div
         style={{
           display: 'flex',
           flexFlow: 'row',
@@ -44,16 +44,17 @@ export default function HomePage() {
           justifyContent: 'flex-start',
           alignItems: 'stretch',
           alignContent: 'stretch',
+          marginLeft: '5px',
           }}>
-          <div 
+          <div
             style={{
-              width: '50%', 
+              width: '50%',
             }}>
             <HomeItem item={menuItems[0]} index={1} />
             <HomeItem item={menuItems[1]} index={2} />
           </div>
 
-          <div 
+          <div
             style={styleSVG}>
             <Link to={'/work/'}><Sticker_Browse /></Link>
           </div>
@@ -69,16 +70,16 @@ export default function HomePage() {
             }}>
             <HomeItem item={menuItems[2]} index={3} />
           </div>
-          
-          
-          <div 
+
+
+          <div
             style={{
               width:'50%',
             }}>
             <HomeItem item={menuItems[3]} index={4} />
             <HomeItem item={menuItems[4]} index={5} />
           </div>
-          
+
           <div
             style={styleSVG}>
             <Link to={'/student-resources/'}><Sticker_Student /></Link>
@@ -88,7 +89,7 @@ export default function HomePage() {
             style={styleSVG}>
             <Link to={'/upcoming-events/'}><Sticker_Upcoming /></Link>
           </div>
-          
+
           <div
             style={{
               width:'50%',
@@ -96,7 +97,7 @@ export default function HomePage() {
             <HomeItem item={menuItems[5]} index={6} />
           </div>
 
-          <div 
+          <div
             style={{
               width:'50%',
               display: 'flex',
@@ -105,8 +106,8 @@ export default function HomePage() {
             }}>
 
             <HomeItem item={menuItems[6]} index={7} />
-            
-            <div 
+
+            <div
               style={{
                 marginTop: '5vh',
                 display: 'flex',

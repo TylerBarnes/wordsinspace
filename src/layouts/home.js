@@ -29,7 +29,7 @@ const Home = ({children}) => {
 
   return (
     <div style={styleWrapper}>
-      <div className='gradient'>
+      <div className='left-gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
         <LeftNav />
       </div>

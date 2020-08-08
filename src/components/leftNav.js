@@ -3,22 +3,21 @@ import Title from './title'
 
 const LeftNav = () => {
   return (
-		<div 
+		<div
       style={{
 		    alignSelf: 'flex-start',
 		    flexShrink: '0',
 		    height: '100vh',
-		    width: '50px',
+		    width: '60px',
 		    writingMode: 'vertical-rl',
 		    transform: 'rotate(0deg)',
 		    textAlign: 'left',
 		    padding: '5px 10px 5px 0px',
-		    marginRight: '10px',
+		    marginRight: '0px',
 		  }}>
         <Title />
-      </div> 
+      </div>
   )
 }
 
 export default LeftNav
-

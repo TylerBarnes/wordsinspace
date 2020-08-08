@@ -41,7 +41,7 @@ const Browser = ({ children, props }) => {
   return (
     <div style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <div className='gradient'>
+      <div className='left-gradient'>
         {!mobileNavBar && <LeftNav />}
         {mobileNavBar && <MobileLeftNav />}
       </div>
