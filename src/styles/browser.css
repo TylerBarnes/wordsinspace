@@ -25,6 +25,46 @@
   padding: 0;
 }
 
+
+/*****/
+/*****/
+/*****LIST ITEM BACKGROUND COLOR*/
+/*****/
+/*****/
+
+.publicationsItem:hover {
+  background: linear-gradient(90deg, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 1) 2%, rgba(245, 227, 225, 1) 98%, rgba(245, 227, 225, 0) 100%);
+}
+
+.workItem:hover {
+  background: linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%);
+}
+
+.teachingItem:hover {
+  background: linear-gradient(90deg, rgba(225, 238, 244, 0) 0%, rgba(225, 238, 244, 1) 2%, rgba(225, 238, 244, 1) 98%, rgba(225, 238, 244, 0) 100%);
+}
+
+.projectsItem:hover {
+  background: linear-gradient(90deg, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 1) 2%, rgba(245, 227, 225, 1) 98%, rgba(245, 227, 225, 0) 100%);
+}
+
+.presentationsItem:hover {
+  background: linear-gradient(90deg, rgba(247, 227, 229, 0) 0%, rgba(247, 227, 229, 1) 2%, rgba(247, 227, 229, 1) 98%, rgba(247, 227, 229, 0) 100%);
+}
+
+.talksItem:hover {
+  background: linear-gradient(90deg, rgba(240, 240, 240, 0) 0%, rgba(240, 240, 240, 1) 2%, rgba(240, 240, 240, 1) 98%, rgba(240, 240, 240, 0) 100%);
+}
+
+.blogItem:hover {
+  background: linear-gradient(90deg, rgba(225, 240, 245, 0) 0%, rgba(225, 240, 245, 1) 2%, rgba(225, 240, 245, 1) 98%, rgba(225, 240, 245, 0) 100%);
+}
+
+.researchItem:hover {
+  background: linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%);
+}
+
+
 /*****/
 /*****/
 /*****LIST TITLE*/
@@ -58,7 +98,7 @@
 .tag-inverted {
   color: #fff;
   border: 1px solid #fff;
-  background-color: none; 
+  background-color: none;
 }
 
 .tag-clear {
