@@ -20,7 +20,6 @@ export default function postTemplate({ data }) {
     related,
     categories,
     tags,
-    citations
   } = data.allWpPost.nodes[0]
   const { posts, pages } = related
   const showRelated = posts?.length > 0 || pages?.length > 0
@@ -82,13 +81,13 @@ export default function postTemplate({ data }) {
               className='content'
               dangerouslySetInnerHTML={{ __html: content }}
             />
-            <div
-              className='citations'
+            {/*<div
+              className="citations"
               style={{
                 width: '30vw',
                 alignSelf: 'flex-end'
               }}
-              dangerouslySetInnerHTML={{ __html: citations.citations }}
+              dangerouslySetInnerHTML={{ __html: citations.citations }} */}
             />
           </div>
         </div>
@@ -119,9 +118,6 @@ export const query = graphql`
             slug
             name
           }
-        }
-        citations {
-          citations
         }
         related {
           pages {
