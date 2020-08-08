@@ -16,8 +16,8 @@ export default function pageTemplate({ data }) {
   if (!data) return null
 
   const { title, date, content, categories, tags} = data.allWpPage.nodes[0]
-  const related = getRelated(tags)
-  const showRelated = related.posts?.length > 0 || related.pages?.length > 0
+  const related = getRelated(tags, title)
+  const showRelated = related.length > 0 
 
   return (
     <Reader>
@@ -50,7 +50,7 @@ export default function pageTemplate({ data }) {
             alignItems: 'flex-start',
           }}>
           {/* ==================== Related ========================  */}
-          {showRelated && <ArticleRelated posts={related.posts} pages={related.pages}/>}
+          {showRelated && <ArticleRelated related={related} />}
           
           {/* ==================== Related - placeholder =========== */}
           {!showRelated 

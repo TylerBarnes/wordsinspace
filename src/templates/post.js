@@ -17,7 +17,7 @@ export default function postTemplate({ data }) {
   
   const { title, date, content, categories, tags} = data.allWpPost.nodes[0]
   const related = getRelated(tags)
-  const showRelated = related.posts?.length > 0 || related.pages?.length > 0
+  const showRelated = related.length > 0 
 
   return (
     <Reader>
@@ -47,7 +47,7 @@ export default function postTemplate({ data }) {
           }}
         >
           {/* ==================== Related ====================  */}
-          {showRelated && <ArticleRelated posts={related.posts} pages={related.pages} />}
+          {showRelated && <ArticleRelated related={related} />}
 
           {/* ==================== Related - placeholder =========== */}
           {!showRelated && (

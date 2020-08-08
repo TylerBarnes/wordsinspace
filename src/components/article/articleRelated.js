@@ -2,9 +2,9 @@ import React from "react"
 import {Link} from "gatsby"
 import ArticleCategory from "./articleCategory"
 
-const ArticleRelated = ({pages, posts}) => {
+const ArticleRelated = ({related}) => {
   
-  if (pages.length === 0 && posts.length === 0 ) return null
+  if (related.length === 0 ) return null
 
   const styles = {
     margin: '1vh 0',
@@ -35,21 +35,12 @@ const ArticleRelated = ({pages, posts}) => {
         }}>
         Related
       </div>
-      {pages?.filter(p => p).map((page,index)=> (
+      {related?.filter(p => p).map((item,index)=> (
         <div 
           style={styles}
           key={index} >
-          <ArticleCategory categories={page.categories}/>
-          <Link className='related-title' to={page.uri}>{page.title}</Link>
-        </div>
-      ))}
-      
-      {posts?.filter(p => p).map((post,index)=> (
-        <div 
-          style={styles}
-          key={index} >
-          <ArticleCategory categories={post.categories}/>
-          <Link className='related-title' to={post.uri}>{post.title}</Link>
+          <ArticleCategory categories={item.categories}/>
+          <Link className='related-title' to={item.uri}>{item.title}</Link>
         </div>
       ))}
     </div>

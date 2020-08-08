@@ -48,13 +48,16 @@ export const extractSearchResults = (array) => {
   return results
 }
 
-export const getRelated = (tags) => {
+export const getRelated = (tags, title) => {
   let randomTagSelection = getRandomSubarray(tags.nodes, 3)
+  console.log(randomTagSelection)
+
   let relatedPages = randomTagSelection.map(tag => getRandomSubarray(tag.pages.nodes, 2)).flat(2)
   let relatedPosts = randomTagSelection.map(tag => getRandomSubarray(tag.posts.nodes, 2)).flat(2)
-
-  console.log(relatedPages, relatedPosts)
-  return {pages: relatedPages, posts: relatedPosts}
+  let related = [...relatedPages, ...relatedPosts]
+                .filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
+                .filter(item => item.title !== title)
+  return related
 }
 
 function getRandomSubarray(arr, size) {
