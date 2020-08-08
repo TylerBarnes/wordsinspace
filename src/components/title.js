@@ -4,11 +4,11 @@ import {useTitle} from "../hooks/useTitle"
 
 const Title = () => {
   const title = useTitle();
-  
+
   return (
     <div>
       <Link to="/" >
-         <div 
+         <div
           style={{
             position: 'absolute',
             width: '20px',
@@ -19,12 +19,12 @@ const Title = () => {
             marginTop: '10px',
           }}></div>
       </Link>
-        
+
       <Link
         to="/"
         className='interface'
         style={{
-          marginTop: '80px',
+          marginTop: '60px',
         }}
       >
         {title}

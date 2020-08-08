@@ -8,7 +8,7 @@ const LeftNav = () => {
 		    alignSelf: 'flex-start',
 		    flexShrink: '0',
 		    height: '100vh',
-		    width: '60px',
+		    width: '50px',
 		    writingMode: 'vertical-rl',
 		    transform: 'rotate(0deg)',
 		    textAlign: 'left',
