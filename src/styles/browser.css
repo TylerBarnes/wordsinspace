@@ -93,6 +93,10 @@
 .list-item {
 }
 
+.list-item:hover .list-title  {
+  text-decoration: underline;
+
+}
 /*****/
 /*****/
 /*****TAGS*/
