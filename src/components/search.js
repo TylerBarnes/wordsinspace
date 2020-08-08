@@ -103,7 +103,7 @@ const Search = () => {
   return (
     <div
       style={{
-        marginTop: '15px',
+        marginTop: '0',
         width: '18vw',
             }}>
       <form
