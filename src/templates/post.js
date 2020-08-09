@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Reader from '../layouts/reader'
-import Footer from '../components/footer'
 
 import ArticleTitle from '../components/article/articleTitle'
 import ArticleContent from "../components/article/articleContent"

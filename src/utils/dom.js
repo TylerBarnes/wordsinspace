@@ -13,13 +13,13 @@ export const getResponsiveBrowserVars = (breakpoint) => {
   }
 }
 
-
 // A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Reader
 export const getResponsiveReaderVars = (breakpoint) => { 
   return {
     mobileNavBar : breakpoint !== 'lg', // this goes into the layouts/reader.js
-    mobileArticleTags:  breakpoint !== 'lg', // this goes into article/articleTags.js
-    mobileArticleContent:  breakpoint !== 'lg', // this goes into article/articleContent.js
-    mobileArticleTitle:  breakpoint !== 'lg', // this goes into article/articleContent.js
+    mobileArticleTags:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
+    mobileArticleContent:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
+    mobileArticleTitle:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
+    mobileArticleFooter:  breakpoint !== 'lg', // this goes into article/ArticleFooter.js
   }
 }
