@@ -30,6 +30,10 @@
     }
 }
 
+.filterBar > div > div {
+  overflow: auto;
+}
+
 .filterBar .tag {
   border: 1px solid #6262F4;
   border-radius: 53px;

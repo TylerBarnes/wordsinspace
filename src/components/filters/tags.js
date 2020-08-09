@@ -6,22 +6,22 @@ import TagsInfoBox from './tagsInfoBox'
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-	
+
 	const topTags = tags?.slice(0,tags.length < 20 ? Math.floor(tags.length/2) : 20)
   const extraTags = tags?.slice(tags.length < 20 ? Math.floor(tags.length/2) : 20, tags.length)
 
   return (
-   <div 
+   <div
 	   	style={{
-        	    marginTop: '20px',
-		    	textAlign: 'left',
+  	    marginTop: '0px',
+	    	textAlign: 'left',
 				overflowY: 'scroll',
 				overflowX: 'hidden',
-				maxHeight: '65vh',
-				paddingBottom: '4vh'
+				height: '52vh',
+				paddingBottom: '0vh'
 	    }}>
      	<TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>
-      
+
       {topTags && topTags.map((tag, index) => (
 				<Checkbox
 		      key={index}
@@ -30,7 +30,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
 		    />
-     	))}    
+     	))}
 
      	{showExtra && extraTags.map((tag, index) => (
 				<Checkbox
@@ -42,7 +42,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 		    />
      	))}
 
-     	<button 
+     	<button
 				className='metadata'
 	    	style={{
 					margin: '0',

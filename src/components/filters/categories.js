@@ -7,7 +7,10 @@ const Categories = () => {
 
   return (
 		<div style={{
-			margin: '3vh 0',
+			margin: '1vh 0 0 0',
+      padding: '1vh 0 0 0',
+      overflow: 'auto',
+      height: '38vh',
 		}}>
 			<Link
 				to={'/work'}
@@ -23,7 +26,6 @@ const Categories = () => {
 					key={index}
 					style={{
 		      	margin: '5px 0px', // override li ul margins
-            padding: '0',
 		      	listStyle: 'none',
 					}}
 					>
