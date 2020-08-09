@@ -34,12 +34,14 @@ export const extractSearchResults = (array) => {
 
 export const getRelated = (tags, title) => {
   let randomTagSelection = getRandomSubarray(tags?.nodes, 2)
-  let relatedPages = randomTagSelection?.map(tag => getRandomSubarray(tag.pages?.nodes, 2)).flat(2)
-  let relatedPosts = randomTagSelection?.map(tag => getRandomSubarray(tag.posts?.nodes, 2)).flat(2)
+  // let relatedPages = randomTagSelection?.map(tag => getRandomSubarray(tag.pages?.nodes, 2)).flat(2)
+  // let relatedPosts = randomTagSelection?.map(tag => getRandomSubarray(tag.posts?.nodes, 2)).flat(2)
+  let relatedPages = randomTagSelection?.map(tag => tag.pages ? getRandomSubarray(tag.pages?.nodes, 2) : []).flat(2)
+  let relatedPosts = randomTagSelection?.map(tag => tag.posts ? getRandomSubarray(tag.posts?.nodes, 2) : []).flat(2)
   let related = [...relatedPages, ...relatedPosts]
                 .filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
                 .filter(item => item.title !== title)
-  
+
   return related
 }
 
@@ -54,21 +56,21 @@ function getRandomSubarray(arr, size) {
   return shuffled.slice(0, size);
 }
 
-// 
+//
 // NOT CURRENTLY IN USE
-// 
-// When we first land on a /category endpoint, we want the Tag list to automatically display Tags that are associated with this category's content. We can't do that dynamically with Apollo and we can't use a Gatsby static Query since it doesn't accept variables. We have to construct the [tags] array manually, by extracting them out of the deeply nested 'category' variable. 
+//
+// When we first land on a /category endpoint, we want the Tag list to automatically display Tags that are associated with this category's content. We can't do that dynamically with Apollo and we can't use a Gatsby static Query since it doesn't accept variables. We have to construct the [tags] array manually, by extracting them out of the deeply nested 'category' variable.
 export const extractTags = (initial) => {
   return initial
            .filter(hasTags=>hasTags.tags && hasTags.tags.nodes.length>0) // filter for elements that contain non-zero Tag arrays
-           .map(item=> { 
+           .map(item=> {
             // transform the incoming array into an object with 3 key-value pairs => {checked: bool, slug: string, id: string}, which we need for Tag UX
             let item_tags = item.tags.nodes.map(tag => {
                               return {checked: false, slug: tag.slug, name: tag.name, id: tag.id}
-                            }) 
+                            })
             return item_tags
          })
          .flat(2) // flattens the incoming array of arrays (depth=2)
-         .filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i) // checks for uniqueness based on id, seen here https://stackoverflow.com/a/56757215 
+         .filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i) // checks for uniqueness based on id, seen here https://stackoverflow.com/a/56757215
          .sort( (a, b) => a.id.localeCompare(b.id, 'en', {'sensitivity': 'base'})) // sorts the incoming array of objects alphabetically by 'name', seen here https://stackoverflow.com/a/58958381
 }

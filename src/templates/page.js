@@ -16,17 +16,18 @@ export default function pageTemplate({ data }) {
   if (!data) return null
 
   const { title, date, content, categories, tags} = data.allWpPage.nodes[0]
+  console.log("tags is ", tags) // debugging line for tag.pages/tag.posts being absent in helpers.js
   const related = getRelated(tags, title)
-  const showRelated = related.length > 0 
+  const showRelated = related.length > 0
 
   return (
     <Reader>
-      <div 
+      <div
         style={{
           width: '100%'
         }}>
         {/* ==================== Date, Categories, Tags ====================  */}
-        <div 
+        <div
           style={{
             display: 'flex',
             flexDirection: 'row wrap',
@@ -41,8 +42,8 @@ export default function pageTemplate({ data }) {
 
         {/* ==================== Title ====================  */}
         <ArticleTitle title={title}/>
-        
-        <div 
+
+        <div
           style={{
             display: 'flex',
             flexDirection: 'row',
@@ -51,11 +52,11 @@ export default function pageTemplate({ data }) {
           }}>
           {/* ==================== Related ========================  */}
           {showRelated && <ArticleRelated related={related} />}
-          
+
           {/* ==================== Related - placeholder =========== */}
-          {!showRelated 
-            && 
-            <div 
+          {!showRelated
+            &&
+            <div
               style={{
                 width: '250px',
                 alignSelf: 'flex-start',
@@ -64,9 +65,9 @@ export default function pageTemplate({ data }) {
               }}>
             </div>
           }
-          
+
           {/* ==================== Content ====================  */}
-          <div 
+          <div
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -74,7 +75,7 @@ export default function pageTemplate({ data }) {
               justifyContent: 'space-evenly',
               margin: '0vh 5vh 0vh 5vh',
               width: '70vw'
-            }}> 
+            }}>
               <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
               {/*<div
                 className="citations"
@@ -82,11 +83,11 @@ export default function pageTemplate({ data }) {
                   width: '30vw',
                   alignSelf: 'flex-end'
                 }}
-                dangerouslySetInnerHTML={{ __html: citations.citations }} 
+                dangerouslySetInnerHTML={{ __html: citations.citations }}
               />*/}
           </div>
         </div>
-        
+
         {/* ==================== Footer ====================  */}
         <Footer />
       </div>

@@ -16,7 +16,8 @@ const Home = ({children}) => {
     flexDirection: 'row nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-  }
+    height: '100vh',
+}
 
   const styleTopBar =
   {

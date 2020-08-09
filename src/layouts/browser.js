@@ -27,6 +27,7 @@ const Browser = ({ children, props }) => {
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
+    height: '100vh',
   }
 
   const styleTopBar =
