@@ -17,7 +17,7 @@ export default function pageTemplate({ data }) {
 
   const { title, date, content, categories, tags} = data.allWpPage.nodes[0]
   const related = getRelated(tags, title)
-  const showRelated = related.length > 0 
+  const showRelated = related?.length > 0 
 
   return (
     <Reader>
