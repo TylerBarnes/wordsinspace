@@ -1,7 +1,11 @@
 import React from "react"
-import Title from './title'
+import { Link } from "gatsby"
+
+import {useTitle} from "../hooks/useTitle"
+import Circle_wordsinspace from '../images/assets/circle_wordsinspace.svg'
 
 const WordsInSpace = () => {
+  const title = useTitle();
   return (
 		<div 
       style={{
@@ -11,11 +15,30 @@ const WordsInSpace = () => {
 		    width: '50px',
 		    writingMode: 'vertical-rl',
 		    transform: 'rotate(0deg)',
-		    textAlign: 'left',
-		    padding: '5px 10px 5px 0px',
-		    marginRight: '10px',
+		    display: 'flex',
+		    flexFlow: 'row',
+		    flexWrap: 'nowrap',
+		    justifyContent: 'flex-start',
 		  }}>
-        <Title />
+        
+        <div 
+	        style={{
+	        	marginTop: '10px',
+	        	alignSelf: 'center'
+	        }}>
+		      <Link to={'/'}><Circle_wordsinspace /></Link>
+	      </div>
+	        
+	      <Link
+	        to="/"
+	        className='interface'
+	        style={{
+	          marginTop: '40px',
+		    		alignSelf: 'flex-end',
+	        }}
+	     		>
+	        {title}
+	      </Link>
       </div> 
   )
 }
