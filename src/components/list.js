@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
 import useBreakpoints from '../hooks/useBreakpoint';
-import {getResponsiveVars} from "../utils/dom"
+import {getResponsiveBrowserVars} from "../utils/dom"
 
 import ListItem from "./list/listItem"
 import Footer from './footer'
@@ -11,7 +11,7 @@ import MobileFooter from './mobile/mobileFooter'
 
 const List = ({loading, items, isTagMode}) => {
   const breakpoint = useBreakpoints();
-  const {mobileList, listWidth, listTitleWidth} = getResponsiveVars(breakpoint)
+  const {mobileList, listWidth, listTitleWidth} = getResponsiveBrowserVars(breakpoint)
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 

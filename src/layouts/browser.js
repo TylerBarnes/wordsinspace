@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 
 import {useLocation} from '@reach/router'
 import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveBrowserVars} from "../utils/dom"
 
 import LeftNav from '../components/leftNav'
 import MobileLeftNav from '../components/mobile/mobileLeftNav'
 import Search from '../components/search'
-import {getResponsiveVars} from "../utils/dom"
 
 import '../styles/layout.css'
 import '../styles/global.css'
@@ -18,7 +18,7 @@ const Browser = ({ children, props }) => {
   const catName = location.pathname.replace('/', '').replace('/', '')
   
   const breakpoint = useBreakpoints();
-  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveVars(breakpoint)
+  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoint)
 
   const styleWrapper = 
   {

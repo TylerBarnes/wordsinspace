@@ -6,7 +6,7 @@ import {useTagSelection} from "../hooks/useTagSelection"
 import useBreakpoints from '../hooks/useBreakpoint'
 
 import {sortByDate} from "../utils/helpers"
-import {getResponsiveVars} from "../utils/dom"
+import {getResponsiveBrowserVars} from "../utils/dom"
 
 import Browser from "../layouts/browser"
 import SEO from "../components/seo"
@@ -16,7 +16,7 @@ import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
   const breakpoint = useBreakpoints();
-  const {showDesktopFilters, showMobileFilters} = getResponsiveVars(breakpoint)
+  const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoint)
 
   // initialize the items to all of the Pages and all of the Posts
   const initial = [...data.allWpCategory.nodes[0].pages.nodes, ...data.allWpCategory.nodes[0].posts.nodes];
