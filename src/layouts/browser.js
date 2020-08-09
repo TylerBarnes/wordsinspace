@@ -45,7 +45,7 @@ const Browser = ({ children, props }) => {
       {mobileNavBar && <MobileLeftNav />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div>
+      <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
           <div  className='interface'>

@@ -7,7 +7,11 @@ import HomeItem from '../components/home/homeItem'
 import Footer from "../components/footer"
 import { navigate } from "gatsby"
 
+import MobileIndex from '../components/mobile/mobileIndex'
+
 import {useSiteMenuData} from '../hooks/useSiteMenuData'
+import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveHomeVars} from "../utils/dom"
 
 import Sticker_Email from '../images/assets/Sticker_Email.svg'
 import Sticker_Browse from '../images/assets/Sticker_Browse.svg'
@@ -19,11 +23,16 @@ import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
 import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 
 export default function HomePage() {
-  const menuData = useSiteMenuData();
+  const breakpoint = useBreakpoints();
+  const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
+  const menuData = useSiteMenuData();
+  
   if (!menuData)  {navigate('/work')}
   
   const menuItems = menuData[0]?.menuItems?.nodes
+
+  if (mobileHome) return <MobileIndex menuItems={menuItems} />
 
   const styleSVG = {
     width:'50%',
@@ -119,7 +128,7 @@ export default function HomePage() {
             </div>
           </div>
 
-      </div>
+        </div>
       <Footer />
     </Home >
   )

@@ -2,37 +2,46 @@ import React, {useState} from "react"
 import {Link} from "gatsby" 
 import PropTypes from "prop-types"
 
+import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveHomeVars} from "../utils/dom"
+
 import LeftNav from "../components/leftNav"
+import MobileLeftNav from '../components/mobile/mobileLeftNav'
 
 import "../styles/layout.css"
 import "../styles/global.css"
 import "../styles/home.css"
 
 const Home = ({children}) => {
+  
+  const breakpoint = useBreakpoints();
+  const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const styleWrapper = 
   {
     display: 'flex',
-    flexDirection: 'row nowrap', 
+    flexDirection: mobileHome ? 'column' : 'row nowrap', 
     alignItems: 'flex-start',
     justifyContent: 'space-around',
+    background: '#F5F5FF',
+    boxShadow: '30px 30px 50px #fff inset'
   }
 
   const styleTopBar = 
   {
-    display: 'flex',
+    display: mobileHome ? 'none' : 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: '50px',
+    height: mobileHome ? 'auto' : '60px',
   }
 
   return (
     <div style={styleWrapper}>
-      <div className='gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-        <LeftNav />
-      </div>
+      {!mobileHome && <LeftNav />}
+      {mobileHome && <MobileLeftNav />}
+
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
@@ -43,11 +52,12 @@ const Home = ({children}) => {
         </div>
 
         {/* ----------------------------MAIN---------------------------- */}
-        <div style={{
-          maxHeight: '92vh',
-          overflow: 'auto',
-          width: '100%'
-        }}>
+        <div 
+          style={{
+            maxHeight: '92vh',
+            overflow: 'auto',
+            width: '100%'
+          }}>
           {children}
         </div>
       </div>

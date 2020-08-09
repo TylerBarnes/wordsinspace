@@ -1,4 +1,16 @@
+// 
+// HOME
+// 
+// A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Home
+export const getResponsiveHomeVars = (breakpoint) => { 
+  return {
+    mobileHome:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
+  }
+}
 
+// 
+// BROWSER
+// 
 // A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Browser
 export const getResponsiveBrowserVars = (breakpoint) => { 
   return {
@@ -13,6 +25,9 @@ export const getResponsiveBrowserVars = (breakpoint) => {
   }
 }
 
+// 
+// READER
+// 
 // A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Reader
 export const getResponsiveReaderVars = (breakpoint) => { 
   return {

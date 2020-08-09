@@ -64,13 +64,6 @@ input:hover {
 /* */
 /* Shared styles */
 /* */
-
-
-.gradient {
-  background: rgba(255, 145, 83, 0.13);
-  box-shadow: 30px 30px 50px #fff inset;
-}
-
 .interface {
   color: #513bfd;
   text-decoration: none;
