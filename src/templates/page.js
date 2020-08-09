@@ -16,9 +16,8 @@ export default function pageTemplate({ data }) {
   if (!data) return null
 
   const { title, date, content, categories, tags} = data.allWpPage.nodes[0]
-  console.log("tags is ", tags) // debugging line for tag.pages/tag.posts being absent in helpers.js
   const related = getRelated(tags, title)
-  const showRelated = related.length > 0
+  const showRelated = related?.length > 0 
 
   return (
     <Reader>

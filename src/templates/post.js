@@ -17,7 +17,7 @@ export default function postTemplate({ data }) {
 
   const { title, date, content, categories, tags} = data.allWpPost.nodes[0]
   const related = getRelated(tags)
-  const showRelated = related.length > 0
+  const showRelated = related?.length > 0 
 
   return (
     <Reader>

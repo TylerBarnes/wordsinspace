@@ -33,6 +33,8 @@ export const extractSearchResults = (array) => {
 }
 
 export const getRelated = (tags, title) => {
+  if (!tags || tags.length === 0) return null
+    
   let randomTagSelection = getRandomSubarray(tags?.nodes, 2)
   // let relatedPages = randomTagSelection?.map(tag => getRandomSubarray(tag.pages?.nodes, 2)).flat(2)
   // let relatedPosts = randomTagSelection?.map(tag => getRandomSubarray(tag.posts?.nodes, 2)).flat(2)
