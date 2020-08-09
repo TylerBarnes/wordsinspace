@@ -1,14 +1,14 @@
 import React from "react"
 
 const Footer = () => {
-  
+
   return (
-    <div 
+    <div
     	style={{
-	    	borderTop: '0.5px solid #513bfd',
+	    	borderTop: '1px dashed #513bfd',
         marginTop: '5vh',
-	    	padding: '5vh 0'
-	    }} 
+	    	padding: '1vh 0'
+	    }}
 	    className="metadata">
      Copyright All Rights Reserved © 2020
     </div>

@@ -4,11 +4,11 @@ const ArticleTags = ({tags}) => {
   return (
 		<div
       style={{
-        alignSelf: 'flex-start',
+        alignSelf: 'center',
         margin: '-4px 5px -4px 20px'
-      }}> 
-      {tags.nodes.map((tag, index_tag) => 
-        <span 
+      }}>
+      {tags.nodes.map((tag, index_tag) =>
+        <span
           style={{
             marginRight: '10px'
           }}

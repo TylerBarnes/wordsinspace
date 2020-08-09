@@ -6,7 +6,7 @@ import {sortByDate, extractSearchResults} from '../utils/helpers'
 import SearchModal from "./search/searchModal"
 import SearchResults from "./search/searchResults"
 
-import Glyph from '../images/assets/glyph.svg'
+import Glyph from '../images/assets/glyph_filled.svg'
 import GlyphHover from '../images/assets/glyph_hover.svg'
 import GlyphOpen from '../images/assets/glyph_open.svg'
 

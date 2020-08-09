@@ -7,10 +7,10 @@ const Categories = () => {
 
   return (
 		<div style={{
-			margin: '0vh 0',
+			margin: '3vh 0',
 		}}>
-			<Link 
-				to={'/work'} 
+			<Link
+				to={'/work'}
 				activeClassName='category-active'
 				partiallyActive={true}
 				className='work'
@@ -19,15 +19,16 @@ const Categories = () => {
 				All
 			</Link>
 		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
-				<li 
+				<li
 					key={index}
 					style={{
 		      	margin: '5px 0px', // override li ul margins
+            padding: '0',
 		      	listStyle: 'none',
-					}}		
+					}}
 					>
-					<Link 
-						to={`/${category.slug}`} 
+					<Link
+						to={`/${category.slug}`}
 						activeClassName='category-active'
 						partiallyActive={true}
 						className={category.slug}

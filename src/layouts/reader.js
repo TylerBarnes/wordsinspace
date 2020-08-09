@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import LeftNav from '../components/leftNav'
@@ -13,15 +13,15 @@ import "../styles/reader.css"
 const Reader = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
 
-  const styleWrapper = 
+  const styleWrapper =
   {
     display: 'flex',
-    flexDirection: 'row nowrap', 
+    flexDirection: 'row nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
   }
-  
-  const styleTopBar = 
+
+  const styleTopBar =
   {
     display: 'flex',
     flexDirection: 'row',
@@ -34,15 +34,19 @@ const Reader = ({children}) => {
     <div className='gradient' style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <LeftNav />      
+      <LeftNav />
 
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar}>
           <div className='interface'>
-            <Link to={'/work/'}> 
-              <div             
+            <Link to={'/work/'}>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'row',
+                alignContent: 'center',
+              }}
                 onMouseEnter={e=>setGlyphHovered(true)}
                 onMouseLeave={e=>setGlyphHovered(false)}
                 >
@@ -54,7 +58,7 @@ const Reader = ({children}) => {
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-        
+
         <div style={{
           maxHeight: '92vh',
           overflow: 'auto',
