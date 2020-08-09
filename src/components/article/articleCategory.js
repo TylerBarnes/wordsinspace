@@ -7,7 +7,7 @@ const ArticleCategory = ({categories}) => {
 		<div
 	    className={`${category} reader`}
       style={{
-        margin: '0 50px',
+        margin: '0 5px', // changing this to 50px does somthing funny to Related
       }}>
 	    <Link to={`/${category}`}>{category}</Link>
 	  </div>
