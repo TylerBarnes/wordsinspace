@@ -63,8 +63,8 @@ export default function HomePage({menuItems}) {
             <Glyph />
           </Link>
 
-        </div>
-      <MobileFooter />
+        <MobileFooter />
+      </div>
     </Home >
   )
 }

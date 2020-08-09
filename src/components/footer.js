@@ -6,11 +6,11 @@ const Footer = () => {
     <div 
     	style={{
 	    	borderTop: '0.5px solid #513bfd',
-        marginTop: '5vh',
-	    	padding: '5vh 0'
+        margin: '5vh auto',
+	    	padding: '5vh 0',
 	    }} 
 	    className="metadata">
-     Copyright All Rights Reserved © 2020
+      Copyright All Rights Reserved © 2020
     </div>
   )
 }
