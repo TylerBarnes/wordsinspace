@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react"
 import {useLocation} from '@reach/router'
 import { gql, useQuery } from '@apollo/client'
 
-import {sortByDate, extractSearchResults} from '../utils/helpers'
+import {extractSearchResults} from '../utils/helpers'
 import SearchModal from "./search/searchModal"
 import SearchResults from "./search/searchResults"
 
@@ -77,8 +77,8 @@ const Search = () => {
     })
 
   useEffect(()=>{
-    if (showResults && !loading) {
-      setSearchResults(sortByDate(extractSearchResults(data)))
+    if (showResults && !loading) { 
+      setSearchResults(extractSearchResults(data))
     }
   },[data])
 

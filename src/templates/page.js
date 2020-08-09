@@ -10,14 +10,17 @@ import ArticleCategory from "../components/article/articleCategory"
 import ArticleTags from "../components/article/articleTags"
 import ArticleRelated from "../components/article/articleRelated"
 
-export default function pageTemplate({ data }) {
-    if (!data) return null
+import {getRelated} from "../utils/helpers"
 
-    const { title, date, content, related, categories, tags} = data.allWpPage.nodes[0]
-    const { posts, pages } = related;
-    const showRelated = posts?.length > 0 || pages?.length > 0
-    return (
-        <Reader>
+export default function pageTemplate({ data }) {
+  if (!data) return null
+
+  const { title, date, content, categories, tags} = data.allWpPage.nodes[0]
+  const related = getRelated(tags, title)
+  const showRelated = related.length > 0 
+
+  return (
+    <Reader>
       <div 
         style={{
           width: '100%'
@@ -47,7 +50,7 @@ export default function pageTemplate({ data }) {
             alignItems: 'flex-start',
           }}>
           {/* ==================== Related ========================  */}
-          {showRelated && <ArticleRelated posts={posts} pages={pages}/>}
+          {showRelated && <ArticleRelated related={related} />}
           
           {/* ==================== Related - placeholder =========== */}
           {!showRelated 
@@ -88,7 +91,7 @@ export default function pageTemplate({ data }) {
         <Footer />
       </div>
     </Reader>
-    )
+  )
 }
 
 export const query = graphql `
@@ -110,27 +113,41 @@ export const query = graphql `
           nodes {
             slug
             name
-          }
-        }
-        related {
-          pages {
-            ... on WpPage {
-              uri
-              title
-              categories {
-                nodes {
-                  name
+            posts {
+              nodes {
+                title
+                slug
+                date
+                nodeType
+                uri
+                categories {
+                  nodes {
+                    name
+                  }
+                }
+                tags {
+                  nodes {
+                    slug
+                  }
                 }
               }
             }
-          }
-          posts {
-            ... on WpPost {
-              uri
-              title
-              categories {
-                nodes {
-                  name
+            pages {
+              nodes {
+                title
+                slug
+                date
+                nodeType
+                uri
+                categories {
+                  nodes {
+                    name
+                  }
+                }
+                tags {
+                  nodes {
+                    slug
+                  }
                 }
               }
             }

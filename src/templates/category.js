@@ -5,7 +5,6 @@ import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
 import useBreakpoints from '../hooks/useBreakpoint'
 
-import {extractTags} from "../utils/helpers"
 import {sortByDate} from "../utils/helpers"
 import {getResponsiveVars} from "../utils/dom"
 
@@ -25,7 +24,6 @@ export default function CategoryTemplate({data}) {
   const [isTagMode, setTagMode] = useState(false)
 
   // initialize the tags to only those that belong to data of this category, see function definition below for more details
-  // const [tags, setTags] = useState(extractTags(initial))
   const [tags, setTags] = useState(useTags())
 
   // handles clicking on Tags by updating the 'checked' key-value for every tag
