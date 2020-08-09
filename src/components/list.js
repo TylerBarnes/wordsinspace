@@ -20,9 +20,9 @@ const List = ({loading, items, isTagMode}) => {
       {...ulScrollRestoration}
       style={{
         display: 'flex',
-        flexDirection: 'row wrap',
+        flexDirection: 'column',
         alignItems: 'flex-start',
-        justifyContent: 'stretch',
+        justifyContent: 'space-between',
         maxHeight: '92vh',
         overflow: 'auto',
         // width: '100%'
@@ -58,10 +58,12 @@ const List = ({loading, items, isTagMode}) => {
                 listTitleWidth={listTitleWidth}
                 />
             ))}
-            {!mobileList && <Footer />}
-            {mobileList && <MobileFooter />}
+
           </ul>
+
         }
+        {!mobileList && <Footer />}
+        {mobileList && <MobileFooter />}
     </div>
    )
 }

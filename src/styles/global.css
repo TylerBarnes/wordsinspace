@@ -95,7 +95,7 @@ input:hover {
 }
 
 .tag {
-  display: inline;
+  display: inline-block;
   border: 1px solid #6262F4;
   border-radius: 53px;
   padding: 4px 15px 4px 15px;
@@ -107,7 +107,7 @@ input:hover {
   text-align: center;
   text-transform: uppercase;
   color: #6262F4;
-  margin: 0 10px 0 0;
+  margin: 0 5px 0 0;
 }
 
 
@@ -123,7 +123,7 @@ input:hover {
   color: #fff;
   padding: 4px 10px 3px 10px;
   text-transform: uppercase;
-  margin-right: 10px;
+  margin-right: 5px;
   white-space: nowrap;
 }
 
