@@ -74,7 +74,7 @@ export default function pageTemplate({ data }) {
               alignItems: 'flex-start',
               justifyContent: 'space-evenly',
               margin: '0vh 5vh 0vh 5vh',
-              width: '70vw'
+              width: '65vw'
             }}>
               <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
               {/*<div

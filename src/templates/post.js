@@ -14,10 +14,10 @@ import {getRelated} from "../utils/helpers"
 
 export default function postTemplate({ data }) {
   if (!data) return null
-  
+
   const { title, date, content, categories, tags} = data.allWpPost.nodes[0]
   const related = getRelated(tags)
-  const showRelated = related.length > 0 
+  const showRelated = related.length > 0
 
   return (
     <Reader>
@@ -68,8 +68,8 @@ export default function postTemplate({ data }) {
               flexDirection: 'column',
               alignItems: 'flex-start',
               justifyContent: 'space-evenly',
-              margin: '5vh 0',
-              width: '70vw',
+              margin: '2vh 0',
+              width: '65vw',
             }}
           >
             <div
@@ -82,7 +82,7 @@ export default function postTemplate({ data }) {
                 width: '30vw',
                 alignSelf: 'flex-end'
               }}
-              dangerouslySetInnerHTML={{ __html: citations.citations }} 
+              dangerouslySetInnerHTML={{ __html: citations.citations }}
             />*/}
           </div>
         </div>
