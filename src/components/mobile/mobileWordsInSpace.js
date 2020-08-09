@@ -1,7 +1,7 @@
 import React from "react"
 import Title from '../title'
 
-const MobileLeftNav = () => {
+const MobileWordsInSpace = () => {
   return (
 		<div 
       style={{
@@ -15,5 +15,5 @@ const MobileLeftNav = () => {
   )
 }
 
-export default MobileLeftNav
+export default MobileWordsInSpace
 

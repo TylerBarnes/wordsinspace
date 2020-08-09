@@ -1,7 +1,7 @@
 import React from "react"
 import Title from './title'
 
-const LeftNav = () => {
+const WordsInSpace = () => {
   return (
 		<div 
       style={{
@@ -20,5 +20,5 @@ const LeftNav = () => {
   )
 }
 
-export default LeftNav
+export default WordsInSpace
 

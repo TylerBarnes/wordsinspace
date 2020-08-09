@@ -42,7 +42,6 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         listStyle: 'none',
           width: '75vw',
           height: 'auto',
-          // minHeight: '150px',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'row',
@@ -50,9 +49,6 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           borderStyle: 'dashed none none none',
           borderWidth: '1px',
           borderColor: invertedTheme ? '#fff' : '#513bfd',
-          // background: isVisible && !invertedTheme
-          //             ? 'linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%)'
-          //             : 'none',
       }}>
 
       <div

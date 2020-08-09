@@ -5,8 +5,8 @@ import PropTypes from "prop-types"
 import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveReaderVars} from "../utils/dom"
 
-import LeftNav from '../components/leftNav'
-import MobileLeftNav from '../components/mobile/mobileLeftNav'
+import WordsInSpace from '../components/wordsInSpace'
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 
 import GlyphLeft from '../images/assets/glyph_left.svg'
 import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
@@ -43,8 +43,8 @@ const Reader = ({children}) => {
     <div className='gradient' style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      {!mobileNavBar && <LeftNav />}
-      {mobileNavBar && <MobileLeftNav />}      
+      {!mobileNavBar && <WordsInSpace />}
+      {mobileNavBar && <MobileWordsInSpace />}      
 
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>

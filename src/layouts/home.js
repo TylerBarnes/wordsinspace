@@ -5,8 +5,8 @@ import PropTypes from "prop-types"
 import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveHomeVars} from "../utils/dom"
 
-import LeftNav from "../components/leftNav"
-import MobileLeftNav from '../components/mobile/mobileLeftNav'
+import WordsInSpace from '../components/wordsInSpace'
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 
 import "../styles/layout.css"
 import "../styles/global.css"
@@ -39,8 +39,8 @@ const Home = ({children}) => {
   return (
     <div style={styleWrapper}>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      {!mobileHome && <LeftNav />}
-      {mobileHome && <MobileLeftNav />}
+      {!mobileHome && <WordsInSpace />}
+      {mobileHome && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>

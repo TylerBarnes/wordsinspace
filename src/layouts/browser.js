@@ -5,8 +5,8 @@ import {useLocation} from '@reach/router'
 import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
-import LeftNav from '../components/leftNav'
-import MobileLeftNav from '../components/mobile/mobileLeftNav'
+import WordsInSpace from '../components/wordsInSpace'
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 import Search from '../components/search'
 
 import '../styles/layout.css'
@@ -41,8 +41,8 @@ const Browser = ({ children, props }) => {
   return (
     <div style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      {!mobileNavBar && <LeftNav />}
-      {mobileNavBar && <MobileLeftNav />}
+      {!mobileNavBar && <WordsInSpace />}
+      {mobileNavBar && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
