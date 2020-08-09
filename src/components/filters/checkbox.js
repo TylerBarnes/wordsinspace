@@ -7,7 +7,6 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange }) => {
       style={{
         margin: '5px 0',
       }}>
-      {isSelected ? <span className='tag-clear'> &times; </span> : null}
       <label 
         style={{
           // padding: '2px 15px 2px 25px',
