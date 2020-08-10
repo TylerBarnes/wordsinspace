@@ -5,8 +5,7 @@ const Footer = () => {
   return (
     <div 
     	style={{
-        margin: '5vh auto',
-	    	padding: '5vh 0',
+        margin: '10vh 0 4vh 0',
         width: '100%',
 	    }} 
 	    className="metadata">

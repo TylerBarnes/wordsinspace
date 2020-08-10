@@ -8,14 +8,14 @@ const MobileFooter = () => {
     <div 
     	style={{
 	    	borderTop: '0.5px solid #513bfd',
-        marginTop: '10px',
-        width: '80%',
-	    	padding: '5vh 0',
+        paddingTop: '10px',
+        margin: '10px auto',
         display: 'flex',
         flexFlow: 'row',
         flexWrap: 'nowrap',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        width: '80%'
 	    }}>
       
       <div 
@@ -25,25 +25,25 @@ const MobileFooter = () => {
           flexFlow: 'column',
           flexWrap: 'nowrap',
           alignItems: 'flex-start',
-          justifyContent: 'flex-start',
+          justifyContent: 'flex-end',
         }}>
-        <div className='metadata'> 
+        <div style={{margin: '6px 0'}} className='metadata'> 
           <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!">email me</a> 
         </div>
 
-        <div className='metadata'> 
+        <div style={{margin: '6px 0'}}  className='metadata'> 
           <a href="https://twitter.com/shannonmattern">twitter</a> 
         </div>      
 
-        <div className='metadata'> 
+        <div style={{margin: '6px 0'}}  className='metadata'> 
           <a href="https://pinboard.in/u:shannon_mattern">pinboard</a> 
         </div>
 
-        <div className='metadata'> 
+        <div style={{margin: '6px 0'}}  className='metadata'> 
           <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf">CV</a> 
         </div>      
 
-        <div className='metadata'> 
+        <div style={{margin: '6px 0'}}  className='metadata'> 
           <Link to={'/colophon'}>colophon</Link>
         </div>
       </div>
@@ -55,20 +55,21 @@ const MobileFooter = () => {
           display: 'flex',
           flexFlow: 'column',
           flexWrap: 'nowrap',
-          alignItems: 'center',
+          alignItems: 'flex-end',
           justifyContent: 'space-between',
         }}>
-        <Circle_mobile_footer />
+        
+        <Link to={'/about'}><Circle_mobile_footer /></Link>
         
         <div 
           className='metadata' 
           style={{
-            textAlign: 'center',
-            marginTop: '5px'
+            textAlign: 'right',
+            marginTop: '5px',
+            alignSelf: 'flex-end'
           }}>
           Copyright All Rights Reserved © 2020
         </div>
-
       </div>
     </div>
   )

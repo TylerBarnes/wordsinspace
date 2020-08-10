@@ -24,6 +24,7 @@ export default function HomePage({menuItems}) {
 
   const styleSVG = {
     alignSelf: 'center',
+    margin: '1vh 0'
   }
 
   const styleLink = {
@@ -40,7 +41,7 @@ export default function HomePage({menuItems}) {
   
   return (
     <Home>
-      <SEO title='home' />
+      <SEO title='Home' />
       <div 
         style={styleWrapper}>
           <div 
@@ -62,8 +63,6 @@ export default function HomePage({menuItems}) {
             <div className='home-title-mobile'>ABOUT</div>
             <Glyph />
           </Link>
-
-        <MobileFooter />
       </div>
     </Home >
   )
