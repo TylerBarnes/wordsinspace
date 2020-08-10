@@ -20,6 +20,7 @@ import Sticker_Words from '../images/assets/Sticker_Words.svg'
 import Sticker_Pinboard from '../images/assets/Sticker_Pinboard.svg'
 import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
 import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
+import Sticker_Colophon from '../images/assets/Sticker_Colophon.svg'
 
 export default function HomePage() {
   const breakpoint = useBreakpoints();
@@ -125,6 +126,7 @@ export default function HomePage() {
               <a href="https://twitter.com/shannonmattern"><Sticker_Twitter /></a>
               <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV /></a>
               <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /></a>
+              <Link to={'/colophon'}><Sticker_Colophon /></Link>
             </div>
           </div>
         </div>
