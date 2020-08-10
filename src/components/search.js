@@ -121,13 +121,13 @@ const Search = () => {
             alignItems: 'center',
           }}>
         <input
-          onMouseEnter={e=>setGlyphHovered(true)}
-          onMouseLeave={e=>setGlyphHovered(false)}
           style={{
+            cursor: 'text',
             width: '16vw',
             margin: '0',
             padding: '5px 0 0 5px',
-            border: 'none'
+            border: 'none',
+            background: 'rgba(255,255,255,0.6)'
           }} 
           ref={inputEl}
           type="text"
@@ -136,10 +136,14 @@ const Search = () => {
           onChange={e => onChange(e)}
           />
 
-         <div
+          <div
+            style={{
+              cursor: 'pointer'
+            }}
             onMouseEnter={e=>setGlyphHovered(true)}
             onMouseLeave={e=>setGlyphHovered(false)}
-          >
+            onClick={e=>handleSubmit(e)}
+            >
            {isGlyphHovered
              ? !showResults 
                ? <GlyphHover /> 
@@ -149,7 +153,6 @@ const Search = () => {
                : <GlyphOpen />
            }
          </div>
-
         </div>
       </form>
       <SearchModal
