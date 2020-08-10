@@ -9,7 +9,7 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange, clearIndividualT
       }}>
       {isSelected 
         ? <div 
-            onClick={clearIndividualTag}
+            onClick={e=>clearIndividualTag(e,label)}
             className='tag-clear'>  
             &times;
           </div> 

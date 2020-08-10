@@ -39,9 +39,8 @@ export default function Work({data}) {
     setTagMode(false)
   }
 
-  function handleClearIndividualTag(e) {
-    e.preventDefault()
-    console.log('clear')
+  function handleClearIndividualTag(e, label) {
+    setTags(tags.map(tag => tag.name === label ? {...tag, checked: false } : tag))
   }
 
   // watches tags array for updates and updates the Tag Mode in case no Tag is checked
