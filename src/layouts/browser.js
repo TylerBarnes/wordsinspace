@@ -6,8 +6,9 @@ import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
 import WordsInSpace from '../components/wordsInSpace'
-import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 import Search from '../components/search'
+
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 
 import '../styles/layout.css'
 import '../styles/global.css'
@@ -27,6 +28,7 @@ const Browser = ({ children, props }) => {
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
+    height: '100vh'
   }
 
   const styleTopBar = 
@@ -45,7 +47,10 @@ const Browser = ({ children, props }) => {
       {mobileNavBar && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div style={{width: '100%'}}>
+      <div 
+        style={{
+          width: '100%',
+        }}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
           <div  className='interface'>
@@ -66,7 +71,7 @@ const Browser = ({ children, props }) => {
             justifyContent: 'space-between',
           }}
           >
-          {children}
+            {children}
         </div>
       </div>
     </div>

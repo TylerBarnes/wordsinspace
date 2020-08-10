@@ -6,8 +6,6 @@ import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
 import ListItem from "./list/listItem"
-import Footer from './footer'
-import MobileFooter from './mobile/mobileFooter'
 
 const List = ({loading, items, isTagMode}) => {
   const breakpoint = useBreakpoints();
@@ -58,8 +56,6 @@ const List = ({loading, items, isTagMode}) => {
                 listTitleWidth={listTitleWidth}
                 /> 
             ))}
-            {!mobileList && <Footer />}
-            {mobileList && <MobileFooter />}
           </ul>
         }
     </div>

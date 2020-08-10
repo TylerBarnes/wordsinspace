@@ -36,8 +36,6 @@ export default function postTemplate({ data }) {
       {/* ==================== Content ====================  */}
       <ArticleContent content={content} tags={tags} title={title} />
 
-      {/* ==================== Footer ====================  */}
-      <ArticleFooter />
     </Reader>
   )
 }

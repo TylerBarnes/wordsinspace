@@ -35,9 +35,7 @@ export default function pageTemplate({ data }) {
       
       {/* ==================== Content ====================  */}
       <ArticleContent content={content} tags={tags} title={title} />
-      
-      {/* ==================== Footer ====================  */}
-      <ArticleFooter />
+     
     </Reader>
   )
 }

@@ -7,6 +7,7 @@ import {getResponsiveReaderVars} from "../utils/dom"
 
 import WordsInSpace from '../components/wordsInSpace'
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+import ArticleFooter from '../components/article/articleFooter'
 
 import GlyphLeft from '../images/assets/glyph_left.svg'
 import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
@@ -69,7 +70,8 @@ const Reader = ({children}) => {
             maxHeight: '92vh',
             overflow: 'auto',
           }}>
-         {children}
+            {children}
+            <ArticleFooter />
        </div>
       </div>
     </div>

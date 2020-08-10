@@ -4,7 +4,6 @@ import {Link} from "gatsby"
 import Home from '../layouts/home'
 import SEO from '../components/seo'
 import HomeItem from '../components/home/homeItem'
-import Footer from "../components/footer"
 import { navigate } from "gatsby"
 
 import MobileIndex from '../components/mobile/mobileIndex'
@@ -129,7 +128,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      <Footer />
     </Home >
   )
 }
