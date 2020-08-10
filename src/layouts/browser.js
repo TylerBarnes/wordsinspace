@@ -28,7 +28,7 @@ const Browser = ({ children, props }) => {
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    height: '100vh'
+    height: '100vh',
   }
 
   const styleTopBar = 
@@ -69,8 +69,7 @@ const Browser = ({ children, props }) => {
             display: 'flex',
             flexDirection: mobileBrowserLayout ? 'column' : 'row',
             justifyContent: 'space-between',
-          }}
-          >
+          }}>
             {children}
         </div>
       </div>

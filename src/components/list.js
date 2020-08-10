@@ -29,7 +29,6 @@ const List = ({loading, items, isTagMode}) => {
         maxHeight: '92vh',
         overflow: 'auto',
       }}>
-
         {/* ---------------- LOADING ---------------- */}
         {loading && 
           <ul>
@@ -47,7 +46,12 @@ const List = ({loading, items, isTagMode}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul id='list'>
+          <ul
+            style={{
+              borderBottom: '1px solid #6262F4',
+              marginBottom: '5vh'
+            }}
+            id='list'>
             <button 
               style={{
                 display: !mobileList ? 'block' : 'none',
@@ -94,7 +98,6 @@ const List = ({loading, items, isTagMode}) => {
     </div>
    )
 }
-
 
 List.propTypes = {
   items: PropTypes.array,
