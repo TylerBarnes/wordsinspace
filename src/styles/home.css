@@ -71,11 +71,11 @@ svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover
 	animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
-svg#sticker-words:hover, svg#sticker-CV:hover {
+svg#sticker-words:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
 	animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
-svg#sticker-email:hover, svg#sticker-pinboard:hover {
+svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
 	animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
