@@ -9,6 +9,7 @@ import ArticleContent from "../components/article/articleContent"
 import ArticleDate from "../components/article/articleDate"
 import ArticleCategory from "../components/article/articleCategory"
 import ArticleTags from "../components/article/articleTags"
+import ArticleFooter from '../components/article/articleFooter'
 
 export default function pageTemplate({ data }) {
 
@@ -36,7 +37,9 @@ export default function pageTemplate({ data }) {
       
       {/* ==================== Content ====================  */}
       <ArticleContent content={content} tags={tags} title={title} />
-     
+      
+      {/* ----------------------------FOOTER---------------------------- */}
+      <ArticleFooter />
     </Reader>
   )
 }

@@ -7,7 +7,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
   if (related.length === 0 || !showRelated) { 
     return <div style={{
               width: '250px',
-              alignSelf: mobileArticleContent ? 'center' : 'flex-end',
+              alignSelf: mobileArticleContent ? 'center' : 'flex-start',
               order: mobileArticleContent ? '2' : '1',
               marginRight: mobileArticleContent ? '0' : '2vw'
             }}>
@@ -30,7 +30,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
     <div 
       style={{
         width: '250px',
-        alignSelf: mobileArticleContent ? 'center' : 'flex-end',
+        alignSelf: mobileArticleContent ? 'center' : 'flex-start',
         order: mobileArticleContent ? '2' : '1',
         marginRight: mobileArticleContent ? '0' : '2vw'
       }}>
