@@ -50,6 +50,7 @@ const List = ({loading, items, isTagMode}) => {
           <ul id='list'>
             <button 
               style={{
+                display: !mobileList ? 'block' : 'none',
                 position: 'fixed',
                 margin: 0,
                 padding: 0,
