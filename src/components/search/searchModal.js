@@ -14,11 +14,12 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
         zIndex: '1040',
         width: '100vw',
         height: '100vh',
-        backgroundColor: '#000',
-        opacity: '0.5',
+        backgroundColor: '#fff',
+        opacity: '0.4',
       }}
       />
       <div 
+        onClick={hide}
         style={{
           position: 'fixed',
           top: '0',
