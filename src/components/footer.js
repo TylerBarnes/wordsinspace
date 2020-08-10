@@ -8,6 +8,7 @@ const Footer = () => {
 	    	borderTop: '0.5px solid #513bfd',
         margin: '5vh auto',
 	    	padding: '5vh 0',
+        width: '100%'
 	    }} 
 	    className="metadata">
       Copyright All Rights Reserved © 2020

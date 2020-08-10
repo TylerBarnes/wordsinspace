@@ -128,7 +128,6 @@ export default function HomePage() {
               <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /></a>
             </div>
           </div>
-
         </div>
       <Footer />
     </Home >
