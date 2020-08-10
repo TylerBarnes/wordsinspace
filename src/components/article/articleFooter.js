@@ -11,10 +11,10 @@ const ArticleFooter = () => {
   const {mobileArticleFooter} = getResponsiveReaderVars(breakpoint)
 
   return (
-    <>
-    {!mobileArticleFooter && <Footer />}
-    {mobileArticleFooter && <MobileFooter />}
-    </>
+    <div>
+	    {!mobileArticleFooter && <Footer />}
+	    {mobileArticleFooter && <MobileFooter />}
+    </div>
   )
 }
 

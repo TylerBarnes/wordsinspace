@@ -123,6 +123,7 @@ export default function HomePage() {
                 justifyContent: 'space-around'
               }}>
               <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email /></a>
+              <a href="https://twitter.com/shannonmattern"><Sticker_Twitter /></a>
               <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV /></a>
               <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /></a>
             </div>
