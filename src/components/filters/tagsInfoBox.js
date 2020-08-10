@@ -12,14 +12,14 @@ const TagsInfoBox = ({clearTags, isTagMode}) => {
 				background: 'transparent',
 				textAlign: 'left',
 				color: 'red',
-				display: isTagMode ? 'block' : 'none', 
+				opacity: isTagMode ? '1' : '0', 
         cursor: 'pointer',
         textDecoration: isHovered ? 'underline' : 'none'
     	}}
       onMouseEnter={e=>setIsHovered(true)}
       onMouseLeave={e=>setIsHovered(false)}
     	onClick={clearTags}>
-    	CLEAR
+    	CLEAR ALL
     </button>
   )
 }

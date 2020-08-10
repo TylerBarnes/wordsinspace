@@ -106,8 +106,10 @@
   font-family: sans-serif;
   font-size: 0.6rem;
   padding: 0;
-  margin-right: 2px;
-  display: inline-block;
+  margin: 0;
+  display: block;
+  position: absolute;
+  right: 275px;
   vertical-align: middle;
   cursor: pointer;
 }
