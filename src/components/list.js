@@ -1,4 +1,4 @@
-import React from "react"
+import React  from "react"
 import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby" 
 
@@ -13,6 +13,11 @@ const List = ({loading, items, isTagMode}) => {
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 
+  function handleScrollTop() {
+    if (typeof window === `undefined`) return null
+    document.getElementById('list').scrollIntoView()
+  }
+
   return (
     <div className="no-scroll"
       {...ulScrollRestoration}
@@ -23,8 +28,6 @@ const List = ({loading, items, isTagMode}) => {
         justifyContent: 'stretch',
         maxHeight: '92vh',
         overflow: 'auto',
-        // width: '100%'
-
       }}>
 
         {/* ---------------- LOADING ---------------- */}
@@ -44,7 +47,35 @@ const List = ({loading, items, isTagMode}) => {
         
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul>
+          <ul id='list'>
+            <button 
+              style={{
+                position: 'fixed',
+                margin: 0,
+                padding: 0,
+                left: '78vw',
+                top: '10vh',
+                outline: 'none',
+                border: 'none',
+                fontSize: '1rem',
+                fontWeight: '900',
+                color: '#6262F4',
+                background: 'transparent',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                zIndex: '2'
+              }} 
+              onClick={handleScrollTop}>
+              &#x2191;
+              <div 
+                className='metadata'
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                }}>scroll up
+              </div>
+            </button>
+            
             {items && items.map((item, index) => (
               <ListItem 
                 key={index}
