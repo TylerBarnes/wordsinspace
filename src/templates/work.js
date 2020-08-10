@@ -59,7 +59,7 @@ export default function Work({data}) {
                           : [] 
   return (
     <Browser>
-      <SEO title="work" />
+      <SEO title="Work" />
       {showMobileFilters && 
         <MobileFilters />
       }

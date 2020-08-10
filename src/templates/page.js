@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import SEO from "../components/seo"
 import Reader from "../layouts/reader"
 
 import ArticleTitle from "../components/article/articleTitle"
@@ -15,6 +16,7 @@ export default function pageTemplate({ data }) {
 
   return (
     <Reader>
+      <SEO title={title} />
       {/* ==================== Date, Categories, Tags ====================  */}
       <div 
         style={{

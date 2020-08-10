@@ -43,7 +43,7 @@ export default function HomePage() {
   
   return (
     <Home>
-      <SEO title='home' />
+      <SEO title='Home' />
       <div 
         style={{
           display: 'flex',

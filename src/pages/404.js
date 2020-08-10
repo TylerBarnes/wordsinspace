@@ -6,14 +6,14 @@ import Home from "../layouts/home"
 
 const NotFoundPage = () => (
   <Home>
-    <SEO title="404: Not found" />
+    <SEO title="Not found" />
     <div 
 	    style={{
 				margin: '10vh 0'
 	    }}>
-    	<h3>NOT FOUND</h3>
-	    <p style={{margin: '2vh 0'}}>Sorry, Shannon has not thought of this yet.</p>
-	    <Link to={'/'}>back</Link>
+    	<div className='home-title'>NOT FOUND</div>
+	    <p className='interface'>Sorry, Shannon has not thought of this yet.</p>
+	    <p className='interface'><Link to={'/'}>Go back</Link></p>
 	    </div>
   </Home>
 )

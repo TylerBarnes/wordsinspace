@@ -13,7 +13,7 @@ export default function Colophon() {
 
   return (
     <Reader>
-      <SEO title="colophon" />
+      <SEO title="Colophon" />
 
       {/* ==================== Title ====================  */}
       <ArticleTitle title={'Colophon'}/>
