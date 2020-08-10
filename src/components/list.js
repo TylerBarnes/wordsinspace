@@ -54,7 +54,7 @@ const List = ({loading, items, isTagMode}) => {
                 position: 'fixed',
                 margin: 0,
                 padding: 0,
-                left: '78vw',
+                left: '78.2vw',
                 top: '10vh',
                 outline: 'none',
                 border: 'none',
@@ -67,13 +67,14 @@ const List = ({loading, items, isTagMode}) => {
                 zIndex: '2'
               }} 
               onClick={handleScrollTop}>
-              &#x2191;
               <div 
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
                   transform: 'rotate(180deg)',
-                }}>scroll up
+                }}>
+                scroll to top
+                &#x2192;
               </div>
             </button>
             
