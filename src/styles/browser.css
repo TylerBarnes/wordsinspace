@@ -25,7 +25,6 @@
   padding: 0;
 }
 
-
 /*****/
 /*****/
 /*****LIST ITEM BACKGROUND COLOR*/
@@ -84,9 +83,6 @@
   color: #fff;
 }
 
-.list-item {
-
-}
 
 /*****/
 /*****/
@@ -109,6 +105,14 @@
   color: red;
   font-family: sans-serif;
   font-size: 0.6rem;
+  padding: 0;
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.tag-clear:hover {
+  font-weight: 900;
 }
 
 label.tag:hover {

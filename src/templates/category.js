@@ -38,6 +38,11 @@ export default function CategoryTemplate({data}) {
     setTags(tags.map(tag=> ({...tag, checked: false})))
     setTagMode(false)
   }
+
+  function handleIndividualTag(e) {
+    e.preventDefault()
+    console.log('clear')
+  }
   
 
   // watches tags array for updates and updates the Tag Mode in case no Tag is checked
@@ -63,7 +68,7 @@ export default function CategoryTemplate({data}) {
       }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       {showDesktopFilters && 
-        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode} clearIndividualTag={handleIndividualTag} />
       }
     </Browser>
   )

@@ -35,6 +35,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
 
   return (
     <li
+      key={item.id}
       className={(categoryClass + "Item" + ' list-item')}
       onMouseEnter={e=>handleMouseEnter(e, item)}
       onMouseLeave={handleMouseLeave}

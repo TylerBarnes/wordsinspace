@@ -3,7 +3,7 @@ import React, {useState} from "react"
 import Checkbox from './checkbox'
 import TagsInfoBox from './tagsInfoBox'
 
-const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
+const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 	
@@ -38,6 +38,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
+		      clearIndividualTag={clearIndividualTag}
 		    />
      	))}
 

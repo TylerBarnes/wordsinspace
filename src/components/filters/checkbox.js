@@ -1,17 +1,24 @@
 import React from "react";
 
-const Checkbox = ({ count, label, isSelected, onCheckboxChange }) => {
-  if (count < 2 ) return null
+const Checkbox = ({ count, label, isSelected, onCheckboxChange, clearIndividualTag}) => {
+  if (count < 2 ) return null // hiding the tags with only one item
   return (
     <div 
       style={{
         margin: '5px 0',
       }}>
-      {isSelected ? <span className='tag-clear'> &times; </span> : null}
+      {isSelected 
+        ? <div 
+            onClick={clearIndividualTag}
+            className='tag-clear'>  
+            &times;
+          </div> 
+        : null
+      }
       <label 
         style={{
-          // padding: '2px 15px 2px 25px',
           paddingLeft: '20px',
+          margin: 0,
           textAlign: 'left',
         }} 
         className={isSelected ? 'tag tag-active' : 'tag'}
@@ -27,6 +34,7 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange }) => {
         />
         {label} [{count}]
       </label>
+      
     </div>
   )
 };

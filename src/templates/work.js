@@ -39,6 +39,11 @@ export default function Work({data}) {
     setTagMode(false)
   }
 
+  function handleClearIndividualTag(e) {
+    e.preventDefault()
+    console.log('clear')
+  }
+
   // watches tags array for updates and updates the Tag Mode in case no Tag is checked
   useEffect(()=> {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
@@ -61,7 +66,7 @@ export default function Work({data}) {
       }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       {showDesktopFilters && 
-        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
+        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode} clearIndividualTag={handleClearIndividualTag}/>
       }
     </Browser>
 	)
