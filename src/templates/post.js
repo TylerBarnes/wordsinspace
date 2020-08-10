@@ -8,7 +8,6 @@ import ArticleContent from "../components/article/articleContent"
 import ArticleDate from '../components/article/articleDate'
 import ArticleCategory from '../components/article/articleCategory'
 import ArticleTags from '../components/article/articleTags'
-import ArticleFooter from '../components/article/articleFooter'
 
 export default function postTemplate({ data }) {
 
