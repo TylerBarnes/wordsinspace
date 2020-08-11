@@ -63,7 +63,9 @@ export default function HomePage({menuItems}) {
             <div className='home-title-mobile'>ABOUT</div>
             <Glyph />
           </Link>
+
       </div>
+      <MobileFooter />
     </Home >
   )
 }
