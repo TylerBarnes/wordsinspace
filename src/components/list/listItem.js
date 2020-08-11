@@ -41,7 +41,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-          width: '75vw',
+          width: listWidth,
           height: 'auto',
           overflow: 'hidden',
           display: 'flex',
@@ -68,7 +68,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            marginLeft: '40px',
+            marginLeft: mobileList ? '0' :'40px',
           }}>
           {date && <ListDate date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
@@ -79,8 +79,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: '30px 0 40px 0',
-            paddingLeft: '20px',
+            margin: mobileList ? '5px 0' : '30px 0 40px 0',
+            paddingLeft: mobileList ? '0' : '20px',
           }}>
           <Link
             to={item.uri}

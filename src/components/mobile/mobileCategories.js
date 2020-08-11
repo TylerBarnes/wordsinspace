@@ -4,36 +4,43 @@ import {useCategories} from "../../hooks/useCategories"
 
 const MobileCategories = () => {
   const categories = useCategories()
+  const listStyle = {
+  	margin: '5px',
+  	listStyle: 'none',
+  	alignSelf: 'center'
+	}
 
   return (
 		<div 
 			style={{
         display: 'flex',
         flexDirection: 'column nowrap',
-        justifyContent: 'space-around',
-				margin: '2vh 0',
+        justifyContent: 'flex-start',
+				height: '40px', 
+				padding: '5px 10px 5px 5px'
 			}}>
-			<Link 
-				to={'/work'} 
-				activeClassName='category-active'
-				partiallyActive={true}
-				className='work'
-				>
-				All
-			</Link>
-		  {categories.sort((a,b) => a.name < b.name).filter(cat=>cat.name !== 'Uncategorized').map((category,index) => (
+			<li
+				style={listStyle}>
+				<Link 
+					style={listStyle}		
+					to={'/work'} 
+					activeClassName='category-active'
+					partiallyActive={true}
+					className='work mobile'
+					>
+					All
+				</Link>
+			</li>
+		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
 				<li 
 					key={index}
-					style={{
-		      	margin: '15px',
-		      	listStyle: 'none',
-					}}		
-				>
+					style={listStyle}		
+					>
 					<Link 
 						to={`/${category.slug}`} 
 						activeClassName='category-active'
 						partiallyActive={true}
-						className={category.slug}
+						className={`${category.slug} mobile`}
 						>
 		      	{category.name}
 		      </Link>

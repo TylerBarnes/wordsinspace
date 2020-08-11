@@ -83,7 +83,6 @@
   color: #fff;
 }
 
-
 /*****/
 /*****/
 /*****TAGS*/
@@ -217,3 +216,21 @@ input[type=checkbox] {
 .category-active > .rd  {
   background-color: #513bfd;
 }
+
+/*****/
+/*****/
+/*****STYLES FOR MOBILE VERSION OF CATEGORIES*/
+/*****/
+/*****/
+
+.mobile {
+  font-size: 10px;
+  line-height: 13px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  height: 17px;
+  padding: 0 3px;
+  margin: 0 3px;
+}
+
+
