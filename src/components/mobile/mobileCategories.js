@@ -17,7 +17,7 @@ const MobileCategories = () => {
         flexDirection: 'column nowrap',
         justifyContent: 'flex-start',
 				height: '40px', 
-				padding: '5px 10px 5px 5px'
+				padding: '5px'
 			}}>
 			<li
 				style={listStyle}>

@@ -36,6 +36,12 @@ const Home = ({children}) => {
     height: '60px',
   }
 
+  const childrenWrapper =
+  {
+    height: '90vh',
+    overflow: 'auto',
+  }
+
   return (
     <div style={styleWrapper}>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
@@ -53,10 +59,7 @@ const Home = ({children}) => {
 
         {/* ----------------------------MAIN---------------------------- */}
         <div 
-          style={{
-            height: '100vh',
-            overflow: 'auto',
-          }}>
+          style={childrenWrapper}>
           {children}
         </div>
       </div>

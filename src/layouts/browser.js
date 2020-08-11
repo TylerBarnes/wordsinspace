@@ -9,6 +9,7 @@ import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
 
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+import MobileFilters from '../components/mobile/mobileFilters'
 
 import '../styles/layout.css'
 import '../styles/global.css'
@@ -38,6 +39,15 @@ const Browser = ({ children, props }) => {
     textTransform: 'uppercase',
     height: '60px',
   }
+
+  const childrenWrapper =
+  {
+    display: 'flex',
+    flexDirection: mobileBrowserLayout ? 'column' : 'row',
+    justifyContent: 'space-between',
+    height: '90vh',
+    overflow: 'auto',
+  }
   
   return (
     <div style={styleWrapper} >
@@ -52,25 +62,22 @@ const Browser = ({ children, props }) => {
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
-          <div  className='interface'>
-            {catName!== 'work' && 
-              <div>
-                Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()}>{catName}</span>
-              </div>
-            }
+          <div className='interface'>
+            Browsing: 
+            <span 
+              style={{
+                marginLeft: '5px'
+              }}
+              className={catName.toLowerCase()}>
+              {catName === 'work' ? `All` : `${catName}`}
+            </span>
           </div>
           {showSearch && <Search />}
         </div>
-
+        {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}
         <div
-          style={{
-            display: 'flex',
-            flexDirection: mobileBrowserLayout ? 'column' : 'row',
-            justifyContent: 'space-between',
-            height: '100vh',
-            overflow: 'auto',
-          }}>
+          style={childrenWrapper}>
             {children}
         </div>
       </div>

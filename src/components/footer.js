@@ -1,13 +1,12 @@
 import React from "react"
 
+import {footerStyles} from "../utils/dom"
+
 const Footer = () => {
   
   return (
     <div 
-    	style={{
-        margin: '10vh 0 4vh 0',
-        width: '100%',
-	    }} 
+    	style={footerStyles} 
 	    className="metadata">
       Copyright All Rights Reserved © 2020
     </div>

@@ -39,6 +39,12 @@ const Reader = ({children}) => {
     height: '60px',
   }
 
+  const childrenWrapper =
+  {
+    height: '90vh',
+    overflow: 'auto',
+  }
+
   return (
     <div className='gradient' style={styleWrapper}>
 
@@ -65,10 +71,7 @@ const Reader = ({children}) => {
 
         {/* ----------------------------Main---------------------------- */}
         <div 
-          style={{
-            height: '100vh',
-            overflow: 'auto',
-          }}>
+          style={childrenWrapper}>
             {children}
        </div>
 
