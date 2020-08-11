@@ -6,9 +6,9 @@ import MobileTags from '../mobile/mobileTags'
 
 const ArticleTags = ({tags}) => {
   const breakpoint = useBreakpoints()
-  const {mobileArticleTags} = getResponsiveReaderVars(breakpoint)
+  const {mobileArticleTags, mobileReaderWidth} = getResponsiveReaderVars(breakpoint)
 
-  if (mobileArticleTags) return <MobileTags tags={tags} />
+  if (mobileArticleTags) return <MobileTags tags={tags} mobileReaderWidth={mobileReaderWidth} />
   
   return (
 		<div

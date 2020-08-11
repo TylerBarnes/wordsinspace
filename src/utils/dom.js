@@ -5,6 +5,7 @@
 export const getResponsiveHomeVars = (breakpoint) => { 
   return {
     mobileHome:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
+    mobileFooterWidth: '93vw'
   }
 }
 
@@ -37,5 +38,9 @@ export const getResponsiveReaderVars = (breakpoint) => {
     mobileArticleContent:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
     mobileArticleTitle:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
     mobileArticleFooter:  breakpoint !== 'lg', // this goes into article/ArticleFooter.js
+    mobileTaxonomy : breakpoint !== 'lg', // this goes into article/ArticleTaxonomy.js
+    mobileReaderWidth : '93vw', 
+    mobileTaxonomyMargins: breakpoint !== 'lg' ? '5px 15px': '',
+    mobileFooterWidth: '93vw'
   }
 }

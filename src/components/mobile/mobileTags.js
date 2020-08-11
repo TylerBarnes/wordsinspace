@@ -1,21 +1,20 @@
 import React from "react"
 import {Link} from "gatsby" 
 
-const MobileTags = ({tags}) => {
+const MobileTags = ({tags, mobileReaderWidth}) => {
 
   return (
 		<div
       style={{
-        alignSelf: 'flex-end',
-        border: '1px solid',
-        display: 'flex',
-        flexDirection: 'row nowrap',
-        overflowX: 'scroll', 
+        alignSelf: 'flex-start',
+        display: 'inline-block',
+        width: mobileReaderWidth, 
+        margin: '0 auto'
       }}> 
       {tags.nodes.map((tag, index_tag) => 
         <span 
           style={{
-            marginRight: '10px'
+            margin: '5px 5px 5px 0'
           }}
           className='tag'
           key={index_tag}>

@@ -20,16 +20,16 @@ export default function HomePage({menuItems}) {
     flexFlow: 'column',
     flexWrap: 'nowrap',
     alignItems: 'center',
+    height: '60vh'
   }
 
   const styleSVG = {
     alignSelf: 'center',
-    margin: '1vh 0'
+    margin: '0'
   }
 
   const styleLink = {
-    margin: '0 30px',
-    width: '80%',
+    width: '90vw',
     height: '60px',
     display: 'flex',
     flexFlow: 'row',

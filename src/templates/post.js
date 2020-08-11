@@ -6,9 +6,7 @@ import Reader from '../layouts/reader'
 
 import ArticleTitle from '../components/article/articleTitle'
 import ArticleContent from "../components/article/articleContent"
-import ArticleDate from '../components/article/articleDate'
-import ArticleCategory from '../components/article/articleCategory'
-import ArticleTags from '../components/article/articleTags'
+import ArticleTaxonomy from "../components/article/articleTaxonomy"
 import ArticleFooter from '../components/article/articleFooter'
 
 export default function postTemplate({ data }) {
@@ -19,19 +17,7 @@ export default function postTemplate({ data }) {
     <Reader>
       <SEO title={title} />
       {/* ==================== Date, Categories, Tags ====================  */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row wrap',
-          justifyContent: 'flex-start',
-          alignItems: 'flex-start',
-          marginTop: '5px',
-        }}
-        >
-        {date && <ArticleDate date={date} />}
-        {categories && <ArticleCategory categories={categories} />}
-        {tags && <ArticleTags tags={tags} />}
-      </div>
+      <ArticleTaxonomy date={date} tags={tags} categories={categories} />
 
       {/* ==================== Title ====================  */}
       <ArticleTitle title={title} />

@@ -10,12 +10,12 @@ const ArticleDate = ({date}) => {
   const year = date.slice(0,4)
   
   const breakpoint = useBreakpoints()
-  const {mobileArticleCategory} = getResponsiveReaderVars(breakpoint)
+  const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoint)
 
   return (
 		<div 
 			style={{
-				margin: mobileArticleCategory ? '0 15px': '',
+				margin: mobileTaxonomyMargins,
 				alignSelf: 'flex-start',
 			}}
 			className='date'>

@@ -28,7 +28,6 @@ const Browser = ({ children, props }) => {
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    height: mobileNavBar ? 'auto' : '100vh',
   }
 
   const styleTopBar = 
@@ -37,7 +36,7 @@ const Browser = ({ children, props }) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: mobileNavBar ? '40px' : '60px',
+    height: '60px',
   }
   
   return (
@@ -69,6 +68,8 @@ const Browser = ({ children, props }) => {
             display: 'flex',
             flexDirection: mobileBrowserLayout ? 'column' : 'row',
             justifyContent: 'space-between',
+            height: '100vh',
+            overflow: 'auto',
           }}>
             {children}
         </div>

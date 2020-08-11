@@ -33,7 +33,7 @@ const Home = ({children}) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: mobileHome ? 'auto' : '60px',
+    height: '60px',
   }
 
   return (
@@ -54,9 +54,8 @@ const Home = ({children}) => {
         {/* ----------------------------MAIN---------------------------- */}
         <div 
           style={{
-            maxHeight: '92vh',
+            height: '100vh',
             overflow: 'auto',
-            width: '100%'
           }}>
           {children}
         </div>

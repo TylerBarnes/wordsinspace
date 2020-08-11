@@ -20,11 +20,11 @@ const MobileWordsInSpace = () => {
 		  }}>
 
       <div 
-	        style={{
-	        	marginTop: '10px',
-	        	alignSelf: 'center'
-	        }}>
-		      <Link to={'/'}><Circle_wordsinspace /></Link>
+        style={{
+        	marginTop: '10px',
+        	alignSelf: 'center'
+        }}>
+	      <Link to={'/'}><Circle_wordsinspace /></Link>
 	      </div>
         
       <Link

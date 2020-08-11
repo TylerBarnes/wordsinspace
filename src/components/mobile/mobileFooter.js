@@ -1,22 +1,28 @@
 import React from "react"
 import {Link} from "gatsby" 
 
+import useBreakpoints from '../../hooks/useBreakpoint';
+import {getResponsiveHomeVars} from "../../utils/dom"
+
 import Circle_mobile_footer from '../../images/assets/circle_mobile_footer.svg'
 
 const MobileFooter = () => {
+
+  const breakpoint = useBreakpoints()
+  const {mobileFooterWidth} = getResponsiveHomeVars(breakpoint)
+
   return (
     <div 
     	style={{
 	    	borderTop: '0.5px solid #513bfd',
-        paddingTop: '10px',
-        paddingBottom: '10px',
+        padding: '10px 0',
         margin: '10px auto',
         display: 'flex',
         flexFlow: 'row',
         flexWrap: 'nowrap',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        width: '80%'
+        width: mobileFooterWidth,
 	    }}>
       
       <div 
