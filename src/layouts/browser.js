@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 
 import {useLocation} from '@reach/router'
 import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveBrowserVars} from "../utils/dom"
 
-import LeftNav from '../components/leftNav'
-import MobileLeftNav from '../components/mobile/mobileLeftNav'
+import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
-import {getResponsiveVars} from "../utils/dom"
+
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 
 import '../styles/layout.css'
 import '../styles/global.css'
@@ -18,7 +19,7 @@ const Browser = ({ children, props }) => {
   const catName = location.pathname.replace('/', '').replace('/', '')
 
   const breakpoint = useBreakpoints();
-  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveVars(breakpoint)
+  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoint)
 
   const styleWrapper =
   {
@@ -26,8 +27,8 @@ const Browser = ({ children, props }) => {
     flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    height: '100vh',
+    justifyContent: 'space-around',
+    height: '100vh'
   }
 
   const styleTopBar =
@@ -42,12 +43,14 @@ const Browser = ({ children, props }) => {
   return (
     <div style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <div className='left-gradient'>
-        {!mobileNavBar && <LeftNav />}
-        {mobileNavBar && <MobileLeftNav />}
-      </div>
+      {!mobileNavBar && <WordsInSpace />}
+      {mobileNavBar && <MobileWordsInSpace />}
+
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div style={{width: '100%'}}>
+      <div 
+        style={{
+          width: '100%',
+        }}>
         {/* ----------------------------TOP---------------------------- */}
         <div className='gradient'>
           <div style={styleTopBar} >
@@ -71,7 +74,7 @@ const Browser = ({ children, props }) => {
             justifyContent: 'space-between',
           }}
           >
-          {children}
+            {children}
         </div>
       </div>
     </div>

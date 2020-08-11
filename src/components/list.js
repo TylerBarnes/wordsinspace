@@ -1,19 +1,24 @@
-import React from "react"
+import React  from "react"
 import PropTypes from "prop-types"
 import {useScrollRestoration} from "gatsby"
+import Footer from "./footer"
+import MobileFooter from "./mobile/mobileFooter"
 
 import useBreakpoints from '../hooks/useBreakpoint';
-import {getResponsiveVars} from "../utils/dom"
+import {getResponsiveBrowserVars} from "../utils/dom"
 
 import ListItem from "./list/listItem"
-import Footer from './footer'
-import MobileFooter from './mobile/mobileFooter'
 
 const List = ({loading, items, isTagMode}) => {
   const breakpoint = useBreakpoints();
-  const {mobileList, listWidth, listTitleWidth} = getResponsiveVars(breakpoint)
+  const {mobileList, listWidth, listTitleWidth} = getResponsiveBrowserVars(breakpoint)
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
+
+  function handleScrollTop() {
+    if (typeof window === `undefined`) return null
+    document.getElementById('list').scrollIntoView()
+  }
 
   return (
     <div className="no-scroll"
@@ -25,8 +30,6 @@ const List = ({loading, items, isTagMode}) => {
         justifyContent: 'space-between',
         maxHeight: '92vh',
         overflow: 'auto',
-        // width: '100%'
-
       }}>
 
         {/* ---------------- LOADING ---------------- */}
@@ -46,7 +49,36 @@ const List = ({loading, items, isTagMode}) => {
 
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul>
+          <ul id='list'>
+            <button 
+              style={{
+                display: !mobileList ? 'block' : 'none',
+                position: 'fixed',
+                margin: 0,
+                padding: 0,
+                left: '78vw',
+                top: '10vh',
+                outline: 'none',
+                border: 'none',
+                fontSize: '1rem',
+                fontWeight: '900',
+                color: '#6262F4',
+                background: 'transparent',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                zIndex: '2'
+              }} 
+              onClick={handleScrollTop}>
+              &#x2191;
+              <div 
+                className='metadata'
+                style={{
+                  writingMode: 'vertical-rl',
+                  transform: 'rotate(180deg)',
+                }}>scroll up
+              </div>
+            </button>
+            
             {items && items.map((item, index) => (
               <ListItem
                 key={index}
@@ -58,7 +90,6 @@ const List = ({loading, items, isTagMode}) => {
                 listTitleWidth={listTitleWidth}
                 />
             ))}
-
           </ul>
 
         }

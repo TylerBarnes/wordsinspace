@@ -26,6 +26,15 @@
 	margin: 15px 0px 5px 10px;
 }
 
+.home-title-mobile {
+	font-family: Bespoke;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	color: #6262F4;
+}
+
 .right {
 	text-align: center;
 	align-self: stretch;

@@ -2,13 +2,23 @@ import React, {useState} from "react"
 import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
-import LeftNav from "../components/leftNav"
+import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveHomeVars} from "../utils/dom"
+
+import WordsInSpace from '../components/wordsInSpace'
+import Footer from '../components/footer'
+
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+import MobileFooter from '../components/mobile/mobileFooter'
 
 import "../styles/layout.css"
 import "../styles/global.css"
 import "../styles/home.css"
 
 const Home = ({children}) => {
+  
+  const breakpoint = useBreakpoints();
+  const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const styleWrapper =
   {
@@ -21,7 +31,7 @@ const Home = ({children}) => {
 
   const styleTopBar =
   {
-    display: 'flex',
+    display: mobileHome ? 'none' : 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
@@ -30,10 +40,10 @@ const Home = ({children}) => {
 
   return (
     <div style={styleWrapper}>
-      <div className='left-gradient'>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-        <LeftNav />
-      </div>
+      {!mobileHome && <WordsInSpace />}
+      {mobileHome && <MobileWordsInSpace />}
+
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
@@ -46,12 +56,15 @@ const Home = ({children}) => {
         </div>
 
         {/* ----------------------------MAIN---------------------------- */}
-        <div style={{
-          maxHeight: '92vh',
-          overflow: 'auto',
-          width: '100%'
-        }}>
+        <div 
+          style={{
+            maxHeight: '92vh',
+            overflow: 'auto',
+            width: '100%'
+          }}>
           {children}
+          {!mobileHome && <Footer />}
+          {mobileHome && <MobileFooter />}
         </div>
       </div>
     </div>

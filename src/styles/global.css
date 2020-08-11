@@ -64,20 +64,6 @@ input:hover {
 /* */
 /* Shared styles */
 /* */
-
-
-.gradient {
-  /* background: linear-gradient(0deg, rgba(245,245,255,1) 0%, rgba(245,245,255,1) 30%, rgba(255,255,255,1) 100%)   ; */
-  box-shadow: -20px 50px 20px -35px #fff inset;
-}
-
-.left-gradient {
-  /* background: linear-gradient(270deg, rgba(245,245,255,1) 0%, rgba(245,245,255,1) 30%, rgba(255,255,255,1) 100%)   ; */
-  /* box-shadow: 60px 50px 20px -35px #fff inset; */
-  -webkit-appearance: none;
-  -webkit-box-shadow: 65px 75px 10px -60px #fff inset;
-}
-
 .interface {
   color: #513bfd;
   text-decoration: none;

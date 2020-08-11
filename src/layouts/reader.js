@@ -2,7 +2,13 @@ import React, {useState} from "react"
 import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
-import LeftNav from '../components/leftNav'
+import useBreakpoints from '../hooks/useBreakpoint';
+import {getResponsiveReaderVars} from "../utils/dom"
+
+import WordsInSpace from '../components/wordsInSpace'
+import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+import ArticleFooter from '../components/article/articleFooter'
+
 import GlyphLeft from '../images/assets/glyph_left.svg'
 import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
 
@@ -13,29 +19,33 @@ import "../styles/reader.css"
 const Reader = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
 
-  const styleWrapper =
+  const breakpoint = useBreakpoints()
+  const {mobileNavBar} = getResponsiveReaderVars(breakpoint)
+
+  const styleWrapper = 
   {
     display: 'flex',
-    flexDirection: 'row nowrap',
+    flexDirection: mobileNavBar ? 'column' : 'row', 
+    flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    height: '100vh',
-}
+  }
 
-  const styleTopBar =
+  const styleTopBar = 
   {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: '60px',
+    height: mobileNavBar ? 'auto' : '60px',
   }
 
   return (
     <div className='gradient' style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
-      <LeftNav />
+      {!mobileNavBar && <WordsInSpace />}
+      {mobileNavBar && <MobileWordsInSpace />}      
 
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
@@ -59,12 +69,13 @@ const Reader = ({children}) => {
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-
-        <div style={{
-          maxHeight: '92vh',
-          overflow: 'auto',
-        }}>
-         {children}
+        <div 
+          style={{
+            maxHeight: '92vh',
+            overflow: 'auto',
+          }}>
+            {children}
+            <ArticleFooter />
        </div>
       </div>
     </div>

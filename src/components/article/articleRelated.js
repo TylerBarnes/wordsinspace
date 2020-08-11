@@ -2,9 +2,17 @@ import React from "react"
 import {Link} from "gatsby"
 import ArticleCategory from "./articleCategory"
 
-const ArticleRelated = ({related}) => {
+const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
   
-  if (related.length === 0 ) return null
+  if (related.length === 0 || !showRelated) { 
+    return <div style={{
+              width: '250px',
+              alignSelf: mobileArticleContent ? 'center' : 'flex-end',
+              order: mobileArticleContent ? '2' : '1',
+              marginRight: mobileArticleContent ? '0' : '2vw'
+            }}>
+          </div>
+  }
 
   const styles = {
     margin: '1vh 0',
@@ -15,16 +23,16 @@ const ArticleRelated = ({related}) => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   } 
 
   return (
     <div 
       style={{
         width: '250px',
-        alignSelf: 'flex-start',
-        marginTop: '70vh',
-        marginRight: '2vw'
+        alignSelf: mobileArticleContent ? 'center' : 'flex-end',
+        order: mobileArticleContent ? '2' : '1',
+        marginRight: mobileArticleContent ? '0' : '2vw'
       }}>
       <div 
         className='metadata'

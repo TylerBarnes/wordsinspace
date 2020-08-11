@@ -121,27 +121,31 @@ const Search = () => {
             justifyContent: 'flex-end',
             width: 'inherit',
           }}>
+        <input
+          style={{
+            cursor: 'text',
+            width: '16vw',
+            margin: '0',
+            padding: '5px 0 0 5px',
+            border: 'none',
+            background: 'rgba(255,255,255,0.6)'
+          }} 
+          ref={inputEl}
+          type="text"
+          placeholder="SEARCH"
+          className='interface'
+          onChange={e => onChange(e)}
+          />
 
           <div
-             onMouseEnter={e=>setGlyphHovered(true)}
-             onMouseLeave={e=>setGlyphHovered(false)}
-           >
-
-            <input
-              onMouseEnter={e=>setGlyphHovered(true)}
-              onMouseLeave={e=>setGlyphHovered(false)}
-              style={{
-                padding: '5px 0 0 5px',
-                width: '18vw',
-              }}
-              ref={inputEl}
-              type="text"
-              placeholder="SEARCH"
-              className='interface'
-              onChange={e => onChange(e)}
-              />
-
-            </div>
+            style={{
+              cursor: 'pointer'
+            }}
+            onMouseEnter={e=>setGlyphHovered(true)}
+            onMouseLeave={e=>setGlyphHovered(false)}
+            onClick={e=>handleSubmit(e)}
+            >
+         </div>
         </div>
       </form>
       <SearchModal
