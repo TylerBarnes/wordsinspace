@@ -32,6 +32,7 @@ export const getResponsiveBrowserVars = (breakpoint) => {
 export const getResponsiveReaderVars = (breakpoint) => { 
   return {
     mobileNavBar : breakpoint !== 'lg', // this goes into the layouts/reader.js
+    mobileArticleCategory:  breakpoint !== 'lg', // this goes into article/ArticleCategory.js
     mobileArticleTags:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
     mobileArticleContent:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
     mobileArticleTitle:  breakpoint !== 'lg', // this goes into article/ArticleContent.js

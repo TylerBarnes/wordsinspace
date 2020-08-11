@@ -32,11 +32,11 @@ const Reader = ({children}) => {
 
   const styleTopBar = 
   {
-    display: 'flex',
+    display: mobileNavBar ? 'none' : 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: mobileNavBar ? 'auto' : '60px',
+    height: '60px',
   }
 
   return (

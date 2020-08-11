@@ -3,12 +3,10 @@ import {Link} from "gatsby"
 
 const ArticleCategory = ({categories}) => {
   const category = categories?.nodes[0]?.name.toLowerCase()
+  
   return (
 		<div 
-	    className={`${category} reader`}
-      style={{
-        margin: '0 10px',
-      }}> 
+	    className={`${category} reader`}> 
 	    <Link to={`/${category}`}>{category}</Link>
 	  </div>
   )

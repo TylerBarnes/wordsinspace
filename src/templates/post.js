@@ -22,9 +22,10 @@ export default function postTemplate({ data }) {
       <div
         style={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'row wrap',
           justifyContent: 'flex-start',
           alignItems: 'flex-start',
+          marginTop: '5px',
         }}
         >
         {date && <ArticleDate date={date} />}

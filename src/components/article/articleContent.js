@@ -36,8 +36,9 @@ const ArticleContent = ({tags, title, content}) => {
           alignItems: 'flex-start',
           justifyContent: 'space-evenly',
           order: mobileArticleContent ? '1' : '2',
-          margin: '0vh 5vh 0vh 5vh',
-          width: '70vw'
+          margin: mobileArticleContent ? '0' : '0vh 5vh 0vh 5vh',
+          padding: mobileArticleContent ? '5px 15px' : '0',
+          width: mobileArticleContent ? '93vw' : '70vw'
         }}> 
           <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
       </div>

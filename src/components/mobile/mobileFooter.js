@@ -9,6 +9,7 @@ const MobileFooter = () => {
     	style={{
 	    	borderTop: '0.5px solid #513bfd',
         paddingTop: '10px',
+        paddingBottom: '10px',
         margin: '10px auto',
         display: 'flex',
         flexFlow: 'row',
