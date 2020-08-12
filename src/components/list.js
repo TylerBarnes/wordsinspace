@@ -28,7 +28,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: '92vh',
+        maxHeight: 'calc(100vh - 60px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}

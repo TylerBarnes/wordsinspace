@@ -7,9 +7,9 @@ const Categories = () => {
 
   return (
 		<div style={{
-			margin: '1vh 0 0 0',
-      padding: '1vh 0 0 0',
-      overflow: 'auto',
+      flex: '1 1 fill',
+			margin: '0vh 0 0 0',
+      padding: '0vh 0 0 0',
       height: '38vh',
 		}}>
 			<Link
