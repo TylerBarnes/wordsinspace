@@ -11,6 +11,7 @@ const Footer = () => {
       display: 'flex',
       flexFlow: 'row',
       justifyContent: 'space-between',
+      width: '100%',
     }}>
       <div
       	style={footerStyles}
