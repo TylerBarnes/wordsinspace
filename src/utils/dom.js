@@ -1,26 +1,26 @@
-// 
+//
 // GLOBALS
-// 
+//
 const global_mobile_width = '93vw'
 
-// 
+//
 // HOME
-// 
+//
 // A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Home
-export const getResponsiveHomeVars = (breakpoint) => { 
+export const getResponsiveHomeVars = (breakpoint) => {
   return {
     mobileHome:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
     mobileFooterWidth: '93vw',
-    mobileColophon:  breakpoint !== 'lg', // this goes into colophon.js, 
-    mobileColophonWidth: global_mobile_width, // this goes into colophon.js, 
+    mobileColophon:  breakpoint !== 'lg', // this goes into colophon.js,
+    mobileColophonWidth: global_mobile_width, // this goes into colophon.js,
   }
 }
 
-// 
+//
 // BROWSER
-// 
+//
 // A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Browser
-export const getResponsiveBrowserVars = (breakpoint) => { 
+export const getResponsiveBrowserVars = (breakpoint) => {
   return {
     showDesktopFilters: breakpoint === 'lg', // this goes into the templates/category.js and templates/work.js
     showMobileFilters: breakpoint !== 'lg', // this goes into the templates/category.js and templates/work.js
@@ -33,11 +33,11 @@ export const getResponsiveBrowserVars = (breakpoint) => {
   }
 }
 
-// 
+//
 // READER
-// 
+//
 // A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Reader
-export const getResponsiveReaderVars = (breakpoint) => { 
+export const getResponsiveReaderVars = (breakpoint) => {
   return {
     mobileNavBar : breakpoint !== 'lg', // this goes into the layouts/reader.js
     mobileArticleCategory:  breakpoint !== 'lg', // this goes into article/ArticleCategory.js
@@ -49,17 +49,17 @@ export const getResponsiveReaderVars = (breakpoint) => {
     mobileArticleTitle:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
     mobileArticleFooter:  breakpoint !== 'lg', // this goes into article/ArticleFooter.js
     mobileTaxonomy : breakpoint !== 'lg', // this goes into article/ArticleTaxonomy.js
-    mobileReaderWidth : global_mobile_width, 
+    mobileReaderWidth : global_mobile_width,
     mobileTaxonomyMargins: breakpoint !== 'lg' ? '5px 15px': '',
     mobileFooterWidth: global_mobile_width
   }
 }
 
 
-// 
+//
 // SHARED ACROSS THE FOOTER FILES
-// 
-export const mobileFooterStyles = 
+//
+export const mobileFooterStyles =
 {
     borderTop: '0.5px solid #513bfd',
     width: '93vw',
@@ -72,9 +72,8 @@ export const mobileFooterStyles =
     justifyContent: 'space-between',
 }
 
-export const footerStyles = 
+export const footerStyles =
 {
-  margin: '10vh 0 4vh 0',
+  margin: '10vh 0 1vh 0',
   width: '100%',
 }
-
