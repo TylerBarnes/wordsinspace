@@ -70,7 +70,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            marginLeft: mobileList ? '0' :'40px',
+            margin: mobileList ? '10px 0 0 0' :'1vh 0 0 2vh',
           }}>
           {date && <ListDate date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
@@ -81,7 +81,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: mobileList ? '5px 0' : '30px 0 40px 0',
+            margin: mobileList ? '15px 0' : '2vh 0 4vh 0',
             paddingLeft: mobileList ? '0' : '20px',
           }}>
           <Link
