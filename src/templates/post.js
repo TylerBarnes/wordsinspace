@@ -21,7 +21,7 @@ export default function postTemplate({ data }) {
 
       {/* ==================== Title ====================  */}
       <ArticleTitle title={title} />
-      
+
       {/* ==================== Content ====================  */}
       <ArticleContent content={content} tags={tags} title={title} />
 

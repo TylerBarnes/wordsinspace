@@ -8,8 +8,8 @@ const Categories = () => {
   return (
 		<div style={{
       flex: '1 1 fill',
-			margin: '0vh 0 0 0',
-      padding: '0vh 0 0 0',
+			margin: '0',
+      padding: '5px 0 0 0',
       height: '38vh',
 		}}>
 			<Link
