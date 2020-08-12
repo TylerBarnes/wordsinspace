@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import useBreakpoints from '../hooks/useBreakpoint';
@@ -17,17 +17,16 @@ const Home = ({children}) => {
   const breakpoint = useBreakpoints();
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
-  const styleWrapper = 
+  const styleWrapper =
   {
     display: 'flex',
-    flexDirection: mobileHome ? 'column' : 'row nowrap', 
+    flexDirection: 'row nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    background: '#F5F5FF',
-    boxShadow: '30px 30px 50px #fff inset'
-  }
+    height: '100vh',
+}
 
-  const styleTopBar = 
+  const styleTopBar =
   {
     display: mobileHome ? 'none' : 'flex',
     flexDirection: 'row',
@@ -51,9 +50,11 @@ const Home = ({children}) => {
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
-        <div style={styleTopBar}>
-          <div className='interface'>
-            HOME
+        <div className='gradient'>
+          <div style={styleTopBar}>
+            <div className='interface'>
+              HOME
+            </div>
           </div>
         </div>
 

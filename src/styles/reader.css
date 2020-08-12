@@ -36,18 +36,18 @@
 /*****Styling new layout as slideshow***/
 
 .wp-block-gallery {
-  height: 60vh;
+  height: auto;
+  width: inherit;
 }
 
 .blocks-gallery-grid {
   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  /* scrollbar-width: none;  /* Firefox */ 
 }
 
 .blocks-gallery-grid::-webkit-scrollbar {
   display: none;
 }
-
 
 .blocks-gallery-grid {
   height: 100%;
@@ -55,11 +55,21 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  padding: 4vh;
-  background:
+  padding: 0;
+  /* background:
     linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
     linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
-    linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+    linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%); */
+}
+
+.blocks-gallery-grid:hover {
+  background-image: url('/assets/Sticker_Words.svg');
+  background-position: right center;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-clip: border-box;
+  background-attachment: auto;
 }
 
 .wp-block-gallery ul, .wp-block-gallery li{
@@ -67,22 +77,39 @@
   margin: 0;
 }
 
+.blocks-gallery-item {
+  width: inherit;
+}
 
 .blocks-gallery-grid figure {
   height: 100%;
   width: inherit;
 }
 
-.blocks-gallery-grid figure > *  {
-  height: inherit;
+.blocks-gallery-grid  {
   width: inherit;
 }
 
+li.blocks-gallery-item:last-child {
+  background:
+    linear-gradient(90deg, rgba(245, 245, 255, 0), rgba(245, 245, 255, 0) 50%, rgba(245, 245, 255, 0.8) 50%, rgba(245, 245, 255, 1) 60%, rgba(245, 245, 255, 1) 100%);
+}
+
+.blocks-gallery-item > figure > div  {
+  width: inherit !important;
+  /* where max image height is set */
+  height: 60vh !important;
+}
+
 .blocks-gallery-grid img  {
-  padding: 0px 50px;
+  padding: 0px 4vw;
   object-fit: contain !important;
 }
 
+.blocks-gallery-grid figure picture {
+  width: inherit;
+  height: inherit;
+}
 
 /*****Styling old layout as slideshow***/
 
@@ -196,6 +223,7 @@
   line-height: 20px;
   color: #6262F4 !important;
   width: inherit;
+  /* padding: 0 5vw 0 0; */
 }
 
 .content img {
@@ -256,7 +284,7 @@ figcaption {
   font-size: 8px;
   line-height: 13px;
   font-family: 'Bespoke', sans-serif;
-  margin-left: 15px;
+  margin: 10px 0 4vh 1px;
 }
 
 /*****/

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 
 import Home from '../layouts/home'
 import SEO from '../components/seo'
@@ -32,7 +32,7 @@ export default function HomePage() {
   const menuData = useSiteMenuData();
   
   if (!menuData)  {navigate('/work')}
-  
+
   const menuItems = menuData[0]?.menuItems?.nodes
 
   if (mobileHome) return <MobileIndex menuItems={menuItems} />
@@ -40,11 +40,11 @@ export default function HomePage() {
   const styleSVG = {
     width:'50%',
     display: 'flex',
-    flexFlow: 'column', 
+    flexFlow: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
   }
-  
+
   return (
     <Home>
       <SEO title='Home' />

@@ -21,7 +21,7 @@ body {
   cursor: default;
   overflow: hidden;
   font-family: 'Wremena_Light', sans-serif;
-  background-color: #F5F5FF
+  background-color: #F5F5FF;
 }
 
 *::-moz-focus-inner {
@@ -70,7 +70,7 @@ input:hover {
   text-transform: uppercase;
   font-size: 16px;
   font-family: 'Bespoke', sans-serif;
-  margin: 15px 0 0 15px;
+  margin: 15px 0 15px 15px;
 }
 
 .metadata {
@@ -81,9 +81,10 @@ input:hover {
 }
 
 .tag {
+  display: inline-block;
   border: 1px solid #6262F4;
   border-radius: 53px;
-  padding: 5px 15px 3px 15px;
+  padding: 4px 15px 4px 15px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
@@ -92,8 +93,7 @@ input:hover {
   text-align: center;
   text-transform: uppercase;
   color: #6262F4;
-  margin: 0 10px 0 0;
-  display: inline-block;
+  margin: 0 5px 0 0;
 }
 
 
@@ -107,10 +107,19 @@ input:hover {
   font-size: 10px;
   line-height: 13px;
   color: #fff;
-  padding: 5px 20px 2px 20px;
+  padding: 4px 10px 3px 10px;
   text-transform: uppercase;
-  margin-right: 10px;
+  margin-right: 5px;
   white-space: nowrap;
+}
+
+@-moz-document url-prefix() {
+  .date, .work, .blog, .teaching, .publications, .projects , .presentations , .talks, .research {
+      padding: 5px 10px 2px 10px;
+    }
+  .tag {
+    padding: 5px 15px 3px 15px;
+  }
 }
 
 .date {
@@ -147,7 +156,7 @@ input:hover {
 .presentations {
   background-color: #E9B7BA;
   border: 1px solid #E9B7BA;
-} 
+}
 
 .talks {
   background-color: #ccc;
@@ -158,4 +167,3 @@ input:hover {
   background-color: #ccc;
   border: 1px solid #ccc;
 }
-

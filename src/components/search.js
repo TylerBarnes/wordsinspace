@@ -6,7 +6,7 @@ import {extractSearchResults} from '../utils/helpers'
 import SearchModal from "./search/searchModal"
 import SearchResults from "./search/searchResults"
 
-import Glyph from '../images/assets/glyph.svg'
+import Glyph from '../images/assets/glyph_filled.svg'
 import GlyphHover from '../images/assets/glyph_hover.svg'
 import GlyphOpen from '../images/assets/glyph_open.svg'
 
@@ -70,7 +70,7 @@ const Search = () => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
   const [isGlyphHovered, setGlyphHovered] = useState(false)
-  
+
   const {loading, error, data} = useQuery(SEARCH_QUERY, {
       variables: { searchTerm: searchTerm, first: 150, catName: catName},
       skip: !showResults
@@ -101,24 +101,25 @@ const Search = () => {
   }
 
   return (
-    <div 
+    <div
       style={{
-        marginRight: '2vw',
-        marginTop: '15px',
-      }}>
-      <form 
+        marginTop: '0',
+        width: '20vw',
+            }}>
+      <form
         style={{
           margin: '0',
-          padding: '0'
-        }} 
+          padding: '0 1vw',
+          width: '100%',
+        }}
         onSubmit={e => handleSubmit(e)}>
 
-        <div 
+        <div
           style={{
             display: 'flex',
-            flexDirection: 'row',
-            justifyItems: 'stretch',
-            alignItems: 'center',
+            flexFlow: 'row',
+            justifyContent: 'flex-end',
+            width: 'inherit',
           }}>
         <input
           style={{
@@ -144,14 +145,6 @@ const Search = () => {
             onMouseLeave={e=>setGlyphHovered(false)}
             onClick={e=>handleSubmit(e)}
             >
-           {isGlyphHovered
-             ? !showResults 
-               ? <GlyphHover /> 
-               : null
-             : !showResults 
-               ? <Glyph />
-               : <GlyphOpen />
-           }
          </div>
         </div>
       </form>

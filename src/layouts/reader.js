@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
 import useBreakpoints from '../hooks/useBreakpoint';
@@ -57,8 +57,12 @@ const Reader = ({children}) => {
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar}>
           <div className='interface'>
-            <Link to={'/work/'}> 
-              <div             
+            <Link to={'/work/'}>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'row',
+                alignContent: 'center',
+              }}
                 onMouseEnter={e=>setGlyphHovered(true)}
                 onMouseLeave={e=>setGlyphHovered(false)}
                 >

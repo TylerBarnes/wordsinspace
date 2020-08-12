@@ -11,16 +11,17 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
   const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
 
   return (
-   <div 
+   <div
 	   	style={{
-		    textAlign: 'left',
+  	    marginTop: '0px',
+	    	textAlign: 'left',
 				overflowY: 'scroll',
 				overflowX: 'hidden',
-				maxHeight: '65vh',
-				paddingBottom: '4vh'
+				height: '52vh',
+				paddingBottom: '0vh'
 	    }}>
      	<TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>
-      
+
       {topTags && topTags.map((tag, index) => (
 				<Checkbox
 		      key={index}
@@ -30,7 +31,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 		      onCheckboxChange={selectTags}
 		      clearIndividualTag={clearIndividualTag}
 		    />
-     	))}    
+     	))}
 
      	{showExtra && extraTags.map((tag, index) => (
 				<Checkbox
@@ -43,7 +44,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 		    />
      	))}
 
-     	<button 
+     	<button
 				className='metadata'
 	    	style={{
 					margin: '0',
@@ -64,4 +65,4 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
   )
 }
 
-export default Tags 
+export default Tags

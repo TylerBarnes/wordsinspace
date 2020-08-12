@@ -18,20 +18,20 @@ import '../styles/browser.css'
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
-  
+
   const breakpoint = useBreakpoints();
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoint)
 
-  const styleWrapper = 
+  const styleWrapper =
   {
     display: 'flex',
-    flexDirection: mobileNavBar ? 'column' : 'row', 
+    flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
   }
 
-  const styleTopBar = 
+  const styleTopBar =
   {
     display: 'flex',
     flexDirection: 'row',
@@ -48,7 +48,7 @@ const Browser = ({ children, props }) => {
     height: '90vh',
     overflow: 'auto',
   }
-  
+
   return (
     <div style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
@@ -72,7 +72,6 @@ const Browser = ({ children, props }) => {
               {catName === 'work' ? `All` : `${catName}`}
             </span>
           </div>
-          {showSearch && <Search />}
         </div>
         {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}

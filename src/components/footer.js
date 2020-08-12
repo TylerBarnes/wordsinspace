@@ -3,7 +3,7 @@ import React from "react"
 import {footerStyles} from "../utils/dom"
 
 const Footer = () => {
-  
+
   return (
     <div 
     	style={footerStyles} 

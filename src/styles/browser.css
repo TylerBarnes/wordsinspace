@@ -4,6 +4,52 @@
 /*****/
 /*****/
 
+/*****/
+/*****/
+/***** FILTER BAR LABELS*/
+/*****/
+/*****/
+
+
+.filterBar .date,.filterBar .work,.filterBar .blog,.filterBar .teaching,.filterBar .publications,.filterBar .projects,.filterBar .presentations,.filterBar .talks,.filterBar .research {
+  font-family: Bespoke;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 0 10px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+@-moz-document url-prefix() {
+  .filterBar .date,.filterBar .work,.filterBar .blog,.filterBar .teaching,.filterBar .publications,.filterBar .projects,.filterBar .presentations,.filterBar .talks,.filterBar .research {
+        padding: 5px 10px 2px 10px;
+    }
+}
+
+.filterBar > div > div {
+  overflow: auto;
+}
+
+.filterBar .tag {
+  border: 1px solid #6262F4;
+  border-radius: 53px;
+  padding: 5px 15px 3px 15px;
+  margin: 0;
+  font-family: Bespoke;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+}
 
 /*****/
 /*****/
@@ -20,7 +66,12 @@
   display: none;
 }
 
-.no-scroll ul, .no-scroll li {
+.no-scroll ul {
+  margin: -1px 0 0 0;
+  padding: 0;
+}
+
+.no-scroll li {
   margin: 0;
   padding: 0;
 }
@@ -132,53 +183,12 @@ label.tag:hover {
 /*****/
 /*****/
 
-.work.category-active {
+.category-active {
   border: 1px solid #513bfd;
   color: #513bfd;
-  background-color: #fff;
+  background-color: #F5F5FF;
 }
 
-.blog.category-active {
-  border: 1px solid #a2d2dd;
-  color: #a2d2dd;
-  background-color: #fff;
-}
-
-.teaching.category-active {
-  border: 1px solid #6F9AAD;
-  color: #6F9AAD;
-  background-color: #fff;
-}
-
-.publications.category-active {
-  border: 1px solid #E79180;
-  color: #E79180;
-  background-color: #fff;
-}
-
-.projects.category-active {
-  border: 1px solid #F4D791;
-  color: #F4D791;
-  background-color: #fff;
-}
-
-.presentations.category-active {
-  border: 1px solid #E9B7BA;
-  color: #E9B7BA;
-  background-color: #fff;
-}
-
-.talks.category-active {
-  border: 1px solid #ccc;
-  color: #ccc;
-  background-color: #fff;
-}
-
-.research.category-active {
-  border: 1px solid #ccc;
-  color: #ccc;
-  background-color: #fff;
-}
 
 /*****/
 /*****/

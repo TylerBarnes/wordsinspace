@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 import {useCategories} from "../../hooks/useCategories"
 
 const Categories = () => {
@@ -7,10 +7,13 @@ const Categories = () => {
 
   return (
 		<div style={{
-			margin: '2vh 0',
+			margin: '1vh 0 0 0',
+      padding: '1vh 0 0 0',
+      overflow: 'auto',
+      height: '38vh',
 		}}>
-			<Link 
-				to={'/work'} 
+			<Link
+				to={'/work'}
 				activeClassName='category-active'
 				partiallyActive={true}
 				className='work'
@@ -19,15 +22,15 @@ const Categories = () => {
 				All
 			</Link>
 		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
-				<li 
+				<li
 					key={index}
 					style={{
-		      	margin: '0px 0',
+		      	margin: '5px 0px', // override li ul margins
 		      	listStyle: 'none',
-					}}		
+					}}
 					>
-					<Link 
-						to={`/${category.slug}`} 
+					<Link
+						to={`/${category.slug}`}
 						activeClassName='category-active'
 						partiallyActive={true}
 						className={category.slug}
@@ -41,4 +44,4 @@ const Categories = () => {
    )
 }
 
-export default Categories 
+export default Categories

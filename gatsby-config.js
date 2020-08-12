@@ -9,8 +9,8 @@ module.exports = {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url: process.env.NODE_ENV === `development`
-            ? `http://localhost:8888/test/graphql`
-            : `https://importiv.wordsinspace.net/graphql`,
+            ? `http://localhost:8888/shannon11/graphql`
+            : `https://importii.wordsinspace.net/graphql`,
         schema: {
           perPage: 50,
         },
@@ -37,7 +37,7 @@ module.exports = {
             onlyReportCriticalErrors: false,
           },
         },
-        type: {        
+        type: {
           Comment: {
             limit: 0
           },
@@ -50,12 +50,12 @@ module.exports = {
             limit: process.env.NODE_ENV === `development`
                    ? null
                    : null
-          },          
+          },
           Page: {
             limit: process.env.NODE_ENV === `development`
                    ? null
                    : null
-          },          
+          },
           MediaItem: {
             limit: process.env.NODE_ENV === `development`
                    ? null
@@ -82,7 +82,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`, 
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-remove-serviceworker`,
       options: {

@@ -1,6 +1,8 @@
 import React  from "react"
 import PropTypes from "prop-types"
-import {useScrollRestoration} from "gatsby" 
+import {useScrollRestoration} from "gatsby"
+import Footer from "./footer"
+import MobileFooter from "./mobile/mobileFooter"
 
 import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveBrowserVars} from "../utils/dom"
@@ -23,27 +25,27 @@ const List = ({loading, items, isTagMode}) => {
       {...ulScrollRestoration}
       style={{
         display: 'flex',
-        flexDirection: 'row wrap', 
+        flexDirection: 'column',
         alignItems: 'flex-start',
-        justifyContent: 'stretch',
+        justifyContent: 'space-between',
         maxHeight: '92vh',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}
-        {loading && 
+        {loading &&
           <ul>
-            <div 
+            <div
             style={{
               width: listWidth,
               height: 'auto',
               minHeight: '150px',
-            }} 
+            }}
             className='interface'>
               FILTERING TAGS...
             </div>
           </ul>
         }
-        
+
         {/* ---------------- LIST ---------------- */}
         {!loading &&
           <ul
@@ -83,18 +85,21 @@ const List = ({loading, items, isTagMode}) => {
             </button>
             
             {items && items.map((item, index) => (
-              <ListItem 
+              <ListItem
                 key={index}
-                item={item} 
+                item={item}
                 mobileList={mobileList}
                 isTagMode={isTagMode}
                 invertedTheme={false}
                 listWidth={listWidth}
                 listTitleWidth={listTitleWidth}
-                /> 
+                />
             ))}
           </ul>
+
         }
+        {!mobileList && <Footer />}
+        {mobileList && <MobileFooter />}
     </div>
    )
 }
