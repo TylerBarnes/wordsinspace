@@ -9,7 +9,7 @@
   font-size: 60px;
   line-height: 61px;
   color: #513bfd;
-  padding: 5vh 0 5vh 0;
+  padding: 1vh 0 5vh 0;
 }
 
 
@@ -42,7 +42,7 @@
 
 .blocks-gallery-grid {
   -ms-overflow-style: none;  /* IE and Edge */
-  /* scrollbar-width: none;  /* Firefox */ 
+  /* scrollbar-width: none;  /* Firefox */
 }
 
 .blocks-gallery-grid::-webkit-scrollbar {

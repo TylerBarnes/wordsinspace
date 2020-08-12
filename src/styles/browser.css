@@ -114,7 +114,6 @@
   background: linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%);
 }
 
-
 /*****/
 /*****/
 /*****LIST TITLE*/
@@ -242,5 +241,3 @@ input[type=checkbox] {
   padding: 0 3px;
   margin: 0 3px;
 }
-
-

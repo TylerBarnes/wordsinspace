@@ -12,7 +12,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
   const categoryClass = item?.categories?.nodes[0]?.name.toLowerCase()
   const tags = item?.tags
   const date = item?.date
-  const slug = item?.slug 
+  const slug = item?.slug
 
   const [thumbnail, setThumbnail] = useState('')
   const [isVisible, setIsVisible] = useState(false);

@@ -84,12 +84,12 @@ input:hover {
   display: inline-block;
   border: 1px solid #6262F4;
   border-radius: 53px;
-  padding: 4px 15px 4px 15px;
+  padding: 5px 15px 4px 15px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
-  line-height: 13px;
+  line-height: 11px;
   text-align: center;
   text-transform: uppercase;
   color: #6262F4;
@@ -97,8 +97,8 @@ input:hover {
 }
 
 
-/*.tag::-moz-focus-inner { border: 0; padding: 0; margin:0; }
-*/
+/* .tag:-moz-focus-inner { border: 1px red solid; padding: px 15px 4px 15px; margin:0; } */
+
 
 .date, .work, .blog, .teaching, .publications, .projects , .presentations , .talks, .research {
   font-family: Bespoke;
