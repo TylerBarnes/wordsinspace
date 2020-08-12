@@ -10,45 +10,47 @@ const HomeItem = ({item, index}) => {
   const title = connectedNode?.node.title
   const category = connectedNode?.node.categories?.nodes[0]?.name
   const isThree = index%3 === 0
+  const isAligned = (index%3 !== 0) && (index%2 !== 0)
 
   return (
-    <div className={isThree ? 'right' : 'left'}
+    <div className={isThree ? 'right' : 'left' }
       style={{
         borderTop: '1px dashed #513bfd',
         margin: '0',
         paddingBottom: '2vh',
       }}>
 
+      <div className={isAligned ? 'imageL' : 'imageR'}>
 
-      {/*================ Latest, Category labels and Title ================*/}
+        {/*================ Latest, Category labels and Title ================*/}
 
-      <div className={'home-entry'}>
+        <div className={'home-entry'}>
 
-        <div
-          style={{
-            display: 'flex',
-            flexFlow: 'row wrap',
-            marginTop: '5px',
-          }}>
+          <div
+            style={{
+              display: 'flex',
+              flexFlow: 'row wrap',
+              margin: '5px 0 0 10px',
+            }}>
 
-          {/*================ Latest ================*/}
-          {connectedNode && <div className='latest'>LATEST</div>}
+            {/*================ Latest ================*/}
+            {connectedNode && <div className='latest'>LATEST</div>}
 
-          {/*================ Category ================*/}
-          {connectedNode && <HomeCategory category={category}/>}
+            {/*================ Category ================*/}
+            {connectedNode && <HomeCategory category={category}/>}
+
+          </div>
+
+          {/*================ Title ================*/}
+          <div className={'home-title'}>
+            <Link to={item.url}>{item.label}</Link>
+          </div>
 
         </div>
 
-        {/*================ Title ================*/}
-        <div className={'home-title'}>
-          <Link to={item.url}>{item.label}</Link>
-        </div>
-
+          {/*================ Thumbnail ================*/}
+          {connectedNode && <HomeImage title={title} thumbnail={thumbnail} />}
       </div>
-
-        {/*================ Thumbnail ================*/}
-        {connectedNode && <HomeImage title={title} thumbnail={thumbnail} />}
-
     </div>
   )
 }

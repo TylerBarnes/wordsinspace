@@ -1,5 +1,6 @@
 import React from "react"
 import {Link} from "gatsby"
+import Colophon from '../images/assets/colophon.svg'
 
 import {footerStyles} from "../utils/dom"
 
@@ -21,7 +22,7 @@ const Footer = () => {
         width: '100%',
         textAlign: 'right',
       }}>
-        <Link to={'/colophon'} className="metadata">*</Link>
+	      <Link to={'/colophon'} className="metadata"><Colophon /></Link>
       </div>
     </div>
 
