@@ -98,8 +98,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       <div
         style={{
           position: 'absolute',
-          bottom: '0px',
-          right: '20vw',
+          bottom: '2vh',
+          right: '21vw',
           width: '27vw',
           margin: 0,
           padding: 0,

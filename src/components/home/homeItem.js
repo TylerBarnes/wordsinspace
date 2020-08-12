@@ -27,8 +27,8 @@ const HomeItem = ({item, index}) => {
         <div
           style={{
             display: 'flex',
-            flexFlow: 'row',
-            flexWrap: 'wrap',
+            flexFlow: 'row wrap',
+            marginTop: '5px',
           }}>
 
           {/*================ Latest ================*/}

@@ -30,7 +30,7 @@ export default function HomePage() {
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const menuData = useSiteMenuData();
-  
+
   if (!menuData)  {navigate('/work')}
 
   const menuItems = menuData[0]?.menuItems?.nodes
@@ -48,7 +48,7 @@ export default function HomePage() {
   return (
     <Home>
       <SEO title='Home' />
-      <div 
+      <div
         style={{
           display: 'flex',
           flexFlow: 'row',
@@ -57,15 +57,15 @@ export default function HomePage() {
           alignItems: 'stretch',
           alignContent: 'stretch',
         }}>
-        <div 
+        <div
           style={{
-            width: '50%', 
+            width: '50%',
           }}>
           <HomeItem item={menuItems[0]} index={1} />
           <HomeItem item={menuItems[1]} index={2} />
         </div>
 
-        <div 
+        <div
           style={styleSVG}>
           <Link to={'/work/'}><Sticker_Browse /></Link>
         </div>
@@ -81,15 +81,15 @@ export default function HomePage() {
           }}>
           <HomeItem item={menuItems[2]} index={3} />
         </div>
-        
-        <div 
+
+        <div
           style={{
             width:'50%',
           }}>
           <HomeItem item={menuItems[3]} index={4} />
           <HomeItem item={menuItems[4]} index={5} />
         </div>
-        
+
         <div
           style={styleSVG}>
           <Link to={'/student-resources/'}><Sticker_Student /></Link>
@@ -99,7 +99,7 @@ export default function HomePage() {
           style={styleSVG}>
           <Link to={'/upcoming-events/'}><Sticker_Upcoming /></Link>
         </div>
-        
+
         <div
           style={{
             width:'50%',
@@ -107,7 +107,7 @@ export default function HomePage() {
           <HomeItem item={menuItems[5]} index={6} />
         </div>
 
-        <div 
+        <div
           style={{
             width:'50%',
             display: 'flex',
@@ -116,8 +116,8 @@ export default function HomePage() {
           }}>
 
           <HomeItem item={menuItems[6]} index={7} />
-          
-          <div 
+
+          <div
             style={{
               marginTop: '5vh',
               display: 'flex',
@@ -128,7 +128,6 @@ export default function HomePage() {
             <a href="https://twitter.com/shannonmattern"><Sticker_Twitter /></a>
             <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV /></a>
             <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /></a>
-            <Link to={'/colophon'}><Sticker_Colophon /></Link>
           </div>
         </div>
       </div>
