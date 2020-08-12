@@ -20,15 +20,16 @@ export default function HomePage({menuItems}) {
     flexFlow: 'column',
     flexWrap: 'nowrap',
     alignItems: 'center',
+    height: '60vh'
   }
 
   const styleSVG = {
     alignSelf: 'center',
+    margin: '0'
   }
 
   const styleLink = {
-    margin: '0 30px',
-    width: '80%',
+    width: '90vw',
     height: '60px',
     display: 'flex',
     flexFlow: 'row',
@@ -40,7 +41,7 @@ export default function HomePage({menuItems}) {
   
   return (
     <Home>
-      <SEO title='home' />
+      <SEO title='Home' />
       <div 
         style={styleWrapper}>
           <div 
@@ -63,8 +64,8 @@ export default function HomePage({menuItems}) {
             <Glyph />
           </Link>
 
-        <MobileFooter />
       </div>
+      <MobileFooter />
     </Home >
   )
 }

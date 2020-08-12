@@ -9,6 +9,7 @@ import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
 
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+import MobileFilters from '../components/mobile/mobileFilters'
 
 import '../styles/layout.css'
 import '../styles/global.css'
@@ -28,7 +29,6 @@ const Browser = ({ children, props }) => {
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    height: '100vh'
   }
 
   const styleTopBar =
@@ -37,7 +37,16 @@ const Browser = ({ children, props }) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: mobileNavBar ? 'auto' : '60px',
+    height: '60px',
+  }
+
+  const childrenWrapper =
+  {
+    display: 'flex',
+    flexDirection: mobileBrowserLayout ? 'column' : 'row',
+    justifyContent: 'space-between',
+    height: '90vh',
+    overflow: 'auto',
   }
 
   return (
@@ -52,28 +61,22 @@ const Browser = ({ children, props }) => {
           width: '100%',
         }}>
         {/* ----------------------------TOP---------------------------- */}
-        <div className='gradient'>
-          <div style={styleTopBar} >
-              <div className='interface'>
-                {catName!== 'work' &&
-                  <div>
-                    Browsing: <span style={{fontSize: '10px'}} className={catName.toLowerCase()+" category-active"}>{catName}</span>
-                  </div>
-                }
-              </div>
-
-            {showSearch && <Search />}
+        <div style={styleTopBar} >
+          <div className='interface'>
+            Browsing: 
+            <span 
+              style={{
+                marginLeft: '5px'
+              }}
+              className={catName.toLowerCase()}>
+              {catName === 'work' ? `All` : `${catName}`}
+            </span>
           </div>
         </div>
-
+        {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}
         <div
-          style={{
-            display: 'flex',
-            flexDirection: mobileBrowserLayout ? 'column' : 'row',
-            justifyContent: 'space-between',
-          }}
-          >
+          style={childrenWrapper}>
             {children}
         </div>
       </div>

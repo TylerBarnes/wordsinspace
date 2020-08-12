@@ -7,7 +7,6 @@ import {getResponsiveReaderVars} from "../utils/dom"
 
 import WordsInSpace from '../components/wordsInSpace'
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
-import ArticleFooter from '../components/article/articleFooter'
 
 import GlyphLeft from '../images/assets/glyph_left.svg'
 import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
@@ -33,11 +32,17 @@ const Reader = ({children}) => {
 
   const styleTopBar = 
   {
-    display: 'flex',
+    display: mobileNavBar ? 'none' : 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: mobileNavBar ? 'auto' : '60px',
+    height: '60px',
+  }
+
+  const childrenWrapper =
+  {
+    height: '90vh',
+    overflow: 'auto',
   }
 
   return (
@@ -70,13 +75,10 @@ const Reader = ({children}) => {
 
         {/* ----------------------------Main---------------------------- */}
         <div 
-          style={{
-            maxHeight: '92vh',
-            overflow: 'auto',
-          }}>
+          style={childrenWrapper}>
             {children}
-            <ArticleFooter />
        </div>
+
       </div>
     </div>
   )

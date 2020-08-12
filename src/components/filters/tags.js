@@ -3,12 +3,12 @@ import React, {useState} from "react"
 import Checkbox from './checkbox'
 import TagsInfoBox from './tagsInfoBox'
 
-const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
+const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-
-	const topTags = tags?.slice(0,tags.length < 20 ? Math.floor(tags.length/2) : 20)
-  const extraTags = tags?.slice(tags.length < 20 ? Math.floor(tags.length/2) : 20, tags.length)
+	const tagCutoff = 20
+	const topTags = tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
+  const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
 
   return (
    <div
@@ -29,6 +29,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
+		      clearIndividualTag={clearIndividualTag}
 		    />
      	))}
 
@@ -39,6 +40,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
+		      clearIndividualTag={clearIndividualTag}
 		    />
      	))}
 

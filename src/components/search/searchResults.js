@@ -30,7 +30,6 @@ const SearchResults = ({items}) => {
               No results found for this search term.
             </div>
           }
-
           {items && items.map((item, index) => (
             <ListItem 
               key={index}

@@ -21,7 +21,7 @@ body {
   cursor: default;
   overflow: hidden;
   font-family: 'Wremena_Light', sans-serif;
-  background-color: rgba(245,245,255,1);
+  background-color: #F5F5FF;
 }
 
 *::-moz-focus-inner {
@@ -128,9 +128,9 @@ input:hover {
 }
 
 .work {
-  background-color: F5F5FF;
+  background-color: #fff;
   color: #513bfd;
-  /* border: 1px solid #513bfd; */
+  border: 1px solid #513bfd;
 }
 
 .blog {

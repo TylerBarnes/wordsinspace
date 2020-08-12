@@ -4,7 +4,7 @@ import {Link} from "gatsby"
 import Tags from "./filters/tags"
 import Categories from "./filters/categories"
 
-const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
+const Filters = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 
   return (
     <div className="filterBar"
@@ -19,7 +19,7 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
       }}>
       <div>
         <Categories />
-        <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} />
+        <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} clearIndividualTag={clearIndividualTag} />
       </div>
     </div>
    )

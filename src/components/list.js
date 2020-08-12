@@ -31,7 +31,6 @@ const List = ({loading, items, isTagMode}) => {
         maxHeight: '92vh',
         overflow: 'auto',
       }}>
-
         {/* ---------------- LOADING ---------------- */}
         {loading &&
           <ul>
@@ -49,14 +48,19 @@ const List = ({loading, items, isTagMode}) => {
 
         {/* ---------------- LIST ---------------- */}
         {!loading &&
-          <ul id='list'>
+          <ul
+            style={{
+              borderBottom: '1px solid #6262F4',
+              padding: '15px'
+            }}
+            id='list'>
             <button 
               style={{
                 display: !mobileList ? 'block' : 'none',
                 position: 'fixed',
                 margin: 0,
                 padding: 0,
-                left: '78vw',
+                left: '78.2vw',
                 top: '10vh',
                 outline: 'none',
                 border: 'none',
@@ -69,13 +73,14 @@ const List = ({loading, items, isTagMode}) => {
                 zIndex: '2'
               }} 
               onClick={handleScrollTop}>
-              &#x2191;
               <div 
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
                   transform: 'rotate(180deg)',
-                }}>scroll up
+                }}>
+                scroll to top
+                &#x2192;
               </div>
             </button>
             
@@ -98,7 +103,6 @@ const List = ({loading, items, isTagMode}) => {
     </div>
    )
 }
-
 
 List.propTypes = {
   items: PropTypes.array,

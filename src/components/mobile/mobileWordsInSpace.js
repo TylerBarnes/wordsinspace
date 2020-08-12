@@ -11,20 +11,19 @@ const MobileWordsInSpace = () => {
       style={{
 		    width: '100%',
 		    height: '60px',
-		    padding: '5px 10px 5px 0px',
         display: 'flex',
 		    flexFlow: 'row',
 		    flexWrap: 'nowrap',
 		    alignItems: 'center',
-		    justifyContent: 'space-around',
+		    justifyContent: 'center',
 		  }}>
 
       <div 
-	        style={{
-	        	marginTop: '10px',
-	        	alignSelf: 'center'
-	        }}>
-		      <Link to={'/'}><Circle_wordsinspace /></Link>
+        style={{
+        	margin: '10px 10px 0 0',
+        	alignSelf: 'center',
+        }}>
+	      <Link to={'/'}><Circle_wordsinspace /></Link>
 	      </div>
         
       <Link
@@ -32,7 +31,6 @@ const MobileWordsInSpace = () => {
         className='interface'
         style={{
           margin: '0',
-		    	flexGrow: '0.5'
         }}
         >
         {title}

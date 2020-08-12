@@ -6,10 +6,7 @@ import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveHomeVars} from "../utils/dom"
 
 import WordsInSpace from '../components/wordsInSpace'
-import Footer from '../components/footer'
-
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
-import MobileFooter from '../components/mobile/mobileFooter'
 
 import "../styles/layout.css"
 import "../styles/global.css"
@@ -38,6 +35,12 @@ const Home = ({children}) => {
     height: '60px',
   }
 
+  const childrenWrapper =
+  {
+    height: '90vh',
+    overflow: 'auto',
+  }
+
   return (
     <div style={styleWrapper}>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
@@ -57,14 +60,8 @@ const Home = ({children}) => {
 
         {/* ----------------------------MAIN---------------------------- */}
         <div 
-          style={{
-            maxHeight: '92vh',
-            overflow: 'auto',
-            width: '100%'
-          }}>
+          style={childrenWrapper}>
           {children}
-          {!mobileHome && <Footer />}
-          {mobileHome && <MobileFooter />}
         </div>
       </div>
     </div>

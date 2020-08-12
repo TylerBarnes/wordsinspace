@@ -1,15 +1,12 @@
 import React from "react"
 
+import {footerStyles} from "../utils/dom"
+
 const Footer = () => {
 
   return (
-    <div
-    	style={{
-	    	borderTop: '0.5px solid #513bfd',
-        margin: '5vh auto',
-	    	padding: '1vh 0 2vh 0',
-        width: '100%',
-	    }} 
+    <div 
+    	style={footerStyles} 
 	    className="metadata">
       Copyright All Rights Reserved © 2020
     </div>

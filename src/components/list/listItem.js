@@ -35,12 +35,13 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
 
   return (
     <li
+      key={item.id}
       className={(categoryClass + "Item" + ' list-item')}
       onMouseEnter={e=>handleMouseEnter(e, item)}
       onMouseLeave={handleMouseLeave}
       style={{
         listStyle: 'none',
-          width: '75vw',
+          width: listWidth,
           height: 'auto',
           marginRight: '1vw',
           overflow: 'hidden',
@@ -69,7 +70,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            margin: '10px 0 0 40px',
+            marginLeft: mobileList ? '0' :'40px',
           }}>
           {date && <ListDate date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
@@ -80,8 +81,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: '25px 0 35px 0',
-            paddingLeft: '20px',
+            margin: mobileList ? '5px 0' : '30px 0 40px 0',
+            paddingLeft: mobileList ? '0' : '20px',
           }}>
           <Link
             to={item.uri}
@@ -97,9 +98,9 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       <div
         style={{
           position: 'absolute',
-          bottom: '2vh',
-          right: '22vw',
-          width: '30vw',
+          bottom: '0px',
+          right: '20vw',
+          width: '27vw',
           margin: 0,
           padding: 0,
           filter: 'drop-shadow(0px 4.4px 4px rgba(0, 0, 0, 0.25))',

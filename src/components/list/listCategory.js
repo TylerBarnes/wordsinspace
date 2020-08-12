@@ -5,8 +5,7 @@ const ListCategory = ({category}) => {
     <div 
       className={category}
       style={{
-        margin: '0 0.2vw', 
-        // fontSize: '0.8rem',
+        margin: '1px 5px 0px 20px', 
         alignSelf: 'flex-start'
       }}> 
       {category}

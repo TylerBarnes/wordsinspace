@@ -9,7 +9,8 @@ const ListDate = ({date, invertedTheme}) => {
     <div 
       className={invertedTheme ? 'date date-inverted' : 'date'}
       style={{
-        alignSelf: 'flex-start'
+        alignSelf: 'flex-start',
+        margin: '1px 5px 0px 20px',
       }}> 
       {monthName} {year} 
     </div>
