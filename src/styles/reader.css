@@ -25,11 +25,12 @@
 
 
 .related-title {
+  font-family:  'LaNord', sans-serif;
   color: #513bfd;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 

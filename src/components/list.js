@@ -51,7 +51,8 @@ const List = ({loading, items, isTagMode}) => {
           <ul
             style={{
               borderBottom: '1px solid #6262F4',
-              padding: '0px 15px 15px 15px'
+              padding: '0px 15px 15px 15px',
+              width: 'calc(80vw - 50px)',
             }}
             id='list'>
             <button

@@ -15,21 +15,21 @@ const ArticleContent = ({tags, title, content}) => {
   const {mobileArticleContent, mobileArticleContentWidth, mobileArticleContentMargin, mobileArticleContentPadding } = getResponsiveReaderVars(breakpoint)
 
   return (
-    <div 
+    <div
       style={{
         display: 'flex',
         flexDirection: mobileArticleContent ? 'column' : 'row',
-        justifyContent: mobileArticleContent ? 'flex-start' : 'space-evenly',
+        justifyContent: mobileArticleContent ? 'flex-start' : 'space-between',
         alignItems: 'flex-start',
       }}>
       {/* ==================== Related ========================  */}
-      <ArticleRelated 
-      	related={related} 
-      	mobileArticleContent={mobileArticleContent} 
+      <ArticleRelated
+      	related={related}
+      	mobileArticleContent={mobileArticleContent}
       	showRelated={showRelated}/>
-      
+
       {/* ==================== Content ====================  */}
-      <div 
+      <div
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -39,7 +39,7 @@ const ArticleContent = ({tags, title, content}) => {
           margin: mobileArticleContentMargin,
           padding: mobileArticleContentPadding,
           width: mobileArticleContentWidth
-        }}> 
+        }}>
           <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </div>

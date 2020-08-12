@@ -28,8 +28,8 @@ export const getResponsiveBrowserVars = (breakpoint) => {
     mobileBrowserLayout : breakpoint !== 'lg', // this goes into the layouts/browser.js
     mobileNavBar : breakpoint !== 'lg',// this goes into the layouts/browser.js
     mobileList: breakpoint !== 'lg', // this goes into components/list.js and components/list/listItem.js
-    listWidth: breakpoint !== 'lg' ? global_mobile_width : '73vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the List component. The List expands to 100vw since we don't have side Filters on mobile.
-    listTitleWidth: breakpoint !== 'lg' ? global_mobile_width : '50vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the Title in each ListItem. Titles expand almost fully in mobile, they are constrated at 50vw when not on mobile.
+    listWidth: breakpoint !== 'lg' ? global_mobile_width : '72vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the List component. The List expands to 100vw since we don't have side Filters on mobile.
+    listTitleWidth: breakpoint !== 'lg' ? global_mobile_width : '45vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the Title in each ListItem. Titles expand almost fully in mobile, they are constrated at 50vw when not on mobile.
   }
 }
 
