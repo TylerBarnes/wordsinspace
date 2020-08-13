@@ -10,7 +10,8 @@ import ArticleTitle from "../components/article/articleTitle"
 import ArticleFooter from "../components/article/articleFooter"
 
 export default function Colophon() {
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileColophon, mobileColophonWidth} = getResponsiveHomeVars(breakpoint)
   const columnStyle = 
   {

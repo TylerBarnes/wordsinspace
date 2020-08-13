@@ -19,7 +19,8 @@ const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
 
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+;
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoint)
 
   const styleWrapper =

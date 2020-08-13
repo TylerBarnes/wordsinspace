@@ -5,7 +5,8 @@ import {getResponsiveReaderVars} from "../../utils/dom"
 
 const ArticleTitle = ({title}) => {
 
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileArticleTitle} = getResponsiveReaderVars(breakpoint)
   
   return (

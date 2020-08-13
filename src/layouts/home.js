@@ -20,7 +20,8 @@ const Home = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
   const location = useLocation()
   const isColophon = location.pathname === '/colophon'
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const styleWrapper =

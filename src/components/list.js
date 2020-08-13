@@ -10,7 +10,7 @@ import {getResponsiveBrowserVars} from "../utils/dom"
 import ListItem from "./list/listItem"
 
 const List = ({loading, items, isTagMode}) => {
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
   const {mobileList, listWidth, listTitleWidth} = getResponsiveBrowserVars(breakpoint)
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)

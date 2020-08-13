@@ -15,7 +15,8 @@ import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function Work({data}) {
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+;
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoint)
 
   // initialize the items to all of the Pages and all of the Posts

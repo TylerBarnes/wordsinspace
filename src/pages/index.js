@@ -35,7 +35,8 @@ import Sticker_Colophon from '../images/assets/Sticker_Colophon.svg'
 import Sticker_Colophon_text from '../images/assets/Sticker_Colophon_text.svg'
 
 export default function HomePage() {
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+;
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const menuData = useSiteMenuData();

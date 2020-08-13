@@ -7,7 +7,8 @@ import {getResponsiveReaderVars} from "../../utils/dom"
 const ArticleCategory = ({categories}) => {
   const category = categories?.nodes[0]?.name.toLowerCase()
   
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoint)
 
   return (

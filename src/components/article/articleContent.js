@@ -11,7 +11,8 @@ const ArticleContent = ({tags, title, content}) => {
   const related = getRelated(tags, title)
   const showRelated = related?.length > 0
 
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileArticleContent, mobileArticleContentWidth, mobileArticleContentMargin, mobileArticleContentPadding } = getResponsiveReaderVars(breakpoint)
 
   return (

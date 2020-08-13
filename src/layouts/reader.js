@@ -18,7 +18,8 @@ import "../styles/reader.css"
 const Reader = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
 
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileNavBar} = getResponsiveReaderVars(breakpoint)
 
   const styleWrapper =

@@ -9,7 +9,8 @@ const ArticleDate = ({date}) => {
   const monthName = getMonthName(monthIndex)
   const year = date.slice(0,4)
   
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoint)
 
   return (

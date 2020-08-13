@@ -12,7 +12,8 @@ import {getResponsiveHomeVars} from "../../utils/dom"
 import Sticker_Browse_Mobile from '../../images/assets/Sticker_Browse_Mobile.svg'
 
 export default function HomePage({menuItems}) {
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+;
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const styleWrapper = {
