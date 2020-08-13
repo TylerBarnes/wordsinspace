@@ -34,15 +34,25 @@
 	color: #6262F4;
 }
 
-.right, .right .imageR {
-	text-align: center;
-	align-self: stretch;
+/* homeItem left side > imageL and imageR alignments; right side */
+
+.left > * {
+	text-align: right;
 	display: flex;
-	flex-flow: column;
-	flex-flow: column;
+	flex-flow: row;
+	justify-content: space-between;
 }
 
-.left {
+.left .home-title {
+	margin: 15px 15px 5px 0px;
+}
+
+.left .home-entry {
+	flex-basis: 60%;
+}
+
+.imageL .home-title {
+	margin: 15px 0px 5px 15px;
 }
 
 .imageL {
@@ -53,26 +63,12 @@
 	justify-content: space-between;
 }
 
-.imageR {
-	text-align: right;
+.right {
+	text-align: center;
+	align-self: stretch;
 	display: flex;
-	flex-flow: row;
-	justify-content: space-between;
-}
-
-.imageL .home-title {
-	margin: 15px 0px 5px 15px;
-}
-
-.imageR .home-title {
-	margin: 15px 15px 5px 0px;
-}
-
-.left .home-entry {
-	flex-basis: 60%;
-}
-
-.left .gatsby-image-wrapper {
+	flex-flow: column;
+	flex-flow: column;
 }
 
 .right .home-title {

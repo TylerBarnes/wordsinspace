@@ -16,7 +16,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 	    	textAlign: 'left',
 				overflowY: 'scroll',
 				overflowX: 'hidden',
-				height: 'calc(-90px + 62vh)',
+				height: 'calc(-90px + 65vh)',
 				paddingBottom: '0vh',
 				flex: '1 1 auto',
 	    }}>

@@ -10,7 +10,7 @@ const Categories = () => {
       flex: '1 1 fill',
 			margin: '0',
       padding: '5px 0 0 0',
-      height: '38vh',
+      height: '35vh',
 		}}>
 			<Link
 				to={'/work'}

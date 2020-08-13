@@ -10,7 +10,7 @@ const HomeItem = ({item, index}) => {
   const title = connectedNode?.node.title
   const category = connectedNode?.node.categories?.nodes[0]?.name
   const isThree = index%3 === 0
-  const isAligned = (index%3 !== 0) && (index%2 !== 0)
+  const leftAligned = (index%3 !== 0) && (index%2 === 0)
 
   return (
     <div className={isThree ? 'right' : 'left' }
@@ -20,7 +20,7 @@ const HomeItem = ({item, index}) => {
         paddingBottom: '2vh',
       }}>
 
-      <div className={isAligned ? 'imageL' : 'imageR'}>
+      <div className={leftAligned ? 'imageL' : ''}>
 
         {/*================ Latest, Category labels and Title ================*/}
 

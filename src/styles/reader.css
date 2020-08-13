@@ -142,16 +142,17 @@ li.blocks-gallery-item:last-child {
 
 .slideshowImgWrapper {
   height: 100%;
-  max-width: 600px;
+  width: inherit;
 }
 
 .slideshowImgWrapper > *  {
   height: inherit;
+  width: inherit;
 }
 
 .slideshowImgWrapper img  {
   padding: 0px 30px;
-  height: 100% !important;
+  object-fit: contain !important;
 }
 
 
@@ -219,15 +220,11 @@ li.blocks-gallery-item:last-child {
   font-family: 'Wremena_Light', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 22px;
+  line-height: 34px;
   color: #6262F4 !important;
   width: inherit;
   /* padding: 0 5vw 0 0; */
-}
-
-p img {
-  max-width: 80% !important;
 }
 
 .content img {
