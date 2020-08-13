@@ -217,3 +217,12 @@ svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover 
             transform: scale(1);
   }
 }
+
+.colophon-copy {
+	font-family: 'LaNord_Light';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 34px;
+	color: #513bfd;
+}
