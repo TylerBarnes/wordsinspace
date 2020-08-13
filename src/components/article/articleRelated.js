@@ -57,8 +57,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         alignItems: 'center',
 
       }}>
-        <Sticker_Related />
-        <div
+        <div className='related-item'
           style={styles}
           key={index} >
           <ArticleCategory categories={item.categories}/>
@@ -69,6 +68,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
           }}>
           </div>
         </div>
+        <Sticker_Related id='sticker-related' />
       </div>
       ))}
     </div>

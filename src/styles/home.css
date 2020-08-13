@@ -144,19 +144,19 @@
 	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
 } */
 
-svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
-	-webkit-animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
+svg#sticker-related:hover, svg#circle-wordsinspace:hover, svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
+	-webkit-animation: loading-spinner  15s infinite;
+	        animation: loading-spinner  15s infinite;
 }
 
-svg#sticker-browse-text:hover + svg#sticker-browse, svg#sticker-upcoming-text:hover + svg#sticker-upcoming {
-	-webkit-animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
+.related-item:hover + svg#sticker-related, svg#sticker-browse-text:hover + svg#sticker-browse, svg#sticker-upcoming-text:hover + svg#sticker-upcoming {
+	-webkit-animation: loading-spinner  15s infinite;
+	        animation: loading-spinner  15s infinite;
 }
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
-	-webkit-animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+	-webkit-animation: loading-spinner-inverse  5s infinite;
+	        animation: loading-spinner-inverse  5s infinite;
 					stroke: #F4D791;
 }
 
