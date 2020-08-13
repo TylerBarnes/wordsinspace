@@ -147,8 +147,11 @@
 svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
 	-webkit-animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
 	        animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
-					stroke: #FF0000;
-					stroke-opacity: 1;
+}
+
+svg#sticker-browse-text:hover + svg#sticker-browse, svg#sticker-upcoming-text:hover + svg#sticker-upcoming {
+	-webkit-animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
+	        animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {

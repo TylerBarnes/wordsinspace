@@ -78,12 +78,12 @@ export default function HomePage() {
 
         <div className="Sticker"
           style={styleSVG}>
-          <Link to={'/work/'}><Sticker_Browse id='sticker-browse' /><Sticker_Browse_text /></Link>
+          <Link to={'/work/'}><Sticker_Browse_text id='sticker-browse-text' /><Sticker_Browse id='sticker-browse' /></Link>
         </div>
 
         <div className="Sticker"
           style={styleSVG}>
-          <Link to ={'/about/'}><Sticker_Words id='sticker-words' /><Sticker_Words_text /></Link>
+          <Link to ={'/about/'}><Sticker_Words_text id='sticker-words-text' /><Sticker_Words id='sticker-words' /></Link>
         </div>
 
         <div
@@ -103,12 +103,12 @@ export default function HomePage() {
 
         <div className="Sticker"
           style={styleSVG}>
-          <Link to={'/student-resources/'}><Sticker_Classes id='sticker-classes' /><Sticker_Classes_text /></Link>
+          <Link to={'/student-resources/'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
         </div>
 
         <div className="Sticker"
           style={styleSVG}>
-          <Link to={'/upcoming-events/'}><Sticker_Upcoming id='sticker-upcoming' /><Sticker_Upcoming_text /></Link>
+          <Link to={'/upcoming-events/'}><Sticker_Upcoming_text id='sticker-upcoming-text' /><Sticker_Upcoming id='sticker-upcoming' /></Link>
         </div>
 
         <div
@@ -137,10 +137,10 @@ export default function HomePage() {
               justifyContent: 'space-between',
               height: '120px',
             }}>
-            <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email id='sticker-email' /><Sticker_Email_text /></a>
-            <a href="https://twitter.com/shannonmattern"><Sticker_Twitter id='sticker-twitter' /><Sticker_Twitter_text /></a>
-            <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV id='sticker-cv'/><Sticker_CV_text /></a>
-            <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard id='sticker-pinboard' /><Sticker_Pinboard_text /></a>
+            <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email_text id='sticker-email-text' /><Sticker_Email id='sticker-email' /></a>
+            <a href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter id='sticker-twitter' /></a>
+            <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV id='sticker-cv'/></a>
+            <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard_text id='sticker-pinboard-text' /><Sticker_Pinboard id='sticker-pinboard' /></a>
           </div>
         </div>
       </div>
