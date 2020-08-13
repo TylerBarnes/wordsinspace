@@ -145,6 +145,14 @@ const Search = () => {
             onMouseLeave={e=>setGlyphHovered(false)}
             onClick={e=>handleSubmit(e)}
             >
+            {isGlyphHovered
+             ? !showResults 
+               ? <GlyphHover /> 
+               : null
+             : !showResults 
+               ? <Glyph />
+               : <GlyphOpen />
+           }
          </div>
         </div>
       </form>

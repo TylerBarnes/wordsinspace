@@ -10,9 +10,10 @@ const global_mobile_width = '93vw'
 export const getResponsiveHomeVars = (breakpoint) => {
   return {
     mobileHome:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
+    mobileFooterWidth: global_mobile_width,
+    mobileColophon:  breakpoint !== 'lg', // this goes into colophon.js, 
+    mobileColophonWidth: global_mobile_width, // this goes into colophon.js, 
     mobileFooterWidth: '93vw',
-    mobileColophon:  breakpoint !== 'lg', // this goes into colophon.js,
-    mobileColophonWidth: global_mobile_width, // this goes into colophon.js,
   }
 }
 

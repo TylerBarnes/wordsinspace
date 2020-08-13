@@ -36,6 +36,7 @@ const Browser = ({ children, props }) => {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     textTransform: 'uppercase',
     height: '60px',
   }
@@ -72,6 +73,7 @@ const Browser = ({ children, props }) => {
               {catName === 'work' ? `All` : `${catName}`}
             </span>
           </div>
+          {showSearch && <Search />}
         </div>
         {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}

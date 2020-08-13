@@ -20,7 +20,7 @@ const Home = ({children}) => {
   const styleWrapper =
   {
     display: 'flex',
-    flexDirection: 'row nowrap',
+    flexDirection: mobileHome ? 'column' : 'row', 
     alignItems: 'flex-start',
     justifyContent: 'space-around',
     height: '100vh',
@@ -46,7 +46,6 @@ const Home = ({children}) => {
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileHome && <WordsInSpace />}
       {mobileHome && <MobileWordsInSpace />}
-
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
