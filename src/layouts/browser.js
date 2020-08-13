@@ -72,6 +72,7 @@ const Browser = ({ children, props }) => {
               {catName === 'work' ? `All` : `${catName}`}
             </span>
           </div>
+          {showSearch && <Search />}
         </div>
         {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}
