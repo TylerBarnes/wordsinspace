@@ -32,7 +32,7 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange, clearIndividualT
           checked={isSelected}
           onChange={onCheckboxChange}
         />
-        {label} [{count}]
+        {label}
       </label>
       
     </div>
