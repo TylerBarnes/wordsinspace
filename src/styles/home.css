@@ -123,6 +123,7 @@
 
 .Sticker svg {
 	position: absolute;
+	transition-duration: 0.5s;
 }
 
 .smallSticker > * {
@@ -135,23 +136,56 @@
 
 .smallSticker svg{
 	position: absolute;
+	transition-duration: 0.5s;
 }
 
-svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
+ /* { old zoom animation
 	-webkit-animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
 	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
-}
+} */
 
-svg#sticker-words:hover, svg#sticker-colophon:hover svg#sticker-cv:hover, svg#sticker-twitter:hover {
-	-webkit-animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
+svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
+	-webkit-animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
+	        animation: loading-spinner  15s cubic-bezier(0, 0, 1, 1) infinite;
+					stroke: #FF0000;
+					stroke-opacity: 1;
 }
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
 	-webkit-animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
 	        animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+					stroke: #F4D791;
 }
 
+/* @-webkit-keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+} */
 
 @-webkit-keyframes loading-spinner {
   from {
@@ -198,37 +232,6 @@ svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover 
   }
 }
 
-
-@-webkit-keyframes zoom-in-out {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-
-@keyframes zoom-in-out {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 
 .colophon-copy {
 	font-family: 'LaNord_Light';

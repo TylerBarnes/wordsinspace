@@ -61,6 +61,7 @@
 .no-scroll {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  scroll-behavior: smooth;
 }
 
 .no-scroll::-webkit-scrollbar {
