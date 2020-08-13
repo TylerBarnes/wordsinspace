@@ -5,7 +5,7 @@ import TagsInfoBox from '../components/filters/tagsInfoBox'
 import Tags from "./filters/tags"
 import Categories from "./filters/categories"
 
-const Filters = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
+const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
     <div className="filterBar"
@@ -24,7 +24,7 @@ const Filters = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) =
       }}>
         <Categories />
         <TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>
-        <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} clearIndividualTag={clearIndividualTag} />
+        <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} />
       </div>
     </div>
    )

@@ -2,7 +2,7 @@ import React, {useState} from "react"
 
 import Checkbox from './checkbox'
 
-const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
+const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 	const tagCutoff = 20
@@ -28,7 +28,6 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
-		      clearIndividualTag={clearIndividualTag}
 		    />
      	))}
 
@@ -39,7 +38,6 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onChecåkboxChange={selectTags}
-		      clearIndividualTag={clearIndividualTag}
 		    />
      	))}
 

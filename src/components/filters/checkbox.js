@@ -1,6 +1,6 @@
 import React from "react";
 
-const Checkbox = ({ count, label, isSelected, onCheckboxChange, clearIndividualTag}) => {
+const Checkbox = ({ count, label, isSelected, onCheckboxChange}) => {
   if (count < 2 ) return null // hiding the tags with only one item
   return (
     <div
