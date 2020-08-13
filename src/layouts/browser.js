@@ -75,7 +75,6 @@ const Browser = ({ children, props }) => {
           </div>
           {showSearch && <Search />}
         </div>
-        {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}
         <div
           style={childrenWrapper}>
