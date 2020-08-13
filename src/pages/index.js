@@ -16,14 +16,23 @@ import MobileFooter from '../components/mobile/mobileFooter'
 import Footer from '../components/footer'
 
 import Sticker_Email from '../images/assets/Sticker_Email.svg'
+import Sticker_Email_text from '../images/assets/Sticker_Email_text.svg'
 import Sticker_Browse from '../images/assets/Sticker_Browse.svg'
+import Sticker_Browse_text from '../images/assets/Sticker_Browse_text.svg'
 import Sticker_CV from '../images/assets/Sticker_CV.svg'
-import Sticker_Student from '../images/assets/Sticker_Student.svg'
+import Sticker_CV_text from '../images/assets/Sticker_CV_text.svg'
+import Sticker_Classes from '../images/assets/Sticker_Classes.svg'
+import Sticker_Classes_text from '../images/assets/Sticker_Classes_text.svg'
 import Sticker_Words from '../images/assets/Sticker_Words.svg'
+import Sticker_Words_text from '../images/assets/Sticker_Words_text.svg'
 import Sticker_Pinboard from '../images/assets/Sticker_Pinboard.svg'
+import Sticker_Pinboard_text from '../images/assets/Sticker_Pinboard_text.svg'
 import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
+import Sticker_Twitter_text from '../images/assets/Sticker_Twitter_text.svg'
 import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
+import Sticker_Upcoming_text from '../images/assets/Sticker_Upcoming_text.svg'
 import Sticker_Colophon from '../images/assets/Sticker_Colophon.svg'
+import Sticker_Colophon_text from '../images/assets/Sticker_Colophon_text.svg'
 
 export default function HomePage() {
   const breakpoint = useBreakpoints();
@@ -38,6 +47,7 @@ export default function HomePage() {
   if (mobileHome) return <MobileIndex menuItems={menuItems} />
 
   const styleSVG = {
+    position: 'relative',
     width:'50%',
     display: 'flex',
     flexFlow: 'column',
@@ -65,14 +75,14 @@ export default function HomePage() {
           <HomeItem item={menuItems[1]} index={2} />
         </div>
 
-        <div
+        <div className="Sticker"
           style={styleSVG}>
-          <Link to={'/work/'}><Sticker_Browse /></Link>
+          <Link to={'/work/'}><Sticker_Browse /><Sticker_Browse_text /></Link>
         </div>
 
-        <div
+        <div className="Sticker"
           style={styleSVG}>
-          <Link to ={'/about/'}><Sticker_Words /></Link>
+          <Link to ={'/about/'}><Sticker_Words /><Sticker_Words_text /></Link>
         </div>
 
         <div
@@ -90,14 +100,14 @@ export default function HomePage() {
           <HomeItem item={menuItems[4]} index={5} />
         </div>
 
-        <div
+        <div className="Sticker"
           style={styleSVG}>
-          <Link to={'/student-resources/'}><Sticker_Student /></Link>
+          <Link to={'/student-resources/'}><Sticker_Classes /><Sticker_Classes_text /></Link>
         </div>
 
-        <div
+        <div className="Sticker"
           style={styleSVG}>
-          <Link to={'/upcoming-events/'}><Sticker_Upcoming /></Link>
+          <Link to={'/upcoming-events/'}><Sticker_Upcoming /><Sticker_Upcoming_text /></Link>
         </div>
 
         <div
@@ -124,10 +134,10 @@ export default function HomePage() {
               alignContent: 'center',
               justifyContent: 'space-around'
             }}>
-            <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email /></a>
-            <a href="https://twitter.com/shannonmattern"><Sticker_Twitter /></a>
-            <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV /></a>
-            <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /></a>
+            <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email /><Sticker_Email_text /></a>
+            <a href="https://twitter.com/shannonmattern"><Sticker_Twitter /><Sticker_Twitter_text /></a>
+            <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV /><Sticker_CV_text /></a>
+            <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard /><Sticker_Pinboard_text /></a>
           </div>
         </div>
       </div>

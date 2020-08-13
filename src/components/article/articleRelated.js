@@ -20,7 +20,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
     top: '0',
     margin: '30px 0 0 0',
     height: '250px',
-    width: '260px',
+    width: '265px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -64,7 +64,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
           <ArticleCategory categories={item.categories}/>
           <Link lang='de' className='related-title' to={item.uri}>{item.title}</Link>
           <div style={{
-            flex: '0 2 80px',
+            flex: '0 2 95px',
             width: '250px',
           }}>
           </div>

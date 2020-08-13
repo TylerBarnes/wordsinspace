@@ -23,7 +23,7 @@ const Footer = () => {
         width: '100%',
         textAlign: 'right',
       }}>
-	      <Link to={'/colophon'} className="metadata"><Colophon /></Link>
+	      <Link to={'/colophon'} className="metadata"><Colophon id='sticker-colophon' /></Link>
       </div>
     </div>
 
