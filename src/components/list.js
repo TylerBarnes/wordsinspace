@@ -28,7 +28,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: '92vh',
+        maxHeight: 'calc(100vh - 60px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}
@@ -51,10 +51,11 @@ const List = ({loading, items, isTagMode}) => {
           <ul
             style={{
               borderBottom: '1px solid #6262F4',
-              padding: '15px'
+              padding: '0px 15px 15px 15px',
+              width: 'calc(80vw - 50px)',
             }}
             id='list'>
-            <button 
+            <button
               style={{
                 display: !mobileList ? 'block' : 'none',
                 position: 'fixed',
@@ -71,9 +72,9 @@ const List = ({loading, items, isTagMode}) => {
                 textTransform: 'uppercase',
                 cursor: 'pointer',
                 zIndex: '2'
-              }} 
+              }}
               onClick={handleScrollTop}>
-              <div 
+              <div
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
@@ -83,7 +84,7 @@ const List = ({loading, items, isTagMode}) => {
                 &#x2192;
               </div>
             </button>
-            
+
             {items && items.map((item, index) => (
               <ListItem
                 key={index}

@@ -13,7 +13,7 @@ import "../styles/global.css"
 import "../styles/home.css"
 
 const Home = ({children}) => {
-  
+
   const breakpoint = useBreakpoints();
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
@@ -37,7 +37,7 @@ const Home = ({children}) => {
 
   const childrenWrapper =
   {
-    height: '90vh',
+    height: 'calc(100vh - 60px)',
     overflow: 'auto',
   }
 
@@ -58,7 +58,7 @@ const Home = ({children}) => {
         </div>
 
         {/* ----------------------------MAIN---------------------------- */}
-        <div 
+        <div
           style={childrenWrapper}>
           {children}
         </div>

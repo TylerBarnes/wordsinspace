@@ -7,10 +7,10 @@ const Categories = () => {
 
   return (
 		<div style={{
-			margin: '1vh 0 0 0',
-      padding: '1vh 0 0 0',
-      overflow: 'auto',
-      height: '38vh',
+      flex: '1 1 fill',
+			margin: '0',
+      padding: '5px 0 0 0',
+      height: '35vh',
 		}}>
 			<Link
 				to={'/work'}

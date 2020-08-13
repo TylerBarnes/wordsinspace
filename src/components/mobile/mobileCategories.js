@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 import {useCategories} from "../../hooks/useCategories"
 
 const MobileCategories = () => {
@@ -11,19 +11,20 @@ const MobileCategories = () => {
 	}
 
   return (
-		<div 
+		<div
 			style={{
         display: 'flex',
         flexDirection: 'column nowrap',
         justifyContent: 'flex-start',
-				height: '40px', 
-				padding: '5px'
+				height: '40px',
+				padding: '5px',
+        margin: '0 0 1vh 0'
 			}}>
 			<li
 				style={listStyle}>
-				<Link 
-					style={listStyle}		
-					to={'/work'} 
+				<Link
+					style={listStyle}
+					to={'/work'}
 					activeClassName='category-active'
 					partiallyActive={true}
 					className='work mobile'
@@ -32,12 +33,12 @@ const MobileCategories = () => {
 				</Link>
 			</li>
 		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
-				<li 
+				<li
 					key={index}
-					style={listStyle}		
+					style={listStyle}
 					>
-					<Link 
-						to={`/${category.slug}`} 
+					<Link
+						to={`/${category.slug}`}
 						activeClassName='category-active'
 						partiallyActive={true}
 						className={`${category.slug} mobile`}
@@ -50,4 +51,4 @@ const MobileCategories = () => {
    )
 }
 
-export default MobileCategories 
+export default MobileCategories

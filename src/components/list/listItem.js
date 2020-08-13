@@ -12,7 +12,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
   const categoryClass = item?.categories?.nodes[0]?.name.toLowerCase()
   const tags = item?.tags
   const date = item?.date
-  const slug = item?.slug 
+  const slug = item?.slug
 
   const [thumbnail, setThumbnail] = useState('')
   const [isVisible, setIsVisible] = useState(false);
@@ -70,7 +70,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            marginLeft: mobileList ? '0' :'40px',
+            margin: mobileList ? '10px 0 0 0' :'1vh 0 0 2vh',
           }}>
           {date && <ListDate date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
@@ -81,7 +81,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: mobileList ? '5px 0' : '30px 0 40px 0',
+            margin: mobileList ? '15px 0' : '3vh 0 5vh 0',
             paddingLeft: mobileList ? '0' : '20px',
           }}>
           <Link
@@ -98,8 +98,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       <div
         style={{
           position: 'absolute',
-          bottom: '0px',
-          right: '20vw',
+          bottom: '2vh',
+          right: '21vw',
           width: '27vw',
           margin: 0,
           padding: 0,

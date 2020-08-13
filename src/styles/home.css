@@ -20,10 +20,9 @@
 	font-family: 'LaNord', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 45px;
-	line-height: 44px;
+	font-size: 40px;
+	line-height: 40px;
 	color: #6262F4;
-	margin: 15px 0px 5px 10px;
 }
 
 .home-title-mobile {
@@ -35,26 +34,41 @@
 	color: #6262F4;
 }
 
-.right {
-	text-align: center;
-	align-self: stretch;
-	display: flex;
-	flex-flow: column;
-	flex-flow: column;
-}
+/* homeItem left side > imageL and imageR alignments; right side */
 
-.left {
-	text-align: left;
+.left > * {
+	text-align: right;
 	display: flex;
 	flex-flow: row;
 	justify-content: space-between;
+}
+
+.left .home-title {
+	margin: 15px 15px 5px 0px;
 }
 
 .left .home-entry {
 	flex-basis: 60%;
 }
 
-.left .gatsby-image-wrapper {
+.imageL .home-title {
+	margin: 15px 0px 5px 15px;
+}
+
+.imageL {
+	text-align: left;
+	display: flex;
+	flex-flow: row;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+
+.right {
+	text-align: center;
+	align-self: stretch;
+	display: flex;
+	flex-flow: column;
+	flex-flow: column;
 }
 
 .right .home-title {

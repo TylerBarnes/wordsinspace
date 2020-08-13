@@ -16,17 +16,29 @@ export default function pageTemplate({ data }) {
   
   return (
     <Reader>
+<<<<<<< HEAD
       <SEO title={title} />
       {/* ==================== Date, Categories, Tags ====================  */}
       {!hiddenTaxonomies && <ArticleTaxonomy date={date} tags={tags} categories={categories} />}
+||||||| merged common ancestors
+      <SEO title={title} />
+      {/* ==================== Date, Categories, Tags ====================  */}
+      <ArticleTaxonomy date={date} tags={tags} categories={categories} />
+=======
+      <div>
+        <SEO title={title} />
+        {/* ==================== Date, Categories, Tags ====================  */}
+        <ArticleTaxonomy date={date} tags={tags} categories={categories} />
+>>>>>>> 6170dbf476041c6a19f42b863943c4e68f3eceba
 
-      {/* ==================== Title ====================  */}
-      <ArticleTitle title={title}/>
-      
-      {/* ==================== Content ====================  */}
-      <ArticleContent content={content} tags={tags} title={title} />
-      
-      {/* ----------------------------FOOTER---------------------------- */}
+        {/* ==================== Title ====================  */}
+        <ArticleTitle title={title}/>
+
+        {/* ==================== Content ====================  */}
+        <ArticleContent content={content} tags={tags} title={title} />
+
+        {/* ----------------------------FOOTER---------------------------- */}
+      </div>
       <ArticleFooter />
     </Reader>
   )

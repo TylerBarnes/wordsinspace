@@ -46,7 +46,7 @@ const Browser = ({ children, props }) => {
     display: 'flex',
     flexDirection: mobileBrowserLayout ? 'column' : 'row',
     justifyContent: 'space-between',
-    height: '90vh',
+    height: '100%',
     overflow: 'auto',
   }
 
@@ -57,15 +57,15 @@ const Browser = ({ children, props }) => {
       {mobileNavBar && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div 
+      <div
         style={{
           width: '100%',
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
           <div className='interface'>
-            Browsing: 
-            <span 
+            Browsing:
+            <span
               style={{
                 marginLeft: '5px'
               }}

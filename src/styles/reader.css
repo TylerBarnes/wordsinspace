@@ -9,7 +9,7 @@
   font-size: 60px;
   line-height: 61px;
   color: #513bfd;
-  padding: 5vh 0 5vh 0;
+  padding: 1vh 0 5vh 0;
 }
 
 
@@ -25,11 +25,12 @@
 
 
 .related-title {
+  font-family:  'LaNord', sans-serif;
   color: #513bfd;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 
@@ -42,7 +43,7 @@
 
 .blocks-gallery-grid {
   -ms-overflow-style: none;  /* IE and Edge */
-  /* scrollbar-width: none;  /* Firefox */ 
+  /* scrollbar-width: none;  /* Firefox */
 }
 
 .blocks-gallery-grid::-webkit-scrollbar {
@@ -219,8 +220,8 @@ li.blocks-gallery-item:last-child {
   font-family: 'Wremena_Light', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 22px;
+  line-height: 34px;
   color: #6262F4 !important;
   width: inherit;
   /* padding: 0 5vw 0 0; */
