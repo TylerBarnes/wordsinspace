@@ -128,12 +128,14 @@ export default function HomePage() {
 
           <HomeItem item={menuItems[6]} index={7} />
 
-          <div
+          <div className='smallSticker'
             style={{
               marginTop: '5vh',
               display: 'flex',
+              flexFlow: 'row',
               alignContent: 'center',
-              justifyContent: 'space-around'
+              justifyContent: 'space-between',
+              height: '120px',
             }}>
             <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email /><Sticker_Email_text /></a>
             <a href="https://twitter.com/shannonmattern"><Sticker_Twitter /><Sticker_Twitter_text /></a>

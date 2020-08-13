@@ -125,6 +125,18 @@
 	position: absolute;
 }
 
+.smallSticker > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex: 1 1 0;
+}
+
+.smallSticker svg{
+	position: absolute;
+}
+
 svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
 	-webkit-animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
 	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
