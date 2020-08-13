@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "gatsby"
 import ArticleCategory from "./articleCategory"
+import Sticker_Related from '../../images/assets/Sticker_Related.svg'
 
 const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
 
@@ -15,15 +16,16 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
   }
 
   const styles = {
-    margin: '1vh 0',
-    height: '220px',
-    width: '220px',
-    border: '1px dashed #513bfd',
-    borderRadius: '250px',
+    position: 'absolute',
+    top: '0',
+    margin: '30px 0 0 0',
+    height: '250px',
+    width: '265px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    maxHeight: '250px',
   }
 
   return (
@@ -32,24 +34,42 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         width: '250px',
         alignSelf: mobileArticleContent ? 'center' : 'flex-start',
         order: mobileArticleContent ? '2' : '1',
-        marginRight: mobileArticleContent ? '0' : '0vw'
+        margin: mobileArticleContent ? '0' : '0 2vw',
+        display: mobileArticleContent ? 'auto' : 'flex',
+        flexFlow: mobileArticleContent ? 'auto' : 'column',
+        alignItems: mobileArticleContent ? 'auto' : 'center',
       }}>
       <div
         className='metadata'
         style={{
           border: '1px solid',
           width: '60px',
-          textAlign: 'center'
+          textAlign: 'center',
+          alignSelf: 'flex-start',
         }}>
         Related
       </div>
       {related?.filter(p => p).map((item,index)=> (
+      <div style={{
+        position: 'relative',
+        display: 'flex',
+        flexFlow: 'column',
+        alignItems: 'center',
+
+      }}>
+        <Sticker_Related />
         <div
           style={styles}
           key={index} >
           <ArticleCategory categories={item.categories}/>
-          <Link className='related-title' to={item.uri}>{item.title}</Link>
+          <Link lang='de' className='related-title' to={item.uri}>{item.title}</Link>
+          <div style={{
+            flex: '0 2 95px',
+            width: '250px',
+          }}>
+          </div>
         </div>
+      </div>
       ))}
     </div>
   )
