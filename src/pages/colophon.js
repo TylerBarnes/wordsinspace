@@ -1,6 +1,6 @@
 import React from "react"
 
-import Reader from "../layouts/reader"
+import Home from "../layouts/home"
 import SEO from "../components/seo"
 
 import useBreakpoints from '../hooks/useBreakpoint';
@@ -14,7 +14,7 @@ export default function Colophon() {
   const {mobileColophon, mobileColophonWidth} = getResponsiveHomeVars(breakpoint)
 
   return (
-      <Reader>
+      <Home>
         <SEO title="Colophon" />
 
         {/* ==================== Title ====================  */}
@@ -39,6 +39,6 @@ export default function Colophon() {
 
         </div>
         <ArticleFooter />
-      </Reader>
+      </Home>
   )
 }

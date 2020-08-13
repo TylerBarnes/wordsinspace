@@ -4,17 +4,23 @@ import PropTypes from "prop-types"
 
 import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveHomeVars} from "../utils/dom"
+import {useLocation} from '@reach/router'
 
 import WordsInSpace from '../components/wordsInSpace'
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+
+import GlyphLeft from '../images/assets/glyph_left.svg'
+import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
 
 import "../styles/layout.css"
 import "../styles/global.css"
 import "../styles/home.css"
 
 const Home = ({children}) => {
-
-  const breakpoint = useBreakpoints();
+  const [isGlyphHovered, setGlyphHovered] = useState(false)
+  const location = useLocation()
+  const isColophon = location.pathname === '/colophon'
+  const breakpoint = useBreakpoints()
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const styleWrapper =
@@ -52,7 +58,23 @@ const Home = ({children}) => {
         <div className='gradient'>
           <div style={styleTopBar}>
             <div className='interface'>
-              HOME
+              <Link to={'/'}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'row',
+                  alignContent: 'center',
+                }}
+                  onMouseEnter={e=>setGlyphHovered(true)}
+                  onMouseLeave={e=>setGlyphHovered(false)}
+                  >
+                  {isColophon && 
+                    isGlyphHovered 
+                    ? <GlyphLeftHover /> 
+                    : isColophon ? <GlyphLeft /> : null
+                  }
+                  <span style={{marginLeft: '5px'}}>HOME</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

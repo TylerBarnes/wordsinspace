@@ -80,7 +80,8 @@ const List = ({loading, items, isTagMode}) => {
                   writingMode: 'vertical-rl',
                   transform: 'rotate(180deg)',
                 }}>
-                scroll to top
+                &#x2192;
+                &#x2192;
                 &#x2192;
               </div>
             </button>

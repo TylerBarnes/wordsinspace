@@ -1,3 +1,4 @@
+
 /*****/
 /*****/
 /*****STYLES SPECIFIC TO HOME*/
@@ -38,9 +39,16 @@
 
 .left > * {
 	text-align: right;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row;
-	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row;
+	        flex-flow: row;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .left .home-title {
@@ -48,7 +56,8 @@
 }
 
 .left .home-entry {
-	flex-basis: 60%;
+	-ms-flex-preferred-size: 60%;
+	    flex-basis: 60%;
 }
 
 .imageL .home-title {
@@ -57,17 +66,31 @@
 
 .imageL {
 	text-align: left;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row;
-	flex-direction: row-reverse;
-	justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row;
+	        flex-flow: row;
+	-ms-flex-direction: row-reverse;
+	    flex-direction: row-reverse;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
 .right {
 	text-align: center;
-	align-self: stretch;
+	-ms-flex-item-align: stretch;
+	    align-self: stretch;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: column;
+	        flex-flow: column;
 	flex-flow: column;
 }
 
@@ -83,10 +106,19 @@
 
 .Sticker > * {
 	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row;
+	        flex-flow: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 .Sticker svg {
@@ -94,45 +126,94 @@
 }
 
 svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
-	animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+	-webkit-animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
 svg#sticker-words:hover, svg#sticker-colophon:hover svg#sticker-cv:hover, svg#sticker-twitter:hover {
-	animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
+	-webkit-animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
+	        animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
 }
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
-	animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+	-webkit-animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+	        animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
+
+@-webkit-keyframes loading-spinner {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 
 @keyframes loading-spinner {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading-spinner-inverse {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
 @keyframes loading-spinner-inverse {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+
+@-webkit-keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 
 @keyframes zoom-in-out {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
