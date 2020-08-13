@@ -1,13 +1,12 @@
 import React from "react"
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 import MobileTags from '../mobile/mobileTags'
 
 const ArticleTags = ({tags}) => {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileArticleTags, mobileReaderWidth} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileArticleTags, mobileReaderWidth} = getResponsiveReaderVars(breakpoints)
 
   if (mobileArticleTags) return <MobileTags tags={tags} mobileReaderWidth={mobileReaderWidth} />
 

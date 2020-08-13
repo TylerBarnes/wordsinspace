@@ -5,14 +5,13 @@ import ArticleDate from './articleDate'
 import ArticleCategory from './articleCategory'
 import ArticleTags from './articleTags'
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 
 
 const ArticleTaxonomy = ({date, categories, tags}) => {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileTaxonomy} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileTaxonomy} = getResponsiveReaderVars(breakpoints)
 
   return (
     <div

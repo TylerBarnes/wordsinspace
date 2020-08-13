@@ -6,15 +6,14 @@ import SEO from '../seo'
 import MobileFooter from "./mobileFooter"
 import Glyph from '../../images/assets/glyph.svg'
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveHomeVars} from "../../utils/dom"
 
 import Sticker_Browse_Mobile from '../../images/assets/Sticker_Browse_Mobile.svg'
 
 export default function HomePage({menuItems}) {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-;
-  const {mobileHome} = getResponsiveHomeVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileHome} = getResponsiveHomeVars(breakpoints)
 
   const styleWrapper = {
     display: 'flex',

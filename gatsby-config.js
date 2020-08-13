@@ -107,6 +107,14 @@ module.exports = {
         appElement: '#___gatsby',
         modalProps: { },
       }
+    },
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: {
+          desktop: '(min-width: 1024px)',
+        }
+      }
     }
   ],
 }

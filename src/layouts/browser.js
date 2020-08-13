@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import {useLocation} from '@reach/router'
-import useBreakpoints from '../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
 import WordsInSpace from '../components/wordsInSpace'
@@ -19,10 +19,8 @@ const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
 
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-;
-  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoint)
-
+  const breakpoints = useBreakpoint()
+  const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoints)
   const styleWrapper =
   {
     display: 'flex',

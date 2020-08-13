@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 
 import {useTags} from "../hooks/useTags"
 import {useTagSelection} from "../hooks/useTagSelection"
-import useBreakpoints from '../hooks/useBreakpoint';
-
 import {sortByDate} from "../utils/helpers"
+
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
 import Browser from "../layouts/browser"
@@ -15,9 +15,8 @@ import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function Work({data}) {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-;
-  const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
   // initialize the items to all of the Pages and all of the Posts
   const initial = [...data.allWpPage.nodes, ...data.allWpPost.nodes]

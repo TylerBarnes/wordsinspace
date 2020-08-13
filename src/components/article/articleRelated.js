@@ -50,17 +50,18 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         Related
       </div>
       {related?.filter(p => p).map((item,index)=> (
-      <div style={{
-        position: 'relative',
-        display: 'flex',
-        flexFlow: 'column',
-        alignItems: 'center',
+      <div 
+        key={index} 
+        style={{
+          position: 'relative',
+          display: 'flex',
+          flexFlow: 'column',
+          alignItems: 'center',
 
-      }}>
+        }}>
         <Sticker_Related />
         <div
-          style={styles}
-          key={index} >
+          style={styles} >
           <ArticleCategory categories={item.categories}/>
           <Link lang='de' className='related-title' to={item.uri}>{item.title}</Link>
           <div style={{
