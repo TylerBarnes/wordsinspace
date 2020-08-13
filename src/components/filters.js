@@ -20,7 +20,7 @@ const Filters = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) =
       }}>
       <div style={{
         display: 'flex',
-        flexFlow: 'column nowrap',
+        flexFlow: 'column',
       }}>
         <Categories />
         <TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>

@@ -45,7 +45,7 @@ const Reader = ({children}) => {
     width: 'calc(100vw - 50px)',
     overflow: 'auto',
     display: 'flex',
-    flexFlow: 'column nowrap',
+    flexFlow: 'column',
     justifyContent: 'space-between',
   }
 

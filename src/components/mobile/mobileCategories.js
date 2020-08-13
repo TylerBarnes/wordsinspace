@@ -14,7 +14,7 @@ const MobileCategories = () => {
 		<div
 			style={{
         display: 'flex',
-        flexDirection: 'column nowrap',
+        flexDirection: 'column',
         justifyContent: 'flex-start',
 				height: '40px',
 				padding: '5px',
