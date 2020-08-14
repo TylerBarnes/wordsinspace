@@ -34,7 +34,7 @@ const WordsInSpace = () => {
 	        to="/"
 	        className='interface'
 	        style={{
-	          marginTop: '40px',
+	          marginTop: '20px',
 		    		alignSelf: 'flex-end',
 	        }}
 	     		>

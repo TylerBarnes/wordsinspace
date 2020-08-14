@@ -27,7 +27,7 @@ body {
   cursor: default;
   overflow: hidden;
   font-family: 'Wremena_Light', sans-serif;
-  background-color: #F5F5FF;
+  background-color: #E5E6EA;
 }
 
 *::-moz-focus-inner {
@@ -76,7 +76,7 @@ input:hover {
   text-transform: uppercase;
   font-size: 16px;
   font-family: 'Bespoke', sans-serif;
-  margin: 15px 0 15px 15px;
+  margin: 15px 0 15px 14px;
 }
 
 .metadata {
