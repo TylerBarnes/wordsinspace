@@ -9,7 +9,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url: process.env.NODE_ENV === `development`
-            ? `http://localhost:8888/test/graphql`
+            ? `http://localhost:8888/shannon11/graphql`
             : `https://importiv.wordsinspace.net/graphql`,
         schema: {
           perPage: 50,
@@ -27,6 +27,7 @@ module.exports = {
         production: {
           hardCacheMediaFiles: false,
         },
+        excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`],
         debug: {
           graphql: {
             showQueryOnError: false,
@@ -38,6 +39,9 @@ module.exports = {
           },
         },
         type: {
+          RootQuery: {
+            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`]
+          },
           Comment: {
             limit: 0
           },
