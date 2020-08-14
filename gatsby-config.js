@@ -82,7 +82,12 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/work/`],
+      },
+    },
     {
       resolve: `gatsby-plugin-remove-serviceworker`,
       options: {

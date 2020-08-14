@@ -14,6 +14,6 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-export const wrapRootElement = ({ element }) => (
+export const wrapPageElement = ({ element }) => (
   <ApolloProvider client={client}>{element}</ApolloProvider>
 );
