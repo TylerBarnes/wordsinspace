@@ -171,7 +171,8 @@ li.blocks-gallery-item:last-child {
 
 .slideshowImgWrapper {
   height: 100%;
-  width: inherit;
+  /*width: inherit;*/
+  max-width: 600px;
 }
 
 .slideshowImgWrapper > *  {
@@ -181,6 +182,7 @@ li.blocks-gallery-item:last-child {
 
 .slideshowImgWrapper img  {
   padding: 0px 30px;
+  height: 100% !important;
   -o-object-fit: contain !important;
      object-fit: contain !important;
 }
@@ -255,6 +257,10 @@ li.blocks-gallery-item:last-child {
   color: #6262F4 !important;
   width: inherit;
   /* padding: 0 5vw 0 0; */
+}
+
+p img {
+  max-width: 80% !important;
 }
 
 .content img {
