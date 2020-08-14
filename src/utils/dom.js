@@ -6,54 +6,55 @@ const global_mobile_width = '93vw'
 //
 // HOME
 //
-// A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Home
-export const getResponsiveHomeVars = (breakpoint) => {
-  return {
-    mobileHome:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
-    mobileFooterWidth: global_mobile_width,
-    mobileColophon:  breakpoint !== 'lg', // this goes into colophon.js, 
-    mobileColophonWidth: global_mobile_width, // this goes into colophon.js, 
-    mobileFooterWidth: '93vw',
-  }
+// A function that receives the current breakpoints range (lg, md, sm, xs) as defined in src/hooks/usebreakpoints.js and returns bool variables that control the layouts of the Home
+export const getResponsiveHomeVars = (breakpoints) => {
+    return {
+        mobileHome:  !breakpoints.desktop, // this goes into article/ArticleTags.js
+        mobileFooterWidth: global_mobile_width,
+        mobileColophon:  !breakpoints.desktop, // this goes into colophon.js, 
+        mobileColophonWidth: global_mobile_width, // this goes into colophon.js, 
+        mobileFooterWidth: global_mobile_width,
+        mobile404: !breakpoints.desktop,
+    }
 }
 
 //
 // BROWSER
 //
-// A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Browser
-export const getResponsiveBrowserVars = (breakpoint) => {
-  return {
-    showDesktopFilters: breakpoint === 'lg', // this goes into the templates/category.js and templates/work.js
-    showMobileFilters: breakpoint !== 'lg', // this goes into the templates/category.js and templates/work.js
-    showSearch: breakpoint === 'lg', // this goes into the layouts/browser.js
-    mobileBrowserLayout : breakpoint !== 'lg', // this goes into the layouts/browser.js
-    mobileNavBar : breakpoint !== 'lg',// this goes into the layouts/browser.js
-    mobileList: breakpoint !== 'lg', // this goes into components/list.js and components/list/listItem.js
-    listWidth: breakpoint !== 'lg' ? global_mobile_width : '72vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the List component. The List expands to 100vw since we don't have side Filters on mobile.
-    listTitleWidth: breakpoint !== 'lg' ? global_mobile_width : '45vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the Title in each ListItem. Titles expand almost fully in mobile, they are constrated at 50vw when not on mobile.
-  }
+// A function that receives the current breakpoints range (lg, md, sm, xs) as defined in src/hooks/usebreakpoints.js and returns bool variables that control the layouts of the Browser
+export const getResponsiveBrowserVars = (breakpoints) => {
+    return {
+        showDesktopFilters: breakpoints.desktop, //this goes into the templates/category.js and work.js
+        showMobileFilters: !breakpoints.desktop, //this goes into the templates/category.js and work.js
+        showSearch: breakpoints.desktop, // this goes into the layouts/browser.js
+        mobileBrowserLayout : !breakpoints.desktop, // this goes into the layouts/browser.js
+        mobileNavBar : !breakpoints.desktop,// this goes into the layouts/browser.js
+        mobileList: !breakpoints.desktop, // this goes into components/list.js list/listItem.js
+        listWidth: !breakpoints.desktop ? global_mobile_width : '72vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the List component. The List expands to 100vw since we don't have side Filters on mobile.
+        listTitleWidth: !breakpoints.desktop ? global_mobile_width : '45vw', // this goes into components/list.js and components/list/listItem.js, it controls the width of the Title in each ListItem. Titles expand almost fully in mobile, they are constrated at 50vw when not on mobile.
+    }
 }
 
 //
 // READER
 //
-// A function that receives the current breakpoint range (lg, md, sm, xs) as defined in src/hooks/useBreakpoint.js and returns bool variables that control the layouts of the Reader
-export const getResponsiveReaderVars = (breakpoint) => {
-  return {
-    mobileNavBar : breakpoint !== 'lg', // this goes into the layouts/reader.js
-    mobileArticleCategory:  breakpoint !== 'lg', // this goes into article/ArticleCategory.js
-    mobileArticleTags:  breakpoint !== 'lg', // this goes into article/ArticleTags.js
-    mobileArticleContent:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
-    mobileArticleContentWidth:  breakpoint !== 'lg' ? '93vw' : '70vw', // this goes into article/ArticleContent.js
-    mobileArticleContentMargin:  breakpoint !== 'lg' ? '0' : '0vh 5vh', // this goes into article/ArticleContent.js
-    mobileArticleContentPadding:  breakpoint !== 'lg' ? '5px 15px' : '0', // this goes into article/ArticleContent.js
-    mobileArticleTitle:  breakpoint !== 'lg', // this goes into article/ArticleContent.js
-    mobileArticleFooter:  breakpoint !== 'lg', // this goes into article/ArticleFooter.js
-    mobileTaxonomy : breakpoint !== 'lg', // this goes into article/ArticleTaxonomy.js
-    mobileReaderWidth : global_mobile_width,
-    mobileTaxonomyMargins: breakpoint !== 'lg' ? '5px 15px': '',
-    mobileFooterWidth: global_mobile_width
-  }
+// A function that receives the current breakpoints range (lg, md, sm, xs) as defined in src/hooks/usebreakpoints.js and returns bool variables that control the layouts of the Reader
+export const getResponsiveReaderVars = (breakpoints) => {
+    return {
+        mobileNavBar : !breakpoints.desktop, // this goes into the layouts/reader.js
+        mobileArticleCategory: !breakpoints.desktop, // this goes into article/ArticleCategory.js
+        mobileArticleTags: !breakpoints.desktop, // this goes into article/ArticleTags.js
+        mobileArticleContent:  !breakpoints.desktop, // this goes into article/ArticleContent.js
+        mobileArticleContentWidth: !breakpoints.desktop ? '93vw' : '70vw', // this goes into article/ArticleContent.js
+        mobileArticleContentMargin: !breakpoints.desktop ? '0' : '0vh 5vh', // this goes into article/ArticleContent.js
+        mobileArticleContentPadding: !breakpoints.desktop ? '5px 15px' : '0', // this goes into article/ArticleContent.js
+        mobileArticleTitle: !breakpoints.desktop, // this goes into article/ArticleContent.js
+        mobileArticleFooter: !breakpoints.desktop, // this goes into article/ArticleFooter.js
+        mobileTaxonomy :!breakpoints.desktop, // this goes into article/ArticleTaxonomy.js
+        mobileReaderWidth : global_mobile_width,
+        mobileTaxonomyMargins: !breakpoints.desktop ? '5px 15px': '',
+        mobileFooterWidth: global_mobile_width
+    }
 }
 
 

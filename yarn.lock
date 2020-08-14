@@ -1022,7 +1022,17 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
+<<<<<<< HEAD
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+=======
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.3.4", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+  version "7.10.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.5.tgz#303d8bd440ecd5a491eae6117fd3367698674c5c"
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.11.0", "@babel/runtime@^7.5.5":
+>>>>>>> 2d6d641197742af1206b2d6ebceb13259be6d0ca
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -6511,7 +6521,17 @@ gatsby-page-utils@^0.2.20:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+<<<<<<< HEAD
 gatsby-plugin-catch-links@^2.3.11:
+=======
+gatsby-plugin-breakpoints@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-breakpoints/-/gatsby-plugin-breakpoints-1.2.2.tgz#7d6f05ea2b93de062e5394f6c3e5cacac2511a1e"
+  dependencies:
+    "@babel/runtime" "^7.11.0"
+
+gatsby-plugin-catch-links@^2.3.2:
+>>>>>>> 2d6d641197742af1206b2d6ebceb13259be6d0ca
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.11.tgz#6a61a126a2ffcc3b155a1647123eb069a0b9e5d6"
   integrity sha512-30oNCe85evOmyEQ4THwfV0Uokv0GVQv+VpR6ztabLDF78J3p3yFQNQhtcyXPjHrLU2EeuWutSZYk3v1etdh9Hw==

@@ -4,14 +4,14 @@ import {useScrollRestoration} from "gatsby"
 import Footer from "./footer"
 import MobileFooter from "./mobile/mobileFooter"
 
-import useBreakpoints from '../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
 import ListItem from "./list/listItem"
 
 const List = ({loading, items, isTagMode}) => {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-  const {mobileList, listWidth, listTitleWidth} = getResponsiveBrowserVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileList, listWidth, listTitleWidth} = getResponsiveBrowserVars(breakpoints)
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
 

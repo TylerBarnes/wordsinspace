@@ -1,7 +1,7 @@
 import React from "react"
 import {getMonthName} from "../../utils/helpers"
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 
 const ArticleDate = ({date}) => {
@@ -9,9 +9,8 @@ const ArticleDate = ({date}) => {
   const monthName = getMonthName(monthIndex)
   const year = date.slice(0,4)
   
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoints)
 
   return (
 		<div 

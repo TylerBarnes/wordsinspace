@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
-import useBreakpoints from '../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveHomeVars} from "../utils/dom"
 import {useLocation} from '@reach/router'
 
@@ -20,10 +20,10 @@ const Home = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
   const location = useLocation()
   const isColophon = location.pathname === '/colophon'
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
 
-  const {mobileHome} = getResponsiveHomeVars(breakpoint)
-
+  const breakpoints = useBreakpoint()
+  const {mobileHome} = getResponsiveHomeVars(breakpoints)
+  
   const styleWrapper =
   {
     display: 'flex',

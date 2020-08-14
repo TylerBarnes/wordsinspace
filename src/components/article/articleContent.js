@@ -1,6 +1,6 @@
 import React from "react"
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 
 import ArticleRelated from "./articleRelated"
@@ -11,9 +11,8 @@ const ArticleContent = ({tags, title, content}) => {
   const related = getRelated(tags, title)
   const showRelated = related?.length > 0
 
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileArticleContent, mobileArticleContentWidth, mobileArticleContentMargin, mobileArticleContentPadding } = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileArticleContent, mobileArticleContentWidth, mobileArticleContentMargin, mobileArticleContentPadding } = getResponsiveReaderVars(breakpoints)
 
   return (
     <div

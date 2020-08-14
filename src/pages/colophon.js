@@ -3,16 +3,16 @@ import React from "react"
 import Home from "../layouts/home"
 import SEO from "../components/seo"
 
-import useBreakpoints from '../hooks/useBreakpoint'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import {getResponsiveHomeVars} from "../utils/dom"
 
 import ArticleTitle from "../components/article/articleTitle"
 import ArticleFooter from "../components/article/articleFooter"
 
 export default function Colophon() {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileColophon, mobileColophonWidth} = getResponsiveHomeVars(breakpoint)
+  const breakpoints = useBreakpoint();
+  const {mobileColophon, mobileColophonWidth} = getResponsiveHomeVars(breakpoints)
+  
   const columnStyle = 
   {
     width: mobileColophon ? '100%' : '33%',

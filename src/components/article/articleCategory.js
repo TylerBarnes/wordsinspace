@@ -1,15 +1,14 @@
 import React from "react"
 import {Link} from "gatsby"
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 
 const ArticleCategory = ({categories}) => {
   const category = categories?.nodes[0]?.name.toLowerCase()
   
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoints)
 
   return (
 		<div 
