@@ -14,6 +14,7 @@ export const getResponsiveHomeVars = (breakpoints) => {
         mobileColophon:  !breakpoints.desktop, // this goes into colophon.js,
         mobileColophonWidth: global_mobile_width, // this goes into colophon.js,
         mobileFooterWidth: global_mobile_width,
+        mobile404: !breakpoints.desktop,
     }
 }
 
