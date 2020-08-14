@@ -1,12 +1,12 @@
 import React from "react"
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 
 import MobileCategories from "./mobileCategories"
 
 const MobileFilters = () => {
 
   return (
-    <div 
+    <div className='no-scroll'
       style={{
         textTransform: 'uppercase',
         overflow: 'scroll',

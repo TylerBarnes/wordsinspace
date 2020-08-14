@@ -42,8 +42,8 @@ const Reader = ({children}) => {
 
   const childrenWrapper =
   {
-    height: 'calc(100vh - 60px)',
-    width: 'calc(100vw - 50px)',
+    height: mobileNavBar ? '100%' : 'calc(100vh - 60px)',
+    width: mobileNavBar ? '100%' : 'calc(100vw - 50px)',
     overflow: 'auto',
     display: 'flex',
     flexFlow: 'column',

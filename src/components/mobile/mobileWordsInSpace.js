@@ -7,7 +7,7 @@ import Circle_wordsinspace from '../../images/assets/circle_wordsinspace.svg'
 const MobileWordsInSpace = () => {
   const title = useTitle();
   return (
-		<div 
+		<div
       style={{
 		    width: '100%',
 		    height: '60px',
@@ -18,14 +18,16 @@ const MobileWordsInSpace = () => {
 		    justifyContent: 'center',
 		  }}>
 
-      <div 
+      <div
         style={{
-        	margin: '10px 10px 0 0',
+        	margin: '5px 10px 0 0',
         	alignSelf: 'center',
+          position: 'absolute',
+          left: '15px',
         }}>
 	      <Link to={'/'}><Circle_wordsinspace /></Link>
 	      </div>
-        
+
       <Link
         to='/'
         className='interface'
@@ -35,9 +37,8 @@ const MobileWordsInSpace = () => {
         >
         {title}
       </Link>
-    </div> 
+    </div>
   )
 }
 
 export default MobileWordsInSpace
-

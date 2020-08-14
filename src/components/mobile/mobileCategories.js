@@ -14,7 +14,7 @@ const MobileCategories = () => {
 		<div
 			style={{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'flex-start',
 				height: '40px',
 				padding: '5px',
@@ -27,7 +27,7 @@ const MobileCategories = () => {
 					to={'/work'}
 					activeClassName='category-active'
 					partiallyActive={true}
-					className='work mobile'
+					className='work'
 					>
 					All
 				</Link>
@@ -41,7 +41,7 @@ const MobileCategories = () => {
 						to={`/${category.slug}`}
 						activeClassName='category-active'
 						partiallyActive={true}
-						className={`${category.slug} mobile`}
+						className={`${category.slug}`}
 						>
 		      	{category.name}
 		      </Link>

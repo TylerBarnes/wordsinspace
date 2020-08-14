@@ -70,7 +70,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
             flexDirection: 'row',
             justifyContent: 'space-evenly',
             alignItems: 'flex-start',
-            margin: mobileList ? '10px 0 0 0' :'1vh 0 0 2vh',
+            margin: mobileList ? '10px 0 0 0' :'1.2vh 0 0 8vh',
           }}>
           {date && <ListDate date={date} invertedTheme={invertedTheme} />}
           {category && category !== 'Uncategorized' && <ListCategory category={category.toLowerCase()} />}
@@ -81,14 +81,13 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: mobileList ? '15px 0' : '3vh 0 5vh 0',
+            margin: mobileList ? '15px 0' : '3vh 0 8vh 0',
             paddingLeft: mobileList ? '0' : '20px',
           }}>
           <Link
             to={item.uri}
             className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
             {item.title}
-            <GlyphFilled />
           </Link>
         </div>
 

@@ -6,13 +6,13 @@ const ListDate = ({date, invertedTheme}) => {
   const monthName = getMonthName(monthIndex)
   const year = date.slice(0,4)
   return (
-    <div 
+    <div
       className={invertedTheme ? 'date date-inverted' : 'date'}
       style={{
         alignSelf: 'flex-start',
-        margin: '1px 5px 0px 20px',
-      }}> 
-      {monthName} {year} 
+        margin: '1px 5px 0px 0px',
+      }}>
+      {monthName} {year}
     </div>
   )
 }
