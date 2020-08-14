@@ -6,7 +6,9 @@ const Categories = () => {
   const categories = useCategories()
 
   return (
-		<div style={{
+		<div
+    className='no-scroll'
+    style={{
       flex: '1 1 fill',
 			margin: '0',
       padding: '5px 0 0 0',

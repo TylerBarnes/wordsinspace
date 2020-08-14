@@ -27,7 +27,7 @@ const WordsInSpace = () => {
             marginLeft: '6px',
 	        	alignSelf: 'center'
 	        }}>
-		      <Link to={'/'}><Circle_wordsinspace /></Link>
+		      <Link to={'/'}><Circle_wordsinspace id="circle-wordsinspace" /></Link>
 	      </div>
 
 	      <Link

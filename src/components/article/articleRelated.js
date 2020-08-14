@@ -53,15 +53,13 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
       <div 
         key={index} 
         style={{
-          position: 'relative',
-          display: 'flex',
-          flexFlow: 'column',
-          alignItems: 'center',
-
-        }}>
-        <Sticker_Related />
-        <div
-          style={styles} >
+        position: 'relative',
+        display: 'flex',
+        flexFlow: 'column',
+        alignItems: 'center',
+      }}>
+        <div className='related-item'
+          style={styles}>
           <ArticleCategory categories={item.categories}/>
           <Link lang='de' className='related-title' to={item.uri}>{item.title}</Link>
           <div style={{
@@ -70,6 +68,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
           }}>
           </div>
         </div>
+        <Sticker_Related id='sticker-related' />
       </div>
       ))}
     </div>

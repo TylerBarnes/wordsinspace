@@ -123,23 +123,72 @@
 
 .Sticker svg {
 	position: absolute;
+	transition-duration: 0.5s;
 }
 
-svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
+.smallSticker > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex: 1 1 0;
+}
+
+.smallSticker svg{
+	position: absolute;
+	transition-duration: 0.5s;
+}
+
+ /* { old zoom animation
 	-webkit-animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
 	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+} */
+
+svg#sticker-related:hover, svg#circle-wordsinspace:hover, svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
+	-webkit-animation: loading-spinner  15s infinite;
+	        animation: loading-spinner  15s infinite;
 }
 
-svg#sticker-words:hover, svg#sticker-colophon:hover svg#sticker-cv:hover, svg#sticker-twitter:hover {
-	-webkit-animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
+.related-item:hover + svg#sticker-related, svg#sticker-browse-text:hover + svg#sticker-browse, svg#sticker-upcoming-text:hover + svg#sticker-upcoming {
+	-webkit-animation: loading-spinner  15s infinite;
+	        animation: loading-spinner  15s infinite;
 }
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
-	-webkit-animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+	-webkit-animation: loading-spinner-inverse  5s infinite;
+	        animation: loading-spinner-inverse  5s infinite;
+					stroke: #F4D791;
 }
 
+/* @-webkit-keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+} */
 
 @-webkit-keyframes loading-spinner {
   from {
@@ -186,37 +235,6 @@ svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover 
   }
 }
 
-
-@-webkit-keyframes zoom-in-out {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-
-@keyframes zoom-in-out {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 
 .colophon-copy {
 	font-family: 'LaNord_Light';
