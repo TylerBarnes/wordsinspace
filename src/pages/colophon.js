@@ -11,8 +11,8 @@ import ArticleFooter from "../components/article/articleFooter"
 
 export default function Colophon() {
   const breakpoints = useBreakpoint();
-
   const {mobileColophon, mobileColophonWidth} = getResponsiveHomeVars(breakpoints)
+  
   const columnStyle = 
   {
     width: mobileColophon ? '100%' : '33%',
