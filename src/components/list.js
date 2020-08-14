@@ -28,7 +28,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: 'calc(100vh - 60px)',
+        maxHeight: mobileList ?  'calc(100vh - 165px)' : 'calc(100vh - 60px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}

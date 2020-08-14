@@ -20,7 +20,7 @@ const MobileWordsInSpace = () => {
 
       <div
         style={{
-        	margin: '5px 10px 0 0',
+        	margin: '3px 10px 0 0',
         	alignSelf: 'center',
           position: 'absolute',
           left: '15px',
