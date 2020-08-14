@@ -7,7 +7,8 @@ import Footer from '../footer'
 import MobileFooter from '../mobile/mobileFooter'
 
 const ArticleFooter = () => {
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileArticleFooter} = getResponsiveReaderVars(breakpoint)
 
   return (

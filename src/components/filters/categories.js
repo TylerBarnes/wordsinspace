@@ -6,11 +6,13 @@ const Categories = () => {
   const categories = useCategories()
 
   return (
-		<div style={{
-			margin: '1vh 0 0 0',
-      padding: '1vh 0 0 0',
-      overflow: 'auto',
-      height: '38vh',
+		<div
+    className='no-scroll'
+    style={{
+      flex: '1 1 fill',
+			margin: '0',
+      padding: '5px 0 0 0',
+      height: '35vh',
 		}}>
 			<Link
 				to={'/work'}

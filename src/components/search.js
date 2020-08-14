@@ -77,7 +77,7 @@ const Search = () => {
     })
 
   useEffect(()=>{
-    if (showResults && !loading) { 
+    if (showResults && !loading) {
       setSearchResults(extractSearchResults(data))
     }
   },[data])
@@ -129,7 +129,7 @@ const Search = () => {
             padding: '5px 0 0 5px',
             border: 'none',
             background: 'rgba(255,255,255,0.6)'
-          }} 
+          }}
           ref={inputEl}
           type="text"
           placeholder="SEARCH"
@@ -145,6 +145,14 @@ const Search = () => {
             onMouseLeave={e=>setGlyphHovered(false)}
             onClick={e=>handleSubmit(e)}
             >
+            {isGlyphHovered
+             ? !showResults 
+               ? <GlyphHover /> 
+               : null
+             : !showResults 
+               ? <Glyph />
+               : <GlyphOpen />
+           }
          </div>
         </div>
       </form>

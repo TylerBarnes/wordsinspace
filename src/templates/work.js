@@ -15,7 +15,8 @@ import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function Work({data}) {
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+;
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoint)
 
   // initialize the items to all of the Pages and all of the Posts
@@ -37,10 +38,6 @@ export default function Work({data}) {
     e.preventDefault()
     setTags(tags.map(tag=> ({...tag, checked: false})))
     setTagMode(false)
-  }
-
-  function handleClearIndividualTag(e, label) {
-    setTags(tags.map(tag => tag.name === label ? {...tag, checked: false } : tag))
   }
 
   // watches tags array for updates and updates the Tag Mode in case no Tag is checked
@@ -65,7 +62,7 @@ export default function Work({data}) {
       }
       <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
       {showDesktopFilters && 
-        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode} clearIndividualTag={handleClearIndividualTag}/>
+        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
       }
     </Browser>
 	)

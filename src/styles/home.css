@@ -1,3 +1,4 @@
+
 /*****/
 /*****/
 /*****STYLES SPECIFIC TO HOME*/
@@ -20,10 +21,9 @@
 	font-family: 'LaNord', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 45px;
-	line-height: 44px;
+	font-size: 40px;
+	line-height: 40px;
 	color: #6262F4;
-	margin: 15px 0px 5px 10px;
 }
 
 .home-title-mobile {
@@ -35,30 +35,67 @@
 	color: #6262F4;
 }
 
-.right {
-	text-align: center;
-	align-self: stretch;
+/* homeItem left side > imageL and imageR alignments; right side */
+
+.left > * {
+	text-align: right;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: column;
-	flex-flow: column;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row;
+	        flex-flow: row;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
-.left {
-	text-align: left;
-	display: flex;
-	flex-flow: row;
-	justify-content: space-between;
+.left .home-title {
+	margin: 15px 15px 5px 0px;
 }
 
 .left .home-entry {
-	flex-basis: 60%;
+	-ms-flex-preferred-size: 60%;
+	    flex-basis: 60%;
 }
 
-.left .gatsby-image-wrapper {
+.imageL .home-title {
+	margin: 15px 0px 5px 15px;
+}
+
+.imageL {
+	text-align: left;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row;
+	        flex-flow: row;
+	-ms-flex-direction: row-reverse;
+	    flex-direction: row-reverse;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.right {
+	text-align: center;
+	-ms-flex-item-align: stretch;
+	    align-self: stretch;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: column;
+	        flex-flow: column;
+	flex-flow: column;
 }
 
 .right .home-title {
-	padding: 0 20px 20px 20px;
+	padding: 15px 20px 20px 20px;
 }
 
 /*****/
@@ -67,46 +104,143 @@
 /*****/
 /*****/
 
-svg#sticker-browser:hover, svg#sticker-upcoming:hover, svg#sticker-student:hover {
-	animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+.Sticker > * {
+	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row;
+	        flex-flow: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
-svg#sticker-words:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
-	animation: loading-spinner  5s cubic-bezier(0, 0, 1, 1) infinite;
+.Sticker svg {
+	position: absolute;
+	transition-duration: 0.5s;
+}
+
+.smallSticker > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex: 1 1 0;
+}
+
+.smallSticker svg{
+	position: absolute;
+	transition-duration: 0.5s;
+}
+
+ /* { old zoom animation
+	-webkit-animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
+} */
+
+svg#sticker-related:hover, svg#circle-wordsinspace:hover, svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover {
+	-webkit-animation: loading-spinner  15s infinite;
+	        animation: loading-spinner  15s infinite;
+}
+
+.related-item:hover + svg#sticker-related, svg#sticker-browse-text:hover + svg#sticker-browse, svg#sticker-upcoming-text:hover + svg#sticker-upcoming {
+	-webkit-animation: loading-spinner  15s infinite;
+	        animation: loading-spinner  15s infinite;
 }
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
-	animation: loading-spinner-inverse  5s cubic-bezier(0, 0, 1, 1) infinite;
+	-webkit-animation: loading-spinner-inverse  5s infinite;
+	        animation: loading-spinner-inverse  5s infinite;
+					stroke: #F4D791;
+}
+
+/* @-webkit-keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoom-in-out {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+} */
+
+@-webkit-keyframes loading-spinner {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 
 @keyframes loading-spinner {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading-spinner-inverse {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
 @keyframes loading-spinner-inverse {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
 
-@keyframes zoom-in-out {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.colophon-copy {
+	font-family: 'LaNord_Light';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 34px;
+	color: #513bfd;
 }

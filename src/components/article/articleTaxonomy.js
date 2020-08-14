@@ -10,7 +10,8 @@ import {getResponsiveReaderVars} from "../../utils/dom"
 
 
 const ArticleTaxonomy = ({date, categories, tags}) => {
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileTaxonomy} = getResponsiveReaderVars(breakpoint)
 
   return (

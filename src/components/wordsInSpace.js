@@ -7,7 +7,7 @@ import Circle_wordsinspace from '../images/assets/circle_wordsinspace.svg'
 const WordsInSpace = () => {
   const title = useTitle();
   return (
-		<div 
+		<div
       style={{
 		    alignSelf: 'flex-start',
 		    flexShrink: '0',
@@ -20,15 +20,16 @@ const WordsInSpace = () => {
 		    flexWrap: 'nowrap',
 		    justifyContent: 'flex-start',
 		  }}>
-        
-        <div 
+
+        <div
 	        style={{
-	        	marginTop: '10px',
+	        	marginTop: '13px',
+            marginLeft: '6px',
 	        	alignSelf: 'center'
 	        }}>
-		      <Link to={'/'}><Circle_wordsinspace /></Link>
+		      <Link to={'/'}><Circle_wordsinspace id="circle-wordsinspace" /></Link>
 	      </div>
-	        
+
 	      <Link
 	        to="/"
 	        className='interface'
@@ -39,9 +40,8 @@ const WordsInSpace = () => {
 	     		>
 	        {title}
 	      </Link>
-      </div> 
+      </div>
   )
 }
 
 export default WordsInSpace
-

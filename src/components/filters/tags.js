@@ -1,9 +1,8 @@
 import React, {useState} from "react"
 
 import Checkbox from './checkbox'
-import TagsInfoBox from './tagsInfoBox'
 
-const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
+const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 	const tagCutoff = 20
@@ -12,15 +11,16 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 
   return (
    <div
+	 		className='no-scroll'
 	   	style={{
   	    marginTop: '0px',
 	    	textAlign: 'left',
 				overflowY: 'scroll',
 				overflowX: 'hidden',
-				height: '52vh',
-				paddingBottom: '0vh'
+				height: 'calc(-90px + 65vh)',
+				paddingBottom: '0vh',
+				flex: '1 1 auto',
 	    }}>
-     	<TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>
 
       {topTags && topTags.map((tag, index) => (
 				<Checkbox
@@ -29,7 +29,6 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
-		      clearIndividualTag={clearIndividualTag}
 		    />
      	))}
 
@@ -39,16 +38,15 @@ const Tags = ({tags, selectTags, clearTags, isTagMode, clearIndividualTag}) => {
 		      label={tag.name}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
-		      onCheckboxChange={selectTags}
-		      clearIndividualTag={clearIndividualTag}
+		      onChecåkboxChange={selectTags}
 		    />
      	))}
 
      	<button
 				className='metadata'
 	    	style={{
-					margin: '0',
-					padding: '0',
+					margin: '1vh 0',
+					padding: '0 1vh',
 					border: 'none',
 					background: 'transparent',
 	        cursor: 'pointer',

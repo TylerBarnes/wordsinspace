@@ -4,23 +4,30 @@ import PropTypes from "prop-types"
 
 import useBreakpoints from '../hooks/useBreakpoint';
 import {getResponsiveHomeVars} from "../utils/dom"
+import {useLocation} from '@reach/router'
 
 import WordsInSpace from '../components/wordsInSpace'
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
+
+import GlyphLeft from '../images/assets/glyph_left.svg'
+import GlyphLeftHover from '../images/assets/glyph_left_hover.svg'
 
 import "../styles/layout.css"
 import "../styles/global.css"
 import "../styles/home.css"
 
 const Home = ({children}) => {
-  
-  const breakpoint = useBreakpoints();
+  const [isGlyphHovered, setGlyphHovered] = useState(false)
+  const location = useLocation()
+  const isColophon = location.pathname === '/colophon'
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileHome} = getResponsiveHomeVars(breakpoint)
 
   const styleWrapper =
   {
     display: 'flex',
-    flexDirection: 'row nowrap',
+    flexDirection: mobileHome ? 'column' : 'row', 
     alignItems: 'flex-start',
     justifyContent: 'space-around',
     height: '100vh',
@@ -37,7 +44,7 @@ const Home = ({children}) => {
 
   const childrenWrapper =
   {
-    height: '90vh',
+    height: 'calc(100vh - 60px)',
     overflow: 'auto',
   }
 
@@ -46,20 +53,35 @@ const Home = ({children}) => {
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileHome && <WordsInSpace />}
       {mobileHome && <MobileWordsInSpace />}
-
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
         <div className='gradient'>
           <div style={styleTopBar}>
             <div className='interface'>
-              HOME
+              <Link to={'/'}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'row',
+                  alignContent: 'center',
+                }}
+                  onMouseEnter={e=>setGlyphHovered(true)}
+                  onMouseLeave={e=>setGlyphHovered(false)}
+                  >
+                  {isColophon && 
+                    isGlyphHovered 
+                    ? <GlyphLeftHover /> 
+                    : isColophon ? <GlyphLeft /> : null
+                  }
+                  <span style={{marginLeft: '5px'}}>HOME</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* ----------------------------MAIN---------------------------- */}
-        <div 
+        <div
           style={childrenWrapper}>
           {children}
         </div>

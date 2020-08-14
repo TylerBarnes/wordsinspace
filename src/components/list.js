@@ -10,7 +10,7 @@ import {getResponsiveBrowserVars} from "../utils/dom"
 import ListItem from "./list/listItem"
 
 const List = ({loading, items, isTagMode}) => {
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
   const {mobileList, listWidth, listTitleWidth} = getResponsiveBrowserVars(breakpoint)
 
   const ulScrollRestoration = useScrollRestoration(`list-component-ul-list`)
@@ -28,7 +28,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: '92vh',
+        maxHeight: 'calc(100vh - 60px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}
@@ -51,10 +51,11 @@ const List = ({loading, items, isTagMode}) => {
           <ul
             style={{
               borderBottom: '1px solid #6262F4',
-              padding: '15px'
+              padding: '0px 15px 15px 15px',
+              width: 'calc(80vw - 50px)',
             }}
             id='list'>
-            <button 
+            <button
               style={{
                 display: !mobileList ? 'block' : 'none',
                 position: 'fixed',
@@ -71,19 +72,20 @@ const List = ({loading, items, isTagMode}) => {
                 textTransform: 'uppercase',
                 cursor: 'pointer',
                 zIndex: '2'
-              }} 
+              }}
               onClick={handleScrollTop}>
-              <div 
+              <div
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
                   transform: 'rotate(180deg)',
                 }}>
-                scroll to top
+                &#x2192;
+                &#x2192;
                 &#x2192;
               </div>
             </button>
-            
+
             {items && items.map((item, index) => (
               <ListItem
                 key={index}

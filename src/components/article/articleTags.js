@@ -5,20 +5,24 @@ import {getResponsiveReaderVars} from "../../utils/dom"
 import MobileTags from '../mobile/mobileTags'
 
 const ArticleTags = ({tags}) => {
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileArticleTags, mobileReaderWidth} = getResponsiveReaderVars(breakpoint)
 
   if (mobileArticleTags) return <MobileTags tags={tags} mobileReaderWidth={mobileReaderWidth} />
-  
+
   return (
 		<div
       style={{
         alignSelf: 'flex-start',
-      }}> 
-      {tags.nodes.map((tag, index_tag) => 
-        <span 
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        alignContent: 'flex-start',
+      }}>
+      {tags.nodes.map((tag, index_tag) =>
+        <span
           style={{
-            marginRight: '10px'
+            marginRight: '10px',
           }}
           className='tag'
           key={index_tag}>

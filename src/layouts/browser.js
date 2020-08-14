@@ -19,7 +19,8 @@ const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
 
-  const breakpoint = useBreakpoints();
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+;
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoint)
 
   const styleWrapper =
@@ -36,6 +37,7 @@ const Browser = ({ children, props }) => {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     textTransform: 'uppercase',
     height: '60px',
   }
@@ -45,7 +47,7 @@ const Browser = ({ children, props }) => {
     display: 'flex',
     flexDirection: mobileBrowserLayout ? 'column' : 'row',
     justifyContent: 'space-between',
-    height: '90vh',
+    height: '100%',
     overflow: 'auto',
   }
 
@@ -56,15 +58,15 @@ const Browser = ({ children, props }) => {
       {mobileNavBar && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div 
+      <div
         style={{
           width: '100%',
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
           <div className='interface'>
-            Browsing: 
-            <span 
+            Browsing:
+            <span
               style={{
                 marginLeft: '5px'
               }}
@@ -72,8 +74,8 @@ const Browser = ({ children, props }) => {
               {catName === 'work' ? `All` : `${catName}`}
             </span>
           </div>
+          {showSearch && <Search />}
         </div>
-        {mobileBrowserLayout && <MobileFilters />}
         {/* ----------------------------MAIN ---------------------------- */}
         <div
           style={childrenWrapper}>

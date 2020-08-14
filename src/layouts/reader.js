@@ -18,19 +18,20 @@ import "../styles/reader.css"
 const Reader = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
 
-  const breakpoint = useBreakpoints()
+  const breakpoint = useBreakpoints(typeof window !== `undefined`)
+
   const {mobileNavBar} = getResponsiveReaderVars(breakpoint)
 
-  const styleWrapper = 
+  const styleWrapper =
   {
     display: 'flex',
-    flexDirection: mobileNavBar ? 'column' : 'row', 
+    flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
   }
 
-  const styleTopBar = 
+  const styleTopBar =
   {
     display: mobileNavBar ? 'none' : 'flex',
     flexDirection: 'row',
@@ -41,8 +42,12 @@ const Reader = ({children}) => {
 
   const childrenWrapper =
   {
-    height: '90vh',
+    height: 'calc(100vh - 60px)',
+    width: 'calc(100vw - 50px)',
     overflow: 'auto',
+    display: 'flex',
+    flexFlow: 'column',
+    justifyContent: 'space-between',
   }
 
   return (
@@ -50,7 +55,7 @@ const Reader = ({children}) => {
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
-      {mobileNavBar && <MobileWordsInSpace />}      
+      {mobileNavBar && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
@@ -74,7 +79,7 @@ const Reader = ({children}) => {
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-        <div 
+        <div
           style={childrenWrapper}>
             {children}
        </div>

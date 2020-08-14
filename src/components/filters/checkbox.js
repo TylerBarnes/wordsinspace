@@ -1,26 +1,19 @@
 import React from "react";
 
-const Checkbox = ({ count, label, isSelected, onCheckboxChange, clearIndividualTag}) => {
+const Checkbox = ({ count, label, isSelected, onCheckboxChange}) => {
   if (count < 2 ) return null // hiding the tags with only one item
   return (
-    <div 
+    <div
       style={{
         margin: '5px 0',
       }}>
-      {isSelected 
-        ? <div 
-            onClick={e=>clearIndividualTag(e,label)}
-            className='tag-clear'>  
-            &times;
-          </div> 
-        : null
-      }
-      <label 
+
+      <label
         style={{
           paddingLeft: '20px',
           margin: 0,
           textAlign: 'left',
-        }} 
+        }}
         className={isSelected ? 'tag tag-active' : 'tag'}
         >
         <input
@@ -32,9 +25,9 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange, clearIndividualT
           checked={isSelected}
           onChange={onCheckboxChange}
         />
-        {label} [{count}]
+        {label}
       </label>
-      
+
     </div>
   )
 };

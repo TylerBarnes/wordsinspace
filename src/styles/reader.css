@@ -1,3 +1,4 @@
+
 /*****/
 /*****/
 /*****STYLES SPECIFIC TO READER*/
@@ -9,7 +10,7 @@
   font-size: 60px;
   line-height: 61px;
   color: #513bfd;
-  padding: 5vh 0 5vh 0;
+  padding: 1vh 0 5vh 0;
 }
 
 
@@ -25,11 +26,17 @@
 
 
 .related-title {
+  font-family:  'LaNord', sans-serif;
   color: #513bfd;
+  font-weight: normal;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 1vh;
+  /* hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto; */
 }
 
 
@@ -42,7 +49,7 @@
 
 .blocks-gallery-grid {
   -ms-overflow-style: none;  /* IE and Edge */
-  /* scrollbar-width: none;  /* Firefox */ 
+  /* scrollbar-width: none;  /* Firefox */
 }
 
 .blocks-gallery-grid::-webkit-scrollbar {
@@ -52,9 +59,16 @@
 .blocks-gallery-grid {
   height: 100%;
   overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0;
   /* background:
     linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
@@ -92,6 +106,10 @@
 
 li.blocks-gallery-item:last-child {
   background:
+    -webkit-gradient(linear, left top, right top, from(rgba(245, 245, 255, 0)), color-stop(50%, rgba(245, 245, 255, 0)), color-stop(50%, rgba(245, 245, 255, 0.8)), color-stop(60%, rgba(245, 245, 255, 1)), to(rgba(245, 245, 255, 1)));
+  background:
+    -o-linear-gradient(left, rgba(245, 245, 255, 0), rgba(245, 245, 255, 0) 50%, rgba(245, 245, 255, 0.8) 50%, rgba(245, 245, 255, 1) 60%, rgba(245, 245, 255, 1) 100%);
+  background:
     linear-gradient(90deg, rgba(245, 245, 255, 0), rgba(245, 245, 255, 0) 50%, rgba(245, 245, 255, 0.8) 50%, rgba(245, 245, 255, 1) 60%, rgba(245, 245, 255, 1) 100%);
 }
 
@@ -103,7 +121,8 @@ li.blocks-gallery-item:last-child {
 
 .blocks-gallery-grid img  {
   padding: 0px 4vw;
-  object-fit: contain !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
 }
 
 .blocks-gallery-grid figure picture {
@@ -129,10 +148,21 @@ li.blocks-gallery-item:last-child {
 .slideshowWrapper {
   height: 100%;
   overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 4vh;
+  background:
+    -o-linear-gradient(233deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
+    -o-linear-gradient(323deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
+    -o-linear-gradient(114deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
   background:
     linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
     linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
@@ -141,16 +171,18 @@ li.blocks-gallery-item:last-child {
 
 .slideshowImgWrapper {
   height: 100%;
-  max-width: 600px;
+  width: inherit;
 }
 
 .slideshowImgWrapper > *  {
   height: inherit;
+  width: inherit;
 }
 
 .slideshowImgWrapper img  {
   padding: 0px 30px;
-  height: 100% !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
 }
 
 
@@ -218,15 +250,11 @@ li.blocks-gallery-item:last-child {
   font-family: 'Wremena_Light', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 22px;
+  line-height: 34px;
   color: #6262F4 !important;
   width: inherit;
   /* padding: 0 5vw 0 0; */
-}
-
-p img {
-  max-width: 80% !important;
 }
 
 .content img {
@@ -263,10 +291,19 @@ p img {
 }
 
 .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   overflow: scroll;
   width: 70vw;
   margin: 0 auto;
@@ -277,7 +314,8 @@ p img {
 
 .gallery-item {
   margin: 1vh 1vw;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 
