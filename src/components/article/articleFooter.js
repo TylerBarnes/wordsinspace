@@ -1,15 +1,14 @@
 import React from "react"
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 
 import Footer from '../footer'
 import MobileFooter from '../mobile/mobileFooter'
 
 const ArticleFooter = () => {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileArticleFooter} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileArticleFooter} = getResponsiveReaderVars(breakpoints)
 
   return (
     <div>

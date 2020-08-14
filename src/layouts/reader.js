@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {Link} from "gatsby"
 import PropTypes from "prop-types"
 
-import useBreakpoints from '../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../utils/dom"
 
 import WordsInSpace from '../components/wordsInSpace'
@@ -18,9 +18,8 @@ import "../styles/reader.css"
 const Reader = ({children}) => {
   const [isGlyphHovered, setGlyphHovered] = useState(false)
 
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileNavBar} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint();
+  const {mobileNavBar} = getResponsiveReaderVars(breakpoints)
 
   const styleWrapper =
   {

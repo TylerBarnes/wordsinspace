@@ -1,13 +1,11 @@
 import React from "react"
 
-import useBreakpoints from '../../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveReaderVars} from "../../utils/dom"
 
 const ArticleTitle = ({title}) => {
-
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-
-  const {mobileArticleTitle} = getResponsiveReaderVars(breakpoint)
+  const breakpoints = useBreakpoint()
+  const {mobileArticleTitle} = getResponsiveReaderVars(breakpoints)
   
   return (
     <div

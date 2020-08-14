@@ -9,7 +9,7 @@ import { navigate } from "gatsby"
 import MobileIndex from '../components/mobile/mobileIndex'
 
 import {useSiteMenuData} from '../hooks/useSiteMenuData'
-import useBreakpoints from '../hooks/useBreakpoint';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveHomeVars} from "../utils/dom"
 
 import MobileFooter from '../components/mobile/mobileFooter'
@@ -35,9 +35,8 @@ import Sticker_Colophon from '../images/assets/Sticker_Colophon.svg'
 import Sticker_Colophon_text from '../images/assets/Sticker_Colophon_text.svg'
 
 export default function HomePage() {
-  const breakpoint = useBreakpoints(typeof window !== `undefined`)
-;
-  const {mobileHome} = getResponsiveHomeVars(breakpoint)
+  const breakpoints = useBreakpoint();
+  const {mobileHome} = getResponsiveHomeVars(breakpoints)
 
   const menuData = useSiteMenuData();
 
