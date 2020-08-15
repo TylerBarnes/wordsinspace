@@ -38,7 +38,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 		      label={tag.name}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
-		      onChecåkboxChange={selectTags}
+		      onCheckboxChange={selectTags}
 		    />
      	))}
 
