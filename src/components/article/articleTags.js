@@ -25,7 +25,7 @@ const ArticleTags = ({tags}) => {
           }}
           className='tag'
           key={index_tag}>
-          {tag.slug}
+          {tag.name}
         </span>
       )}
     </div>
