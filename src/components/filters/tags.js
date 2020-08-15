@@ -55,6 +55,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	    	}}
 	      onMouseEnter={e=>setIsHovered(true)}
 	      onMouseLeave={e=>setIsHovered(false)}
+	      onKeyPress={e=>setShowExtra(!showExtra)}
 	    	onClick={e=>setShowExtra(!showExtra)}>
 	    	{!showExtra ? 'Show extra tags' : 'Hide extra tags'}
 	    </button>

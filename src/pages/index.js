@@ -31,8 +31,6 @@ import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
 import Sticker_Twitter_text from '../images/assets/Sticker_Twitter_text.svg'
 import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 import Sticker_Upcoming_text from '../images/assets/Sticker_Upcoming_text.svg'
-import Sticker_Colophon from '../images/assets/Sticker_Colophon.svg'
-import Sticker_Colophon_text from '../images/assets/Sticker_Colophon_text.svg'
 
 export default function HomePage() {
   const breakpoints = useBreakpoint();
@@ -142,10 +140,10 @@ export default function HomePage() {
               justifyContent: 'space-between',
               height: '120px',
             }}>
-            <a href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email_text id='sticker-email-text' /><Sticker_Email id='sticker-email' /></a>
-            <a href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter id='sticker-twitter' /></a>
-            <a href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV id='sticker-cv'/></a>
-            <a href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard_text id='sticker-pinboard-text' /><Sticker_Pinboard id='sticker-pinboard' /></a>
+            <a aria-label='email' href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email_text id='sticker-email-text' /><Sticker_Email id='sticker-email' /></a>
+            <a aria-label='twitter' href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter id='sticker-twitter' /></a>
+            <a aria-label='CV' href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV id='sticker-cv'/></a>
+            <a aria-label='pinboard' href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard_text id='sticker-pinboard-text' /><Sticker_Pinboard id='sticker-pinboard' /></a>
           </div>
         </div>
       </div>

@@ -4,11 +4,6 @@ import { gql, useQuery } from '@apollo/client'
 
 import {extractSearchResults} from '../utils/helpers'
 import SearchModal from "./search/searchModal"
-import SearchResults from "./search/searchResults"
-
-import Glyph from '../images/assets/glyph_filled.svg'
-import GlyphHover from '../images/assets/glyph_hover.svg'
-import GlyphOpen from '../images/assets/glyph_open.svg'
 
 // The GraphQL query containing the search term, will be sent to Apollo
 const SEARCH_QUERY = gql`
@@ -69,14 +64,13 @@ const Search = () => {
   const inputEl = useRef(null)
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
-  const [isGlyphHovered, setGlyphHovered] = useState(false)
 
-  const {loading, error, data} = useQuery(SEARCH_QUERY, {
+  const {loading, data} = useQuery(SEARCH_QUERY, {
       variables: { searchTerm: searchTerm, first: 150, catName: catName},
       skip: !showResults
     })
 
-  useEffect(()=>{
+  useEffect((loading, showResults)=>{
     if (showResults && !loading) {
       setSearchResults(extractSearchResults(data))
     }

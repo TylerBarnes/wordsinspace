@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import {useLocation} from '@reach/router'
@@ -9,7 +9,6 @@ import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
 
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
-import MobileFilters from '../components/mobile/mobileFilters'
 
 import '../styles/layout.css'
 import '../styles/global.css'

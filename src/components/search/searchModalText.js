@@ -5,6 +5,8 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   return (
     <div>
     	<div
+        role='button'
+        tabIndex={0}
         style={{
           outline: 'none',
           border: '1px dotted #fff',
@@ -22,6 +24,7 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
         aria-label="Close" 
         onMouseEnter={e=>setIsHovered(true)}
         onMouseLeave={e=>setIsHovered(false)}
+        onKeyPress={hide}
         onClick={hide}>
           Close
         </div>

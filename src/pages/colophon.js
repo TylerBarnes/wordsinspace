@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import {getResponsiveHomeVars} from "../utils/dom"
 
-import ArticleTitle from "../components/article/articleTitle"
 import ArticleFooter from "../components/article/articleFooter"
 
 export default function Colophon() {

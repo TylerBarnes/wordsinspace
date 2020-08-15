@@ -1,6 +1,5 @@
 import React, {useState} from "react"
 import {Link} from "gatsby"
-import GlyphFilled from '../../images/assets/glyph_filled.svg'
 
 import ListTag from "./listTag"
 import ListDate from "./listDate"
@@ -35,6 +34,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
 
   return (
     <li
+      role='button'
       key={item.id}
       className={(categoryClass + "Item" + ' list-item')}
       onMouseEnter={e=>handleMouseEnter(e, item)}

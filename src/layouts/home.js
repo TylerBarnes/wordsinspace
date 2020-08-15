@@ -60,7 +60,10 @@ const Home = ({children}) => {
           <div style={styleTopBar}>
             <div className='interface'>
               <Link to={'/'}>
-                <div style={{
+                <div 
+                tabIndex={0}
+                role='button'
+                style={{
                   display: 'flex',
                   justifyContent: 'row',
                   alignContent: 'center',

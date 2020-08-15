@@ -69,7 +69,10 @@ const Reader = ({children}) => {
         <div style={styleTopBar}>
           <div className='interface'>
             <Link to={'/work/'}>
-              <div style={{
+              <div 
+              role='button'
+              tabIndex={0}
+              style={{
                 display: 'flex',
                 justifyContent: 'row',
                 alignContent: 'center',

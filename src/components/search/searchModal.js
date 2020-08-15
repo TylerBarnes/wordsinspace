@@ -19,6 +19,9 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
       }}
       />
       <div
+        role='button'
+        tabIndex={0}
+        onKeyPress={hide}
         onClick={hide}
         style={{
           position: 'fixed',

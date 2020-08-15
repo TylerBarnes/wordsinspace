@@ -1,5 +1,4 @@
 import React from "react"
-import {Link} from "gatsby"
 import TagsInfoBox from '../components/filters/tagsInfoBox'
 
 import Tags from "./filters/tags"

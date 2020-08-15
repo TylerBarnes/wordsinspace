@@ -73,6 +73,7 @@ const List = ({loading, items, isTagMode}) => {
                 cursor: 'pointer',
                 zIndex: '2'
               }}
+              onKeyPress={handleScrollTop}
               onClick={handleScrollTop}>
               <div
                 className='metadata'

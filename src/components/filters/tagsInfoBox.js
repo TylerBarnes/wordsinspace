@@ -19,6 +19,7 @@ const TagsInfoBox = ({clearTags, isTagMode}) => {
     	}}
       onMouseEnter={e=>setIsHovered(true)}
       onMouseLeave={e=>setIsHovered(false)}
+      onKeyPress={clearTags}
     	onClick={clearTags}>
     	CLEAR ALL
     </button>
