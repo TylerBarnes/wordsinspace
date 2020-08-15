@@ -15,12 +15,12 @@ const HomeItem = ({item, index}) => {
   return (
     <div className={isThree ? 'right' : 'left' }
       style={{
-        borderTop: '1.3px dashed #513bfd',
+        borderBottom: '1.3px dashed #513bfd',
         margin: '0',
         paddingBottom: '2vh',
       }}>
 
-      <div className={leftAligned ? 'imageL' : ''}>
+      <div className={leftAligned ? 'imageL' : 'normal'}>
 
         {/*================ Latest, Category labels and Title ================*/}
 
@@ -30,7 +30,7 @@ const HomeItem = ({item, index}) => {
             style={{
               display: 'flex',
               flexFlow: 'row wrap',
-              margin: '1.2vh 0 0 10px',
+              margin: '1.2vh 5px 0 10px',
             }}>
 
             {/*================ Latest ================*/}

@@ -6,7 +6,7 @@ import SearchModalText from "./searchModalText"
 
 const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, loading}) => isShowing ? ReactDOM.createPortal(
   <React.Fragment>
-    <div 
+    <div
       style={{
         position: 'fixed',
         top: '0',
@@ -15,10 +15,10 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
         width: '100vw',
         height: '100vh',
         backgroundColor: '#fff',
-        opacity: '0.4',
+        opacity: '0',
       }}
       />
-      <div 
+      <div
         onClick={hide}
         style={{
           position: 'fixed',
@@ -31,32 +31,31 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
           overflowY: 'hidden',
           outline: '0',
         }}>
-        <div 
+        <div
           style={{
             zIndex: '100',
             background: '#513bfd',
             position: 'relative',
-            margin: '59px 0 0 59px',
-            borderRadius: '5px',
-            width: '78.5vw',
+            margin: '60px 0 0 50px',
+            width: 'calc(80vw - 50px)',
             maxHeight: '75vh',
-            padding: '0.5vh 1vw',
+            padding: '1vh 2vw 2vh 2vw',
             overflowY: 'scroll',
           }}>
 
           {/* ---------------- LOADING MESSAGE ---------------- */}
           {loading && (
-            <div 
+            <div
               className='metadata'
               style={{
                 padding: '1vh 0',
                 textTransform: 'uppercase',
                 color: '#fff'
-              }}> 
+              }}>
               Searching for <strong>{searchTerm}</strong> {catName === '' ? '' : `under ${catName}`}
             </div>
           )}
-          
+
           {/* ---------------- SEARCH RESULTS ---------------- */}
           {!loading && (
             <>

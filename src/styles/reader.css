@@ -20,8 +20,7 @@
   font-size: 36px;
   line-height: 36px;
   color: #513bfd;
-  margin: 10px 15px 20px 15px;
-  padding: 0;
+  padding: 2vh 0 3vh 0;
 }
 
 
@@ -255,8 +254,7 @@ li.blocks-gallery-item:last-child {
   font-size: 22px;
   line-height: 34px;
   color: #6262F4 !important;
-  width: inherit;
-  /* padding: 0 5vw 0 0; */
+  width: 100%;
 }
 
 p img {

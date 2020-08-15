@@ -5,7 +5,7 @@ import {useCategories} from "../../hooks/useCategories"
 const MobileCategories = () => {
   const categories = useCategories()
   const listStyle = {
-  	margin: '5px',
+  	padding: '5px 15px 5px 0px',
   	listStyle: 'none',
   	alignSelf: 'center'
 	}
@@ -17,13 +17,12 @@ const MobileCategories = () => {
         flexDirection: 'row',
         justifyContent: 'flex-start',
 				height: '60px',
-				padding: '5px',
-        margin: '-10px 0 5px 0'
+				padding: '0 30px',
+        margin: '-10px 0 5px 0',
 			}}>
 			<li
 				style={listStyle}>
 				<Link
-					style={listStyle}
 					to={'/work'}
 					activeClassName='category-active'
 					partiallyActive={true}

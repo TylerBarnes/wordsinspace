@@ -22,8 +22,16 @@ const ArticleTaxonomy = ({date, categories, tags}) => {
         alignItems: 'flex-start',
       }}
       >
-      {date && <ArticleDate date={date} />}
-      {categories && <ArticleCategory categories={categories} />}
+      <div style= {{
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        justifyContent: 'flex-start',
+        width: mobileTaxonomy ? '84vw' : 'auto',
+        margin: mobileTaxonomy ? '0 auto' : '0',
+      }}>
+        {date && <ArticleDate date={date} />}
+        {categories && <ArticleCategory categories={categories} />}
+      </div>
       {tags && <ArticleTags tags={tags} />}
     </div>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "gatsby" 
+import {Link} from "gatsby"
 
 import Home from '../../layouts/home'
 import SEO from '../seo'
@@ -20,16 +20,16 @@ export default function HomePage({menuItems}) {
     flexFlow: 'column',
     flexWrap: 'nowrap',
     alignItems: 'center',
-    height: '60vh'
+    height: 'auto'
   }
 
   const styleSVG = {
     alignSelf: 'center',
-    margin: '0'
+    margin: '5vh 0'
   }
 
   const styleLink = {
-    width: '90vw',
+    width: '84vw',
     height: '60px',
     display: 'flex',
     flexFlow: 'row',
@@ -38,20 +38,20 @@ export default function HomePage({menuItems}) {
     justifyContent: 'space-between',
     borderBottom: '1px dotted #6262F4'
   }
-  
+
   return (
     <Home>
       <SEO title='Home' />
-      <div 
+      <div
         style={styleWrapper}>
-          <div 
+          <div
             style={styleSVG}>
             <Link to={'/work/'}><Sticker_Browse_Mobile /></Link>
           </div>
           <Link style={styleLink} to={'/teaching'}>
             <div className='home-title-mobile'>CLASSES</div>
             <Glyph />
-          </Link>          
+          </Link>
 
           <Link style={styleLink} to={'/upcoming-events'}>
             <div className='home-title-mobile'>UPCOMING EVENTS</div>

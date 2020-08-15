@@ -65,7 +65,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
           className='related-item'
           style={styles}>
           <ArticleCategory categories={item.categories}/>
-          <Link className='related-title' to={item.uri}>{item.title}</Link>
+          <Link className='related-title' to={item.uri}> {item.title} </Link>
           <div style={{
             flex: '0 2 95px',
             width: '250px',
