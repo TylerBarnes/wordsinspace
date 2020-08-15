@@ -11,6 +11,7 @@ const MobileFilters = () => {
         textTransform: 'uppercase',
         overflow: 'scroll',
         fontWeight: '500',
+        padding: '0 30px 0 0',
       }}>
         <MobileCategories />
     </div>

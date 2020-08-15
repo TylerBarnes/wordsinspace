@@ -23,12 +23,12 @@ const Home = ({children}) => {
 
   const breakpoints = useBreakpoint()
   const {mobileHome} = getResponsiveHomeVars(breakpoints)
-  
+
   const styleWrapper =
   {
     display: 'flex',
-    flexDirection: mobileHome ? 'column' : 'row', 
-    alignItems: 'flex-start',
+    flexDirection: mobileHome ? 'column' : 'row',
+    alignItems: mobileHome ? 'center' : 'flex-start',
     justifyContent: 'space-around',
     height: '100vh',
 }
@@ -68,9 +68,9 @@ const Home = ({children}) => {
                   onMouseEnter={e=>setGlyphHovered(true)}
                   onMouseLeave={e=>setGlyphHovered(false)}
                   >
-                  {isColophon && 
-                    isGlyphHovered 
-                    ? <GlyphLeftHover /> 
+                  {isColophon &&
+                    isGlyphHovered
+                    ? <GlyphLeftHover />
                     : isColophon ? <GlyphLeft /> : null
                   }
                   <span style={{marginLeft: '5px'}}>HOME</span>

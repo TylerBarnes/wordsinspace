@@ -1,7 +1,7 @@
 //
 // GLOBALS
 //
-const global_mobile_width = '93vw'
+const global_mobile_width = '84vw'
 
 //
 // HOME
@@ -64,9 +64,9 @@ export const getResponsiveReaderVars = (breakpoints) => {
 export const mobileFooterStyles =
 {
     borderTop: '0.5px solid #513bfd',
-    width: '93vw',
+    width: '84vw',
     padding: '10px 0',
-    margin: '10px auto',
+    margin: '2vh auto',
     display: 'flex',
     flexFlow: 'row',
     flexWrap: 'nowrap',

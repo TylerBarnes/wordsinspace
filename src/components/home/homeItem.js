@@ -15,7 +15,7 @@ const HomeItem = ({item, index}) => {
   return (
     <div className={isThree ? 'right' : 'left' }
       style={{
-        borderTop: '1.3px dashed #513bfd',
+        borderBottom: '1.3px dashed #513bfd',
         margin: '0',
         paddingBottom: '2vh',
       }}>

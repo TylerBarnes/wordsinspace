@@ -127,6 +127,12 @@ export default function HomePage() {
 
           <HomeItem item={menuItems[6]} index={7} />
 
+        </div>
+
+        <div
+          style={{
+            width:'60%',
+          }}>
           <div className='smallSticker'
             style={{
               marginTop: '5vh',

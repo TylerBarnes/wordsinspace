@@ -26,7 +26,7 @@ const Browser = ({ children, props }) => {
     display: 'flex',
     flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
-    alignItems: 'flex-start',
+    alignItems: mobileNavBar ? 'center' : 'flex-start',
     justifyContent: 'space-around',
   }
 
@@ -38,6 +38,8 @@ const Browser = ({ children, props }) => {
     alignItems: 'center',
     textTransform: 'uppercase',
     height: '60px',
+    width: mobileNavBar ? '84vw' : 'auto',
+    alignSelf: mobileNavBar ? 'center' : 'normal',
   }
 
   const childrenWrapper =
@@ -59,14 +61,20 @@ const Browser = ({ children, props }) => {
       <div
         style={{
           width: '100%',
+          display: mobileNavBar ? 'flex' : 'block',
+          flexFlow: 'column',
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar} >
-          <div className='interface'>
+          <div className='interface'
+          style={{
+            margin: mobileNavBar ? '0' : '15px 0px 15px 14px',
+          }}>
             Browsing:
             <span
               style={{
-                marginLeft: '5px'
+                position: 'relative',
+                margin: '5px'
               }}
               className={catName.toLowerCase()}>
               {catName === 'work' ? `All` : `${catName}`}

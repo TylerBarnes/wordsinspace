@@ -9,13 +9,14 @@ const MobileWordsInSpace = () => {
   return (
 		<div
       style={{
-		    width: '100%',
+		    width: '84vw',
 		    height: '60px',
         display: 'flex',
 		    flexFlow: 'row',
 		    flexWrap: 'nowrap',
 		    alignItems: 'center',
 		    justifyContent: 'center',
+        position: 'relative',
 		  }}>
 
       <div
@@ -23,7 +24,7 @@ const MobileWordsInSpace = () => {
         	margin: '3px 10px 0 0',
         	alignSelf: 'center',
           position: 'absolute',
-          left: '15px',
+          left: '0',
         }}>
 	      <Link to={'/'}><Circle_wordsinspace /></Link>
 	      </div>
