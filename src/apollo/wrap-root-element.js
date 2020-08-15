@@ -4,8 +4,8 @@ import fetch from "isomorphic-fetch"
 
 const httpLink = createHttpLink({
     uri: process.env.NODE_ENV === `development`
-        ? `https://final.wordsinspace.net/graphql`//`http://localhost:8888/shannon11/graphql`
-        : `https://importiv.wordsinspace.net/graphql`
+        ? `https://final.wordsinspace.net/graphql`//`http://localhost:8888/test/graphql`
+        : `https://final.wordsinspace.net/graphql`
 });
 
 const client = new ApolloClient({
