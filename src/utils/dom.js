@@ -45,14 +45,14 @@ export const getResponsiveReaderVars = (breakpoints) => {
         mobileArticleCategory: !breakpoints.desktop, // this goes into article/ArticleCategory.js
         mobileArticleTags: !breakpoints.desktop, // this goes into article/ArticleTags.js
         mobileArticleContent:  !breakpoints.desktop, // this goes into article/ArticleContent.js
-        mobileArticleContentWidth: !breakpoints.desktop ? '93vw' : '70vw', // this goes into article/ArticleContent.js
+        mobileArticleContentWidth: !breakpoints.desktop ? global_mobile_width : '70vw', // this goes into article/ArticleContent.js
         mobileArticleContentMargin: !breakpoints.desktop ? '0' : '0vh 5vh', // this goes into article/ArticleContent.js
-        mobileArticleContentPadding: !breakpoints.desktop ? '5px 15px' : '0', // this goes into article/ArticleContent.js
+        mobileArticleContentPadding: !breakpoints.desktop ? '0' : '0', // this goes into article/ArticleContent.js
         mobileArticleTitle: !breakpoints.desktop, // this goes into article/ArticleContent.js
         mobileArticleFooter: !breakpoints.desktop, // this goes into article/ArticleFooter.js
         mobileTaxonomy :!breakpoints.desktop, // this goes into article/ArticleTaxonomy.js
         mobileReaderWidth : global_mobile_width,
-        mobileTaxonomyMargins: !breakpoints.desktop ? '5px 15px': '',
+        mobileTaxonomyMargins: !breakpoints.desktop ? '5px 5px 5px 0px': '',
         mobileFooterWidth: global_mobile_width
     }
 }

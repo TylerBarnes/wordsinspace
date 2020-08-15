@@ -26,7 +26,7 @@ const Reader = ({children}) => {
     display: 'flex',
     flexDirection: mobileNavBar ? 'column' : 'row',
     flexWrap: 'nowrap',
-    alignItems: 'flex-start',
+    alignItems: mobileNavBar ? 'center' : 'flex-start',
     justifyContent: 'space-around',
   }
 
@@ -37,12 +37,14 @@ const Reader = ({children}) => {
     justifyContent: 'space-between',
     textTransform: 'uppercase',
     height: '60px',
+    width: mobileNavBar ? '84vw' : 'auto',
+    alignSelf: mobileNavBar ? 'center' : 'normal',
   }
 
   const childrenWrapper =
   {
     height: mobileNavBar ? '100%' : 'calc(100vh - 60px)',
-    width: mobileNavBar ? '100%' : 'calc(100vw - 50px)',
+    width: mobileNavBar ? '84vw' : 'calc(100vw - 50px)',
     overflow: 'auto',
     display: 'flex',
     flexFlow: 'column',
@@ -57,7 +59,12 @@ const Reader = ({children}) => {
       {mobileNavBar && <MobileWordsInSpace />}
 
       {/* ----------------------------CONTAINER---------------------------- */}
-      <div style={{width: '100%'}}>
+      <div style={{
+        width: '100%',
+        display: mobileNavBar ? 'flex' : 'block',
+        flexFlow: 'column',
+        alignItems: mobileNavBar ? 'center' : 'auto',
+      }}>
         {/* ----------------------------TOP---------------------------- */}
         <div style={styleTopBar}>
           <div className='interface'>

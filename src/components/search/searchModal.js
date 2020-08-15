@@ -39,7 +39,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
             margin: '60px 0 0 50px',
             width: 'calc(80vw - 50px)',
             maxHeight: '75vh',
-            padding: '1vh 2vw',
+            padding: '1vh 2vw 2vh 2vw',
             overflowY: 'scroll',
           }}>
 

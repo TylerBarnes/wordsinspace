@@ -124,7 +124,7 @@ const Search = () => {
         <input
           style={{
             cursor: 'text',
-            width: '16vw',
+            width: '20vw',
             margin: '0',
             padding: '5px 0 0 5px',
             border: 'none',
@@ -137,23 +137,6 @@ const Search = () => {
           onChange={e => onChange(e)}
           />
 
-          <div
-            style={{
-              cursor: 'pointer'
-            }}
-            onMouseEnter={e=>setGlyphHovered(true)}
-            onMouseLeave={e=>setGlyphHovered(false)}
-            onClick={e=>handleSubmit(e)}
-            >
-            {isGlyphHovered
-             ? !showResults 
-               ? <GlyphHover /> 
-               : null
-             : !showResults 
-               ? <Glyph />
-               : <GlyphOpen />
-           }
-         </div>
         </div>
       </form>
       <SearchModal

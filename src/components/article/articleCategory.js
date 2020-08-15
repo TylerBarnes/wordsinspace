@@ -6,16 +6,16 @@ import {getResponsiveReaderVars} from "../../utils/dom"
 
 const ArticleCategory = ({categories}) => {
   const category = categories?.nodes[0]?.name.toLowerCase()
-  
+
   const breakpoints = useBreakpoint()
-  const {mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoints)
+  const {mobileTaxonomy, mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoints)
 
   return (
-		<div 
+		<div
 			style={{
-				margin: mobileTaxonomyMargins,
+				margin: mobileTaxonomy ? mobileTaxonomyMargins : '0 20px 0 0',
 			}}
-	    className={`${category} reader`}> 
+	    className={`${category} reader`}>
 	    <Link to={`/${category}`}>{category}</Link>
 	  </div>
   )
