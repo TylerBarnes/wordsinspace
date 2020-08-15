@@ -39,17 +39,15 @@
   border: 1px solid #6262F4;
   border-radius: 53px;
   padding: 3px 15px 2px 15px;
-  margin: 0;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  text-align: center;
   text-transform: uppercase;
   margin: 0 10px 0 0;
   display: inline-block;
-  overflow-wrap: break-word;
+  overflow-wrap: break-all;
 }
 
 /*****/

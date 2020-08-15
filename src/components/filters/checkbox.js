@@ -10,9 +10,9 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange}) => {
 
       <label
         style={{
-          paddingLeft: '20px',
           margin: 0,
           textAlign: 'left',
+          wordWrap: 'break-word'
         }}
         className={isSelected ? 'tag tag-active' : 'tag'}
         >

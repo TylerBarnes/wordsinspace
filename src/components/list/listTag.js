@@ -11,7 +11,7 @@ const ListTag = ({tags, invertedTheme}) => {
         <span
           className={invertedTheme ? 'tag tag-inverted' : 'tag'}
           key={index_tag}>
-          {tag.slug}
+          {tag.name}
         </span>
       )}
     </div>
