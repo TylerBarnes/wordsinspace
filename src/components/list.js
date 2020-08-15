@@ -50,7 +50,7 @@ const List = ({loading, items, isTagMode}) => {
         {!loading &&
           <ul
             style={{
-              borderBottom: '1px solid #6262F4',
+              borderBottom: mobileList ? 'none' : '1px solid #6262F4',
               padding: '0px 15px 15px 15px',
               width: 'calc(80vw - 50px)',
             }}

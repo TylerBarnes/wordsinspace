@@ -15,7 +15,7 @@ const HomeItem = ({item, index}) => {
   return (
     <div className={isThree ? 'right' : 'left' }
       style={{
-        borderTop: '1px dashed #513bfd',
+        borderTop: '1.3px dashed #513bfd',
         margin: '0',
         paddingBottom: '2vh',
       }}>
@@ -34,7 +34,7 @@ const HomeItem = ({item, index}) => {
             }}>
 
             {/*================ Latest ================*/}
-            {connectedNode && <div className='latest'>LATEST</div>}
+            {connectedNode && <div className='featured'>FEATURED</div>}
 
             {/*================ Category ================*/}
             {connectedNode && <HomeCategory category={category}/>}

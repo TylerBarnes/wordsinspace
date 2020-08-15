@@ -16,23 +16,15 @@ const WordsInSpace = () => {
 		    writingMode: 'vertical-rl',
 		    transform: 'rotate(0deg)',
 		    display: 'flex',
-		    flexFlow: 'row',
+		    flexFlow: 'row-reverse',
 		    flexWrap: 'nowrap',
-		    justifyContent: 'flex-start',
+		    justifyContent: 'flex-end',
 		  }}>
-
-        <div
-	        style={{
-	        	marginTop: '13px',
-            marginLeft: '6px',
-	        	alignSelf: 'center'
-	        }}>
-		      <Link to={'/'}><Circle_wordsinspace id="circle-wordsinspace" /></Link>
-	      </div>
 
 	      <Link
 	        to="/"
 	        className='interface'
+          id="wordsinspace"
 	        style={{
 	          marginTop: '20px',
 		    		alignSelf: 'flex-end',
@@ -40,6 +32,15 @@ const WordsInSpace = () => {
 	     		>
 	        {title}
 	      </Link>
+
+        <div
+          style={{
+            marginTop: '13px',
+            marginLeft: '6px',
+            alignSelf: 'center'
+          }}>
+          <Link to={'/'}><Circle_wordsinspace id="circle-wordsinspace" /></Link>
+        </div>
       </div>
   )
 }

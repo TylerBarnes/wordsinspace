@@ -49,8 +49,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           flexDirection: 'row',
           flexGrow: '1',
           justifyContent: 'space-between',
-          borderStyle: 'dashed none none none',
-          borderWidth: '1px',
+          borderStyle: 'none none dashed none',
+          borderWidth: '1.3px',
           borderColor: invertedTheme ? '#fff' : '#513bfd',
       }}>
 
