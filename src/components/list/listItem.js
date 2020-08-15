@@ -96,7 +96,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       {/* ==================== Thumbnail ====================  */}
       <div
         style={{
-          display: mobileList ? 'none' : 'block', 
+          visibility: mobileList ? 'hidden' : 'visible', 
           position: 'absolute',
           bottom: '2vw',
           right: '22vw',

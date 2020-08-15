@@ -30,7 +30,8 @@ const HomeItem = ({item, index}) => {
             style={{
               display: 'flex',
               flexFlow: 'row wrap',
-              margin: '1.2vh 0 0 10px',
+              justifyContent: leftAligned ? 'flex-start' : 'flex-end',
+              margin: '1.2vh 5px 0 10px',
             }}>
 
             {/*================ Latest ================*/}
