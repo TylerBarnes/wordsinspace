@@ -53,6 +53,10 @@
 	    flex-basis: 60%;
 }
 
+.left .normal .home-entry > * {
+	justify-content: flex-end;
+}
+
 .imageL .home-title {
 	margin: 15px 0px 5px 15px;
 }

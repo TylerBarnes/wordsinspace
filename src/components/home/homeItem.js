@@ -20,7 +20,7 @@ const HomeItem = ({item, index}) => {
         paddingBottom: '2vh',
       }}>
 
-      <div className={leftAligned ? 'imageL' : ''}>
+      <div className={leftAligned ? 'imageL' : 'normal'}>
 
         {/*================ Latest, Category labels and Title ================*/}
 
@@ -30,7 +30,6 @@ const HomeItem = ({item, index}) => {
             style={{
               display: 'flex',
               flexFlow: 'row wrap',
-              justifyContent: leftAligned ? 'flex-start' : 'flex-end',
               margin: '1.2vh 5px 0 10px',
             }}>
 
