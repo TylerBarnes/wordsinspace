@@ -26,6 +26,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
     alignItems: 'center',
     justifyContent: 'space-between',
     maxHeight: '250px',
+    zIndex: '1'
   }
 
   return (
@@ -59,7 +60,8 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         alignItems: 'center',
         marginBottom: '6vh',
       }}>
-        <div className='related-item'
+        <div 
+          className='related-item'
           style={styles}>
           <ArticleCategory categories={item.categories}/>
           <Link lang='de' className='related-title' to={item.uri}>{item.title}</Link>
