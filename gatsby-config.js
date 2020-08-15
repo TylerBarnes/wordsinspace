@@ -8,9 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: process.env.NODE_ENV === `development`
-            ? `http://localhost:8888/test/graphql`
-            : `https://importiv.wordsinspace.net/graphql`,
+        url: `https://final.wordsinspace.net/graphql`,  //`http://localhost:8888/test/graphql`
         schema: {
           perPage: 50,
         },

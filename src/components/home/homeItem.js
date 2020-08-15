@@ -5,6 +5,7 @@ import HomeImage from "./homeImage"
 import HomeCategory from "./homeCategory"
 
 const HomeItem = ({item, index}) => {
+  console.log("item title is, ", item.label)
   const connectedNode = item?.connectedNode
   const thumbnail = connectedNode?.node.featuredImage?.node?.localFile?.childImageSharp?.fluid
   const title = connectedNode?.node.title
@@ -43,7 +44,7 @@ const HomeItem = ({item, index}) => {
 
           {/*================ Title ================*/}
           <div className={'home-title'}>
-            <Link to={item.url}>{item.label}</Link>
+            <Link to={item.url}>{item.label.replace(/&#038;/, '&')}</Link>
           </div>
 
         </div>
