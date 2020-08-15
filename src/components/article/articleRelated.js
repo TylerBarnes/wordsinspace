@@ -26,7 +26,8 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
     alignItems: 'center',
     justifyContent: 'space-between',
     maxHeight: '250px',
-    zIndex: '1'
+    zIndex: '1',
+    wordWrap: 'break-all'
   }
 
   return (
@@ -64,7 +65,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
           className='related-item'
           style={styles}>
           <ArticleCategory categories={item.categories}/>
-          <Link lang='de' className='related-title' to={item.uri}>{item.title}</Link>
+          <Link className='related-title' to={item.uri}>{item.title}</Link>
           <div style={{
             flex: '0 2 95px',
             width: '250px',
