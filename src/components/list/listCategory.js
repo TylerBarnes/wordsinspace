@@ -1,8 +1,12 @@
 import React from "react"
+import {Link} from "gatsby"
 
 const ListCategory = ({category}) => {
   return (
-    <div
+    <Link
+      to={'/' + category}
+      >
+      <div
       className={category}
       style={{
         margin: '1px 5px 0px 10px',
@@ -10,6 +14,7 @@ const ListCategory = ({category}) => {
       }}>
       {category}
     </div>
+    </Link>
   )
 }
 
