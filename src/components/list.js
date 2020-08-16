@@ -7,6 +7,8 @@ import MobileFooter from "./mobile/mobileFooter"
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
 
+import Glyph_scrollup from '../images/assets/glyph_scrollup.svg'
+
 import ListItem from "./list/listItem"
 
 const List = ({loading, items, isTagMode}) => {
@@ -62,11 +64,11 @@ const List = ({loading, items, isTagMode}) => {
                 margin: '0',
                 padding: '0',
                 left: '78.2vw',
-                top: '10vh',
+                top: '60px',
                 outline: 'none',
                 border: 'none',
                 fontSize: '1rem',
-                fontWeight: '900',
+                fontWeight: '500',
                 color: '#6262F4',
                 background: 'transparent',
                 textTransform: 'uppercase',
@@ -75,16 +77,15 @@ const List = ({loading, items, isTagMode}) => {
               }}
               onKeyPress={handleScrollTop}
               onClick={handleScrollTop}>
+              <Glyph_scrollup id="glyph_scrollup"/>
               <div
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
-                  transform: 'rotate(180deg)',
                 }}>
-                &#x2192;
-                &#x2192;
-                &#x2192;
+                BACK TO TOP
               </div>
+
             </button>
 
             {items && items.map((item, index) => (

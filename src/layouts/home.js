@@ -49,7 +49,7 @@ const Home = ({children}) => {
   }
 
   return (
-    <div style={styleWrapper}>
+    <div className="home" style={styleWrapper}>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileHome && <WordsInSpace />}
       {mobileHome && <MobileWordsInSpace />}
@@ -60,7 +60,7 @@ const Home = ({children}) => {
           <div style={styleTopBar}>
             <div className='interface'>
               <Link to={'/'}>
-                <div 
+                <div
                 tabIndex={0}
                 role='button'
                 style={{

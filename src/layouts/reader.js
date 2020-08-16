@@ -52,7 +52,7 @@ const Reader = ({children}) => {
   }
 
   return (
-    <div className='gradient' style={styleWrapper}>
+    <div className='reader' style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
@@ -69,7 +69,7 @@ const Reader = ({children}) => {
         <div style={styleTopBar}>
           <div className='interface'>
             <Link to={'/work/'}>
-              <div 
+              <div
               role='button'
               tabIndex={0}
               style={{

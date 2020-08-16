@@ -25,6 +25,14 @@
   white-space: nowrap;
 }
 
+.filterBar .date:hover,.filterBar .blog:hover, .filterBar .teaching:hover, .filterBar .publications:hover, .filterBar .projects:hover, .filterBar .presentations:hover, .filterBar .talks:hover, .filterBar .research:hover {
+  color: #fff;
+}
+
+.filterBar .work:hover {
+  color: #513bfd;
+}
+
 @-moz-document url-prefix() {
   .filterBar .date,.filterBar .work,.filterBar .blog,.filterBar .teaching,.filterBar .publications,.filterBar .projects,.filterBar .presentations,.filterBar .talks,.filterBar .research {
         padding: 5px 10px 2px 10px;
@@ -36,9 +44,9 @@
 }
 
 .filterBar .tag {
-  border: 1px solid #6262F4;
+  border: 1px solid #414171;
   border-radius: 53px;
-  padding: 3px 15px 2px 15px;
+  padding: 3px 18px 2px 18px;
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
@@ -48,6 +56,12 @@
   margin: 0 10px 0 0;
   display: inline-block;
   overflow-wrap: break-all;
+}
+
+@-moz-document url-prefix() {
+  .filterBar .tag {
+    padding: 6px 16px 2px 21px;
+  }
 }
 
 /*****/
@@ -74,6 +88,26 @@
 .no-scroll li {
   margin: 0;
   padding: 0;
+}
+
+/*****/
+/*****/
+/*****SCROLL ARROW*/
+/*****/
+/*****/
+
+#glyph_scrollup + .metadata {
+  display: none;
+  transition-duration: 1s;
+}
+
+#glyph_scrollup:hover + .metadata {
+  display: block;
+  -webkit-animation: fadein 0.2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.2s; /* Firefox < 16 */
+   -ms-animation: fadein 0.2s; /* Internet Explorer */
+    -o-animation: fadein 0.2s; /* Opera < 12.1 */
+       animation: fadein 0.2s;
 }
 
 /*****/
@@ -188,7 +222,7 @@
   font-size: 28px;
   line-height: 30px;
   font-family: 'LaNord', sans-serif;
-  color: #513bfd;
+  color: #414171;
   font-style: normal;
   font-weight: normal;
 }
@@ -235,6 +269,7 @@
   vertical-align: middle;
   cursor: pointer;
 }
+
 .tag-clear:hover {
   font-weight: 900;
 }
@@ -242,6 +277,7 @@
 label.tag:hover {
   background-color:  #bab6fb;
   cursor: pointer;
+  transition: 0.05s ease-in;
 }
 
 .date-inverted {
@@ -293,6 +329,7 @@ input[type=checkbox] {
 .rd:hover {
   background-color: #bab6fb;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
 .category-active > .rd  {
@@ -313,4 +350,31 @@ input[type=checkbox] {
   height: 17px;
   padding: 0 3px;
   margin: 0 3px;
+}
+
+/*****/
+/*****/
+/*****FADEIN ANIMATION*/
+/*****/
+/*****/@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

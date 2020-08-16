@@ -51,7 +51,7 @@ const Browser = ({ children, props }) => {
   }
 
   return (
-    <div style={styleWrapper} >
+    <div className="browser" style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
       {mobileNavBar && <MobileWordsInSpace />}
