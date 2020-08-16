@@ -22,8 +22,6 @@ function ClientOnly({ children, ...delegated }) {
     return null;
   }
   
-  console.log('has mounted')
-  
   return (
     <div {...delegated}>
       {children}

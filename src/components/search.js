@@ -70,11 +70,11 @@ const Search = () => {
       skip: !showResults
     })
 
-  useEffect((loading, showResults)=>{
+  useEffect(()=>{
     if (showResults && !loading) {
       setSearchResults(extractSearchResults(data))
     }
-  },[data])
+  },[data, showResults, loading])
 
   function handleSubmit(e) {
     e.preventDefault()
