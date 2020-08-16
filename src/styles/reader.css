@@ -159,7 +159,7 @@ li.blocks-gallery-item:last-child {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-          align-items: flex-start;
+    align-items: center;
   background:
     -o-linear-gradient(233deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
     -o-linear-gradient(323deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
@@ -171,23 +171,35 @@ li.blocks-gallery-item:last-child {
 }
 
 .slideshowImgWrapper {
-  height: 60vh;
+  height: inherit;
   padding: 2vh 2vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
+/* override inline hell */
 .slideshowImgWrapper > *  {
+  width: 56vw !important;
 }
 
 .slideshowImgWrapper img  {
   padding: 0vh 0vw;
   max-width: 56vw;
-  height: 100% !important;
+  max-height: 56vh ;
   -o-object-fit: contain !important;
      object-fit: contain !important;
 
 }
 
+/* Styling in-line images */
 
+.content a > img {
+  width: 100%;
+  max-width: 56vw;
+  padding: 2vh 2vw;
+  margin: 0 2vw;
+}
 
 /*****/
 /*****/
