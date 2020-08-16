@@ -182,7 +182,7 @@ input:hover {
 }
 
 @-moz-document url-prefix() {
-  .date, .blog, .teaching, .publications, .projects , .presentations , .talks, .research, .featured {
+  .date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {
       padding: 5px 10px 2px 10px;
     }
   .tag {

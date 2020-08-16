@@ -1,10 +1,13 @@
 import React from "react"
+import {Link} from "gatsby"
 
 const HomeCategory = ({category}) => {
   return (
-    <div className={category.toLowerCase()}> 
-      {category}
-    </div>
+    <Link to={'/' + category.toLowerCase()}>
+      <div className={category.toLowerCase()}>
+        {category}
+      </div>
+    </Link>
   )
 }
 

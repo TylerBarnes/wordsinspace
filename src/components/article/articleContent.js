@@ -36,7 +36,7 @@ const ArticleContent = ({tags, title, content}) => {
           alignItems: 'flex-start',
           justifyContent: 'space-evenly',
           order: mobileArticleContent ? '1' : '2',
-          margin: mobileArticleContent ? mobileArticleContentMargin : '0 2vw 0 0',
+          margin: mobileArticleContent ? mobileArticleContentMargin : '0 50px 0 0',
           padding: mobileArticleContent ? mobileArticleContentPadding : '0',
           width: mobileArticleContent ? mobileArticleContentWidth : '60vw',
         }}>

@@ -4,7 +4,7 @@ import {Link} from "gatsby"
 const ListCategory = ({category}) => {
   return (
     <Link
-      to={'/' + category}
+      to={'/' + category.toLowerCase()}
       >
       <div
       className={category}
