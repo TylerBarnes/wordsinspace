@@ -36,7 +36,7 @@ const Browser = ({ children, props }) => {
     justifyContent: 'space-between',
     alignItems: 'center',
     textTransform: 'uppercase',
-    height: '50px',
+    height: mobileNavBar ? '35px' : '50px',
     width: mobileNavBar ? '84vw' : 'auto',
     alignSelf: mobileNavBar ? 'center' : 'normal',
   }

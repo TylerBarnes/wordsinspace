@@ -30,7 +30,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: mobileList ? 'center' : 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: mobileList ?  'calc(100vh - 150px)' : 'calc(100vh - 50px)',
+        maxHeight: mobileList ?  'calc(100vh - 125px)' : 'calc(100vh - 50px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}
@@ -55,7 +55,7 @@ const List = ({loading, items, isTagMode}) => {
               padding: '0px 15px 15px 15px',
               width: mobileList ? 'auto' : 'calc(80vw - 50px)',
             }}
-            id='list'>
+            id={mobileList ? 'mobile-list' : 'list'}>
             <button
               style={{
                 display: !mobileList ? 'block' : 'none',

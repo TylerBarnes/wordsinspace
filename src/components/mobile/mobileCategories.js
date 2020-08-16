@@ -16,9 +16,9 @@ const MobileCategories = () => {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-				height: '50px',
+				height: '40px',
 				padding: '0 30px',
-        margin: '-10px 0 5px 0',
+        margin: '0px 0 0px 0',
 			}}>
 			<li
 				style={listStyle}>
