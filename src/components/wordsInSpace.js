@@ -7,7 +7,7 @@ import Circle_wordsinspace from '../images/assets/circle_wordsinspace.svg'
 const WordsInSpace = () => {
   const title = useTitle();
   return (
-		<div
+		<div className="left-bar"
       style={{
 		    alignSelf: 'flex-start',
 		    flexShrink: '0',

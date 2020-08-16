@@ -79,7 +79,7 @@ input:hover {
    -ms-animation: fadein 0.2s; /* Internet Explorer */
     -o-animation: fadein 0.2s; /* Opera < 12.1 */
        animation: fadein 0.2s;
-}
+     }
 
 .browser {
   -webkit-animation: fadein 0.2s; /* Safari, Chrome and Opera > 12.1 */
@@ -87,7 +87,7 @@ input:hover {
    -ms-animation: fadein 0.2s; /* Internet Explorer */
     -o-animation: fadein 0.2s; /* Opera < 12.1 */
        animation: fadein 0.2s;
-}
+     }
 
 .reader {
   -webkit-animation: fadein 0.2s; /* Safari, Chrome and Opera > 12.1 */
@@ -97,7 +97,27 @@ input:hover {
        animation: fadein 0.2s;
 }
 
+/* */
+/* NavBar gradients */
+/* */
 
+.top-bar {
+  -webkit-box-shadow: inset -19px 19px 45px 1px rgba(255,255,255,0.87);
+  -moz-box-shadow: inset -19px 19px 45px 1px rgba(255,255,255,0.87);
+  box-shadow: inset -19px 19px 45px 1px rgba(255,255,255,0.87);
+}
+
+.left-bar {
+  -webkit-box-shadow: inset 31px 19px 36px 1px rgba(255,255,255,0.87);
+  -moz-box-shadow: inset 31px 19px 36px 1px rgba(255,255,255,0.87);
+  box-shadow: inset 31px 19px 36px 1px rgba(255,255,255,0.87);
+}
+
+.right-gradient {
+  -webkit-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,0.87);
+  -moz-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,0.87);
+  box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,0.87);
+}
 
 /* */
 /* Shared styles */
@@ -154,7 +174,7 @@ input:hover {
   font-size: 10px;
   line-height: 13px;
   color: #fff;
-  padding: 7px 10px 3px 10px;
+  padding: 3px 10px 3px 10px;
   text-transform: uppercase;
   margin-right: 5px;
   white-space: nowrap;

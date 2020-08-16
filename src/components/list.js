@@ -39,8 +39,7 @@ const List = ({loading, items, isTagMode}) => {
             <div
             style={{
               width: listWidth,
-              height: 'auto',
-              minHeight: '150px',
+              margin: '0',
             }}
             className='interface'>
               FILTERING TAGS...

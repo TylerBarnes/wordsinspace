@@ -96,7 +96,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
       {/* ==================== Thumbnail ====================  */}
       <div
         style={{
-          visibility: mobileList ? 'hidden' : 'visible', 
+          visibility: mobileList ? 'hidden' : 'visible',
           position: 'absolute',
           bottom: '2vw',
           right: '22vw',
@@ -105,6 +105,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           padding: '0',
           filter: 'drop-shadow(0px 4.4px 4px rgba(0, 0, 0, 0.25))',
           display: isVisible && !invertedTheme ? 'block' : 'none',
+          pointerEvents: 'none',
         }}>
         {thumbnail && <ListImage title={item.title} thumbnail={thumbnail} isTagMode={isTagMode}/>}
       </div>

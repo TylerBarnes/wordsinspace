@@ -51,7 +51,7 @@ const Browser = ({ children, props }) => {
   }
 
   return (
-    <div className="browser" style={styleWrapper} >
+    <div className={mobileBrowserLayout ? 'browser' : 'browser right-gradient'} style={styleWrapper} >
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
       {mobileNavBar && <MobileWordsInSpace />}
@@ -64,7 +64,7 @@ const Browser = ({ children, props }) => {
           flexFlow: 'column',
         }}>
         {/* ----------------------------TOP---------------------------- */}
-        <div style={styleTopBar} >
+        <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
           <div className='interface'
           style={{
             margin: mobileNavBar ? '0' : '15px 0px 15px 14px',

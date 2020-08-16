@@ -11,7 +11,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
    <div
-	 		className='no-scroll'
+	 		className='tag-menu no-scroll'
 	   	style={{
   	    marginTop: '0px',
 	    	textAlign: 'left',

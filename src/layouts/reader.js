@@ -52,7 +52,7 @@ const Reader = ({children}) => {
   }
 
   return (
-    <div className='reader' style={styleWrapper}>
+    <div className={mobileNavBar ? 'reader' : 'reader right-gradient'} style={styleWrapper}>
 
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
@@ -66,7 +66,7 @@ const Reader = ({children}) => {
         alignItems: mobileNavBar ? 'center' : 'auto',
       }}>
         {/* ----------------------------TOP---------------------------- */}
-        <div style={styleTopBar}>
+        <div className={mobileNavBar ? '' : 'top-bar'} style={styleTopBar}>
           <div className='interface'>
             <Link to={'/work/'}>
               <div

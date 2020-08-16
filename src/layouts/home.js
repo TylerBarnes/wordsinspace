@@ -49,14 +49,14 @@ const Home = ({children}) => {
   }
 
   return (
-    <div className="home" style={styleWrapper}>
+    <div className={mobileHome ? 'home' : 'home right-gradient'} style={styleWrapper}>
       {/* ----------------------------WORDS IN SPACE---------------------------- */}
       {!mobileHome && <WordsInSpace />}
       {mobileHome && <MobileWordsInSpace />}
       {/* ----------------------------CONTAINER---------------------------- */}
       <div style={{width: '100%'}}>
         {/* ----------------------------TOP---------------------------- */}
-        <div className='gradient'>
+        <div className={mobileHome ? '' : 'top-bar'}>
           <div style={styleTopBar}>
             <div className='interface'>
               <Link to={'/'}>
