@@ -56,7 +56,7 @@ export default function HomePage() {
   return (
     <Home>
       <SEO title='Home' />
-      <div
+      <div className='home-body'
         style={{
           display: 'flex',
           flexFlow: 'row',

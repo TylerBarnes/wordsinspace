@@ -36,14 +36,14 @@ const Reader = ({children}) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: '60px',
+    height: '50px',
     width: mobileNavBar ? '84vw' : 'auto',
     alignSelf: mobileNavBar ? 'center' : 'normal',
   }
 
   const childrenWrapper =
   {
-    height: mobileNavBar ? '100%' : 'calc(100vh - 60px)',
+    height: mobileNavBar ? '100%' : 'calc(100vh - 50px)',
     width: mobileNavBar ? '84vw' : 'calc(100vw - 50px)',
     overflow: 'auto',
     display: 'flex',

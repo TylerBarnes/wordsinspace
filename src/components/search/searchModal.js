@@ -39,7 +39,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
             zIndex: '100',
             background: '#513bfd',
             position: 'relative',
-            margin: '60px 0 0 50px',
+            margin: '50px 0 0 50px',
             width: 'calc(80vw - 50px)',
             maxHeight: '75vh',
             padding: '0vh 2vw 0vh 2vw',

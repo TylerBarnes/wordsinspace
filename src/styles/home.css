@@ -28,6 +28,20 @@
 	color: #6262F4;
 }
 
+.home-body:before {
+  content  : "";
+ position : absolute;
+ z-index  : 1;
+ top: 50px;
+ left: 50px;
+ pointer-events   : none;
+ background-image : linear-gradient(to bottom,
+                   rgba(243,243,243, 1) 10%,
+                   rgba(243,243,243, 0) 100%);
+ width: calc(80vw - 50px);
+ height   : 2vh;
+}
+
 /* homeItem left side > imageL and imageR alignments; right side */
 
 .left > * {

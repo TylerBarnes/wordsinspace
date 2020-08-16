@@ -16,7 +16,7 @@ const MobileCategories = () => {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-				height: '60px',
+				height: '50px',
 				padding: '0 30px',
         margin: '-10px 0 5px 0',
 			}}>

@@ -39,12 +39,12 @@ const Home = ({children}) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     textTransform: 'uppercase',
-    height: '60px',
+    height: '50px',
   }
 
   const childrenWrapper =
   {
-    height: 'calc(100vh - 60px)',
+    height: 'calc(100vh - 50px)',
     overflow: 'auto',
   }
 

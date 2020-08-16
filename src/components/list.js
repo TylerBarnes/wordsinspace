@@ -30,7 +30,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: mobileList ? 'center' : 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: mobileList ?  'calc(100vh - 185px)' : 'calc(100vh - 60px)',
+        maxHeight: mobileList ?  'calc(100vh - 150px)' : 'calc(100vh - 50px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}
@@ -63,7 +63,7 @@ const List = ({loading, items, isTagMode}) => {
                 margin: '0',
                 padding: '0',
                 left: '78.2vw',
-                top: '60px',
+                top: '50px',
                 outline: 'none',
                 border: 'none',
                 fontSize: '1rem',
