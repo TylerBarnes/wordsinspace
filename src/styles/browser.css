@@ -73,7 +73,7 @@
   content  : "";
  position : absolute;
  z-index  : 1;
- bottom   : calc(-90px + 64vh);
+ bottom   : calc(-80px + 64vh);
  right     : 0;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,

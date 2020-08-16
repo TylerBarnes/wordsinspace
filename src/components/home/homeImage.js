@@ -1,11 +1,12 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const HomeImage = ({title, thumbnail, isEven}) => {
+const HomeImage = ({title, thumbnail}) => {
+
   return (
-    <div 
+    <div
 	    style={{
-	    	flexBasis: '40%', 
+	    	flexBasis: '40%',
 	    }}>
       <Img fluid={thumbnail} alt={title} />
     </div>
