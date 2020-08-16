@@ -21,7 +21,7 @@ function ClientOnly({ children, ...delegated }) {
   if (!hasMounted) {
     return null;
   }
-  
+
   return (
     <div {...delegated}>
       {children}

@@ -67,7 +67,7 @@ const Browser = ({ children, props }) => {
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
           <div className='interface'
           style={{
-            margin: mobileNavBar ? '0' : '15px 0px 15px 14px',
+            margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
           }}>
             Browsing:
             <span
