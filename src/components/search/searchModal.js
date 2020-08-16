@@ -34,7 +34,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
           overflowY: 'hidden',
           outline: '0',
         }}>
-        <div
+        <div className="search-modal"
           style={{
             zIndex: '100',
             background: '#513bfd',
@@ -42,7 +42,7 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
             margin: '60px 0 0 50px',
             width: 'calc(80vw - 50px)',
             maxHeight: '75vh',
-            padding: '1vh 2vw 2vh 2vw',
+            padding: '0vh 2vw 0vh 2vw',
             overflowY: 'scroll',
           }}>
 
@@ -62,8 +62,8 @@ const SearchModal = ({ isShowing, hide, searchResults, searchTerm, catName, load
           {/* ---------------- SEARCH RESULTS ---------------- */}
           {!loading && (
             <>
-              <SearchModalText resultsCount={searchResults.length} searchTerm={searchTerm} catName={catName} hide={hide} />
               <SearchResults items={searchResults} />
+              <SearchModalText resultsCount={searchResults.length} searchTerm={searchTerm} catName={catName} hide={hide} />
             </>
           )}
         </div>

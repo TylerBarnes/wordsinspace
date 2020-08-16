@@ -97,6 +97,30 @@
  height   : 2vh;
 }
 
+.search-modal:before {
+  content  : "";
+ position : absolute;
+ z-index  : 1;
+ top: -3vh;
+ right     : 0;
+ pointer-events   : none;
+ background-image : linear-gradient(to bottom,
+                   rgba(243,243,243, 1) 30%,
+                   rgba(243,243,243, 0.7) 50%,
+                   rgba(243,243,243, 0.4) 70%,
+                   rgba(243,243,243, 0) 100%);
+ width: calc(80vw - 50px);
+ height   : 10vh;
+}
+
+.search-modal {
+  -webkit-animation: fadein 0.2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.2s; /* Firefox < 16 */
+   -ms-animation: fadein 0.2s; /* Internet Explorer */
+    -o-animation: fadein 0.2s; /* Opera < 12.1 */
+       animation: fadein 0.2s;
+}
+
 /*****/
 /*****/
 /*****DISABLE SCROLLBAR and ITEM MARGINS IN LIST AND SEARCH*/
@@ -149,6 +173,10 @@
 /*****/
 /*****/
 
+.search-results .publicationsItem, .search-results .workItem, .search-results .teachingItem, .search-results .projectsItem, .search-results .presentationsItem, .search-results .talksItem, .search-results .blogItem, .search-results .researchItem {
+  background-color: rgb(81, 59, 253);
+}
+
 .publicationsItem:hover {
   background: -webkit-gradient(linear, left top, right top, from(rgba(245, 227, 225, 0)), color-stop(2%, rgba(245, 227, 225, 1)), color-stop(98%, rgba(245, 227, 225, 1)), to(rgba(245, 227, 225, 0)));
   background: -o-linear-gradient(left, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 1) 2%, rgba(245, 227, 225, 1) 98%, rgba(245, 227, 225, 0) 100%);
@@ -197,53 +225,7 @@
   background: linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 1) 2%, rgba(247,227,229, 1) 98%, rgba(247,227,229, 0) 100%);
 }
 
-.search-results .publicationsItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(245, 227, 225, 0)), color-stop(2%, rgba(245, 227, 225, 0.3)), color-stop(98%, rgba(245, 227, 225, 0.3)), to(rgba(245, 227, 225, 0)));
-  background: -o-linear-gradient(left, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 0.3) 2%, rgba(245, 227, 225, 0.3) 98%, rgba(245, 227, 225, 0) 100%);
-  background: linear-gradient(90deg, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 0.3) 2%, rgba(245, 227, 225, 0.3) 98%, rgba(245, 227, 225, 0) 100%);
-}
 
-.search-results .workItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(247,227,229, 0)), color-stop(2%, rgba(247,227,229, 0.3)), color-stop(98%, rgba(247,227,229, 0.3)), to(rgba(247,227,229, 0)));
-  background: -o-linear-gradient(left, rgba(247,227,229, 0) 0%, rgba(247,227,229, 0.3) 2%, rgba(247,227,229, 0.3) 98%, rgba(247,227,229, 0) 100%);
-  background: linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 0.3) 2%, rgba(247,227,229, 0.3) 98%, rgba(247,227,229, 0) 100%);
-}
-
-.search-results .teachingItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(225, 238, 244, 0)), color-stop(2%, rgba(225, 238, 244, 0.3)), color-stop(98%, rgba(225, 238, 244, 0.3)), to(rgba(225, 238, 244, 0)));
-  background: -o-linear-gradient(left, rgba(225, 238, 244, 0) 0%, rgba(225, 238, 244, 0.3) 2%, rgba(225, 238, 244, 0.3) 98%, rgba(225, 238, 244, 0) 100%);
-  background: linear-gradient(90deg, rgba(225, 238, 244, 0) 0%, rgba(225, 238, 244, 0.3) 2%, rgba(225, 238, 244, 0.3) 98%, rgba(225, 238, 244, 0) 100%);
-}
-
-.search-results .projectsItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(245, 227, 225, 0)), color-stop(2%, rgba(245, 227, 225, 0.3)), color-stop(98%, rgba(245, 227, 225, 0.3)), to(rgba(245, 227, 225, 0)));
-  background: -o-linear-gradient(left, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 0.3) 2%, rgba(245, 227, 225, 0.3) 98%, rgba(245, 227, 225, 0) 100%);
-  background: linear-gradient(90deg, rgba(245, 227, 225, 0) 0%, rgba(245, 227, 225, 0.3) 2%, rgba(245, 227, 225, 0.3) 98%, rgba(245, 227, 225, 0) 100%);
-}
-
-.search-results .presentationsItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(247, 227, 229, 0)), color-stop(2%, rgba(247, 227, 229, 0.3)), color-stop(98%, rgba(247, 227, 229, 0.3)), to(rgba(247, 227, 229, 0)));
-  background: -o-linear-gradient(left, rgba(247, 227, 229, 0) 0%, rgba(247, 227, 229, 0.3) 2%, rgba(247, 227, 229, 0.3) 98%, rgba(247, 227, 229, 0) 100%);
-  background: linear-gradient(90deg, rgba(247, 227, 229, 0) 0%, rgba(247, 227, 229, 0.3) 2%, rgba(247, 227, 229, 0.3) 98%, rgba(247, 227, 229, 0) 100%);
-}
-
-.search-results .talksItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(240, 240, 240, 0)), color-stop(2%, rgba(240, 240, 240, 0.3)), color-stop(98%, rgba(240, 240, 240, 0.3)), to(rgba(240, 240, 240, 0)));
-  background: -o-linear-gradient(left, rgba(240, 240, 240, 0) 0%, rgba(240, 240, 240, 0.3) 2%, rgba(240, 240, 240, 0.3) 98%, rgba(240, 240, 240, 0) 100%);
-  background: linear-gradient(90deg, rgba(240, 240, 240, 0) 0%, rgba(240, 240, 240, 0.3) 2%, rgba(240, 240, 240, 0.3) 98%, rgba(240, 240, 240, 0) 100%);
-}
-
-.search-results .blogItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(225, 240, 245, 0)), color-stop(2%, rgba(225, 240, 245, 0.3)), color-stop(98%, rgba(225, 240, 245, 0.3)), to(rgba(225, 240, 245, 0)));
-  background: -o-linear-gradient(left, rgba(225, 240, 245, 0) 0%, rgba(225, 240, 245, 0.3) 2%, rgba(225, 240, 245, 0.3) 98%, rgba(225, 240, 245, 0) 100%);
-  background: linear-gradient(90deg, rgba(225, 240, 245, 0) 0%, rgba(225, 240, 245, 0.3) 2%, rgba(225, 240, 245, 0.3) 98%, rgba(225, 240, 245, 0) 100%);
-}
-
-.search-results .researchItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(247,227,229, 0)), color-stop(2%, rgba(247,227,229, 0.3)), color-stop(98%, rgba(247,227,229, 0.3)), to(rgba(247,227,229, 0)));
-  background: -o-linear-gradient(left, rgba(247,227,229, 0) 0%, rgba(247,227,229, 0.3) 2%, rgba(247,227,229, 0.3) 98%, rgba(247,227,229, 0) 100%);
-  background: linear-gradient(90deg, rgba(247,227,229, 0) 0%, rgba(247,227,229, 0.3) 2%, rgba(247,227,229, 0.3) 98%, rgba(247,227,229, 0) 100%);
-}
 
 /*****/
 /*****/
@@ -263,6 +245,7 @@
 .list-title-inverted {
   color: #fff;
 }
+
 
 /*****/
 /*****/

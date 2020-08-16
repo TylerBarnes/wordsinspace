@@ -11,7 +11,8 @@ const SearchResults = ({items}) => {
         flexDirection: 'row wrap',
         alignItems: 'flex-start',
         justifyContent: 'stretch',
-        maxHeight: '60vh',
+        maxHeight: '65vh',
+        paddingTop: '4vh',
         overflow: 'auto',
       }}>
         {/* ---------------- LIST ---------------- */}
@@ -20,7 +21,7 @@ const SearchResults = ({items}) => {
             overflow: 'scroll',
             color: '#fff',
             height: 'auto',
-            marginBottom: '2vh',
+            paddingBottom: '2vh',
             borderBottom: '1px solid #fff',
           }}>
 

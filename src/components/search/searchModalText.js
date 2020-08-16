@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import Close_search from '../../images/assets/close_search.svg'
 
 const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -9,30 +10,27 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
         tabIndex={0}
         style={{
           outline: 'none',
-          border: '1px dotted #fff',
           padding: '5px',
           margin: '5px 0',
           position: 'relative',
           float: 'right',
-          color: isHovered ? '#6262F4' : '#fff',
-          background: isHovered ? '#fff' : 'transparent',
+          color: isHovered ? '#6262F4' : '#FF7167',
           textTransform: 'uppercase',
           cursor: 'pointer'
         }}
         className='metadata'
-        data-dismiss="modal" 
-        aria-label="Close" 
+        data-dismiss="modal"
+        aria-label="Close"
         onMouseEnter={e=>setIsHovered(true)}
         onMouseLeave={e=>setIsHovered(false)}
         onKeyPress={hide}
         onClick={hide}>
-          Close
+          <Close_search />
         </div>
-      
-      <div 
+
+      <div
         className='metadata'
         style={{
-          padding: '2vh 0',
           textTransform: 'uppercase',
           color: '#fff',
         }}>
