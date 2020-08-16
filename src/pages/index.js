@@ -44,9 +44,18 @@ export default function HomePage() {
 
   if (mobileHome) return <MobileIndex menuItems={menuItems} />
 
-  const styleSVG = {
+  const styleSVGL = {
     position: 'relative',
-    width:'50%',
+    width:'60%',
+    display: 'flex',
+    flexFlow: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  }
+
+  const styleSVGR = {
+    position: 'relative',
+    width:'40%',
     display: 'flex',
     flexFlow: 'column',
     justifyContent: 'space-around',
@@ -67,57 +76,57 @@ export default function HomePage() {
         }}>
         <div
           style={{
-            width: '50%',
+            width: '60%',
           }}>
           <HomeItem item={menuItems[0]} index={1} />
           <HomeItem item={menuItems[1]} index={2} />
         </div>
 
         <div className="Sticker"
-          style={styleSVG}>
+          style={styleSVGR}>
           <Link to={'/work/'}><Sticker_Browse_text id='sticker-browse-text' /><Sticker_Browse id='sticker-browse' /></Link>
         </div>
 
         <div className="Sticker"
-          style={styleSVG}>
+          style={styleSVGL}>
           <Link to ={'/about/'}><Sticker_Words_text id='sticker-words-text' /><Sticker_Words id='sticker-words' /></Link>
         </div>
 
         <div
           style={{
-            width:'50%',
+            width:'40%',
           }}>
           <HomeItem item={menuItems[2]} index={3} />
         </div>
 
         <div
           style={{
-            width:'50%',
+            width:'60%',
           }}>
           <HomeItem item={menuItems[3]} index={4} />
           <HomeItem item={menuItems[4]} index={5} />
         </div>
 
         <div className="Sticker"
-          style={styleSVG}>
+          style={styleSVGR}>
           <Link to={'/student-resources/'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
         </div>
 
         <div className="Sticker"
-          style={styleSVG}>
+          style={styleSVGL}>
           <Link to={'/upcoming-events/'}><Sticker_Upcoming_text id='sticker-upcoming-text' /><Sticker_Upcoming id='sticker-upcoming' /></Link>
         </div>
 
         <div
           style={{
-            width:'50%',
+            width:'40%',
           }}>
           <HomeItem item={menuItems[5]} index={6} />
         </div>
 
         <div
           style={{
-            width:'50%',
+            width:'60%',
             display: 'flex',
             flexFlow: 'column',
             flexWrap: 'nowrap',
