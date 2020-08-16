@@ -65,7 +65,41 @@
 
 /*****/
 /*****/
-/*****DISABLE SCROLLBAR, ITEM MARGINS IN LIST AND SEARCH*/
+/*****Component Fades*/
+/*****/
+/*****/
+
+.tag-menu:before {
+  content  : "";
+ position : absolute;
+ z-index  : 1;
+ bottom   : calc(-90px + 64vh);
+ right     : 0;
+ pointer-events   : none;
+ background-image : linear-gradient(to bottom,
+                   rgba(243,243,243, 1) 10%,
+                   rgba(243,243,243, 0) 100%);
+ width    : 19.9vw;
+ height   : 1vh;
+}
+
+.tag-menu:after {
+  content  : "";
+ position : absolute;
+ z-index  : 1;
+ bottom   : 0;
+ right     : 0;
+ pointer-events   : none;
+ background-image : linear-gradient(to bottom,
+                   rgba(243,243,243, 0),
+                   rgba(243,243,243, 1) 90%);
+ width    : 20vw;
+ height   : 2vh;
+}
+
+/*****/
+/*****/
+/*****DISABLE SCROLLBAR and ITEM MARGINS IN LIST AND SEARCH*/
 /*****/
 /*****/
 

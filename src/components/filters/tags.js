@@ -1,5 +1,7 @@
 import React, {useState} from "react"
 
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
+import {getResponsiveBrowserVars} from "../../utils/dom"
 import Checkbox from './checkbox'
 
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
@@ -9,15 +11,19 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const topTags = tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
   const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
 
+	const breakpoints = useBreakpoint()
+	const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoints)
+
   return (
    <div
-	 		className='tag-menu no-scroll'
+	 		className={mobileBrowserLayout ? 'no-scroll' : 'tag-menu no-scroll'}
 	   	style={{
   	    marginTop: '0px',
 	    	textAlign: 'left',
 				overflowY: 'scroll',
 				overflowX: 'hidden',
 				height: 'calc(-90px + 65vh)',
+				paddingTop: '1vh',
 				paddingBottom: '0vh',
 				flex: '1 1 auto',
 	    }}>
