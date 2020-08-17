@@ -253,13 +253,24 @@ li.blocks-gallery-item:last-child {
      object-fit: contain !important;
 }
 
+.slideshowImg {
+  width: 56vw !important;
+}
+
 .mobile-content .slideshowImgWrapper > div  {
   padding: 0 0 0 0 !important;
   width: inherit !important;
   max-width: 84vw;
   -o-object-fit: contain !important;
      object-fit: contain !important;
+}
 
+.mobile-content .slideshowImg  {
+  padding: 0;
+  max-width: 84vw !important;
+  max-height: auto ;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
 }
 
 .mobile-content .slideshowImgWrapper img  {
@@ -331,7 +342,7 @@ li.blocks-gallery-item:last-child {
 /*****/
 
 .content {
-  font-family:  'LaNord', sans-serif;
+  font-family:  'LaNord_Light', sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 22px;
@@ -350,28 +361,39 @@ li.blocks-gallery-item:last-child {
   width: inherit;
 }
 
-.content p img {
-  max-width: 56vw !important;
-}
-
-.mobile-content p img {
-  max-width: 84vw !important;
-}
-
-.content iframe, .mobile-content iframe {
-  display: block;
-  margin: 0 auto 0 auto;
-}
-
 /* replacement styles from Agnes */
 
 .emphasised {
-
+  font-weight: bold;
 }
 
 .indented {
-  
+  color: #F5F5F7;
 }
+
+.content > h1, .content > h2, .content > h3, .mobile-content > h1, .mobile-content > h2, .mobile-content > h3 {
+  font-family: 'LaNord', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 40px;
+  color: #464668;
+}
+
+.content a, .mobile-content a {
+  font-family: 'LaNord_Light', sans-serif;
+  font-weight: 200;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
+
+/*****/
+/*****/
+/*****INLINE WORDPRESS STYLES FOR IMAGES THIS IS A SPECIAL TYPE OF HELL*/
+/*****/
+/*****/
+
 
 .content a > img {
   display: block;
@@ -391,28 +413,21 @@ li.blocks-gallery-item:last-child {
   margin-right: auto;
 }
 
-.content > h1, .content > h2, .content > h3, .mobile-content > h1, .mobile-content > h2, .mobile-content > h3 {
-  font-family: 'LaNord', sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 40px;
-  color: #464668;
+.content p img {
+  max-width: 56vw !important;
+  height: auto !important;
 }
 
-.content a, .mobile-content a {
-  font-family: 'LaNord', sans-serif;
-  font-weight: 500;
-  text-decoration: underline;
-  margin: 0;
-  padding: 0;
+.mobile-content p img {
+  max-width: 84vw !important;
+  height: auto !important;
 }
 
-/*****/
-/*****/
-/*****INLINE WORDPRESS STYLES FOR IMAGES THIS IS A SPECIAL TYPE OF HELL*/
-/*****/
-/*****/
+.content iframe, .mobile-content iframe {
+  display: block;
+  margin: 0 auto 4vh auto;
+}
+
 
 .content > figure img, .mobile-content > figure, img {
   padding: 0;

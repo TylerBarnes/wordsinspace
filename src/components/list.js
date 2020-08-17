@@ -62,7 +62,7 @@ const List = ({loading, items, isTagMode}) => {
                 position: 'fixed',
                 margin: '0',
                 padding: '0',
-                left: '78.2vw',
+                right: '20vw',
                 top: '50px',
                 outline: 'none',
                 border: 'none',

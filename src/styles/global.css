@@ -43,7 +43,7 @@ a {
 }
 
 .interface > a {
-  color: #464668;
+  color: #6161f4;
 }
 
 a:hover {
@@ -103,9 +103,9 @@ input:hover {
 /* */
 
 .top-bar {
-  -webkit-box-shadow: inset -19px 19px 20px 1px rgba(255,255,255,1);
-  -moz-box-shadow: inset -19px 19px 20px 1px rgba(255,255,255,1);
-  box-shadow: inset -19px 19px 20px 1px rgba(255,255,255,1);
+  -webkit-box-shadow: inset -19px 23px 21px 1px rgba(255,255,255,1);
+  -moz-box-shadow: inset -19px 23px 21px 1px rgba(255,255,255,1);
+  box-shadow: inset -19px 23px 21px 1px rgba(255,255,255,1);
 }
 
 .left-bar {
@@ -124,7 +124,7 @@ input:hover {
 /* Shared styles */
 /* */
 .interface {
-  color: #464668;
+  color: #6161f4;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
@@ -199,7 +199,7 @@ input:hover {
 }
 
 .work {
-  background-color: #F5F5F7;
+  background-color: transparent;
   color: #464668;
   border: 1px solid #464668;
 }

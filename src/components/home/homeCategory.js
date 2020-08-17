@@ -2,8 +2,8 @@ import React from "react"
 import {Link} from "gatsby"
 
 const HomeCategory = ({category}) => {
-  const isClasses = (category === 'classes')
-  
+  const isClasses = (category === 'classes') // link classes to teaching
+
   return (
     <Link to={isClasses ? '/teaching' : '/' + category.toLowerCase()}>
       <div className={category.toLowerCase()}>

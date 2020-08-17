@@ -16,7 +16,7 @@
 	font-weight: normal;
 	font-size: 40px;
 	line-height: 40px;
-	color: #2B2B6B;
+	color: #4c4661;
 }
 
 .home-title-mobile {
@@ -124,6 +124,10 @@
 /*****STICKER STYLES*/
 /*****/
 /*****/
+
+path.st0 {
+	fill: #6161f4 !important;
+}
 
 .Sticker > * {
 	position: absolute;
