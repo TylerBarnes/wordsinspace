@@ -152,7 +152,7 @@ input:hover {
   text-align: left;
   text-transform: uppercase;
   color: #414171;
-  margin: 0 5px 0 0;
+  margin: 0 0 0 5px;
 }
 
 .date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {

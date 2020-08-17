@@ -13,7 +13,7 @@ const ArticleCategory = ({categories}) => {
   return (
 		<div
 			style={{
-				margin: mobileTaxonomy ? mobileTaxonomyMargins : '0 20px 0 0',
+				margin: mobileTaxonomy ? mobileTaxonomyMargins : '0',
 			}}
 	    className={`${category} reader`}>
 	    <Link to={`/${category}`}>{category}</Link>

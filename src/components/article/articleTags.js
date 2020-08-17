@@ -20,9 +20,6 @@ const ArticleTags = ({tags}) => {
       }}>
       {tags.nodes.map((tag, index_tag) =>
         <span
-          style={{
-            marginRight: '5px',
-          }}
           className='tag'
           key={index_tag}>
           {tag.name}

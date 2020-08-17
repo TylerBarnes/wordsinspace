@@ -26,7 +26,7 @@
   font-family:  'LaNord', sans-serif;
   color: #464668;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 27px;
   text-align: center;
   margin-top: 1vh;
@@ -125,15 +125,15 @@ li.blocks-gallery-item:last-child {
 }
 
 .content .blocks-gallery-item > figure > div  {
-  width: inherit !important;
+  width: inherit;
   /* where max image height is set */
-  height: 60vh !important;
+  height: 60vh;
 }
 
 .mobile-content .blocks-gallery-item > figure > div  {
-  width: inherit !important;
+  width: inherit;
   /* where max image height is set */
-  height: auto !important;
+  height: auto;
 }
 
 .content .blocks-gallery-grid img  {
@@ -209,11 +209,11 @@ li.blocks-gallery-item:last-child {
 
 /* override inline hell */
 .content .slideshowImgWrapper > *  {
-  width: 56vw !important;
+  width: 56vw;
 }
 
 .mobile-content .slideshowImgWrapper > *  {
-  width: 80vw !important;
+  width: 80vw;
 }
 
 .slideshowImgWrapper img  {

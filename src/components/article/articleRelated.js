@@ -7,7 +7,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
 
   if (related.length === 0 || !showRelated) {
     return <div style={{
-              width: '250px',
+              width: '200px',
               alignSelf: mobileArticleContent ? 'center' : 'flex-start',
               order: mobileArticleContent ? '2' : '1',
               marginRight: mobileArticleContent ? '0' : '0',
@@ -18,9 +18,9 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
   const styles = {
     position: 'absolute',
     top: '0',
-    margin: '30px 0 0 0',
-    height: '250px',
-    width: '265px',
+    margin: '20px 0 0 0',
+    height: '200px',
+    width: '250px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -33,10 +33,10 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
   return (
     <div
       style={{
-        width: '250px',
+        width: '200px',
         alignSelf: mobileArticleContent ? 'center' : 'flex-start',
         order: mobileArticleContent ? '2' : '1',
-        margin: mobileArticleContent ? '0' : '0 2vw',
+        margin: mobileArticleContent ? '0' : '60vh 2vw 0 2vw',
         display: mobileArticleContent ? 'auto' : 'flex',
         flexFlow: mobileArticleContent ? 'auto' : 'column',
         alignItems: mobileArticleContent ? 'auto' : 'center',
@@ -59,20 +59,22 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         display: 'flex',
         flexFlow: 'column',
         alignItems: 'center',
-        marginBottom: '6vh',
+        margin: '1vh 0vh',
+        height: '200px',
       }}>
-        <div 
+        <div
           className='related-item'
           style={styles}>
           <ArticleCategory categories={item.categories}/>
           <Link className='related-title' to={item.uri}> {item.title} </Link>
           <div style={{
-            flex: '0 2 95px',
-            width: '250px',
+            flex: '0 2 70px',
+            width: '200px',
+            height: '200px',
           }}>
           </div>
         </div>
-        <Sticker_Related id='sticker-related' />
+        <Sticker_Related style={{ width: '200px', }} id='sticker-related' />
       </div>
       ))}
     </div>
