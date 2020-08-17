@@ -62,7 +62,6 @@ const Browser = ({ children, props }) => {
           width: '100%',
           display: mobileNavBar ? 'flex' : 'block',
           flexFlow: 'column',
-
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >

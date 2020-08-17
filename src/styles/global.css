@@ -27,7 +27,7 @@ body {
   cursor: default;
   overflow: hidden;
   font-family: 'Wremena_Light', sans-serif;
-  background-color: #f3f3f3;
+  background-color: #F5F5F7;
 }
 
 *::-moz-focus-inner {
@@ -199,7 +199,7 @@ input:hover {
 }
 
 .work {
-  background-color: #f3f3f3;
+  background-color: #F5F5F7;
   color: #464668;
   border: 1px solid #464668;
 }
@@ -235,8 +235,8 @@ input:hover {
 }
 
 .talks {
-  background-color: #ccc;
-  border: 1px solid #ccc;
+  background-color: #FFA698;
+  border: 1px solid #FFA698;
 }
 
 .research {

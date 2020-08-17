@@ -358,16 +358,26 @@ li.blocks-gallery-item:last-child {
   max-width: 84vw !important;
 }
 
-/* .content img, .mobile-content img {
-  width: auto;
-  height: auto;
-} */
+.content iframe, .mobile-content iframe {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+/* replacement styles from Agnes */
+
+.emphasised {
+
+}
+
+.indented {
+  
+}
 
 .content a > img {
   display: block;
   max-width: 56vw;
   height: auto;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
   margin-left: auto;
   margin-right: auto;
 }

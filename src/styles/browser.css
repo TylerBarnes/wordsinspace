@@ -285,7 +285,7 @@
 }
 
 .search-results .list-title {
-  color: #f3f3f3;
+  color: #F5F5F7;
 }
 
 .search-results .list-title:hover {
@@ -316,7 +316,7 @@
 .tag-inverted {
   color: #fff;
   border: 1px solid #fff;
-  background-color: #f3f3f3f;
+  background-color: #F5F5F7f;
 }
 
 .tag-clear {
@@ -356,7 +356,7 @@ label.tag:hover {
 .category-active {
   border: 1px solid #464668;
   color: #464668;
-  background-color: #f3f3f3;
+  background-color: #F5F5F7;
 }
 
 

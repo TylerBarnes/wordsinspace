@@ -35,7 +35,7 @@ const WordsInSpace = () => {
 
         <div
           style={{
-            marginTop: '13px',
+            marginTop: '11px',
             marginLeft: '6px',
             alignSelf: 'center'
           }}>
