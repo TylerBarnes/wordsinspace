@@ -471,16 +471,16 @@ figcaption {
   line-height: 13px;
   font-family: 'Bespoke', sans-serif;
   margin: 10px 0 4vh 1px;
-  padding-right: 2.5vh;
+  padding-right: 0;
 }
 
 .blocks-gallery-grid:hover + figcaption:after {
-  content: 'scroll for more';
+  content: 'scroll for more >>';
   float: right;
   -webkit-backface-visibility: hidden;
 }
 
-.blocks-gallery-grid:hover + figcaption {
+/* .blocks-gallery-grid:hover + figcaption {
   background-image: url('/slideshow_scroll.svg');
   background-position: right center;
   background-size: 20px 20px;
@@ -488,7 +488,7 @@ figcaption {
   background-origin: border-box;
   background-clip: border-box;
   background-attachment: auto;
-  }
+  } */
 
 /*****/
 /*****/
