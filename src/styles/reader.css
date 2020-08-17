@@ -409,8 +409,8 @@ picture source {
   font-weight: bold;
 }
 
+/* maybe not too important regex'd indents from old WIS */
 .indented {
-  color: #F5F5F7;
 }
 
 .content > h1, .content > h2, .content > h3, .mobile-content > h1, .mobile-content > h2, .mobile-content > h3 {

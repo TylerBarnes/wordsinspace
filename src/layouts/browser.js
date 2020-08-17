@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'gatsby'
 
 import {useLocation} from '@reach/router'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
+import {useCategories} from "../hooks/useCategories"
 
 import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
@@ -17,6 +19,8 @@ import '../styles/browser.css'
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
+
+  const categories = useCategories()
 
   const breakpoints = useBreakpoint()
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoints)
@@ -65,6 +69,12 @@ const Browser = ({ children, props }) => {
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
+
+        <div style={{
+          display: 'flex',
+          flexFlow: 'row nowrap',
+          width: '100%',
+        }}>
           <div className='interface'
           style={{
             margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
@@ -79,6 +89,26 @@ const Browser = ({ children, props }) => {
               {catName === 'work' ? `All` : `${catName}`}
             </span>
           </div>
+
+            {categories.sort((a,b) => a.name < b.name).map((category,index) => (
+
+              <div
+                key={index}
+                >
+                <Link
+                  to={`/${category.slug}`}
+                  activeClassName='category-active'
+                  partiallyActive={true}
+                  className={category.slug}
+                  >
+                  {category.name}
+                </Link>
+              </div>
+
+            ))}
+
+        </div>
+
           {showSearch && <Search />}
         </div>
         {/* ----------------------------MAIN ---------------------------- */}
