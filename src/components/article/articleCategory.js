@@ -9,6 +9,7 @@ const ArticleCategory = ({categories}) => {
 
   const breakpoints = useBreakpoint()
   const {mobileTaxonomy, mobileTaxonomyMargins} = getResponsiveReaderVars(breakpoints)
+  const isClasses = (`/${category}` === '/classes') // link classes to teaching
 
   return (
 		<div
@@ -16,7 +17,7 @@ const ArticleCategory = ({categories}) => {
 				margin: mobileTaxonomy ? mobileTaxonomyMargins : '0',
 			}}
 	    className={`${category} reader`}>
-	    <Link to={`/${category}`}>{category}</Link>
+	    <Link to={isClasses ? '/teaching' : `/${category}`}>{category}</Link>
 	  </div>
   )
 }
