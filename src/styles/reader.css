@@ -44,6 +44,11 @@
   width: inherit;
 }
 
+.mobile-content .wp-block-gallery {
+  height: auto;
+  width: inherit;
+}
+
 .blocks-gallery-grid {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -90,10 +95,15 @@
   margin: 0;
 }
 
-.blocks-gallery-item {
+.content .blocks-gallery-item {
   width: inherit;
   padding: 0 20px 0 0;
+}
 
+.mobile-content .blocks-gallery-item {
+  width: inherit;
+  height: auto;
+  padding: 0 20px 0 0;
 }
 
 .blocks-gallery-grid figure {
@@ -114,14 +124,26 @@ li.blocks-gallery-item:last-child {
     linear-gradient(90deg, rgba(245, 245, 255, 0), rgba(245, 245, 255, 0) 50%, rgba(245, 245, 255, 0.8) 50%, rgba(245, 245, 255, 1) 60%, rgba(245, 245, 255, 1) 100%);
 }
 
-.blocks-gallery-item > figure > div  {
+.content .blocks-gallery-item > figure > div  {
   width: inherit !important;
   /* where max image height is set */
   height: 60vh !important;
 }
 
-.blocks-gallery-grid img  {
+.mobile-content .blocks-gallery-item > figure > div  {
+  width: inherit !important;
+  /* where max image height is set */
+  height: auto !important;
+}
+
+.content .blocks-gallery-grid img  {
   padding: 0px 4vw;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
+.mobile-content .blocks-gallery-grid img  {
+  padding: 0 4vw 0 4vw;
   -o-object-fit: contain !important;
      object-fit: contain !important;
 }
@@ -135,6 +157,11 @@ li.blocks-gallery-item:last-child {
 
 .slideshowFrame {
   height: 60vh;
+  margin-bottom: 4vh;
+}
+
+.mobile-content .slideshowFrame {
+  height: auto;
   margin-bottom: 4vh;
 }
 
@@ -181,14 +208,27 @@ li.blocks-gallery-item:last-child {
 }
 
 /* override inline hell */
-.slideshowImgWrapper > *  {
+.content .slideshowImgWrapper > *  {
   width: 56vw !important;
 }
 
+.mobile-content .slideshowImgWrapper > *  {
+  width: 80vw !important;
+}
+
 .slideshowImgWrapper img  {
-  padding: 0vh 0vw;
+  padding: 0;
   max-width: 56vw;
   max-height: 56vh ;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+
+}
+
+.mobile-content .slideshowImgWrapper img  {
+  padding: 0;
+  max-width: 84vw;
+  max-height: auto ;
   -o-object-fit: contain !important;
      object-fit: contain !important;
 
@@ -263,25 +303,48 @@ li.blocks-gallery-item:last-child {
   width: inherit;
 }
 
-p img {
+.mobile-content {
+  font-family:  'LaNord', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 24px;
+  color: #464668 !important;
+  width: inherit;
+}
+
+.content p img {
   max-width: 56vw !important;
 }
 
-.content img {
+.mobile-content p img {
+  max-width: 84vw !important;
+}
+
+/* .content img, .mobile-content img {
   width: auto;
   height: auto;
-}
+} */
 
-.content > a > img {
+.content a > img {
   display: block;
   max-width: 56vw;
-  padding: 2vh 2vw;
+  height: auto;
+  margin-bottom: 2vh;
   margin-left: auto;
   margin-right: auto;
-
 }
 
-.content > h1, .content > h2, .content > h3 {
+.mobile-content a > img {
+  display: block;
+  max-width: 84vw;
+  height: auto;
+  margin-bottom: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content > h1, .content > h2, .content > h3, .mobile-content > h1, .mobile-content > h2, .mobile-content > h3 {
   font-family: 'LaNord', sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -290,7 +353,7 @@ p img {
   color: #464668;
 }
 
-.content a {
+.content a, .mobile-content a {
   font-family: 'LaNord', sans-serif;
   font-weight: 500;
   text-decoration: underline;
@@ -304,7 +367,7 @@ p img {
 /*****/
 /*****/
 
-.content > figure, img {
+.content > figure img, .mobile-content > figure, img {
   padding: 0;
   margin: 0;
 }

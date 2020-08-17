@@ -86,7 +86,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           }}>
           <Link
             to={item.uri}
-            className={invertedTheme ? 'list-title-inverted' : 'list-title'}>
+            className={mobileList ? 'list-title-mobile' : 'list-title'}>
             {item.title}
           </Link>
         </div>

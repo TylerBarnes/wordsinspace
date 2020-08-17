@@ -40,7 +40,7 @@ const ArticleContent = ({tags, title, content}) => {
           padding: mobileArticleContent ? mobileArticleContentPadding : '0',
           width: mobileArticleContent ? mobileArticleContentWidth : '60vw',
         }}>
-          <div className='content' dangerouslySetInnerHTML={{ __html: content }} />
+          <div className={mobileArticleContent ? 'mobile-content' : 'content'} dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </div>
   )
