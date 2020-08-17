@@ -29,7 +29,7 @@
 }
 
 .filterBar .work:hover {
-  color: #513bfd;
+  color: #464668;
 }
 
 @-moz-document url-prefix() {
@@ -325,7 +325,7 @@ label.tag:hover {
 }
 
 .date-inverted {
-  color: #513bfd;
+  color: #464668;
   background-color: #fff
 }
 
@@ -336,8 +336,8 @@ label.tag:hover {
 /*****/
 
 .category-active {
-  border: 1px solid #513bfd;
-  color: #513bfd;
+  border: 1px solid #464668;
+  color: #464668;
   background-color: #f3f3f3;
 }
 
@@ -361,7 +361,7 @@ input[type=checkbox] {
   margin-right: 5px;
   margin-top: 6px;
   background-color: none;
-  border: 1px solid #513bfd;
+  border: 1px solid #464668;
   float: left;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -377,7 +377,7 @@ input[type=checkbox] {
 }
 
 .category-active > .rd  {
-  background-color: #513bfd;
+  background-color: #464668;
 }
 
 /*****/

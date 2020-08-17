@@ -51,7 +51,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           justifyContent: 'space-between',
           borderStyle: 'none none dashed none',
           borderWidth: '1.3px',
-          borderColor: invertedTheme ? '#fff' : '#513bfd',
+          borderColor: invertedTheme ? '#fff' : '#464668',
       }}>
 
       <div

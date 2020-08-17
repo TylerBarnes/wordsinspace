@@ -9,7 +9,7 @@
   font-style: normal;
   font-size: 60px;
   line-height: 61px;
-  color: #513bfd;
+  color: #464668;
   padding: 4vh 8vh 5vh 4vh;
 }
 
@@ -18,13 +18,13 @@
   font-style: normal;
   font-size: 36px;
   line-height: 36px;
-  color: #513bfd;
+  color: #464668;
   padding: 2vh 0 3vh 0;
 }
 
 .related-title {
   font-family:  'LaNord', sans-serif;
-  color: #513bfd;
+  color: #464668;
   font-weight: normal;
   font-size: 24px;
   line-height: 27px;
@@ -59,6 +59,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 2vh 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -70,6 +71,7 @@
     linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
     linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
     linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+
 }
 
 /* testing hover arrow to indicate scrollover for more */
@@ -198,8 +200,8 @@ li.blocks-gallery-item:last-child {
 /*****/
 /*****/
 .work.reader:hover {
-  border: 1px solid #513bfd;
-  color: #513bfd;
+  border: 1px solid #464668;
+  color: #464668;
   background-color: #fff;
 }
 
@@ -326,7 +328,7 @@ p img {
   margin: 0 auto;
   height: 70vh;
   padding: 0;
-  border: 1px solid #513bfd;
+  border: 1px solid #464668;
 
 }
 
@@ -361,7 +363,7 @@ figcaption {
   background-origin: border-box;
   background-clip: border-box;
   background-attachment: auto;
-     }
+  }
 
 /*****/
 /*****/

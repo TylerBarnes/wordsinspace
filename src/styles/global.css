@@ -43,7 +43,7 @@ a {
 }
 
 .interface > a {
-  color: #513bfd;
+  color: #464668;
 }
 
 a:hover {
@@ -103,15 +103,15 @@ input:hover {
 /* */
 
 .top-bar {
-  -webkit-box-shadow: inset -19px 19px 45px 1px rgba(255,255,255,0.87);
-  -moz-box-shadow: inset -19px 19px 45px 1px rgba(255,255,255,0.87);
-  box-shadow: inset -19px 19px 45px 1px rgba(255,255,255,0.87);
+  -webkit-box-shadow: inset -19px 19px 20px 1px rgba(255,255,255,1);
+  -moz-box-shadow: inset -19px 19px 20px 1px rgba(255,255,255,1);
+  box-shadow: inset -19px 19px 20px 1px rgba(255,255,255,1);
 }
 
 .left-bar {
-  -webkit-box-shadow: inset 31px 19px 36px 1px rgba(255,255,255,0.87);
-  -moz-box-shadow: inset 31px 19px 36px 1px rgba(255,255,255,0.87);
-  box-shadow: inset 31px 19px 36px 1px rgba(255,255,255,0.87);
+  -webkit-box-shadow: inset 20px 10px 19px 1px rgba(255,255,255,0.87);
+  -moz-box-shadow: inset 20px 10px 19px 1px rgba(255,255,255,0.87);
+  box-shadow: inset 20px 10px 19px 1px rgba(255,255,255,0.87);
 }
 
 .right-gradient {
@@ -124,7 +124,7 @@ input:hover {
 /* Shared styles */
 /* */
 .interface {
-  color: #513bfd;
+  color: #464668;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
@@ -133,7 +133,7 @@ input:hover {
 }
 
 .metadata {
-  color: #513bfd;
+  color: #464668;
   text-transform: uppercase;
   font-size: 10px;
   font-family: 'Bespoke', sans-serif;
@@ -200,8 +200,8 @@ input:hover {
 
 .work {
   background-color: #f3f3f3;
-  color: #513bfd;
-  border: 1px solid #513bfd;
+  color: #464668;
+  border: 1px solid #464668;
 }
 
 .blog {
