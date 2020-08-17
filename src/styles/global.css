@@ -205,33 +205,33 @@ input:hover {
 }
 
 .blog {
-  background-color: #a2d2dd;
-  border: 1px solid #a2d2dd;
+  background-color: #3CA899;
+  border: 1px solid #3CA899;
 }
 
 .teaching {
-  background-color: #6F9AAD;
-  border: 1px solid #6F9AAD;
+  background-color: #FF7167;
+  border: 1px solid #FF7167;
 }
 
 .classes {
-  background-color: #6F9AAD;
-  border: 1px solid #6F9AAD;
+  background-color: #FF7167;
+  border: 1px solid #FF7167;
 }
 
 .publications {
-  background-color: #E79180;
-  border: 1px solid #E79180;
+  background-color: #7D7ED1;
+  border: 1px solid #7D7ED1;
 }
 
 .projects {
-  background-color: #F4D791;
-  border: 1px solid #F4D791;
+  background-color: #AD687B;
+  border: 1px solid #AD687B;
 }
 
 .presentations {
-  background-color: #E9B7BA;
-  border: 1px solid #E9B7BA;
+  background-color: #A7DCA4;
+  border: 1px solid #A7DCA4;
 }
 
 .talks {

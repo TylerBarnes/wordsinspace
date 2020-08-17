@@ -84,7 +84,7 @@ const Home = ({children}) => {
         </div>
 
         {/* ----------------------------MAIN---------------------------- */}
-        <div
+        <div className="home-body-mobile"
           style={childrenWrapper}>
           {children}
         </div>

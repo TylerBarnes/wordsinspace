@@ -25,7 +25,7 @@
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 19px;
-	color: #6262F4;
+	color: #464668;
 }
 
 .home-body:before {
@@ -41,6 +41,15 @@
                    rgba(243,243,243, 0) 100%);
  width: calc(80vw - 50px);
  height   : 1vh;
+}
+
+.home-body-mobile {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.home-body-mobile::-webkit-scrollbar {
+  display: none;
 }
 
 /* homeItem left side > imageL and imageR alignments; right side */

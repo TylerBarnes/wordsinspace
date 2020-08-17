@@ -130,9 +130,10 @@
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
                    rgba(243,243,243, 1) 10%,
+                   rgba(243,243,243, 0.7) 50%,
                    rgba(243,243,243, 0) 100%);
  width: calc(80vw - 50px);
- height   : 2vh;
+ height   : 1vh;
 }
 
 #mobile-list:before {
@@ -292,13 +293,13 @@
 
 .tag-active {
   color: #fff;
-  background-color: #6262F4;
+  background-color: #464668;
 }
 
 .tag-inverted {
   color: #fff;
   border: 1px solid #fff;
-  background-color: #6262F4;
+  background-color: #464668;
 }
 
 .tag-clear {

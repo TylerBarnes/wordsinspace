@@ -10,7 +10,7 @@ const MobileWordsInSpace = () => {
 		<div
       style={{
 		    width: '84vw',
-		    height: '51850px',
+		    height: '50px',
         display: 'flex',
 		    flexFlow: 'row',
 		    flexWrap: 'nowrap',

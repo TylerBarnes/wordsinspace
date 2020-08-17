@@ -20,7 +20,7 @@ export default function HomePage({menuItems}) {
 
   const styleSVG = {
     alignSelf: 'center',
-    margin: '5vh 0'
+    margin: '3vh 0 0vh 0'
   }
 
   const styleLink = {
@@ -31,7 +31,7 @@ export default function HomePage({menuItems}) {
     flexWrap: 'nowrap',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderBottom: '1px dotted #6262F4'
+    borderBottom: '1px dotted #464668'
   }
 
   return (

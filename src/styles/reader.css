@@ -46,7 +46,7 @@
 
 .blocks-gallery-grid {
   -ms-overflow-style: none;  /* IE and Edge */
-  /* scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .blocks-gallery-grid::-webkit-scrollbar {

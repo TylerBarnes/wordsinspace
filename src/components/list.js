@@ -51,7 +51,7 @@ const List = ({loading, items, isTagMode}) => {
         {!loading &&
           <ul
             style={{
-              borderBottom: mobileList ? 'none' : '1px solid #6262F4',
+              borderBottom: mobileList ? 'none' : '1px solid #464668',
               padding: '0px 15px 15px 15px',
               width: mobileList ? 'auto' : 'calc(80vw - 50px)',
             }}
@@ -68,7 +68,7 @@ const List = ({loading, items, isTagMode}) => {
                 border: 'none',
                 fontSize: '1rem',
                 fontWeight: '500',
-                color: '#6262F4',
+                color: '#464668',
                 background: 'transparent',
                 textTransform: 'uppercase',
                 cursor: 'pointer',

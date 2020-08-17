@@ -62,7 +62,7 @@ export const getResponsiveReaderVars = (breakpoints) => {
 //
 export const mobileFooterStyles =
 {
-    borderTop: '0.5px solid #513bfd',
+    borderTop: '0.5px solid #464668',
     width: '84vw',
     padding: '10px 0',
     margin: '2vh auto',
