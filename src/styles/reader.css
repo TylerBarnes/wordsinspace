@@ -66,6 +66,16 @@
   height   : 1vh;
 }
 
+.reader-body-mobile {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.reader-body-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+
 /*****Styling new layout as slideshow***/
 
 .wp-block-gallery {
@@ -455,9 +465,16 @@ picture source {
   height: auto !important;
 }
 
-.content iframe, .mobile-content iframe {
+.content iframe {
   display: block;
   margin: 0 auto 4vh auto;
+  max-width: 100%;
+}
+
+.mobile-content iframe {
+  display: block;
+  margin: 0 auto 4vh auto;
+  max-width: 100%;
 }
 
 

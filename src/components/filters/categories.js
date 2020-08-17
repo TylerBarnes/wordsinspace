@@ -24,6 +24,7 @@ const Categories = () => {
 				All
 			</Link>
 		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
+
 				<li
 					key={index}
 					style={{

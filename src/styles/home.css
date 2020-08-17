@@ -39,7 +39,7 @@
                    rgba(243,243,243, 1) 0%,
 									 rgba(243,243,243, 0.8) 50%,
                    rgba(243,243,243, 0) 100%);
- width: calc(80vw - 50px);
+ width: calc(100vw - 50px);
  height   : 1vh;
 }
 
