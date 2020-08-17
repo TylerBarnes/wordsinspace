@@ -282,6 +282,25 @@ li.blocks-gallery-item:last-child {
 
 }
 
+.slideshowImg > div {
+  padding: 0;
+}
+
+picture img {
+  padding: 0;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+img [aria-hidden="true"], div [aria-hidden="true"] {
+  display: none !important;
+}
+
+picture source {
+  display: none !important;
+}
+
 /*****/
 /*****/
 /*****CATEGORIES HOVER*/
@@ -432,6 +451,28 @@ li.blocks-gallery-item:last-child {
 .content > figure img, .mobile-content > figure, img {
   padding: 0;
   margin: 0;
+}
+
+.content .twitter-tweet {
+  border: 1px #464688 solid;
+  border-radius: 30px;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 3vh 2vw;
+  margin: 0vw 4vw;
+  background: linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
+      linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
+      linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+}
+
+.mobile-content .twitter-tweet {
+  border: 1px #464688 solid;
+  border-radius: 30px;
+  padding: 3vh 6vw;
+  margin: 0vw 4vw;
+  background: linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
+      linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
+      linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
 }
 
 .gallery {
