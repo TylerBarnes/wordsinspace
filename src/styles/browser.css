@@ -107,7 +107,7 @@
  background-image : linear-gradient(to bottom,
                    rgba(243,243,243, 1) 30%,
                    rgba(243,243,243, 0.7) 50%,
-                   rgba(243,243,243, 0.4) 70%,
+                   rgba(243,243,243, 0.3) 70%,
                    rgba(243,243,243, 0) 100%);
  width: calc(80vw - 50px);
  height   : 10vh;
@@ -202,8 +202,8 @@
 /*****/
 /*****/
 
-.search-results .publicationsItem, .search-results .workItem, .search-results .teachingItem, .search-results .projectsItem, .search-results .presentationsItem, .search-results .talksItem, .search-results .blogItem, .search-results .researchItem {
-  background-color: rgb(81, 59, 253);
+.search-results .publicationsItem:hover, .search-results .workItem:hover, .search-results .teachingItem:hover, .search-results .projectsItem:hover, .search-results .presentationsItem:hover, .search-results .talksItem:hover, .search-results .blogItem:hover, .search-results .researchItem:hover {
+  background: transparent;
 }
 
 .publicationsItem:hover {
@@ -284,6 +284,14 @@
   font-weight: normal;
 }
 
+.search-results .list-title {
+  color: #f3f3f3;
+}
+
+.search-results .list-title:hover {
+  color: #FF7167;
+}
+
 
 /*****/
 /*****/
@@ -308,7 +316,7 @@
 .tag-inverted {
   color: #fff;
   border: 1px solid #fff;
-  background-color: #464668;
+  background-color: #f3f3f3f;
 }
 
 .tag-clear {

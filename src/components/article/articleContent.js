@@ -27,7 +27,6 @@ const ArticleContent = ({tags, title, content}) => {
       	related={related}
       	mobileArticleContent={mobileArticleContent}
       	showRelated={showRelated}/>
-
       {/* ==================== Content ====================  */}
       <div
         style={{

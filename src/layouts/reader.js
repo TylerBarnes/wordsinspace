@@ -43,7 +43,7 @@ const Reader = ({children}) => {
 
   const childrenWrapper =
   {
-    height: mobileNavBar ? '100%' : 'calc(100vh - 50px)',
+    height: mobileNavBar ? 'calc(-50px + 100vh)' : 'calc(100vh - 50px)',
     width: mobileNavBar ? '84vw' : 'calc(100vw - 50px)',
     overflow: 'auto',
     display: 'flex',
@@ -88,7 +88,7 @@ const Reader = ({children}) => {
         </div>
 
         {/* ----------------------------Main---------------------------- */}
-        <div
+        <div className={mobileNavBar ? 'reader-body-mobile' : 'reader-body'}
           style={childrenWrapper}>
             {children}
        </div>

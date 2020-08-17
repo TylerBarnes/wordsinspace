@@ -36,6 +36,35 @@
     -ms-hyphens: auto; */
 }
 
+.reader-body:before {
+  content  : "";
+  position : absolute;
+  z-index  : 1;
+  top: 50px;
+  left: 50px;
+  pointer-events   : none;
+  background-image : linear-gradient(to bottom,
+                   rgba(243,243,243, 1) 10%,
+                   rgba(243,243,243, 0.7) 50%,
+                   rgba(243,243,243, 0) 100%);
+  width: calc(80vw - 50px);
+  height   : 1vh;
+}
+
+.reader-body-mobile:before {
+  content  : "";
+  position : absolute;
+  z-index  : 1;
+  top: 50px;
+  left: 0px;
+  pointer-events   : none;
+  background-image : linear-gradient(to bottom,
+                 rgba(243,243,243, 1) 10%,
+                 rgba(243,243,243, 0.7) 50%,
+                 rgba(243,243,243, 0) 100%);
+  width: 100vw;
+  height   : 1vh;
+}
 
 /*****Styling new layout as slideshow***/
 
@@ -220,6 +249,14 @@ li.blocks-gallery-item:last-child {
   padding: 0;
   max-width: 56vw;
   max-height: 56vh ;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
+.mobile-content .slideshowImgWrapper > div  {
+  padding: 0 0 0 0 !important;
+  width: inherit !important;
+  max-width: 84vw;
   -o-object-fit: contain !important;
      object-fit: contain !important;
 
