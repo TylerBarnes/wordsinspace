@@ -122,6 +122,7 @@ module.exports = {
           desktop: '(min-width: 1024px)',
         }
       }
-    }
+    },
+  `gatsby-plugin-netlify`
   ],
 }

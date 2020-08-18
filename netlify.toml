@@ -1,0 +1,37 @@
+[[redirects]]
+	from = "/shannon/:slug"
+	to = "/:slug"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "/presentations/:slug"
+	to = "/:slug"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "/publications/:slug"
+	to = "/:slug"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "/projects/:slug"
+	to = "/:slug"
+	status = 200
+	force = true
+
+
+[[redirects]]
+	from = "/shannon/wp-content/uploads/:year/:month/:slug"
+	to = "https://final.wordsinspace.net/wp-content/uploads/:year/:month/:slug"
+	status = 200
+	force = true
+
+
+[dev]
+command = 'npm run develop'
+port = 8000
+publish = 'site/public'
+targetPort = 8000
