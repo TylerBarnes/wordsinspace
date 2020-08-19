@@ -41,7 +41,7 @@ const Browser = ({ children, props }) => {
     alignItems: 'center',
     textTransform: 'uppercase',
     height: mobileNavBar ? '35px' : '50px',
-    width: mobileNavBar ? '84vw' : 'auto',
+    width: mobileNavBar ? '84vw' : 'calc(-50px + 100vw)',
     alignSelf: mobileNavBar ? 'center' : 'normal',
   }
 
@@ -56,11 +56,11 @@ const Browser = ({ children, props }) => {
 
   return (
     <div className={mobileBrowserLayout ? 'browser' : 'browser right-gradient'} style={styleWrapper} >
-      {/* ----------------------------WORDS IN SPACE---------------------------- */}
+      {/* ----------------------------WORDS IN SPACE (LEFT)---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
       {mobileNavBar && <MobileWordsInSpace />}
 
-      {/* ----------------------------CONTAINER---------------------------- */}
+      {/* ----------------------------MAIN CONTAINER---------------------------- */}
       <div
         style={{
           width: '100%',
@@ -70,45 +70,53 @@ const Browser = ({ children, props }) => {
         {/* ----------------------------TOP---------------------------- */}
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
 
-        <div style={{
+          <div style={{
+          width: 'calc(-50px + 80vw)',
           display: 'flex',
           flexFlow: 'row nowrap',
-          width: '100%',
-        }}>
-          <div className='interface'
-          style={{
-            margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
+          alignItems: 'center',
           }}>
-            Browsing:
-            <span
-              style={{
-                position: 'relative',
-                margin: '5px'
-              }}
-              className={catName.toLowerCase()}>
-              {catName === 'work' ? `All` : `${catName}`}
-            </span>
-          </div>
+            <div className='interface'
+            style={{
+              margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
+            }}>
+              Browsing:
+            </div>
 
-            {categories.sort((a,b) => a.name < b.name).map((category,index) => (
+            <div style={{
+              display: 'flex',
+              flexFlow: 'row nowrap',
+              alignItems: 'center',
+              overflow: 'auto',
+            }}>
+              <span
+                style={{
+                  position: 'relative',
+                  margin: '5px'
+                }}
+                className={catName.toLowerCase()}>
+                {catName === 'work' ? `All` : `All`}
+              </span>
 
-              <div
-                key={index}
-                >
-                <Link
-                  to={`/${category.slug}`}
-                  activeClassName='category-active'
-                  partiallyActive={true}
-                  className={category.slug}
-                  >
-                  {category.name}
-                </Link>
-              </div>
+              {categories.sort((a,b) => a.name < b.name).map((category,index) => (
 
-            ))}
+                <div
+                  key={index}
+                    >
+                  <Link
+                    to={`/${category.slug}`}
+                    activeClassName='category-active'
+                    partiallyActive={true}
+                    className={category.slug}
+                    >
+                    {category.name}
+                  </Link>
+                </div>
+
+              ))}
+            </div>
 
         </div>
-
           {showSearch && <Search />}
         </div>
         {/* ----------------------------MAIN ---------------------------- */}

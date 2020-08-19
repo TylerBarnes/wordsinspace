@@ -97,14 +97,14 @@ const Search = () => {
   return (
     <div
       style={{
-        marginTop: '0',
+        margin: '0',
         width: '20vw',
             }}>
       <form
         style={{
           margin: '0',
           padding: '0 1vw',
-          width: '100%',
+          width: 'inherit',
         }}
         onSubmit={e => handleSubmit(e)}>
 
@@ -112,17 +112,20 @@ const Search = () => {
           style={{
             display: 'flex',
             flexFlow: 'row',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-start',
             width: 'inherit',
+            margin: '0',
+
           }}>
         <input
           style={{
             cursor: 'text',
-            width: '20vw',
-            margin: '0',
+            width: '18vw',
             padding: '5px 0 0 5px',
+            margin: '0',
             border: 'none',
-            background: 'rgba(255,255,255,0.6)'
+            background: 'rgba(255,255,255,0.6)',
+
           }}
           ref={inputEl}
           type="text"

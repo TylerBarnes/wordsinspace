@@ -193,6 +193,11 @@ input:hover {
   }
 }
 
+/* HIDE UNCATEGORIZED */
+.uncategorized {
+  display: none;
+}
+
 .date {
   background-color: #513bfd;
   border: 1px solid #513bfd;

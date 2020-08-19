@@ -75,6 +75,9 @@ export default function Colophon() {
               <a href='https://www.metaflop.com/metafonts/bespoke'>Bespoke</a>, a metafont developed by Alexis Reigel and Marco Muller using their web application <a href="https://www.metaflop.com/">Metaflop</a>. <a href="https://en.wikipedia.org/wiki/Metafont">Metafont</a> is a computer language used to define raster fonts devised by Donald Knuth as a companion to his TeX typesetting system.
               </p>
 
+              <p>Foreign Objects is an itinerant design and research studio exploring the internet through the production of cultural artifacts. </p>
+
+
             </div>
           </div>
         <ArticleFooter />
