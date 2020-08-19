@@ -18,7 +18,6 @@ const HomeItem = ({item, index}) => {
       style={{
         borderBottom: '1.3px dashed #464668',
         margin: '0',
-        paddingBottom: '2vh',
       }}>
 
       <div className={leftAligned ? 'imageL' : 'normal'}>
