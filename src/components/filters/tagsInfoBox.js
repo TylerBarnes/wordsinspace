@@ -7,8 +7,8 @@ const TagsInfoBox = ({clearTags, isTagMode}) => {
     <button className='metadata'
     	style={{
 				margin: '0',
-				padding: '0',
-        height: '30px',
+        height: '25px',
+        padding: '0 1vh',
 				border: 'none',
 				background: 'transparent',
 				textAlign: 'left',

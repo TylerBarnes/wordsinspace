@@ -3,7 +3,7 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@ap
 import fetch from "isomorphic-fetch"
 
 const httpLink = createHttpLink({
-    uri: `https://server.wordsinspace.net/graphql`
+    uri: `https://final.wordsinspace.net/graphql`
 });
 
 const client = new ApolloClient({

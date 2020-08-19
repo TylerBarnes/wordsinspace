@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'gatsby'
 
 import {useLocation} from '@reach/router'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
+import {useCategories} from "../hooks/useCategories"
 
 import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
@@ -17,6 +19,8 @@ import '../styles/browser.css'
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
+
+  const categories = useCategories()
 
   const breakpoints = useBreakpoint()
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoints)
@@ -37,7 +41,7 @@ const Browser = ({ children, props }) => {
     alignItems: 'center',
     textTransform: 'uppercase',
     height: mobileNavBar ? '35px' : '50px',
-    width: mobileNavBar ? '84vw' : 'auto',
+    width: mobileNavBar ? '84vw' : 'calc(-50px + 100vw)',
     alignSelf: mobileNavBar ? 'center' : 'normal',
   }
 
@@ -52,11 +56,11 @@ const Browser = ({ children, props }) => {
 
   return (
     <div className={mobileBrowserLayout ? 'browser' : 'browser right-gradient'} style={styleWrapper} >
-      {/* ----------------------------WORDS IN SPACE---------------------------- */}
+      {/* ----------------------------WORDS IN SPACE (LEFT)---------------------------- */}
       {!mobileNavBar && <WordsInSpace />}
       {mobileNavBar && <MobileWordsInSpace />}
 
-      {/* ----------------------------CONTAINER---------------------------- */}
+      {/* ----------------------------MAIN CONTAINER---------------------------- */}
       <div
         style={{
           width: '100%',
@@ -65,20 +69,57 @@ const Browser = ({ children, props }) => {
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
-          <div className='interface'
-          style={{
-            margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
+
+          <div style={{
+          width: 'calc(-50px + 80vw)',
+          display: 'flex',
+          flexFlow: 'row nowrap',
+          alignItems: 'center',
           }}>
-            Browsing:
-            <span
-              style={{
-                position: 'relative',
-                margin: '5px'
-              }}
-              className={catName.toLowerCase()}>
-              {catName === 'work' ? `All` : `${catName}`}
-            </span>
-          </div>
+            <div className='interface'
+            style={{
+              margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
+            }}>
+              Browsing:
+            </div>
+
+            <div style={{
+              display: 'flex',
+              flexFlow: 'row nowrap',
+              alignItems: 'center',
+              overflow: 'auto',
+            }}>
+              <span
+                style={{
+                  position: 'relative',
+                  margin: '5px'
+                }}
+                className={!mobileBrowserLayout ? "work" : catName.toLowerCase()}>
+
+                {mobileBrowserLayout ? catName === 'work' ? `All` : `${catName}` : 'All'}
+
+              </span>
+
+              {!mobileBrowserLayout &&
+
+                categories.sort((a,b) => a.name < b.name).map((category,index) => (
+
+                  <div key={index}>
+                    <Link
+                      to={`/${category.slug}`}
+                      activeClassName='category-active'
+                      partiallyActive={true}
+                      className={category.slug}
+                      >
+                      {category.name}
+                    </Link>
+                  </div>
+                ))
+              }
+
+            </div>
+
+        </div>
           {showSearch && <Search />}
         </div>
         {/* ----------------------------MAIN ---------------------------- */}
