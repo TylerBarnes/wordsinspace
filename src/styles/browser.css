@@ -265,7 +265,7 @@
 .list-title, .list-title-inverted {
   font-size: 28px;
   line-height: 30px;
-  font-family: 'LaNord', sans-serif;
+  font-family: 'LaNord_SemiLight', sans-serif;
   color: #414171;
   font-style: normal;
   font-weight: normal;
@@ -354,9 +354,9 @@ label.tag:hover {
 /*****/
 
 .category-active {
-  border: 1px solid #464668;
-  color: #464668;
-  background-color: #F5F5F7;
+  padding: 8px 10px 4px 10px;
+  font-size: 16px;
+  line-height: 34px;
 }
 
 

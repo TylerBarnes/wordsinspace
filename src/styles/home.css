@@ -11,7 +11,7 @@
 }
 
 .home-title {
-	font-family: 'LaNord', sans-serif;
+	font-family: 'LaNord_SemiLight', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 40px;
@@ -163,6 +163,10 @@ path.st0 {
 	position: absolute;
 	transition-duration: 0.5s;
 	height: 100%;
+}
+
+#sticker-browse-text, #sticker-words-text, #sticker-classes-text, #sticker-upcoming-text {
+	height: 250px;
 }
 
  /* { old zoom animation

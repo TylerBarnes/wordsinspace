@@ -81,8 +81,8 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: mobileList ? '15px 0' : '3vh 0 5vh 0',
-            paddingLeft: mobileList ? '0' : '20px',
+            margin: mobileList ? '15px 0' : '3vh 0 4vh 0',
+            paddingLeft: mobileList ? '0' : '30px',
           }}>
           <Link
             to={item.uri}

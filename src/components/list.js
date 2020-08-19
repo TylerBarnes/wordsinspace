@@ -81,6 +81,7 @@ const List = ({loading, items, isTagMode}) => {
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
+                  color: 'red',
                 }}>
                 BACK TO TOP
               </div>

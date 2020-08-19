@@ -87,35 +87,47 @@ const Browser = ({ children, props }) => {
               display: 'flex',
               flexFlow: 'row nowrap',
               alignItems: 'center',
+              width: 'inherit',
               overflow: 'auto',
+              justifyContent: 'flex-start',
+              marginBottom : '-3px',
             }}>
-              <span
-                style={{
-                  position: 'relative',
-                  margin: '5px'
-                }}
-                className={!mobileBrowserLayout ? "work" : catName.toLowerCase()}>
+              <div>
+                <Link to={'/work'}
+                  style={{
+                    position: 'relative',
+                    margin: '5px'
+                  }}
+                  className={!mobileBrowserLayout ? catName === 'work' ? 'work category-active' : 'work' : catName.toLowerCase()}
+                  >
+                    {mobileBrowserLayout ? catName === 'work' ? `All` : `${catName}` : 'All'}
+                </Link>
+              </div>
 
-                {mobileBrowserLayout ? catName === 'work' ? `All` : `${catName}` : 'All'}
+              <div style={{
+                display: 'flex',
+                flexFlow: 'row nowrap',
+                alignItems: 'center',
+                overflow: 'auto',
+                justifyContent: 'flex-end',
+              }}>
+                {!mobileBrowserLayout &&
 
-              </span>
+                  categories.sort((a,b) => a.name < b.name).map((category,index) => (
 
-              {!mobileBrowserLayout &&
-
-                categories.sort((a,b) => a.name < b.name).map((category,index) => (
-
-                  <div key={index}>
-                    <Link
-                      to={`/${category.slug}`}
-                      activeClassName='category-active'
-                      partiallyActive={true}
-                      className={category.slug}
-                      >
-                      {category.name}
-                    </Link>
-                  </div>
-                ))
-              }
+                    <div key={index}>
+                      <Link
+                        to={`/${category.slug}`}
+                        activeClassName='category-active'
+                        partiallyActive={true}
+                        className={category.slug}
+                        >
+                        {category.name}
+                      </Link>
+                    </div>
+                  ))
+                }
+              </div>
 
             </div>
 

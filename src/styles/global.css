@@ -14,6 +14,11 @@
 }
 
 @font-face {
+  font-family: 'LaNord_SemiLight';
+  src: url('../fonts/LaNord_SemiLight.woff');
+}
+
+@font-face {
   font-family: 'Wremena_Light';
   src: url('../fonts/Wremena_Light.otf');
 }
@@ -155,7 +160,7 @@ input:hover {
   margin: 0 0 0 5px;
 }
 
-.date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {
+.work, .date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
@@ -168,35 +173,43 @@ input:hover {
   white-space: nowrap;
 }
 
-.work {
+.date:hover, .blog:hover, .teaching:hover, .classes:hover, .publications:hover, .projects:hover , .presentations:hover , .talks:hover, .research:hover, .featured:hover {
+ color: #fff;
+}
+
+.work:hover {
+  color: #464668;
+}
+
+/* .work {
   font-family: Bespoke;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
   line-height: 13px;
   color: #fff;
-  padding: 3px 10px 3px 10px;
+  padding: 4px 10px 3px 10px;
   text-transform: uppercase;
   margin-right: 5px;
   white-space: nowrap;
-}
+} */
 
 @-moz-document url-prefix() {
-  .date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {
+  .work, .date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {
       padding: 5px 10px 2px 10px;
     }
   .tag {
     padding: 7px 15px 3px 15px;
   }
-  .work {
-    padding: 7px 10px 3px 10px;
-  }
+  /* .work {
+    padding: 3px 10px 1px 10px;
+  } */
 }
 
 /* HIDE UNCATEGORIZED */
-/* .uncategorized {
+.uncategorized {
   display: none;
-} */
+}
 
 .date {
   background-color: #513bfd;
@@ -204,7 +217,6 @@ input:hover {
 }
 
 .work {
-  background-color: transparent;
   color: #464668;
   border: 1px solid #464668;
 }
