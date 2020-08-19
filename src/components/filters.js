@@ -21,7 +21,9 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
         display: 'flex',
         flexFlow: 'column',
       }}>
-        <Categories />
+
+      {/*  <Categories /> */}
+      
         <TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>
         <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} />
       </div>

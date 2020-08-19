@@ -94,26 +94,29 @@ const Browser = ({ children, props }) => {
                   position: 'relative',
                   margin: '5px'
                 }}
-                className={catName.toLowerCase()}>
-                {catName === 'work' ? `All` : `All`}
+                className={!mobileBrowserLayout ? "work" : catName.toLowerCase()}>
+
+                {mobileBrowserLayout ? catName === 'work' ? `All` : `${catName}` : 'All'}
+
               </span>
 
-              {categories.sort((a,b) => a.name < b.name).map((category,index) => (
+              {!mobileBrowserLayout &&
 
-                <div
-                  key={index}
-                    >
-                  <Link
-                    to={`/${category.slug}`}
-                    activeClassName='category-active'
-                    partiallyActive={true}
-                    className={category.slug}
-                    >
-                    {category.name}
-                  </Link>
-                </div>
+                categories.sort((a,b) => a.name < b.name).map((category,index) => (
 
-              ))}
+                  <div key={index}>
+                    <Link
+                      to={`/${category.slug}`}
+                      activeClassName='category-active'
+                      partiallyActive={true}
+                      className={category.slug}
+                      >
+                      {category.name}
+                    </Link>
+                  </div>
+                ))
+              }
+
             </div>
 
         </div>

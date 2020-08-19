@@ -5,11 +5,15 @@ import {useCategories} from "../../hooks/useCategories"
 const MobileCategories = () => {
   const categories = useCategories()
   const listStyle = {
-  	padding: '5px 15px 5px 0px',
+  	padding: '0',
   	listStyle: 'none',
   	alignSelf: 'center'
 	}
-
+  const catStyle = {
+  	margin: '5px 15px 5px 0px',
+  	listStyle: 'none',
+  	alignSelf: 'center'
+	}
   return (
 		<div
 			style={{
@@ -23,7 +27,8 @@ const MobileCategories = () => {
 			<li
 				style={listStyle}>
 				<Link
-					to={'/work'}
+        style={catStyle}
+				to={'/work'}
 					activeClassName='category-active'
 					partiallyActive={true}
 					className='work'
@@ -34,9 +39,10 @@ const MobileCategories = () => {
 		  {categories.sort((a,b) => a.name < b.name).map((category,index) => (
 				<li
 					key={index}
-					style={listStyle}
-					>
+          style={listStyle}
+				>
 					<Link
+            style={catStyle}
 						to={`/${category.slug}`}
 						activeClassName='category-active'
 						partiallyActive={true}
