@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `https://final.wordsinspace.net/graphql`,  //`http://localhost:8888/test/graphql`
+        url: `https://server.wordsinspace.net/graphql`,  //`http://localhost:8888/test/graphql`
         schema: {
           perPage: 50,
         },
@@ -122,6 +122,7 @@ module.exports = {
           desktop: '(min-width: 1024px)',
         }
       }
-    }
+    },
+  `gatsby-plugin-netlify`
   ],
 }
