@@ -194,9 +194,9 @@ input:hover {
 }
 
 /* HIDE UNCATEGORIZED */
-.uncategorized {
+/* .uncategorized {
   display: none;
-}
+} */
 
 .date {
   background-color: #513bfd;
