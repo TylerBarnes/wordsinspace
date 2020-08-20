@@ -5,7 +5,7 @@ import Sticker_Related from '../../images/assets/Sticker_Related.svg'
 
 const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
 
-  if (related.length === 0 || !showRelated) {
+  if ( related === undefined || related === null || related.length === 0 || !showRelated) {
     return <div style={{
               width: '200px',
               alignSelf: mobileArticleContent ? 'center' : 'flex-start',
