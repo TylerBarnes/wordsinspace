@@ -30,7 +30,7 @@ const List = ({loading, items, isTagMode}) => {
         flexDirection: 'column',
         alignItems: mobileList ? 'center' : 'flex-start',
         justifyContent: 'space-between',
-        maxHeight: mobileList ?  'calc(100vh - 125px)' : 'calc(100vh - 50px)',
+        maxHeight: mobileList ?  'calc(100vh - 90px)' : 'calc(100vh - 50px)',
         overflow: 'auto',
       }}>
         {/* ---------------- LOADING ---------------- */}

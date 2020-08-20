@@ -35,7 +35,7 @@ const Browser = ({ children, props }) => {
 
   const styleTopBar =
   {
-    display: 'flex',
+    display: mobileNavBar ? 'none' : 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -90,7 +90,7 @@ const Browser = ({ children, props }) => {
               width: 'inherit',
               overflow: 'auto',
               justifyContent: 'flex-start',
-              marginBottom : '-3px',
+              marginBottom : '-5px',
             }}>
               <div>
                 <Link to={'/work'}
