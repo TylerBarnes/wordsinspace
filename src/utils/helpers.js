@@ -6,6 +6,7 @@ export const getMonthName = (index) => {
   return monthNames[index-1]
 }
 
+// sorts Tags array when we are in TagMode
 export const sortTags = (tags) => {
    return tags
             .filter(tag => tag.name.length > 0) // filter for nodes which have tags
@@ -14,6 +15,7 @@ export const sortTags = (tags) => {
             .map(obj=> ({ ...obj, checked: false })) // modify the incoming array by inserting a {checked: true | false} field to every object, which is used for selecting Tags
 }
 
+// sorts an array by date (newest to oldest)
 export const sortByDate = (array) => {
   return array.sort((a,b)=> {
             if (a.date && b.date) {
@@ -22,6 +24,7 @@ export const sortByDate = (array) => {
           })
 }
 
+// extracts and sorts the search results from what the Apollo useQuery returns
 export const extractSearchResults = (array) => {
   let results = array.categories.nodes
                .filter(cat=> cat.pages.nodes.length >0 || cat.posts.nodes.length >0)
@@ -32,21 +35,22 @@ export const extractSearchResults = (array) => {
   return sortByDate(results)
 }
 
+// identifies if there are any posts or pages which share the same Tag with the current Post or Page, and if that is the case, returns an array of these items
 export const getRelated = (tags, title) => {
   if (!tags || tags.length === 0) return null
     
-  let randomTagSelection = getRandomSubarray(tags?.nodes, 2)
-  // let relatedPages = randomTagSelection?.map(tag => getRandomSubarray(tag.pages?.nodes, 2)).flat(2)
-  // let relatedPosts = randomTagSelection?.map(tag => getRandomSubarray(tag.posts?.nodes, 2)).flat(2)
-  let relatedPages = randomTagSelection?.map(tag => tag.pages ? getRandomSubarray(tag.pages?.nodes, 2) : []).flat(2)
-  let relatedPosts = randomTagSelection?.map(tag => tag.posts ? getRandomSubarray(tag.posts?.nodes, 2) : []).flat(2)
-  let related = [...relatedPages, ...relatedPosts]
-                .filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
-                .filter(item => item.title !== title)
+  let randomTagSelection = getRandomSubarray(tags?.nodes, 1) // selects two shared tags
+  let relatedPages = randomTagSelection?.map(tag => tag.pages ? getRandomSubarray(tag.pages?.nodes, 2) : []).flat(2) // gets Pages that have the Tag
+  let relatedPosts = randomTagSelection?.map(tag => tag.posts ? getRandomSubarray(tag.posts?.nodes, 1) : []).flat(2) // gets Posts that have the Tag
+  
+  let related = [...relatedPages, ...relatedPosts] // merges array
+                .filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) // removes duplicates
+                .filter(item => item.title !== title) // removes current Page or Post
 
   return related
 }
 
+// gets random subarray from a given [arr] of [size]
 function getRandomSubarray(arr, size) {
   let shuffled = arr.slice(0), i = arr.length, temp, index;
   while (i--) {
@@ -56,23 +60,4 @@ function getRandomSubarray(arr, size) {
       shuffled[i] = temp;
   }
   return shuffled.slice(0, size);
-}
-
-//
-// NOT CURRENTLY IN USE
-//
-// When we first land on a /category endpoint, we want the Tag list to automatically display Tags that are associated with this category's content. We can't do that dynamically with Apollo and we can't use a Gatsby static Query since it doesn't accept variables. We have to construct the [tags] array manually, by extracting them out of the deeply nested 'category' variable.
-export const extractTags = (initial) => {
-  return initial
-           .filter(hasTags=>hasTags.tags && hasTags.tags.nodes.length>0) // filter for elements that contain non-zero Tag arrays
-           .map(item=> {
-            // transform the incoming array into an object with 3 key-value pairs => {checked: bool, slug: string, id: string}, which we need for Tag UX
-            let item_tags = item.tags.nodes.map(tag => {
-                              return {checked: false, slug: tag.slug, name: tag.name, id: tag.id}
-                            })
-            return item_tags
-         })
-         .flat(2) // flattens the incoming array of arrays (depth=2)
-         .filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i) // checks for uniqueness based on id, seen here https://stackoverflow.com/a/56757215
-         .sort( (a, b) => a.id.localeCompare(b.id, 'en', {'sensitivity': 'base'})) // sorts the incoming array of objects alphabetically by 'name', seen here https://stackoverflow.com/a/58958381
 }

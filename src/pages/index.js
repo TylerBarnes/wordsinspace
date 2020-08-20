@@ -114,7 +114,7 @@ export default function HomePage() {
 
         <div className="Sticker"
           style={styleSVGL}>
-          <Link to={'/upcoming-events/'}><Sticker_Upcoming_text id='sticker-upcoming-text' /><Sticker_Upcoming id='sticker-upcoming' /></Link>
+          <Link to={'/presentations/upcoming-events/'}><Sticker_Upcoming_text id='sticker-upcoming-text' /><Sticker_Upcoming id='sticker-upcoming' /></Link>
         </div>
 
         <div
