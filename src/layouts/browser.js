@@ -9,6 +9,7 @@ import {useCategories} from "../hooks/useCategories"
 
 import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'
+import CategoriesHorizontal from '../components/filters/categoriesHorizontal'
 
 import MobileWordsInSpace from '../components/mobile/mobileWordsInSpace'
 
@@ -19,8 +20,6 @@ import '../styles/browser.css'
 const Browser = ({ children, props }) => {
   const location = useLocation();
   const catName = location.pathname.replace('/', '').replace('/', '')
-
-  const categories = useCategories()
 
   const breakpoints = useBreakpoint()
   const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoints)
@@ -69,69 +68,10 @@ const Browser = ({ children, props }) => {
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
-
-          <div style={{
-          width: 'calc(-50px + 80vw)',
-          display: 'flex',
-          flexFlow: 'row nowrap',
-          alignItems: 'center',
-          }}>
-            <div className='interface'
-            style={{
-              margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
-            }}>
-              Browsing:
-            </div>
-
-            <div style={{
-              display: 'flex',
-              flexFlow: 'row nowrap',
-              alignItems: 'center',
-              width: 'inherit',
-              overflow: 'auto',
-              justifyContent: 'flex-start',
-              marginBottom : '-5px',
-            }}>
-              <div>
-                <Link to={'/work'}
-                  style={{
-                    position: 'relative',
-                    margin: '5px'
-                  }}
-                  className={!mobileBrowserLayout ? catName === 'work' ? 'work category-active' : 'work' : catName.toLowerCase()}
-                  >
-                    {mobileBrowserLayout ? catName === 'work' ? `All` : `${catName}` : 'All'}
-                </Link>
-              </div>
-
-              <div style={{
-                display: 'flex',
-                flexFlow: 'row nowrap',
-                alignItems: 'center',
-                overflow: 'auto',
-                justifyContent: 'flex-end',
-              }}>
-                {!mobileBrowserLayout &&
-
-                  categories.sort((a,b) => a.name < b.name).map((category,index) => (
-
-                    <div key={index}>
-                      <Link
-                        to={`/${category.slug}`}
-                        activeClassName='category-active'
-                        partiallyActive={true}
-                        className={category.slug}
-                        >
-                        {category.name}
-                      </Link>
-                    </div>
-                  ))
-                }
-              </div>
-
-            </div>
-
-        </div>
+          <CategoriesHorizontal 
+            catName={catName} 
+            mobileNavBar={mobileNavBar} 
+            mobileBrowserLayout={mobileBrowserLayout} />
           {showSearch && <Search />}
         </div>
         {/* ----------------------------MAIN ---------------------------- */}

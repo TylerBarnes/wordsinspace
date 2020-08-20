@@ -12,7 +12,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
   const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
 
 	const breakpoints = useBreakpoint()
-	const {showSearch, mobileBrowserLayout, mobileNavBar} = getResponsiveBrowserVars(breakpoints)
+	const {mobileBrowserLayout} = getResponsiveBrowserVars(breakpoints)
 
   return (
    <div

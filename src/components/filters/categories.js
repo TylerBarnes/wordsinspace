@@ -4,16 +4,15 @@ import {useCategories} from "../../hooks/useCategories"
 
 const Categories = () => {
   const categories = useCategories()
-
   return (
 		<div
-    className='no-scroll'
-    style={{
-      flex: '1 1 fill',
-			margin: '0',
-      padding: '5px 0 0 0',
-      height: '35vh',
-		}}>
+	    className='no-scroll'
+	    style={{
+	      flex: '1 1 fill',
+				margin: '0',
+	      padding: '5px 0 0 0',
+	      height: '35vh',
+			}}>
 			<Link
 				to={'/work'}
 				activeClassName='category-active'
