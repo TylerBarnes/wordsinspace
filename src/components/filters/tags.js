@@ -16,13 +16,13 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 
   return (
    <div
-	 		className={mobileBrowserLayout ? 'no-scroll' : 'tag-menu no-scroll'}
+	 		className={mobileBrowserLayout ? 'no-scroll' : isTagMode ? 'tag-menu-on no-scroll' : 'tag-menu no-scroll'}
 	   	style={{
   	    marginTop: '0px',
 	    	textAlign: 'left',
 				overflowY: 'scroll',
 				overflowX: 'hidden',
-				height: 'calc(-75px + 100vh)',
+				height: isTagMode ? 'calc(-75px + 100vh)' : 'calc(-50px + 100vh)',
 				paddingBottom: '0vh',
 				flex: '1 1 auto',
 	    }}>

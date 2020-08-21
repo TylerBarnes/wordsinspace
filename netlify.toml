@@ -29,15 +29,15 @@
 	force = true
 
 [[redirects]]
-	from = "/shannon/wp-content/uploads/:year/:month/:slug"
-	to = "https://final.wordsinspace.net/wp-content/uploads/:year/:month/:slug"
+	from = "/teaching/:slug"
+	to = "/classes/:slug"
 	status = 200
 	force = true
 
 [[redirects]]
-	from = "/static/:imgpath/d08f8/:slug"
-	to = "/static/:imgpath/5c188/:slug"
-	status = 301
+	from = "/shannon/wp-content/uploads/:year/:month/:slug"
+	to = "https://final.wordsinspace.net/wp-content/uploads/:year/:month/:slug"
+	status = 200
 	force = true
 
 

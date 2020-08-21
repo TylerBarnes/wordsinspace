@@ -73,6 +73,20 @@
   content  : "";
  position : absolute;
  z-index  : 1;
+ bottom   : calc(-50px + 99vh);
+ right     : 0;
+ pointer-events   : none;
+ background-image : linear-gradient(to bottom,
+                   rgba(243,243,243, 1) 10%,
+                   rgba(243,243,243, 0) 100%);
+ width    : 19.9vw;
+ height   : 1vh;
+}
+
+.tag-menu-on:before {
+  content  : "";
+ position : absolute;
+ z-index  : 1;
  bottom   : calc(-75px + 99vh);
  right     : 0;
  pointer-events   : none;
