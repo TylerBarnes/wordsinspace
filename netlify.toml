@@ -29,6 +29,12 @@
 	force = true
 
 [[redirects]]
+	from = "/teaching/:slug"
+	to = "/classes/:slug"
+	status = 200
+	force = true
+
+[[redirects]]
 	from = "/shannon/wp-content/uploads/:year/:month/:slug"
 	to = "https://final.wordsinspace.net/wp-content/uploads/:year/:month/:slug"
 	status = 200
