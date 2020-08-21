@@ -19,7 +19,7 @@ export default function Work({data}) {
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
   // initialize the items to all of the Pages and all of the Posts
-  const initial = [...data.allWpPage.nodes, ...data.allWpPost.nodes]
+  const initial = sortByDate([...data.allWpPage.nodes, ...data.allWpPost.nodes])
 
   const [isTagMode, setTagMode] = useState(false)
   
@@ -51,7 +51,7 @@ export default function Work({data}) {
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
-                          ? [...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]
+                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes])
                           : [] 
   return (
     <Browser>
@@ -59,7 +59,7 @@ export default function Work({data}) {
       {showMobileFilters && 
         <MobileFilters />
       }
-      <List items={sortByDate(isTagMode ? tagQueryResults : initial)} loading={response.loading} isTagMode={isTagMode}/>
+      <List items={isTagMode ? tagQueryResults : initial} loading={response.loading} isTagMode={isTagMode}/>
       {showDesktopFilters && 
         <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
       }
@@ -69,7 +69,7 @@ export default function Work({data}) {
 
 export const query = graphql`
   query PAGES_POSTS {
-    allWpPage {
+    allWpPage(sort: {order: DESC, fields:date}) {
       nodes {
         slug
         title
@@ -101,7 +101,7 @@ export const query = graphql`
         }
       }
     }
-    allWpPost {
+    allWpPost(sort: {order: DESC, fields:date}) {
       nodes {
         slug
         title

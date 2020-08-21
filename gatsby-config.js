@@ -15,7 +15,7 @@ module.exports = {
         verboseOutput: true,
         html: {
           useGatsbyImage: true,
-          imageQuality: 80,
+          imageQuality: 90,
           imageMaxWidth: 1400,
         },
         develop: {

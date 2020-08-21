@@ -18,10 +18,8 @@ export const sortTags = (tags) => {
 // sorts an array by date (newest to oldest)
 export const sortByDate = (array) => {
   return array.sort((a,b)=> {
-            if (a.date && b.date) {
-              return parseInt(b.date.slice(0,4)) - parseInt(a.date.slice(0,4))
-            }
-          })
+      return new Date(b.date) - new Date(a.date)
+    })
 }
 
 // extracts and sorts the search results from what the Apollo useQuery returns
