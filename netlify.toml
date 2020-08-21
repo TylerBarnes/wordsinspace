@@ -40,12 +40,6 @@
 	status = 200
 	force = true
 
-[[redirects]]
-	from = "/static/:imgpath/d08f8/:slug"
-	to = "/static/:imgpath/5c188/:slug"
-	status = 301
-	force = true
-
 
 [dev]
 command = 'npm run develop'
