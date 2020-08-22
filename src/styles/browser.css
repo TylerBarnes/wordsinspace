@@ -232,6 +232,12 @@
   background: linear-gradient(90deg, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
 }
 
+.classesItem:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 113, 103, 0)), color-stop(2%, rgba(255, 113, 103, 0.3)), color-stop(98%, rgba(255, 113, 103, 0.3)), to(rgba(255, 113, 103, 0)));
+  background: -o-linear-gradient(left, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
+}
+
 .projectsItem:hover {
   background: -webkit-gradient(linear, left top, right top, from(rgba(168, 51, 87, 0)), color-stop(2%, rgba(168, 51, 87, 0.3)), color-stop(98%, rgba(168, 51, 87, 0.3)), to(rgba(168, 51, 87, 0)));
   background: -o-linear-gradient(left, rgba(168, 51, 87, 0) 0%, rgba(168, 51, 87, 0.3) 2%, rgba(168, 51, 87, 0.3) 98%, rgba(168, 51, 87, 0) 100%);
@@ -370,13 +376,6 @@ label.tag:hover {
   background-color: transparent;
   color: #414171;
 }
-
-.list-item .work:hover, .list-item .list-item .blog:hover, .list-item .teaching:hover, .list-item .classes:hover, .list-item .publications:hover, .list-item .projects:hover, .list-item .presentations:hover, .list-item .talks:hover, .list-item .research:hover {
-  background-color: transparent;
-  color: #414171;
-}
-
-
 
 .work.browsetop:hover {
   background-color: rgba(65,65,113, 50%);

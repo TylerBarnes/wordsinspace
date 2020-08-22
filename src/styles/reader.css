@@ -50,6 +50,10 @@
     -ms-hyphens: auto; */
 }
 
+.related-item:hover .related-title {
+  color: #FF666E;
+}
+
 .reader-body:before {
   content  : "";
   position : absolute;
@@ -214,6 +218,7 @@ li.blocks-gallery-item:last-child {
 /*****Styling old layout as slideshow***/
 
 .slideshowFrame {
+  position: relative;
   height: 60vh;
   margin-bottom: 4vh;
 }
@@ -403,6 +408,7 @@ picture source {
 /*****/
 
 .content {
+  position: relative;
   font-family:  'LaNord_Light', sans-serif;
   font-style: normal;
   font-weight: 100;
@@ -514,6 +520,10 @@ picture source {
       linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
 }
 
+.content .twitter-tweet:after {
+  content: "on Twitter";
+}
+
 .mobile-content .twitter-tweet {
   border: 1px #464688 solid;
   border-radius: 30px;
@@ -567,6 +577,18 @@ figcaption {
 .blocks-gallery-grid:hover + figcaption:after {
   content: 'scroll for more >>';
   float: right;
+  -webkit-backface-visibility: hidden;
+}
+
+.slideshowWrapper:hover:after {
+  content: 'scroll right for more >';
+  font-family: Bespoke;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  position: absolute;
+  bottom: -4vh;
+  right: 0;
   -webkit-backface-visibility: hidden;
 }
 
