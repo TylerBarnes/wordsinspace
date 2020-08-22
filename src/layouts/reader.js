@@ -80,7 +80,7 @@ const Reader = ({children}) => {
                 onMouseEnter={e=>setGlyphHovered(true)}
                 onMouseLeave={e=>setGlyphHovered(false)}
                 >
-                {isGlyphHovered ? <GlyphLeftHover /> : <GlyphLeft />}
+                {isGlyphHovered ? <GlyphLeftHover style={{ marginTop: '-1px', }} /> : <GlyphLeft style={{ marginTop: '-1px', }} />}
                 <span style={{marginLeft: '5px'}}>BROWSER</span>
               </div>
             </Link>

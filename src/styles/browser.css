@@ -77,8 +77,8 @@
  right     : 0;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 1) 10%,
-                   rgba(243,243,243, 0) 100%);
+                   rgba(245,245,247, 1) 10%,
+                   rgba(245,245,247, 0) 100%);
  width    : 19.9vw;
  height   : 1vh;
 }
@@ -91,8 +91,8 @@
  right     : 0;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 1) 10%,
-                   rgba(243,243,243, 0) 100%);
+                   rgba(245,245,247, 1) 10%,
+                   rgba(245,245,247, 0) 100%);
  width    : 19.9vw;
  height   : 1vh;
 }
@@ -105,8 +105,8 @@
  right     : 0;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 0),
-                   rgba(243,243,243, 1) 90%);
+                   rgba(245,245,247, 0),
+                   rgba(245,245,247, 1) 90%);
  width    : 20vw;
  height   : 2vh;
 }
@@ -119,10 +119,10 @@
  right     : 0;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 1) 30%,
-                   rgba(243,243,243, 0.7) 50%,
-                   rgba(243,243,243, 0.3) 70%,
-                   rgba(243,243,243, 0) 100%);
+                   rgba(245,245,247, 1) 30%,
+                   rgba(245,245,247, 0.7) 50%,
+                   rgba(245,245,247, 0.3) 70%,
+                   rgba(245,245,247, 0) 100%);
  width: calc(80vw - 50px);
  height   : 10vh;
 }
@@ -143,9 +143,9 @@
  left: 50px;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 1) 10%,
-                   rgba(243,243,243, 0.7) 50%,
-                   rgba(243,243,243, 0) 100%);
+                   rgba(245,245,247, 1) 10%,
+                   rgba(245,245,247, 0.7) 50%,
+                   rgba(245,245,247, 0) 100%);
  width: calc(80vw - 50px);
  height   : 1vh;
 }
@@ -158,8 +158,8 @@
  left: 0px;
  pointer-events   : none;
  background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 1) 10%,
-                   rgba(243,243,243, 0) 100%);
+                   rgba(245,245,247, 1) 10%,
+                   rgba(245,245,247, 0) 100%);
  width: 100%;
  height   : 2vh;
 }
@@ -366,10 +366,17 @@ label.tag:hover {
 /*****/
 /*****/
 
-.work.browsetop, .date.browsetop, .blog.browsetop, .teaching.browsetop, .classes.browsetop, .publications.browsetop, .projects.browsetop , .presentations.browsetop , .talks.browsetop, .research.browsetop {
+.work.browsetop, .blog.browsetop, .teaching.browsetop, .classes.browsetop, .publications.browsetop, .projects.browsetop , .presentations.browsetop , .talks.browsetop, .research.browsetop {
   background-color: transparent;
   color: #414171;
 }
+
+.list-item .work:hover, .list-item .list-item .blog:hover, .list-item .teaching:hover, .list-item .classes:hover, .list-item .publications:hover, .list-item .projects:hover, .list-item .presentations:hover, .list-item .talks:hover, .list-item .research:hover {
+  background-color: transparent;
+  color: #414171;
+}
+
+
 
 .work.browsetop:hover {
   background-color: rgba(65,65,113, 50%);

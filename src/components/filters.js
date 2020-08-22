@@ -12,7 +12,7 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
         borderLeft: '1px dashed #464668',
         maxHeight: 'calc(100vh - 50px)',
         textTransform: 'uppercase',
-        padding: '0 1vw',
+        padding: '0 0 0 1vw',
         overflow: 'hidden',
         fontWeight: '500',
         width: '20vw',
