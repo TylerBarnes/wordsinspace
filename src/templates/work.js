@@ -19,8 +19,7 @@ export default function Work({data}) {
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
   // initialize the items to all of the Pages and all of the Posts
-  const initial = sortByDate([...data.allWpPage.nodes, ...data.allWpPost.nodes])
-
+  const initial = sortByDate([...data.allWpPage.nodes, ...data.allWpPost.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
   const [isTagMode, setTagMode] = useState(false)
   
   // initialize the tags to all of the Tags available
@@ -51,7 +50,7 @@ export default function Work({data}) {
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
-                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes])
+                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
                           : [] 
   return (
     <Browser>
