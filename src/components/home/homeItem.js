@@ -11,7 +11,7 @@ const HomeItem = ({item, index}) => {
   const category = connectedNode?.node.categories?.nodes[0]?.name
   const isThree = index%3 === 0
   const leftAligned = (index%3 !== 0) && (index%2 === 0)
-
+  
   return (
     <div className={isThree ? 'right' : 'left' }
       style={{
