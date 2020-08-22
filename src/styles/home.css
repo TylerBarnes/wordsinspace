@@ -126,8 +126,9 @@
 /*****/
 
 path.st0 {
-	fill: #6161f4 !important;
+	fill: #5B5A7C;
 }
+
 
 .Sticker > * {
 	position: absolute;
@@ -169,25 +170,43 @@ path.st0 {
 	height: 250px;
 }
 
- /* { old zoom animation
-	-webkit-animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
-	        animation: zoom-in-out  5s cubic-bezier(0, 0, 1, 1) infinite;
-} */
+/* Sticker Hovers */
 
-svg#sticker-related:hover, svg#circle-wordsinspace:hover, svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover{
+.Sticker:hover .st0 {
+	fill: #FF666E;
+}
+
+.related-item:hover + svg#sticker-related, svg#sticker-related:hover, svg#circle-wordsinspace:hover, svg#sticker-browse:hover, svg#sticker-upcoming:hover, svg#sticker-classes:hover, svg#sticker-words:hover, svg#sticker-colophon:hover, svg#sticker-cv:hover, svg#sticker-twitter:hover{
 	-webkit-animation: loading-spinner  10s infinite;
 	        animation: loading-spinner  10s infinite;
 }
 
-#wordsinspace:hover + *, .related-item:hover + svg#sticker-related, svg#sticker-browse-text:hover + svg#sticker-browse, svg#sticker-upcoming-text:hover + svg#sticker-upcoming , svg#sticker-404 {
-	-webkit-animation: loading-spinner  10s infinite;
-	        animation: loading-spinner  10s infinite;
+svg#sticker-related:hover .st0, svg#circle-wordsinspace:hover .st0, svg#sticker-browse:hover .st0, svg#sticker-upcoming:hover .st0, svg#sticker-classes:hover .st0, svg#sticker-words:hover .st0, svg#sticker-colophon:hover .st0, svg#sticker-cv:hover .st0, svg#sticker-twitter:hover .st0 {
+	fill: #FF666E;
 }
+
+.related-item:hover + * circle {
+	stroke: #FF666E;
+}
+
+#wordsinspace:hover * {
+	color: #FF666E;
+	fill: #FF666E;
+}
+
+/* small sticker hover */
 
 svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
 	-webkit-animation: loading-spinner-inverse  5s infinite;
 	        animation: loading-spinner-inverse  5s infinite;
-					stroke: #F4D791;
+}
+
+a[aria-label="email"]:hover path, a[aria-label="twitter"]:hover path, a[aria-label="CV"]:hover path, a[aria-label="pinboard"]:hover path {
+	fill: #FF666E;
+}
+
+a[aria-label="email"]:hover circle, a[aria-label="twitter"]:hover circle, a[aria-label="CV"]:hover circle, a[aria-label="pinboard"]:hover circle {
+	stroke: #FF666E;
 }
 
 @-webkit-keyframes loading-spinner {

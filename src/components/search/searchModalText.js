@@ -14,7 +14,7 @@ const SearchModalText = ({resultsCount, catName, searchTerm, hide}) => {
           margin: '5px 0',
           position: 'relative',
           float: 'right',
-          color: isHovered ? '#464668' : '#FF7167',
+          color: isHovered ? '#464668' : '#FF666E',
           textTransform: 'uppercase',
           cursor: 'pointer'
         }}

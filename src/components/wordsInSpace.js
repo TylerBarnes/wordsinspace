@@ -21,10 +21,15 @@ const WordsInSpace = () => {
 		    justifyContent: 'flex-end',
 		  }}>
 
+      <div id="wordsinspace"
+        style={{
+          display: 'flex',
+          flexFlow: 'row-reverse',
+
+        }}>
 	      <Link
 	        to="/"
 	        className='interface'
-          id="wordsinspace"
 	        style={{
 	          marginTop: '20px',
 		    		alignSelf: 'flex-end',
@@ -42,6 +47,7 @@ const WordsInSpace = () => {
           <Link to={'/'}><Circle_wordsinspace id="circle-wordsinspace" /></Link>
         </div>
       </div>
+    </div>
   )
 }
 
