@@ -24,6 +24,11 @@
 }
 
 @font-face {
+  font-family: 'Bespoke_Caption';
+  src: url('../fonts/Bespoke-JqcDoWNXFu.woff');
+}
+
+@font-face {
   font-family: 'Bespoke';
   src: url('../fonts/Bespoke.otf');
 }
@@ -179,6 +184,12 @@ input:hover {
   white-space: nowrap;
 }
 
+.work:hover, .blog:hover, .teaching:hover, .classes:hover, .publications:hover, .projects:hover, .presentations:hover, .talks:hover,.research:hover {
+  background-color: transparent;
+  color: #414171;
+}
+
+
 @-moz-document url-prefix() {
   .work, .date, .blog, .teaching, .classes, .publications, .projects, .presentations , .talks, .research, .featured {
       padding: 5px 10px 2px 10px;
@@ -208,9 +219,17 @@ input:hover {
   border: 1px solid #3CA899;
 }
 
+.blog:hover {
+  color: #3BA899;
+}
+
 .teaching {
   background-color: #FF7167;
   border: 1px solid #FF7167;
+}
+
+.teaching:hover{
+  color: #FF7167;
 }
 
 .classes {
@@ -218,9 +237,18 @@ input:hover {
   border: 1px solid #FF7167;
 }
 
+ .classes:hover{
+   color: #FF7167;
+
+ }
+
 .publications {
   background-color: #7D7ED1;
   border: 1px solid #7D7ED1;
+}
+
+.publications:hover{
+  color: #7D7ED1;
 }
 
 .projects {
@@ -228,9 +256,17 @@ input:hover {
   border: 1px solid #A83357;
 }
 
+.projects:hover{
+  color: #A83357;
+}
+
 .presentations {
   background-color: #69D18E;
   border: 1px solid #69D18E;
+}
+
+.presentations:hover{
+  color: #69D18E;
 }
 
 .talks {
@@ -238,7 +274,15 @@ input:hover {
   border: 1px solid #FFB9B0;
 }
 
+.talks:hover{
+  color: #FFB9B0;
+}
+
 .research {
   background-color: #ccc;
   border: 1px solid #ccc;
+}
+
+.research:hover{
+  color: #ccc;
 }

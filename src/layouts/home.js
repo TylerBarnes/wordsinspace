@@ -76,7 +76,7 @@ const Home = ({children}) => {
                     ? <GlyphLeftHover />
                     : isColophon ? <GlyphLeft /> : null
                   }
-                  <span>HOME</span>
+                  <div style={{marginLeft: '5px'}}>HOME</div>
                 </div>
               </Link>
             </div>
