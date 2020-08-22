@@ -289,6 +289,11 @@
   color: #fff;
 }
 
+.list-title:hover {
+  text-decoration: underline;
+}
+
+
 .list-title-mobile, .list-title-mobile-inverted {
   font-size: 22px;
   line-height: 24px;
@@ -303,7 +308,7 @@
 }
 
 .search-results .list-title:hover {
-  color: #FF7167;
+  color: #FF666E;
 }
 
 

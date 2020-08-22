@@ -73,6 +73,7 @@ export default function HomePage() {
           justifyContent: 'flex-start',
           alignItems: 'stretch',
           alignContent: 'stretch',
+          marginRight: '50px',
         }}>
         <div
           style={{
@@ -138,7 +139,7 @@ export default function HomePage() {
 
         <div
           style={{
-            width:'60%',
+            width:'80%',
           }}>
           <div className='smallSticker'
             style={{
@@ -149,10 +150,10 @@ export default function HomePage() {
               justifyContent: 'space-between',
               height: '120px',
             }}>
-            <a aria-label='email' href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email_text id='sticker-email-text' /><Sticker_Email id='sticker-email' /></a>
-            <a aria-label='twitter' href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter id='sticker-twitter' /></a>
-            <a aria-label='CV' href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV id='sticker-cv'/></a>
-            <a aria-label='pinboard' href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard_text id='sticker-pinboard-text' /><Sticker_Pinboard id='sticker-pinboard' /></a>
+            <a aria-label='email' href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email_text id='sticker-email-text' /><Sticker_Email style={{height: '120%'}} id='sticker-email' /></a>
+            <a aria-label='twitter' href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter style={{height: '120%'}} id='sticker-twitter' /></a>
+            <a aria-label='CV' href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV style={{height: '120%'}} id='sticker-cv'/></a>
+            <a aria-label='pinboard' href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard_text id='sticker-pinboard-text' /><Sticker_Pinboard style={{height: '120%'}} id='sticker-pinboard' /></a>
           </div>
         </div>
       </div>

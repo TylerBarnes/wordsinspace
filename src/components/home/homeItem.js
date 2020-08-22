@@ -15,8 +15,9 @@ const HomeItem = ({item, index}) => {
   return (
     <div className={isThree ? 'right' : 'left' }
       style={{
-        borderBottom: '1.3px dashed #464668',
-        margin: '0',
+        borderBottom: '1.3px solid #7B7BA8',
+        marginRight: isThree ? '0' : '10px',
+        marginLeft: isThree ? '10px' : '0px',
       }}>
 
       <div className={leftAligned ? 'imageL' : 'normal'}>
