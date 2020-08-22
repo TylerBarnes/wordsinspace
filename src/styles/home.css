@@ -60,6 +60,7 @@
 
 .left > * {
 	text-align: right;
+	margin-bottom: 20px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -94,6 +95,7 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	margin-bottom: 20px;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	    -ms-flex-flow: row;
@@ -107,6 +109,7 @@
 
 .right {
 	text-align: center;
+	padding-bottom: 20px;
 	-ms-flex-item-align: stretch;
 	    align-self: stretch;
 	display: -webkit-box;
