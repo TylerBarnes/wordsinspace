@@ -73,6 +73,7 @@ export default function HomePage() {
           justifyContent: 'flex-start',
           alignItems: 'stretch',
           alignContent: 'stretch',
+          marginRight: '50px',
         }}>
         <div
           style={{

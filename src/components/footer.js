@@ -12,6 +12,7 @@ const Footer = () => {
       flexFlow: 'row',
       justifyContent: 'space-between',
       width: '100%',
+      paddingRight: '50px',
     }}>
       <div
       	style={footerStyles}
@@ -19,7 +20,7 @@ const Footer = () => {
         Copyright All Rights Reserved © 2020
       </div>
       <div style={{
-        margin: '10vh 2vh 1vh 0',
+        margin: '10vh 0vh 1vh 0',
         width: '100%',
         textAlign: 'right',
       }}>
