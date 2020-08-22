@@ -24,6 +24,11 @@
 }
 
 @font-face {
+  font-family: 'Bespoke_Caption';
+  src: url('../fonts/Bespoke-JqcDoWNXFu.woff');
+}
+
+@font-face {
   font-family: 'Bespoke';
   src: url('../fonts/Bespoke.otf');
 }

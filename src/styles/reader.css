@@ -54,7 +54,7 @@
   color: #FF666E;
 }
 
-.reader-body:before {
+/* .reader-body:before {
   content  : "";
   position : absolute;
   z-index  : 1;
@@ -62,10 +62,10 @@
   left: 50px;
   pointer-events   : none;
   background-image : linear-gradient(to bottom,
-                   rgba(243,243,243, 1) 10%,
-                   rgba(243,243,243, 0.7) 50%,
-                   rgba(243,243,243, 0) 100%);
-  width: calc(80vw - 50px);
+                   rgba(245,245,247, 1) 10%,
+                   rgba(245,245,247, 0.7) 50%,
+                   rgba(245,245,247, 0) 100%);
+  width: calc(100vw - 50px);
   height   : 1vh;
 }
 
@@ -82,7 +82,7 @@
                  rgba(243,243,243, 0) 100%);
   width: 100vw;
   height   : 1vh;
-}
+} */
 
 .reader-body-mobile {
   -ms-overflow-style: none;  /* IE and Edge */
@@ -569,7 +569,7 @@ figcaption {
   text-transform: uppercase;
   font-size: 10px;
   line-height: 13px;
-  font-family: 'Bespoke', sans-serif;
+  font-family: 'Bespoke_Caption', sans-serif;
   margin: 10px 0 4vh 1px;
   padding-right: 0;
 }
@@ -582,7 +582,7 @@ figcaption {
 
 .slideshowWrapper:hover:after {
   content: 'scroll right for more >';
-  font-family: Bespoke;
+  font-family: 'Bespoke_Caption';
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -609,7 +609,7 @@ figcaption {
 /*****/
 
 .citations {
-  font-family: Bespoke;
+  font-family: 'Bespoke_Caption';
   font-style: normal;
   font-weight: 500;
   font-size: 10px;

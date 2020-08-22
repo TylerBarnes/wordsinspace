@@ -134,7 +134,7 @@
     -o-animation: fadein 0.2s; /* Opera < 12.1 */
        animation: fadein 0.2s;
 }
-
+/*
 #list:before {
   content  : "";
  position : absolute;
@@ -148,7 +148,7 @@
                    rgba(245,245,247, 0) 100%);
  width: calc(80vw - 50px);
  height   : 1vh;
-}
+} */
 
 #mobile-list:before {
  content  : "";
