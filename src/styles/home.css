@@ -31,7 +31,7 @@
 	line-height: 19px;
 	color: #464668;
 }
-/* 
+/*
 .home-body:before {
   content  : "";
  position : absolute;
@@ -195,6 +195,11 @@ svg#sticker-related:hover .st0, svg#circle-wordsinspace:hover .st0, svg#sticker-
 .related-item:hover + * circle {
 	stroke: #FF666E;
 }
+
+.metadata:hover circle {
+	stroke: #FF666E;
+}
+
 
 #wordsinspace:hover * {
 	color: #FF666E;

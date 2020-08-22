@@ -32,7 +32,6 @@ export default function Colophon() {
             margin: '30px 0',
             padding: '0',
           }}>
-          <Colophon_icon id='sticker-colophon-rotating' />
 
         </div>
 
@@ -54,7 +53,7 @@ export default function Colophon() {
 
               <p>The website is uses a Wordpress content management system and a MySQL database, queried by <a href='https://graphql.org/'>GraphQL</a> using a frontend built using <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
 
-              <p>This website uses two primary typefaces: </p>
+              <p>Words in Space uses two typefaces: </p>
 
               <p style={{
                 fontFamily: 'LaNord',
@@ -63,7 +62,7 @@ export default function Colophon() {
                 lineHeight: '23px',
                 margin: '1.45rem 2rem',
               }}>
-              La Nord, designed by <a href='http://raoulgottschling.de/'>Raoul Gottschling</a>.
+              La Nord, by <a href='http://raoulgottschling.de/'>Raoul Gottschling</a>.
               </p>
               <p style={{
                 fontFamily: 'Bespoke',
@@ -75,7 +74,7 @@ export default function Colophon() {
               <a href='https://www.metaflop.com/metafonts/bespoke'>Bespoke</a>, a metafont developed by Alexis Reigel and Marco Muller using their web application <a href="https://www.metaflop.com/">Metaflop</a>. <a href="https://en.wikipedia.org/wiki/Metafont">Metafont</a> is a computer language used to define raster fonts devised by Donald Knuth as a companion to his TeX typesetting system.
               </p>
 
-              <p>Foreign Objects is an itinerant design and research studio exploring the internet through the production of cultural artifacts. </p>
+              <p>Foreign Objects is an itinerant design and research studio exploring the internet through the production of cultural artifacts. Its members are based in New York, London and Toronto.</p>
 
 
             </div>
