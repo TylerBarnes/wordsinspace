@@ -135,9 +135,9 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   background:
-    linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
-    linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
-    linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+    linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
+    linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
+    linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
 
 }
 
@@ -253,13 +253,13 @@ li.blocks-gallery-item:last-child {
           justify-content: flex-start;
     align-items: center;
   background:
-    -o-linear-gradient(233deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
-    -o-linear-gradient(323deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
-    -o-linear-gradient(114deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+    -o-linear-gradient(233deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
+    -o-linear-gradient(323deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
+    -o-linear-gradient(114deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
   background:
-    linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
-    linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
-    linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+    linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
+    linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
+    linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
 }
 
 .content .slideshowImgWrapper {
@@ -515,12 +515,12 @@ picture source {
   line-height: 26px;
   padding: 3vh 2vw;
   margin: 0vw 4vw;
-  background: linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
-      linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
-      linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+  background: linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
+      linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
+      linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
 }
 
-.content .twitter-tweet:after {
+.content .twitter-tweet:after, .mobile-content .twitter-tweet:after {
   content: "on Twitter";
 }
 
@@ -528,10 +528,10 @@ picture source {
   border: 1px #464688 solid;
   border-radius: 30px;
   padding: 3vh 6vw;
-  margin: 0vw 4vw;
-  background: linear-gradient(217deg, rgba(255,0,0,.08), rgba(255,255,255,0) 40.71%),
-      linear-gradient(127deg, rgba(0,255,0,.08), rgba(255,255,255,0) 40.71%),
-      linear-gradient(336deg, rgba(0,0,255,.08), rgba(0,0,255,0) 40.71%);
+  margin: 0vw 0vw;
+  background: linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
+      linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
+      linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
 }
 
 .gallery {
