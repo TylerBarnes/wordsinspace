@@ -5,14 +5,14 @@ import {useCategories} from "../../hooks/useCategories"
 const CategoriesHorizontal = ({mobileNavBar, mobileBrowserLayout, catName}) => {
   const categories = useCategories()
   return (
-		<div 
+		<div
       style={{
         width: 'calc(-50px + 80vw)',
         display: 'flex',
         flexFlow: 'row nowrap',
         alignItems: 'center',
       }}>
-      <div 
+      <div
       	className='interface'
 	      style={{
 	        margin: mobileNavBar ? '0' : '17px 0px 13px 14px',
@@ -20,7 +20,7 @@ const CategoriesHorizontal = ({mobileNavBar, mobileBrowserLayout, catName}) => {
         Browsing:
       </div>
 
-      <div 
+      <div
 	      style={{
 	        display: 'flex',
 	        flexFlow: 'row nowrap',
@@ -36,13 +36,13 @@ const CategoriesHorizontal = ({mobileNavBar, mobileBrowserLayout, catName}) => {
               position: 'relative',
               margin: '5px'
             }}
-            className={!mobileBrowserLayout ? catName === 'work' ? 'work category-active' : 'work' : catName.toLowerCase()}
+            className={!mobileBrowserLayout ? catName === 'work' ? 'work browsetop category-active' : 'work browsetop' : catName.toLowerCase()}
             >
               {mobileBrowserLayout ? catName === 'work' ? `All` : `${catName}` : 'All'}
           </Link>
         </div>
 
-        <div 
+        <div
 	        style={{
 	          display: 'flex',
 	          flexFlow: 'row nowrap',
@@ -57,7 +57,7 @@ const CategoriesHorizontal = ({mobileNavBar, mobileBrowserLayout, catName}) => {
                   to={`/${category.slug}`}
                   activeClassName='category-active'
                   partiallyActive={true}
-                  className={category.slug}
+                  className={category.slug + " browsetop"}
                   >
                   {category.name}
                 </Link>
