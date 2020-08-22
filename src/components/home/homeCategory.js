@@ -1,12 +1,11 @@
 import React from "react"
+import PropTypes from "prop-types"
 import {Link} from "gatsby"
 
 const HomeCategory = ({category}) => {
-  const isClasses = (category === 'classes') // link classes to teaching
-
   return (
-    <Link to={isClasses ? '/teaching' :  `/${category}`.toLowerCase()}>
-      <div className={`${category}`.toLowerCase()}>
+    <Link to={category?.toLowerCase()}>
+      <div className={category?.toLowerCase()}>
         {category}
       </div>
     </Link>
@@ -14,3 +13,11 @@ const HomeCategory = ({category}) => {
 }
 
 export default HomeCategory
+
+HomeCategory.defaultProps = {
+  category: ``,
+}
+
+HomeCategory.propTypes = {
+  category: PropTypes.string,
+}
