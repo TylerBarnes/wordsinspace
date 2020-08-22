@@ -19,6 +19,10 @@
 	color: #4c4661;
 }
 
+.home-title a:hover {
+	text-decoration: underline;
+}
+
 .home-title-mobile {
 	font-family: Bespoke;
 	font-style: normal;
@@ -69,7 +73,7 @@
 }
 
 .left .home-title {
-	margin: 20px 20px 5px 0px;
+	margin: 20px 20px 20px 0px;
 }
 
 .left .home-entry {

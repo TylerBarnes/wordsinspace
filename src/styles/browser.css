@@ -289,7 +289,7 @@
   color: #fff;
 }
 
-.list-title a {
+.list-title:hover {
   text-decoration: underline;
 }
 
