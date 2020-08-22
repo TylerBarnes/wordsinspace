@@ -74,7 +74,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
           }}>
           </div>
         </div>
-        <Sticker_Related style={{ width: '200px', }} id='sticker-related' />
+         <Sticker_Related style={{ width: '200px', }} id='sticker-related' />
       </div>
       ))}
     </div>

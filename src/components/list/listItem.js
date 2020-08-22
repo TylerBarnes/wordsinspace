@@ -49,18 +49,19 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
           flexDirection: 'row',
           flexGrow: '1',
           justifyContent: 'space-between',
-          borderStyle: 'none none dashed none',
-          borderWidth: '1.3px',
-          borderColor: invertedTheme ? '#fff' : '#464668',
       }}>
 
       <div
         style={{
+          width: mobileList ? '84vw' : '73vw',
           alignSelf: 'flex-start',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
           alignItems: 'flex-start',
+          borderStyle: 'none none solid none',
+          borderWidth: '1.3px',
+          borderColor: invertedTheme ? '#fff' : '#7B7BA8',
         }}>
 
         {/* ==================== Date, Categories, Tags ====================  */}
@@ -81,7 +82,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         <div
           style={{
             width: listTitleWidth,
-            margin: mobileList ? '15px 0' : '3vh 0 4vh 0',
+            margin: mobileList ? '15px 0' : '2vh 0 3vh 0',
             paddingLeft: mobileList ? '0' : '30px',
           }}>
           <Link

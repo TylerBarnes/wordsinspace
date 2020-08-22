@@ -110,7 +110,7 @@ export default function HomePage() {
 
         <div className="Sticker"
           style={styleSVGR}>
-          <Link to={'/student-resources/'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
+          <Link to={'/teaching'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
         </div>
 
         <div className="Sticker"

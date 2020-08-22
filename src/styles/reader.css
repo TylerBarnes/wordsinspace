@@ -4,13 +4,27 @@
 /*****STYLES SPECIFIC TO READER*/
 /*****/
 /*****/
+
+.reader .work, .reader .date, .reader .blog, .reader .teaching, .reader .classes, .reader .publications, .reader .projects , .reader .presentations , .reader .talks, .reader .research, .reader .featured {
+  color: #fff;
+}
+
+.reader .work a:hover, .reader .date a:hover, .reader .blog a:hover, .reader .teaching:hover {
+  color: inherit;
+}
+
+.reader .classes a:hover, .reader .publications a:hover, .reader .projects a:hover, .reader .presentations a:hover, .reader .talks a:hover, .reader .research a:hover, .reader .feature a:hover {
+  color: inherit;
+}
+
 .reader-title {
   font-family:  'LaNord_SemiLight', sans-serif;
   font-style: normal;
   font-size: 66px;
   line-height: 68px;
   color: #464668;
-  padding: 4vh 8vh 5vh 4vh;
+  width: 60vw;
+  margin: 4vh 8vh 5vh 4vh;
 }
 
 .reader-title-mobile {
@@ -73,6 +87,11 @@
 
 .reader-body-mobile::-webkit-scrollbar {
   display: none;
+}
+
+.top-bar .interface:hover path {
+  stroke: #FF666E;
+  fill: #FF666E;
 }
 
 
@@ -348,26 +367,26 @@ picture source {
 }
 
 .publications.reader:hover {
-  border: 1px solid #E79180;
-  color: #E79180;
+  border: 1px solid #7D7ED1;
+  color: #7D7ED1;
   background-color: #fff;
 }
 
 .projects.reader:hover {
-  border: 1px solid #F4D791;
-  color: #F4D791;
+  border: 1px solid #A83357;
+  color: #A83357;
   background-color: #fff;
 }
 
 .presentations.reader:hover {
-  border: 1px solid #E9B7BA;
-  color: #E9B7BA;
+  border: 1px solid #69D18E;
+  color: #69D18E;
   background-color: #fff;
 }
 
 .talks.reader:hover {
-  border: 1px solid #ccc;
-  color: #ccc;
+  border: 1px solid #FFB9B0;
+  color: #FFB9B0;
   background-color: #fff;
 }
 

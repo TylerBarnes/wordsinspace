@@ -114,15 +114,21 @@ input:hover {
 }
 
 .left-bar {
-  -webkit-box-shadow: inset 20px 10px 19px 1px rgba(255,255,255,0.87);
-  -moz-box-shadow: inset 20px 10px 19px 1px rgba(255,255,255,0.87);
-  box-shadow: inset 20px 10px 19px 1px rgba(255,255,255,0.87);
+  -webkit-box-shadow: inset 20px 20px 19px 1px rgba(255,255,255,1);
+  -moz-box-shadow: inset 20px 20px 19px 1px rgba(255,255,255,1);
+  box-shadow: inset 20px 20px 19px 1px rgba(255,255,255,1);
 }
 
 .right-gradient {
-  -webkit-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,0.87);
-  -moz-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,0.87);
-  box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,0.87);
+  -webkit-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,1);
+  -moz-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,1);
+  box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,1);
+}
+
+.tag-right-gradient {
+  -webkit-box-shadow: inset -100px -2px 36px -100px rgba(255,255,255,1);
+  -moz-box-shadow: inset -100px -2px 36px -100px rgba(255,255,255,1);
+  box-shadow: inset -100px -2px 36px -100px rgba(255,255,255,1);
 }
 
 /* */
@@ -138,7 +144,7 @@ input:hover {
 }
 
 .metadata {
-  color: #464668;
+  color: #FF66E;
   text-transform: uppercase;
   font-size: 10px;
   font-family: 'Bespoke', sans-serif;
@@ -173,37 +179,13 @@ input:hover {
   white-space: nowrap;
 }
 
-.date:hover, .blog:hover, .teaching:hover, .classes:hover, .publications:hover, .projects:hover , .presentations:hover , .talks:hover, .research:hover, .featured:hover {
- color: #fff;
-}
-
-.work:hover {
-  color: #464668;
-}
-
-/* .work {
-  font-family: Bespoke;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 13px;
-  color: #fff;
-  padding: 4px 10px 3px 10px;
-  text-transform: uppercase;
-  margin-right: 5px;
-  white-space: nowrap;
-} */
-
 @-moz-document url-prefix() {
-  .work, .date, .blog, .teaching, .classes, .publications, .projects , .presentations , .talks, .research, .featured {
+  .work, .date, .blog, .teaching, .classes, .publications, .projects, .presentations , .talks, .research, .featured {
       padding: 5px 10px 2px 10px;
     }
   .tag {
     padding: 7px 15px 3px 15px;
   }
-  /* .work {
-    padding: 3px 10px 1px 10px;
-  } */
 }
 
 /* HIDE UNCATEGORIZED */
@@ -222,7 +204,7 @@ input:hover {
 }
 
 .blog {
-  background-color: #3CA899;
+  background-color: #3BA899;
   border: 1px solid #3CA899;
 }
 
@@ -242,18 +224,18 @@ input:hover {
 }
 
 .projects {
-  background-color: #AD687B;
-  border: 1px solid #AD687B;
+  background-color: #A83357;
+  border: 1px solid #A83357;
 }
 
 .presentations {
-  background-color: #A7DCA4;
-  border: 1px solid #A7DCA4;
+  background-color: #69D18E;
+  border: 1px solid #69D18E;
 }
 
 .talks {
-  background-color: #FFA698;
-  border: 1px solid #FFA698;
+  background-color: #FFB9B0;
+  border: 1px solid #FFB9B0;
 }
 
 .research {
