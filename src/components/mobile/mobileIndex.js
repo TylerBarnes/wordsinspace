@@ -43,7 +43,7 @@ export default function HomePage({menuItems}) {
             style={styleSVG}>
             <Link to={'/work/'}><Sticker_Browse_Mobile /></Link>
           </div>
-          <Link style={styleLink} to={'/teaching'}>
+          <Link style={styleLink} to={'/classes'}>
             <div className='home-title-mobile'>CLASSES</div>
             <Glyph />
           </Link>

@@ -43,7 +43,7 @@ const HomeItem = ({item, index}) => {
 
           {/*================ Title ================*/}
           <div className={'home-title'}>
-            <Link to={item.url}>{item.label.replace(/&#038;/, '&')}</Link>
+            <Link to={item?.url}>{item?.label.replace(/&#038;/, '&')}</Link>
           </div>
 
         </div>
