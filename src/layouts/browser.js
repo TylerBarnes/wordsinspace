@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'gatsby'
 
 import {useLocation} from '@reach/router'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {getResponsiveBrowserVars} from "../utils/dom"
-import {useCategories} from "../hooks/useCategories"
 
 import WordsInSpace from '../components/wordsInSpace'
 import Search from '../components/search'

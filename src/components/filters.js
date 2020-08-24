@@ -2,7 +2,6 @@ import React from "react"
 import TagsInfoBox from '../components/filters/tagsInfoBox'
 
 import Tags from "./filters/tags"
-import Categories from "./filters/categories"
 
 const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
 
@@ -22,7 +21,6 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
         flexFlow: 'column',
       }}>
 
-      {/*  <Categories /> */}
         <TagsInfoBox clearTags={clearTags} isTagMode={isTagMode}/>
         <Tags tags={tags} selectTags={selectTags} clearTags={clearTags} isTagMode={isTagMode} />
       </div>
