@@ -28,7 +28,7 @@
 }
 
 .reader-title-mobile {
-  font-family:  'LaNord', sans-serif;
+  font-family:  'LaNord_SemiLight', sans-serif;
   font-style: normal;
   font-size: 36px;
   line-height: 36px;
@@ -37,7 +37,7 @@
 }
 
 .related-title {
-  font-family:  'LaNord', sans-serif;
+  font-family:  'LaNord_SemiLight', sans-serif;
   color: #464668;
   font-weight: normal;
   font-size: 22px;
@@ -409,7 +409,7 @@ picture source {
 
 .content {
   position: relative;
-  font-family:  'LaNord_Light', sans-serif;
+  font-family:  'LaNord_SemiLight', sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 22px;
@@ -419,7 +419,7 @@ picture source {
 }
 
 .mobile-content {
-  font-family:  'LaNord', sans-serif;
+  font-family:  'LaNord_SemiLight', sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 16px;

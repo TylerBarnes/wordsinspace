@@ -55,7 +55,7 @@ export default function Colophon() {
               <p>Words in Space uses two typefaces: </p>
 
               <p style={{
-                fontFamily: 'LaNord',
+                fontFamily: 'LaNord_SemiLight',
                 fontWeight: '500',
                 fontSize: '18px',
                 lineHeight: '23px',
