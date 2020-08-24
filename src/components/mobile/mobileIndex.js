@@ -15,7 +15,8 @@ export default function HomePage({menuItems}) {
     flexFlow: 'column',
     flexWrap: 'nowrap',
     alignItems: 'center',
-    height: 'auto'
+    height: 'auto',
+    marginBottom: '2vh',
   }
 
   const styleSVG = {

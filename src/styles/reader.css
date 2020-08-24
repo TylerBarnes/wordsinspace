@@ -513,6 +513,30 @@ picture source {
   max-width: 100%;
 }
 
+.content embed, .content figure {
+  display: block;
+  margin: 0 auto 4vh auto;
+  max-width: 100%;
+}
+
+.mobile-content embed, .mobile-content figure {
+  display: block;
+  margin: 0 auto 4vh auto;
+  max-width: 100%;
+}
+
+.content object {
+  display: block;
+  margin: 0 auto 4vh auto;
+  max-width: 100%;
+}
+
+.mobile-content object {
+  display: block;
+  margin: 0 auto 4vh auto;
+  max-width: 100%;
+}
+
 
 .content > figure img, .mobile-content > figure, img {
   padding: 0;
@@ -589,6 +613,14 @@ figcaption {
   content: 'scroll for more >>';
   float: right;
   -webkit-backface-visibility: hidden;
+}
+
+.wp-block-gallery {
+  cursor: col-resize;
+}
+
+.slideshowFrame {
+  cursor: col-resize;
 }
 
 .slideshowWrapper:hover:after {
