@@ -29,7 +29,7 @@
 }
 
 .filterBar .work:hover {
-  color: #464668;
+  color: #5B5A7C;
 }
 
 @-moz-document url-prefix() {
@@ -43,7 +43,7 @@
 }
 
 .filterBar .tag {
-  border: 1px solid #414171;
+  border: 1px solid #5B5A7C;
   border-radius: 53px;
   padding: 3px 18px 2px 18px;
   font-family: Bespoke;
@@ -149,7 +149,7 @@
  width: calc(80vw - 50px);
  height   : 1vh;
 } */
-
+/*
 #mobile-list:before {
  content  : "";
  position : absolute;
@@ -162,7 +162,7 @@
                    rgba(245,245,247, 0) 100%);
  width: 100%;
  height   : 2vh;
-}
+} */
 
 /*****/
 /*****/
@@ -280,7 +280,7 @@
   font-size: 32px;
   line-height: 36px;
   font-family: 'LaNord_SemiLight', sans-serif;
-  color: #414171;
+  color: #5B5A7C;
   font-style: normal;
   font-weight: normal;
 }
@@ -297,8 +297,8 @@
 .list-title-mobile, .list-title-mobile-inverted {
   font-size: 22px;
   line-height: 24px;
-  font-family: 'LaNord', sans-serif;
-  color: #414171;
+  font-family: 'LaNord_SemiLight', sans-serif;
+  color: #5B5A7C;
   font-style: normal;
   font-weight: normal;
 }
@@ -329,7 +329,7 @@
 
 .tag-active {
   color: #fff;
-  background-color: #464668;
+  background-color: #5B5A7C;
 }
 
 .tag-inverted {
@@ -362,7 +362,7 @@ label.tag:hover {
 }
 
 .date-inverted {
-  color: #464668;
+  color: #5B5A7C;
   background-color: #fff
 }
 
@@ -374,7 +374,7 @@ label.tag:hover {
 
 .work.browsetop, .blog.browsetop, .teaching.browsetop, .classes.browsetop, .publications.browsetop, .projects.browsetop , .presentations.browsetop , .talks.browsetop, .research.browsetop {
   background-color: transparent;
-  color: #414171;
+  color: #5B5A7C;
 }
 
 .work.browsetop:hover {
@@ -419,8 +419,8 @@ label.tag:hover {
 
 .work.category-active {
   color: #F5F5F7;
-  background-color: #414171;
-  border: 1px solid #414171;
+  background-color: #5B5A7C;
+  border: 1px solid #5B5A7C;
 }
 
 .blog.category-active {
@@ -490,7 +490,7 @@ input[type=checkbox] {
   margin-right: 5px;
   margin-top: 6px;
   background-color: none;
-  border: 1px solid #464668;
+  border: 1px solid #5B5A7C;
   float: left;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -506,7 +506,7 @@ input[type=checkbox] {
 }
 
 .category-active > .rd  {
-  background-color: #464668;
+  background-color: #5B5A7C;
 }
 
 /*****/

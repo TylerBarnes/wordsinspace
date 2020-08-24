@@ -12,7 +12,7 @@ const TagsInfoBox = ({clearTags, isTagMode}) => {
 				border: 'none',
 				background: 'transparent',
 				textAlign: 'left',
-				color: 'red',
+				color: '#FF666E',
 				display: isTagMode ? 'block' : 'none',
         cursor: 'pointer',
         textDecoration: isHovered ? 'underline' : 'none'

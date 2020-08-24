@@ -51,7 +51,7 @@ const List = ({loading, items, isTagMode}) => {
         {!loading &&
           <ul
             style={{
-              borderBottom: mobileList ? 'none' : '1px solid #464668',
+              borderBottom: mobileList ? 'none' : '1px #5B5A7C solid',
               padding: '0px 15px 15px 15px',
               width: mobileList ? 'auto' : 'calc(80vw - 50px)',
             }}
@@ -68,7 +68,7 @@ const List = ({loading, items, isTagMode}) => {
                 border: 'none',
                 fontSize: '1rem',
                 fontWeight: '500',
-                color: '#464668',
+                color: '#5B5A7C',
                 background: 'transparent',
                 textTransform: 'uppercase',
                 cursor: 'pointer',
@@ -81,7 +81,7 @@ const List = ({loading, items, isTagMode}) => {
                 className='metadata'
                 style={{
                   writingMode: 'vertical-rl',
-                  color: 'red',
+                  color: '#FF666E',
                 }}>
                 BACK TO TOP
               </div>

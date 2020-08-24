@@ -20,7 +20,7 @@ const ArticleTaxonomy = ({date, categories, tags}) => {
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         marginTop: '1vh',
-        marginLeft: '4vh',
+        marginLeft: mobileTaxonomy ? '0vh' : '4vh',
       }}
       >
       <div style= {{

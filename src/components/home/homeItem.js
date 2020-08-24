@@ -11,7 +11,7 @@ const HomeItem = ({item, index}) => {
   const category = connectedNode?.node.categories?.nodes[0]?.name
   const isThree = index%3 === 0
   const leftAligned = (index%3 !== 0) && (index%2 === 0)
-  
+
   return (
     <div className={isThree ? 'right' : 'left' }
       style={{
@@ -30,7 +30,7 @@ const HomeItem = ({item, index}) => {
             style={{
               display: 'flex',
               flexFlow: 'row wrap',
-              margin: '10px 5px 10px 10px',
+              margin: '10px 20px 10px 20px',
             }}>
 
             {/*================ Latest ================*/}

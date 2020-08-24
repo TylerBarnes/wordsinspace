@@ -7,7 +7,6 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import {getResponsiveHomeVars} from "../utils/dom"
 
 import ArticleFooter from "../components/article/articleFooter"
-import Colophon_icon from '../images/assets/colophon.svg'
 
 export default function Colophon() {
   const breakpoints = useBreakpoint();
@@ -56,7 +55,7 @@ export default function Colophon() {
               <p>Words in Space uses two typefaces: </p>
 
               <p style={{
-                fontFamily: 'LaNord',
+                fontFamily: 'LaNord_SemiLight',
                 fontWeight: '500',
                 fontSize: '18px',
                 lineHeight: '23px',

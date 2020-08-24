@@ -66,9 +66,9 @@ const Browser = ({ children, props }) => {
         }}>
         {/* ----------------------------TOP---------------------------- */}
         <div className={mobileBrowserLayout ? '' : 'top-bar'} style={styleTopBar} >
-          <CategoriesHorizontal 
-            catName={catName} 
-            mobileNavBar={mobileNavBar} 
+          <CategoriesHorizontal
+            catName={catName}
+            mobileNavBar={mobileNavBar}
             mobileBrowserLayout={mobileBrowserLayout} />
           {showSearch && <Search />}
         </div>

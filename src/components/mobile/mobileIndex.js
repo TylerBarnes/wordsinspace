@@ -31,7 +31,7 @@ export default function HomePage({menuItems}) {
     flexWrap: 'nowrap',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderBottom: '1px dotted #464668'
+    borderBottom: '1px solid #5B5A7C'
   }
 
   return (

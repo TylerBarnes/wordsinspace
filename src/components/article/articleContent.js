@@ -30,10 +30,7 @@ const ArticleContent = ({tags, title, content}) => {
       {/* ==================== Content ====================  */}
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'space-evenly',
+
           order: mobileArticleContent ? '1' : '2',
           margin: mobileArticleContent ? mobileArticleContentMargin : '0 50px 0 0',
           padding: mobileArticleContent ? mobileArticleContentPadding : '0',
