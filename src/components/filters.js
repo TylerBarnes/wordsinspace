@@ -8,7 +8,7 @@ const Filters = ({tags, selectTags, clearTags, isTagMode}) => {
   return (
     <div className="filterBar"
       style={{
-        borderLeft: '1px dashed #464668',
+        borderLeft: '1px solid #5B5A7C',
         maxHeight: 'calc(100vh - 50px)',
         textTransform: 'uppercase',
         padding: '0 0 0 1vw',

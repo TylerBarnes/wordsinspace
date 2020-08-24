@@ -123,7 +123,7 @@ const Search = () => {
             width: '18vw',
             padding: '5px 0 0 5px',
             margin: '0',
-            border: '2px solid #9F9FD6',
+            border: '2px solid #5B5A7C',
             background: 'rgba(255,255,255,0.6)',
 
           }}

@@ -55,7 +55,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 					border: 'none',
 					background: 'transparent',
 	        cursor: 'pointer',
-	        color: 'red',
+	        color: '#FF666E',
 	        textDecoration: isHovered ? 'underline' : 'none'
 	    	}}
 	      onMouseEnter={e=>setIsHovered(true)}

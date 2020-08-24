@@ -22,7 +22,7 @@
   font-style: normal;
   font-size: 66px;
   line-height: 68px;
-  color: #464668;
+  color: #5B5A7C;
   width: 60vw;
   margin: 4vh 8vh 5vh 4vh;
 }
@@ -32,26 +32,27 @@
   font-style: normal;
   font-size: 36px;
   line-height: 36px;
-  color: #464668;
+  color: #5B5A7C;
   padding: 2vh 0 3vh 0;
 }
 
 .related-title {
   font-family:  'LaNord_SemiLight', sans-serif;
-  color: #464668;
+  color: #5B5A7C;
   font-weight: normal;
   font-size: 22px;
   line-height: 27px;
   text-align: center;
   margin-top: 1vh;
-  /* hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto; */
 }
 
 .related-item:hover .related-title {
   color: #FF666E;
+}
+
+.related-item .uncategorized {
+  display: block;
+  opacity: 0;
 }
 
 /* .reader-body:before {
@@ -354,8 +355,8 @@ picture source {
 /*****/
 /*****/
 .work.reader:hover {
-  border: 1px solid #464668;
-  color: #464668;
+  border: 1px solid #5B5A7C;
+  color: #5B5A7C;
   background-color: #fff;
 }
 
@@ -414,7 +415,7 @@ picture source {
   font-weight: 100;
   font-size: 22px;
   line-height: 34px;
-  color: #464668 !important;
+  color: #5B5A7C !important;
   width: inherit;
 }
 
@@ -424,7 +425,7 @@ picture source {
   font-weight: 100;
   font-size: 16px;
   line-height: 24px;
-  color: #464668 !important;
+  color: #5B5A7C !important;
   width: inherit;
 }
 
@@ -444,7 +445,7 @@ picture source {
   font-weight: 900;
   font-size: 36px;
   line-height: 40px;
-  color: #464668;
+  color: #5B5A7C;
 }
 
 .content a, .mobile-content a {
@@ -460,6 +461,16 @@ picture source {
 /*****INLINE WORDPRESS STYLES FOR IMAGES THIS IS A SPECIAL TYPE OF HELL*/
 /*****/
 /*****/
+
+.mobile-content img {
+  max-width: 56vw !important;
+  height: auto !important;
+}
+
+.mobile-content img {
+  max-width: 84vw !important;
+  height: auto !important;
+}
 
 
 .content a > img {
@@ -553,7 +564,7 @@ picture source {
   margin: 0 auto;
   height: 70vh;
   padding: 0;
-  border: 1px solid #464668;
+  border: 1px solid #5B5A7C;
 
 }
 
@@ -565,7 +576,7 @@ picture source {
 
 
 figcaption {
-  color: #464668;
+  color: #5B5A7C;
   text-transform: uppercase;
   font-size: 10px;
   line-height: 13px;
@@ -614,7 +625,7 @@ figcaption {
   font-weight: 500;
   font-size: 10px;
   line-height: 17px;
-  color: #464668;
-  border-top: 1px dotted #464668;
+  color: #5B5A7C;
+  border-top: 1px solid #5B5A7C;
   padding-top: 10px;
 }

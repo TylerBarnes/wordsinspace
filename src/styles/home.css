@@ -6,8 +6,8 @@
 /*****/
 
 .featured {
-	border: 1px solid #6262F4;
-	background-color: #6262F4;
+	border: 1px solid #5B5A7C;
+	background-color: #5B5A7C;
 }
 
 .home-title {
@@ -29,7 +29,7 @@
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 19px;
-	color: #464668;
+	color: #5B5A7C;
 }
 /*
 .home-body:before {
@@ -273,5 +273,5 @@ a[aria-label="email"]:hover circle, a[aria-label="twitter"]:hover circle, a[aria
 	font-weight: 300;
 	font-size: 22px;
 	line-height: 34px;
-	color: #464668;
+	color: #5B5A7C;
 }
