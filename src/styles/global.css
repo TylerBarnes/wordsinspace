@@ -132,9 +132,9 @@ input:hover {
 }
 
 .tag-right-gradient {
-  -webkit-box-shadow: inset -100px -2px 36px -100px rgba(255,255,255,1);
-  -moz-box-shadow: inset -100px -2px 36px -100px rgba(255,255,255,1);
-  box-shadow: inset -100px -2px 36px -100px rgba(255,255,255,1);
+  -webkit-box-shadow: inset -100px 22px 36px 1px rgba(255,255,255,1);
+  -moz-box-shadow: inset -100px 22px 36px 1px rgba(255,255,255,1);
+  box-shadow: inset -100px 22px 36px 1px rgba(255,255,255,1);
 }
 
 /* */
