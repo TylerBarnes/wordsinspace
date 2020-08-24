@@ -111,6 +111,11 @@
 	padding: 20px 20px 20px 20px;
 }
 
+.home-entry .work, .home-entry .date, .home-entry .blog, .home-entry .teaching, .home-entry .classes, .home-entry .publications, .home-entry .projects , .home-entry .presentations , .home-entry .talks, .home-entry .research {
+  margin-right: 0px;
+
+}
+
 /*****/
 /*****/
 /*****STICKER STYLES*/

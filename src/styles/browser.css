@@ -121,7 +121,7 @@
  background-image : linear-gradient(to bottom,
                    rgba(245,245,247, 1) 30%,
                    rgba(245,245,247, 0.7) 50%,
-                   rgba(245,245,247, 0.3) 70%,
+                   rgba(245,245,247, 0.1) 70%,
                    rgba(245,245,247, 0) 100%);
  width: calc(80vw - 50px);
  height   : 10vh;
@@ -196,13 +196,18 @@
 /*****/
 /*****/
 
+#glyph_scrollup:hover path, #glyph_scrollup:hover line {
+  stroke: #FF666E;
+}
+
 #glyph_scrollup + .metadata {
   display: none;
-  transition-duration: 1s;
+  margin-right: 2px;
 }
 
 #glyph_scrollup:hover + .metadata {
   display: block;
+  margin-right: 2px;
   -webkit-animation: fadein 0.2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 0.2s; /* Firefox < 16 */
    -ms-animation: fadein 0.2s; /* Internet Explorer */
@@ -221,51 +226,51 @@
 }
 
 .publicationsItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(125, 126, 209, 0)), color-stop(2%, rgba(125, 126, 209, 0.3)), color-stop(98%, rgba(125, 126, 209, 0.3)), to(rgba(125, 126, 209, 0)));
-  background: -o-linear-gradient(left, rgba(125, 126, 209, 0) 0%, rgba(125, 126, 209, 0.3) 2%, rgba(125, 126, 209, 0.3) 98%, rgba(125, 126, 209, 0) 100%);
-  background: linear-gradient(90deg, rgba(125, 126, 209, 0) 0%, rgba(125, 126, 209, 0.3) 2%, rgba(125, 126, 209, 0.3) 98%, rgba(125, 126, 209, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(125, 126, 209, 0)), color-stop(2%, rgba(125, 126, 209, 0.1)), color-stop(98%, rgba(125, 126, 209, 0.1)), to(rgba(125, 126, 209, 0)));
+  background: -o-linear-gradient(left, rgba(125, 126, 209, 0) 0%, rgba(125, 126, 209, 0.1) 2%, rgba(125, 126, 209, 0.1) 98%, rgba(125, 126, 209, 0) 100%);
+  background: linear-gradient(90deg, rgba(125, 126, 209, 0) 0%, rgba(125, 126, 209, 0.1) 2%, rgba(125, 126, 209, 0.1) 98%, rgba(125, 126, 209, 0) 100%);
 }
 
 .teachingItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 113, 103, 0)), color-stop(2%, rgba(255, 113, 103, 0.3)), color-stop(98%, rgba(255, 113, 103, 0.3)), to(rgba(255, 113, 103, 0)));
-  background: -o-linear-gradient(left, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
-  background: linear-gradient(90deg, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 113, 103, 0)), color-stop(2%, rgba(255, 113, 103, 0.1)), color-stop(98%, rgba(255, 113, 103, 0.1)), to(rgba(255, 113, 103, 0)));
+  background: -o-linear-gradient(left, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.1) 2%, rgba(255, 113, 103, 0.1) 98%, rgba(255, 113, 103, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.1) 2%, rgba(255, 113, 103, 0.1) 98%, rgba(255, 113, 103, 0) 100%);
 }
 
 .classesItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 113, 103, 0)), color-stop(2%, rgba(255, 113, 103, 0.3)), color-stop(98%, rgba(255, 113, 103, 0.3)), to(rgba(255, 113, 103, 0)));
-  background: -o-linear-gradient(left, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
-  background: linear-gradient(90deg, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.3) 2%, rgba(255, 113, 103, 0.3) 98%, rgba(255, 113, 103, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 113, 103, 0)), color-stop(2%, rgba(255, 113, 103, 0.1)), color-stop(98%, rgba(255, 113, 103, 0.1)), to(rgba(255, 113, 103, 0)));
+  background: -o-linear-gradient(left, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.1) 2%, rgba(255, 113, 103, 0.1) 98%, rgba(255, 113, 103, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 113, 103, 0) 0%, rgba(255, 113, 103, 0.1) 2%, rgba(255, 113, 103, 0.1) 98%, rgba(255, 113, 103, 0) 100%);
 }
 
 .projectsItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(168, 51, 87, 0)), color-stop(2%, rgba(168, 51, 87, 0.3)), color-stop(98%, rgba(168, 51, 87, 0.3)), to(rgba(168, 51, 87, 0)));
-  background: -o-linear-gradient(left, rgba(168, 51, 87, 0) 0%, rgba(168, 51, 87, 0.3) 2%, rgba(168, 51, 87, 0.3) 98%, rgba(168, 51, 87, 0) 100%);
-  background: linear-gradient(90deg, rgba(168, 51, 87, 0) 0%, rgba(168, 51, 87, 0.3) 2%, rgba(168, 51, 87, 0.3) 98%, rgba(168, 51, 87, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(168, 51, 87, 0)), color-stop(2%, rgba(168, 51, 87, 0.1)), color-stop(98%, rgba(168, 51, 87, 0.1)), to(rgba(168, 51, 87, 0)));
+  background: -o-linear-gradient(left, rgba(168, 51, 87, 0) 0%, rgba(168, 51, 87, 0.1) 2%, rgba(168, 51, 87, 0.1) 98%, rgba(168, 51, 87, 0) 100%);
+  background: linear-gradient(90deg, rgba(168, 51, 87, 0) 0%, rgba(168, 51, 87, 0.1) 2%, rgba(168, 51, 87, 0.1) 98%, rgba(168, 51, 87, 0) 100%);
 }
 
 .presentationsItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(105, 209, 142, 0)), color-stop(2%, rgba(105, 209, 142, 0.3)), color-stop(98%, rgba(105, 209, 142, 0.3)), to(rgba(105, 209, 142, 0)));
-  background: -o-linear-gradient(left, rgba(105, 209, 142, 0) 0%, rgba(105, 209, 142, 0.3) 2%, rgba(105, 209, 142, 0.3) 98%, rgba(105, 209, 142, 0) 100%);
-  background: linear-gradient(90deg, rgba(105, 209, 142, 0) 0%, rgba(105, 209, 142, 0.3) 2%, rgba(105, 209, 142, 0.3) 98%, rgba(105, 209, 142, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(105, 209, 142, 0)), color-stop(2%, rgba(105, 209, 142, 0.1)), color-stop(98%, rgba(105, 209, 142, 0.1)), to(rgba(105, 209, 142, 0)));
+  background: -o-linear-gradient(left, rgba(105, 209, 142, 0) 0%, rgba(105, 209, 142, 0.1) 2%, rgba(105, 209, 142, 0.1) 98%, rgba(105, 209, 142, 0) 100%);
+  background: linear-gradient(90deg, rgba(105, 209, 142, 0) 0%, rgba(105, 209, 142, 0.1) 2%, rgba(105, 209, 142, 0.1) 98%, rgba(105, 209, 142, 0) 100%);
 }
 
 .talksItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 185, 176, 0)), color-stop(2%, rgba(255, 185, 176, 0.3)), color-stop(98%, rgba(255, 185, 176, 0.3)), to(rgba(255, 185, 176, 0)));
-  background: -o-linear-gradient(left, rgba(255, 185, 176, 0) 0%, rgba(255, 185, 176, 0.3) 2%, rgba(255, 185, 176, 0.3) 98%, rgba(255, 185, 176, 0) 100%);
-  background: linear-gradient(90deg, rgba(255, 185, 176, 0) 0%, rgba(255, 185, 176, 0.3) 2%, rgba(255, 185, 176, 0.3) 98%, rgba(255, 185, 176, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 185, 176, 0)), color-stop(2%, rgba(255, 185, 176, 0.1)), color-stop(98%, rgba(255, 185, 176, 0.1)), to(rgba(255, 185, 176, 0)));
+  background: -o-linear-gradient(left, rgba(255, 185, 176, 0) 0%, rgba(255, 185, 176, 0.1) 2%, rgba(255, 185, 176, 0.1) 98%, rgba(255, 185, 176, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 185, 176, 0) 0%, rgba(255, 185, 176, 0.1) 2%, rgba(255, 185, 176, 0.1) 98%, rgba(255, 185, 176, 0) 100%);
 }
 
 .blogItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(59,168,153, 0)), color-stop(2%, rgba(59,168,153, 0.3)), color-stop(98%, rgba(59,168,153, 0.3)), to(rgba(59,168,153, 0)));
-  background: -o-linear-gradient(left, rgba(59,168,153, 0) 0%, rgba(59,168,153, 0.3) 2%, rgba(59,168,153, 0.3) 98%, rgba(59,168,153, 0) 100%);
-  background: linear-gradient(90deg, rgba(59,168,153, 0) 0%, rgba(59,168,153, 0.3) 2%, rgba(59,168,153, 0.3) 98%, rgba(59,168,153, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(59,168,153, 0)), color-stop(2%, rgba(59,168,153, 0.1)), color-stop(98%, rgba(59,168,153, 0.1)), to(rgba(59,168,153, 0)));
+  background: -o-linear-gradient(left, rgba(59,168,153, 0) 0%, rgba(59,168,153, 0.1) 2%, rgba(59,168,153, 0.1) 98%, rgba(59,168,153, 0) 100%);
+  background: linear-gradient(90deg, rgba(59,168,153, 0) 0%, rgba(59,168,153, 0.1) 2%, rgba(59,168,153, 0.1) 98%, rgba(59,168,153, 0) 100%);
 }
 
 .researchItem:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(204, 204, 204, 0)), color-stop(2%, rgba(204, 204, 204, 0.3)), color-stop(98%, rgba(204, 204, 204, 0.3)), to(rgba(204, 204, 204, 0)));
-  background: -o-linear-gradient(left, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0.3) 2%, rgba(204, 204, 204, 0.3) 98%, rgba(204, 204, 204, 0) 100%);
-  background: linear-gradient(90deg, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0.3) 2%, rgba(204, 204, 204, 0.3) 98%, rgba(204, 204, 204, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(204, 204, 204, 0)), color-stop(2%, rgba(204, 204, 204, 0.1)), color-stop(98%, rgba(204, 204, 204, 0.1)), to(rgba(204, 204, 204, 0)));
+  background: -o-linear-gradient(left, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0.1) 2%, rgba(204, 204, 204, 0.1) 98%, rgba(204, 204, 204, 0) 100%);
+  background: linear-gradient(90deg, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0.1) 2%, rgba(204, 204, 204, 0.1) 98%, rgba(204, 204, 204, 0) 100%);
 }
 
 
@@ -356,7 +361,7 @@
 }
 
 label.tag:hover {
-  background-color:  #bab6fb;
+  background-color: #C4C4D9;
   cursor: pointer;
   transition: 0.05s ease-in;
 }

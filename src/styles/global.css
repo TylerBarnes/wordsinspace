@@ -80,6 +80,19 @@ input:hover {
   cursor: pointer;
 }
 
+
+/* Safari only Words in space circle */
+
+
+@media not all and (min-resolution:.001dpcm) {
+    @media {
+        #wordsinspace-circle {
+            margin-left: -1px !important;
+            margin-top: 13px !important;
+        }
+    }
+}
+
 /* */
 /* page fadein */
 /* */
@@ -126,16 +139,16 @@ input:hover {
 }
 
 .right-gradient {
-  -webkit-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,1);
-  -moz-box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,1);
-  box-shadow: inset -23px 22px 36px 1px rgba(255,255,255,1);
+  -webkit-box-shadow: inset -20px 23px 21px 1px rgba(255,255,255,1);
+  -moz-box-shadow: inset -20px 23px 21px 1px rgba(255,255,255,1);
+  box-shadow: inset -20px 23px 21px 1px rgba(255,255,255,1);
 }
 
-.tag-right-gradient {
+/* .tag-right-gradient {
   -webkit-box-shadow: inset -100px 22px 36px 1px rgba(255,255,255,1);
   -moz-box-shadow: inset -100px 22px 36px 1px rgba(255,255,255,1);
   box-shadow: inset -100px 22px 36px 1px rgba(255,255,255,1);
-}
+} */
 
 /* */
 /* Shared styles */

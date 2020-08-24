@@ -13,7 +13,7 @@ const Footer = () => {
       justifyContent: 'space-between',
       width: '100%',
       paddingRight: '50px',
-      marginLeft: '15px',
+      paddingLeft: '15px',
     }}>
       <div
       	style={footerStyles}

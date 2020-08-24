@@ -31,8 +31,8 @@ const List = ({loading, items, isTagMode}) => {
         alignItems: mobileList ? 'center' : 'flex-start',
         justifyContent: 'space-between',
         maxHeight: mobileList ?  'calc(100vh - 90px)' : 'calc(100vh - 50px)',
-        overflow: 'auto',
-      }}>
+        overflowY: 'auto',
+    }}>
         {/* ---------------- LOADING ---------------- */}
         {loading &&
           <ul>
@@ -52,8 +52,9 @@ const List = ({loading, items, isTagMode}) => {
           <ul
             style={{
               borderBottom: mobileList ? 'none' : '1px #5B5A7C solid',
-              padding: '0px 15px 15px 15px',
+              padding: '0px 0px 15px 0px',
               width: mobileList ? 'auto' : 'calc(80vw - 50px)',
+              listStyle: 'none',
             }}
             id={mobileList ? 'mobile-list' : 'list'}>
             <button

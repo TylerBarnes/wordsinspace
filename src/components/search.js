@@ -123,7 +123,7 @@ const Search = () => {
             width: '18vw',
             padding: '5px 0 0 5px',
             margin: '0',
-            border: '2px solid #5B5A7C',
+            border: '1px solid #5B5A7C',
             background: 'rgba(255,255,255,0.6)',
 
           }}
@@ -131,6 +131,9 @@ const Search = () => {
           type="text"
           placeholder="SEARCH"
           className='interface'
+          style={{
+            color: '#c6c6f8',
+          }}
           onChange={e => onChange(e)}
           />
 

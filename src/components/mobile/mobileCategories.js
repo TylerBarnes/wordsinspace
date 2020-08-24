@@ -46,7 +46,7 @@ const MobileCategories = () => {
 						to={`/${category.slug}`}
 						activeClassName='category-active'
 						partiallyActive={true}
-						className={`${category.slug}`}
+						className={`${category.slug}` + " browsetop"}
 						>
 		      	{category.name}
 		      </Link>

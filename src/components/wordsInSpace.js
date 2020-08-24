@@ -38,10 +38,10 @@ const WordsInSpace = () => {
 	        {title}
 	      </Link>
 
-        <div
+        <div id="wordsinspace-circle"
           style={{
             marginTop: '11px',
-            marginLeft: '6px',
+            marginLeft: '9px',
             alignSelf: 'center'
           }}>
           <Link to={'/'}><Circle_wordsinspace id="circle-wordsinspace" /></Link>
