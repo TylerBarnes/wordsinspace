@@ -30,7 +30,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
     setIsVisible(false)
   }
 
-  if (slug === 'about') return null
+  if (slug === 'about' || slug==='upcoming-events' || slug==='upcoming-events-2') return null
 
   return (
     <li
