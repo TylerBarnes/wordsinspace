@@ -48,7 +48,7 @@ export default function HomePage({menuItems}) {
             <Glyph />
           </Link>
 
-          <Link style={styleLink} to={'/upcoming-events'}>
+          <Link style={styleLink} to={'/upcoming-events-2/'}>
             <div className='home-title-mobile'>UPCOMING EVENTS</div>
             <Glyph />
           </Link>

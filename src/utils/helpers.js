@@ -30,7 +30,7 @@ export const extractSearchResults = (array) => {
                   return [...nonEmptyCat.pages.nodes, ...nonEmptyCat.posts.nodes]
                })
                .flat(2)
-  return sortByDate(results)
+  return sortByDate(results).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
 }
 
 // identifies if there are any posts or pages which share the same Tag with the current Post or Page, and if that is the case, returns an array of these items

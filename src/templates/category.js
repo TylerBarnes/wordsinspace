@@ -19,7 +19,7 @@ export default function CategoryTemplate({data}) {
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
   // initialize the items to all of the Pages and all of the Posts
-  const initial = sortByDate([...data.allWpCategory.nodes[0].pages.nodes, ...data.allWpCategory.nodes[0].posts.nodes]);
+  const initial = sortByDate([...data.allWpCategory.nodes[0].pages.nodes, ...data.allWpCategory.nodes[0].posts.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) ;
 
   const [isTagMode, setTagMode] = useState(false)
 
@@ -51,7 +51,7 @@ export default function CategoryTemplate({data}) {
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
   const tagQueryResults = isTagMode && !response.loading 
-                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes])
+                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
                           : [] 
 
   return (
