@@ -36,7 +36,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         width: '200px',
         alignSelf: mobileArticleContent ? 'center' : 'flex-start',
         order: mobileArticleContent ? '2' : '1',
-        margin: mobileArticleContent ? '0' : '60vh 2vw 0 2vw',
+        margin: mobileArticleContent ? '3vh 0' : '60vh 2vw 0 2vw',
         display: mobileArticleContent ? 'auto' : 'flex',
         flexFlow: mobileArticleContent ? 'auto' : 'column',
         alignItems: mobileArticleContent ? 'auto' : 'center',
@@ -59,7 +59,7 @@ const ArticleRelated = ({related, mobileArticleContent, showRelated}) => {
         display: 'flex',
         flexFlow: 'column',
         alignItems: 'center',
-        margin: '1vh 0vh',
+        margin: '2vh 0vh',
         height: '200px',
       }}>
         <div

@@ -64,8 +64,8 @@ export const mobileFooterStyles =
 {
     borderTop: '1px solid #5B5A7C',
     width: '84vw',
-    padding: '10px 0',
-    margin: '2vh auto',
+    padding: '20px 0',
+    margin: '0vh auto 0vh auto',
     display: 'flex',
     flexFlow: 'row',
     flexWrap: 'nowrap',

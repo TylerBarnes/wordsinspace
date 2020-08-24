@@ -54,7 +54,7 @@ const MobileFooter = () => {
         <Link to={'/about'}><Circle_mobile_footer /></Link>
 
         <div
-          className='metadata' 
+          className='metadata'
           style={{
             textAlign: 'right',
             marginTop: '5px',

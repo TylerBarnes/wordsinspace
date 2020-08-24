@@ -53,7 +53,7 @@ const List = ({loading, items, isTagMode}) => {
             style={{
               borderBottom: mobileList ? 'none' : '1px #5B5A7C solid',
               padding: '0px 0px 15px 0px',
-              width: mobileList ? 'auto' : 'calc(80vw - 50px)',
+              width: mobileList ? '84vw' : 'calc(80vw - 50px)',
               listStyle: 'none',
             }}
             id={mobileList ? 'mobile-list' : 'list'}>

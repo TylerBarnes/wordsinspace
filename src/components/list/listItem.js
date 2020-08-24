@@ -67,6 +67,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
         {/* ==================== Date, Categories, Tags ====================  */}
         <div
           style={{
+            paddingLeft: mobileList ? '20px' : '0',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-evenly',
