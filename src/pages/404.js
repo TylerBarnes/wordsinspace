@@ -12,15 +12,16 @@ export default function  NotFoundPage()  {
   const breakpoints = useBreakpoint();
   const {mobile404} = getResponsiveHomeVars(breakpoints)
 
-	const styleWrapper = 
+	const styleWrapper =
 	{
     display: 'flex',
     flexFlow: 'column',
     justifyContent: 'space-around',
-    alignItems: mobile404 ? 'center' : 'flex-start',
+    textAlign: 'center',
+    alignItems: mobile404 ? 'center' : 'center',
   }
 
-  const styleSVG = 
+  const styleSVG =
 	{
 		marginTop: '5vh'
 	}
