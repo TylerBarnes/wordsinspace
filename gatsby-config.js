@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `https://ahole.website/graphql`,  //`http://localhost:8888/test/graphql`
+        url: `https://x.wordsinspace.net/graphql`,  //`http://localhost:8888/test/graphql`
         schema: {
           perPage: 50,
         },
