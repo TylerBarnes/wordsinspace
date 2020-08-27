@@ -462,7 +462,15 @@ picture source {
 /*****/
 /*****/
 
-.mobile-content img {
+.content div, .content div div {
+  width: inherit;
+}
+
+.mobile-content div, .mobile-content div div {
+  width: inherit;
+}
+
+.content img {
   max-width: 56vw !important;
   height: auto !important;
 }
@@ -471,7 +479,6 @@ picture source {
   max-width: 84vw !important;
   height: auto !important;
 }
-
 
 .content a > img {
   display: block;
@@ -528,13 +535,13 @@ picture source {
 .content object {
   display: block;
   margin: 0 auto 4vh auto;
-  max-width: 100%;
+  max-width: inherit;
 }
 
 .mobile-content object {
   display: block;
   margin: 0 auto 4vh auto;
-  max-width: 100%;
+  max-width: inherit;
 }
 
 
