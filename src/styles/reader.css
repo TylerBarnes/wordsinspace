@@ -462,8 +462,15 @@ picture source {
 /*****/
 /*****/
 
+.content p, .mobile-content p {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .content div, .content div div {
   width: inherit;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mobile-content div, .mobile-content div div {
