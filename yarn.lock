@@ -6564,6 +6564,17 @@ gatsby-plugin-netlify-cache@^1.2.0:
     babel-runtime "^6.26.0"
     fs-extra "^7.0.0"
 
+gatsby-plugin-netlify-redirect@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-redirect/-/gatsby-plugin-netlify-redirect-1.0.0.tgz#19eb04ffaa0d7f7e17a02e9f9eba7eb35dbbf92b"
+  integrity sha512-/r8snp02OeeP/HnKtbEo5OjDhDKtQZEk+TkuK2mD6yBykLKVdjDmptaA5JuyO1EK0DssjYSnSxrTjDlMcFxQRw==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    fs-extra "^8.1.0"
+    kebab-hash "^0.1.2"
+    lodash "^4.17.15"
+    webpack-assets-manifest "^3.1.1"
+
 gatsby-plugin-netlify@^2.3.13:
   version "2.3.13"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.3.13.tgz#96d3467beb485648de97fb13bad3e5d1d1ebdcd1"
