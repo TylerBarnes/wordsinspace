@@ -115,6 +115,9 @@ module.exports = {
         modalProps: { },
       }
     },
+  {
+  resolve: `gatsby-plugin-netlify-redirect`,
+    },
     {
       resolve: "gatsby-plugin-breakpoints",
       options: {

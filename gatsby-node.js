@@ -2,7 +2,15 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  
+
+  const { createRedirect } = actions
+  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/presentations/:slug', toPath: '/:slug', force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/publications/:slug', toPath: '/:slug', force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/projects/:slug', toPath: '/:slug', force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/teaching/:slug', toPath: '/classes/:slug', force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/teaching/', toPath: '/classes/', force: true, statusCode: 200 })
+
   // ------------
   // ------------ Create Pages and Posts endpoints
   // ------------
