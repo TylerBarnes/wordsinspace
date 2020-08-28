@@ -470,11 +470,12 @@ picture source {
 .content div, .content div div {
   width: inherit;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto
 }
 
 .mobile-content div, .mobile-content div div {
   width: inherit;
+  max-width: 84vw !important;
 }
 
 .content img {
@@ -564,9 +565,7 @@ picture source {
   line-height: 26px;
   padding: 3vh 2vw;
   margin: 0vw 4vw;
-  background: linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
-      linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
-      linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
+  background: rgba(255,255,255,0.4);
 }
 
 .content .twitter-tweet:after, .mobile-content .twitter-tweet:after {
