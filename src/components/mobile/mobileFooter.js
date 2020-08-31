@@ -42,7 +42,7 @@ const MobileFooter = () => {
 
       <div
         style={{
-          alignSelf: 'flex-end',
+          alignSelf: 'flex-start',
           maxWidth: '50%',
           display: 'flex',
           flexFlow: 'column',
