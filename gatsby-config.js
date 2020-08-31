@@ -126,9 +126,6 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: 'gatsby-plugin-netlify-cache',
-    },
   `gatsby-plugin-netlify`
   ],
 }
