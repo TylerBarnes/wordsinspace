@@ -48,9 +48,9 @@ export default function Colophon() {
               style={columnStyle}
               className='colophon-copy'>
 
-              <p>Words in Space was redeveloped in the summer of 2020 by <a href='http://www.foreignobjects.net'>FOREIGN OBJECTS</a>. It is the third [?] redesign of Shannon Mattern’s online home, which has been built using <a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> since 2001 (???).</p>
+              <p>Words in Space was redeveloped in the summer of 2020 by <a href='http://www.foreignobjects.net'>Foreign Objects</a>. It is the seventh redesign of Shannon Mattern website, which has been online since 2002.</p>
 
-              <p>The website is uses a Wordpress content management system and a MySQL database, queried by <a href='https://graphql.org/'>GraphQL</a> using a frontend built using <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
+              <p>The website is uses a <a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> content management system and a MySQL database, queried by <a href='https://graphql.org/'>GraphQL</a> using a frontend built with <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
 
               <p>Words in Space uses two typefaces: </p>
 
@@ -70,10 +70,10 @@ export default function Colophon() {
                 lineHeight: '26px',
                 margin: '1.45rem 2rem',
               }}>
-              <a href='https://www.metaflop.com/metafonts/bespoke'>Bespoke</a>, a metafont developed by Alexis Reigel and Marco Muller using their web application <a href="https://www.metaflop.com/">Metaflop</a>. <a href="https://en.wikipedia.org/wiki/Metafont">Metafont</a> is a computer language used to define raster fonts devised by Donald Knuth as a companion to his TeX typesetting system.
+              <a href='https://www.metaflop.com/metafonts/bespoke'>Bespoke</a>, a metafont developed using <a href="https://www.metaflop.com/">Metaflop</a>, developed by Alexis Reigel and Marco Muller. <a href="https://en.wikipedia.org/wiki/Metafont">Metafont</a> is a computer language used to define raster fonts devised by Donald Knuth as a companion to his TeX typesetting system.
               </p>
 
-              <p>Foreign Objects is an itinerant design and research studio exploring the internet through the production of cultural artifacts. Its members are based in New York, London and Toronto.</p>
+              <p><a href="https://www.foreignobjects.net">Foreign Objects</a> is an itinerant design and research studio exploring the internet through the production of cultural artifacts. Its members are based in New York, London and Toronto.</p>
 
 
             </div>
