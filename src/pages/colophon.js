@@ -48,9 +48,9 @@ export default function Colophon() {
               style={columnStyle}
               className='colophon-copy'>
 
-              <p>Words in Space was redeveloped in the summer of 2020 by <a href='http://www.foreignobjects.net'>Foreign Objects</a>. It is the seventh redesign of Shannon Mattern website, which has been online since 2002.</p>
+              <p>Words in Space was redeveloped in the summer of 2020 by <a href='http://www.foreignobjects.net'>Foreign Objects</a>. It is the seventh redesign of Shannon Mattern's website, which has been online since 2002.</p>
 
-              <p>The website is uses a <a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> content management system and a MySQL database, queried by <a href='https://graphql.org/'>GraphQL</a> using a frontend built with <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
+              <p>The website is uses a headless <a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> configuration with a custom frontend built with <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
 
               <p>Words in Space uses two typefaces: </p>
 

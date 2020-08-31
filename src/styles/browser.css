@@ -487,6 +487,11 @@ input[type=checkbox] {
   opacity: 0;
 }
 
+input.interface {
+  margin: 15px 0px;
+  width: 18vw;
+}
+
 .rd {
   width: 14px;
   height: 14px;
