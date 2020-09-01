@@ -15,6 +15,7 @@ import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
+
   const breakpoints = useBreakpoint()
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
@@ -50,18 +51,18 @@ export default function CategoryTemplate({data}) {
 
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
-  const tagQueryResults = isTagMode && !response.loading 
-                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
-                          : [] 
+  const tagQueryResults = isTagMode && !response.loading
+                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
+                          : []
 
   return (
     <Browser>
       <SEO title={data.allWpCategory.nodes[0].name} />
-      {showMobileFilters && 
+      {showMobileFilters &&
         <MobileFilters />
       }
       <List items={isTagMode ? tagQueryResults : initial} loading={response.loading} isTagMode={isTagMode}/>
-      {showDesktopFilters && 
+      {showDesktopFilters &&
         <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode} />
       }
     </Browser>
