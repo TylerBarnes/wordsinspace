@@ -30,7 +30,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
       {topTags && topTags.map((tag, index) => (
 				<Checkbox
 		      key={index}
-		      label={tag.name}
+		      label={tag.name.replace(/\s/, '\n')}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
@@ -40,7 +40,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
      	{showExtra && extraTags.map((tag, index) => (
 				<Checkbox
 		      key={index}
-		      label={tag.name}
+		      label={tag.name.replace(/\s/, '\n')}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
