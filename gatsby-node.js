@@ -5,13 +5,34 @@ exports.createPages = async ({ actions, graphql }) => {
 
 
   const { createRedirect } = actions
-  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/shannon/:year/:month/:day/:slug', toPath: '/:year/:month/:day/:slug', isPermanent: true, force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/presentations/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/publications/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/projects/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/teaching/:slug', toPath: '/classes/:slug', isPermanent: true, force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/teaching/', toPath: '/classes/', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/shannon/:year/:month/:day/:slug', toPath: '/:year/:month/:day/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //specific pdf redirects as netlify doesn't support regex
+  createRedirect({ fromPath: '/publications/DissAbstract.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/DissAbstract.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/IESS Media Entry 2.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/IESS Media Entry 2.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/JAEPrintEd.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/JAEPrintEd.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/KirkbrideMatternChainbuilding.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/KirkbrideMatternChainbuilding.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/MakingSpaces.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/MakingSpaces.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/Mattern_EdgeBlendingIAC.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/Mattern_EdgeBlendingIAC.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/Mattern_Senses and Society.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/Mattern_Senses and Society.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/Mattern_Silent Invisible City_DRAFT.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/Mattern_Silent Invisible City_DRAFT.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/MatternPneumaticTubesDraft.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/MatternPneumaticTubesDraft.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/MatternPublicCulture.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/MatternPublicCulture.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/MatternSalmon_FramingNoise.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/MatternSalmon_FramingNoise.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/MatternWoodberryDraft.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/MatternWoodberryDraft.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/NewRepublic.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/NewRepublic.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/NotesListsCFP.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/NotesListsCFP.pdf', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/publications/SilentInvisibleCity.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/SilentInvisibleCity.pdf', isPermanent: true, force: true, statusCode: 301 })
+
+  //other than that, links to /publications reference an article
+  createRedirect({ fromPath: '/publications/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //all the rest
+  createRedirect({ fromPath: '/presentations/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/projects/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/teaching/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/teaching/', toPath: '/classes/', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/shannon-archive-2017/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/secure/:slug', toPath: 'https://icd.wordsinspace.net/secure/:slug', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/shannon/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
