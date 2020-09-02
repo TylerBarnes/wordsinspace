@@ -3,10 +3,10 @@ import {Link} from "gatsby"
 
 const ListCategory = ({category}) => {
   const isClasses = (category === 'classes') // link classes to teaching
-
+  console.log('category is', category)
   return (
     <Link
-      to={category.toLowerCase()}
+      to={"/" + category.toLowerCase()}
       >
       <div
       className={category}
