@@ -441,7 +441,16 @@ picture source {
 .indented {
 }
 
-.content > h1, .content > h2, .content > h3, .mobile-content > h1, .mobile-content > h2, .mobile-content > h3 {
+.content > h1, .content > h2, .content > h3, .content > h4, .content > h5 {
+  font-family: 'LaNord', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 24px;
+  color: #5B5A7C;
+}
+
+.mobile-content > h1, .mobile-content > h2, .mobile-content > h3, mobile-content > h4, .mobile-content > h5 {
   font-family: 'LaNord', sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -566,7 +575,7 @@ picture source {
   font-size: 18px;
   line-height: 26px;
   padding: 3vh 2vw;
-  margin: 2vw 4vw;
+  margin: 2vh 4vw;
   background: rgba(255,255,255,0.4);
 }
 
@@ -578,10 +587,8 @@ picture source {
   border: 1px #464688 solid;
   border-radius: 30px;
   padding: 3vh 6vw;
-  margin: 0vw 0vw;
-  background: linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
-      linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
-      linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
+  margin: 2vh 0vw;
+  background: rgba(255,255,255,0.4);
 }
 
 .gallery {

@@ -6,7 +6,7 @@ const ListCategory = ({category}) => {
 
   return (
     <Link
-      to={category.toLowerCase()}
+      to={"/" + category.toLowerCase()}
       >
       <div
       className={category}
