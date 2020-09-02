@@ -11,6 +11,7 @@ module.exports = {
         url: `https://icd.wordsinspace.net/graphql`,
         schema: {
           perPage: 50,
+          timeout: 300000,
         },
         verboseOutput: true,
         html: {

@@ -12,7 +12,7 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange}) => {
         style={{
           margin: 0,
           textAlign: 'left',
-          wordWrap: 'break-word'
+          // wordWrap: 'break-word'
         }}
         className={isSelected ? 'tag tag-active' : 'tag'}
         >
@@ -21,7 +21,7 @@ const Checkbox = ({ count, label, isSelected, onCheckboxChange}) => {
             height: '0px',
           }}
           type="checkbox"
-          name={label}
+          name={label.replace(/\s/, '\n')}
           checked={isSelected}
           onChange={onCheckboxChange}
         />
