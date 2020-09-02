@@ -5,8 +5,8 @@ exports.createPages = async ({ actions, graphql }) => {
 
 
   const { createRedirect } = actions
-  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
-  createRedirect({ fromPath: '/shannon/:year/:month/:day/:slug', toPath: '/:year/:month/:day/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //redirect rules go from most to least specific
 
   //specific pdf redirects as netlify doesn't support regex
   createRedirect({ fromPath: '/publications/DissAbstract.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/DissAbstract.pdf', isPermanent: true, force: true, statusCode: 301 })
@@ -25,17 +25,29 @@ exports.createPages = async ({ actions, graphql }) => {
   createRedirect({ fromPath: '/publications/NotesListsCFP.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/NotesListsCFP.pdf', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/publications/SilentInvisibleCity.pdf', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/publications/SilentInvisibleCity.pdf', isPermanent: true, force: true, statusCode: 301 })
 
-  //other than that, links to /publications reference an article
+  //pages that previously had parents
   createRedirect({ fromPath: '/publications/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
-
-  //all the rest
   createRedirect({ fromPath: '/presentations/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/projects/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/teaching/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/blog/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //teaching to classes
   createRedirect({ fromPath: '/teaching/', toPath: '/classes/', isPermanent: true, force: true, statusCode: 301 })
+
+  //archives and random folders from her site
   createRedirect({ fromPath: '/shannon-archive-2017/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/secure/:slug', toPath: 'https://icd.wordsinspace.net/secure/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //images
   createRedirect({ fromPath: '/shannon/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //pages
+  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 301 })
+
+  //posts
+  createRedirect({ fromPath: '/shannon/:year/:month/:day/:slug', toPath: '/:year/:month/:day/:slug', isPermanent: true, force: true, statusCode: 301 })
+
 
   // ------------
   // ------------ Create Pages and Posts endpoints
