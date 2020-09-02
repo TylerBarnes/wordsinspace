@@ -5,14 +5,18 @@ exports.createPages = async ({ actions, graphql }) => {
 
 
   const { createRedirect } = actions
-  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/presentations/:slug', toPath: '/:slug', force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/publications/:slug', toPath: '/:slug', force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/projects/:slug', toPath: '/:slug', force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/shannon/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/shannon/:year/:month/:day/:slug', toPath: '/:year/:month/:day/:slug', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/presentations/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/publications/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/projects/:slug', toPath: '/:slug', isPermanent: true, force: true, statusCode: 200 })
   // createRedirect({ fromPath: '/work/:slug', toPath: '/:slug', force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/teaching/:slug', toPath: '/classes/:slug', force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/teaching/', toPath: '/classes/', force: true, statusCode: 200 })
-  createRedirect({ fromPath: '/*.pdf', toPath: 'https://icd.wordsinspace.net/:splat', force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/teaching/:slug', toPath: '/classes/:slug', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/teaching/', toPath: '/classes/', isPermanent: true, force: true, statusCode: 200 })
+  createRedirect({ fromPath: '/shannon/shannon-archive-2017/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/shannon/secure/:slug', toPath: 'https://icd.wordsinspace.net/secure/:slug', isPermanent: true, force: true, statusCode: 301 })
+  createRedirect({ fromPath: '/shannon/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
+
   // ------------
   // ------------ Create Pages and Posts endpoints
   // ------------
