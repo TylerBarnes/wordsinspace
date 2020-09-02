@@ -482,7 +482,7 @@ picture source {
 
 .content img, .content > .gatsby-image-wrapper {
   max-width: 56vw !important;
-  height: auto !important;
+  height: auto;
 }
 
 .mobile-content img {

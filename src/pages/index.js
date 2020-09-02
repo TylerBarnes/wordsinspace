@@ -89,7 +89,7 @@ export default function HomePage() {
         </div>
 
         <div className="Sticker"
-          style={styleSVGR}>
+          style={styleSVGL}>
           <Link to={'/classes'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
         </div>
 
@@ -109,7 +109,7 @@ export default function HomePage() {
         </div>
 
         <div className="Sticker"
-          style={styleSVGL}>
+          style={styleSVGR}>
           <Link to ={'/about/'}><Sticker_Words_text id='sticker-words-text' /><Sticker_Words id='sticker-words' /></Link>
         </div>
 
