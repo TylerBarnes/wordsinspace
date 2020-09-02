@@ -89,8 +89,8 @@ export default function HomePage() {
         </div>
 
         <div className="Sticker"
-          style={styleSVGL}>
-          <Link to ={'/about/'}><Sticker_Words_text id='sticker-words-text' /><Sticker_Words id='sticker-words' /></Link>
+          style={styleSVGR}>
+          <Link to={'/classes'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
         </div>
 
         <div
@@ -109,8 +109,8 @@ export default function HomePage() {
         </div>
 
         <div className="Sticker"
-          style={styleSVGR}>
-          <Link to={'/classes'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
+          style={styleSVGL}>
+          <Link to ={'/about/'}><Sticker_Words_text id='sticker-words-text' /><Sticker_Words id='sticker-words' /></Link>
         </div>
 
         <div className="Sticker"
