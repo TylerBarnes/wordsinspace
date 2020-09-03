@@ -55,6 +55,7 @@
   margin: 0 10px 0 0;
   display: inline-block;
   overflow-wrap: break-all;
+  text-indent: 6px;
 }
 
 @-moz-document url-prefix() {
