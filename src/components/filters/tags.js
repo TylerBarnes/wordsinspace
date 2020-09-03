@@ -11,6 +11,8 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const topTags = tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
   const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
 
+  console.log('tags are', tags)
+
 	const breakpoints = useBreakpoint()
 	const {mobileBrowserLayout} = getResponsiveBrowserVars(breakpoints)
 
@@ -30,7 +32,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
       {topTags && topTags.map((tag, index) => (
 				<Checkbox
 		      key={index}
-		      label={tag.name.replace(/\s/, '\n')}
+		      label={tag.name}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}
@@ -40,7 +42,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
      	{showExtra && extraTags.map((tag, index) => (
 				<Checkbox
 		      key={index}
-		      label={tag.name.replace(/\s/, '\n')}
+		      label={tag.name}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
 		      onCheckboxChange={selectTags}

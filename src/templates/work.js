@@ -27,8 +27,9 @@ export default function Work({data}) {
 
   // handles clicking on Tags by updating the 'checked' key-value for every tag
   function handleSelection(e) {
+    console.log('selected', e.target);
     const { name } = e.target;
-    setTags(tags.map(tag => tag.name === name ? {...tag, checked: !tag.checked } : tag))
+    setTags(tags.map(tag => tag.name.replace(/[\n\s]/, '-') === name.replace(/[\n\s]/, '-') ? {...tag, checked: !tag.checked } : tag))
   }
 
   // handles clearing the Tag selections and toggling TagMode
