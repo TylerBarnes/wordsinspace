@@ -142,17 +142,6 @@
 
 }
 
-/* testing hover arrow to indicate scrollover for more */
-/* .blocks-gallery-item:hover {
-  background-image: url('/slideshow_scroll.svg');
-  background-position: right center;
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-clip: border-box;
-  background-attachment: auto;
-} */
-
 .wp-block-gallery ul, .wp-block-gallery li{
   list-style-type: none;
   margin: 0;
@@ -172,6 +161,7 @@
 .blocks-gallery-grid figure {
   height: 100%;
   width: inherit;
+  margin-bottom: 0 !important;
 }
 
 .blocks-gallery-grid  {
@@ -481,12 +471,14 @@ picture source {
 .content div, .content div div {
   width: inherit;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
-.mobile-content div, .mobile-content div div {
+.mobile-content > div, .mobile-content > p > div {
   width: inherit;
   max-width: 84vw !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content img, .content > .gatsby-image-wrapper {
