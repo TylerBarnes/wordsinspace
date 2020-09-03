@@ -173,8 +173,8 @@
   /* override inline width */
   width: inherit !important;
   /* where max image height is set */
-  height: 40vh;
-  max-height: 40vh;
+  height: 50vh;
+  max-height: 50vh;
 }
 
 .content .blocks-gallery-grid img  {
@@ -199,9 +199,9 @@
 
 /****** Styling non-GUTENBERG slideshow ******/
 
+/* structure:
 .gallery > figure.gallery-item > .gallery-icon > a > div > picture > img {
-
-}
+} */
 
 .gallery {
   display: -webkit-box;
@@ -255,7 +255,10 @@ figure.gallery-item > .gallery-icon > a > div {
   /* override inline width */
   width: inherit !important;
   /* where max image height is set */
-  max-height: 40vh;
+  max-height: 50vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 figure.gallery-item > .gallery-icon > a > div picture {
@@ -300,9 +303,8 @@ figure.gallery-item > .gallery-icon > a > div img {
 }
 
 .mobile-content .slideshowFrame {
-  height: 40vh;
   margin-bottom: 4vh;
-  max-height: 40vh;
+  height: auto;
 }
 
 .slideshowWrapper {
@@ -315,7 +317,6 @@ figure.gallery-item > .gallery-icon > a > div img {
 }
 
 .slideshowWrapper {
-  height: inherit;
   overflow-x: auto;
   overflow-y: hidden;
   display: -webkit-box;
@@ -385,9 +386,8 @@ figure.gallery-item > .gallery-icon > a > div img {
 }
 
 .mobile-content .slideshowImg > picture  {
-  max-height: 40vh;
+  max-height: 50vh;
 }
-
 
 .mobile-content .slideshowImgWrapper > div  {
   padding: 0 0 0 0 !important;
