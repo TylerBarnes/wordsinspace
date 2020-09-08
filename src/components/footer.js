@@ -18,7 +18,7 @@ const Footer = () => {
       <div
       	style={footerStyles}
   	    className="metadata">
-        Copyright All Rights Reserved © 2020
+        © Please credit me if you use my work and consult with me before reusing copyrighted work :)
       </div>
       <div style={{
         margin: '10vh 0vh 1vh 0',
@@ -28,7 +28,6 @@ const Footer = () => {
 	      <Link to={'/colophon'} className="metadata"><Colophon id='sticker-colophon' /></Link>
       </div>
     </div>
-
   )
 }
 

@@ -55,36 +55,6 @@
   opacity: 0;
 }
 
-/* .reader-body:before {
-  content  : "";
-  position : absolute;
-  z-index  : 1;
-  top: 50px;
-  left: 50px;
-  pointer-events   : none;
-  background-image : linear-gradient(to bottom,
-                   rgba(245,245,247, 1) 10%,
-                   rgba(245,245,247, 0.7) 50%,
-                   rgba(245,245,247, 0) 100%);
-  width: calc(100vw - 50px);
-  height   : 1vh;
-}
-
-.reader-body-mobile:before {
-  content  : "";
-  position : absolute;
-  z-index  : 1;
-  top: 50px;
-  left: 0px;
-  pointer-events   : none;
-  background-image : linear-gradient(to bottom,
-                 rgba(243,243,243, 1) 10%,
-                 rgba(243,243,243, 0.7) 50%,
-                 rgba(243,243,243, 0) 100%);
-  width: 100vw;
-  height   : 1vh;
-} */
-
 .reader-body-mobile {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -105,15 +75,6 @@
 .content .wp-block-gallery, .mobile-content .wp-block-gallery {
   height: auto;
   width: inherit;
-}
-
-.blocks-gallery-grid {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.blocks-gallery-grid::-webkit-scrollbar {
-  display: none;
 }
 
 .blocks-gallery-grid {
@@ -305,15 +266,6 @@ figure.gallery-item > .gallery-icon > a > div img {
 .mobile-content .slideshowFrame {
   margin-bottom: 4vh;
   height: auto;
-}
-
-.slideshowWrapper {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.slideshowWrapper::-webkit-scrollbar {
-  display: none;
 }
 
 .slideshowWrapper {
