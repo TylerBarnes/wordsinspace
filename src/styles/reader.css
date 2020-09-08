@@ -55,36 +55,6 @@
   opacity: 0;
 }
 
-/* .reader-body:before {
-  content  : "";
-  position : absolute;
-  z-index  : 1;
-  top: 50px;
-  left: 50px;
-  pointer-events   : none;
-  background-image : linear-gradient(to bottom,
-                   rgba(245,245,247, 1) 10%,
-                   rgba(245,245,247, 0.7) 50%,
-                   rgba(245,245,247, 0) 100%);
-  width: calc(100vw - 50px);
-  height   : 1vh;
-}
-
-.reader-body-mobile:before {
-  content  : "";
-  position : absolute;
-  z-index  : 1;
-  top: 50px;
-  left: 0px;
-  pointer-events   : none;
-  background-image : linear-gradient(to bottom,
-                 rgba(243,243,243, 1) 10%,
-                 rgba(243,243,243, 0.7) 50%,
-                 rgba(243,243,243, 0) 100%);
-  width: 100vw;
-  height   : 1vh;
-} */
-
 .reader-body-mobile {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -100,25 +70,11 @@
 }
 
 
-/*****Styling new layout as slideshow***/
+/*****Styling new layout as GUTENBERG slideshow***/
 
-.wp-block-gallery {
+.content .wp-block-gallery, .mobile-content .wp-block-gallery {
   height: auto;
   width: inherit;
-}
-
-.mobile-content .wp-block-gallery {
-  height: auto;
-  width: inherit;
-}
-
-.blocks-gallery-grid {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.blocks-gallery-grid::-webkit-scrollbar {
-  display: none;
 }
 
 .blocks-gallery-grid {
@@ -142,17 +98,6 @@
 
 }
 
-/* testing hover arrow to indicate scrollover for more */
-/* .blocks-gallery-item:hover {
-  background-image: url('/slideshow_scroll.svg');
-  background-position: right center;
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-clip: border-box;
-  background-attachment: auto;
-} */
-
 .wp-block-gallery ul, .wp-block-gallery li{
   list-style-type: none;
   margin: 0;
@@ -166,25 +111,16 @@
 .mobile-content .blocks-gallery-item {
   width: inherit;
   height: auto;
-  padding: 0 20px 0 0;
 }
 
 .blocks-gallery-grid figure {
   height: 100%;
   width: inherit;
+  margin-bottom: 0 !important;
 }
 
 .blocks-gallery-grid  {
   width: inherit;
-}
-
-li.blocks-gallery-item:last-child {
-  background:
-    -webkit-gradient(linear, left top, right top, from(rgba(245, 245, 255, 0)), color-stop(50%, rgba(245, 245, 255, 0)), color-stop(50%, rgba(245, 245, 255, 0.8)), color-stop(60%, rgba(245, 245, 255, 1)), to(rgba(245, 245, 255, 1)));
-  background:
-    -o-linear-gradient(left, rgba(245, 245, 255, 0), rgba(245, 245, 255, 0) 50%, rgba(245, 245, 255, 0.8) 50%, rgba(245, 245, 255, 1) 60%, rgba(245, 245, 255, 1) 100%);
-  background:
-    linear-gradient(90deg, rgba(245, 245, 255, 0), rgba(245, 245, 255, 0) 50%, rgba(245, 245, 255, 0.8) 50%, rgba(245, 245, 255, 1) 60%, rgba(245, 245, 255, 1) 100%);
 }
 
 .content .blocks-gallery-item > figure > div  {
@@ -198,7 +134,8 @@ li.blocks-gallery-item:last-child {
   /* override inline width */
   width: inherit !important;
   /* where max image height is set */
-  height: auto;
+  height: 50vh;
+  max-height: 50vh;
 }
 
 .content .blocks-gallery-grid img  {
@@ -208,15 +145,115 @@ li.blocks-gallery-item:last-child {
 }
 
 .mobile-content .blocks-gallery-grid img  {
-  padding: 0 4vw 0 4vw;
+  padding: 0 2vw 0 2vw;
   -o-object-fit: contain !important;
      object-fit: contain !important;
+     max-height: inherit;
 }
 
 .blocks-gallery-grid figure picture {
   width: inherit;
   height: inherit;
+  max-height: inherit;
+  display: flex;
 }
+
+/****** Styling non-GUTENBERG slideshow ******/
+
+/* structure:
+.gallery > figure.gallery-item > .gallery-icon > a > div > picture > img {
+} */
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: scroll;
+  width: inherit;
+  margin: 0 auto 4vh auto;
+  height: auto;
+  padding: 0;
+  background:
+    linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
+    linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
+    linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
+}
+
+figure.gallery-item {
+  margin-bottom: 0 !important;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: inherit;
+}
+
+figure.gallery-item > .gallery-icon {
+  width: inherit !important;
+  padding: 2vh 0;
+}
+
+figure.gallery-item > .gallery-icon > a {
+  width: inherit !important;
+}
+
+figure.gallery-item > .gallery-icon > a > div {
+  /* override inline width */
+  width: inherit !important;
+  /* where max image height is set */
+  height: 60vh;
+}
+
+.mobile-content figure.gallery-item > .gallery-icon > a > div {
+  /* override inline width */
+  width: inherit !important;
+  /* where max image height is set */
+  max-height: 50vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+figure.gallery-item > .gallery-icon > a > div picture {
+  /* override inline width */
+  width: inherit !important;
+  margin: 2vw;
+}
+
+.mobile-content figure.gallery-item > .gallery-icon > a > div picture {
+  /* override inline width */
+  width: inherit !important;
+  margin: 0;
+  max-height: inherit;
+}
+
+figure.gallery-item > .gallery-icon > a > div img {
+  /* override inline width */
+  width: inherit !important;
+  /* where max image height is set */
+  height: 60vh;
+  padding: 0 2vw 0 2vw;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
+.mobile-content figure.gallery-item > .gallery-icon > a > div img {
+  /* override inline width */
+  width: inherit !important;
+  /* where max image height is set */
+  max-height: inherit;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
 
 /*****Styling old layout as slideshow***/
 
@@ -227,21 +264,11 @@ li.blocks-gallery-item:last-child {
 }
 
 .mobile-content .slideshowFrame {
-  height: auto;
   margin-bottom: 4vh;
+  height: auto;
 }
 
 .slideshowWrapper {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.slideshowWrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.slideshowWrapper {
-  height: inherit;
   overflow-x: auto;
   overflow-y: hidden;
   display: -webkit-box;
@@ -263,6 +290,7 @@ li.blocks-gallery-item:last-child {
     linear-gradient(217deg, rgba(255,0,0,.04), rgba(255,255,255,0) 40.71%),
     linear-gradient(127deg, rgba(0,255,0,.04), rgba(255,255,255,0) 40.71%),
     linear-gradient(336deg, rgba(0,0,255,.04), rgba(0,0,255,0) 40.71%);
+    max-height: inherit;
 }
 
 .content .slideshowImgWrapper {
@@ -275,6 +303,7 @@ li.blocks-gallery-item:last-child {
 
 .mobile-content .slideshowImgWrapper {
   height: inherit;
+  max-height: inherit;
   width: 84vw;
   padding: 2vh 2vw;
   display: flex;
@@ -289,6 +318,7 @@ li.blocks-gallery-item:last-child {
 
 .mobile-content .slideshowImgWrapper > *  {
   width: 80vw;
+  max-height: inherit;
 }
 
 .content .slideshowImgWrapper img  {
@@ -307,6 +337,10 @@ li.blocks-gallery-item:last-child {
   width: 80vw !important;
 }
 
+.mobile-content .slideshowImg > picture  {
+  max-height: 50vh;
+}
+
 .mobile-content .slideshowImgWrapper > div  {
   padding: 0 0 0 0 !important;
   width: inherit !important;
@@ -318,7 +352,7 @@ li.blocks-gallery-item:last-child {
 .mobile-content .slideshowImg  {
   padding: 0;
   max-width: 80vw !important;
-  max-height: auto ;
+  max-height: inherit ;
   -o-object-fit: contain !important;
      object-fit: contain !important;
 }
@@ -326,9 +360,9 @@ li.blocks-gallery-item:last-child {
 .mobile-content .slideshowImgWrapper img  {
   padding: 0;
   max-width: 80vw;
-  max-height: auto ;
   -o-object-fit: contain !important;
      object-fit: contain !important;
+   max-height: inherit;
 
 }
 
@@ -481,12 +515,14 @@ picture source {
 .content div, .content div div {
   width: inherit;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
-.mobile-content div, .mobile-content div div {
+.mobile-content > div, .mobile-content > p > div {
   width: inherit;
   max-width: 84vw !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content img, .content > .gatsby-image-wrapper {
@@ -591,35 +627,6 @@ picture source {
   background: rgba(255,255,255,0.4);
 }
 
-.gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  overflow: scroll;
-  width: 70vw;
-  margin: 0 auto;
-  height: 70vh;
-  padding: 0;
-  border: 1px solid #5B5A7C;
-
-}
-
-.gallery-item {
-  margin: 1vh 1vw;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-
 
 figcaption {
   color: #5B5A7C;
@@ -637,15 +644,11 @@ figcaption {
   -webkit-backface-visibility: hidden;
 }
 
-.wp-block-gallery {
+.wp-block-gallery, .slideshowFrame, .gallery * {
   cursor: url("https://ia601508.us.archive.org/28/items/cursor-right_20200831_1918/Cursor_Right.png") 32 29, e-resize;
 }
 
-.slideshowFrame {
-  cursor: url("https://ia601508.us.archive.org/28/items/cursor-right_20200831_1918/Cursor_Right.png") 32 29, e-resize;
-}
-
-.slideshowWrapper:hover:after {
+.wp-block-gallery:hover:after, .gallery:hover:after, .slideshowWrapper:hover:after {
   content: 'scroll right for more >';
   font-family: 'Bespoke_Caption';
   font-style: normal;

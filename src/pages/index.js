@@ -15,16 +15,18 @@ import {getResponsiveHomeVars} from "../utils/dom"
 import MobileFooter from '../components/mobile/mobileFooter'
 import Footer from '../components/footer'
 
+import Sticker_About from '../images/assets/Sticker_About.svg'
+import Sticker_About_text from '../images/assets/Sticker_About_text.svg'
 import Sticker_Email from '../images/assets/Sticker_Email.svg'
 import Sticker_Email_text from '../images/assets/Sticker_Email_text.svg'
-import Sticker_Browse from '../images/assets/Sticker_Browse.svg'
-import Sticker_Browse_text from '../images/assets/Sticker_Browse_text.svg'
+import Sticker_Publications from '../images/assets/Sticker_Publications.svg'
+import Sticker_Publications_text from '../images/assets/Sticker_Publications_text.svg'
 import Sticker_CV from '../images/assets/Sticker_CV.svg'
 import Sticker_CV_text from '../images/assets/Sticker_CV_text.svg'
 import Sticker_Classes from '../images/assets/Sticker_Classes.svg'
 import Sticker_Classes_text from '../images/assets/Sticker_Classes_text.svg'
-import Sticker_Words from '../images/assets/Sticker_Words.svg'
-import Sticker_Words_text from '../images/assets/Sticker_Words_text.svg'
+import Sticker_Projects from '../images/assets/Sticker_Projects.svg'
+import Sticker_Projects_text from '../images/assets/Sticker_Projects_text.svg'
 import Sticker_Pinboard from '../images/assets/Sticker_Pinboard.svg'
 import Sticker_Pinboard_text from '../images/assets/Sticker_Pinboard_text.svg'
 import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
@@ -85,12 +87,12 @@ export default function HomePage() {
 
         <div className="Sticker"
           style={styleSVGR}>
-          <Link to={'/work/'}><Sticker_Browse_text id='sticker-browse-text' /><Sticker_Browse id='sticker-browse' /></Link>
+          <Link to={'/classes'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
         </div>
 
         <div className="Sticker"
           style={styleSVGL}>
-          <Link to={'/classes'}><Sticker_Classes_text id='sticker-classes-text' /><Sticker_Classes id='sticker-classes' /></Link>
+          <Link to={'/publications'}><Sticker_Publications_text id='sticker-publications-text' /><Sticker_Publications id='sticker-publications' /></Link>
         </div>
 
         <div
@@ -110,7 +112,7 @@ export default function HomePage() {
 
         <div className="Sticker"
           style={styleSVGR}>
-          <Link to ={'/about/'}><Sticker_Words_text id='sticker-words-text' /><Sticker_Words id='sticker-words' /></Link>
+          <Link to ={'/projects'}><Sticker_Projects_text id='sticker-projects-text' /><Sticker_Projects id='sticker-projects' /></Link>
         </div>
 
         <div className="Sticker"
@@ -150,6 +152,7 @@ export default function HomePage() {
               justifyContent: 'space-between',
               height: '120px',
             }}>
+            <a aria-label='about' href="/about/"><Sticker_About_text id='sticker-about-text' /><Sticker_About style={{height: '120%'}} id='sticker-about' /></a>
             <a aria-label='email' href="mailto:matterns@newschool.edu?subject=Hi Shannon!"><Sticker_Email_text id='sticker-email-text' /><Sticker_Email style={{height: '120%'}} id='sticker-email' /></a>
             <a aria-label='twitter' href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter style={{height: '120%'}} id='sticker-twitter' /></a>
             <a aria-label='CV' href="https://wordsinspace.net/shannon/wp-content/uploads/2019/09/matterncv2019.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV style={{height: '120%'}} id='sticker-cv'/></a>
