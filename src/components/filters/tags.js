@@ -9,7 +9,7 @@ import Checkbox from './checkbox'
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-	const tagCutoff = 5
+	const tagCutoff = 20
 
 	const location = useLocation();
 	const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
