@@ -1,20 +1,30 @@
 import React, {useState} from "react"
 
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
+import {useLocation} from '@reach/router'
+
 import {getResponsiveBrowserVars} from "../../utils/dom"
 import Checkbox from './checkbox'
 
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const [showExtra, setShowExtra] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-	const tagCutoff = 20
-	const topTags = tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
-  const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
+	const tagCutoff = 5
+
+	const location = useLocation();
+	const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
+
+	const pinnedTag = 'books'
+	const topTags = (catName === 'publications')
+								? [...tags.filter(tag => tag.name === pinnedTag), ...tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff).filter(tag => tag.name !== pinnedTag)]
+								: tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
+
+	const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
 
 	const breakpoints = useBreakpoint()
 	const {mobileBrowserLayout} = getResponsiveBrowserVars(breakpoints)
 
-  return (
+	return (
    <div
 	 		className={mobileBrowserLayout ? 'no-scroll' : isTagMode ? 'tag-menu-on no-scroll  tag-right-gradient' : 'tag-menu no-scroll  tag-right-gradient'}
 	   	style={{

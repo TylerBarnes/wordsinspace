@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `https://icd.wordsinspace.net/graphql`,
+        url: `http://localhost:8888/test/graphql`,
         schema: {
           perPage: 50,
           timeout: 300000,
