@@ -14,9 +14,9 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const location = useLocation();
 	const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
 
-	const pinnedTag = 'books'
+	const pinnedTags = ['books', 'articles', 'chapters', 'reviews', 'editorial']
 	const topTags = (catName === 'publications')
-								? [...tags.filter(tag => tag.name === pinnedTag), ...tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff).filter(tag => tag.name !== pinnedTag)]
+								? [...tags.filter(tag => pinnedTags.includes(tag.name.toLowerCase())), ...tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff).filter(tag => !pinnedTags.includes(tag.name.toLowerCase()) )]
 								: tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
 
 	const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
