@@ -32,8 +32,10 @@ function ClientOnly({ children, ...delegated }) {
 
 export const wrapPageElement = ({ element }) => (
 	<ClientOnly>
-    <SEO>
-  	  <ApolloProvider client={client}>{element}</ApolloProvider>
-    </SEO>
+  	  <ApolloProvider client={client}>
+        <SEO>
+          {element}
+        </SEO>
+      </ApolloProvider>
   </ClientOnly>
 );
