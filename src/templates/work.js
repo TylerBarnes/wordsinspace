@@ -19,9 +19,9 @@ export default function Work({data}) {
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
   // initialize the items to all of the Pages and all of the Posts
-  const initial = sortByDate([...data.allWpPage.nodes, ...data.allWpPost.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
+  const initial = sortByDate([...data.allWpPage.nodes, ...data.allWpPost.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
   const [isTagMode, setTagMode] = useState(false)
-  
+
   // initialize the tags to all of the Tags available
   const [tags, setTags] = useState(useTags())
 
@@ -43,23 +43,28 @@ export default function Work({data}) {
     setTagMode(tags.filter(tag=>tag.checked).length > 0)
   }, [tags])
 
-  // ========== 
+  // ==========
   // Apollo query
-  // ========== 
+  // ==========
 
   // Apollo useQuery (imported as a hook) fetches Posts and Pages of selected Tags array
   const response = useTagSelection(tags.filter(tag=> tag.checked), isTagMode);
-  const tagQueryResults = isTagMode && !response.loading 
-                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
-                          : [] 
+  const tagQueryResults = isTagMode && !response.loading
+                          ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
+                          : []
   return (
     <Browser>
-      <SEO title="Work" />
-      {showMobileFilters && 
+      <SEO
+        title='Work'
+        description='Words in Space is the work of Shannon Mattern.'
+        author='@shannonmattern'
+        image='https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png'
+      />
+      {showMobileFilters &&
         <MobileFilters />
       }
       <List items={isTagMode ? tagQueryResults : initial} loading={response.loading} isTagMode={isTagMode}/>
-      {showDesktopFilters && 
+      {showDesktopFilters &&
         <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode}/>
       }
     </Browser>
@@ -135,4 +140,3 @@ export const query = graphql`
     }
   }
 `
-

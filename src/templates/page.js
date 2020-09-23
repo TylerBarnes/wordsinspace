@@ -16,8 +16,8 @@ export default function pageTemplate({ data }) {
 
   return (
     <Reader>
+      <SEO title={title} />
       <div>
-        <SEO title={title} />
         {/* ==================== Date, Categories, Tags ====================  */}
         {!hiddenTaxonomies && <ArticleTaxonomy date={date} tags={tags} categories={categories} />}
 

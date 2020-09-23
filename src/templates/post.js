@@ -15,8 +15,8 @@ export default function postTemplate({ data }) {
 
   return (
     <Reader>
+      <SEO title={title} />
       <div>
-        <SEO title={title} />
         {/* ==================== Date, Categories, Tags ====================  */}
         <ArticleTaxonomy date={date} tags={tags} categories={categories} />
 
