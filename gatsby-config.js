@@ -3,7 +3,6 @@ module.exports = {
     title: `Words in Space`,
     description: `Words in Space is the work of Shannon Mattern.`,
     author: `Work: Shannon Mattern. Design: FOREIGN OBJECTS`,
-    image: `images/twittercard.png`
   },
   plugins: [
     {
@@ -117,8 +116,8 @@ module.exports = {
         modalProps: { },
       }
     },
-  {
-  resolve: `gatsby-plugin-netlify-redirect`,
+    {
+      resolve: `gatsby-plugin-netlify-redirect`,
     },
     {
       resolve: "gatsby-plugin-breakpoints",
@@ -128,6 +127,14 @@ module.exports = {
         }
       }
     },
-  `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-social-cards`,
+        ],
+      },
+    },
   ],
 }

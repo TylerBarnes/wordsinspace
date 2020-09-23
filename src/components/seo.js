@@ -12,7 +12,6 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
-            image
           }
         }
       }
@@ -21,54 +20,14 @@ function SEO({ description, lang, meta, title }) {
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: site.siteMetadata.description,
-        },
-        {
-          property: `og:title`,
-          content: site.siteMetadata.title,
-        },
-        {
-          property: `og:description`,
-          content: site.siteMetadata.description,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: 'Words in Space',
-        },
-        {
-          name: `twitter:description`,
-          content: site.siteMetadata.description,
-        },
-        {
-          name: `twitter:card`,
-          content: 'summary_large_image',
-        },
-        {
-          name: `twitter:image`,
-          content: 'https://www.dropbox.com/s/441pwjoxj43hzzo/twittercard.png',
-        },
-      ].concat(meta)}
-    />
+      title={site.siteMetadata.title}
+      description={site.siteMetadata.description}>
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:image"
+        content={'https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png'}
+      />
+    </Helmet>
   )
 }
 
