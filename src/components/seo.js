@@ -33,7 +33,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: site.siteMetadata.description,
+          content: site.siteMetadata.title,
         },
         {
           property: `og:description`,
@@ -53,7 +53,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: site.siteMetadata.title,
+          content: 'Words in Space',
         },
         {
           name: `twitter:description`,
@@ -65,7 +65,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: site.siteMetadata.image,
+          content: 'https://www.dropbox.com/s/441pwjoxj43hzzo/twittercard.png',
         },
       ].concat(meta)}
     />
