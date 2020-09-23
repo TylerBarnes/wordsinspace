@@ -68,48 +68,9 @@ export default function HomePage() {
     <Home>
       <SEO
         title='Home'
-        meta={[
-          {
-            name: `description`,
-            content: `Words in Space is the work of Shannon Mattern.`,
-          },
-          {
-            property: `og:title`,
-            content: `Words in Space`,
-          },
-          {
-            property: `og:description`,
-            content: `Words in Space is the work of Shannon Mattern.`,
-          },
-          {
-            property: `og:type`,
-            content: `website`,
-          },
-          {
-            name: `og:image`,
-            content: `https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png`,
-          },
-          {
-            name: `twitter:card`,
-            content: `summary`,
-          },
-          {
-            name: `twitter:creator`,
-            content: `@shannonmattern`,
-          },
-          {
-            name: `twitter:title`,
-            content: `Words in Space`,
-          },
-          {
-            name: `twitter:description`,
-            content: `Words in Space is the work of Shannon Mattern.`,
-          },
-          {
-            name: `twitter:card`,
-            content: `summary_large_image`,
-          }
-        ]}
+        description='Words in Space is the work of Shannon Mattern.'
+        author='@shannonmattern'
+        image='https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png'
       />
       <div className='home-body'
         style={{
