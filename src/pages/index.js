@@ -109,7 +109,7 @@ export default function HomePage() {
             name: `twitter:card`,
             content: `summary_large_image`,
           }
-        ]
+        ]}
       />
       <div className='home-body'
         style={{
