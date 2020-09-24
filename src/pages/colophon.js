@@ -75,11 +75,8 @@ export default function Colophon() {
 
               <p><a href="https://www.foreignobjects.net">Foreign Objects</a> is an itinerant design and research studio exploring the internet through the production of cultural artifacts. Its members are based in New York, London and Toronto.</p>
 
-
             </div>
           </div>
-        <ArticleFooter />
-
       </Home>
   )
 }
