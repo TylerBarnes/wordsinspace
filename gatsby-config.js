@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Words in Space`,
     description: `Words in Space is the work of Shannon Mattern.`,
-    author: `Work: Shannon Mattern. Design: FOREIGN OBJECTS`,
+    author: `@shannonmattern`,
   },
   plugins: [
     {
@@ -116,8 +116,8 @@ module.exports = {
         modalProps: { },
       }
     },
-  {
-  resolve: `gatsby-plugin-netlify-redirect`,
+    {
+      resolve: `gatsby-plugin-netlify-redirect`,
     },
     {
       resolve: "gatsby-plugin-breakpoints",
@@ -127,6 +127,6 @@ module.exports = {
         }
       }
     },
-  `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify`,
   ],
 }

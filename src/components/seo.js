@@ -26,7 +26,6 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -45,6 +44,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          name: `og:image`,
+          content: `https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -60,10 +63,15 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        }
       ].concat(meta)}
     />
   )
 }
+
 
 SEO.defaultProps = {
   lang: `en`,

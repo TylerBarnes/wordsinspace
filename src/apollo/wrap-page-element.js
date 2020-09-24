@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import fetch from "isomorphic-fetch"
+import SEO from "../components/seo"
 
 const httpLink = createHttpLink({
-    uri: `https://icd.wordsinspace.net/graphql`, //http://localhost:8888/test/graphql 
+    uri: `https://icd.wordsinspace.net/graphql`, //http://localhost:8888/test/graphql
 });
 
 const client = new ApolloClient({
@@ -31,6 +32,8 @@ function ClientOnly({ children, ...delegated }) {
 
 export const wrapPageElement = ({ element }) => (
 	<ClientOnly>
-	  <ApolloProvider client={client}>{element}</ApolloProvider>
+  	  <ApolloProvider client={client}>
+        {element}
+      </ApolloProvider>
   </ClientOnly>
 );

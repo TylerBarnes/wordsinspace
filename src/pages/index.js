@@ -66,7 +66,12 @@ export default function HomePage() {
 
   return (
     <Home>
-      <SEO title='Home' />
+      <SEO
+        title='Home'
+        description='Words in Space is the work of Shannon Mattern.'
+        author='@shannonmattern'
+        image='https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png'
+      />
       <div className='home-body'
         style={{
           display: 'flex',
