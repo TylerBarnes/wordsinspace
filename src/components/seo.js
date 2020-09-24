@@ -26,10 +26,6 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      author={author}
-      description={description}
-      image={'https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png'}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
