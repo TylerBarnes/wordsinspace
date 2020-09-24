@@ -39,6 +39,34 @@ exports.createPages = async ({ actions, graphql }) => {
   createRedirect({ fromPath: '/shannon-archive-2017/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
   createRedirect({ fromPath: '/secure/:slug', toPath: 'https://icd.wordsinspace.net/secure/:slug', isPermanent: true, force: true, statusCode: 301 })
 
+  //archived classes
+  createRedirect({ fromPath: '/UMS/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/UMS/:date'})
+  createRedirect({ fromPath: '/UMS/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/UMS/:date/:slug'})
+  createRedirect({ fromPath: '/UMSReadings/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/UMSReadings/:slug'})
+  createRedirect({ fromPath: '/mapsmedia/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/mapsmedia/:date'})
+  createRedirect({ fromPath: '/mapsmedia/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/mapsmedia/:date/:slug'})
+  createRedirect({ fromPath: '/media-architecture/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/media-architecture/:date'})
+  createRedirect({ fromPath: '/media-architecture/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/media-architecture/:date/:slug'})
+  createRedirect({ fromPath: '/urban-media-archaeology/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/urban-media-archaeology/:date'})
+  createRedirect({ fromPath: '/urban-media-archaeology/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/urban-media-archaeology/:date/:slug'})
+  createRedirect({ fromPath: '/interfaces/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/interfaces/:date'})
+  createRedirect({ fromPath: '/interfaces/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/interfaces/:date/:slug'})
+  createRedirect({ fromPath: '/lib-arch-data/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/lib-arch-data/:date'})
+  createRedirect({ fromPath: '/lib-arch-data/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/lib-arch-data/:date/:slug'})
+  createRedirect({ fromPath: '/sound-space/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/sound-space/:date'})
+  createRedirect({ fromPath: '/sound-space/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/sound-space/:date/:slug'})
+  createRedirect({ fromPath: '/urbanintel/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/urbanintel/:date'})
+  createRedirect({ fromPath: '/urbanintel/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/urbanintel/:date/:slug'})
+  createRedirect({ fromPath: '/digital-archives/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/digital-archives/:date'})
+  createRedirect({ fromPath: '/digital-archives/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/digital-archives/:date/:slug'})
+  createRedirect({ fromPath: '/designingmethods/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/designingmethods/:date'})
+  createRedirect({ fromPath: '/designingmethods/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/designingmethods/:date/:slug'})
+  createRedirect({ fromPath: '/media-materiality/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/media-materiality/:date'})
+  createRedirect({ fromPath: '/media-materiality/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/media-materiality/:date/:slug'})
+  createRedirect({ fromPath: '/tools/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/tools/:date'})
+  createRedirect({ fromPath: '/tools/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/tools/:date/:slug'})
+
+
   //images
   createRedirect({ fromPath: '/shannon/wp-content/uploads/:year/:month/:slug', toPath: 'https://icd.wordsinspace.net/wp-content/uploads/:year/:month/:slug', isPermanent: true, force: true, statusCode: 301 })
 
