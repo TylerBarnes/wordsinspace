@@ -44,26 +44,26 @@ module.exports = {
           Comment: {
             limit: 0
           },
-          Tag: {
-            limit: process.env.NODE_ENV === `development`
-                   ? null
-                   : null
-          },
-          Post: {
-            limit: process.env.NODE_ENV === `development`
-                   ? null
-                   : null
-          },
-          Page: {
-            limit: process.env.NODE_ENV === `development`
-                   ? null
-                   : null
-          },
-          MediaItem: {
-            limit: process.env.NODE_ENV === `development`
-                   ? null
-                   : null
-          },
+          // Tag: {
+          //   limit: process.env.NODE_ENV === `development`
+          //          ? null
+          //          : null
+          // },
+          // Post: {
+          //   limit: process.env.NODE_ENV === `development`
+          //          ? null
+          //          : null
+          // },
+          // Page: {
+          //   limit: process.env.NODE_ENV === `development`
+          //          ? null
+          //          : null
+          // },
+          // MediaItem: {
+          //   limit: process.env.NODE_ENV === `development`
+          //          ? null
+          //          : null
+          // },
         }
       },
     },
