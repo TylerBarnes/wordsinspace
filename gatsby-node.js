@@ -40,31 +40,77 @@ exports.createPages = async ({ actions, graphql }) => {
   createRedirect({ fromPath: '/secure/:slug', toPath: 'https://icd.wordsinspace.net/secure/:slug', isPermanent: true, force: true, statusCode: 301 })
 
   //archived classes
-  createRedirect({ fromPath: '/UMS/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/UMS/:date'})
-  createRedirect({ fromPath: '/UMS/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/UMS/:date/:slug'})
-  createRedirect({ fromPath: '/UMSReadings/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/UMSReadings/:slug'})
-  createRedirect({ fromPath: '/mapsmedia/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/mapsmedia/:date'})
-  createRedirect({ fromPath: '/mapsmedia/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/mapsmedia/:date/:slug'})
-  createRedirect({ fromPath: '/media-architecture/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/media-architecture/:date'})
-  createRedirect({ fromPath: '/media-architecture/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/media-architecture/:date/:slug'})
-  createRedirect({ fromPath: '/urban-media-archaeology/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/urban-media-archaeology/:date'})
-  createRedirect({ fromPath: '/urban-media-archaeology/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/urban-media-archaeology/:date/:slug'})
-  createRedirect({ fromPath: '/interfaces/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/interfaces/:date'})
-  createRedirect({ fromPath: '/interfaces/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/interfaces/:date/:slug'})
-  createRedirect({ fromPath: '/lib-arch-data/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/lib-arch-data/:date'})
-  createRedirect({ fromPath: '/lib-arch-data/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/lib-arch-data/:date/:slug'})
-  createRedirect({ fromPath: '/sound-space/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/sound-space/:date'})
-  createRedirect({ fromPath: '/sound-space/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/sound-space/:date/:slug'})
-  createRedirect({ fromPath: '/urbanintel/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/urbanintel/:date'})
-  createRedirect({ fromPath: '/urbanintel/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/urbanintel/:date/:slug'})
-  createRedirect({ fromPath: '/digital-archives/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/digital-archives/:date'})
-  createRedirect({ fromPath: '/digital-archives/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/digital-archives/:date/:slug'})
-  createRedirect({ fromPath: '/designingmethods/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/designingmethods/:date'})
-  createRedirect({ fromPath: '/designingmethods/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/designingmethods/:date/:slug'})
-  createRedirect({ fromPath: '/media-materiality/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/media-materiality/:date'})
-  createRedirect({ fromPath: '/media-materiality/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/media-materiality/:date/:slug'})
-  createRedirect({ fromPath: '/tools/:date', toPath: 'https://icd.wordsinspace.net/classes-archive/tools/:date'})
-  createRedirect({ fromPath: '/tools/:date/:slug', toPath: 'https://icd.wordsinspace.net/classes-archive/tools/:date/:slug'})
+  createRedirect({ fromPath: '/interfaces/:date', toPath: 'https://interfaces.wordsinspace.net/:date'})
+  createRedirect({ fromPath: '/interfaces/:date/:slug', toPath: 'https://interfaces.wordsinspace.net/:date/:slug'})
+
+  createRedirect({ fromPath: '/data_archive/fall2018', toPath: 'https://dataarchive.wordsinspace.net/2018'})
+  createRedirect({ fromPath: '/data_archive/fall2018/:slug', toPath: 'https://dataarchive.wordsinspace.net/2018/:slug'})
+
+  createRedirect({ fromPath: '/mapsmedia/fall2018', toPath: 'https://mapsmedia.wordsinspace.net/2018'})
+  createRedirect({ fromPath: '/mapsmedia/fall2018/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2018/:slug'})
+
+  createRedirect({ fromPath: '/urbanintel/spring2018', toPath: 'https://urbanintel.wordsinspace.net/spring2018'})
+  createRedirect({ fromPath: '/urbanintel/spring2018/:slug', toPath: 'https://urbanintel.wordsinspace.net/spring2018/:slug'})
+
+  createRedirect({ fromPath: '/designingmethods/spring2018', toPath: 'https://designmethod.wordsinspace.net/spring2018'})
+  createRedirect({ fromPath: '/designingmethods/spring2018/:slug', toPath: 'https://designmethod.wordsinspace.net/spring2018/:slug'})
+
+  createRedirect({ fromPath: '/mapsmedia/fall2017', toPath: 'https://mapsmedia.wordsinspace.net/2017'})
+  createRedirect({ fromPath: '/mapsmedia/fall2017/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2017/:slug'})
+
+  createRedirect({ fromPath: '/data_archive/fall2017', toPath: 'https://dataarchive.wordsinspace.net/2017'})
+  createRedirect({ fromPath: '/data_archive/fall2017/:slug', toPath: 'https://dataarchive.wordsinspace.net/2017/:slug'})
+
+  createRedirect({ fromPath: '/UMS', toPath: 'https://ums.wordsinspace.net/2017'})
+  createRedirect({ fromPath: '/UMS/:slug', toPath: 'https://ums.wordsinspace.net/2017/:slug'})
+
+  createRedirect({ fromPath: '/urbanintel', toPath: 'https://urbanintel.wordsinspace.net/2017'})
+  createRedirect({ fromPath: '/urbanintel/:slug', toPath: 'https://urbanintel.wordsinspace.net/2017/:slug'})
+
+  createRedirect({ fromPath: '/mapsmedia/fall2016', toPath: 'https://mapsmedia.wordsinspace.net/2016'})
+  createRedirect({ fromPath: '/mapsmedia/fall2016/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2016/:slug'})
+
+  createRedirect({ fromPath: '/booksdata/fall2016', toPath: 'https://booksbigdata.wordsinspace.net/2016'})
+  createRedirect({ fromPath: '/booksdata/fall2016/:slug', toPath: 'https://booksbigdata.wordsinspace.net/2016/:slug'})
+
+  createRedirect({ fromPath: '/mapsmedia/fall2015', toPath: 'https://mapsmedia.wordsinspace.net/2015'})
+  createRedirect({ fromPath: '/mapsmedia/fall2015/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2015/:slug'})
+
+  createRedirect({ fromPath: '/lib-arch-data/2014-fall', toPath: 'https://libarchdata.wordsinspace.net/2014'})
+  createRedirect({ fromPath: '/lib-arch-data/2014-fall/:slug', toPath: 'https://libarchdata.wordsinspace.net/2014/:slug'})
+
+  createRedirect({ fromPath: '/sound-space/2014-spring', toPath: 'https://soundspace.wordsinspace.net/2014'})
+  createRedirect({ fromPath: '/sound-space/2014-spring/:slug', toPath: 'https://soundspace.wordsinspace.net/2014/:slug'})
+
+  createRedirect({ fromPath: '/lib-arch-data/2013-fall', toPath: 'https://libarchdata.wordsinspace.net/2013'})
+  createRedirect({ fromPath: '/lib-arch-data/2013-fall/:slug', toPath: 'https://libarchdata.wordsinspace.net/2013/:slug'})
+
+  createRedirect({ fromPath: '/urban-media-archaeology/2013-fall', toPath: 'https://uma.wordsinspace.net/2013'})
+  createRedirect({ fromPath: '/urban-media-archaeology/2013-fall/:slug', toPath: 'https://uma.wordsinspace.net/2013/:slug'})
+
+  createRedirect({ fromPath: '/lib-arch-data/2012-fall', toPath: 'https://libarchdata.wordsinspace.net/2012'})
+  createRedirect({ fromPath: '/lib-arch-data/2012-fall/:slug', toPath: 'https://libarchdata.wordsinspace.net/2012/:slug'})
+
+  createRedirect({ fromPath: '/urban-media-archaeology/2012-fall', toPath: 'https://uma.wordsinspace.net/2012'})
+  createRedirect({ fromPath: '/urban-media-archaeology/2012-fall/:slug', toPath: 'https://uma.wordsinspace.net/2012/:slug'})
+
+  createRedirect({ fromPath: '/media-architecture/2012-spring', toPath: 'https://mediaarch.wordsinspace.net/2012'})
+  createRedirect({ fromPath: '/media-architecture/2012-spring/:slug', toPath: 'https://mediaarch.wordsinspace.net/2012/:slug'})
+
+  createRedirect({ fromPath: '/media-materiality/2012-spring', toPath: 'https://mediamateriality.wordsinspace.net/2012'})
+  createRedirect({ fromPath: '/media-materiality/2012-spring/:slug', toPath: 'https://mediamateriality.wordsinspace.net/2012/:slug'})
+
+  createRedirect({ fromPath: '/urban-media-archaeology/2011-fall', toPath: 'https://uma.wordsinspace.net/2011'})
+  createRedirect({ fromPath: '/urban-media-archaeology/2011-fall/:slug', toPath: 'https://uma.wordsinspace.net/2011/:slug'})
+
+  createRedirect({ fromPath: '/lib-arch-data/wordpress_libarchdata', toPath: 'https://libarchdata.wordsinspace.net/2011'})
+  createRedirect({ fromPath: '/lib-arch-data/wordpress_libarchdata/:slug', toPath: 'https://libarchdata.wordsinspace.net/2011/:slug'})
+
+  createRedirect({ fromPath: '/urban-media-archaeology/2010-fall', toPath: 'https://uma.wordsinspace.net/2010'})
+  createRedirect({ fromPath: '/urban-media-archaeology/2010-fall/:slug', toPath: 'https://uma.wordsinspace.net/2010/:slug'})
+
+  createRedirect({ fromPath: '/2010/Fall/mediamateriality', toPath: 'https://mediamateriality.wordsinspace.net/2010'})
+  createRedirect({ fromPath: '/2010/Fall/mediamateriality/:slug', toPath: 'https://mediamateriality.wordsinspace.net/2010/:slug'})
 
 
   //images
