@@ -49,11 +49,11 @@ exports.createPages = async ({ actions, graphql }) => {
   createRedirect({ fromPath: '/mapsmedia/fall2018', toPath: 'https://mapsmedia.wordsinspace.net/2018'})
   createRedirect({ fromPath: '/mapsmedia/fall2018/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2018/:slug'})
 
-  createRedirect({ fromPath: '/urbanintel/spring2018', toPath: 'https://urbanintel.wordsinspace.net/spring2018'})
-  createRedirect({ fromPath: '/urbanintel/spring2018/:slug', toPath: 'https://urbanintel.wordsinspace.net/spring2018/:slug'})
+  createRedirect({ fromPath: '/urbanintel/spring2018', toPath: 'https://urbanintel.wordsinspace.net/2018'})
+  createRedirect({ fromPath: '/urbanintel/spring2018/:slug', toPath: 'https://urbanintel.wordsinspace.net/2018/:slug'})
 
-  createRedirect({ fromPath: '/designingmethods/spring2018', toPath: 'https://designmethod.wordsinspace.net/spring2018'})
-  createRedirect({ fromPath: '/designingmethods/spring2018/:slug', toPath: 'https://designmethod.wordsinspace.net/spring2018/:slug'})
+  createRedirect({ fromPath: '/designingmethods/spring2018', toPath: 'https://designmethod.wordsinspace.net/2018'})
+  createRedirect({ fromPath: '/designingmethods/spring2018/:slug', toPath: 'https://designmethod.wordsinspace.net/2018/:slug'})
 
   createRedirect({ fromPath: '/mapsmedia/fall2017', toPath: 'https://mapsmedia.wordsinspace.net/2017'})
   createRedirect({ fromPath: '/mapsmedia/fall2017/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2017/:slug'})
