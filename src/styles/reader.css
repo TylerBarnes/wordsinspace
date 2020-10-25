@@ -648,7 +648,7 @@ figcaption {
   cursor: url("https://ia601508.us.archive.org/28/items/cursor-right_20200831_1918/Cursor_Right.png") 32 29, e-resize;
 }
 
-.wp-block-gallery:hover:after, .gallery:hover:after, .slideshowWrapper:hover:after {
+.wp-block-gallery:hover:after, .slideshowWrapper:hover:after {
   content: 'scroll right for more >';
   font-family: 'Bespoke_Caption';
   font-style: normal;
@@ -659,16 +659,6 @@ figcaption {
   right: 0;
   -webkit-backface-visibility: hidden;
 }
-
-/* .blocks-gallery-grid:hover + figcaption {
-  background-image: url('/slideshow_scroll.svg');
-  background-position: right center;
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-clip: border-box;
-  background-attachment: auto;
-  } */
 
 /*****/
 /*****/
