@@ -61,7 +61,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 				className='metadata'
 	    	style={{
 					margin: '0',
-					padding: '0 1vh',
+					padding: '0 1vh 3vh 1vh',
 					border: 'none',
 					background: 'transparent',
 	        cursor: 'pointer',
