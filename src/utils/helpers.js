@@ -61,16 +61,20 @@ function getRandomSubarray(arr, size) {
 }
 
 export const handlePublicationsTags = (tags, pinnedTags, tagCutoff) => {
+  const pinned = tags.filter(tag => pinnedTags.includes(tag.name.toLowerCase()))
+  const notPinned = tags.filter(tag => !pinnedTags.includes(tag.name.toLowerCase()))
+
   const topTags = [
     // filter by names in pinnedTags to bump these specific tags to top
-    ...tags.filter(tag => pinnedTags.includes(tag.name.toLowerCase())),
+    ...pinned,
     // rest of tags
-    ...tags?.slice(0,tags.length < tagCutoff
+    ...notPinned?.slice(0,tags.length < tagCutoff - pinned.length
             ? Math.floor(tags.length/2)
-            : tagCutoff
+            : tagCutoff  - pinned.length
             )
   ]
 
+  // remove the PinnedTags from the rest of the tags
   const extraTags = tags?.slice(tags.length < tagCutoff
                     ? Math.floor(tags.length/2)
                     : tagCutoff, tags.length)
