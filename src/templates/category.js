@@ -15,13 +15,11 @@ import MobileFilters from "../components/mobile/mobileFilters"
 import List from "../components/list"
 
 export default function CategoryTemplate({data}) {
-
   const breakpoints = useBreakpoint()
   const {showDesktopFilters, showMobileFilters} = getResponsiveBrowserVars(breakpoints)
 
   // initialize the items to all of the Pages and all of the Posts
-  const initial = sortByDate([...data.allWpCategory.nodes[0].pages.nodes, ...data.allWpCategory.nodes[0].posts.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) ;
-
+  const initial = sortByDate([...data.allWpPage.nodes, ...data.allWpPost.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
   const [isTagMode, setTagMode] = useState(false)
 
   // initialize the tags to only those that belong to data of this category, see function definition below for more details
@@ -30,7 +28,7 @@ export default function CategoryTemplate({data}) {
   // handles clicking on Tags by updating the 'checked' key-value for every tag
   function handleSelection(e) {
     const { name } = e.target;
-    setTags(tags.map(tag => tag.name === name ? {...tag, checked: !tag.checked } : tag))
+    setTags(tags.map(tag => tag.name.replace(/[\n\s]/, '-') === name.replace(/[\n\s]/, '-') ? {...tag, checked: !tag.checked } : tag))
   }
 
   // handles clearing the Tag selections and toggling TagMode
@@ -55,15 +53,23 @@ export default function CategoryTemplate({data}) {
                           ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
                           : []
 
+  const category = data.allWpPage.nodes[0].categories.nodes[0].name
+
   return (
     <Browser>
-      <SEO title={data.allWpCategory.nodes[0].name} />
+      <SEO title={category} />
       {showMobileFilters &&
         <MobileFilters />
       }
-      <List items={isTagMode ? tagQueryResults : initial} loading={response.loading} isTagMode={isTagMode}/>
+      <List
+        items={isTagMode ? tagQueryResults : initial} loading={response.loading}
+        isTagMode={isTagMode}/>
       {showDesktopFilters &&
-        <Filters tags={tags} selectTags={handleSelection} clearTags={handleClear} isTagMode={isTagMode} />
+        <Filters
+          tags={tags}
+          selectTags={handleSelection}
+          clearTags={handleClear}
+          isTagMode={isTagMode} />
       }
     </Browser>
   )
@@ -72,76 +78,71 @@ export default function CategoryTemplate({data}) {
 // this is a static GraphQL query Gatsby executes when compiling so that we can have access to the different /category endpoints
 export const query = graphql`
   query getCategory($slug: String!) {
-    allWpCategory(filter: {slug: { eq: $slug }}) {
+    allWpPage(sort: {order: DESC, fields: date}, filter: {categories: {nodes: {elemMatch: {slug: {eq: $slug}}}}}) {
       nodes {
-        name
         slug
-        posts {
-          nodes {
-            title
-            slug
-            date
-            content
-            excerpt
-            uri
-            featuredImage {
-              node {
-                localFile {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
+        title
+        date
+        content
+        uri
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
                 }
-              }
-            }
-            categories {
-              nodes {
-                name
-              }
-            }
-            tags {
-              nodes {
-                slug
-                name
-                id
               }
             }
           }
         }
-        pages {
+        categories {
           nodes {
-            title
+            name
+          }
+        }
+        tags {
+          nodes {
             slug
-            date
-            content
-            uri
-            featuredImage {
-              node {
-                localFile {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
-            categories {
-              nodes {
-                name
-              }
-            }
-            tags {
-              nodes {
-                slug
-                name
-                id
-              }
-            }
+            name
+            id
           }
         }
       }
     }
-  }
+    allWpPost(sort: {order: DESC, fields: date}, filter: {categories: {nodes: {elemMatch: {slug: {eq: $slug}}}}}) {
+      nodes {
+        slug
+        title
+        date
+        content
+        uri
+        excerpt
+        categories {
+          nodes {
+            name
+          }
+        }
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        tags {
+          nodes {
+            slug
+            name
+            id
+          }
+        }
+      }
+    }
+    }
+
 `
