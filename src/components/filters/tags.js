@@ -4,6 +4,7 @@ import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import {useLocation} from '@reach/router'
 
 import {getResponsiveBrowserVars} from "../../utils/dom"
+import {handlePublicationsTags, handleRestOfTags} from "../../utils/helpers"
 import Checkbox from './checkbox'
 
 const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
@@ -11,19 +12,20 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
   const [isHovered, setIsHovered] = useState(false)
 	const tagCutoff = 20
 
-	const location = useLocation();
-	const catName = location.pathname.replace('/', '').replace('/', '') !== 'work' ? location.pathname.replace('/', '').replace('/', '') : ''
+	const location = useLocation()
 
+	const catName = location.pathname.replace('/', '')
+                .replace('/', '') !== 'work'
+                ? location.pathname.replace('/', '').replace('/', '')
+                : ''
 	const pinnedTags = ['books', 'articles', 'chapters', 'reviews', 'editorial']
-	const topTags = (catName === 'publications')
-								? [...tags.filter(tag => pinnedTags.includes(tag.name.toLowerCase())), ...tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff).filter(tag => !pinnedTags.includes(tag.name.toLowerCase()) )]
-								: tags?.slice(0,tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff)
 
-	const extraTags = tags?.slice(tags.length < tagCutoff ? Math.floor(tags.length/2) : tagCutoff, tags.length)
-
+	const {topTags, extraTags}= (catName === 'publications')
+								? handlePublicationsTags(tags, pinnedTags, tagCutoff)
+								: handleRestOfTags(tags, tagCutoff)
+  console.log(topTags, extraTags)
 	const breakpoints = useBreakpoint()
 	const {mobileBrowserLayout} = getResponsiveBrowserVars(breakpoints)
-
 	return (
    <div
 	 		className={mobileBrowserLayout ? 'no-scroll' : isTagMode ? 'tag-menu-on no-scroll  tag-right-gradient' : 'tag-menu no-scroll  tag-right-gradient'}
