@@ -6,8 +6,6 @@ import SEO from "../components/seo"
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import {getResponsiveHomeVars} from "../utils/dom"
 
-import ArticleFooter from "../components/article/articleFooter"
-
 export default function Colophon() {
   const breakpoints = useBreakpoint();
   const {mobileColophon, mobileColophonWidth} = getResponsiveHomeVars(breakpoints)

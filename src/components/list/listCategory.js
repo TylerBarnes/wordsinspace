@@ -2,8 +2,6 @@ import React from "react"
 import {Link} from "gatsby"
 
 const ListCategory = ({category}) => {
-  const isClasses = (category === 'classes') // link classes to teaching
-
   return (
     <Link
       to={"/" + category.toLowerCase()}
