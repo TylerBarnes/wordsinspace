@@ -61,7 +61,6 @@ function getRandomSubarray(arr, size) {
 }
 
 export const handlePublicationsTags = (tags, pinnedTags, tagCutoff) => {
-  console.log(tags.length)
   const topTags = [
     // filter by names in pinnedTags to bump these specific tags to top
     ...tags.filter(tag => pinnedTags.includes(tag.name.toLowerCase())),

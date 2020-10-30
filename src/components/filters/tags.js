@@ -23,7 +23,6 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 	const {topTags, extraTags}= (catName === 'publications')
 								? handlePublicationsTags(tags, pinnedTags, tagCutoff)
 								: handleRestOfTags(tags, tagCutoff)
-  console.log(topTags, extraTags)
 	const breakpoints = useBreakpoint()
 	const {mobileBrowserLayout} = getResponsiveBrowserVars(breakpoints)
 	return (
@@ -51,7 +50,7 @@ const Tags = ({tags, selectTags, clearTags, isTagMode}) => {
 
      	{showExtra && extraTags.map((tag, index) => (
 				<Checkbox
-		      key={index}
+		      key={index+topTags.length}
 		      label={tag.name}
 		      count={tag.pages.nodes.length + tag.posts.nodes.length}
 		      isSelected={tag.checked}
