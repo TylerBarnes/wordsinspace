@@ -60,7 +60,7 @@ const MobileFooter = () => {
             marginTop: '5px',
             alignSelf: 'flex-end'
           }}>
-          Copyright All Rights Reserved © 2020
+           © Please credit me if you use my work and consult with me before reusing copyrighted work :)
         </div>
       </div>
     </div>
