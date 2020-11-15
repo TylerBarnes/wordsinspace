@@ -48,7 +48,7 @@ export default function Colophon() {
 
               <p>Words in Space is the website of <a href="/about/">Shannon Mattern</a>. It was redeveloped in the summer of 2020 by <a href='http://www.foreignobjects.net'>Foreign Objects</a>, with taxonomic expertise from librarian <a href="https://sarahhamerman.net/">Sal Hamerman</a>. It is the seventh redesign of Shannon Mattern's website, which has been online since 2002.</p>
 
-              <p>The website is uses a headless <a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> configuration with a custom frontend built with <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
+              <p>The website uses a headless <a href="https://en.wikipedia.org/wiki/WordPress">Wordpress</a> configuration with a custom frontend built with <a href='https://www.gatsbyjs.com/'>GatsbyJS</a>.</p>
 
               <p>Words in Space uses two typefaces: </p>
 
