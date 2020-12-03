@@ -7,6 +7,7 @@
   "dependencies": {
     "@apollo/client": "^3.0.2",
     "@babel/types": "^7.12.1",
+    "cache-manager-fs-hash": "^0.0.9",
     "gatsby": "^2.24.1",
     "gatsby-cli": "^2.12.61",
     "gatsby-image": "^2.4.7",
@@ -24,7 +25,7 @@
     "gatsby-recipes": "^0.2.16",
     "gatsby-remark-social-cards": "^0.4.1",
     "gatsby-source-filesystem": "^2.3.11",
-    "gatsby-source-wordpress-experimental": "^2.0.2",
+    "gatsby-source-wordpress-experimental": "4.0.0",
     "gatsby-transformer-remark": "^2.8.35",
     "gatsby-transformer-sharp": "^2.5.5",
     "graphql": "^15.3.0",
