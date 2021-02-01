@@ -1,0 +1,22 @@
+query NON_NODE_QUERY {
+  discussionSettings {
+    defaultCommentStatus
+    defaultPingStatus
+  }
+
+  readingSettings {
+    postsPerPage
+  }
+
+  schemaMd5
+
+  wpGatsby {
+    arePrettyPermalinksEnabled
+  }
+
+  writingSettings {
+    defaultCategory
+    defaultPostFormat
+    useSmilies
+  }
+}

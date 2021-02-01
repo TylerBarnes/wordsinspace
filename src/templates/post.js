@@ -59,6 +59,8 @@ export const query = graphql`
                 date
                 nodeType
                 uri
+                pingStatus
+                pinged
                 categories {
                   nodes {
                     name
