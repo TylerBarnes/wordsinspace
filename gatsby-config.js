@@ -26,7 +26,7 @@ module.exports = {
         production: {
           hardCacheMediaFiles: false,
         },
-        excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`],
+        excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`],
         debug: {
           graphql: {
             showQueryOnError: false,

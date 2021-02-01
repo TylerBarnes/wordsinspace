@@ -52,7 +52,6 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     modified
     modifiedGmt
     pingStatus
-    pinged
     postFormats(first: 100) {
       nodes {
         id
