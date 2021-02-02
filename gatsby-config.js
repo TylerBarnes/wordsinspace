@@ -40,31 +40,21 @@ module.exports = {
         },
         type: {
           RootQuery: {
-            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`]
+            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`]
           },
           Comment: {
             limit: 0
           },
-          // Tag: {
-          //   limit: process.env.NODE_ENV === `development`
-          //          ? null
-          //          : null
-          // },
-          // Post: {
-          //   limit: process.env.NODE_ENV === `development`
-          //          ? null
-          //          : null
-          // },
-          // Page: {
-          //   limit: process.env.NODE_ENV === `development`
-          //          ? null
-          //          : null
-          // },
-          // MediaItem: {
-          //   limit: process.env.NODE_ENV === `development`
-          //          ? null
-          //          : null
-          // },
+          Post: {
+            limit: process.env.NODE_ENV === `development`
+                   ? 1
+                   : null
+          },
+          Page: {
+            limit: process.env.NODE_ENV === `development`
+                   ? 1
+                   : null
+          },
         }
       },
     },
@@ -82,7 +72,8 @@ module.exports = {
       options: {
         rule: {
           include: /assets/ // See below to configure properly
-        }
+        },
+        failOnError: false
       }
     },
     `gatsby-transformer-sharp`,
