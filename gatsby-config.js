@@ -21,18 +21,18 @@ module.exports = {
         },
         develop: {
           nodeUpdateInterval: 10000,
-          hardCacheMediaFiles: true,
+          hardCacheMediaFiles: false,
         },
         production: {
           hardCacheMediaFiles: false,
+          allow404images: true,
         },
         excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`],
         debug: {
           graphql: {
-            showQueryOnError: false,
+            showQueryOnError: true,
             showQueryVarsOnError: true,
-            copyQueryOnError: true,
-            panicOnError: true,
+            panicOnError: false,
             writeQueriesToDisk: true,
             // a critical error is a WPGraphQL query that returns an error and no response data. Currently WPGQL will error if we try to access private posts so if this is false it returns a lot of irrelevant errors.
             onlyReportCriticalErrors: false,
@@ -47,12 +47,12 @@ module.exports = {
           },
           Post: {
             limit: process.env.NODE_ENV === `development`
-                   ? 1
+                   ? null
                    : null
           },
           Page: {
             limit: process.env.NODE_ENV === `development`
-                   ? 1
+                   ? null
                    : null
           },
         }
