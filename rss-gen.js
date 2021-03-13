@@ -15,18 +15,17 @@ const getXML = async () => {
 async function generateRSS() {
   const XMLfile = await getXML()
   const staticOutputPath = path.join(process.cwd(), './static/');
-  parseString(XMLfile, (err, result) => {
-    fs.writeFile(`${staticOutputPath}/rss.xml`, XMLfile, err => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('File written successfully');
-      }
-    });
+  // parseString(XMLfile, (err, result) => {
+  //   console.log(result)
+  // });
 
+  fs.writeFile(`${staticOutputPath}/rss.xml`, XMLfile, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('File written successfully');
+    }
   });
-
-
 }
 
 // kick it all off
