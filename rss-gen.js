@@ -8,13 +8,12 @@ const getXML = async () => {
     url: 'https://icd.wordsinspace.net/',
     headers: { 'X-Requested-With': 'XMLHttpRequest' },
   });
-
   return response.data;
 };
 
 async function generateRSS() {
   const XMLfile = await getXML();
-  const staticOutputPath = path.join(process.cwd(), '');
+  const staticOutputPath = path.join(process.cwd(), '/public/static');
 
   fs.writeFile(`${staticOutputPath}/rss.xml`, XMLfile, err => {
     if (err) {
