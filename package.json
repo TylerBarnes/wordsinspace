@@ -7,6 +7,7 @@
   "dependencies": {
     "@apollo/client": "^3.0.2",
     "@babel/types": "^7.12.1",
+    "axios": "^0.21.1",
     "cache-manager-fs-hash": "^0.0.9",
     "gatsby": "^2.24.1",
     "gatsby-cli": "^2.12.61",
@@ -49,7 +50,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && node rss-gen.js",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
