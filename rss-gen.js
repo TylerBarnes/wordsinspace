@@ -14,7 +14,7 @@ const getXML = async () => {
 
 async function generateRSS() {
   const XMLfile = await getXML();
-  const staticOutputPath = path.join(process.cwd(), 'public');
+  const staticOutputPath = path.join(process.cwd(), '');
 
   fs.writeFile(`${staticOutputPath}/rss.xml`, XMLfile, err => {
     if (err) {

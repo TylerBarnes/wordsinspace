@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en-US">
+
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+
+		<title>Words In Space &#8211; Just another WordPress site</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Words In Space &raquo; Feed" href="https://icd.wordsinspace.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Words In Space &raquo; Comments Feed" href="https://icd.wordsinspace.net/comments/feed/" />
+		<script>
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/icd.wordsinspace.net\/wp-includes\/js\/wp-emoji.js?ver=5.7","twemoji":"https:\/\/icd.wordsinspace.net\/wp-includes\/js\/twemoji.js?ver=5.7"}};
+			/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. This flag is shortlisted for the Emoji 13 spec,
+				 * but has landed in Twemoji early, so we can add support for it, too.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0x1F3F3, 0xFE0F, 0x200D, 0x26A7, 0xFE0F ],
+					[ 0x1F3F3, 0xFE0F, 0x200B, 0x26A7, 0xFE0F ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * So easy, even a baby could do it!
+				 *
+				 *  To test for Emoji 13 support, try to render a new emoji: Man Feeding Baby.
+				 *
+				 * The Man Feeding Baby emoji is a ZWJ sequence combining 👨 Man, a Zero Width Joiner and 🍼 Baby Bottle.
+				 *
+				 * 0xD83D, 0xDC68 == Man emoji.
+				 * 0x200D == Zero-Width Joiner (ZWJ) that links the two code points for the new emoji or
+				 * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+				 * 0xD83C, 0xDF7C == Baby Bottle.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[0xD83D, 0xDC68, 0x200D, 0xD83C, 0xDF7C],
+					[0xD83D, 0xDC68, 0x200B, 0xD83C, 0xDF7C]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='twentytwenty-style-css'  href='https://icd.wordsinspace.net/wp-content/themes/twentytwenty/style.css?ver=1.5' media='all' />
+<style id='twentytwenty-style-inline-css'>
+.color-accent,.color-accent-hover:hover,.color-accent-hover:focus,:root .has-accent-color,.has-drop-cap:not(:focus):first-letter,.wp-block-button.is-style-outline,a { color: #cd2653; }blockquote,.border-color-accent,.border-color-accent-hover:hover,.border-color-accent-hover:focus { border-color: #cd2653; }button,.button,.faux-button,.wp-block-button__link,.wp-block-file .wp-block-file__button,input[type="button"],input[type="reset"],input[type="submit"],.bg-accent,.bg-accent-hover:hover,.bg-accent-hover:focus,:root .has-accent-background-color,.comment-reply-link { background-color: #cd2653; }.fill-children-accent,.fill-children-accent * { fill: #cd2653; }body,.entry-title a,:root .has-primary-color { color: #000000; }:root .has-primary-background-color { background-color: #000000; }cite,figcaption,.wp-caption-text,.post-meta,.entry-content .wp-block-archives li,.entry-content .wp-block-categories li,.entry-content .wp-block-latest-posts li,.wp-block-latest-comments__comment-date,.wp-block-latest-posts__post-date,.wp-block-embed figcaption,.wp-block-image figcaption,.wp-block-pullquote cite,.comment-metadata,.comment-respond .comment-notes,.comment-respond .logged-in-as,.pagination .dots,.entry-content hr:not(.has-background),hr.styled-separator,:root .has-secondary-color { color: #6d6d6d; }:root .has-secondary-background-color { background-color: #6d6d6d; }pre,fieldset,input,textarea,table,table *,hr { border-color: #dcd7ca; }caption,code,code,kbd,samp,.wp-block-table.is-style-stripes tbody tr:nth-child(odd),:root .has-subtle-background-background-color { background-color: #dcd7ca; }.wp-block-table.is-style-stripes { border-bottom-color: #dcd7ca; }.wp-block-latest-posts.is-grid li { border-top-color: #dcd7ca; }:root .has-subtle-background-color { color: #dcd7ca; }body:not(.overlay-header) .primary-menu > li > a,body:not(.overlay-header) .primary-menu > li > .icon,.modal-menu a,.footer-menu a, .footer-widgets a,#site-footer .wp-block-button.is-style-outline,.wp-block-pullquote:before,.singular:not(.overlay-header) .entry-header a,.archive-header a,.header-footer-group .color-accent,.header-footer-group .color-accent-hover:hover { color: #cd2653; }.social-icons a,#site-footer button:not(.toggle),#site-footer .button,#site-footer .faux-button,#site-footer .wp-block-button__link,#site-footer .wp-block-file__button,#site-footer input[type="button"],#site-footer input[type="reset"],#site-footer input[type="submit"] { background-color: #cd2653; }.header-footer-group,body:not(.overlay-header) #site-header .toggle,.menu-modal .toggle { color: #000000; }body:not(.overlay-header) .primary-menu ul { background-color: #000000; }body:not(.overlay-header) .primary-menu > li > ul:after { border-bottom-color: #000000; }body:not(.overlay-header) .primary-menu ul ul:after { border-left-color: #000000; }.site-description,body:not(.overlay-header) .toggle-inner .toggle-text,.widget .post-date,.widget .rss-date,.widget_archive li,.widget_categories li,.widget cite,.widget_pages li,.widget_meta li,.widget_nav_menu li,.powered-by-wordpress,.to-the-top,.singular .entry-header .post-meta,.singular:not(.overlay-header) .entry-header .post-meta a { color: #6d6d6d; }.header-footer-group pre,.header-footer-group fieldset,.header-footer-group input,.header-footer-group textarea,.header-footer-group table,.header-footer-group table *,.footer-nav-widgets-wrapper,#site-footer,.menu-modal nav *,.footer-widgets-outer-wrapper,.footer-top { border-color: #dcd7ca; }.header-footer-group table caption,body:not(.overlay-header) .header-inner .toggle-wrapper::before { background-color: #dcd7ca; }
+</style>
+<link rel='stylesheet' id='twentytwenty-print-style-css'  href='https://icd.wordsinspace.net/wp-content/themes/twentytwenty/print.css?ver=1.5' media='print' />
+<script src='https://icd.wordsinspace.net/wp-content/themes/twentytwenty/assets/js/index.js?ver=1.5' id='twentytwenty-js-js' async></script>
+<link rel="https://api.w.org/" href="https://icd.wordsinspace.net/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://icd.wordsinspace.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://icd.wordsinspace.net/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7" />
+	<script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script>
+	<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	</head>
+
+	<body class="home blog wp-embed-responsive enable-search-modal has-no-pagination showing-comments show-avatars footer-top-visible">
+
+		<a class="skip-link screen-reader-text" href="#site-content">Skip to the content</a>
+		<header id="site-header" class="header-footer-group" role="banner">
+
+			<div class="header-inner section-inner">
+
+				<div class="header-titles-wrapper">
+
+					
+						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+							<span class="toggle-inner">
+								<span class="toggle-icon">
+									<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)" /></svg>								</span>
+								<span class="toggle-text">Search</span>
+							</span>
+						</button><!-- .search-toggle -->
+
+					
+					<div class="header-titles">
+
+						<h1 class="site-title"><a href="https://icd.wordsinspace.net/">Words In Space</a></h1><div class="site-description">Just another WordPress site</div><!-- .site-description -->
+					</div><!-- .header-titles -->
+
+					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="26" height="7" viewBox="0 0 26 7"><path fill-rule="evenodd" d="M332.5,45 C330.567003,45 329,43.4329966 329,41.5 C329,39.5670034 330.567003,38 332.5,38 C334.432997,38 336,39.5670034 336,41.5 C336,43.4329966 334.432997,45 332.5,45 Z M342,45 C340.067003,45 338.5,43.4329966 338.5,41.5 C338.5,39.5670034 340.067003,38 342,38 C343.932997,38 345.5,39.5670034 345.5,41.5 C345.5,43.4329966 343.932997,45 342,45 Z M351.5,45 C349.567003,45 348,43.4329966 348,41.5 C348,39.5670034 349.567003,38 351.5,38 C353.432997,38 355,39.5670034 355,41.5 C355,43.4329966 353.432997,45 351.5,45 Z" transform="translate(-329 -38)" /></svg>							</span>
+							<span class="toggle-text">Menu</span>
+						</span>
+					</button><!-- .nav-toggle -->
+
+				</div><!-- .header-titles-wrapper -->
+
+				<div class="header-navigation-wrapper">
+
+					
+							<nav class="primary-menu-wrapper" aria-label="Horizontal" role="navigation">
+
+								<ul class="primary-menu reset-list-style">
+
+								<li id="menu-item-41657" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41657"><a href="https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/">Glimmer: Refracting Rock</a></li>
+<li id="menu-item-41658" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41658"><a href="https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/">Purity and Security: Towards a Cultural History of Plexiglass</a></li>
+<li id="menu-item-41814" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41814"><a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/">Digital Ethnography</a></li>
+<li id="menu-item-41815" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41815"><a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/">Mapping the Field</a></li>
+<li id="menu-item-41697" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41697"><a href="https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/">Fluttering Codes: A Cultural History of the Spit Flap</a></li>
+<li id="menu-item-41707" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41707"><a href="https://icd.wordsinspace.net/2020/11/12/urban-auscultation-abc-radio/">Urban Auscultation: ABC Radio</a></li>
+<li id="menu-item-15953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15953"><a href="https://icd.wordsinspace.net/encrypted-repositories/">Encrypted Repositories</a></li>
+
+								</ul>
+
+							</nav><!-- .primary-menu-wrapper -->
+
+						
+						<div class="header-toggles hide-no-js">
+
+						
+							<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+
+								<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+									<span class="toggle-inner">
+										<span class="toggle-text">Menu</span>
+										<span class="toggle-icon">
+											<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="26" height="7" viewBox="0 0 26 7"><path fill-rule="evenodd" d="M332.5,45 C330.567003,45 329,43.4329966 329,41.5 C329,39.5670034 330.567003,38 332.5,38 C334.432997,38 336,39.5670034 336,41.5 C336,43.4329966 334.432997,45 332.5,45 Z M342,45 C340.067003,45 338.5,43.4329966 338.5,41.5 C338.5,39.5670034 340.067003,38 342,38 C343.932997,38 345.5,39.5670034 345.5,41.5 C345.5,43.4329966 343.932997,45 342,45 Z M351.5,45 C349.567003,45 348,43.4329966 348,41.5 C348,39.5670034 349.567003,38 351.5,38 C353.432997,38 355,39.5670034 355,41.5 C355,43.4329966 353.432997,45 351.5,45 Z" transform="translate(-329 -38)" /></svg>										</span>
+									</span>
+								</button><!-- .nav-toggle -->
+
+							</div><!-- .nav-toggle-wrapper -->
+
+							
+							<div class="toggle-wrapper search-toggle-wrapper">
+
+								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+									<span class="toggle-inner">
+										<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)" /></svg>										<span class="toggle-text">Search</span>
+									</span>
+								</button><!-- .search-toggle -->
+
+							</div>
+
+							
+						</div><!-- .header-toggles -->
+						
+				</div><!-- .header-navigation-wrapper -->
+
+			</div><!-- .header-inner -->
+
+			<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
+
+	<div class="search-modal-inner modal-inner">
+
+		<div class="section-inner">
+
+			<form role="search" aria-label="Search for:" method="get" class="search-form" action="https://icd.wordsinspace.net/">
+	<label for="search-form-1">
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" id="search-form-1" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<input type="submit" class="search-submit" value="Search" />
+</form>
+
+			<button class="toggle search-untoggle close-search-toggle fill-children-current-color" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+				<span class="screen-reader-text">Close search</span>
+				<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>			</button><!-- .search-toggle -->
+
+		</div><!-- .section-inner -->
+
+	</div><!-- .search-modal-inner -->
+
+</div><!-- .menu-modal -->
+
+		</header><!-- #site-header -->
+
+		
+<div class="menu-modal cover-modal header-footer-group" data-modal-target-string=".menu-modal">
+
+	<div class="menu-modal-inner modal-inner">
+
+		<div class="menu-wrapper section-inner">
+
+			<div class="menu-top">
+
+				<button class="toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
+					<span class="toggle-text">Close Menu</span>
+					<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102" /></svg>				</button><!-- .nav-toggle -->
+
+				
+					<nav class="expanded-menu" aria-label="Expanded" role="navigation">
+
+						<ul class="modal-menu reset-list-style">
+							<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41657"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/">Glimmer: Refracting Rock</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41658"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/">Purity and Security: Towards a Cultural History of Plexiglass</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41814"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/">Digital Ethnography</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41815"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/">Mapping the Field</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41697"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/">Fluttering Codes: A Cultural History of the Spit Flap</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41707"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/11/12/urban-auscultation-abc-radio/">Urban Auscultation: ABC Radio</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15953"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/encrypted-repositories/">Encrypted Repositories</a></div><!-- .ancestor-wrapper --></li>
+						</ul>
+
+					</nav>
+
+					
+					<nav class="mobile-menu" aria-label="Mobile" role="navigation">
+
+						<ul class="modal-menu reset-list-style">
+
+						<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41657"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/">Glimmer: Refracting Rock</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41658"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/">Purity and Security: Towards a Cultural History of Plexiglass</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41814"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/">Digital Ethnography</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41815"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/">Mapping the Field</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41697"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/">Fluttering Codes: A Cultural History of the Spit Flap</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-41707"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/2020/11/12/urban-auscultation-abc-radio/">Urban Auscultation: ABC Radio</a></div><!-- .ancestor-wrapper --></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15953"><div class="ancestor-wrapper"><a href="https://icd.wordsinspace.net/encrypted-repositories/">Encrypted Repositories</a></div><!-- .ancestor-wrapper --></li>
+
+						</ul>
+
+					</nav>
+
+					
+			</div><!-- .menu-top -->
+
+			<div class="menu-bottom">
+
+				
+			</div><!-- .menu-bottom -->
+
+		</div><!-- .menu-wrapper -->
+
+	</div><!-- .menu-modal-inner -->
+
+</div><!-- .menu-modal -->
+
+<main id="site-content" role="main">
+
+	
+<article class="post-41853 post type-post status-publish format-standard has-post-thumbnail hentry category-presentations tag-ecology tag-erasure tag-infrastructure tag-mapping tag-mapping-infrastructures" id="post-41853">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/presentations/" rel="category tag">Presentations</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/">Mapping Nothing: Geographies of Suspension</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/">February 5, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/#respond">No Comments<span class="screen-reader-text"> on Mapping Nothing: Geographies of Suspension</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-1' class='gallery galleryid-41853 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM.png'><img width="1062" height="593" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM.png 1062w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM-300x168.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM-1024x572.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM-768x429.png 768w" sizes="(max-width: 1062px) 100vw, 1062px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM.png'><img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM.png'><img width="1067" height="624" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM-300x175.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM-1024x599.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM-768x449.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM.png'><img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png'><img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM.png'><img width="1062" height="584" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM.png 1062w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM-300x165.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM-1024x563.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM-768x422.png 768w" sizes="(max-width: 1062px) 100vw, 1062px" /></a>
+			</div></figure>
+		</div>
+
+<p>On, January 27, 2021, I shared &#8220;<a href="https://www.ucl.ac.uk/bartlett/casa/events/2021/jan/shannon-mattern-how-map-nothing-geographies-suspension" target="_blank" rel="noopener">How to Map Nothing: Geographies of Suspension</a>&#8221; in UCL&#8217;s CASA series, and on February 4, I reprised the talk for the <a href="https://urbanecologies.net/events.php" target="_blank" rel="noopener">&#8220;Urban Ecologies&#8221; program</a> at ROM for kunst and arkitektur and the Oslo National Art Academy </p>
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/zB-N2J0ceyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/ecology/" rel="tag">ecology</a>, <a href="https://icd.wordsinspace.net/tag/erasure/" rel="tag">erasure</a>, <a href="https://icd.wordsinspace.net/tag/infrastructure/" rel="tag">infrastructure</a>, <a href="https://icd.wordsinspace.net/tag/mapping/" rel="tag">mapping</a>, <a href="https://icd.wordsinspace.net/tag/mapping-infrastructures/" rel="tag">Mapping Infrastructures</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41801 post type-post status-publish format-standard has-post-thumbnail hentry category-classes tag-ethnography tag-methodology" id="post-41801">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/classes/" rel="category tag">Classes</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/">Digital Ethnography</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/">January 31, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/#respond">No Comments<span class="screen-reader-text"> on Digital Ethnography</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1200" height="977" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1200x977.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1200x977.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-300x244.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1024x833.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-768x625.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979.jpg 1536w" sizes="(max-width: 1200px) 100vw, 1200px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-2' class='gallery galleryid-41801 gallery-columns-3 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/large-3/'><img width="640" height="447" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/large.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/large.jpg 640w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/large-300x210.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/screen-shot-2020-12-23-at-10-26-05-pm/'><img width="1196" height="1140" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM.png 1196w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM-300x286.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM-1024x976.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM-768x732.png 768w" sizes="(max-width: 1196px) 100vw, 1196px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/timmara_handgrip1979/'><img width="1536" height="1250" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-300x244.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1024x833.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-768x625.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1200x977.jpg 1200w" sizes="(max-width: 1536px) 100vw, 1536px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/unknown/'><img width="1438" height="1438" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown.jpeg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown.jpeg 1438w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-300x300.jpeg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-1024x1024.jpeg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-150x150.jpeg 150w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-768x768.jpeg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-1200x1200.jpeg 1200w" sizes="(max-width: 1438px) 100vw, 1438px" /></a>
+			</div></figure>
+		</div>
+
+<p><em>Inter-Institutional Undergraduate Intensive, with M.E. Luka and Annette Markham</em></p>
+<p>The acronym IRL, or “in real life,” purports to distinguish our “real,” unmediated, bodily existence from everything “unreal” that happens online. But the distinction isn’t quite so tidy; there’s hardly any aspect of our social and material worlds that remains untouched by digital technologies. How can we deploy the methods and sensibilities of ethnography, anthropology’s signature method, to better understand how the digital shapes our relationships, our institutions, our economies, our selves, etc? How might we deploy digital tools *in* that investigation? And how can we supplement anthropological methods with those from media studies, critical data studies, infrastructure studies, design, creative technology, and a variety of other fields? In this intensive intersession workshop, we’ll join with the Digital Ethnography Research Centre at RMIT in Melbourne, Australia, and the University of Toronto to engage in the globally networked exploration and application of digital ethnography. Students will be invited to complete course readings and screenings, small ethnographic exercises, and an individual or collaborative final project: a multimedia documentary of, or a field guide to, a digital environment or community or phenomenon. For the first two weeks in January, we’ll meet intensively for lecture, discussion, and collaborative exercises; students should expect to dedicate roughly five hours each day to either class meetings or asynchronous engagement, plus light homework. Students will then apply their learning through independently designed and executed digital fieldwork, which they’ll complete during the first half of the spring semester. The sensibilities and skills developed in this course will be highly relevant in a variety of fields, as most institutions and industries in the post-pandemic world will have to reimagine themselves to more integrally incorporate digital technologies.</p>
+<p><a href="https://digitalethnography.wordsinspace.net/jan2021/" target="_blank" rel="noopener">Spring 2021 Class Website</a></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/ethnography/" rel="tag">ethnography</a>, <a href="https://icd.wordsinspace.net/tag/methodology/" rel="tag">Methodology</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41786 post type-post status-publish format-standard has-post-thumbnail hentry category-classes tag-data-visualization tag-fieldwork tag-mapping tag-mapping-infrastructures tag-methodology" id="post-41786">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/classes/" rel="category tag">Classes</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/">Mapping the Field</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/">January 31, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/#respond">No Comments<span class="screen-reader-text"> on Mapping the Field</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="619" height="450" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg 619w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f-300x218.jpg 300w" sizes="(max-width: 619px) 100vw, 619px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-3' class='gallery galleryid-41786 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg'><img width="619" height="450" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg 619w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f-300x218.jpg 300w" sizes="(max-width: 619px) 100vw, 619px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM.png'><img width="1628" height="1266" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM.png 1628w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-300x233.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-1024x796.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-768x597.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-1536x1194.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-1200x933.png 1200w" sizes="(max-width: 1628px) 100vw, 1628px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1.png'><img width="1992" height="1970" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1.png 1992w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-300x297.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1024x1013.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-768x760.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1536x1519.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1200x1187.png 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1980x1958.png 1980w" sizes="(max-width: 1992px) 100vw, 1992px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1.jpg'><img width="940" height="627" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1.jpg 940w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1-768x512.jpg 768w" sizes="(max-width: 940px) 100vw, 940px" /></a>
+			</div></figure>
+		</div>
+
+<p><em>Graduate Elective</em><br />
+Maps reveal, delineate, verify, orient, navigate, anticipate, historicize, conceal, persuade, and, on occasion, even lie. From the earliest spatial representations in cave paintings and on clay tablets, to the predictive climate visualizations and crime maps and mobile cartographic apps of today and tomorrow, maps have offered far more than an objective representation of a stable reality. In this hybrid theory-practice studio we’ll examine maps as artifacts, as texts, as media; and mapping as a method useful in the social sciences, humanities, arts, and design. We’ll explore the past, present, and future – across myriad geographic and cultural contexts – of our techniques and technologies for mapping space and time. In the process, we’ll address various critical frameworks for analyzing the rhetorics, poetics, politics, and epistemologies of spatial and temporal maps. Throughout the semester we’ll also experiment with a variety of critical mapping tools and methods, from techniques of critical cartography to indigenous practices to sensory mapping to time-lining, using both analog and digital approaches. Students are encouraged to use the course, which will be supported by a skilled cartographer teaching assistant, to supplement their fieldwork, to develop their own thesis / dissertation projects, or to advance other personal research and creative pursuits. Course requirements include: individual map critiques; lab exercises; and individual research-based, critical-creative “atlases” composed of maps in a variety of formats.</p>
+<p><a href="https://mappingthefield.wordsinspace.net/2021/" target="_blank" rel="noopener">Spring 2021 Class Website</a></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/data-visualization/" rel="tag">data visualization</a>, <a href="https://icd.wordsinspace.net/tag/fieldwork/" rel="tag">fieldwork</a>, <a href="https://icd.wordsinspace.net/tag/mapping/" rel="tag">mapping</a>, <a href="https://icd.wordsinspace.net/tag/mapping-infrastructures/" rel="tag">Mapping Infrastructures</a>, <a href="https://icd.wordsinspace.net/tag/methodology/" rel="tag">Methodology</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41779 post type-post status-publish format-standard has-post-thumbnail hentry category-publications tag-chapters tag-infrastructure tag-materiality tag-mcluhan" id="post-41779">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/publications/" rel="category tag">Publications</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2021/01/31/on-mcluhan/">On McLuhan</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/on-mcluhan/">January 31, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/on-mcluhan/#respond">No Comments<span class="screen-reader-text"> on On McLuhan</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1090" height="1538" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png 1090w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-213x300.png 213w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-726x1024.png 726w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-768x1084.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-1089x1536.png 1089w" sizes="(max-width: 1090px) 100vw, 1090px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-4' class='gallery galleryid-41779 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon portrait'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png'><img width="1090" height="1538" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png 1090w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-213x300.png 213w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-726x1024.png 726w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-768x1084.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-1089x1536.png 1089w" sizes="(max-width: 1090px) 100vw, 1090px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150.jpg'><img width="886" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150.jpg 886w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150-768x512.jpg 768w" sizes="(max-width: 886px) 100vw, 886px" /></a>
+			</div></figure>
+		</div>
+
+<p>[On McLuhan] in Peter Bexte and Martina Leeker, eds., <a href="https://meson.press/books/ein-medium-namens-mcluhan/" target="_blank" rel="noopener"><em>Medium / McLuhan </em></a>(meson press, 2020): 52-3.</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/chapters/" rel="tag">Chapters</a>, <a href="https://icd.wordsinspace.net/tag/infrastructure/" rel="tag">infrastructure</a>, <a href="https://icd.wordsinspace.net/tag/materiality/" rel="tag">materiality</a>, <a href="https://icd.wordsinspace.net/tag/mcluhan/" rel="tag">mcluhan</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41756 post type-post status-publish format-standard has-post-thumbnail hentry category-publications tag-archives tag-articles-chapters-reviews tag-chapters tag-climate-change tag-data tag-materiality tag-media-environments" id="post-41756">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/publications/" rel="category tag">Publications</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2021/01/31/41756/">Field [in Uncertain Archives]</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/41756/">January 31, 2021</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2021/01/31/41756/#respond">No Comments<span class="screen-reader-text"> on Field [in Uncertain Archives]</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1149" height="765" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg 1149w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-300x200.jpeg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-1024x682.jpeg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-768x511.jpeg 768w" sizes="(max-width: 1149px) 100vw, 1149px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-5' class='gallery galleryid-41756 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon portrait'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type.jpg'><img width="550" height="707" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type.jpg 550w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type-233x300.jpg 233w" sizes="(max-width: 550px) 100vw, 550px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes.jpg'><img width="960" height="640" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes.jpg 960w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes-768x512.jpg 768w" sizes="(max-width: 960px) 100vw, 960px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1.png'><img width="768" height="427" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1-300x167.png 300w" sizes="(max-width: 768px) 100vw, 768px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc.jpg'><img width="1170" height="780" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc.jpg 1170w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc-1024x683.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc-768x512.jpg 768w" sizes="(max-width: 1170px) 100vw, 1170px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg'><img width="1149" height="765" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg 1149w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-300x200.jpeg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-1024x682.jpeg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-768x511.jpeg 768w" sizes="(max-width: 1149px) 100vw, 1149px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive.jpg'><img width="1024" height="661" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive-300x194.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive-768x496.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709.jpg'><img width="4032" height="3024" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709.jpg 4032w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1024x768.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-768x576.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1536x1152.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-2048x1536.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1200x900.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1980x1485.jpg 1980w" sizes="(max-width: 4032px) 100vw, 4032px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo.jpg'><img width="2048" height="993" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-300x145.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1024x497.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-768x372.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1536x745.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1200x582.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1980x960.jpg 1980w" sizes="(max-width: 2048px) 100vw, 2048px" /></a>
+			</div></figure>
+		</div>
+
+<p>“Field Archives” in Nanna Bonde Thylstrup, et al., eds., <em>Uncertain Archives: Critical Keywords for Big Data</em> (Cambridge, MA: MIT Press, 2021): 227-34.</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/archives/" rel="tag">Archives</a>, <a href="https://icd.wordsinspace.net/tag/articles-chapters-reviews/" rel="tag">Articles/Chapters + Reviews</a>, <a href="https://icd.wordsinspace.net/tag/chapters/" rel="tag">Chapters</a>, <a href="https://icd.wordsinspace.net/tag/climate-change/" rel="tag">climate change</a>, <a href="https://icd.wordsinspace.net/tag/data/" rel="tag">data</a>, <a href="https://icd.wordsinspace.net/tag/materiality/" rel="tag">materiality</a>, <a href="https://icd.wordsinspace.net/tag/media-environments/" rel="tag">Media Environments</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41689 post type-post status-publish format-standard has-post-thumbnail hentry category-presentations tag-code tag-media-architectures tag-media-objects tag-reading" id="post-41689">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/presentations/" rel="category tag">Presentations</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/">Fluttering Codes: A Cultural History of the Spit Flap</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/">December 3, 2020</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/#respond">No Comments<span class="screen-reader-text"> on Fluttering Codes: A Cultural History of the Spit Flap</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="735" height="490" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg 735w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1-300x200.jpg 300w" sizes="(max-width: 735px) 100vw, 735px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-6' class='gallery galleryid-41689 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM.png'><img width="1954" height="998" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM.png 1954w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-300x153.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-1024x523.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-768x392.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-1536x785.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-1200x613.png 1200w" sizes="(max-width: 1954px) 100vw, 1954px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg'><img width="735" height="490" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg 735w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1-300x200.jpg 300w" sizes="(max-width: 735px) 100vw, 735px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be.jpg'><img width="474" height="474" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be.jpg 474w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be-300x300.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be-150x150.jpg 150w" sizes="(max-width: 474px) 100vw, 474px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM.png'><img width="1954" height="998" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM.png 1954w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-300x153.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-1024x523.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-768x392.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-1536x785.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-1200x613.png 1200w" sizes="(max-width: 1954px) 100vw, 1954px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b.jpg'><img width="1024" height="680" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b-300x199.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b-768x510.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original.jpg'><img width="1600" height="1130" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original.jpg 1600w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-300x212.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-1024x723.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-768x542.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-1536x1085.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-1200x848.jpg 1200w" sizes="(max-width: 1600px) 100vw, 1600px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo.jpg'><img width="2048" height="1364" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1024x682.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-768x512.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1536x1023.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1200x799.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1980x1319.jpg 1980w" sizes="(max-width: 2048px) 100vw, 2048px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon portrait'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3.jpg'><img width="474" height="628" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3.jpg 474w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3-226x300.jpg 226w" sizes="(max-width: 474px) 100vw, 474px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0.jpg'><img width="474" height="474" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0.jpg 474w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0-300x300.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0-150x150.jpg 150w" sizes="(max-width: 474px) 100vw, 474px" /></a>
+			</div></figure>
+		</div>
+
+<p>&nbsp;</p>
+<p>On November 23, 2020, the University of Pennsylvania&#8217;s Workshop on the History of Materials Texts hosted a <a href="https://www.library.upenn.edu/about/exhibits-events/material-texts-roadshow-writing-objects-feat-chris-faraone-chicago-shannon" target="_blank" rel="noopener noreferrer">&#8220;Writing on Objects&#8221; roadshow</a>, and I shared “Fluttering Codes: A Cultural History of the Split Flap Display&#8221;; my presentation starts at around 22:00</p>
+<p><iframe loading="lazy" src="https://www.youtube.com/embed/84Poi2qplfU" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/code/" rel="tag">code</a>, <a href="https://icd.wordsinspace.net/tag/media-architectures/" rel="tag">Media Architectures</a>, <a href="https://icd.wordsinspace.net/tag/media-objects/" rel="tag">Media Objects</a>, <a href="https://icd.wordsinspace.net/tag/reading/" rel="tag">reading</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41684 post type-post status-publish format-standard has-post-thumbnail hentry category-presentations tag-maintenance tag-repair" id="post-41684">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/presentations/" rel="category tag">Presentations</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2020/12/03/on-care-and-repair-in-community-tech/">On Care and Repair in Community Tech</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/03/on-care-and-repair-in-community-tech/">December 3, 2020</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/03/on-care-and-repair-in-community-tech/#respond">No Comments<span class="screen-reader-text"> on On Care and Repair in Community Tech</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1200" height="613" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM-1200x613.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM-1200x613.png 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM-300x153.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM-1024x523.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM-768x392.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM-1536x785.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.09.09-AM.png 1954w" sizes="(max-width: 1200px) 100vw, 1200px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<p>On October 13, 2020, I spoke with Rachel Coldicutt about care, repair, and maintenance in community tech, as part of their Community Tech Fellowship interview series</p>
+<p><iframe loading="lazy" src="https://www.youtube.com/embed/XIsG5NNx6oA" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/maintenance/" rel="tag">maintenance</a>, <a href="https://icd.wordsinspace.net/tag/repair/" rel="tag">repair</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41645 post type-post status-publish format-standard has-post-thumbnail hentry category-publications tag-articles tag-colonialism tag-exhibition tag-materiality tag-media-architectures tag-media-objects tag-organization" id="post-41645">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/publications/" rel="category tag">Publications</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/">Glimmer: Refracting Rock</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/">December 2, 2020</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/#respond">No Comments<span class="screen-reader-text"> on Glimmer: Refracting Rock</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="590" height="443" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg 590w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8-300x225.jpg 300w" sizes="(max-width: 590px) 100vw, 590px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-7' class='gallery galleryid-41645 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon portrait'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900.jpg'><img width="750" height="888" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900.jpg 750w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900-253x300.jpg 253w" sizes="(max-width: 750px) 100vw, 750px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory.jpg'><img width="864" height="672" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory.jpg 864w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory-300x233.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory-768x597.jpg 768w" sizes="(max-width: 864px) 100vw, 864px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg'><img width="590" height="443" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg 590w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8-300x225.jpg 300w" sizes="(max-width: 590px) 100vw, 590px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894.jpg'><img width="800" height="641" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894.jpg" class="attachment-full size-full" alt="" loading="lazy" aria-describedby="gallery-7-41652" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894.jpg 800w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894-300x240.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894-768x615.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+			</div>
+				<figcaption class='wp-caption-text gallery-caption' id='gallery-7-41652'>
+				2007 METRO Project | ImageDigitizationSpecifications v1.0 | Epson Perfection V750 Pro
+				</figcaption></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976.jpg'><img width="800" height="639" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976.jpg" class="attachment-full size-full" alt="" loading="lazy" aria-describedby="gallery-7-41653" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976.jpg 800w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976-300x240.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976-768x613.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+			</div>
+				<figcaption class='wp-caption-text gallery-caption' id='gallery-7-41653'>
+				2009 Production Scanning | ImageDigitizationSpecifications v1.0 | Epson Perfection V750 Pro
+				</figcaption></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still.jpg'><img width="4724" height="2657" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still.jpg 4724w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-300x169.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1024x576.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-768x432.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1536x864.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-2048x1152.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1200x675.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1980x1114.jpg 1980w" sizes="(max-width: 4724px) 100vw, 4724px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440.jpg'><img width="1440" height="860" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440.jpg 1440w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-300x179.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-1024x612.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-768x459.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-1200x717.jpg 1200w" sizes="(max-width: 1440px) 100vw, 1440px" /></a>
+			</div></figure>
+		</div>
+
+<p>“<a href="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Mattern_Glimmer_LAPlus.pdf" target="_blank" rel="noopener noreferrer">Glimmer: Refracting Rock</a>,” <em>LA+</em> 12: GEO (University of Pennsylvania, 2020)</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/articles/" rel="tag">articles</a>, <a href="https://icd.wordsinspace.net/tag/colonialism/" rel="tag">colonialism</a>, <a href="https://icd.wordsinspace.net/tag/exhibition/" rel="tag">exhibition</a>, <a href="https://icd.wordsinspace.net/tag/materiality/" rel="tag">materiality</a>, <a href="https://icd.wordsinspace.net/tag/media-architectures/" rel="tag">Media Architectures</a>, <a href="https://icd.wordsinspace.net/tag/media-objects/" rel="tag">Media Objects</a>, <a href="https://icd.wordsinspace.net/tag/organization/" rel="tag">organization</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41636 post type-post status-publish format-standard has-post-thumbnail hentry category-publications tag-architecture tag-articles tag-sensation tag-surveillance" id="post-41636">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/publications/" rel="category tag">Publications</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/">Purity and Security: Towards a Cultural History of Plexiglass</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/">December 2, 2020</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/#respond">No Comments<span class="screen-reader-text"> on Purity and Security: Towards a Cultural History of Plexiglass</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1200" height="898" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1200x898.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1200x898.png 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-300x225.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1024x767.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-768x575.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1536x1150.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-2048x1533.png 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1980x1482.png 1980w" sizes="(max-width: 1200px) 100vw, 1200px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<div id='gallery-8' class='gallery galleryid-41636 gallery-columns-1 gallery-size-full'><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304.jpg'><img width="640" height="426" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304.jpg 640w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304-300x200.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM.png'><img width="2514" height="1882" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM.png 2514w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-300x225.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1024x767.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-768x575.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1536x1150.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-2048x1533.png 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1200x898.png 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1980x1482.png 1980w" sizes="(max-width: 2514px) 100vw, 2514px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg.jpg'><img width="512" height="341" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg.jpg 512w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg-300x200.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433.jpg'><img width="620" height="413" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433.jpg 620w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433-300x200.jpg 300w" sizes="(max-width: 620px) 100vw, 620px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c.jpg'><img width="799" height="533" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c.jpg 799w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c-768x512.jpg 768w" sizes="(max-width: 799px) 100vw, 799px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c.jpg'><img width="800" height="503" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c.jpg 800w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c-300x189.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c-768x483.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly.png'><img width="600" height="338" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly.png 600w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly-300x169.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773.jpg'><img width="1160" height="773" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773.jpg" class="attachment-full size-full" alt="" loading="lazy" aria-describedby="gallery-8-41665" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773.jpg 1160w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773-1024x682.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773-768x512.jpg 768w" sizes="(max-width: 1160px) 100vw, 1160px" /></a>
+			</div>
+				<figcaption class='wp-caption-text gallery-caption' id='gallery-8-41665'>
+				A member of the production crew cleans glass on stage which will serve as a barrier to protect the spread of COVID-19 as preparations take place for the vice presidential debate at the University of Utah, Tuesday, Oct. 6, 2020, in Salt Lake City. The vice presidential debate between Vice President Mike Pence and Democratic vice presidential candidate, Sen. Kamala Harris, D-Calif., is scheduled for Oct. 7. (AP Photo/Julio Cortez)
+				</figcaption></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926.jpg'><img width="1024" height="768" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926-768x576.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+			</div></figure><figure class='gallery-item'>
+			<div class='gallery-icon landscape'>
+				<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b.jpg'><img width="1704" height="957" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b.jpg 1704w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-300x168.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-1024x575.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-768x431.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-1536x863.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-1200x674.jpg 1200w" sizes="(max-width: 1704px) 100vw, 1704px" /></a>
+			</div></figure>
+		</div>
+
+<p>&#8220;<a href="https://placesjournal.org/article/purity-and-security-a-cultural-history-of-plexiglass/" target="_blank" rel="noopener noreferrer">Purity and Security: Towards a Cultural History of Plexiglas</a>,&#8221; <em>Places Journal </em>(December 2020).</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+		<div class="post-meta-wrapper post-meta-single post-meta-single-bottom">
+
+			<ul class="post-meta">
+
+									<li class="post-tags meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Tags</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="" d="M15.4496399,8.42490555 L8.66109799,1.63636364 L1.63636364,1.63636364 L1.63636364,8.66081885 L8.42522727,15.44178 C8.57869221,15.5954158 8.78693789,15.6817418 9.00409091,15.6817418 C9.22124393,15.6817418 9.42948961,15.5954158 9.58327627,15.4414581 L15.4486339,9.57610048 C15.7651495,9.25692435 15.7649133,8.74206554 15.4496399,8.42490555 Z M16.6084423,10.7304545 L10.7406818,16.59822 C10.280287,17.0591273 9.65554997,17.3181054 9.00409091,17.3181054 C8.35263185,17.3181054 7.72789481,17.0591273 7.26815877,16.5988788 L0.239976954,9.57887876 C0.0863319284,9.4254126 0,9.21716044 0,9 L0,0.818181818 C0,0.366312477 0.366312477,0 0.818181818,0 L9,0 C9.21699531,0 9.42510306,0.0862010512 9.57854191,0.239639906 L16.6084423,7.26954545 C17.5601275,8.22691012 17.5601275,9.77308988 16.6084423,10.7304545 Z M5,6 C4.44771525,6 4,5.55228475 4,5 C4,4.44771525 4.44771525,4 5,4 C5.55228475,4 6,4.44771525 6,5 C6,5.55228475 5.55228475,6 5,6 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/tag/architecture/" rel="tag">architecture</a>, <a href="https://icd.wordsinspace.net/tag/articles/" rel="tag">articles</a>, <a href="https://icd.wordsinspace.net/tag/sensation/" rel="tag">Sensation</a>, <a href="https://icd.wordsinspace.net/tag/surveillance/" rel="tag">surveillance</a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />
+<article class="post-41594 post type-post status-publish format-standard has-post-thumbnail hentry category-blog" id="post-41594">
+
+	
+<header class="entry-header has-text-align-center">
+
+	<div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categories</span>
+				<div class="entry-categories-inner">
+					<a href="https://icd.wordsinspace.net/category/blog/" rel="category tag">Blog</a>				</div><!-- .entry-categories-inner -->
+			</div><!-- .entry-categories -->
+
+			<h2 class="entry-title heading-size-1"><a href="https://icd.wordsinspace.net/2020/11/20/letters-of-recommendation/">Letters of Recommendation</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta">
+
+									<li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post author</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z" /></svg>						</span>
+						<span class="meta-text">
+							By <a href="https://icd.wordsinspace.net/author/shannon/">Shannon Mattern</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Post date</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/11/20/letters-of-recommendation/">November 20, 2020</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z" /></svg>						</span>
+						<span class="meta-text">
+							<a href="https://icd.wordsinspace.net/2020/11/20/letters-of-recommendation/#respond">No Comments<span class="screen-reader-text"> on Letters of Recommendation</span></a>						</span>
+					</li>
+					
+			</ul><!-- .post-meta -->
+
+		</div><!-- .post-meta-wrapper -->
+
+		
+	</div><!-- .entry-header-inner -->
+
+</header><!-- .entry-header -->
+
+	<figure class="featured-media">
+
+		<div class="featured-media-inner section-inner medium">
+
+			<img width="1200" height="900" src="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1200x900.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1200x900.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1024x768.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-768x576.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1536x1152.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-2048x1536.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1980x1485.jpg 1980w" sizes="(max-width: 1200px) 100vw, 1200px" />
+		</div><!-- .featured-media-inner -->
+
+	</figure><!-- .featured-media -->
+
+	
+	<div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			<p><a href="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A.jpg"><img loading="lazy" class="alignnone size-full wp-image-41595" src="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A.jpg" alt="" width="3648" height="2736" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A.jpg 3648w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1024x768.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-768x576.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1536x1152.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-2048x1536.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1200x900.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1980x1485.jpg 1980w" sizes="(max-width: 3648px) 100vw, 3648px" /></a>I&#8217;m usually happy to write letters of recommendation for students who&#8217;ve taken – and meaningfully engaged in – at least one of my classes, and who, if they&#8217;ve been out of school for a while, have kept in touch at least periodically. I also often write letters for colleagues and professional collaborators. I can typically handle sets of letters for about 12 or 15 individuals each semester &#8212; so if I have to decline your request, it might be because I&#8217;m already maxed out!</p>
+<p>Why do I need to set these limits? Because writing a strong, customized letter that concretely describes your unique talents and qualifications is a time-intensive process. And writing multiple letters is cumulatively demanding – particularly every fall, as undergrads apply for grad school, as Master&#8217;s students apply for PhD&#8217;s, and as both my PhD advisees and my colleagues apply for jobs. I write bespoke letters for each candidate, and the writing process – which involves closely reviewing your past work and future plans – typically takes me about two hours. If you&#8217;re applying for graduate school or a prize or fellowship, I&#8217;ll also typically invest time in reviewing and offering feedback on your statement of purpose and / or application. And tweaking the application letter for each position – sometimes eight to twelve different schools for a PhD applicant, or a few dozen universities for a prospective faculty member – and navigating their idiosyncratic application systems, takes time. In all, I dedicate an average of six or seven hours to each candidate. This is why it&#8217;s hard for me to simply &#8220;squeeze in&#8221; last-minute requests.</p>
+<p>I ask that you please help <em>me</em> help<em> you</em> by doing the following:</p>
+<ul>
+<li><strong>Request your letters as early in the semester as possible</strong>. If you wait until close to your deadlines, I&#8217;m likely already fully committed to supporting other students!</li>
+<li>Roughly <strong>a month before your first deadline</strong>, please share with me a <strong>spreadsheet</strong> listing: (1) the programs or opportunities you&#8217;re applying for; (2) a couple words on why each program appeals to you, what specific faculty you&#8217;d like to work with, what institutional resources you&#8217;d be eager to take advantage of, etc., so I can try to work those details into each letter, if possible; (3) links to where I can find more information about the program; (4) if applicable, particular addressees (e.g., do I address my letter to the chair of the search committee?); (5) instructions for my letter submission (e.g., will I receive an email prompting to upload my letter via the university&#8217;s application management system, which is typically the case; do I email the search committee chair; do I upload to Interfolio?); and (6) my letter deadline for each school / position. At this time, please also send me (1) a copy of your <strong>cv / resume</strong>; (2) a draft of your <strong>statement of purpose</strong> and/or <strong>cover letter</strong>; and (3) a brief description of the <strong>projects you&#8217;ve completed in my classes</strong>. I&#8217;m happy to provide feedback on both the cv and statement, if it would be helpful.</li>
+<li>Because particular seasonal letter of rec deadlines typically fall within a few (super-busy) weeks of one another, things can get very overwhelming &#8212; especially when I&#8217;m submitting eight or ten letters for each of 12 different students, many of whom are applying to some of the same schools. With 100+ letter request emails hitting my inbox all at once, it&#8217;s <em>possible </em>for mistakes to happen.<br />
+<span style="color: #ffffff;">&#8230;..</span>Thus, <strong>I <em>strongly prefer</em> to take care of each applicant&#8217;s letters in one sitting</strong> – i.e., I’d ideally upload all eight or ten or [?] of your letters in one fell swoop. I ask that you <strong>please register me in each university’s application systems (roughly) simultaneously</strong>, so I receive all the notifications on the same day. Please <strong>confirm this date with me at least a week in advance</strong>, so I can block out time for you, and schedule your &#8220;upload session&#8221; around those for my other advisees.</li>
+<li>And please check back in after you&#8217;ve heard about the status of your applications!</li>
+</ul>
+<p>Thank you! [Image: Wax Seal, via <a href="https://commons.wikimedia.org/wiki/File:Wax_seal_with_impression_of_uppercase_letter_A.jpg" target="_blank" rel="noopener noreferrer">Wikimedia</a>]</p>
+
+		</div><!-- .entry-content -->
+
+	</div><!-- .post-inner -->
+
+	<div class="section-inner">
+		
+	</div><!-- .section-inner -->
+
+	
+</article><!-- .post -->
+
+	
+	<div class="pagination-wrapper section-inner">
+
+		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
+
+		
+	<nav class="navigation pagination" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><span class="prev page-numbers placeholder" aria-hidden="true"><span aria-hidden="true">&larr;</span> <span class="nav-prev-text">Newer <span class="nav-short">Posts</span></span></span><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://icd.wordsinspace.net/page/2/">2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class="page-numbers" href="https://icd.wordsinspace.net/page/43/">43</a>
+<a class="next page-numbers" href="https://icd.wordsinspace.net/page/2/"><span class="nav-next-text">Older <span class="nav-short">Posts</span></span> <span aria-hidden="true">&rarr;</span></a></div>
+	</nav>
+	</div><!-- .pagination-wrapper -->
+
+	
+</main><!-- #site-content -->
+
+
+	<div class="footer-nav-widgets-wrapper header-footer-group">
+
+		<div class="footer-inner section-inner">
+
+			
+			
+				<aside class="footer-widgets-outer-wrapper" role="complementary">
+
+					<div class="footer-widgets-wrapper">
+
+						
+							<div class="footer-widgets column-one grid-item">
+								<div class="widget widget_search"><div class="widget-content"><form role="search"  method="get" class="search-form" action="https://icd.wordsinspace.net/">
+	<label for="search-form-2">
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" id="search-form-2" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+	</label>
+	<input type="submit" class="search-submit" value="Search" />
+</form>
+</div></div>
+		<div class="widget widget_recent_entries"><div class="widget-content">
+		<h2 class="widget-title subheading heading-size-3">Recent Posts</h2>
+		<ul>
+											<li>
+					<a href="https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/">Mapping Nothing: Geographies of Suspension</a>
+									</li>
+											<li>
+					<a href="https://icd.wordsinspace.net/2021/01/31/digital-ethnography/">Digital Ethnography</a>
+									</li>
+											<li>
+					<a href="https://icd.wordsinspace.net/2021/01/31/mapping-the-field/">Mapping the Field</a>
+									</li>
+											<li>
+					<a href="https://icd.wordsinspace.net/2021/01/31/on-mcluhan/">On McLuhan</a>
+									</li>
+											<li>
+					<a href="https://icd.wordsinspace.net/2021/01/31/41756/">Field [in Uncertain Archives]</a>
+									</li>
+					</ul>
+
+		</div></div><div class="widget widget_recent_comments"><div class="widget-content"><h2 class="widget-title subheading heading-size-3">Recent Comments</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://wordsinspace.net' rel='external nofollow ugc' class='url'>Shannon</a></span> on <a href="https://icd.wordsinspace.net/2016/01/25/goodbye-old-friend-and-thanks-for-all-the-frisbees/#comment-238">Goodbye, Old Friend, and Thanks for All the Frisbees</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://www.hippelysmakindoo.com/' rel='external nofollow ugc' class='url'>Lori Harding Hippely</a></span> on <a href="https://icd.wordsinspace.net/2016/01/25/goodbye-old-friend-and-thanks-for-all-the-frisbees/#comment-237">Goodbye, Old Friend, and Thanks for All the Frisbees</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://wordsinspace.net' rel='external nofollow ugc' class='url'>Shannon</a></span> on <a href="https://icd.wordsinspace.net/2016/01/25/goodbye-old-friend-and-thanks-for-all-the-frisbees/#comment-236">Goodbye, Old Friend, and Thanks for All the Frisbees</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://girlwonder.com' rel='external nofollow ugc' class='url'>Molly</a></span> on <a href="https://icd.wordsinspace.net/2016/01/25/goodbye-old-friend-and-thanks-for-all-the-frisbees/#comment-235">Goodbye, Old Friend, and Thanks for All the Frisbees</a></li><li class="recentcomments"><span class="comment-author-link">Jill Benson</span> on <a href="https://icd.wordsinspace.net/2016/01/25/goodbye-old-friend-and-thanks-for-all-the-frisbees/#comment-234">Goodbye, Old Friend, and Thanks for All the Frisbees</a></li></ul></div></div>							</div>
+
+						
+						
+							<div class="footer-widgets column-two grid-item">
+								<div class="widget widget_archive"><div class="widget-content"><h2 class="widget-title subheading heading-size-3">Archives</h2>
+			<ul>
+					<li><a href='https://icd.wordsinspace.net/2021/02/'>February 2021</a></li>
+	<li><a href='https://icd.wordsinspace.net/2021/01/'>January 2021</a></li>
+	<li><a href='https://icd.wordsinspace.net/2020/12/'>December 2020</a></li>
+	<li><a href='https://icd.wordsinspace.net/2020/11/'>November 2020</a></li>
+	<li><a href='https://icd.wordsinspace.net/2020/10/'>October 2020</a></li>
+	<li><a href='https://icd.wordsinspace.net/2020/09/'>September 2020</a></li>
+	<li><a href='https://icd.wordsinspace.net/2020/04/'>April 2020</a></li>
+	<li><a href='https://icd.wordsinspace.net/2019/11/'>November 2019</a></li>
+	<li><a href='https://icd.wordsinspace.net/2019/08/'>August 2019</a></li>
+	<li><a href='https://icd.wordsinspace.net/2019/04/'>April 2019</a></li>
+	<li><a href='https://icd.wordsinspace.net/2019/03/'>March 2019</a></li>
+	<li><a href='https://icd.wordsinspace.net/2019/02/'>February 2019</a></li>
+	<li><a href='https://icd.wordsinspace.net/2018/10/'>October 2018</a></li>
+	<li><a href='https://icd.wordsinspace.net/2017/11/'>November 2017</a></li>
+	<li><a href='https://icd.wordsinspace.net/2017/10/'>October 2017</a></li>
+	<li><a href='https://icd.wordsinspace.net/2017/03/'>March 2017</a></li>
+	<li><a href='https://icd.wordsinspace.net/2017/01/'>January 2017</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/12/'>December 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/11/'>November 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/08/'>August 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/07/'>July 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/06/'>June 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/04/'>April 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/03/'>March 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/02/'>February 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2016/01/'>January 2016</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/12/'>December 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/11/'>November 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/10/'>October 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/09/'>September 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/08/'>August 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/07/'>July 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/06/'>June 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/05/'>May 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/04/'>April 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/03/'>March 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/02/'>February 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2015/01/'>January 2015</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/12/'>December 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/11/'>November 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/10/'>October 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/09/'>September 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/08/'>August 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/07/'>July 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/06/'>June 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/05/'>May 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/04/'>April 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/03/'>March 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/02/'>February 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2014/01/'>January 2014</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/12/'>December 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/11/'>November 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/10/'>October 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/09/'>September 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/08/'>August 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/07/'>July 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/06/'>June 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/05/'>May 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/04/'>April 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/03/'>March 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/02/'>February 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2013/01/'>January 2013</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/12/'>December 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/11/'>November 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/10/'>October 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/09/'>September 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/08/'>August 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/07/'>July 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/06/'>June 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/05/'>May 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/04/'>April 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/03/'>March 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/02/'>February 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2012/01/'>January 2012</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/12/'>December 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/11/'>November 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/10/'>October 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/09/'>September 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/08/'>August 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/07/'>July 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/06/'>June 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/05/'>May 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/04/'>April 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/03/'>March 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/02/'>February 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2011/01/'>January 2011</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/12/'>December 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/11/'>November 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/10/'>October 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/09/'>September 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/08/'>August 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/07/'>July 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/06/'>June 2010</a></li>
+	<li><a href='https://icd.wordsinspace.net/2010/04/'>April 2010</a></li>
+			</ul>
+
+			</div></div><div class="widget widget_categories"><div class="widget-content"><h2 class="widget-title subheading heading-size-3">Categories</h2>
+			<ul>
+					<li class="cat-item cat-item-2"><a href="https://icd.wordsinspace.net/category/blog/">Blog</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://icd.wordsinspace.net/category/classes/">Classes</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://icd.wordsinspace.net/category/presentations/">Presentations</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://icd.wordsinspace.net/category/projects/">Projects</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://icd.wordsinspace.net/category/publications/">Publications</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://icd.wordsinspace.net/category/uncategorized/">Uncategorized</a>
+</li>
+			</ul>
+
+			</div></div><div class="widget widget_meta"><div class="widget-content"><h2 class="widget-title subheading heading-size-3">Meta</h2>
+		<ul>
+						<li><a href="https://icd.wordsinspace.net/wp-login.php">Log in</a></li>
+			<li><a href="https://icd.wordsinspace.net/feed/">Entries feed</a></li>
+			<li><a href="https://icd.wordsinspace.net/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</div></div>							</div>
+
+						
+					</div><!-- .footer-widgets-wrapper -->
+
+				</aside><!-- .footer-widgets-outer-wrapper -->
+
+			
+		</div><!-- .footer-inner -->
+
+	</div><!-- .footer-nav-widgets-wrapper -->
+
+
+			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+
+				<div class="section-inner">
+
+					<div class="footer-credits">
+
+						<p class="footer-copyright">&copy;
+							2021							<a href="https://icd.wordsinspace.net/">Words In Space</a>
+						</p><!-- .footer-copyright -->
+
+						<p class="powered-by-wordpress">
+							<a href="https://wordpress.org/">
+								Powered by WordPress							</a>
+						</p><!-- .powered-by-wordpress -->
+
+					</div><!-- .footer-credits -->
+
+					<a class="to-the-top" href="#site-header">
+						<span class="to-the-top-long">
+							To the top <span class="arrow" aria-hidden="true">&uarr;</span>						</span><!-- .to-the-top-long -->
+						<span class="to-the-top-short">
+							Up <span class="arrow" aria-hidden="true">&uarr;</span>						</span><!-- .to-the-top-short -->
+					</a><!-- .to-the-top -->
+
+				</div><!-- .section-inner -->
+
+			</footer><!-- #site-footer -->
+
+		<script src='https://icd.wordsinspace.net/wp-includes/js/wp-embed.js?ver=5.7' id='wp-embed-js'></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	
+	</body>
+</html>
