@@ -1,337 +1,150 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
-	xmlns:content="http://purl.org/rss/1.0/modules/content/"
-	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:atom="http://www.w3.org/2005/Atom"
-	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-	>
-
-<channel>
-	<title>Words In Space</title>
-	<atom:link href="https://icd.wordsinspace.net/feed/rss2" rel="self" type="application/rss+xml" />
-	<link>https://icd.wordsinspace.net</link>
-	<description>Words in Space is the website of Shannon Mattern.</description>
-	<lastBuildDate>Fri, 05 Feb 2021 16:11:33 +0000</lastBuildDate>
-	<language>en-US</language>
-	<sy:updatePeriod>
-	hourly	</sy:updatePeriod>
-	<sy:updateFrequency>
-	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7</generator>
-	<item>
-		<title>Mapping Nothing: Geographies of Suspension</title>
-		<link>https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/</link>
-					<comments>https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Fri, 05 Feb 2021 16:09:33 +0000</pubDate>
-				<category><![CDATA[Presentations]]></category>
-		<category><![CDATA[ecology]]></category>
-		<category><![CDATA[erasure]]></category>
-		<category><![CDATA[infrastructure]]></category>
-		<category><![CDATA[mapping]]></category>
-		<category><![CDATA[Mapping Infrastructures]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41853</guid>
-
-					<description><![CDATA[On, January 27, 2021, I shared &#8220;How to Map Nothing: Geographies of Suspension&#8221; in UCL&#8217;s CASA series, and on February 4, I reprised the talk for the &#8220;Urban Ecologies&#8221; program at ROM for kunst and arkitektur and the Oslo National Art Academy]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM.png'><img width="1062" height="593" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM.png 1062w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM-300x168.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM-1024x572.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.45-AM-768x429.png 768w" sizes="(max-width: 1062px) 100vw, 1062px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM.png'><img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.34-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM.png'><img width="1067" height="624" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM-300x175.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM-1024x599.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.26-AM-768x449.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM.png'><img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.30-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png'><img width="1067" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM.png 1067w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-300x166.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-1024x567.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.05.24-AM-768x425.png 768w" sizes="(max-width: 1067px) 100vw, 1067px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM.png'><img width="1062" height="584" src="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM.png 1062w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM-300x165.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM-1024x563.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/02/Screen-Shot-2021-02-05-at-11.04.53-AM-768x422.png 768w" sizes="(max-width: 1062px) 100vw, 1062px" /></a>
-
-<p>On, January 27, 2021, I shared &#8220;<a href="https://www.ucl.ac.uk/bartlett/casa/events/2021/jan/shannon-mattern-how-map-nothing-geographies-suspension" target="_blank" rel="noopener">How to Map Nothing: Geographies of Suspension</a>&#8221; in UCL&#8217;s CASA series, and on February 4, I reprised the talk for the <a href="https://urbanecologies.net/events.php" target="_blank" rel="noopener">&#8220;Urban Ecologies&#8221; program</a> at ROM for kunst and arkitektur and the Oslo National Art Academy </p>
-<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/zB-N2J0ceyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2021/02/05/mapping-nothing-geographies-of-suspension/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Digital Ethnography</title>
-		<link>https://icd.wordsinspace.net/2021/01/31/digital-ethnography/</link>
-					<comments>https://icd.wordsinspace.net/2021/01/31/digital-ethnography/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Sun, 31 Jan 2021 02:37:13 +0000</pubDate>
-				<category><![CDATA[Classes]]></category>
-		<category><![CDATA[ethnography]]></category>
-		<category><![CDATA[Methodology]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41801</guid>
-
-					<description><![CDATA[Inter-Institutional Undergraduate Intensive, with M.E. Luka and Annette Markham The acronym IRL, or “in real life,” purports to distinguish our “real,” unmediated, bodily existence from everything “unreal” that happens online. But the distinction isn’t quite so tidy; there’s hardly any aspect of our social and material worlds that remains untouched by digital technologies. How can [&#8230;]]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/large-3/'><img width="640" height="447" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/large.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/large.jpg 640w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/large-300x210.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>
-<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/screen-shot-2020-12-23-at-10-26-05-pm/'><img width="1196" height="1140" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM.png 1196w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM-300x286.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM-1024x976.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2020-12-23-at-10.26.05-PM-768x732.png 768w" sizes="(max-width: 1196px) 100vw, 1196px" /></a>
-<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/timmara_handgrip1979/'><img width="1536" height="1250" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-300x244.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1024x833.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-768x625.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/TimMara_HandGrip1979-1200x977.jpg 1200w" sizes="(max-width: 1536px) 100vw, 1536px" /></a>
-<a href='https://icd.wordsinspace.net/2021/01/31/digital-ethnography/attachment/unknown/'><img width="1438" height="1438" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown.jpeg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown.jpeg 1438w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-300x300.jpeg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-1024x1024.jpeg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-150x150.jpeg 150w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-768x768.jpeg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Unknown-1200x1200.jpeg 1200w" sizes="(max-width: 1438px) 100vw, 1438px" /></a>
-
-<p><em>Inter-Institutional Undergraduate Intensive, with M.E. Luka and Annette Markham</em></p>
-<p>The acronym IRL, or “in real life,” purports to distinguish our “real,” unmediated, bodily existence from everything “unreal” that happens online. But the distinction isn’t quite so tidy; there’s hardly any aspect of our social and material worlds that remains untouched by digital technologies. How can we deploy the methods and sensibilities of ethnography, anthropology’s signature method, to better understand how the digital shapes our relationships, our institutions, our economies, our selves, etc? How might we deploy digital tools *in* that investigation? And how can we supplement anthropological methods with those from media studies, critical data studies, infrastructure studies, design, creative technology, and a variety of other fields? In this intensive intersession workshop, we’ll join with the Digital Ethnography Research Centre at RMIT in Melbourne, Australia, and the University of Toronto to engage in the globally networked exploration and application of digital ethnography. Students will be invited to complete course readings and screenings, small ethnographic exercises, and an individual or collaborative final project: a multimedia documentary of, or a field guide to, a digital environment or community or phenomenon. For the first two weeks in January, we’ll meet intensively for lecture, discussion, and collaborative exercises; students should expect to dedicate roughly five hours each day to either class meetings or asynchronous engagement, plus light homework. Students will then apply their learning through independently designed and executed digital fieldwork, which they’ll complete during the first half of the spring semester. The sensibilities and skills developed in this course will be highly relevant in a variety of fields, as most institutions and industries in the post-pandemic world will have to reimagine themselves to more integrally incorporate digital technologies.</p>
-<p><a href="https://digitalethnography.wordsinspace.net/jan2021/" target="_blank" rel="noopener">Spring 2021 Class Website</a></p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2021/01/31/digital-ethnography/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Mapping the Field</title>
-		<link>https://icd.wordsinspace.net/2021/01/31/mapping-the-field/</link>
-					<comments>https://icd.wordsinspace.net/2021/01/31/mapping-the-field/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Sun, 31 Jan 2021 02:34:07 +0000</pubDate>
-				<category><![CDATA[Classes]]></category>
-		<category><![CDATA[data visualization]]></category>
-		<category><![CDATA[fieldwork]]></category>
-		<category><![CDATA[mapping]]></category>
-		<category><![CDATA[Mapping Infrastructures]]></category>
-		<category><![CDATA[Methodology]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41786</guid>
-
-					<description><![CDATA[Graduate Elective Maps reveal, delineate, verify, orient, navigate, anticipate, historicize, conceal, persuade, and, on occasion, even lie. From the earliest spatial representations in cave paintings and on clay tablets, to the predictive climate visualizations and crime maps and mobile cartographic apps of today and tomorrow, maps have offered far more than an objective representation of [&#8230;]]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg'><img width="619" height="450" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f.jpg 619w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/6a3c843b0d44086970d8021efc627d5f-300x218.jpg 300w" sizes="(max-width: 619px) 100vw, 619px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM.png'><img width="1628" height="1266" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM.png 1628w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-300x233.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-1024x796.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-768x597.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-1536x1194.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-2.30.05-AM-1200x933.png 1200w" sizes="(max-width: 1628px) 100vw, 1628px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1.png'><img width="1992" height="1970" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1.png 1992w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-300x297.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1024x1013.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-768x760.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1536x1519.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1200x1187.png 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-15-at-12.43.41-AM-3-1992x1970-1-1980x1958.png 1980w" sizes="(max-width: 1992px) 100vw, 1992px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1.jpg'><img width="940" height="627" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1.jpg 940w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/9400298-3x2-940x627-1-768x512.jpg 768w" sizes="(max-width: 940px) 100vw, 940px" /></a>
-
-<p><em>Graduate Elective</em><br />
-Maps reveal, delineate, verify, orient, navigate, anticipate, historicize, conceal, persuade, and, on occasion, even lie. From the earliest spatial representations in cave paintings and on clay tablets, to the predictive climate visualizations and crime maps and mobile cartographic apps of today and tomorrow, maps have offered far more than an objective representation of a stable reality. In this hybrid theory-practice studio we’ll examine maps as artifacts, as texts, as media; and mapping as a method useful in the social sciences, humanities, arts, and design. We’ll explore the past, present, and future – across myriad geographic and cultural contexts – of our techniques and technologies for mapping space and time. In the process, we’ll address various critical frameworks for analyzing the rhetorics, poetics, politics, and epistemologies of spatial and temporal maps. Throughout the semester we’ll also experiment with a variety of critical mapping tools and methods, from techniques of critical cartography to indigenous practices to sensory mapping to time-lining, using both analog and digital approaches. Students are encouraged to use the course, which will be supported by a skilled cartographer teaching assistant, to supplement their fieldwork, to develop their own thesis / dissertation projects, or to advance other personal research and creative pursuits. Course requirements include: individual map critiques; lab exercises; and individual research-based, critical-creative “atlases” composed of maps in a variety of formats.</p>
-<p><a href="https://mappingthefield.wordsinspace.net/2021/" target="_blank" rel="noopener">Spring 2021 Class Website</a></p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2021/01/31/mapping-the-field/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>On McLuhan</title>
-		<link>https://icd.wordsinspace.net/2021/01/31/on-mcluhan/</link>
-					<comments>https://icd.wordsinspace.net/2021/01/31/on-mcluhan/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Sun, 31 Jan 2021 02:28:11 +0000</pubDate>
-				<category><![CDATA[Publications]]></category>
-		<category><![CDATA[Chapters]]></category>
-		<category><![CDATA[infrastructure]]></category>
-		<category><![CDATA[materiality]]></category>
-		<category><![CDATA[mcluhan]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41779</guid>
-
-					<description><![CDATA[[On McLuhan] in Peter Bexte and Martina Leeker, eds., Medium / McLuhan (meson press, 2020): 52-3.]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png'><img width="1090" height="1538" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM.png 1090w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-213x300.png 213w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-726x1024.png 726w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-768x1084.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2021-01-30-at-9.26.31-PM-1089x1536.png 1089w" sizes="(max-width: 1090px) 100vw, 1090px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150.jpg'><img width="886" height="591" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150.jpg 886w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/mcluhan_150-768x512.jpg 768w" sizes="(max-width: 886px) 100vw, 886px" /></a>
-
-<p>[On McLuhan] in Peter Bexte and Martina Leeker, eds., <a href="https://meson.press/books/ein-medium-namens-mcluhan/" target="_blank" rel="noopener"><em>Medium / McLuhan </em></a>(meson press, 2020): 52-3.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2021/01/31/on-mcluhan/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Field [in Uncertain Archives]</title>
-		<link>https://icd.wordsinspace.net/2021/01/31/41756/</link>
-					<comments>https://icd.wordsinspace.net/2021/01/31/41756/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Sun, 31 Jan 2021 02:22:08 +0000</pubDate>
-				<category><![CDATA[Publications]]></category>
-		<category><![CDATA[Archives]]></category>
-		<category><![CDATA[Articles/Chapters + Reviews]]></category>
-		<category><![CDATA[Chapters]]></category>
-		<category><![CDATA[climate change]]></category>
-		<category><![CDATA[data]]></category>
-		<category><![CDATA[materiality]]></category>
-		<category><![CDATA[Media Environments]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41756</guid>
-
-					<description><![CDATA[“Field Archives” in Nanna Bonde Thylstrup, et al., eds., Uncertain Archives: Critical Keywords for Big Data (Cambridge, MA: MIT Press, 2021): 227-34.]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type.jpg'><img width="550" height="707" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type.jpg 550w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/collidbooks_covers_0isbn9780262539883type-233x300.jpg 233w" sizes="(max-width: 550px) 100vw, 550px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes.jpg'><img width="960" height="640" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes.jpg 960w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Soil-Sample-boxes-768x512.jpg 768w" sizes="(max-width: 960px) 100vw, 960px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1.png'><img width="768" height="427" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Screen-Shot-2016-11-02-at-1.02.09-PM-768x427-1-300x167.png 300w" sizes="(max-width: 768px) 100vw, 768px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc.jpg'><img width="1170" height="780" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc.jpg 1170w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc-1024x683.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/sandy-art-galleries-printed-matter2_huqqpc-768x512.jpg 768w" sizes="(max-width: 1170px) 100vw, 1170px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg'><img width="1149" height="765" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils.jpeg 1149w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-300x200.jpeg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-1024x682.jpeg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/Marbut_ColorProfilesRepresentativeSoils-768x511.jpeg 768w" sizes="(max-width: 1149px) 100vw, 1149px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive.jpg'><img width="1024" height="661" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive-300x194.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/InternetArchive-768x496.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709.jpg'><img width="4032" height="3024" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709.jpg 4032w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1024x768.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-768x576.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1536x1152.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-2048x1536.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1200x900.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/IMG_1709-1980x1485.jpg 1980w" sizes="(max-width: 4032px) 100vw, 4032px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo.jpg'><img width="2048" height="993" src="https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-300x145.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1024x497.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-768x372.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1536x745.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1200x582.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2021/01/16extinctionbanks-slide-IF37-superJumbo-1980x960.jpg 1980w" sizes="(max-width: 2048px) 100vw, 2048px" /></a>
-
-<p>“Field Archives” in Nanna Bonde Thylstrup, et al., eds., <em>Uncertain Archives: Critical Keywords for Big Data</em> (Cambridge, MA: MIT Press, 2021): 227-34.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2021/01/31/41756/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Fluttering Codes: A Cultural History of the Spit Flap</title>
-		<link>https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/</link>
-					<comments>https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Thu, 03 Dec 2020 15:27:10 +0000</pubDate>
-				<category><![CDATA[Presentations]]></category>
-		<category><![CDATA[code]]></category>
-		<category><![CDATA[Media Architectures]]></category>
-		<category><![CDATA[Media Objects]]></category>
-		<category><![CDATA[reading]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41689</guid>
-
-					<description><![CDATA[&#160; On November 23, 2020, the University of Pennsylvania&#8217;s Workshop on the History of Materials Texts hosted a &#8220;Writing on Objects&#8221; roadshow, and I shared “Fluttering Codes: A Cultural History of the Split Flap Display&#8221;; my presentation starts at around 22:00]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM.png'><img width="1954" height="998" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM.png 1954w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-300x153.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-1024x523.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-768x392.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-1536x785.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.24.29-AM-1200x613.png 1200w" sizes="(max-width: 1954px) 100vw, 1954px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg'><img width="735" height="490" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1.jpg 735w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/073019_30th_Street_flapboard_railr.2e16d0ba.fill-735x490-1-300x200.jpg 300w" sizes="(max-width: 735px) 100vw, 735px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be.jpg'><img width="474" height="474" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be.jpg 474w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be-300x300.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/6d778c9858ddbb14a3e9f381eb0c08be-150x150.jpg 150w" sizes="(max-width: 474px) 100vw, 474px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM.png'><img width="1954" height="998" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM.png 1954w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-300x153.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-1024x523.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-768x392.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-1536x785.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-12-03-at-10.23.07-AM-1200x613.png 1200w" sizes="(max-width: 1954px) 100vw, 1954px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b.jpg'><img width="1024" height="680" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b-300x199.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2942425719_611f76b774_b-768x510.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original.jpg'><img width="1600" height="1130" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original.jpg 1600w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-300x212.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-1024x723.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-768x542.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-1536x1085.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/2011.20.original-1200x848.jpg 1200w" sizes="(max-width: 1600px) 100vw, 1600px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo.jpg'><img width="2048" height="1364" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1024x682.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-768x512.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1536x1023.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1200x799.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/27BOARD1-superJumbo-1980x1319.jpg 1980w" sizes="(max-width: 2048px) 100vw, 2048px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3.jpg'><img width="474" height="628" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3.jpg 474w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/16ea93f9b94478de7d2331418f8bb6a3-226x300.jpg 226w" sizes="(max-width: 474px) 100vw, 474px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0.jpg'><img width="474" height="474" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0.jpg 474w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0-300x300.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/8e5339c99ebd3f8d9edae48fddc7b0d0-150x150.jpg 150w" sizes="(max-width: 474px) 100vw, 474px" /></a>
-
-<p>&nbsp;</p>
-<p>On November 23, 2020, the University of Pennsylvania&#8217;s Workshop on the History of Materials Texts hosted a <a href="https://www.library.upenn.edu/about/exhibits-events/material-texts-roadshow-writing-objects-feat-chris-faraone-chicago-shannon" target="_blank" rel="noopener noreferrer">&#8220;Writing on Objects&#8221; roadshow</a>, and I shared “Fluttering Codes: A Cultural History of the Split Flap Display&#8221;; my presentation starts at around 22:00</p>
-<p><iframe loading="lazy" src="https://www.youtube.com/embed/84Poi2qplfU" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2020/12/03/fluttering-codes-a-cultural-history-of-the-spit-flap/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>On Care and Repair in Community Tech</title>
-		<link>https://icd.wordsinspace.net/2020/12/03/on-care-and-repair-in-community-tech/</link>
-					<comments>https://icd.wordsinspace.net/2020/12/03/on-care-and-repair-in-community-tech/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Thu, 03 Dec 2020 15:17:50 +0000</pubDate>
-				<category><![CDATA[Presentations]]></category>
-		<category><![CDATA[maintenance]]></category>
-		<category><![CDATA[repair]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41684</guid>
-
-					<description><![CDATA[On October 13, 2020, I spoke with Rachel Coldicutt about care, repair, and maintenance in community tech, as part of their Community Tech Fellowship interview series]]></description>
-										<content:encoded><![CDATA[<p>On October 13, 2020, I spoke with Rachel Coldicutt about care, repair, and maintenance in community tech, as part of their Community Tech Fellowship interview series</p>
-<p><iframe loading="lazy" src="https://www.youtube.com/embed/XIsG5NNx6oA" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2020/12/03/on-care-and-repair-in-community-tech/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Glimmer: Refracting Rock</title>
-		<link>https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/</link>
-					<comments>https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Wed, 02 Dec 2020 19:06:55 +0000</pubDate>
-				<category><![CDATA[Publications]]></category>
-		<category><![CDATA[articles]]></category>
-		<category><![CDATA[colonialism]]></category>
-		<category><![CDATA[exhibition]]></category>
-		<category><![CDATA[materiality]]></category>
-		<category><![CDATA[Media Architectures]]></category>
-		<category><![CDATA[Media Objects]]></category>
-		<category><![CDATA[organization]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41645</guid>
-
-					<description><![CDATA[“Glimmer: Refracting Rock,” LA+ 12: GEO (University of Pennsylvania, 2020)]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900.jpg'><img width="750" height="888" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900.jpg 750w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/10-writing-of-stones-50watts_900-253x300.jpg 253w" sizes="(max-width: 750px) 100vw, 750px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory.jpg'><img width="864" height="672" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory.jpg 864w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory-300x233.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/AmericanMuseumNaturalHistory-768x597.jpg 768w" sizes="(max-width: 864px) 100vw, 864px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg'><img width="590" height="443" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8.jpg 590w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/d7c26c4d6142fa92f0adb2a3c8e9d7d8-300x225.jpg 300w" sizes="(max-width: 590px) 100vw, 590px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894.jpg'><img width="800" height="641" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894.jpg 800w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894-300x240.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GeologyHall1894-768x615.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976.jpg'><img width="800" height="639" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976.jpg 800w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976-300x240.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/GuggenheimHall1976-768x613.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still.jpg'><img width="4724" height="2657" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still.jpg 4724w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-300x169.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1024x576.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-768x432.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1536x864.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-2048x1152.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1200x675.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/In-Pursuit-of-Bling-video-still-1980x1114.jpg 1980w" sizes="(max-width: 4724px) 100vw, 4724px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440.jpg'><img width="1440" height="860" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440.jpg 1440w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-300x179.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-1024x612.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-768x459.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Nkanga_Otobong_Instalation_View_WEB.jpg1440-1200x717.jpg 1200w" sizes="(max-width: 1440px) 100vw, 1440px" /></a>
-
-<p>“<a href="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Mattern_Glimmer_LAPlus.pdf" target="_blank" rel="noopener noreferrer">Glimmer: Refracting Rock</a>,” <em>LA+</em> 12: GEO (University of Pennsylvania, 2020)</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2020/12/02/glimmer-refracting-rock/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Purity and Security: Towards a Cultural History of Plexiglass</title>
-		<link>https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/</link>
-					<comments>https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Wed, 02 Dec 2020 18:31:15 +0000</pubDate>
-				<category><![CDATA[Publications]]></category>
-		<category><![CDATA[architecture]]></category>
-		<category><![CDATA[articles]]></category>
-		<category><![CDATA[Sensation]]></category>
-		<category><![CDATA[surveillance]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41636</guid>
-
-					<description><![CDATA[&#8220;Purity and Security: Towards a Cultural History of Plexiglas,&#8221; Places Journal (December 2020).]]></description>
-										<content:encoded><![CDATA[
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304.jpg'><img width="640" height="426" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304.jpg 640w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/web1_DSC_1304-300x200.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM.png'><img width="2514" height="1882" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM.png 2514w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-300x225.png 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1024x767.png 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-768x575.png 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1536x1150.png 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-2048x1533.png 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1200x898.png 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/Screen-Shot-2020-10-20-at-1.59.07-AM-1980x1482.png 1980w" sizes="(max-width: 2514px) 100vw, 2514px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg.jpg'><img width="512" height="341" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg.jpg 512w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/iAL46kj8GF0_LOeEJ502kDZC51zkRhNLZhV-VmaDk3E5XcIGjiZ5uuDIDOiOfb5W7yqUvkwfO8D5F02HZZj80JA-cr34QIEtWqL0pPdtGFqrNPwXDCoF0P-1WidFFTF-RIpwLzg-300x200.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433.jpg'><img width="620" height="413" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433.jpg 620w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/1590715811433-300x200.jpg 300w" sizes="(max-width: 620px) 100vw, 620px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c.jpg'><img width="799" height="533" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c.jpg 799w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/15770913184_c0d69dd07e_c-768x512.jpg 768w" sizes="(max-width: 799px) 100vw, 799px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c.jpg'><img width="800" height="503" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c.jpg 800w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c-300x189.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/3484692732_9052708f7b_c-768x483.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly.png'><img width="600" height="338" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly.png" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly.png 600w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/20171219_philly-300x169.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773.jpg'><img width="1160" height="773" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773.jpg 1160w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773-300x200.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773-1024x682.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/201007-debate-ap-773-768x512.jpg 768w" sizes="(max-width: 1160px) 100vw, 1160px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926.jpg'><img width="1024" height="768" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/1024px-MTA_Installs_Plexiglass_and_Vinyl_Barriers_to_Protect_Employees_and_Riders_During_COVID-19_Pandemic_49803532926-768x576.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
-<a href='https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b.jpg'><img width="1704" height="957" src="https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b.jpg 1704w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-300x168.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-1024x575.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-768x431.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-1536x863.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/12/9e6f83ac41c5f9e94497d3f8f3fdff3b-1200x674.jpg 1200w" sizes="(max-width: 1704px) 100vw, 1704px" /></a>
-
-<p>&#8220;<a href="https://placesjournal.org/article/purity-and-security-a-cultural-history-of-plexiglass/" target="_blank" rel="noopener noreferrer">Purity and Security: Towards a Cultural History of Plexiglas</a>,&#8221; <em>Places Journal </em>(December 2020).</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2020/12/02/purity-and-security-towards-a-cultural-history-of-plexiglass/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Letters of Recommendation</title>
-		<link>https://icd.wordsinspace.net/2020/11/20/letters-of-recommendation/</link>
-					<comments>https://icd.wordsinspace.net/2020/11/20/letters-of-recommendation/#respond</comments>
-		
-		<dc:creator><![CDATA[Shannon Mattern]]></dc:creator>
-		<pubDate>Fri, 20 Nov 2020 07:31:49 +0000</pubDate>
-				<category><![CDATA[Blog]]></category>
-		<guid isPermaLink="false">https://icd.wordsinspace.net/?p=41594</guid>
-
-					<description><![CDATA[I&#8217;m usually happy to write letters of recommendation for students who&#8217;ve taken – and meaningfully engaged in – at least one of my classes, and who, if they&#8217;ve been out of school for a while, have kept in touch at least periodically. I also often write letters for colleagues and professional collaborators. I can typically [&#8230;]]]></description>
-										<content:encoded><![CDATA[<p><a href="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A.jpg"><img loading="lazy" class="alignnone size-full wp-image-41595" src="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A.jpg" alt="" width="3648" height="2736" srcset="https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A.jpg 3648w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-300x225.jpg 300w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1024x768.jpg 1024w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-768x576.jpg 768w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1536x1152.jpg 1536w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-2048x1536.jpg 2048w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1200x900.jpg 1200w, https://icd.wordsinspace.net/wp-content/uploads/2020/11/Wax_seal_with_impression_of_uppercase_letter_A-1980x1485.jpg 1980w" sizes="(max-width: 3648px) 100vw, 3648px" /></a>I&#8217;m usually happy to write letters of recommendation for students who&#8217;ve taken – and meaningfully engaged in – at least one of my classes, and who, if they&#8217;ve been out of school for a while, have kept in touch at least periodically. I also often write letters for colleagues and professional collaborators. I can typically handle sets of letters for about 12 or 15 individuals each semester &#8212; so if I have to decline your request, it might be because I&#8217;m already maxed out!</p>
-<p>Why do I need to set these limits? Because writing a strong, customized letter that concretely describes your unique talents and qualifications is a time-intensive process. And writing multiple letters is cumulatively demanding – particularly every fall, as undergrads apply for grad school, as Master&#8217;s students apply for PhD&#8217;s, and as both my PhD advisees and my colleagues apply for jobs. I write bespoke letters for each candidate, and the writing process – which involves closely reviewing your past work and future plans – typically takes me about two hours. If you&#8217;re applying for graduate school or a prize or fellowship, I&#8217;ll also typically invest time in reviewing and offering feedback on your statement of purpose and / or application. And tweaking the application letter for each position – sometimes eight to twelve different schools for a PhD applicant, or a few dozen universities for a prospective faculty member – and navigating their idiosyncratic application systems, takes time. In all, I dedicate an average of six or seven hours to each candidate. This is why it&#8217;s hard for me to simply &#8220;squeeze in&#8221; last-minute requests.</p>
-<p>I ask that you please help <em>me</em> help<em> you</em> by doing the following:</p>
-<ul>
-<li><strong>Request your letters as early in the semester as possible</strong>. If you wait until close to your deadlines, I&#8217;m likely already fully committed to supporting other students!</li>
-<li>Roughly <strong>a month before your first deadline</strong>, please share with me a <strong>spreadsheet</strong> listing: (1) the programs or opportunities you&#8217;re applying for; (2) a couple words on why each program appeals to you, what specific faculty you&#8217;d like to work with, what institutional resources you&#8217;d be eager to take advantage of, etc., so I can try to work those details into each letter, if possible; (3) links to where I can find more information about the program; (4) if applicable, particular addressees (e.g., do I address my letter to the chair of the search committee?); (5) instructions for my letter submission (e.g., will I receive an email prompting to upload my letter via the university&#8217;s application management system, which is typically the case; do I email the search committee chair; do I upload to Interfolio?); and (6) my letter deadline for each school / position. At this time, please also send me (1) a copy of your <strong>cv / resume</strong>; (2) a draft of your <strong>statement of purpose</strong> and/or <strong>cover letter</strong>; and (3) a brief description of the <strong>projects you&#8217;ve completed in my classes</strong>. I&#8217;m happy to provide feedback on both the cv and statement, if it would be helpful.</li>
-<li>Because particular seasonal letter of rec deadlines typically fall within a few (super-busy) weeks of one another, things can get very overwhelming &#8212; especially when I&#8217;m submitting eight or ten letters for each of 12 different students, many of whom are applying to some of the same schools. With 100+ letter request emails hitting my inbox all at once, it&#8217;s <em>possible </em>for mistakes to happen.<br />
-<span style="color: #ffffff;">&#8230;..</span>Thus, <strong>I <em>strongly prefer</em> to take care of each applicant&#8217;s letters in one sitting</strong> – i.e., I’d ideally upload all eight or ten or [?] of your letters in one fell swoop. I ask that you <strong>please register me in each university’s application systems (roughly) simultaneously</strong>, so I receive all the notifications on the same day. Please <strong>confirm this date with me at least a week in advance</strong>, so I can block out time for you, and schedule your &#8220;upload session&#8221; around those for my other advisees.</li>
-<li>And please check back in after you&#8217;ve heard about the status of your applications!</li>
-</ul>
-<p>Thank you! [Image: Wax Seal, via <a href="https://commons.wikimedia.org/wiki/File:Wax_seal_with_impression_of_uppercase_letter_A.jpg" target="_blank" rel="noopener noreferrer">Wikimedia</a>]</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>https://icd.wordsinspace.net/2020/11/20/letters-of-recommendation/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-	</channel>
-</rss>
+<?xml version="1.0" ?>
+      <rss
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+        xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+        version="2.0"
+      >
+        <channel>
+            <title><![CDATA[Words In Space]]></title>
+            <link>https://wordsinspace.net/</link>
+            <description>
+              <![CDATA[Words in Space is the website of Shannon Mattern.]]>
+            </description>
+            <language>en-US</language>
+            <lastBuildDate>Fri, 05 Feb 2021 16:11:33 +0000</lastBuildDate>
+            undefined
+        <item>
+          <title><![CDATA[Mapping Nothing: Geographies of Suspension]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Fri, 05 Feb 2021 16:09:33 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Presentations,ecology,erasure,infrastructure,mapping,Mapping Infrastructures</category>
+          <description>
+          <![CDATA[On, January 27, 2021, I shared &#8220;How to Map Nothing: Geographies of Suspension&#8221; in UCL&#8217;s CASA series, and on February 4, I reprised the talk for the &#8220;Urban Ecologies&#8221; program at ROM for kunst and arkitektur and the Oslo National Art Academy]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Digital Ethnography]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Sun, 31 Jan 2021 02:37:13 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Classes,ethnography,Methodology</category>
+          <description>
+          <![CDATA[Inter-Institutional Undergraduate Intensive, with M.E. Luka and Annette Markham The acronym IRL, or “in real life,” purports to distinguish our “real,” unmediated, bodily existence from everything “unreal” that happens online. But the distinction isn’t quite so tidy; there’s hardly any aspect of our social and material worlds that remains untouched by digital technologies. How can [&#8230;]]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Mapping the Field]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Sun, 31 Jan 2021 02:34:07 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Classes,data visualization,fieldwork,mapping,Mapping Infrastructures,Methodology</category>
+          <description>
+          <![CDATA[Graduate Elective Maps reveal, delineate, verify, orient, navigate, anticipate, historicize, conceal, persuade, and, on occasion, even lie. From the earliest spatial representations in cave paintings and on clay tablets, to the predictive climate visualizations and crime maps and mobile cartographic apps of today and tomorrow, maps have offered far more than an objective representation of [&#8230;]]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[On McLuhan]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Sun, 31 Jan 2021 02:28:11 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Publications,Chapters,infrastructure,materiality,mcluhan</category>
+          <description>
+          <![CDATA[[On McLuhan] in Peter Bexte and Martina Leeker, eds., Medium / McLuhan (meson press, 2020): 52-3.]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Field [in Uncertain Archives]]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Sun, 31 Jan 2021 02:22:08 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Publications,Archives,Articles/Chapters + Reviews,Chapters,climate change,data,materiality,Media Environments</category>
+          <description>
+          <![CDATA[“Field Archives” in Nanna Bonde Thylstrup, et al., eds., Uncertain Archives: Critical Keywords for Big Data (Cambridge, MA: MIT Press, 2021): 227-34.]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Fluttering Codes: A Cultural History of the Spit Flap]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Thu, 03 Dec 2020 15:27:10 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Presentations,code,Media Architectures,Media Objects,reading</category>
+          <description>
+          <![CDATA[&#160; On November 23, 2020, the University of Pennsylvania&#8217;s Workshop on the History of Materials Texts hosted a &#8220;Writing on Objects&#8221; roadshow, and I shared “Fluttering Codes: A Cultural History of the Split Flap Display&#8221;; my presentation starts at around 22:00]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[On Care and Repair in Community Tech]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Thu, 03 Dec 2020 15:17:50 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Presentations,maintenance,repair</category>
+          <description>
+          <![CDATA[On October 13, 2020, I spoke with Rachel Coldicutt about care, repair, and maintenance in community tech, as part of their Community Tech Fellowship interview series]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Glimmer: Refracting Rock]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Wed, 02 Dec 2020 19:06:55 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Publications,articles,colonialism,exhibition,materiality,Media Architectures,Media Objects,organization</category>
+          <description>
+          <![CDATA[“Glimmer: Refracting Rock,” LA+ 12: GEO (University of Pennsylvania, 2020)]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Purity and Security: Towards a Cultural History of Plexiglass]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Wed, 02 Dec 2020 18:31:15 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Publications,architecture,articles,Sensation,surveillance</category>
+          <description>
+          <![CDATA[&#8220;Purity and Security: Towards a Cultural History of Plexiglas,&#8221; Places Journal (December 2020).]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        <item>
+          <title><![CDATA[Letters of Recommendation]]></title>
+          <link>https://wordsinspace.net/</link>
+          <pubDate>Fri, 20 Nov 2020 07:31:49 +0000</pubDate>
+          <guid isPermaLink="false">[object Object]</guid>
+          <category>Blog</category>
+          <description>
+          <![CDATA[I&#8217;m usually happy to write letters of recommendation for students who&#8217;ve taken – and meaningfully engaged in – at least one of my classes, and who, if they&#8217;ve been out of school for a while, have kept in touch at least periodically. I also often write letters for colleagues and professional collaborators. I can typically [&#8230;]]]>
+          </description>
+          <content:encoded>
+            <![CDATA[undefined]]>
+          </content:encoded>
+      </item>
+        </channel>
+      </rss>
