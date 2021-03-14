@@ -22,8 +22,8 @@ const createIndividualRSSitem = (XMLfile) => {
     // the language is misleading - an item is actually the data belonging to all fetched posts/pages
     const { item } = data
     lastBuildDate = data.lastBuildDate[0]
-    language = data.language
-    description = data.description
+    language = data.language[0]
+    description = data.description[0]
 
     // iterate over posts/pages and grab title, link, pubData etc per post or page
     item.map(i => {
