@@ -7,7 +7,7 @@ const fetchInitialXML = async () => {
   const response = await axios({
     method: 'get',
     url: 'https://icd.wordsinspace.net/feed/rss2',
-    headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+    headers: { 'Content-Type': 'application/xml' },
   })
   return response.data
 };
@@ -23,22 +23,21 @@ const createPostRSSfeed = (XMLfile) => {
 
     // iterating over posts/pages
     item.map(i => {
-      const { title, link, pubDate, category, guid, description } = i
-      const content = i['content:encoded']
-      const modifiedURL = link // TO DO - sanitize URLs that point back to icd.wordsinspace.net
-      const modifiedGUID = guid[0]._ // TO DO - sanitize URLs that point back to icd.wordsinspace.net
+      const { title, link, pubDate, category, description } = i
+      const content = i['content:encoded'][0]
+      const modifiedURL = link[0].replace('https://icd.wordsinspace.net', 'https://wordsinspace.net')
+      const modifiedContent = content.replace('”', '"')
       rssItemsXml += `
         <item>
           <title><![CDATA[${title}]]></title>
-          <link>${modifiedGUID}</link>
+          <link>${modifiedURL}</link>
           <pubDate>${pubDate}</pubDate>
-          <guid isPermaLink="false">${guid}</guid>
           <category>${category}</category>
           <description>
           <![CDATA[${description}]]>
           </description>
           <content:encoded>
-            <![CDATA[${content}]]>
+            <![CDATA[${modifiedContent}]]>
           </content:encoded>
       </item>`
     })
