@@ -21,7 +21,7 @@ const createIndividualRSSitem = (XMLfile) => {
 
     // the language is misleading - an item is actually the data belonging to all fetched posts/pages
     const { item } = data
-    lastBuildDate = data.lastBuildDate
+    lastBuildDate = data.lastBuildDate[0]
     language = data.language
     description = data.description
 
@@ -62,7 +62,6 @@ const assembleRSSfragments = (XMLfile) => {
     lastBuildDate,
     language,
     description } = createIndividualRSSitem(XMLfile)
-
   return `<?xml version="1.0" ?>
       <rss
         xmlns:dc="http://purl.org/dc/elements/1.1/"
