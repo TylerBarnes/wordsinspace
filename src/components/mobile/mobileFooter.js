@@ -38,6 +38,10 @@ const MobileFooter = () => {
         <div style={{margin: '6px 0'}}  className='metadata'>
           <Link to={'/colophon'}>colophon</Link>
         </div>
+
+        <div style={{margin: '6px 0'}}  className='metadata'>
+          <a href="https://wordsinspace.net/rss.xml">RSS</a>
+        </div>
       </div>
 
       <div
