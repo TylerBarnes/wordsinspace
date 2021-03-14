@@ -20,17 +20,17 @@ const createPostRSSfeed = (XMLfile) => {
     lastBuildDate = data.lastBuildDate
     language = data.language
     description = data.description
-    description = data.description
 
     // iterating over posts/pages
     item.map(i => {
-      const { title, link, pubDate, category, guid, description, content } = i
-      const modifiedURL = 'https://wordsinspace.net/'
-
+      const { title, link, pubDate, category, guid, description } = i
+      const content = i['content:encoded']
+      const modifiedURL = link // TO DO - sanitize URLs that point back to icd.wordsinspace.net
+      const modifiedGUID = guid[0]._ // TO DO - sanitize URLs that point back to icd.wordsinspace.net
       rssItemsXml += `
         <item>
           <title><![CDATA[${title}]]></title>
-          <link>${modifiedURL}</link>
+          <link>${modifiedGUID}</link>
           <pubDate>${pubDate}</pubDate>
           <guid isPermaLink="false">${guid}</guid>
           <category>${category}</category>
