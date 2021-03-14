@@ -12,21 +12,26 @@ const fetchInitialXML = async () => {
   return response.data
 };
 
-const createPostRSSfeed = (XMLfile) => {
+const createIndividualRSSitem = (XMLfile) => {
   let rssItemsXml, lastBuildDate, language, description
+
+  // parse the entire XML 
   parseString(XMLfile, (err, result) => {
     const data = result.rss.channel[0]
+
+    // the language is misleading - an item is actually the data belonging to all fetched posts/pages
     const { item } = data
     lastBuildDate = data.lastBuildDate
     language = data.language
     description = data.description
 
-    // iterating over posts/pages
+    // iterate over posts/pages and grab title, link, pubData etc per post or page
     item.map(i => {
       const { title, link, pubDate, category, description } = i
       const content = i['content:encoded'][0]
       const modifiedURL = link[0].replace('https://icd.wordsinspace.net', 'https://wordsinspace.net')
-      const modifiedContent = content.replace('”', '"')
+      const modifiedDescription = description[0].replace('“', '"').replace('”', '"')
+      const modifiedContent = content.replace('“', '"').replace('”', '"')
       rssItemsXml += `
         <item>
           <title><![CDATA[${title}]]></title>
@@ -34,7 +39,7 @@ const createPostRSSfeed = (XMLfile) => {
           <pubDate>${pubDate}</pubDate>
           <category>${category}</category>
           <description>
-          <![CDATA[${description}]]>
+          <![CDATA[${modifiedDescription}]]>
           </description>
           <content:encoded>
             <![CDATA[${modifiedContent}]]>
@@ -56,7 +61,7 @@ const assembleRSSfragments = (XMLfile) => {
     rssItemsXml,
     lastBuildDate,
     language,
-    description } = createPostRSSfeed(XMLfile)
+    description } = createIndividualRSSitem(XMLfile)
 
   return `<?xml version="1.0" ?>
       <rss

@@ -6,9 +6,9 @@ import HomeCategory from "./homeCategory"
 
 const HomeItem = ({item, index}) => {
   const connectedNode = item?.connectedNode
-  const thumbnail = connectedNode?.node.featuredImage?.node?.localFile?.childImageSharp?.fluid
-  const title = connectedNode?.node.title
-  const category = connectedNode?.node.categories?.nodes[0]?.name
+  const thumbnail = connectedNode?.node?.featuredImage?.node?.localFile?.childImageSharp?.fluid
+  const title = connectedNode?.node?.title
+  const category = connectedNode?.node?.categories?.nodes[0]?.name
   const isThree = index%3 === 0
   const leftAligned = (index%3 !== 0) && (index%2 === 0)
 
