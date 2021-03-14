@@ -1,7 +1,7 @@
 import React from "react";
 
 const Checkbox = ({ count, label, isSelected, onCheckboxChange}) => {
-  if (count < 2 ) return null // hiding the tags with only one item
+  if (count < 1 ) return null // hiding the tags with no items (shouldn't be necessary)
   return (
     <div
       style={{

@@ -30,17 +30,17 @@ export const extractSearchResults = (array) => {
                   return [...nonEmptyCat.pages.nodes, ...nonEmptyCat.posts.nodes]
                })
                .flat(2)
-  return sortByDate(results).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) 
+  return sortByDate(results).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
 }
 
 // identifies if there are any posts or pages which share the same Tag with the current Post or Page, and if that is the case, returns an array of these items
 export const getRelated = (tags, title) => {
   if (!tags || tags.length === 0) return null
-    
+
   let randomTagSelection = getRandomSubarray(tags?.nodes, 1) // selects two shared tags
   let relatedPages = randomTagSelection?.map(tag => tag.pages ? getRandomSubarray(tag.pages?.nodes, 2) : []).flat(2) // gets Pages that have the Tag
   let relatedPosts = randomTagSelection?.map(tag => tag.posts ? getRandomSubarray(tag.posts?.nodes, 1) : []).flat(2) // gets Posts that have the Tag
-  
+
   let related = [...relatedPages, ...relatedPosts] // merges array
                 .filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i) // removes duplicates
                 .filter(item => item.title !== title) // removes current Page or Post
@@ -58,4 +58,38 @@ function getRandomSubarray(arr, size) {
       shuffled[i] = temp;
   }
   return shuffled.slice(0, size);
+}
+
+export const handlePublicationsTags = (tags, pinnedTags, tagCutoff) => {
+  const pinned = tags.filter(tag => pinnedTags.includes(tag.name.toLowerCase()))
+  const notPinned = tags.filter(tag => !pinnedTags.includes(tag.name.toLowerCase()))
+
+  const topTags = [
+    // filter by names in pinnedTags to bump these specific tags to top
+    ...pinned,
+    // rest of tags
+    ...notPinned?.slice(0,tags.length < tagCutoff - pinned.length
+            ? Math.floor(tags.length/2)
+            : tagCutoff  - pinned.length
+            )
+  ]
+
+  // remove the PinnedTags from the rest of the tags
+  const extraTags = tags?.slice(tags.length < tagCutoff
+                    ? Math.floor(tags.length/2)
+                    : tagCutoff, tags.length)
+
+  return {topTags: topTags, extraTags: extraTags}
+}
+
+export const handleRestOfTags = (tags, tagCutoff) => {
+  const topTags = tags?.slice(0,tags.length < tagCutoff
+      ? Math.floor(tags.length/2)
+      : tagCutoff)
+
+	const extraTags = tags?.slice(tags.length < tagCutoff
+                    ? Math.floor(tags.length/2)
+                    : tagCutoff, tags.length)
+
+  return {topTags: topTags, extraTags: extraTags}
 }
