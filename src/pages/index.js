@@ -33,6 +33,8 @@ import Sticker_Twitter from '../images/assets/Sticker_Twitter.svg'
 import Sticker_Twitter_text from '../images/assets/Sticker_Twitter_text.svg'
 import Sticker_Upcoming from '../images/assets/Sticker_Upcoming.svg'
 import Sticker_Upcoming_text from '../images/assets/Sticker_Upcoming_text.svg'
+import Sticker_RSS from '../images/assets/Sticker_RSS.svg'
+import Sticker_RSS_text from '../images/assets/Sticker_RSS_text.svg'
 
 export default function HomePage() {
   const breakpoints = useBreakpoint();
@@ -146,7 +148,7 @@ export default function HomePage() {
 
         <div
           style={{
-            width:'80%',
+            width:'60%',
           }}>
           <div className='smallSticker'
             style={{
@@ -162,6 +164,7 @@ export default function HomePage() {
             <a aria-label='twitter' href="https://twitter.com/shannonmattern"><Sticker_Twitter_text id='sticker-twitter-text' /><Sticker_Twitter style={{height: '120%'}} id='sticker-twitter' /></a>
             <a aria-label='CV' href="https://icd.wordsinspace.net/static_files/matterncv.pdf"><Sticker_CV_text id='sticker-cv-text' /><Sticker_CV style={{height: '120%'}} id='sticker-cv'/></a>
             <a aria-label='pinboard' href="https://pinboard.in/u:shannon_mattern"><Sticker_Pinboard_text id='sticker-pinboard-text' /><Sticker_Pinboard style={{height: '120%'}} id='sticker-pinboard' /></a>
+            <a aria-label='RSS' href="https://wordsinspace.net/rss.xml"><Sticker_RSS_text id='sticker-RSS-text' /><Sticker_RSS style={{height: '120%'}} id='sticker-RSS'/></a>
           </div>
         </div>
       </div>

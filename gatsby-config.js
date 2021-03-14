@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: `https://icd.wordsinspace.net/graphql`,
         schema: {
@@ -30,8 +30,8 @@ module.exports = {
         excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`],
         debug: {
           graphql: {
-            showQueryOnError: true,
-            showQueryVarsOnError: true,
+            showQueryOnError: false,
+            showQueryVarsOnError: false,
             panicOnError: false,
             writeQueriesToDisk: true,
             // a critical error is a WPGraphQL query that returns an error and no response data. Currently WPGQL will error if we try to access private posts so if this is false it returns a lot of irrelevant errors.
@@ -47,12 +47,12 @@ module.exports = {
           },
           Post: {
             limit: process.env.NODE_ENV === `development`
-                   ? null
+                   ? 10
                    : null
           },
           Page: {
             limit: process.env.NODE_ENV === `development`
-                   ? null
+                   ? 10
                    : null
           },
         }

@@ -202,7 +202,7 @@ svg#sticker-projects:hover circle, svg#sticker-publications:hover circle, .metad
 
 /* small sticker hover */
 
-svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover {
+svg#sticker-email:hover, svg#sticker-pinboard:hover, svg#sticker-colophon:hover, svg#sticker-RSS:hover {
 	-webkit-animation: loading-spinner-inverse  5s infinite;
 	        animation: loading-spinner-inverse  5s infinite;
 }
