@@ -55,6 +55,12 @@ module.exports = {
                    ? 10
                    : null
           },
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 20,
+              maxFileSizeBytes: 10485760, // 10Mb
+            },
+          },
         }
       },
     },
