@@ -29,6 +29,7 @@ const createIndividualRSSitem = (XMLfile) => {
     item.map(i => {
       const { title, link, pubDate, category, description } = i
       const content = i['content:encoded'][0]
+      const modifiedPubDate = pubDate[0]
       const modifiedURL = link[0].replace('https://icd.wordsinspace.net', 'https://wordsinspace.net')
       const modifiedDescription = description[0].replace('“', '"').replace('”', '"')
       const modifiedContent = content.replace('“', '"').replace('”', '"')
@@ -36,7 +37,7 @@ const createIndividualRSSitem = (XMLfile) => {
         <item>
           <title><![CDATA[${title}]]></title>
           <link>${modifiedURL}</link>
-          <pubDate>${pubDate}</pubDate>
+          <pubDate>${modifiedPubDate}</pubDate>
           <category>${category}</category>
           <description>
           <![CDATA[${modifiedDescription}]]>
