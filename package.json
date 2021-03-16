@@ -51,8 +51,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "node rss-gen.js",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "postbuild": "node rss-gen.js",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
