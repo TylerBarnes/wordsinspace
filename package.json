@@ -51,8 +51,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "node rss-gen.js",
+    "prebuild": "npm run rss-generate",
     "build": "gatsby build",
+    "rss-generate": "node rss-gen.js",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
