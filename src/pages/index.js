@@ -38,11 +38,13 @@ import Sticker_RSS_text from '../images/assets/Sticker_RSS_text.svg'
 
 export default function HomePage() {
   const breakpoints = useBreakpoint();
-  const {mobileHome} = getResponsiveHomeVars(breakpoints)
+  const { mobileHome } = getResponsiveHomeVars(breakpoints)
 
-  const menuData = useSiteMenuData();
+  const menuData = useSiteMenuData()
 
-  if (!menuData)  {navigate('/work')}
+  if (!menuData)  { 
+    navigate('/work')
+  }
 
   const menuItems = menuData[0]?.menuItems?.nodes
 

@@ -53,7 +53,7 @@ export default function CategoryTemplate({data}) {
                           ? sortByDate([...response?.data?.posts?.nodes, ...response?.data?.pages?.nodes]).filter((v,i,a)=>a.findIndex(t=>(t.title === v.title))===i)
                           : []
 
-  const category = data.allWpPage.nodes[0].categories.nodes[0].name
+  const category = data?.allWpPage?.nodes[0]?.categories?.nodes[0]?.name
 
   return (
     <Browser>

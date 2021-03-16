@@ -11,12 +11,12 @@ module.exports = {
         url: `https://icd.wordsinspace.net/graphql`,
         schema: {
           // perPage: 50,
-          timeout: 500000,
+          timeout: 300000,
         },
         verboseOutput: true,
         html: {
           useGatsbyImage: true,
-          imageQuality: 90,
+          imageQuality: 60,
           imageMaxWidth: 1400,
         },
         develop: {
@@ -27,7 +27,7 @@ module.exports = {
           hardCacheMediaFiles: false,
           allow404images: true,
         },
-        excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`],
+        excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`, `toPing`],
         debug: {
           graphql: {
             showQueryOnError: false,
@@ -40,26 +40,22 @@ module.exports = {
         },
         type: {
           RootQuery: {
-            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`]
+            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`, `toPing`]
           },
           Comment: {
             limit: 0
           },
           Post: {
+            excludeFieldNames: [`pinged`, `toPing`],
             limit: process.env.NODE_ENV === `development`
-                   ? 10
-                   : null
+              ? 10
+              : null
           },
           Page: {
+            excludeFieldNames: [`pinged`, `toPing`],
             limit: process.env.NODE_ENV === `development`
-                   ? 10
-                   : null
-          },
-          MediaItem: {
-            localFile: {
-              requestConcurrency: 20,
-              maxFileSizeBytes: 10485760, // 10Mb
-            },
+              ? 10
+              : null
           },
         }
       },
