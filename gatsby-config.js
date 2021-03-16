@@ -8,7 +8,9 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
+        // baseurl: `https://icd.wordsinspace.net/graphql`,
         url: `https://icd.wordsinspace.net/graphql`,
+        protocol: `https`,
         schema: {
           // perPage: 50,
           timeout: 300000,
@@ -21,7 +23,7 @@ module.exports = {
         },
         develop: {
           nodeUpdateInterval: 10000,
-          hardCacheMediaFiles: false,
+          hardCacheMediaFiles: true,
         },
         production: {
           hardCacheMediaFiles: false,
