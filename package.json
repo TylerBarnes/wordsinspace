@@ -27,7 +27,7 @@
     "gatsby-recipes": "^0.2.16",
     "gatsby-remark-social-cards": "^0.4.1",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-source-wordpress": "^5.0.0",
+    "gatsby-source-wordpress": "^5.1.0",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "graphql": "^15.3.0",
@@ -54,7 +54,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "npm run rss-generate",
     "build": "gatsby build",
     "rss-generate": "node rss-gen.js",
     "develop": "gatsby develop",

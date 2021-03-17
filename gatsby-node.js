@@ -198,3 +198,10 @@ exports.createPages = async ({ actions, graphql }) => {
     path: '/work',
   })
 }
+
+
+exports.onPostBuild = async function onPostBuild() {
+  // do something with public
+  // e.g. upload to S3
+  console.log('post build this!')
+}
