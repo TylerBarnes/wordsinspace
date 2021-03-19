@@ -99,5 +99,4 @@ async function generateRSS() {
   });
 }
 
-// kick it all off
-generateRSS();
+module.exports.generateRSS = generateRSS

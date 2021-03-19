@@ -1,8 +1,7 @@
 const path = require(`path`)
+const { generateRSS } = require(`./rss-gen`)
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-
 
   const { createRedirect } = actions
 
@@ -199,9 +198,11 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 }
 
+exports.onPreInit = () => {
+  // https://github.com/gatsbyjs/gatsby/issues/7810#issuecomment-457010663
+  generateRSS()
+}
 
-exports.onPostBuild = async function onPostBuild() {
-  // do something with public
-  // e.g. upload to S3
-  console.log('post build this!')
+exports.onPreBuild = async () => {
+  generateRSS()
 }
