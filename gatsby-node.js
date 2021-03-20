@@ -198,13 +198,8 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 }
 
-exports.onPreInit = () => {
+exports.onPreBuild = async () => {
   // https://github.com/gatsbyjs/gatsby/issues/7810#issuecomment-457010663
   generateRSS()
-  console.log('onPreInit')
-}
-
-exports.onPreBuild = async () => {
-  generateRSS()
-  console.log('onPreBuild')
+  console.log('generating new RSS file - onPreBuild')
 }
