@@ -167,12 +167,6 @@ export default function HomePage() {
       {/* ----------------------------FOOTER---------------------------- */}
       {!mobileHome && <Footer />}
       {mobileHome && <MobileFooter />}
-      <SEO
-        title='Home'
-        description='Words in Space is the work of Shannon Mattern.'
-        author='@shannonmattern'
-        image='https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png'
-      />
     </Home>
   )
 }
