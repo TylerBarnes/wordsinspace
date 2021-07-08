@@ -10,7 +10,6 @@ function SEO({ description, lang, meta, author, title }) {
       <meta property="og:url" content="https://wordsinspace.net/" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:content" content={description} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content={author} />
