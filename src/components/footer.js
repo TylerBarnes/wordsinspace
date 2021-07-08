@@ -27,7 +27,6 @@ const Footer = () => {
       }}>
 	      <Link to={'/colophon'} className="metadata"><Colophon id='sticker-colophon' /></Link>
       </div>
-      {false && <a href="">Words in Space is the work of Shannon Mattern.</a>}
     </div>
   )
 }

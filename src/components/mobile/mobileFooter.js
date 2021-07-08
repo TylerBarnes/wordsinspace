@@ -66,7 +66,6 @@ const MobileFooter = () => {
           }}>
            © Please credit me if you use my work and consult with me before reusing copyrighted work :)
         </div>
-        {false && <a href="">Words in Space is the work of Shannon Mattern.</a>}
       </div>
     </div>
   )
