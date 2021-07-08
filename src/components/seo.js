@@ -10,6 +10,7 @@ function SEO({ description, lang, meta, author, title }) {
       <meta property="og:url" content="https://wordsinspace.net/" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <meta property="og:content" content={description} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content={author} />
@@ -25,7 +26,7 @@ function SEO({ description, lang, meta, author, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
+  description: `Words in Space is the work of Shannon Mattern.`,
 }
 
 SEO.propTypes = {
