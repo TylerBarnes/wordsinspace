@@ -173,14 +173,15 @@ export default function HomePage() {
       {/* ----------------------------FOOTER---------------------------- */}
       {!mobileHome && <Footer />}
       {mobileHome && <MobileFooter />}
-      <div 
+      <a 
+        href=""
         style={{
           color: '#F5F5F7',
           fontSize: '1px',
           float: 'left',
         }}>
           Words in Space is the work of Shannon Mattern.
-      </div>
+      </a>
     </Home>
   )
 }
