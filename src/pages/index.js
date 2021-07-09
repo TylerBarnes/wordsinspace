@@ -174,7 +174,7 @@ export default function HomePage() {
       {!mobileHome && <Footer />}
       {mobileHome && <MobileFooter />}
       <a 
-        href=""
+        href="https://wordsinspace.net/"
         style={{
           color: '#F5F5F7',
           fontSize: '1px',
