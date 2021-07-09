@@ -16,6 +16,7 @@ function SEO({ description, lang, meta, author, title }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://raw.githubusercontent.com/samtous/wordsinspace/master/src/images/twittercard.png" />
+      <meta name="google-site-verification" content="qgz1o-wWQZm7p2-_tkORHgZtQo1b29E0RSOVNrkJREM" />
       <html lang="en" />
     </Helmet>
   )
