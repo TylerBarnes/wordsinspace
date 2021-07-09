@@ -3,6 +3,7 @@ module.exports = {
     title: `Words in Space`,
     description: `Words in Space is the work of Shannon Mattern.`,
     author: `@shannonmattern`,
+    siteUrl: `https://wordsinspace.net/`,
   },
   plugins: [
     {
@@ -124,5 +125,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-sitemap`,
   ],
 }
