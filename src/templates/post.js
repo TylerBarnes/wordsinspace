@@ -11,7 +11,7 @@ import ArticleFooter from '../components/article/articleFooter'
 
 export default function postTemplate({ data }) {
 
-  const { title, date, content, categories, tags} = data.allWpPost.nodes[0]
+  const { title, date, content, categories, tags} = data?.allWpPost?.nodes[0]
 
   return (
     <Reader>

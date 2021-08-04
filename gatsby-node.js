@@ -1,8 +1,7 @@
 const path = require(`path`)
+const { generateRSS } = require(`./rss-gen`)
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-
 
   const { createRedirect } = actions
 
@@ -197,4 +196,10 @@ exports.createPages = async ({ actions, graphql }) => {
     component: path.resolve(`./src/templates/work.js`),
     path: '/work',
   })
+}
+
+exports.onPreInit = async () => {
+  // https://github.com/gatsbyjs/gatsby/issues/7810#issuecomment-457010663
+  generateRSS()
+  console.log('generating new RSS file - onPreInit')
 }

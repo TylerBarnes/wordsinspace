@@ -11,7 +11,7 @@ import ArticleFooter from '../components/article/articleFooter'
 
 export default function pageTemplate({ data }) {
 
-  const { title, date, content, categories, tags, slug} = data.allWpPage.nodes[0]
+  const { title, date, content, categories, tags, slug} = data?.allWpPage?.nodes[0]
   const hiddenTaxonomies = slug === 'about' || slug === 'upcoming-events'
 
   return (

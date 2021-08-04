@@ -21,14 +21,15 @@ const createIndividualRSSitem = (XMLfile) => {
 
     // the language is misleading - an item is actually the data belonging to all fetched posts/pages
     const { item } = data
-    lastBuildDate = data.lastBuildDate
-    language = data.language
-    description = data.description
+    lastBuildDate = data.lastBuildDate[0]
+    language = data.language[0]
+    description = data.description[0]
 
     // iterate over posts/pages and grab title, link, pubData etc per post or page
     item.map(i => {
       const { title, link, pubDate, category, description } = i
       const content = i['content:encoded'][0]
+      const modifiedPubDate = pubDate[0]
       const modifiedURL = link[0].replace('https://icd.wordsinspace.net', 'https://wordsinspace.net')
       const modifiedDescription = description[0].replace('“', '"').replace('”', '"')
       const modifiedContent = content.replace('“', '"').replace('”', '"')
@@ -36,7 +37,7 @@ const createIndividualRSSitem = (XMLfile) => {
         <item>
           <title><![CDATA[${title}]]></title>
           <link>${modifiedURL}</link>
-          <pubDate>${pubDate}</pubDate>
+          <pubDate>${modifiedPubDate}</pubDate>
           <category>${category}</category>
           <description>
           <![CDATA[${modifiedDescription}]]>
@@ -62,7 +63,6 @@ const assembleRSSfragments = (XMLfile) => {
     lastBuildDate,
     language,
     description } = createIndividualRSSitem(XMLfile)
-
   return `<?xml version="1.0" ?>
       <rss
         xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -99,5 +99,4 @@ async function generateRSS() {
   });
 }
 
-// kick it all off
-generateRSS();
+module.exports.generateRSS = generateRSS
