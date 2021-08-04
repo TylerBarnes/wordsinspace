@@ -74,7 +74,7 @@ exports.createPages = async ({ actions, graphql }) => {
   createRedirect({ fromPath: '/booksdata/fall2016/:slug', toPath: 'https://booksbigdata.wordsinspace.net/2016/:slug'})
 
   createRedirect({ fromPath: '/mapsmedia/fall2015', toPath: 'https://mapsmedia.wordsinspace.net/2015'})
-  createRedirect({ fromPath: '/mapsmedia/fall2015/:slug', toPath: 'https://mapsmedia.wordsinspace.net/2015/:slug'})
+  createRedirect({ fromPath: '/mapsmedia/fall2015/*', toPath: 'https://mapsmedia.wordsinspace.net/2015/:splat'})
 
   createRedirect({ fromPath: '/lib-arch-data/2014-fall', toPath: 'https://libarchdata.wordsinspace.net/2014'})
   createRedirect({ fromPath: '/lib-arch-data/2014-fall/:slug', toPath: 'https://libarchdata.wordsinspace.net/2014/:slug'})
