@@ -28,7 +28,6 @@ module.exports = {
         },
         production: {
           hardCacheMediaFiles: false,
-          allow404images: false,
         },
         excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`, `toPing`],
         debug: {
