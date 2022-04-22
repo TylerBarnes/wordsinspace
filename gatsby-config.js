@@ -42,19 +42,19 @@ module.exports = {
         },
         type: {
           RootQuery: {
-            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`, `toPing`]
+            excludeFieldNames: [`generalSettings`, `email`, `allSettings`, `generalSettingsEmail`, `viewer`, `pinged`, `toPing`, `isSticky`]
           },
           Comment: {
             limit: 0
           },
           Post: {
-            excludeFieldNames: [`pinged`, `toPing`],
+            excludeFieldNames: [`pinged`, `toPing`, `isSticky`],
             limit: process.env.NODE_ENV === `development`
               ? 10
               : null
           },
           Page: {
-            excludeFieldNames: [`pinged`, `toPing`],
+            excludeFieldNames: [`pinged`, `toPing`, `isSticky`],
             limit: process.env.NODE_ENV === `development`
               ? 10
               : null
