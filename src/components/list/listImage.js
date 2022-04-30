@@ -1,10 +1,10 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const ListImage = ({title, thumbnail, isTagMode}) => {
   return (
     <div>
-      {!isTagMode && <Img fluid={thumbnail} alt={title} key={1} />}
+      {!isTagMode && <GatsbyImage image={thumbnail} alt={title} key={1} />}
       {isTagMode && <img src={thumbnail} alt={title} key={1} />}
     </div>
   )

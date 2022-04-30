@@ -24,9 +24,7 @@ export const useSiteMenuData = () => {
                           node {
                             localFile {
                               childImageSharp {
-                                fluid {
-                                  ...GatsbyImageSharpFluid
-                                }
+                                gatsbyImageData(layout: CONSTRAINED)
                               }
                             }
                           }
@@ -44,9 +42,7 @@ export const useSiteMenuData = () => {
                           node {
                             localFile {
                               childImageSharp {
-                                fluid {
-                                  ...GatsbyImageSharpFluid
-                                }
+                                gatsbyImageData(layout: CONSTRAINED)
                               }
                             }
                           }

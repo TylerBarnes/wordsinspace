@@ -20,7 +20,7 @@ const ListItem = ({item, isTagMode, invertedTheme, mobileList, listWidth, listTi
     e.preventDefault()
     setIsVisible(true)
     setThumbnail(!isTagMode
-                 ? item?.featuredImage?.node?.localFile?.childImageSharp?.fluid
+                 ? item?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData
                  : item?.featuredImage?.node?.guid
                  )
   }

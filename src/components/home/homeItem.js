@@ -6,7 +6,7 @@ import HomeCategory from "./homeCategory"
 
 const HomeItem = ({item, index}) => {
   const connectedNode = item?.connectedNode
-  const thumbnail = connectedNode?.node?.featuredImage?.node?.localFile?.childImageSharp?.fluid
+  const thumbnail = connectedNode?.node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData
   const title = connectedNode?.node?.title
   const category = connectedNode?.node?.categories?.nodes[0]?.name
   const isThree = index%3 === 0

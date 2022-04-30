@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const HomeImage = ({title, thumbnail}) => {
 
@@ -8,7 +8,7 @@ const HomeImage = ({title, thumbnail}) => {
 	    style={{
 	    	flexBasis: '40%',
 	    }}>
-      <Img fluid={thumbnail} alt={title} />
+      <GatsbyImage image={thumbnail} alt={title} />
     </div>
   )
 }
